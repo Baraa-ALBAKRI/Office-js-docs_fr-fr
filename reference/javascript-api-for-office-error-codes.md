@@ -2,7 +2,7 @@
 # Codes d’erreur de l’API JavaScript pour Office
 Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office.js).
 
- _**S’applique à :** Access apps for SharePoint | apps for Office | Excel | Office Add-ins | Outlook | PowerPoint | Project | Word_
+ _**S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word_
 
 
 ## Codes d’erreur

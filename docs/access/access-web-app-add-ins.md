@@ -3,7 +3,10 @@
 
 
 
-Cet article explique comment utiliser Visual Studio 2015 pour développer un Complément Office qui cible l’applications web Access.
+Cet article explique comment utiliser Visual Studio 2015 pour développer un Complément Office qui cible les applications web Access.
+
+>
+  **Remarque :** pour plus d’informations sur le développement de solutions pour Access à l’aide de VBA, consultez la rubrique [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) sur MSDN.
 
 ## Conditions préalables
 

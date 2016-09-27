@@ -20,7 +20,7 @@ Renvoie un tableau de tableaux qui contient les données du tableau. Renvoie un 
 
 ## Remarques
 
-Pour spécifier des lignes, vous devez spécifier un tableau de tableaux qui correspond à la structure du tableau. Par exemple, pour spécifier deux lignes de valeurs de **chaîne** dans un tableau de deux colonnes, affectez à la propriété **row** la valeur ` [['a', 'b'], ['c', 'd']]`.
+Pour spécifier des lignes, vous devez spécifier un tableau de tableaux qui correspond à la structure de la table. Par exemple, pour spécifier les deux lignes de valeurs **string** dans une table à deux colonnes, vous devez définir la propriété **rows** sur ` [['a', 'b'], ['c', 'd']]`.
 
 Si vous spécifiez une valeur **null** pour la propriété **rows** (ou si vous laissez la propriété vide quand vous construisez un objet **TableData**), vous obtenez les résultats suivants quand votre code s’exécute :
 

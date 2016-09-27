@@ -11,12 +11,12 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 |ignoreSpace|bool|Obtient ou définit une valeur indiquant si tous les espaces entre les mots doivent être ignorés. Correspond à la case à cocher Ignorer les caractères d’espacement de la boîte de dialogue Rechercher et remplacer.|
 |matchCase|bool|Obtient ou définit une valeur indiquant si la recherche respecte la casse. Correspond à la case à cocher Respecter la casse de la boîte de dialogue Rechercher et remplacer (menu Édition).|
 |matchPrefix|bool|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui commencent par la chaîne entrée. Correspond à la case à cocher Préfixe de la boîte de dialogue Rechercher et remplacer.|
-|matchSoundsLike|bool|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots dont la prononciation est semblable à celle de la chaîne de recherche. Correspond à la case à cocher Recherche phonétique de la boîte de dialogue Rechercher et remplacer.|
+|matchSoundsLike|bool|**Cette option a été déconseillée dans la mise à jour de juin 2016**. Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots dont la prononciation est semblable à celle de la chaîne de recherche. Correspond à la case à cocher Recherche phonétique de la boîte de dialogue Rechercher et remplacer|
 |matchSuffix|bool|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui se terminent par la chaîne entrée. Correspond à la case à cocher Suffixe de la boîte de dialogue Rechercher et remplacer.|
 |matchWholeWord|bool|Obtient ou définit une valeur indiquant si la recherche doit uniquement porter sur des mots entiers et exclure le texte s’il est inclus dans un mot plus long. Correspond à la case à cocher Mot entier de la boîte de dialogue Rechercher et remplacer.|
 |matchWildCards|bool|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case Caractères génériques de la boîte de dialogue Rechercher et remplacer.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples](#property-access-examples) d’accès aux propriétés._
 
 Les options de recherche sont facultatives. Elles doivent être définies à l’aide d’un littéral d’objet dans toutes les méthodes de recherche :
 

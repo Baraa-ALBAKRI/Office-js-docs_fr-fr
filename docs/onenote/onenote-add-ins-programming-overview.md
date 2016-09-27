@@ -113,5 +113,5 @@ Le diagramme suivant représente ce qui est actuellement disponible dans l’API
 
 - [Créer votre premier complément OneNote](onenote-add-ins-getting-started.md)
 - [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Vue d’ensemble de la plateforme des compléments pour Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

@@ -2,7 +2,7 @@
 
 Objet permettant de définir les informations de pagination et les propriétés à charger lors de l’appel de la méthode context.sync().
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 
 ## Propriétés
 | Propriété     | Type   |Description|
@@ -55,7 +55,7 @@ Cet exemple montre comment obtenir les paragraphes du document Word, ainsi que 
             return context.sync().then(function () {
 
             // Insert code that works with the paragraphs loaded by context.load().
-
+           })
         })
         .catch(function (error) {
             console.log('Error: ' + JSON.stringify(error));

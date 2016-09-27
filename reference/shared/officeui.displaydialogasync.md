@@ -23,7 +23,7 @@ Cette méthode est disponible dans l’[ensemble de conditions requises](../../d
 Pour détecter cette API lors de son exécution, utilisez le code suivant.
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', '1.1')) 
+ if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
     {  
          // Use Office UI methods; 
     } 

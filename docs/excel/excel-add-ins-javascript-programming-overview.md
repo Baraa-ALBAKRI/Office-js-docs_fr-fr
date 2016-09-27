@@ -1,13 +1,8 @@
 # Vue d’ensemble de la programmation de l’API JavaScript d’Excel
 
-Cet article explique les notions de base associées à l’utilisation de l’API JavaScript d’Excel pour créer des compléments dans Excel 2016. Pour plus d’informations sur l’API JavaScript d’Excel, consultez la page [Référence](excel-add-ins-javascript-api-reference.md).
+Cet article décrit comment utiliser l’API JavaScript Excel pour créer des compléments pour Excel 2016. Il présente des concepts fondamentaux pour l’utilisation d’API, notamment concernant les objets RequestContext, les objets de proxy JavaScript, ainsi que les méthodes sync(), Excel.run() et load(). Les exemples de code à la fin de l’article vous montrent comment appliquer les concepts.
 
-## Principes de base
-
-Nous allons commencer par une brève présentation de concepts fondamentaux pour l’utilisation d’API, notamment concernant les objets RequestContext, les objets de proxy JavaScript, ainsi que les méthodes sync(), Excel.run() et load(). L’exemple de code fourni à la fin de cette section offre une mise en application pratique de ces concepts.
-
-
-#### RequestContext
+## RequestContext
 
 L’objet RequestContext facilite les demandes auprès de l’application Excel. L’exécution du complément Office et de l’application Excel faisant appel à deux processus différents, il est nécessaire de fournir le contexte des demandes pour accéder à Excel et aux objets associés, tels que les feuilles de calcul et les tableaux, à partir du complément. L’exemple suivant illustre la création d’un contexte de demande.
 
@@ -15,7 +10,7 @@ L’objet RequestContext facilite les demandes auprès de l’application Excel.
 var ctx = new Excel.RequestContext();
 ```
 
-#### Objets de proxy
+## Objets de proxy
 
 Les objets JavaScript Excel déclarés et utilisés dans un complément sont des objets de proxy correspondant aux objets réels d’un document Excel. Toutes les actions effectuées sur les objets de proxy ne sont pas réalisées dans Excel et l’état du document Excel n’est pas répercuté sur les objets de proxy tant que cet état n’a pas été synchronisé. L’état de document est synchronisé lors de l’exécution de la méthode context.sync() (voir ci-dessous).
 
@@ -25,17 +20,17 @@ Par exemple, l’objet `selectedRange` JavaScript local est déclaré pour réf�
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-#### sync()
+## sync()
 
 La méthode sync() disponible dans le contexte de demande synchronise l’état des objets de proxy JavaScript et des objets réels d’Excel en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés à utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue lorsque la synchronisation est terminée.
 
-#### Excel.run(function(context) { batch })
+## Excel.run(function(context) { batch })
 
 Excel.run() exécute un script de commandes qui effectue des actions sur le modèle objet Excel. Les commandes de traitement par lots incluent les définitions des objets de proxy JavaScript locaux et des méthodes sync() qui synchronisent l’état des objets locaux et Excel, ainsi que la résolution de la promesse. L’avantage de traiter les demandes par lots avec Excel.run() est que, une fois la promesse résolue, tous les objets de plage faisant l’objet d’un suivi qui ont été alloués lors de l’exécution sont automatiquement libérés.
 
 La méthode d’exécution utilise le contexte de demande et renvoie une promesse (en général, le résultat de la méthode ctx.sync()). Il est possible d’exécuter l’opération par lots en dehors de la méthode Excel.run(). Toutefois, dans ce cas, toutes les références d’objet de plage doivent être suivies et gérées manuellement.
 
-#### load()
+## load()
 
 La méthode load() permet de remplir les objets de proxy créés dans le calque JavaScript du complément. Lorsque vous essayez de récupérer un objet, une feuille de calcul par exemple, un objet de proxy local est tout d’abord créé dans le calque JavaScript. Cet objet peut être utilisé pour mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Toutefois, pour la lecture des propriétés ou des relations de l’objet, les méthodes load() et sync() doivent d’abord être appelées. La méthode load() utilise les propriétés et les relations qui doivent être chargées lors de l’appel de la méthode sync().
 
@@ -53,9 +48,9 @@ où :
 * `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les méthodes .load() décrites sous chaque objet.
 * `loadOption` spécifie un objet qui décrit les propriétés select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](../../reference/excel/loadoption.md) de chargement d’objet.
 
-##### Exemple
+## Exemple : écrire des valeurs d’un tableau vers un objet de plage
 
-L’exemple ci-dessous met en application les concepts décrits précédemment. Cet exemple de code permet d’écrire des valeurs d’un tableau vers un objet de plage.
+L’exemple suivant vous montre comment écrire des valeurs d’un tableau vers un objet de plage.
 
 La méthode Excel.run() contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à une plage (adresse A1:B2) est créé dans la feuille de calcul active. La valeur de cet objet de plage de proxy est définie localement. Pour pouvoir lire les valeurs, la propriété `text` de la plage est chargée sur l’objet proxy. Toutes ces commandes sont mises en file d’attente et sont exécutées lorsque la méthode ctx.sync() est appelée. La méthode sync() renvoie une promesse qui peut être utilisée pour y adjoindre d’autres opérations.
 
@@ -76,9 +71,6 @@ Excel.run(function (ctx) {
     // Assign array value to the proxy object's values property.
     range.values = values;
 
-    // Queue a command to load the text property for the proxy range object.
-    range.load('text');
-
     // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
     return ctx.sync().then(function() {
             console.log("Done");
@@ -91,7 +83,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-##### Exemple
+## Exemple : copier des valeurs
 
 L’exemple suivant montre comment copier les valeurs de la plage A1:A2 vers la plage B1:B2 de la feuille de calcul en utilisant la méthode load() sur l’objet de plage.
 
@@ -102,13 +94,10 @@ Excel.run(function (ctx) {
     // Create a proxy object for the range
     var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
 
-    // Queue a command to load the following properties on the proxy range object.
-    range.load ("address, values, range/format");
-
     // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
     return ctx.sync().then(function() {
         // Assign the previously loaded values to the new range proxy object. The values will be updated once the following .then() function is invoked.
-        ctx.workbook.worksheets. getActiveWorksheet().getRange("B1:B2").values= range.values;
+        ctx.workbook.worksheets.getActiveWorksheet().getRange("B1:B2").values = range.values;
     });
 }).then(function() {
       console.log("done");
@@ -120,9 +109,9 @@ Excel.run(function (ctx) {
 });
 ```
 
-### Sélection des relations et des propriétés
+## Sélection de relations et de propriétés
 
-Par défaut, la méthode object.load() sélectionne toutes les propriétés scalaires et complexes de l’objet qui est chargé. Les relations ne sont pas chargées par défaut (par exemple, le format est un objet de relation de l’objet de plage). Toutefois, il est toujours recommandé de marquer de façon explicite les propriétés et les relations à charger afin d’améliorer les performances. Pour cela, vous pouvez indiquer (dans le paramètre `load()`) un sous-ensemble de propriétés et de relations à inclure dans la réponse. La méthode Load autorise deux types d’entrées :
+Par défaut, la méthode object.load() sélectionne toutes les propriétés scalaires et complexes de l’objet qui est chargé. Les relations ne sont pas chargées par défaut (par exemple, le format est un objet de relation de l’objet de plage). Toutefois, nous vous recommandons de marquer de façon explicite les propriétés et les relations à charger afin d’améliorer les performances. Pour cela, indiquez (dans le paramètre `load()`) un sous-ensemble de propriétés et de relations à inclure dans la réponse. La méthode Load autorise deux types d’entrées :
 
 * Des noms de propriété et de relation, sous forme de chaînes séparées par des virgules _ou_ de tableau de chaînes contenant des noms de propriété ou de relation.
 * Un objet qui décrit les options select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](../../reference/excel/loadoption.md) de chargement d’objet.
@@ -134,9 +123,9 @@ object.load  ('<var1>,<relation1/var2>');
 object.load (["var1", "relation1/var2"]);
 ```
 
-#### Exemples
+### Exemple
 
-L’instruction de chargement ci-dessous charge toutes les propriétés de la plage, puis étend les valeurs de format et de format/remplissage.
+L’instruction de chargement suivante charge toutes les propriétés de la plage, puis étend les valeurs de format et de format/remplissage.
 
 ```js
 Excel.run(function (ctx) {
@@ -162,21 +151,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### Entrée null
+## Entrée null
 
-#### entrée de valeurs null dans un tableau 2D
+### entrée de valeurs null dans un tableau 2D
 
 L’entrée `null` dans un tableau à deux dimensions (pour des valeurs, des formats de nombre ou des formules) est ignorée dans l’API de mise à jour. Aucune mise à jour n’est appliquée à la cible voulue quand l’entrée `null` est envoyée dans des grilles de valeurs, de formats de nombre ou de formules.
 
 Exemple : afin de mettre à jour uniquement des parties spécifiques de la plage, par exemple pour modifier le format de nombre d’une cellule tout en conservant le format de nombre existant pour d’autres parties de la plage, indiquez le format de nombre souhaité là où un changement est nécessaire et envoyez `null` pour les autres cellules.
 
-Dans la demande définie ci-dessous, seules certaines parties du format de nombre de la plage sont définies et le format de nombre existant est conservé sur la partie restante (en indiquant des valeurs null).
+Dans la demande définie suivante, seules certaines parties du format de nombre de la plage sont définies et le format de nombre existant est conservé sur la partie restante (en indiquant des valeurs null).
 
 ```js
   range.values = [["Eurasia", "29.96", "0.25", "15-Feb" ]];
   range.numberFormat = [[null, null, null, "m/d/yyyy;@"]];
 ```
-#### Entrée null pour une propriété
+### Entrée null pour une propriété
 
 Vous ne pouvez pas indiquer `null` comme valeur unique pour l’ensemble de la propriété. Par exemple, l’exemple suivant n’est pas valide car vous ne pouvez pas ignorer ou définir sur null l’ensemble des valeurs.
 
@@ -225,9 +214,9 @@ Pour les opérations de lecture, il est normal d’obtenir des valeurs vides si 
   range.formula = [["", "", "=Rand()"]];
 ```
 
-### Plage illimitée
+## Plage illimitée
 
-#### Lecture
+### Lecture
 
 Une adresse de plage illimitée ne contient que des identificateurs de ligne ou de colonne, ainsi que des identificateurs de lignes ou de colonnes non spécifiées (respectivement), comme dans l’exemple ci-dessous :
 
@@ -236,11 +225,11 @@ Une adresse de plage illimitée ne contient que des identificateurs de ligne ou 
 
 Lorsque l’API effectue une demande pour récupérer une plage illimitée (par exemple, `getRange('C:C')`), la réponse renvoyée contient `null` pour les propriétés définies au niveau des cellules, telles que `values`, `text`, `numberFormat`, `formula`, etc. D’autres propriétés de plage, telles que `address`, `cellCount`, etc. refléteront la plage illimitée.
 
-#### Écriture
+### Écriture
 
 Vous n’êtes **pas autorisé** à définir des propriétés de niveau cellule (par exemple, values, numberFormat, etc.) sur une plage illimitée, car la demande d’entrée risque d’être trop lourde à gérer.
 
-Exemple : La demande de mise à jour suivante n’est pas valide, car la plage demandée est illimitée.
+Exemple : la demande de mise à jour suivante n’est pas valide, car la plage demandée est illimitée.
 
 ```js
 ...
@@ -252,20 +241,20 @@ Exemple : La demande de mise à jour suivante n’est pas valide, car la plage 
 Lorsqu’une opération de mise à jour est tentée sur une plage de ce type, l’API renvoie une erreur.
 
 
-### Plage de grande taille
+## Plage de grande taille
 
-Une plage de grande taille est une plage trop grande pour pouvoir être gérée par un seul appel à l’API. De nombreux facteurs tels que le nombre de cellules, les valeurs, le format de nombre, les formules, etc. contenus dans la plage peuvent entraîner une réponse trop lourde pour l’interaction avec l’API. L’API tente de renvoyer ou d’écrire les données requises en faisant au mieux de ses possibilités. Toutefois, la taille importante de la réponse peut provoquer une erreur de l’API à cause de la grande quantité de ressources mobilisées.
+Une plage de grande taille est une plage trop grande pour pouvoir être gérée par un seul appel à l’API. De nombreux facteurs tels que le nombre de cellules, les valeurs, le format de nombre, et les formules contenues dans la plage peuvent entraîner une réponse trop lourde pour l’interaction avec l’API. L’API tente de renvoyer ou d’écrire les données requises en faisant au mieux de ses possibilités. Toutefois, la taille importante de la réponse peut provoquer une erreur de l’API à cause de la grande quantité de ressources mobilisées.
 
-Pour éviter ce problème, il est recommandé de fractionner les plages de grande taille en plusieurs plages plus petites pour vos opérations de lecture et d’écriture.
+Pour éviter cela, nous vous recommandons de fractionner les plages de grande taille en plusieurs plages plus petites pour vos opérations de lecture et d’écriture.
 
 
-### Copie d’une seule entrée
+## Copie d’une seule entrée
 
 Pour mettre à jour une plage contenant des formats de nombre ou des valeurs uniformes, ou pour appliquer une même formule à l’ensemble d’une plage, la convention suivante est utilisée dans l’API définie. Dans Excel, cela revient à attribuer des valeurs ou des formules à une plage en mode CTRL + ENTRÉE.
 
 L’API recherche une *valeur de cellule unique* et, si la dimension de la plage cible ne correspond pas à la dimension de la plage d’entrée, elle applique la mise à jour à la plage entière en mode CTRL + ENTRÉE avec la valeur ou la formule indiquée dans la demande.
 
-#### Exemples
+### Exemples
 
 La demande suivante met à jour la plage sélectionnée en y ajoutant le texte « Due Date ». Notez que la plage comporte 20 cellules, tandis que l’entrée fournie comporte seulement 1 valeur de cellule.
 
@@ -332,7 +321,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### Messages d’erreur
+## Messages d’erreur
 
 Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d’un code et d’un message. Le tableau suivant fournit la liste des erreurs qui peuvent se produire.
 
@@ -358,7 +347,7 @@ Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d
 |InsertDeleteConflict|L’opération d’insertion ou de suppression tentée a créé un conflit.|
 |InvalidOperation|L’opération tentée n’est pas valide sur l’objet.|
 
-### Ressources supplémentaires
+## Ressources supplémentaires
 
 * [Création de votre premier complément Excel](build-your-first-excel-add-in.md)
 * [Explorateur d’extraits de code](https://github.com/OfficeDev/office-js-snippet-explorer)

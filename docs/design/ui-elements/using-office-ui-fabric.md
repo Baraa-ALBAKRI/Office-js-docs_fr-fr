@@ -26,15 +26,15 @@ La structure d’IU comporte des styles pour différents éléments de l’inter
     </button>
 
 ##4. Utiliser des composants avec des exemples de comportement
-La structure d’IU inclut certains composants qui prennent en charge les comportements (par exemple, ce qu’il se passe lorsque l’utilisateur clique). Pour vous aider, la structure d’IU inclut des **exemples de code** sous la forme de plug-ins d’interface utilisateur JQuery que vous pouvez utiliser. Vous pouvez également utiliser n’importe quelle autre infrastructure pour tout faire fonctionner. Si vous choisissez d’utiliser les exemples fournis, notez que ce code n’est pas distribué par le CDN. Vous devrez donc le télécharger à partir de la dernière version du [projet GitHub de la structure](https://github.com/OfficeDev/Office-UI-Fabric/releases), le référencer, puis l’initialiser au sein de votre code. 
+La structure d’IU inclut certains composants qui prennent en charge les comportements (par exemple, ce qu’il se passe lorsque l’utilisateur clique). Pour vous aider, la version 2.6.1 de la structure inclut des **exemples de code** sous la forme de plug-ins d’interface utilisateur JQuery que vous pouvez utiliser. Vous pouvez également utiliser n’importe quelle autre infrastructure pour tout faire fonctionner. Si vous choisissez d’utiliser les exemples fournis, notez que ce code n’est pas distribué par le CDN. Vous devrez donc le télécharger à partir de la version 2.6.1 du [projet GitHub de la structure](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), le référencer, puis l’initialiser au sein de votre code. 
 
 Par exemple, pour utiliser le composant SearchBox :
 
-1. Téléchargez le composant SearchBox à partir de [GitHub](https://github.com/OfficeDev/Office-UI-Fabric/tree/master/src/components/SearchBox).
+1. Téléchargez le composant SearchBox à partir de [GitHub](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1/src/components/SearchBox).
 2. Ajoutez la référence suivante à votre code : `<script src="SearchBox/Jquery.SearchBox.js"></script>`
 3. Initialisez le composant en vous assurant que la ligne suivante est exécutée lors du chargement de votre page : `$(".ms-SearchBox").SearchBox();`. Nous vous conseillons d’inclure cette ligne dans le bloc `Office.Initialize` de votre complément.     
 
-**Remarque :** si vous ne comptez pas utiliser tous les composants de la structure, vous pouvez réduire le volume de ressources téléchargées en hébergeant les fichiers CSS individuels pour chaque composant. Vous pouvez obtenir les fichiers CSS dans les dossiers des composants du [référentiel GitHub de la structure](https://github.com/OfficeDev/Office-UI-Fabric). 
+**Remarque :** si vous ne comptez pas utiliser tous les composants de la structure, vous pouvez réduire le volume de ressources téléchargées en hébergeant les fichiers CSS individuels pour chaque composant. Vous pouvez obtenir les fichiers CSS dans les dossiers des composants du [référentiel GitHub de la version 2.6.1 de la structure](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1). 
 
 
 ##Étapes suivantes

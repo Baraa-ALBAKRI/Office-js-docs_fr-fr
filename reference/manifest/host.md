@@ -1,43 +1,71 @@
 
 # Élément Host
-Spécifie le type d’application hôte Office pris en charge par votre complément Office.
+Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 
- **Type de complément :** Application de contenu, de volet Office, de messagerie
-
-
-## Syntaxe :
+> **Important** : La syntaxe des éléments **Host** varie selon que l’élément est défini dans le [manifeste de base](#basic-manifest) ou le nœud [VersionOverrides](#versionoverrides-node). Toutefois, la fonctionnalité est identique.  
 
 
-```XML
-<Host Name= ["Document" | "Database" | "Mailbox" | "Presentation" | "Project" | "Workbook"] />
+## Manifeste de base
+
+Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](./officeapp.md)), le type d’hôte est déterminé par l’attribut `Name`.   
+
+### Attributs
+| Attribut     | Type   | Requis | Description                                      |
+|:--------------|:-------|:---------|:-------------------------------------------------|
+| [Nom](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+
+
+### Name
+Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
+
+- `Document` (Word)
+- `Database` (Access)
+- `Mailbox` (Outlook)
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Project` (Project)
+- `Workbook` (Excel)
+
+### Exemple
+```xml
+<Hosts>
+    <Host Name="Mailbox">
+    </Host>
+</Hosts>
 ```
 
+---
 
-## Attributs
+## Nœud VersionOverrides
+Lorsqu’il est défini dans [VersionOverrides](./versionoverrides), le type d’hôte est déterminé par l’attribut `xsi:type`. 
+
+### Attributs
+
+|  Attribut  |  Obligatoire  |  Description  |
+|:-----|:-----|:-----|
+|  [xsi:type](#xsitype)  |  Oui  | Décrit l’hôte d’Office auquel ces paramètres s’appliquent.|
+
+### Éléments enfants
+
+|  Élément |  Obligatoire  |  Description  |
+|:-----|:-----|:-----|
+|  [FormFactor](./formfactor.md)    |  Oui   |  Définit le facteur de forme affecté. |
 
 
+### xsi:type
+Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’appliquent également les paramètres contenus. La valeur doit être l’une des suivantes :
 
-|**Attribut**|**Type**|**Requis**|**Description**|
-|:-----|:-----|:-----|:-----|
-|Nom|string|obligatoire|Nom du type d’application hôte Office.|
+- `Document` (Word)
+- `MailHost` (Outlook)    
+- `Notebook` (OneNote)
+- `Presentation` (PowerPoint)
+- `Workbook` (Excel)
 
-## Remarques
-
-Vous pouvez spécifier les valeurs suivantes dans l’attribut **Name** d’un élément **Host**. Chaque valeur correspond à l’ensemble d’une ou plusieurs applications hôtes Office prises en charge par votre complément.
-
-
-
-|**Name**|**Applications hôtes Office**|
-|:-----|:-----|
-| `"Document"`|Word, Word Online, Word sur iPad|
-| `"Database"`|applications web Access|
-| `"Mailbox"`|Outlook, Outlook Web App, OWA pour les périphériques|
-| `"Notebook"`|OneNote Online|
-| `"Presentation"`|PowerPoint, PowerPoint Online, PowerPoint sur iPad|
-| `"Project"`|Projet|
-| `"Workbook"`|Excel, Excel Online, Excel sur iPad|
-
-## Remarques
-
-Pour plus d’informations sur la spécification de prise en charge d’hôtes, voir l’article relatif à la [spécification d’hôtes Office et de conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
-
+## Exemple d’hôte 
+```xml
+<Hosts>
+    <Host xsi:type="MailHost">
+        <!-- Host Settings -->
+    </Host>
+</Hosts>
+```

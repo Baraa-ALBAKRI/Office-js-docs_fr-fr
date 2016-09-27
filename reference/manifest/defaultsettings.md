@@ -26,7 +26,7 @@ Spécifie l’emplacement source par défaut et d’autres paramètres par défa
 
 |**Élément**|**Contenu**|**Application de messagerie**|**TaskPane**|
 |:-----|:-----|:-----|:-----|
-|[SourceLocation](../../reference/manifest/override.md)|x||x|
+|[SourceLocation](../../reference/manifest/sourcelocation.md)|x||x|
 |[RequestedWidth](../../reference/manifest/requestedwidth.md)|x|||
 |[RequestedHeight](../../reference/manifest/requestedheight.md)|x|||
 

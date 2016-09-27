@@ -30,6 +30,8 @@ Les options disponibles dépendent de l’hôte Office que vous ciblez et du typ
 
 Pour élargir la portée de votre complément, assurez-vous qu’il fonctionne sur toutes les plateformes. Les compléments Office sont pris en charge sur Windows, Mac, le web, iOS et Android. Pour avoir une vue d’ensemble des fonctionnalités prises en charge par chaque plateforme, voir la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes].   
 
+Pour plus d’informations sur la gestion des licences pour vos compléments Office Store, consultez la rubrique [Gérer les licences de compléments pour Office et SharePoint](https://msdn.microsoft.com/EN-US/library/office/jj163257.aspx).
+
 Pour plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finals, voir [Commencer à utiliser votre complément Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
 ## Ressources supplémentaires

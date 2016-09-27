@@ -24,7 +24,7 @@
 	
 	<Item text="HighResolutionIconUrl" url="manifest/highresolutioniconurl" SEODescription="Spécifie l’URL de l’image qui est utilisée pour représenter votre complément Office dans l’UX d’insertion UX et l’Office Store sur les écrans à haute résolution (DPI)." />
     <Item text="Hôte" url="manifest/host" SEODescription="Spécifie le type d’application hôte Office pris en charge par votre complément Office." />
-    
+    <Item text="Hôtes" url="manifest/hosts" SEODescription="Spécifie l’application cliente Office dans laquelle le complément Office s’active." />
 	<Item text="IconUrl" url="manifest/iconurl" SEODescription="Spécifie l’URL de l’image utilisée pour représenter votre complément Office dans l’UX d’insertion UX et l’Office Store." />
     <Item text="Id" url="manifest/id" SEODescription="Spécifie l’ID unique de votre complément Office comme GUID." />
     <Item text="Méthode" url="manifest/method" Scope="excel, word, powerpoint, access, project" SEODescription="Spécifie une méthode individuelle de l’API JavaScript pour Office requise pour l’activation de votre complément Office." />
@@ -395,23 +395,23 @@
   </Item>
   
   <Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
-    <Item text="Application" url="onenote/application" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Erreur" url="onenote/error" SEODescription="Référence d’évaluation des compléments OneNote." />
-	<Item text="Bloc-notes" url="onenote/notebook" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Page" url="onenote/page" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Paragraph" url="onenote/paragraph" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Richtext" url="onenote/richtext" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Section" url="onenote/section" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Outline" url="onenote/outline" SEODescription="Référence d’évaluation des compléments OneNote." />
-    <Item text="Image" url="onenote/image" SEODescription="Référence d’évaluation des compléments OneNote." />
+    <Item text="Application" url="onenote/application" SEODescription="Référence des compléments OneNote." />
+    <Item text="Erreur" url="onenote/error" SEODescription="Référence des compléments OneNote." />
+	<Item text="Bloc-notes" url="onenote/notebook" SEODescription="Référence des compléments OneNote." />
+    <Item text="Notebookcollection" url="onenote/notebookcollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Page" url="onenote/page" SEODescription="Référence des compléments OneNote." />
+    <Item text="Pagecollection" url="onenote/pagecollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Pagecontent" url="onenote/pagecontent" SEODescription="Référence des compléments OneNote." />
+    <Item text="Pagecontentcollection" url="onenote/pagecontentcollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Paragraph" url="onenote/paragraph" SEODescription="Référence des compléments OneNote." />
+    <Item text="Paragraphcollection" url="onenote/paragraphcollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Richtext" url="onenote/richtext" SEODescription="Référence des compléments OneNote." />
+    <Item text="Section" url="onenote/section" SEODescription="Référence des compléments OneNote." />
+    <Item text="Sectioncollection" url="onenote/sectioncollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Sectiongroup" url="onenote/sectiongroup" SEODescription="Référence des compléments OneNote." />
+    <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="Référence des compléments OneNote." />
+    <Item text="Outline" url="onenote/outline" SEODescription="Référence des compléments OneNote." />
+    <Item text="Image" url="onenote/image" SEODescription="Référence des compléments OneNote." />
   </Item>  
   <Item text="API partagée" url="shared/shared-api">
     <Item text="Interface API JavaScript pour Office" url="javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office comprend des objets, méthodes, propriétés, événements et énumérations que vous pouvez utiliser dans votre code des compléments Office." />
@@ -444,7 +444,8 @@
       <Item text="AsyncResult.status" url="shared/asyncresult.status" SEODescription="Obtient l’état de l’opération asynchrone." />
       <Item text="AsyncResult.value" url="shared/asyncresult.value" SEODescription="Obtient la charge utile ou le contenu de l’opération asynchrone, le cas échéant." />
     </Item>
-    <Item text="Contexte " url="shared/office.context" FriendlyUrl="reference/common/officeoffice.context">
+    <Item text="Context " url="shared/context">
+      <Item text="office.context" url="shared/office.context" SEODescription="Obtient l’objet Context qui représente l’environnement d’exécution du complément " />
       <Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="Obtient des informations indiquant si le complément est exécuté sur une plateforme qui autorise les liens vers des systèmes de paiement externes." />
       <Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification du document ou de l’élément." />
       <Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office." />

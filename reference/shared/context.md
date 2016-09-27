@@ -14,18 +14,16 @@ Office.context
 
 ## Membres
 
-
-**Propriétés**
-
 |||
 |:-----|:-----|
-|Nom|Description|
+|Name|Description|
 |[commerceAllowed](../../reference/shared/office.context.commerceallowed.md)|Obtient des informations indiquant si le complément est exécuté sur une plateforme qui autorise les liens vers des systèmes de paiement externes.|
 |[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|Obtient les paramètres régionaux (langue) des données, tels qu’ils sont stockés dans le document ou l’élément.|
 |[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|Obtient les paramètres régionaux (langue) de l’interface utilisateur de l’application hôte.|
 |[document](../../reference/shared/office.context.document.md)|Obtient un objet qui représente le document avec lequel le complément de contenu ou de volet de tâches interagit.|
 |[boîte aux lettres](../../reference/shared/office.context.mailbox.md)|Obtient l’objet **mailbox** qui donne accès aux membres de l’API spécifiquement destinés aux compléments Outlook.|
 |[officeTheme](../../reference/shared/office.context.officetheme.md)|Permet d’accéder aux propriétés pour les couleurs du thème Office.|
+|[ui](../../reference/shared/officeui)|Fournit des objets et des méthodes permettant de créer et de manipuler des composants d’interface utilisateur, comme les boîtes de dialogue.|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|Obtient un objet qui représente les paramètres personnalisés enregistrés du complément.|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|Obtient des informations indiquant si le complément est exécuté dans une application hôte Office tactile.|
 

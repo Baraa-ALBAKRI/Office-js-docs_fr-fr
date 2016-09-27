@@ -2,9 +2,7 @@
 # Nouveautés de l’API JavaScript pour Office
 Afin d’étendre la fonctionnalité de vos Compléments Office, des objets, méthodes, propriétés, événements et énumérations sont régulièrement ajoutés et mis à jour dans l’API JavaScript pour Office. Utilisez les liens ci-dessous pour afficher les membres de l’API qui ont été ajoutés ou mis à jour.
 
- _**S’applique à :** Access apps for SharePoint | apps for Office | Excel | Office Add-ins | Outlook | PowerPoint | Project | Word_
-
-Pour développer des compléments utilisant les nouveaux membres de l’API, vous devez [mettre à jour l’API JavaScript pour les fichiers de l’API Javascript pour Office dans votre projet](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Pour développer des compléments utilisant les nouveaux membres de l’API, vous devez [mettre à jour l’API JavaScript pour les fichiers de l’API JavaScript pour Office dans votre projet](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 Pour visualiser tous les membres de l’API, y compris ceux qui sont identiques par rapport aux versions précédentes, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md).
 
@@ -14,7 +12,7 @@ Pour visualiser tous les membres de l’API, y compris ceux qui sont identiques 
  **Objets ajoutés et mis à jour**
 
 
-|**Objet**|**Description**|**Version ajoutée ou mise à jour **|
+|**Objet**|**Description**|**Version ajoutée ou mise à jour**|
 |:-----|:-----|:-----|
 |[Élément](../reference/outlook/Office.context.mailbox.item.md)|Mises à jour et ajouts pour les éléments suivants :<br><ul><li><p>Méthodes <a href="../reference/outlook/Office.context.mailbox.item.md#getSelectedDataAsync" target="_blank">getSelectedDataAsync</a> et <a href="../reference/outlook/Office.context.mailbox.item.md#setSelectedDataAsync" target="_blank">setSelectedDataAsync</a> pour prendre en charge l’obtention de la sélection de l’utilisateur et son remplacement dans l’objet et le corps d’un message ou d’un rendez-vous.</p></li><li><p>Méthodes <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyAllForm" target="_blank">displayReplyAllForm</a> et <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyForm" target="_blank">displayReplyForm</a> pour prendre en charge l’ajout d’une pièce jointe au formulaire de réponse d’un rendez-vous.</p></li></ul>|Boîte aux lettres 1.2|
 |[Élément](../reference/outlook/Office.context.mailbox.item.md)|Mis à jour pour inclure des méthodes et des champs utiles à la création de compléments Outlook en mode composition. |1.1|
