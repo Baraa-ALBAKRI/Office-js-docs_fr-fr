@@ -1,28 +1,28 @@
 
-# Labs.Components.InputComponentAnswer
+# <a name="labs.components.inputcomponentanswer"></a>Labs.Components.InputComponentAnswer
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Réponse à un problème de composant de saisie.
+Représente la réponse à un problème de composant de saisie.
 
 ```
 class InputComponentAnswer
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
 |:-----|:-----|
 | `public var answer: any`|Valeur de la réponse.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(answer: any)`
 

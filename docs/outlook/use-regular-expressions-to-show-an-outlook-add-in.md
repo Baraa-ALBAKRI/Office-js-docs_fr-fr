@@ -1,5 +1,5 @@
 
-# Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
+# <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
 Vous pouvez indiquer des règles d’expressions régulières pour activer un complément Outlook dans certains scénarios de lecture. Lorsque l’utilisateur affiche un message ou un rendez-vous dans le volet de lecture ou l’inspecteur, Outlook évalue les règles d’expressions régulières dans le but de déterminer s’il doit activer votre complément. Ces règles ne sont pas évaluées par Outlook quand l’utilisateur compose un élément. Il existe également d’autres scénarios dans lesquels Outlook n’active pas les compléments ; par exemple, les éléments protégés par la Gestion des droits relatifs à l’information ou ceux présents dans le dossier Courrier indésirable. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../outlook/manifests/activation-rules.md).
 
@@ -15,7 +15,7 @@ Vous pouvez spécifier une expression régulière dans le cadre d’une règle [
 |<|Signe inférieur à|&amp;lt;|
 |>|Signe supérieur à|&amp;gt;|
 
-## Règle ItemHasRegularExpressionMatch
+## <a name="itemhasregularexpressionmatch-rule"></a>Règle ItemHasRegularExpressionMatch
 
 
 La règle  **ItemHasRegularExpressionMatch** est très utile dans le contrôle de l’activation d’un complément basé sur les valeurs spécifiques d’une propriété prise en charge. La règle **ItemHasRegularExpressionMatch** contient les attributs ci-dessous.
@@ -27,9 +27,9 @@ La règle  **ItemHasRegularExpressionMatch** est très utile dans le contrôle d
 |**RegExName**|Spécifie le nom de l’expression régulière afin que vous puissiez vous référer à l’expression dans le code de votre complément.|
 |**RegExValue**|Spécifie l’expression régulière qui sera évaluée pour déterminer si le complément doit être affiché.|
 |**PropertyName**|Spécifie le nom de la propriété par rapport à laquelle l’expression régulière sera évaluée. Les valeurs autorisées sont  **BodyAsHTML**,  **BodyAsPlaintext**,  **SenderSMTPAddress** et **Subject**. Si vous spécifiez  **BodyAsHTML**, Outlook applique l’expression régulière uniquement si le corps de l’élément est de type HTML, sinon Outlook ne renvoie aucune correspondance pour cette expression régulière. Comme les rendez-vous sont toujours enregistrés au format RTF, une expression régulière qui spécifie  **BodyAsHTML** ne correspond à aucune chaîne dans le corps des éléments de rendez-vous.Si vous spécifiez  **BodyAsPlaintext**, Outlook applique toujours l’expression régulière au corps de l’élément.|
-|**IgnoreCase**|Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par  **RegExName**.|
+|**IgnoreCase**|Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par **RegExName**.|
 
-### Meilleures pratiques pour l’utilisation d’expressions régulières dans les règles
+### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Meilleures pratiques pour l’utilisation d’expressions régulières dans les règles
 
 Prêtez une attention particulière aux éléments suivants lorsque vous utilisez des expressions régulières :
 
@@ -38,7 +38,7 @@ Prêtez une attention particulière aux éléments suivants lorsque vous utilise
     
 - Le corps en texte brut renvoyé sur un navigateur peut être légèrement différent sur un autre. Si vous utilisez une règle [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) avec **BodyAsPlaintext** comme attribut **PropertyName**, testez votre expression régulière sur tous les navigateurs pris en charge par votre complément.
     
-    Comme différents navigateurs utilisent diverses méthodes pour obtenir le corps du texte d’un élément sélectionné, vous devez vous assurer que votre expression régulière prend en charge les fines différences qui peuvent être renvoyées dans le cadre du corps de texte. Par exemple, certains navigateurs, comme Internet Explorer 9, utilisent la propriété  **innerText** du DOM, tandis que d’autres, comme Firefox, utilisent la méthode **.textContent()** afin d’obtenir le corps du texte d’un élément. En outre, différents navigateurs peuvent renvoyer des sauts de ligne de manière différente : un saut de ligne correspond à « \r\n » sur Internet Explorer et « \n » dans Firefox et Chrome. Pour plus d’informations, voir la rubrique sur la [compatibilité DOM W3C - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07).
+    Comme différents navigateurs utilisent diverses méthodes pour obtenir le corps du texte d’un élément sélectionné, vous devez vous assurer que votre expression régulière prend en charge les fines différences qui peuvent être renvoyées dans le cadre du corps de texte. Par exemple, certains navigateurs, comme Internet Explorer 9, utilisent la propriété  **innerText** du DOM, tandis que d’autres, comme Firefox, utilisent la méthode **.textContent()** afin d’obtenir le corps du texte d’un élément. En outre, différents navigateurs peuvent renvoyer des sauts de ligne de manière différente : un saut de ligne correspond à « \r\n » sur Internet Explorer et « \n » dans Firefox et Chrome. Pour plus d’informations, voir la page sur la [compatibilité DOM W3C - HTML](http://www.quirksmode.org/dom/w3c_html.mdl#t07).
     
 - Le corps HTML d’un élément est légèrement différent entre un client riche Outlook et Outlook Web App ou OWA pour périphériques. Définissez soigneusement vos expressions régulières. Prenons par exemple l’expression régulière suivante utilisée dans une règle  **ItemHasRegularExpressionMatch** avec **BodyAsHTML** comme valeur de l’attribut **PropertyName** :
     
@@ -65,7 +65,7 @@ La même règle ne renvoie pas cette correspondance dans Outlook Web App et OWA 
 - En fonction de l’application hôte, du type de périphérique ou de la propriété à laquelle l’expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chaque hôte, que vous devez connaître lorsque vous créez des expressions régulières comme règle d’activation. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
     
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 La règle  **ItemHasRegularExpressionMatch** suivante active le complément chaque fois que l’adresse de messagerie SMTP de l’expéditeur correspond à « @contoso », indépendamment des caractères majuscules et minuscules.
 
@@ -106,7 +106,7 @@ La règle  **ItemHasRegularExpressionMatch** suivante active le complément chaq
 ```
 
 
-## Règle ItemHasKnownEntity
+## <a name="itemhasknownentity-rule"></a>Règle ItemHasKnownEntity
 
 
 La règle  **ItemHasKnownEntity** active un complément en fonction de l’existence d’une entité dans l’objet ou le corps de l’élément sélectionné. Le type [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) définit les entités prises en charge. L’application d’une expression régulière sur une règle **ItemHasKnownEntity** convient lorsque l’activation est basée sur un sous-ensemble de valeurs pour une entité (par exemple, un ensemble spécifique d’URL, ou des numéros de téléphone avec un certain code régional).
@@ -122,11 +122,11 @@ La règle  **ItemHasKnownEntity** prend en charge les attributs du tableau suiva
 |**Nom de l’attribut**|**Description**|
 |:-----|:-----|
 |**EntityType**|Spécifie le type d’entité qui doit être trouvé pour que la valeur de la règle soit égale à  **true**. Utilisez plusieurs règles pour spécifier plusieurs types d’entité.|
-|**RegExFilter**|Spécifie une expression régulière qui filtre les instances de l’entité spécifiée par  **EntityType**.|
-|**FilterName**|Spécifie le nom de l’expression régulière spécifiée par  **RegExFilter**, afin qu’il soit possible d’y faire référence ultérieurement par code.|
-|**IgnoreCase**|Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par  **RegExFilter**.|
+|**RegExFilter**|Spécifie une expression régulière qui filtre les instances de l’entité spécifiée par **EntityType**.|
+|**FilterName**|Spécifie le nom de l’expression régulière spécifiée par **RegExFilter**, afin qu’il soit possible d’y faire référence ultérieurement par code.|
+|**IgnoreCase**|Spécifie s’il faut ignorer la casse pour la correspondance avec l’expression régulière spécifiée par **RegExFilter**.|
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 La règle  **ItemHasKnownEntity** suivante active le complément chaque fois qu’une URL se trouve dans l’objet ou le corps de l’élément actuel, et qu’elle contient la chaîne « youtube », indépendamment de la casse de cette chaîne.
 
@@ -140,7 +140,7 @@ La règle  **ItemHasKnownEntity** suivante active le complément chaque fois qu�
 ```
 
 
-## Utilisation des résultats d’expressions régulières dans le code
+## <a name="using-regular-expression-results-in-code"></a>Utilisation des résultats d’expressions régulières dans le code
 
 
 Vous pouvez obtenir des correspondances avec une expression régulière en utilisant les méthodes suivantes sur l’élément actif :
@@ -158,7 +158,7 @@ Lorsque les expressions régulières sont évaluées, les correspondances sont r
  >**Remarque**  Les correspondances renvoyées par un client riche Outlook ne sont pas classées dans un ordre particulier dans le tableau. En outre, vous ne devez pas supposer que le client riche Outlook renvoie les correspondances dans le même ordre que Outlook Web App ou OWA pour périphériques dans ce tableau, même si vous exécutez le même complément sur chacun de ces clients, sur le même élément, et dans la même boîte aux lettres. Pour plus d’informations sur les différences de traitement des expressions régulières entre le client riche Outlook et dans Outlook Web App ou OWA pour périphériques, voir [Limites d’activation et d’API JavaScript des compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 L’exemple suivant montre un regroupement de règles qui contient une règle  **ItemHasRegularExpressionMatch** avec une expression régulière nommée `videoURL`.
 
@@ -226,7 +226,7 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
@@ -234,9 +234,10 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
     
 - [Règles d’activation pour les compléments Outlook](../outlook/manifests/activation-rules.md)
     
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     
-- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md)
+- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [Meilleures pratiques pour les expressions régulières dans .NET Framework](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
+- 
+  [Meilleures pratiques pour les expressions régulières dans .NET Framework](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
     

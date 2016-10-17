@@ -1,7 +1,7 @@
 
-# Labs.getConnectionInfo
+# <a name="labs.getconnectioninfo"></a>Labs.getConnectionInfo
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Récupère des informations de configuration associées à une connexion spécifiée.
 
@@ -10,12 +10,12 @@ function getConnectionInfo(): Core.IConnectionResponse
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 Aucun
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Les informations de configuration sont fournies à l’aide des informations d’initialisation de l’interface [Labs.Core.IConnectionResponse](../../reference/office-mix/labs.core.iconnectionresponse.md).
 

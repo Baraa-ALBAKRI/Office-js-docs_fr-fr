@@ -1,7 +1,7 @@
 
-# Labs.Connect
+# <a name="labs.connect"></a>Labs.Connect
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Initialise une connexion avec l’hôte.
 

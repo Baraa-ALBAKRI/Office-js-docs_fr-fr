@@ -1,5 +1,5 @@
 
-# Compléments Outlook contextuels
+# <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
 Les compléments contextuels sont des compléments Outlook qui s’activent en fonction du texte d’un message ou d’un rendez-vous. Grâce aux compléments contextuels, vous pouvez initier des tâches associées à un message sans avoir à quitter le message lui-même. L’expérience utilisateur en est ainsi facilitée et enrichie.
 
@@ -14,7 +14,7 @@ Les compléments contextuels sont différents des compléments relatifs aux piè
     
 Actuellement, les compléments contextuels sont limités à Outlook Web App.
 
-## Création d’un complément contextuel
+## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 
 Pour créer un complément contextuel, le manifeste du complément doit spécifier l’entité ou l’expression régulière qui peut l’activer. L’entité peut être l’une des propriétés de l’objet [Entities](../../reference/outlook/simple-types.md). Par conséquent, le manifeste du complément doit contenir une règle de type  **ItemHasKnownEntity** ou **ItemHasRegularExpressionMatch**. L’exemple suivant montre comment spécifier un numéro de téléphone en tant qu’entité :
 
@@ -40,7 +40,7 @@ Il existe plusieurs restrictions sur les compléments contextuels :
 - Vous ne pouvez pas spécifier si le complément s’affichera dans la carte ou dans la barre de complément.
     
 
-## Lancement d’un complément contextuel
+## <a name="how-to-launch-a-contextual-add-in"></a>Lancement d’un complément contextuel
 
 Le lancement d’un complément contextuel se fait par le biais de texte (soit une entité connue, soit l’expression régulière d’un développeur) ou par la barre du complément. En règle générale, l’utilisateur identifie le complément contextuel, car l’entité est en surbrillance. L’exemple suivant illustre la mise en surbrillance dans un message. Dans cette image, l’entité (une adresse) est de couleur bleue et est soulignée par une ligne bleue en pointillés. Pour lancer le complément contextuel, l’utilisateur clique sur l’entité en surbrillance. 
 
@@ -70,7 +70,7 @@ Lorsque plusieurs entités ou compléments contextuels sont présents dans un me
 - Si une chaîne unique contient plusieurs entités qui activent plusieurs compléments, la chaîne entière est mise en surbrillance et lorsque l’utilisateur clique sur cette chaîne, tous les compléments concernés par la chaîne s’affichent dans des onglets distincts. Par exemple, une chaîne qui décrit une proposition de réunion dans un restaurant peut activer le complément de suggestion de réunion et un complément d’avis sur des restaurants.
     
 
-## Affichage des compléments contextuels
+## <a name="how-a-contextual-add-in-displays"></a>Affichage des compléments contextuels
 
 Un complément contextuel activé s’affiche à l’un des deux emplacements suivants :
 
@@ -112,12 +112,12 @@ Remarques :
 - L’iframe affiche le complément. Le développeur peut définir la hauteur de l’iframe mais la largeur est une valeur fixe. La hauteur est la même pour le complément lancé à partir de la barre du complément et la carte ; il n’est pas nécessaire que le développeur spécifie deux hauteurs distinctes.
     
 
-## Affichage des compléments contextuels en fonction des appareils
+## <a name="how-contextual-add-ins-appear-on-different-devices"></a>Affichage des compléments contextuels en fonction des appareils
 
 Sur un ordinateur de bureau, un complément contextuel s’affiche généralement dans une carte ; si plusieurs compléments sont présents, ils apparaissent dans des onglets distincts. Sur une tablette, le même complément s’affiche comme s’il était « au verso » et, si plusieurs compléments sont présents, ils apparaissent dans plusieurs onglets. Sur un téléphone, le complément apparaît sous la forme d’une expérience immersive. Dans le cas où plusieurs compléments sont activés sur l’entité, des points de suspension « ... » apparaissent dans le coin supérieur droit pour permettre aux utilisateurs de naviguer entre les différents compléments sur l’entité spécifique.
 
 
-## Compléments contextuels actuels
+## <a name="current-contextual-add-ins"></a>Compléments contextuels actuels
 
 Les compléments contextuels suivants sont installés par défaut pour les utilisateurs qui utilisent des compléments Outlook :
 
@@ -129,11 +129,11 @@ Les compléments contextuels suivants sont installés par défaut pour les utili
 De plus, le complément contextuel [Package Tracker](https://store.office.com/package-tracker-WA104162083.aspx?assetid=WA104162083.aspx) est disponible dans l’Office Store.
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
     
 - [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 

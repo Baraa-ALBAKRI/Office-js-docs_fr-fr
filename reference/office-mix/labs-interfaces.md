@@ -1,7 +1,7 @@
 
-# Interfaces d’atelier
+# <a name="labs-interfaces"></a>Interfaces d’atelier
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Voici les interfaces du module **LabJS.Labs**.
 

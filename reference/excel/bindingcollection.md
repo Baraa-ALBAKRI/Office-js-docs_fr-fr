@@ -1,48 +1,48 @@
-# Objet BindingCollection (interface API JavaScript pour Excel)
+# <a name="bindingcollection-object-(javascript-api-for-excel)"></a>Objet BindingCollection (interface API JavaScript pour Excel)
 
 Représente la collection de tous les objets de liaison qui font partie du classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |count|int|Renvoie le nombre de liaisons de la collection. En lecture seule.|
-|Items|[binding[]](binding.md)|Collection d’objets de liaison. En lecture seule.|
+|items|[Binding[]](binding.md)|Collection d’objets de liaison. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
-|[getItem(id: string)](#getitemid-string)|[Liaison](binding.md)|Obtient un objet de liaison par ID.|
-|[getItemAt(index: number)](#getitematindex-number)|[Liaison](binding.md)|Obtient un objet de liaison en fonction de sa position dans le tableau d’éléments.|
+|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Obtient un objet de liaison par ID.|
+|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtient un objet de liaison en fonction de sa position dans le tableau d’éléments.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getItem(id: string)
+### <a name="getitem(id:-string)"></a>getItem(id: string)
 Obtient un objet de liaison par ID.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bindingCollectionObject.getItem(id);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |id|string|ID de l’objet de liaison à récupérer.|
 
-#### Retourne
-[Liaison](binding.md)
+#### <a name="returns"></a>Retourne
+[Binding](binding.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 Créez une liaison de table pour contrôler les modifications apportées aux données de la table. Lorsque les données sont modifiées, la couleur d’arrière-plan du tableau devient orange.
 
@@ -100,7 +100,7 @@ Créez une liaison de table pour contrôler les modifications apportées aux don
 
 
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -118,23 +118,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtient un objet de liaison en fonction de sa position dans le tableau d’éléments.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bindingCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
-[Liaison](binding.md)
+#### <a name="returns"></a>Retourne
+[Binding](binding.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -152,22 +152,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, accepte un objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

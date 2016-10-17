@@ -1,20 +1,20 @@
 
 
-# mailbox
+# <a name="mailbox"></a>boîte aux lettres
 
 ## [Office](Office.md)[.context](Office.context.md). mailbox
 
 Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Espaces de noms
+### <a name="namespaces"></a>Espaces de noms
 
 [diagnostics](Office.context.mailbox.diagnostics.md) : Fournit des informations de diagnostic à un complément Outlook.
 
@@ -22,29 +22,29 @@ Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft 
 
 [userProfile](Office.context.mailbox.userProfile.md) : Fournit des informations sur l’utilisateur dans un complément Outlook.
 
-### Membres
+### <a name="members"></a>Membres
 
-#### ewsUrl :String
+#### <a name="ewsurl-:string"></a>ewsUrl :String
 
 Obtient l’URL du point de terminaison des services Web Exchange (EWS) pour ce compte de messagerie. Mode lecture uniquement.
 
 La valeur `ewsUrl` peut être utilisée par un service distant pour émettre des appels EWS vers la boîte aux lettres de l’utilisateur. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Chaîne
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
 
-### Méthodes
+### <a name="methods"></a>Méthodes
 
-####  convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 Obtient un dictionnaire contenant les informations d’heure dans l’heure locale du client.
 
@@ -52,45 +52,45 @@ Les dates et heures utilisées par une application de messagerie pour Outlook ou
 
 Si l’application de messagerie est en cours d’exécution dans Outlook, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire de l’ordinateur client. Si l’application de messagerie est en cours d’exécution dans Outlook Web App, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire spécifié dans le CAE.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`timeValue`| Date|Objet Date|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Renvoie :
+##### <a name="returns:"></a>Renvoie :
 
 Type : [LocalClientTime](simple-types.md#localclienttime)
 
-####  convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
 
 Obtient un objet Date à partir d’un dictionnaire contenant des informations d’heure.
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs appropriées pour la date et l’heure locales.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`input`| [LocalClientTime](simple-types.md#localclienttime)|Valeur de l’heure locale à convertir.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Renvoie :
+##### <a name="returns:"></a>Renvoie :
 
 Objet Date avec l’heure exprimée au format UTC.
 
@@ -102,7 +102,7 @@ Objet Date avec l’heure exprimée au format UTC.
 
 </dl>
 
-####  displayAppointmentForm(itemId)
+####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
 
 Affiche un rendez-vous de calendrier existant.
 
@@ -114,27 +114,27 @@ Dans Outlook Web App, cette méthode ouvre le formulaire spécifié uniquement
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`itemId`| String|Identificateur des services web Exchange pour un rendez-vous du calendrier existant.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  displayMessageForm(itemId)
+####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
 
 Affiche un message existant.
 
@@ -146,27 +146,27 @@ Si l’identificateur de l’élément spécifié n’identifie aucun message ex
 
 N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire afin de créer un nouveau rendez-vous.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`itemId`| String|Identificateur des services web Exchange pour un message existant.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
 
 Affiche un formulaire permettant de créer un rendez-vous du calendrier.
 
@@ -178,21 +178,21 @@ Dans le client riche Outlook et Outlook RT, si vous indiquez des participants ou
 
 Si l’un des paramètres dépasse les limites définies en matière de taille ou si un nom de paramètre inconnu est spécifié, une exception est levée.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`parameters`| Object|Dictionnaire de paramètres décrivant le nouveau rendez-vous.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet <code>EmailAddressDetails</code> pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>optionalAttendees</code></td><td>Array.&lt;String&gt; &#124; Array.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet EmailAddressDetails pour chacun des participants facultatifs au rendez-vous. Le tableau est limité à 100 entrées au maximum.</td></tr><tr><td><code>start</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de début du rendez-vous.</td></tr><tr><td><code>end</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de fin du rendez-vous.</td></tr><tr><td><code>location</code></td><td>String</td><td>Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>subject</code></td><td>String</td><td>Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>body</code></td><td>String</td><td>Corps du message du rendez-vous. La taille du corps du message est limitée à 32 Ko.</td></tr></tbody></table>|
+|`parameters`| Object|Dictionnaire de paramètres décrivant le nouveau rendez-vous.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet <code>EmailAddressDetails</code> pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>optionalAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet EmailAddressDetails pour chacun des participants facultatifs au rendez-vous. Le tableau est limité à 100 entrées au maximum.</td></tr><tr><td><code>start</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de début du rendez-vous.</td></tr><tr><td><code>end</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de fin du rendez-vous.</td></tr><tr><td><code>location</code></td><td>String</td><td>Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>subject</code></td><td>String</td><td>Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>body</code></td><td>String</td><td>Corps du message du rendez-vous. La taille du corps du message est limitée à 32 Ko.</td></tr></tbody></table>|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 var start = new Date();
@@ -212,7 +212,7 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtient une chaîne qui contient un jeton servant à obtenir une pièce jointe ou un élément à partir d’un serveur Exchange.
 
@@ -222,7 +222,7 @@ Vous pouvez passer le jeton et un identificateur de pièce jointe ou d’éléme
 
 Votre application doit disposer de l’autorisation **ReadItem** spécifiée dans son manifeste pour pouvoir appeler la méthode `getCallbackTokenAsync`.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -230,15 +230,15 @@ Votre application doit disposer de l’autorisation **ReadItem** spécifiée dan
 
 Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.| |`userContext`| Objet | &lt;optional&gt;| Les données d’état sont transmises à la méthode asynchrone. |
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```js
 function getCallbackToken() {
@@ -250,13 +250,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtient un jeton qui identifie l’utilisateur et le complément Office.
 
 La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’identifier et d’[authentifier le complément et l’utilisateur à l’aide d’un système tiers](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx).
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -264,15 +264,15 @@ La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’ide
 
 Le jeton est fourni sous forme de chaîne dans la propriété `asyncResult.value`.| |`userContext`| Objet | &lt;optional&gt;| Les données d’état sont transmises à la méthode asynchrone. |
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```js
 function getIdentityToken() {
@@ -284,7 +284,7 @@ function cb(asyncResult) {
 }
 ```
 
-####  makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 Envoie une demande asynchrone à un des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres de l’utilisateur.
 
@@ -298,11 +298,11 @@ La demande XML doit spécifier l’encodage UTF-8.
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-Votre complément doit disposer de l’autorisation **ReadWriteMailbox** pour utiliser la méthode `makeEwsRequestAsync`. Pour plus d’informations sur l’utilisation de l’autorisation **ReadWriteMailbox** et des opérations EWS que vous pouvez appeler avec la méthode `makeEwsRequestAsync`, consultez la page relative aux[ autorisations du complément de messagerie pour accéder à la boîte aux lettres de l’utilisateur](../../../docs/outlook/understanding-outlook-add-in-permissions.md).
+Votre complément doit disposer de l’autorisation **ReadWriteMailbox** pour utiliser la méthode `makeEwsRequestAsync`. Pour plus d’informations sur l’utilisation de l’autorisation **ReadWriteMailbox** et des opérations EWS que vous pouvez appeler avec la méthode `makeEwsRequestAsync`, consultez la page relative aux [autorisations du complément de messagerie pour accéder à la boîte aux lettres de l’utilisateur](../../../docs/outlook/understanding-outlook-add-in-permissions.md).
 
 **REMARQUE** : l’administrateur serveur doit définir `OAuthAuthentication` sur true dans le répertoire EWS du serveur d’accès client pour permettre à la méthode `makeEwsRequestAsync` d’effectuer des demandes EWS.
 
-#### Différences entre les versions
+#### <a name="version-differences"></a>Différences entre les versions
 
 Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de messagerie exécutées dans des versions d’Outlook inférieures à 15.0.4535.1004, vous devez définir la valeur d’encodage sur `ISO-8859-1`.
 
@@ -312,24 +312,24 @@ Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de
 
 Lorsque votre application de messagerie s’exécute dans Outlook sur le web, vous n’avez pas à définir la valeur d’encodage. Pour déterminer si votre application de messagerie s’exécute dans Outlook ou Outlook sur le web, utilisez la propriété mailbox.diagnostics.hostName. Pour déterminer la version d’Outlook qui est exécutée, utilisez la propriété mailbox.diagnostics.hostVersion.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
 |`data`| String||Demande EWS.|
 |`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult).
 
-Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo taille, un message d’erreur est renvoyé. | |`userContext`| Objet| &lt;optional&gt;| Les données d’état sont transmises à la méthode asynchrone.|
+Le résultat XML de l’appel EWS est fourni sous forme de chaîne dans la propriété `asyncResult.value`. Si la taille du résultat est supérieure à 1 Mo, un message d’erreur est renvoyé.| |`userContext`| Objet| &lt;facultatif&gt;| Les données d’état sont transmises à la méthode asynchrone.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteMailbox|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple suivant appelle la méthode `makeEwsRequestAsync` pour utiliser l’opération `GetItem` pour obtenir l’objet d’un élément.
 

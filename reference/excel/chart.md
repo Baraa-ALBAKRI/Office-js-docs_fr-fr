@@ -1,8 +1,8 @@
-# Objet Chart (interface API JavaScript pour Excel)
+# <a name="chart-object-(javascript-api-for-excel)"></a>Objet Chart (interface API JavaScript pour Excel)
 
 Représente un objet de graphique dans un classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -13,19 +13,19 @@ Représente un objet de graphique dans un classeur.
 |top|Double|Représente la distance, en points, entre le bord supérieur de l’objet et la partie supérieure de la ligne 1 (sur une feuille de calcul) ou le haut de la zone de graphique (sur un graphique).|
 |width|Double|Représente la largeur, en points, de l’objet de graphique.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |axes|[ChartAxes](chartaxes.md)|Représente les axes du graphique. En lecture seule.|
 |dataLabels|[ChartDataLabels](chartdatalabels.md)|Représente les étiquettes des données sur le graphique. En lecture seule.|
 |format|[ChartAreaFormat](chartareaformat.md)|Regroupe les propriétés de format de la zone de graphique. En lecture seule.|
-|legend|[ChartLegend](chartlegend.md)|Représente la légende du graphique. En lecture seule.|
-|Série|[ChartSeriesCollection](chartseriescollection.md)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|
-|Fonction|[ChartTitle](charttitle.md)|Représente le titre du graphique indiqué et comprend le texte, la visibilité, la position et la mise en forme du titre. En lecture seule.|
+|légende|[ChartLegend](chartlegend.md)|Représente la légende du graphique. En lecture seule.|
+|série|[ChartSeriesCollection](chartseriescollection.md)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|
+|titre|[ChartTitle](charttitle.md)|Représente le titre du graphique indiqué et comprend le texte, la visibilité, la position et la mise en forme du titre. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -35,24 +35,24 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Redéfinit les données sources du graphique.|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positionne le graphique par rapport aux cellules dans la feuille de calcul.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Supprime l’objet de graphique.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartObject.delete();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
@@ -66,25 +66,25 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getImage(height: number, width: number, fittingMode: string)
+### <a name="getimage(height:-number,-width:-number,-fittingmode:-string)"></a>getImage(height: number, width: number, fittingMode: string)
 Affiche le graphique sous forme d’image codée en Base64 ajusté aux dimensions spécifiées.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartObject.getImage(height, width, fittingMode);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |height|number|Facultatif. (Facultatif) Hauteur souhaitée de l’image produite.|
 |width|number|Facultatif. (Facultatif) Largeur souhaitée de l’image produite.|
 |fittingMode|string|Facultatif. (Facultatif) Méthode utilisée pour mettre à l’échelle le graphique aux dimensions spécifiées (si la hauteur et la largeur sont définies).  Les valeurs possibles sont les suivantes : Fit (ajuster), FitAndCenter (ajuster et centrer), Fill (remplir)|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 System.IO.Stream
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
@@ -102,40 +102,40 @@ Excel.run(function (ctx) {
 
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-### setData(sourceData: Range, seriesBy: string)
+### <a name="setdata(sourcedata:-range,-seriesby:-string)"></a>setData(sourceData: Range, seriesBy: string)
 Redéfinit les données sources du graphique.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartObject.setData(sourceData, seriesBy);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |sourceData|Range|Objet Range correspondant aux données source.|
 |seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes). Dans la version bureau, l’option « auto » inspecte la forme des données source pour déterminer automatiquement si les données sont présentées en lignes ou en colonnes. Dans Excel Online, « auto » est défini par défaut sur « columns » (colonnes).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 Définissez `sourceData` sur « A1: B4 » et `seriesBy` sur « Columns »
 
@@ -154,24 +154,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### setPosition(startCell: Range or string, endCell: Range or string)
+### <a name="setposition(startcell:-range-or-string,-endcell:-range-or-string)"></a>setPosition(startCell: Range or string, endCell: Range or string)
 Positionne le graphique par rapport aux cellules dans la feuille de calcul.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartObject.setPosition(startCell, endCell);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |startCell|Range or string|Cellule de début. Il s’agit de l’emplacement où le graphique sera déplacé. La cellule de début est la cellule supérieure gauche ou supérieure droite, selon les paramètres d’affichage gauche-droite définis par l’utilisateur.|
 |endCell|Range or string|Facultatif. Cellule de fin. Si une valeur est indiquée, la largeur et la hauteur du graphique sont définies de manière à couvrir entièrement cette cellule/plage.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 
 ```js
@@ -191,7 +191,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Obtenir un graphique nommé « Chart1 »
 

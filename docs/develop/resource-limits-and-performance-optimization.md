@@ -1,11 +1,11 @@
 
-# Limites des ressources et optimisation des performances pour les compléments Office
+# <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
 
 
 Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre Complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office pour Windows et OS X mais pas sur des clients Office Online, Outlook Web App ou OWA pour périphériques. Par ailleurs, cette rubrique suggère des techniques de conception et d’implémentation de complément qui permettent de mieux contrôler les performances des compléments sur ordinateurs de bureau, tablettes et smartphones.
 
-## Limites d’utilisation des ressources pour les compléments
+## <a name="resource-usage-limits-for-add-ins"></a>Limites d’utilisation des ressources pour les compléments
 
 
 Les limites d’utilisation des ressources d’exécution s’appliquent à tous les Compléments Office. Elles permettent à l’utilisateur de bénéficier de bonnes performances et contribuent également à atténuer les attaques par déni de service. Vous devez tester suffisamment votre Complément Office sur l’application hôte cible à l’aide d’un large éventail de données possibles et mesurer ses performances par rapport aux limites ci-après :
@@ -53,7 +53,7 @@ Les limites d’utilisation des ressources d’exécution s’appliquent à tous
   - Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.
     
 
-## Vérification des problèmes d’utilisation des ressources dans le journal de télémétrie
+## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>Vérification des problèmes d’utilisation des ressources dans le journal de télémétrie
 
 
 Office propose un journal de télémétrie qui tient à jour un enregistrement de certains événements (chargement, ouverture, fermeture et erreurs) des solutions Office qui s’exécutent sur l’ordinateur local, notamment les problèmes d’utilisation des ressources dans une Complément Office. Si le journal de télémétrie est configuré, vous pouvez utiliser Excel pour l’ouvrir à partir de l’emplacement par défaut suivant sur votre disque local :
@@ -85,7 +85,7 @@ Le journal de télémétrie comprend pour chaque événement suivi pour un compl
 Pour plus d’informations, voir [Déployer le Tableau de bord de télémétrie](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) et [Dépannage des fichiers et des solutions personnalisées d’Office avec le journal de télémétrie](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)
 
 
-## Techniques de conception et d’implémentation
+## <a name="design-and-implementation-techniques"></a>Techniques de conception et d’implémentation
 
 
 Bien que les limites en matière d’utilisation des ressources de l’UC et de la mémoire, de tolérance d’incident et de réactivité de l’interface utilisateur s’appliquent aux Compléments Office qui s’exécutent uniquement sur les clients enrichis, l’optimisation de l’utilisation de ces ressources et de la batterie doit constituer une priorité si vous voulez que votre complément s’exécute de manière satisfaisante sur tous les clients et appareils de prise en charge. L’optimisation est particulièrement importante si votre complément effectue des opérations de longue durée ou manipule de grands jeux de données. La liste suivante suggère quelques techniques à suivre pour réduire la taille des opérations qui utilisent beaucoup de ressources d’UC ou de données afin de permettre à votre complément d’éviter une consommation excessive des ressources et à l’application hôte de rester réactive :
@@ -102,7 +102,7 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 - Veillez à tester votre complément par rapport au volume de données le plus important possible, puis limitez votre complément pour lui permettre d’atteindre cette limite.
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

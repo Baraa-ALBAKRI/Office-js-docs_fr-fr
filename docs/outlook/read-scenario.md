@@ -1,5 +1,5 @@
 
-# Créer des compléments Outlook pour des formulaires de lecture
+# <a name="create-outlook-add-ins-for-read-forms"></a>Créer des compléments Outlook pour des formulaires de lecture
 
 Les compléments de lecture sont des compléments Outlook activés dans le volet de lecture ou l’inspecteur de lecture d’Outlook. Contrairement aux compléments de composition (qui sont des compléments Outlook activés lorsqu’un utilisateur crée un message ou un rendez-vous), les compléments de lecture sont disponibles dans les scénarios suivants :
 
@@ -16,12 +16,12 @@ Les compléments de lecture sont des compléments Outlook activés dans le vole
 Dans chacun de ces scénarios de lecture, Outlook active les compléments lorsque leurs conditions d’activation sont respectées. Les utilisateurs peuvent ensuite choisir et ouvrir les compléments activés dans la barre de compléments du volet de lecture ou de l’inspecteur de lecture. La figure 1 montre le complément  **Bing Cartes** qui a été activé et ouvert alors que l’utilisateur lit un message contenant une adresse géographique.
 
 
-**Figure 1. Volet de complément montrant le complément Bing Cartes en action pour le message Outlook sélectionné qui contient une adresse**
+**Figure 1 Volet de complément montrant le complément Bing Cartes en action pour le message Outlook sélectionné qui contient une adresse**
 
 ![Application de messagerie avec carte Bing dans Outlook](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## Types de complément disponibles en mode de lecture
+## <a name="types-of-add-ins-available-in-read-mode"></a>Types de complément disponibles en mode de lecture
 
 
 Les compléments de lecture peuvent correspondre à n’importe quelle combinaison des types suivants.
@@ -29,12 +29,12 @@ Les compléments de lecture peuvent correspondre à n’importe quelle combinais
 
 - [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md)
     
-- [Compléments Outlook contextuels](../outlook/contextual-outlook-add-ins.md)
+- [Compléments Outlook contextuels](../outlook/contextual-outlook-add-ins.md)
     
-- [Compléments Outlook de volet personnalisé](../outlook/custom-pane-outlook-add-ins.md)
+- [Compléments Outlook de volet personnalisé](../outlook/custom-pane-outlook-add-ins.md)
     
 
-## Fonctionnalités de l’API disponibles pour les compléments de lecture
+## <a name="api-features-available-to-read-add-ins"></a>Fonctionnalités de l’API disponibles pour les compléments de lecture
 
 
 Pour obtenir la liste des fonctionnalités que l’API JavaScript pour Office fournit aux compléments Outlook dans les formulaires de lecture, voir les tableaux 1 et 2 dans [Fonctionnalités des applications de messagerie par version](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx). 
@@ -46,18 +46,18 @@ Voir aussi :
     
 - [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
     
-- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md)
+- [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [Extraire des chaînes d’entité d’un élément Outlook](../outlook/extract-entity-strings-from-an-item.md)
+- [Extraire des chaînes d’entité d’un élément Outlook](../outlook/extract-entity-strings-from-an-item.md)
     
-- [Obtenir des pièces jointes d’un élément Outlook à partir du serveur](../outlook/get-attachments-of-an-outlook-item.md)
+- [Obtenir des pièces jointes d’un élément Outlook à partir du serveur](../outlook/get-attachments-of-an-outlook-item.md)
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
+- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted.aspx)
     
 - [Compléments Outlook](../outlook/outlook-add-ins.md)
     

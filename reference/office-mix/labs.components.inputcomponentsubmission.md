@@ -1,16 +1,16 @@
 
-# Labs.Components.InputComponentSubmission
+# <a name="labs.components.inputcomponentsubmission"></a>Labs.Components.InputComponentSubmission
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Envoi vers un composant de saisie.
+Représente un envoi vers un composant de saisie.
 
 ```
 class InputComponentSubmission
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
@@ -19,12 +19,12 @@ class InputComponentSubmission
 | `public var result: Components.InputComponentResult`|Résultat ([Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md)) de l’envoi.|
 | `public var time: number`|Heure à laquelle l’envoi a été reçu.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, time: number)`
 
@@ -37,4 +37,4 @@ Crée une instance de la classe **InputComponentSubmission**.
 |:-----|:-----|
 | _answer_|Réponse associée à l’envoi.|
 | _result_|Résultat de l’envoi.|
-| _heure_|Heure à laquelle l’envoi a été reçu.|
+| _time_|Heure à laquelle l’envoi a été reçu.|

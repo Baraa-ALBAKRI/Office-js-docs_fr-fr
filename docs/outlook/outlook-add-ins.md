@@ -1,5 +1,5 @@
 
-# Compléments Outlook
+# <a name="outlook-add-ins"></a>Compléments Outlook
 
 Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de la nouvelle plateforme de technologies web. Les compléments Outlook comportent trois aspects clés :
 
@@ -15,7 +15,7 @@ Les compléments Outlook sont différents des compléments COM ou VSTO, qui sont
 Les éléments Outlook qui prennent en charge les compléments de messagerie incluent notamment les messages électroniques, les demandes de réunion, les réponses à des demandes de réunion, les annulations de réunion et les rendez-vous. Chaque complément de messagerie définit le contexte dans lequel il est disponible, y compris les types d’éléments et si l’utilisateur lit ou compose un élément.
 
 
-## Points d’extension
+## <a name="extension-points"></a>Points d’extension
 
 
 Les points d’extension correspondent à la manière dont les compléments sont intégrés à Outlook. Voici les méthodes possibles :
@@ -27,7 +27,7 @@ Les points d’extension correspondent à la manière dont les compléments sont
 
     ![Forme sans interface utilisateur de commande de complément](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
 
-- Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Compléments Outlook contextuels](../outlook/contextual-outlook-add-ins.md).
+- Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Ces compléments contextuels Outlook](../outlook/contextual-outlook-add-ins.md).
     
     **Complément contextuel pour une entité en surbrillance (adresse)**
 
@@ -40,7 +40,7 @@ Les points d’extension correspondent à la manière dont les compléments sont
     ![Affiche un volet personnalisé dans un formulaire de lecture de message.](../../images/c585ab0a-6c33-42d0-a20f-5deb8b54f480.png)
 
 
-## Éléments de boîtes aux lettres disponibles pour les compléments
+## <a name="mailbox-items-available-to-add-ins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
 
 
 Les compléments Outlook sont disponibles pour les messages ou les rendez-vous en mode de lecture ou de composition, mais pas pour d’autres types d’élément. Outlook ne les active pas si l’élément de message actuel, en mode de composition ou de lecture, fait partie des éléments suivants :
@@ -59,25 +59,27 @@ Les compléments Outlook sont disponibles pour les messages ou les rendez-vous 
 En général, Outlook peut activer des compléments dans des formulaires de lecture pour des éléments du dossier Éléments envoyés, à l’exception des compléments qui s’activent en fonction des correspondances de chaîne d’entités connues. Pour plus d’informations sur les raisons de ce comportement, voir la section « Prise en charge des entités connues » dans la rubrique [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md).
 
 
-## Hôtes pris en charge
+## <a name="supported-hosts"></a>Hôtes pris en charge
 
 
 Les compléments Outlook sont pris en charge dans Outlook 2013 et versions ultérieures, Outlook 2016 pour Mac, Outlook Web App pour Exchange 2013 en local, Outlook Web App dans Office 365 et Outlook.com. Toutes les nouvelles fonctionnalités ne sont pas prises en charge dans tous les clients en même temps. Reportez-vous aux rubriques spécifiques et aux références d’API, pour identifier les hôtes qui sont pris en charge ou non.
 
 
-## Commencer à créer des compléments Outlook
+## <a name="get-started-building-outlook-add-ins"></a>Commencer à créer des compléments Outlook
 
 
 Pour commencer à créer des compléments Outlook, voir [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 - [Vue d’ensemble de l’architecture et des fonctionnalités des compléments Outlook](../outlook/overview.md)
 - [Meilleures pratiques en matière de développement de compléments Office](../../docs/overview/add-in-development-best-practices.md)
 - [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
-- [Gérer les licences de compléments pour Office et SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- 
+  [Gérer les licences de compléments pour Office et SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 - [Publier votre complément Office](../publish/publish.md)
-- [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 

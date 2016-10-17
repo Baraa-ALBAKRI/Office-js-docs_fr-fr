@@ -1,4 +1,4 @@
-#Mise en page des conteneurs du volet Office
+#<a name="layout-for-task-pane-containers"></a>Mise en page des conteneurs du volet Office
 
 
 Créez un style visuel cohérent pour vos conteneurs du volet Office en utilisant la mise en page recommandée. Celle-ci contient les éléments suivants : 

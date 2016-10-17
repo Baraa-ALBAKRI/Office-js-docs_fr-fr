@@ -1,9 +1,9 @@
 
-# Empaquetage de votre complément à l’aide de Napa ou de Visual Studio pour préparer la publication
+# <a name="package-your-add-in-using-napa-or-visual-studio-to-prepare-for-publishing"></a>Empaquetage de votre complément à l’aide de Napa ou de Visual Studio pour préparer la publication
 
 Votre package de complément Office contient un fichier XML que vous allez utiliser pour publier le complément. Vous devez publier les fichiers de l’application web de votre projet séparément.
 
-## Empaquetage d’un Complément Office créé à l’aide de Outils de développement Office 365 « Napa »
+## <a name="package-an-office-add-in-that-you-create-by-using-napa"></a>Empaquetage d’un Complément Office créé à l’aide de Outils de développement Office 365 « Napa »
 
 
 
@@ -22,11 +22,11 @@ Ensuite, copiez manuellement les fichiers de contenu web (feuilles de style, fic
 Vous pouvez désormais télécharger votre manifeste XML à l’emplacement approprié pour [publier votre complément](../publish/publish.md). 
 
 
-## Déploiement de votre projet web et empaquetage de votre complément à l’aide de Visual Studio 2015
+## <a name="deploy-your-web-project-and-package-your-add-in-by-using-visual-studio-2015"></a>Déploiement de votre projet web et empaquetage de votre complément à l’aide de Visual Studio 2015
 
 
 
-### Pour déployer votre projet Web
+### <a name="to-deploy-your-web-project"></a>Pour déployer votre projet Web
 
 
 1. Dans l’ **Explorateur de solutions**, ouvrez le menu contextuel du projet d’complément, puis sélectionnez  **Publier**.
@@ -43,10 +43,10 @@ Vous pouvez désormais télécharger votre manifeste XML à l’emplacement appr
     
 3. Sur la page **Publier votre complément**, cliquez sur le lien **Déployer votre projet Web**.
     
-    La boîte de dialogue **Publier le site web** s’affiche. Pour plus d’informations sur l’utilisation de cet Assistant, reportez-vous à l’article relatif à la [procédure de déploiement d’un projet web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
+    La boîte de dialogue **Publier le site web** s’affiche. Pour plus d’informations sur l’utilisation de cet Assistant, reportez-vous à l’article relatif à la [procédure de déploiement d’un projet web à l’aide de la publication en un clic dans Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
     
 
-### Empaquetage de votre complément
+### <a name="to-package-your-add-in"></a>Empaquetage de votre complément
 
 
 1. Sur la page  **Publier votre complément**, cliquez sur le lien  **Empaqueter le complément**.
@@ -68,11 +68,12 @@ Vous pouvez désormais télécharger votre manifeste XML à l’emplacement appr
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
 - [Publier votre complément Office](../publish/publish.md)
     
-- [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
     

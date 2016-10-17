@@ -1,15 +1,15 @@
-# Objet TrackedObjectsCollection (interface API JavaScript pour Office 2016)
+# <a name="trackedobjectscollection-object-(javascript-api-for-office-2016)"></a>Objet TrackedObjectsCollection (interface API JavaScript pour Office 2016)
 
 Permet à des compléments de gérer des références d’objet de plage entre plusieurs lots sync(). En règle générale, la méthode Excel.run() permet de mettre à jour les références dans tous les lots de façon automatique, sans que vous ayez à effectuer de suivi explicitement. Toutefois, si un objet de plage doit être suivi et ajusté manuellement pour qu’il reflète l’état actuel de la plage Excel sous-jacente, cette collection peut être utilisée afin de marquer ces objets pour le suivi. Notez que si un objet de plage est marqué pour être suivi, il doit être explicitement supprimé lorsqu’il est utilisé, afin de libérer de la mémoire dans Excel, même en cas d’erreur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 Aucune.
 
-## Relations
+## <a name="relationships"></a>Relations
 
 Aucun
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 Les méthodes suivantes définies pour l’objet trackedObjectsCollection :
 
@@ -17,29 +17,29 @@ Les méthodes suivantes définies pour l’objet trackedObjectsCollection :
 |:-----------------|:--------|:----------|
 |[add(rangeObject: Range)](#addrangeobject-range)| Null             |Crée une nouvelle référence sur une plage.|
 |[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Supprime une référence sur la plage.  |
-|[removeAll()](#removeall)| Null|Supprime toutes les références créées par le complément sur l’appareil.|
+|[removeAll()](#removeallrangeobject-range)| Null|Supprime toutes les références créées par le complément sur l’appareil.|
 
 
-## Spécification d’API 
+## <a name="api-specification"></a>Spécification d’API 
 
-### add(rangeObject: range)
+### <a name="add(rangeobject:-range)"></a>add(rangeObject: range)
 Ajoute un objet de plage à la collection d’objets suivis. Les modifications sous-jacentes seront suivies pour toutes les demandes de traitement par lot et toutes les mises à jour de suivi seront appliquées à l’état actuel de l’objet de plage. 
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 trackedObjectsCollection.add(rangeObject);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 
 Paramètre       | Type   | Description
 --------------- | ------ | ------------
 `rangeObject`  | [Range](range.md)| Objet de plage à ajouter à la collection d’objets suivis.
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 Null
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 var sheetName = "Sheet1";
@@ -57,25 +57,25 @@ Excel.run(function (ctx) {
 ```
 
 
-### remove(rangeObject: range)
+### <a name="remove(rangeobject:-range)"></a>remove(rangeObject: range)
 
 Supprime un objet de référence de la collection. Cette opération libère de la mémoire et des ressources nécessaires pour gérer l’état de l’objet suivi. Notez que si un objet de plage est marqué comme devant faire l’objet d’un suivi, il doit être explicitement supprimé, même en cas d’erreur.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 trackedObjectsCollection.remove(rangeObject);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 
 Paramètre       | Type   | Description
 --------------- | ------ | ------------
 `rangeObject`  | [Range](range.md)| Objet de plage à supprimer de la collection d’objets suivis.
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 Null
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 
 ```js
@@ -94,23 +94,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### removeAll(rangeObject: range)
+### <a name="removeall(rangeobject:-range)"></a>removeAll(rangeObject: range)
 
 Supprime toutes les références créées par le complément sur l’appareil.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 trackedObjectsCollection.removeAll();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 Null
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 

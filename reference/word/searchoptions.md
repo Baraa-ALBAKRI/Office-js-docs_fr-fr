@@ -1,10 +1,10 @@
-# Objet SearchOptions (interface API JavaScript pour Word)
+# <a name="searchoptions-object-(javascript-api-for-word)"></a>Objet SearchOptions (interface API JavaScript pour Word)
 
 Spécifie les options à inclure dans une opération de recherche.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |ignorePunct|bool|Obtient ou définit une valeur indiquant si toutes les marques de ponctuation entre les mots doivent être ignorées. Correspond à la case à cocher Ignorer les marques de ponctuation de la boîte de dialogue Rechercher et remplacer.|
@@ -16,7 +16,7 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 |matchWholeWord|bool|Obtient ou définit une valeur indiquant si la recherche doit uniquement porter sur des mots entiers et exclure le texte s’il est inclus dans un mot plus long. Correspond à la case à cocher Mot entier de la boîte de dialogue Rechercher et remplacer.|
 |matchWildCards|bool|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case Caractères génériques de la boîte de dialogue Rechercher et remplacer.|
 
-_Voir des [exemples](#property-access-examples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 Les options de recherche sont facultatives. Elles doivent être définies à l’aide d’un littéral d’objet dans toutes les méthodes de recherche :
 
@@ -26,37 +26,37 @@ Les options de recherche sont facultatives. Elles doivent être définies à l�
 
 Vous pouvez fournir une ou plusieurs propriétés d’options de recherche dans le littéral d’objet pour définir les options de recherche. 
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-## Exemples d’accès aux propriétés
+## <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-### Ignorer les signes de ponctuation dans la recherche
+### <a name="ignore-punctuation-search"></a>Ignorer les signes de ponctuation dans la recherche
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -92,7 +92,7 @@ Word.run(function (context) {
 });
 ```
 
-### Effectuer une recherche de préfixe
+### <a name="search-based-on-a-prefix"></a>Effectuer une recherche de préfixe
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -128,7 +128,7 @@ Word.run(function (context) {
 });
 ```
 
-### Effectuer une recherche de suffixe
+### <a name="search-based-on-a-suffix"></a>Effectuer une recherche de suffixe
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -164,7 +164,7 @@ Word.run(function (context) {
 });
 ```
 
-### Effectuer une recherche à l’aide d’un caractère générique
+### <a name="search-using-a-wildcard"></a>Effectuer une recherche à l’aide d’un caractère générique
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -202,7 +202,7 @@ Word.run(function (context) {
 ```
 
 
-## Aide concernant les caractères génériques 
+## <a name="wildcard-guidance"></a>Aide concernant les caractères génériques 
 
 | Pour trouver :         | Caractère générique |  Exemple |
 |:-----------------|:--------|:----------|
@@ -219,5 +219,5 @@ Word.run(function (context) {
 |Une ou plusieurs occurrences de l’expression ou du caractère précédent|@ |mar@e trouve mare et marre.|
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

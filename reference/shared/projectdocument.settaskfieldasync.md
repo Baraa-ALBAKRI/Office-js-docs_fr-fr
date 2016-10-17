@@ -1,12 +1,11 @@
 
-# Méthode ProjectDocument.setTaskFieldAsync (interface API JavaScript pour Office version 1.1)
-Définit de manière asynchrone la valeur du champ spécifié pour la tâche spécifiée.
- **Important :** cette API fonctionne uniquement dans Project 2016 sur le bureau Windows.
+# <a name="projectdocument.settaskfieldasync-method-(javascript-api-for-office-v1.1)"></a>Méthode ProjectDocument.setTaskFieldAsync (interface API JavaScript pour Office version 1.1)
+Définit de manière asynchrone la valeur du champ spécifié pour la tâche spécifiée.  **Important :** cette API fonctionne uniquement dans Project 2016 sur le bureau Windows.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Hôtes :**|Project|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
 |**Ajouté dans**|1.1|
 
 ```js
@@ -14,7 +13,7 @@ Office.context.document.setTaskFieldAsync(taskId, fieldId, fieldValue[, options]
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
 _taskId_<br/>
@@ -33,7 +32,7 @@ _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Fonction appelée quand l’appel de méthode est renvoyé, dont le seul paramètre est de type [AsyncResult](../../reference/shared/asyncresult.md). Facultatif.
     
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Lorsque la fonction _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir du paramètre de la fonction de rappel.
 
@@ -44,16 +43,16 @@ Pour la méthode **setTaskFieldAsync**, l’objet [AsyncResult](../../reference
 |**Nom**|**Description**|
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Données transmises dans le paramètre _asyncContext_ facultatif si le paramètre a été utilisé.|
-|[erreur](../../reference/shared/asyncresult.error.md)|Informations sur l’erreur, si la propriété **status** est **failed**.|
-|[statut](../../reference/shared/asyncresult.status.md)|Statut **succeeded** ou **failed** de l’appel asynchrone.|
+|[error](../../reference/shared/asyncresult.error.md)|Informations sur l’erreur, si la propriété **status** est **failed**.|
+|[status](../../reference/shared/asyncresult.status.md)|Statut **succeeded** ou **failed** de l’appel asynchrone.|
 |[value](../../reference/shared/asyncresult.value.md)|Cette méthode ne renvoie pas de valeur.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Appelez d’abord la méthode [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) ou [getTaskByIndexAsync](../../reference/shared/projectdocument.settaskfieldasync.md) pour obtenir le GUID de tâche, puis transmettez le GUID en tant qu’argument _taskId_ à **setTaskFieldAsync**. Vous ne pouvez mettre à jour qu’un seul champ pour une seule tâche dans chaque appel asynchrone.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant appelle [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) pour obtenir le GUID de la tâche actuellement sélectionnée dans un affichage des tâches. Ensuite, il définit deux valeurs de champ de tâche en appelant **setTaskFieldAsync** de façon récursive.
 
@@ -142,27 +141,27 @@ L’exemple suppose que votre complément comporte une référence à la bibliot
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|
 |:-----|:-----|:-----|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**||
+|**Disponible dans les ensembles de conditions requises**||
 |**Niveau d’autorisation minimal**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 
@@ -170,11 +169,11 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |:-----|:-----|
 |1.1|Introduit|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 
 [Méthode getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedresourceasync.md)

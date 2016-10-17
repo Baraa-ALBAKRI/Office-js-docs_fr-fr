@@ -1,16 +1,16 @@
 
-# Labs.Components.ChoiceComponentSubmission
+# <a name="labs.components.choicecomponentsubmission"></a>Labs.Components.ChoiceComponentSubmission
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Envoi associé à un composant de choix.
+Représente l’envoi associé à un composant de choix.
 
 ```
 class ChoiceComponentSubmission
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
@@ -19,16 +19,16 @@ class ChoiceComponentSubmission
 | `public var result: Components.ChoiceComponentResult`|Résultat ([Labs.Components.ChoiceComponentResult](../../reference/office-mix/labs.components.choicecomponentresult.md)) de l’envoi.|
 | `public var time: number`|Heure à laquelle l’envoi a été reçu.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `class ChoiceComponentSubmission`
 
-Envoi associé à un composant de choix.
+Représente l’envoi associé à un composant de choix.
 
  **Paramètres**
 
@@ -37,4 +37,4 @@ Envoi associé à un composant de choix.
 |:-----|:-----|
 | _answer_|Réponse ([Labs.Components.ChoiceComponentAnswer](../../reference/office-mix/labs.components.choicecomponentanswer.md)) associée à l’envoi.|
 | _result_|Résultat ([Labs.Components.ChoiceComponentResult](../../reference/office-mix/labs.components.choicecomponentresult.md)) de l’envoi.|
-| _heure_|Heure à laquelle l’envoi a été reçu.|
+| _time_|Heure à laquelle l’envoi a été reçu.|

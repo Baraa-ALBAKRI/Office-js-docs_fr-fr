@@ -1,8 +1,8 @@
-# Objet RangeBorder (interface API JavaScript pour Excel)
+# <a name="rangeborder-object-(javascript-api-for-excel)"></a>Objet RangeBorder (interface API JavaScript pour Excel)
 
 Cet objet représente la bordure d'un objet.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -11,37 +11,37 @@ Cet objet représente la bordure d'un objet.
 |style|string|L’une des constantes de style de ligne déterminant le style de ligne de la bordure. Les valeurs possibles sont les suivantes : None (aucune), Continuous (continue), Dash (tirets), DashDot (ligne tiret-point), DashDotDot (ligne tiret-point-point), Dot (points), Double (double), SlantDashDot (ligne tiret-point oblique).|
 |weight|string|Spécifie l’épaisseur de la bordure entourant une plage. Les valeurs possibles sont les suivantes : Hairline (très fine), Thin (fine), Medium (moyenne), Thick (épaisse).|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,5 +1,5 @@
 
-# Utilisation de PHP pour valider un jeton d’identité
+# <a name="use-php-to-validate-an-identity-token"></a>Utilisation de PHP pour valider un jeton d’identité
 
 Votre complément Outlook peut vous envoyer un jeton d’identité, mais avant d’approuver la demande, vous devez valider le jeton pour garantir qu’il provient du serveur Exchange attendu. Les exemples de cet article utilisent PHP pour valider le jeton d’identité Exchange ; cependant, vous pouvez utiliser n’importe quel langage de programmation pour effectuer la validation. Les opérations requises pour valider le jeton sont décrites dans le [Document préliminaire Internet JWT (JSON Web Token)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
 
@@ -62,7 +62,7 @@ Le processus peut sembler globalement complexe, mais chaque étape individuelle 
 ```
 
 
-## Bibliothèque de validation des jetons d’identité
+## <a name="identity-token-validation-library"></a>Bibliothèque de validation des jetons d’identité
 
 Le code suivant correspond à une bibliothèque PHP pour la validation d’un jeton d’identité Exchange.
 
@@ -498,7 +498,7 @@ class token_validator
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

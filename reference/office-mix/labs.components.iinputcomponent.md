@@ -1,7 +1,7 @@
 
-# Labs.Components.IInputComponent
+# <a name="labs.components.iinputcomponent"></a>Labs.Components.IInputComponent
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Permet des interactions avec un composant de saisie.
 
@@ -10,7 +10,7 @@ interface IInputComponent extends Labs.Core.IComponent
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Nom|Description|

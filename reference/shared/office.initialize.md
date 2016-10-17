@@ -1,18 +1,18 @@
 
-# Événement Office.initialize
+# <a name="office.initialize-event"></a>Événement Office.initialize
 Se produit quand l’environnement d’exécution est chargé et que le complément est prêt à interagir avec l’application et le document hébergé. 
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```js
 Office.initialize = function (reason) {/* initialization code */}
 ```
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Le paramètre _reason_ de la fonction de détecteur d’événements **initialize** renvoie une valeur d’énumération [InitializationReason](../../reference/shared/initializationreason-enumeration.md) qui indique comment l’initialisation s’est produite. Un complément du volet Office ou de contenu peut être initialisé de deux façons :
 
@@ -25,7 +25,7 @@ Le paramètre _reason_ de la fonction de détecteur d’événements **initializ
  >**Remarque** : le paramètre reason de la fonction de détecteur d’événements **initialize** renvoie uniquement une valeur d’énumération **InitializationReason** pour les compléments du volet Office et de contenu. Il ne renvoie aucune valeur pour les compléments Outlook.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 Vous pouvez utiliser la valeur de **InitializationEnumeration** pour implémenter une autre logique quand le complément est inséré pour la première fois par opposition au moment où il fait déjà partie du document. L’exemple suivant illustre une logique simple qui utilise la valeur du paramètre _reason_ pour indiquer la façon dont le complément du volet Office ou de contenu a été initialisé.
 
@@ -53,31 +53,31 @@ function write(message){
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet événement est pris en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cet événement.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Outlook pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Outlook pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|De contenu Outlook, du volet Office|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

@@ -1,4 +1,4 @@
-# Utiliser du contenu de page OneNote 
+# <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote 
 
 Dans l’API JavaScript des compléments OneNote, le contenu de page est représenté par le modèle objet suivant.
 
@@ -22,7 +22,7 @@ Utilisez ensuite les méthodes dans les objets suivants pour travailler avec le 
 
 Le contenu et la structure d’une page OneNote sont représentés par du code HTML. Seul un sous-ensemble de code HTML est pris en charge pour créer ou mettre à jour du contenu de page, comme décrit ci-dessous.
 
-## HTML pris en charge
+## <a name="supported-html"></a>HTML pris en charge
 
 L’API JavaScript des compléments OneNote prend en charge le code HTML suivant pour créer et mettre à jour du contenu de page :
 
@@ -35,13 +35,13 @@ L’API JavaScript des compléments OneNote prend en charge le code HTML suivant
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## Accès au contenu de la page
+## <a name="accessing-page-contents"></a>Accès au contenu de la page
 
 Vous pouvez uniquement accéder au *contenu de la page* via `Page#load` pour la page actuellement active. Pour modifier la page active, appelez `navigateToPage($page)`.
 
 Des métadonnées, telles que le titre, peuvent toujours être interrogées pour n’importe quelle page.
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
 - [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)

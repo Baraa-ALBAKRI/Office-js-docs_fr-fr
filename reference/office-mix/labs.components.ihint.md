@@ -1,7 +1,7 @@
 
-# Labs.Components.IHint
+# <a name="labs.components.ihint"></a>Labs.Components.IHint
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Conseil pour un problème relatif à un atelier.
 
@@ -10,7 +10,7 @@ interface IHint extends Labs.Core.IValue
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Nom|Description|

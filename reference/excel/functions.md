@@ -1,7 +1,7 @@
-# Objet Worksheet Functions
+# <a name="worksheet-functions"></a>Objet Worksheet Functions
 Cet objet est utilisé comme conteneur des fonctions de feuille de calcul Microsoft Excel que vous pouvez appeler via JavaScript ou REST.
 
-## Type renvoyé
+## <a name="return-type"></a>Type renvoyé
 L’objet Worksheet Functions renvoie un objet FunctionResult. Un objet FunctionResult comporte deux propriétés.
 
 | Propriété       | Type    |Description|Notes |
@@ -10,12 +10,12 @@ L’objet Worksheet Functions renvoie un objet FunctionResult. Un objet Function
 |erreur|string|Renvoie les informations d’erreur lors de l’application des fonctions de feuille de calcul spécifiées.||
 
 
-## Syntaxe
+## <a name="syntax"></a>Syntaxe
 ```js
 workbook.functions.functionMethod();
 ```
 
-## Exemples
+## <a name="examples"></a>Exemples
 Voici un exemple de tableau Excel sur le suivi des ventes de différents outils. Nous utiliserons les données de ce tableau pour expliquer le fonctionnement des fonctions de feuille de calcul.
 
 ![Exemple](../../images/worksheetfunctionschainingResult.JPG)
@@ -68,9 +68,9 @@ L’exemple suivant applique la fonction vlookup pour rechercher d’abord le no
 
 ```
 
-## [Liste des fonctions de feuille de calcul prises en charge](#liste-des-fonctions-de-feuille-de-calcul-prises-en-charge)
+## <a name="[list-of-supported-worksheet-functions](#list)"></a>[Liste des fonctions de feuille de calcul prises en charge](#list)
 
-| Méthode           | Type renvoyé    |Description|Notes |
+| Méthode           | Type renvoyé    |Description|Commentaires |
 |:---------------|:--------|:----------|:-----|
 |[Fonction ABS](https://support.office.com/en-us/article/ABS-function-3420200f-5628-4e8c-99da-c99d7c87713c)| FunctionResult |Renvoie la valeur absolue d’un nombre|
 |[Fonction ACCRINT](https://support.office.com/en-us/article/ACCRINT-function-fe45d089-6722-4fb3-9379-e1f911d8dc74)| FunctionResult |Renvoie l’intérêt couru non échu d’un titre dont l’intérêt est perçu périodiquement|

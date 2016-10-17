@@ -1,50 +1,50 @@
-# Objet TableColumnCollection (interface API JavaScript pour Excel)
+# <a name="tablecolumncollection-object-(javascript-api-for-excel)"></a>Objet TableColumnCollection (interface API JavaScript pour Excel)
 
 Représente une collection de toutes les colonnes du tableau.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |count|int|Renvoie le nombre de colonnes du tableau. En lecture seule.|
-|Items|[TableColumn[]](tablecolumn.md)|Collection d’objets tableColumn. En lecture seule.|
+|items|[TableColumn[]](tablecolumn.md)|Collection d’objets tableColumn. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
-|[add(index: number, values: (boolean ou string ou number)[][])](#addindex-number-values-boolean-ou-string-ou-number)|[TableColumn](tablecolumn.md)|Ajoute une nouvelle colonne au tableau.|
-|[getItem(key: number ou string)](#getitemkey-number-ou-string)|[TableColumn](tablecolumn.md)|Obtient un objet de colonne par son nom ou son ID.|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Ajoute une nouvelle colonne au tableau.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Obtient un objet de colonne par son nom ou son ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Obtient une colonne en fonction de sa position dans la collection.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### add(index: number, values: (boolean ou string ou number)[][])
+### <a name="add(index:-number,-values:-(boolean-or-string-or-number)[][])"></a>add(index: number, values: (boolean ou string ou number)[][])
 Ajoute une nouvelle colonne au tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnCollectionObject.add(index, values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Spécifie la position relative de la nouvelle colonne. La colonne qui se trouvait précédemment à cette position est décalée vers la droite. La valeur d’indice doit être égale ou inférieure à celle de la dernière colonne, afin qu’elle n’ajoute pas de colonne à la fin du tableau. Avec indice zéro.|
 |values|(boolean ou string ou number)[][]|Facultatif. Matrice 2D des valeurs non mises en forme de la colonne du tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableColumn](tablecolumn.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -64,23 +64,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItem(key: number ou string)
+### <a name="getitem(key:-number-or-string)"></a>getItem(key: number ou string)
 Obtient un objet de colonne par son nom ou son ID.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnCollectionObject.getItem(key);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Key|number ou string| Nom ou ID de la colonne.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableColumn](tablecolumn.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -98,7 +98,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
@@ -114,23 +114,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtient une colonne en fonction de sa position dans la collection.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableColumn](tablecolumn.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
@@ -146,22 +146,22 @@ Excel.run(function (ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

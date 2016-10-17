@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ICreateAttemptOptions
+# <a name="labs.core.actions.icreateattemptoptions"></a>Labs.Core.Actions.ICreateAttemptOptions
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Crée une tentative pour le composant donné.
 
@@ -10,7 +10,7 @@ interface ICreateAttemptOptions extends Core.IActionOptions
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |**Nom**|**Description**|

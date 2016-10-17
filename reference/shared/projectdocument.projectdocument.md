@@ -1,19 +1,19 @@
 
 
-# ProjectDocument, objet
+# <a name="projectdocument-object"></a>ProjectDocument, objet
 Classe abstraite qui représente le document du projet (projet actif) avec lequel le complément Office interagit.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Ajouté dans**|1,0|
+|**Hôtes :**|Project|
+|**Ajouté dans**|1.0|
 
 ```js
 Office.context.document
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Méthodes**
@@ -21,9 +21,9 @@ Office.context.document
 
 |**Nom**|**Description**|
 |:-----|:-----|
-|[addHandlerAsync, méthode](../../reference/shared/projectdocument.addhandlerasync.md)|Ajoute de manière asynchrone un gestionnaire d’événements pour un événement dans un objet **ProjectDocument**.|
+|[Méthode addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md)|Ajoute de manière asynchrone un gestionnaire d’événements pour un événement dans un objet **ProjectDocument**.|
 |[Méthode getMaxResourceIndexAsync](../../reference/shared/projectdocument.getmaxresourceindexasync.md)|Obtient de façon asynchrone l’index maximal de la collection de ressources dans le projet en cours.|
-|[Méthode getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md)|Obtenez de façon asynchrone l’index maximal de la collection de tâches dans le projet en cours.|
+|[Méthode getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md)|Obtient de façon asynchrone l’index maximal de la collection de tâches dans le projet en cours.|
 |[Méthode getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)|Obtient de manière asynchrone la valeur du champ spécifié dans le projet actif.|
 |[Méthode getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md)|Obtient de façon asynchrone le GUID de la ressource contenant l’index indiqué dans la collection de ressources.|
 |[Méthode getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)|Obtient de manière asynchrone la valeur du champ spécifié pour la ressource spécifiée.|
@@ -48,12 +48,12 @@ Office.context.document
 |[Événement TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md)|Se produit quand la sélection de tâche change dans le projet actif.|
 |[Événement ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md)|Se produit quand l’affichage actif change dans le projet actif.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 N’appelez pas ou n’instanciez pas directement l’objet **ProjectDocument** dans votre script.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant initialise le complément et obtient les propriétés de l’objet [Document](../../reference/shared/document.md) qui sont disponibles dans le contexte d’un document Project. Un document Project est le projet ouvert et actif. Pour accéder aux membres de l’objet **ProjectDocument**, utilisez l’objet **Office.context.document** comme le montrent les exemples de code pour les méthodes et les événements **ProjectDocument**.
 
@@ -94,36 +94,36 @@ L’exemple suppose que votre complément comporte une référence à la bibliot
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet objet est pris en charge dans l’application hôte Office correspondante. Une cellule vide indique que l’application hôte Office ne prend pas en charge cet objet.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|
 |:-----|:-----|:-----|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 |**Version**|**Modifications**|
 |:-----|:-----|
-|1,0|Introduit|
+|1.0|Introduit|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 
 [Compléments du volet Office pour Project](../../docs/project/project-add-ins.md)

@@ -1,16 +1,16 @@
 
-# Labs.Core.IGetActionOptions
+# <a name="labs.core.igetactionoptions"></a>Labs.Core.IGetActionOptions
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Options transmises dans le cadre d’une action  **get**.
+Options transmises dans le cadre d’une action **get**.
 
 ```
 interface IGetActionOptions
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun.
 

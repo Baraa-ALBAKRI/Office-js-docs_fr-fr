@@ -1,8 +1,8 @@
-# Objet ChartAxis (interface API JavaScript pour Excel)
+# <a name="chartaxis-object-(javascript-api-for-excel)"></a>Objet ChartAxis (interface API JavaScript pour Excel)
 
 Représente un axe unique dans un graphique.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -11,41 +11,41 @@ Représente un axe unique dans un graphique.
 |minimum|object|Représente la valeur minimale pour l’axe des ordonnées. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|
 |minorUnit|object|Représente l’intervalle entre deux graduations secondaires. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |format|[ChartAxisFormat](chartaxisformat.md)|Représente la mise en forme d’un objet de graphique, à savoir le format des lignes et de la police. En lecture seule.|
 |majorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage principal de l’axe spécifié. En lecture seule.|
 |minorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage secondaire de l’axe spécifié. En lecture seule.|
-|Fonction|[ChartAxisTitle](chartaxistitle.md)|Représente le titre de l’axe. En lecture seule.|
+|titre|[ChartAxisTitle](chartaxistitle.md)|Représente le titre de l’axe. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 Obtenir la valeur `maximum` de l’axe du graphique Chart1
 
 ```js

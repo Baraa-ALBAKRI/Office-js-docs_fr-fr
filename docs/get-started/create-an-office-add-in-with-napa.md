@@ -1,20 +1,19 @@
 
-# Créer un complément Office avec Napa
+# <a name="create-an-office-add-in-with-napa"></a>Créer un complément Office avec Napa
 
 
 
 Un [complément pour Office](../../docs/overview/office-add-ins.md) est une application web hébergée dans un contrôle de navigateur ou un IFrame exécuté dans le cadre d’une application Office. Les Compléments peuvent accéder aux données du document ou de l’élément de messagerie en cours, et se connecter à des services web et à d’autres ressources web. Pour développer des compléments, vous devez utiliser des technologies web basées sur des normes, telles que HTML5, JavaScript, CSS3, XML et des API REST. Une complément n’est pas réellement installée sur l’ordinateur exécutant l’application Office hôte, sa mise en œuvre est hébergée sur un serveur web, ce qui vous permet de la maintenir et de la mettre à jour facilement à partir de celui-ci.
 
-Vous pouvez créer une Complément Office simple à l’aide de Outils de développement Office 365 « Napa ».
-
-Voici ce dont vous avez besoin pour cela :
+Vous pouvez créer un complément Office simple à l’aide de « Napa ». Pour ce faire, il vous faut :
 
 - Un [compte Microsoft](http://www.microsoft.com/en-us/account/default.aspx)
     
 - L’URL de l’application web [Napa](https://www.napacloudapp.com/ )
-    
 
-## Créer une complément de base
+>**Remarque :** si vous débutez avec les compléments pour OneNote, voir [Créer votre premier complément OneNote](../onenote/onenote-add-ins-getting-started.md).
+
+## <a name="create-a-basic-add-in"></a>Créer un complément de base
 
 
 
@@ -37,7 +36,7 @@ Voici ce dont vous avez besoin pour cela :
     L’application Office associée au type de complément que vous avez choisi s’ouvre et le complément fourni à titre d’exemple s’affiche. Vous pouvez maintenant tester les fonctionnalités du complément.
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

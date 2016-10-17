@@ -1,11 +1,11 @@
 
-# Élément FormSettings
+# <a name="formsettings-element"></a>Élément FormSettings
 Spécifie l’emplacement source et les paramètres de contrôle de votre complément de messagerie.
 
  **Type de complément :** messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,12 +15,12 @@ Spécifie l’emplacement source et les paramètres de contrôle de votre compl�
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Peut contenir :
+## <a name="can-contain:"></a>Peut contenir :
 
-[Formulaire](../../reference/manifest/form.md)
+[Form](../../reference/manifest/form.md)
 

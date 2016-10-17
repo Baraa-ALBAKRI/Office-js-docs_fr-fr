@@ -1,6 +1,6 @@
 
 
-# Événement
+# <a name="event"></a>Événement
 
 L’objet `event` est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur. Cet objet permet au complément d’identifier le bouton sur lequel l’utilisateur a cliqué et d’informer l’hôte que son traitement est terminé.
 
@@ -39,7 +39,7 @@ function testEventObject(event) {
 }
 ```
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -47,9 +47,9 @@ function testEventObject(event) {
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Membres
+### <a name="members"></a>Membres
 
-####  source:Object
+####  <a name="source-:object"></a>source:Object
 
 Obtient l’identificateur du bouton de commande du complément qui a appelé la méthode.
 
@@ -61,11 +61,11 @@ La propriété `source` renvoie un objet avec les propriétés suivantes.
 
 Cette valeur peut être utilisée quand plusieurs boutons appellent la même fonction, mais vous devez effectuer différentes actions en fonction du bouton sur lequel l’utilisateur a cliqué.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Objet
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -73,7 +73,7 @@ Cette valeur peut être utilisée quand plusieurs boutons appellent la même fon
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 // Function is used by two buttons:
@@ -92,15 +92,15 @@ function multiButton (event) {
 }
 ```
 
-### Méthodes
+### <a name="methods"></a>Méthodes
 
-####  completed()
+####  <a name="completed()"></a>completed()
 
 Indique que le complément a terminé le traitement déclenché par le bouton de commande d’un complément.
 
 Cette méthode doit être appelée à la fin d’une fonction qui a été appelée par une commande de complément définie avec un élément `Action` avec un attribut `xsi:type` ayant la valeur `ExecuteFunction`. Appeler cette méthode indique au client hôte que la fonction est terminée et qu’il peut nettoyer les états figurant dans l’appel de la fonction. Par exemple, si l’utilisateur ferme Outlook avant l’appel de cette méthode, Outlook vous avertit qu’une fonction est en cours d’exécution.
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -108,7 +108,7 @@ Cette méthode doit être appelée à la fin d’une fonction qui a été appel�
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 function processItem (event) {

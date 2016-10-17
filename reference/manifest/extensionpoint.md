@@ -1,15 +1,15 @@
-﻿# Élément ExtensionPoint
+# <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
  Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [FormFactor](./formfactor.md). 
 
-## Attributs
+## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **xsi:type**  |  Oui  | Type de point d’extension défini.|
 
 
-## Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
+## <a name="extension-points-for-word,-excel,-powerpoint,-and-onenote-add-in-commands"></a>Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
 
 - **PrimaryCommandSurface** : ruban dans Office.
 - **ContextMenu** : menu contextuel qui apparaît lorsque vous cliquez avec le bouton droit de la souris dans l’interface utilisateur Office.
@@ -62,11 +62,11 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 |**OfficeMenu**|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
 |**Group**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut comporter jusqu’à six contrôles. L’attribut  **id** est requis. Il s’agit d’une chaîne contenant un maximum de 125 caractères.|
 |**Label**|Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Icône**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
+|**Icon**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
 |**Tooltip**|Facultatif. Info-bulle du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Contrôle**|Chaque groupe exige au moins un contrôle. Un élément  **Control** peut être de type **Button** ou **Menu**. Utilisez  **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge.Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](#contrôle-de-bouton) et [Contrôles de menu](#contrôles-de-menu).<br/>**Remarque**  Pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.
+|**Control**|Chaque groupe exige au moins un contrôle. Un élément  **Control** peut être de type **Button** ou **Menu**. Utilisez  **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge.Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](#button-controls) et [Contrôles de menu](#menu-controls).<br/>**Remarque**  Pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.
 
-## Points d’extension pour les commandes de complément Outlook
+## <a name="extension-points-for-outlook-add-in-commands"></a>Points d’extension pour les commandes de complément Outlook
 
 - [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
@@ -75,7 +75,7 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](./formfactor.md).)
 
-### CustomPane
+### <a name="custompane"></a>CustomPane
 
 Le point d’extension CustomPane définit un complément qui s’active lorsque des règles spécifiées sont respectées. Il est destiné uniquement au formulaire de lecture et s’affiche dans un volet horizontal. 
 
@@ -85,11 +85,11 @@ Le point d’extension CustomPane définit un complément qui s’active lorsque
 |:-----|:-----|:-----|
 |  **RequestedHeight** | Non |  Il s’agit de la hauteur demandée, en pixels, pour le volet d’informations lorsqu’il est exécuté sur un ordinateur de bureau. La taille peut être comprise entre 32 et 450 pixels.  |
 |  **SourceLocation**  | Oui |  URL du fichier de code source du complément. Fait référence à un élément **Url** dans l’élément [Resources](./resources.md).  |
-|  **Règle**  | Oui |  Règle ou ensemble de règles qui spécifie quand le complément doit être activé. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../../outlook/manifests/activation-rules.md). |
+|  **Rule**  | Oui |  Règle ou ensemble de règles qui spécifie quand le complément doit être activé. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../../outlook/manifests/activation-rules.md). |
 |  **DisableEntityHighlighting**  | Non |  Spécifie si la mise en surbrillance de l’entité doit être désactivée. |
 
 
-#### Exemple CustomPane
+#### <a name="custompane-example"></a>Exemple CustomPane
 ```xml
 <ExtensionPoint xsi:type="CustomPane">
    <RequestedHeight>100< /RequestedHeight> 
@@ -102,7 +102,7 @@ Le point d’extension CustomPane définit un complément qui s’active lorsque
 </ExtensionPoint>
 ```
 
-### MessageReadCommandSurface
+### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
 
 **Éléments enfants**
@@ -112,7 +112,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 |  [OfficeTab](./officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
 |  [CustomTab](./customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### Exemple OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
@@ -121,7 +121,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 </ExtensionPoint>
 ```
 
-#### Exemple CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <CustomTab id="TabCustom1">
@@ -129,7 +129,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
   </CustomTab>
 </ExtensionPoint>
 ```
-### MessageComposeCommandSurface
+### <a name="messagecomposecommandsurface"></a>MessageComposeCommandSurface
 Ce point d’extension place des boutons sur le ruban pour les compléments à l’aide du formulaire de composition de messagerie. 
 
 **Éléments enfants**
@@ -139,7 +139,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 |  [OfficeTab](./officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
 |  [CustomTab](./customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### Exemple OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -148,7 +148,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 </ExtensionPoint>
 ```
 
-#### Exemple CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -157,7 +157,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
   </CustomTab>
 </ExtensionPoint>
 ```
-### AppointmentOrganizerCommandSurface
+### <a name="appointmentorganizercommandsurface"></a>AppointmentOrganizerCommandSurface
 
 Ce point d’extension place des boutons sur le ruban pour le formulaire qui est affiché à l’intention de l’organisateur de la réunion. 
 
@@ -168,7 +168,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 |  [OfficeTab](./officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
 |  [CustomTab](./customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### Exemple OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <OfficeTab id="TabDefault">
@@ -177,7 +177,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-#### Exemple CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
   <CustomTab id="TabCustom1">
@@ -186,7 +186,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-### AppointmentAttendeeCommandSurface
+### <a name="appointmentattendeecommandsurface"></a>AppointmentAttendeeCommandSurface
 
 Ce point d’extension place des boutons sur le ruban pour le formulaire qui est affiché à l’intention du participant à la réunion. 
 
@@ -197,7 +197,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 |  [OfficeTab](./officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
 |  [CustomTab](./customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
-#### Exemple OfficeTab
+#### <a name="officetab-example"></a>Exemple OfficeTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <OfficeTab id="TabDefault">
@@ -206,7 +206,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-#### Exemple CustomTab
+#### <a name="customtab-example"></a>Exemple CustomTab
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
   <CustomTab id="TabCustom1">
@@ -215,7 +215,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 </ExtensionPoint>
 ```
 
-### Module
+### <a name="module"></a>Module
 
 Ce point d’extension place des boutons sur le ruban pour l’extension de module. 
 

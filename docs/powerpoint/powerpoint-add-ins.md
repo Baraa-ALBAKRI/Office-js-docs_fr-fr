@@ -1,12 +1,12 @@
 
-# Création de compléments de contenu et du volet Office pour PowerPoint
+# <a name="create-content-and-task-pane-add-ins-for-powerpoint"></a>Création de compléments de contenu et du volet Office pour PowerPoint
 
 Les exemples de code dans l’article illustrent quelques tâches élémentaires de développement de compléments de contenu PowerPoint. Les informations affichées dans ces exemples dépendent de la fonction  `app.showNotification`, qui figure dans les modèles de projet Visual Studio d’Compléments Office. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devez remplacer la fonction  `showNotification` par votre propre code. Un certain nombre de ces exemples dépendent également de cet objet `globals` qui se trouve en dehors de la portée des fonctions suivantes : `var globals = {activeViewHandler:0, firstSlideId:0};`
 
 Pour obtenir ces exemples de code, votre projet doit faire référence à la [bibliothèque Office.js v1.1 ou version ultérieure](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 
-## Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
+## <a name="detect-the-presentation's-active-view-and-handle-the-activeviewchanged-event"></a>Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
 
 La fonction  `getFileView` appelle la méthode [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
 
@@ -49,7 +49,7 @@ function registerActiveViewChanged() {
 ```
 
 
-## Obtenir l’URL de la présentation
+## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
 
 La fonction `getFileUrl` appelle la méthode [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) pour obtenir l’URL du fichier de présentation.
 
@@ -70,7 +70,7 @@ function getFileUrl() {
 ```
 
 
-## Accéder à une diapositive spécifique dans la présentation
+## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
 La fonction  `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) pour obtenir un objet JSON renvoyé par `asyncResult.value` et qui contient un tableau intitulé « diapositives » répertoriant les ID, les titres et les index de la série de diapositives sélectionnée (ou uniquement de la diapositive en cours). Elle enregistre également l’ID de la première diapositive de la série sélectionnée dans une variable globale.
 
@@ -111,7 +111,7 @@ function goToFirstSlide() {
 ```
 
 
-## Naviguer entre les diapositives de la présentation
+## <a name="navigate-between-slides-in-the-presentation"></a>Naviguer entre les diapositives de la présentation
 
 La fonction  `goToSlideByIndex` appelle la méthode **Document.goToByIdAsync** pour passer à la diapositive suivante dans la présentation.
 
@@ -137,13 +137,13 @@ function goToSlideByIndex() {
 
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 
-- [Lire et écrire des données dans la sélection active dans un document ou une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
+- [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
 - [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md)
     
-- [Utiliser des thèmes de document dans vos compléments PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
+- [Utiliser des thèmes de document dans vos compléments PowerPoint](../powerpoint/use-document-themes-in-your-powerpoint-add-ins.md)
     

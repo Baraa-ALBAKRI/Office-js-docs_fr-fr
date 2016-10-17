@@ -1,9 +1,9 @@
 
-# Débogage des compléments Office sur iPad et Mac
+# <a name="debug-office-add-ins-on-ipad-and-mac"></a>Débogage des compléments Office sur iPad et Mac
 
 Vous pouvez utiliser Visual Studio pour le développement et le débogage des compléments sur Windows. Toutefois, vous ne pouvez pas l’utiliser pour déboguer les compléments sur iPad ou sur Mac. Dans la mesure où les compléments sont développés dans le code HTML et Javascript, ils devraient fonctionner sur différentes plateformes. Il peut toutefois exister de légères différences dans l’affichage du code HTML dans les différents navigateurs. Cette rubrique explique comment déboguer les compléments en exécution sur iPad ou sur Mac. 
 
-## Débogage avec Vorlon.js 
+## <a name="debugging-with-vorlon.js"></a>Débogage avec Vorlon.js 
 
 Vorlon.js est un débogueur de pages web, semblable aux outils F12, conçu pour fonctionner à distance et pour vous permettre de déboguer des pages web sur différents appareils. Pour plus d’informations, accédez au [site web de Vorlon](http://www.vorlonjs.com).  
 
@@ -31,3 +31,6 @@ Désormais, chaque fois que vous ouvrez le complément sur un appareil, il appar
 ![Capture d’écran de l’interface Vorlon.js](../../images/vorlon_interface.png)
 
 Le plug-in Office ajoute des fonctionnalités supplémentaires pour Office.js, telles que l’exploration du modèle objet et l’exécution d’appels Office.js. 
+
+
+> **Remarque :** Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. Si vous avez besoin de forcer le rechargement de votre complément en cours de développement, vous pouvez effacer le dossier Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/.  

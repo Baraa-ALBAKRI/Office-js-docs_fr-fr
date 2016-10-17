@@ -1,28 +1,28 @@
 
-# Labs.Components.InputComponentInstance
+# <a name="labs.components.inputcomponentinstance"></a>Labs.Components.InputComponentInstance
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Instance d’un composant de saisie.
+Représente une instance d’un composant de saisie.
 
 ```
 class InputComponentInstance extends Labs.ComponentInstance<Components.InputComponentAttempt>
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
 |:-----|:-----|
 | `public var component: Components.IInputComponentInstance`|Objet [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) sous-jacent représenté par cette classe.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(component: Components.IInputComponentInstance)`
 
@@ -33,9 +33,9 @@ Crée une instance [Labs.Components.IInputComponentInstance](../../reference/off
 
 |Paramètre|Description|
 |:-----|:-----|
-| _composant_|Objet [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) à utiliser pour créer cette classe.|
+| _component_|Objet [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) à utiliser pour créer cette classe.|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.InputComponentAttempt`
 

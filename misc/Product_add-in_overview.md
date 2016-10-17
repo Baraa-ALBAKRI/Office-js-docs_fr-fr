@@ -1,4 +1,4 @@
-# Présentation des compléments de *produits*
+# <a name="*product*-add-ins-overview"></a>Présentation des compléments de *produits*
 
 <!-- For an example, see [Word add-ins overview](https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview).
 
@@ -13,27 +13,27 @@
 
 -->
 
-## API de complément de *produit*
+## <a name="*product*-add-in-apis"></a>API de complément de *produit*
 
 <!-- Introduce the APIs used to develop add-ins, including client-specific APIs and Office.js. Explain the scenarios in which to use them. Link to relevant reference documentation.
 
 -->
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 <!-- Link to Getting started content and other relevant topics - Design, best practices, manifest documentation.
 
 -->
 
-## Nouveautés des compléments de *produits*
+## <a name="what's-next-for-*product*-add-ins"></a>Nouveautés des compléments de *produits*
 
 <!-- Describe and link to APIs available on Open Spec page. Link to change log if applicable. Provide a roadmap for new APIs and features.
 
 -->
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - *Créer un lien vers le nœud de la référence produit*
 
 

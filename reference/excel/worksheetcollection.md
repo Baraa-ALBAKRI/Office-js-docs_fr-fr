@@ -1,48 +1,48 @@
-# Objet WorksheetCollection (interface API JavaScript pour Excel)
+# <a name="worksheetcollection-object-(javascript-api-for-excel)"></a>Objet WorksheetCollection (interface API JavaScript pour Excel)
 
 Représente une collection d’objets de feuille de calcul qui font partie du classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
-|Items|[Worksheet[]](worksheet.md)|Collection d’objets de feuille de calcul. En lecture seule.|
+|items|[Worksheet[]](worksheet.md)|Collection d’objets de feuille de calcul. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
-|[add(name: string)](#addname-string)|[Feuille de calcul](worksheet.md)|Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.|
-|[getActiveWorksheet()](#getactiveworksheet)|[Feuille de calcul](worksheet.md)|Obtient la feuille de calcul active du classeur.|
-|[getItem(key: string)](#getitemkey-string)|[Feuille de calcul](worksheet.md)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.|
+|[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.|
+|[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Obtient la feuille de calcul active du classeur.|
+|[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### add(name: string)
+### <a name="add(name:-string)"></a>add(name: string)
 Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 worksheetCollectionObject.add(name);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |name|string|Facultatif. Nom de la feuille de calcul à ajouter. Si cette propriété est définie, le nom doit être unique. Si cette propriété n’est pas définie, Excel détermine le nom de la nouvelle feuille de calcul.|
 
-#### Retourne
-[Feuille de calcul](worksheet.md)
+#### <a name="returns"></a>Retourne
+[Worksheet](worksheet.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -61,21 +61,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getActiveWorksheet()
+### <a name="getactiveworksheet()"></a>getActiveWorksheet()
 Obtient la feuille de calcul active du classeur.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 worksheetCollectionObject.getActiveWorksheet();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
-[Feuille de calcul](worksheet.md)
+#### <a name="returns"></a>Retourne
+[Worksheet](worksheet.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) {  
@@ -93,38 +93,38 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItem(key: string)
+### <a name="getitem(key:-string)"></a>getItem(key: string)
 Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 worksheetCollectionObject.getItem(key);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Key|string|Nom ou ID de la feuille de calcul.|
 
-#### Retourne
-[Feuille de calcul](worksheet.md)
+#### <a name="returns"></a>Retourne
+[Worksheet](worksheet.md)
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js
 Excel.run(function (ctx) {
   var worksheets = ctx.workbook.worksheets;

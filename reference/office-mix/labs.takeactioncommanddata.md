@@ -1,7 +1,7 @@
 
-# Labs.TakeActionCommandData
+# <a name="labs.takeactioncommanddata"></a>Labs.TakeActionCommandData
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Données associées à une commande de prise d’action.
 

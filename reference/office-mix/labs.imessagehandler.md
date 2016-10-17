@@ -1,7 +1,7 @@
 
-# Labs.IMessageHandler
+# <a name="labs.imessagehandler"></a>Labs.IMessageHandler
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Interface permettant de définir des gestionnaires d’événements.
 

@@ -1,23 +1,23 @@
 
-# Labs.registerDeserializer
+# <a name="labs.registerdeserializer"></a>Labs.registerDeserializer
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Désérialise un objet JSON spécifié en un objet. Seuls les auteurs de composant doivent l’utiliser.
+Désérialise un objet JSON spécifié dans un objet. Seuls les auteurs de composant doivent l’utiliser.
 
 ```
 function registerDeserializer(type: string, deserialize: (json: Core.ILabObject): any): void
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
-|**Name**|**Description**|
+|**Nom**|**Description**|
 |:-----|:-----|
 |json|Instance [Labs.Core.ILabObject](../../reference/office-mix/labs.core.ilabobject.md) à désérialiser.|
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Renvoie une instance [Labs.Core.ILabObject](../../reference/office-mix/labs.core.ilabobject.md).
 

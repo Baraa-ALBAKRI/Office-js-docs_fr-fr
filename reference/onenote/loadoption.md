@@ -1,4 +1,4 @@
-# Options de chargement d’objet 
+# <a name="object-load-options"></a>Options de chargement d’objet 
 
 Représente un objet qui peut être transmis à la méthode de chargement pour spécifier l’ensemble de propriétés et de relations à charger lors de l’exécution de la méthode sync() qui synchronise les états entre les objets OneNote et les objets de proxy JavaScript correspondants dans le complément. Cet objet utilise des options telles que les paramètres des propriétés select et expand afin de spécifier l’ensemble de propriétés à charger sur l’objet et autorise la pagination sur la collection.
 
@@ -11,7 +11,7 @@ object.load('<var1>,<relationship1/var2>');
 object.load(["var1", "relationship1/var2"]);
 ```
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description|
 |:---------------|:--------|:----------|
 |select|object|Fournissez un tableau ou une liste de noms de paramètres/relations (en les séparant par des virgules) à charger lors d’un appel synchronisé. Par exemple, "propriété1, relation1", ["propriété1", "relation1"]. Facultatif.|
@@ -19,7 +19,7 @@ object.load(["var1", "relationship1/var2"]);
 |top|int|Indiquez le nombre d’éléments de la collection demandée à inclure dans le résultat. Facultatif.|
 |skip|int|Indiquez le nombre d’éléments de la collection devant être ignorés et exclus du résultat. Si une valeur est définie pour `top`, la sélection du résultat démarre une fois que le nombre spécifié d’éléments a été ignoré. Facultatif.|
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 L’exemple permet d’obtenir le titre de page et le niveau de retrait des cinq premières pages dans la section active.
 

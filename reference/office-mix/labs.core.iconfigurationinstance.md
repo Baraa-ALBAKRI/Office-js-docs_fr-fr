@@ -1,7 +1,7 @@
 
-# Labs.Core.IConfigurationInstance
+# <a name="labs.core.iconfigurationinstance"></a>Labs.Core.IConfigurationInstance
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Classe de base pour les instances d’une configuration de laboratoire. Une instance est l’instanciation d’une configuration d’un utilisateur donné et contient un affichage traduit de la configuration d’une exécution spécifique de l’atelier. Cet affichage peut exclure des informations masquées (conseils, réponses, etc.) et contient les ID des différentes instances.
 
@@ -10,7 +10,7 @@ interface IConfigurationInstance extends Core.IUserData
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

@@ -1,4 +1,4 @@
-# Instructions relatives au ton pour les compléments Office
+# <a name="voice-guidelines-for-office-add-ins"></a>Instructions relatives au ton pour les compléments Office
 
 Lorsque vous concevez vos compléments Office, tenez compte du ton que vous utilisez dans le texte de l’interface utilisateur et des éléments. Tâchez de suivre la voix et le ton de l’interface utilisateur d’Office, à savoir un ton informel, amical et accessible aux utilisateurs. 
 

@@ -1,24 +1,24 @@
 
-# ÉvénementProjectDocument.TaskSelectionChanged
+# <a name="projectdocument.taskselectionchanged-event"></a>ÉvénementProjectDocument.TaskSelectionChanged
 Se produit quand la sélection de tâche change dans le projet actif.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
-|**Ajouté dans**|1,0|
+|**Hôtes :**|Project|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Ajouté dans**|1.0|
 
 ```js
 Office.EventType.TaskSelectionChanged
 ```
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
  **TaskSelectionChanged** est une constante d’énumération [EventType](../../reference/shared/eventtype-enumeration.md) pouvant être utilisée dans les méthodes [ProjectDocument.addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md) et [ProjectDocument.removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md) pour ajouter ou supprimer un gestionnaire pour l’événement.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant ajoute un gestionnaire pour l’événement **TaskSelectionChanged**. Lorsque la sélection de tâche change dans le document, il obtient le GUID de la tâche sélectionnée.
 
@@ -73,7 +73,7 @@ L’exemple suppose que votre complément comporte une référence à la bibliot
 Pour obtenir un exemple qui montre comment utiliser un gestionnaire d’événements **TaskSelectionChanged** dans un complément Projet, voir l’article expliquant comment [créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet événement est pris en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cet événement.
@@ -84,29 +84,29 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 ||||
 |:-----|:-----|:-----|
 ||Office pour Bureau Windows|Office Online (dans un navigateur)|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Selection|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Disponible dans les ensembles de conditions requises**|Selection|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 
 |**Version**|**Modifications**|
 |:-----|:-----|
-|1,0|<ul><li>Introduit</li></ul>|
+|1.0|<ul><li>Introduit</li></ul>|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 
 [Création de votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)

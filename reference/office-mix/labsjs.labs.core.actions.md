@@ -1,17 +1,17 @@
 
-# LabsJS.Labs.Core.Actions
+# <a name="labsjs.labs.core.actions"></a>LabsJS.Labs.Core.Actions
 Fournit une vue d’ensemble de l’API JavaScript LabJS.Labs.Core.Actions.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Ces API représentent les opérations d’un atelier, en indiquant ses comportements en cours. Celles-ci vous permettent de créer des composants ou de développer des connexions avec un nouveau lecteur (autre qu’Office Mix).
 
-## Module d’API LabsJS.Labs.Core.Actions
+## <a name="labsjs.labs.core.actions-api-module"></a>Module d’API LabsJS.Labs.Core.Actions
 
 Le module Actions contient les types suivants :
 
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||
@@ -28,7 +28,7 @@ Le module Actions contient les types suivants :
 |[Labs.Core.Actions.IResumeAttemptOptions](../../reference/office-mix/labs.core.actions.iresumeattemptoptions.md)|Options associées à une tentative de reprise.|
 |[Labs.Core.Actions.ISubmitAnswerOptions](../../reference/office-mix/labs.core.actions.isubmitansweroptions.md)|Options disponibles pour l’action Envoi de la réponse.|
 
-### Variables
+### <a name="variables"></a>Variables
 
 
 |||

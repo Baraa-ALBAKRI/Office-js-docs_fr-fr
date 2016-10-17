@@ -1,7 +1,7 @@
 
-# Labs.on
+# <a name="labs.on"></a>Labs.on
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Ajoute un nouveau gestionnaire pour un événement spécifié.
 
@@ -10,15 +10,15 @@ function on(event: string, handler: Core.IEventCallback): void
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
-|**Name**|**Description**|
+|**Nom**|**Description**|
 |:-----|:-----|
 |événement|Événement à ajouter.|
 |handler|Gestionnaire d’événements à ajouter, à l’aide de l’interface [Labs.Core.IEventCallback](../../reference/office-mix/labs.core.ieventcallback.md).|
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Aucun.
 

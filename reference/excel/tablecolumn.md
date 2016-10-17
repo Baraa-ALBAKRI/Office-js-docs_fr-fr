@@ -1,8 +1,8 @@
-# Objet TableColumn (interface API JavaScript pour Excel)
+# <a name="tablecolumn-object-(javascript-api-for-excel)"></a>Objet TableColumn (interface API JavaScript pour Excel)
 
 Cet objet représente une colonne dans un tableau.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -11,14 +11,14 @@ Cet objet représente une colonne dans un tableau.
 |name|string|Renvoie le nom de la colonne du tableau. En lecture seule.|
 |values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie une chaîne d’erreur.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
-|filtrer|[Filtrer](filter.md)|Extrait le filtre appliqué à la colonne. En lecture seule.|
+|filtrer|[Filter](filter.md)|Extrait le filtre appliqué à la colonne. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -29,24 +29,24 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtient l’objet de plage associé à la ligne de total de la colonne.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Supprime la colonne du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnObject.delete();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -63,21 +63,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getDataBodyRange()
+### <a name="getdatabodyrange()"></a>getDataBodyRange()
 Obtient l’objet de plage associé au corps de données de la colonne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnObject.getDataBodyRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -96,21 +96,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getHeaderRowRange()
+### <a name="getheaderrowrange()"></a>getHeaderRowRange()
 Obtient l’objet de plage associé à la ligne d’en-tête de la colonne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnObject.getHeaderRowRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -129,21 +129,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 Renvoie l’objet de plage associé à l’intégralité de la colonne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnObject.getRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -163,21 +163,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTotalRowRange()
+### <a name="gettotalrowrange()"></a>getTotalRowRange()
 Obtient l’objet de plage associé à la ligne de total de la colonne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableColumnObject.getTotalRowRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -197,22 +197,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,11 +1,11 @@
 
-# Méthode Document.goToByIdAsync
+# <a name="document.gotobyidasync-method"></a>Méthode Document.goToByIdAsync
 Accède à l’emplacement ou l’objet spécifié dans le document.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Excel, PowerPoint, Word|
-|**Disponible dans les ensembles de ressources requis**|Pas dans un ensemble|
+|**Disponible dans les ensembles de conditions requises**|Pas dans un ensemble|
 |**Ajouté dans**|1.1|
 
 ```js
@@ -13,7 +13,7 @@ Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
 
@@ -21,12 +21,12 @@ Office.context.document.goToByIdAsync(id, goToType, [,options], callback);
 |:-----|:-----|:-----|:-----|
 | _id_|**string** ou **number**|Identifiant de l’objet ou de l’emplacement à atteindre. Obligatoire.||
 | _goToType_|[GoToType](../../reference/shared/gototype-enumeration.md)|Type d’emplacement à atteindre. Obligatoire.||
-| _options_|**object**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants||
-| _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|Indique si l’emplacement spécifié par le paramètre _id_ est sélectionné (en surbrillance).|**Dans Excel :**<br/> **Office.SelectionMode.Selected** sélectionne tout le contenu de la liaison ou de l’élément nommé. <br/>**Office.SelectionMode.None** pour les liaisons de texte, sélectionne la cellule ; pour les liaisons de matrice, les liaisons de tableau et les éléments nommés, sélectionne la première cellule de données (pas la première cellule dans la ligne d’en-tête pour les tableaux).<br/><br/> **Dans PowerPoint :**<br/> **Office.SelectionMode.Selected** sélectionne le titre de la diapositive ou la première zone de texte sur la diapositive.<br/> **Office.SelectionMode.None** ne sélectionne rien.<br/><br/> **Dans Word :**<br/> **Office.SelectionMode.Selected** sélectionne tout le contenu de la liaison. <br/>**Office.SelectionMode.None** pour les liaisons de texte, déplace le curseur au début du texte ; pour les liaisons de matrice et de tableau, sélectionne la première cellule de données (pas la première cellule dans la ligne d’en-tête pour les tableaux).|
+| _options_|**objet**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants||
+| _selectionMode_|[SelectionMode](../../reference/shared/selectionmode-enumeration.md)|Indique si l’emplacement spécifié par le paramètre _id_ est sélectionné (en surbrillance).|**Dans Excel :**<br/> **Office.SelectionMode.Selected** sélectionne tout le contenu de la liaison ou de l’élément nommé. <br/>**Office.SelectionMode.None** pour les liaisons de texte, sélectionne la cellule ; pour les liaisons de matrice, les liaisons de tableau et les éléments nommés, sélectionne la première cellule de données (pas la première cellule dans la ligne d’en-tête pour les tableaux).<br/><br/> **Dans PowerPoint :**<br/> **Office.SelectionMode.Selected** sélectionne le titre de la diapositive ou la première zone de texte sur la diapositive.<br/> **Office.SelectionMode.None** ne sélectionne rien.<br/><br/> **Dans Word :**<br/> **Office.SelectionMode.Selected** sélectionne tout le contenu de la liaison. <br/>**Office.SelectionMode.None** pour les liaisons de texte, déplace le curseur au début du texte ; pour les liaisons de matrice et de tableau, sélectionne la première cellule de données (pas la première cellule dans la ligne d’en-tête pour les tableaux).|
 | _asyncContext_|**tableau**, **booléen**, **null**, **numérique**, **objet**, **chaîne** ou **non défini**|Élément défini par l’utilisateur de n’importe quel type qui est renvoyé dans l’objet **AsyncResult** sans être modifié.||
-| _callback_|**object**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
+| _callback_|**objet**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
@@ -34,19 +34,19 @@ Dans la fonction de rappel passée à la méthode **goToByIdAsync**, vous pouvez
 
 
 
-|**Propriété**|**Utiliser pour...**|
+|**Propriété**|**Utiliser pour**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Renvoyer l’affichage actuel.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Déterminer si l’opération a réussi ou échoué.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Accéder à un objet [Error](../../reference/shared/error.md) fournissant des informations sur l’erreur en cas d’échec de l’opération.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou **objet** défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 PowerPoint ne prend pas en charge la méthode **goToByIdAsync** dans les **Modes Masques**.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
  **Accéder à une liaison en fonction de son ID (Word et Excel)**
 
@@ -197,18 +197,18 @@ function goToSlideByIndex() {
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**|v|v|v|
 |**PowerPoint**|v|v|v|
@@ -216,13 +216,13 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Pas dans un ensemble|
+|**Disponible dans les ensembles de conditions requises**|Pas dans un ensemble|
 |**Niveau d’autorisation minimal**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

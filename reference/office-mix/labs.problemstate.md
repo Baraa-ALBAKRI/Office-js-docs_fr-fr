@@ -1,7 +1,7 @@
 
-# Labs.ProblemState
+# <a name="labs.problemstate"></a>Labs.ProblemState
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Valeurs d’état pour un atelier donné.
 
@@ -10,7 +10,7 @@ enum ProblemState
 ```
 
 
-## Valeurs d’énumération
+## <a name="enumeration-values"></a>Valeurs d’énumération
 
 
 |||

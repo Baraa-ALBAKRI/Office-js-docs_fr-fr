@@ -1,12 +1,12 @@
 
 
-# Types simples
+# <a name="simple-types"></a>Types simples
 
-####  AsyncResult
+####  <a name="asyncresult"></a>AsyncResult
 
 Objet qui encapsule le résultat d’une requête asynchrone, y compris les informations d’état et d’erreur quand la demande a échoué.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -15,19 +15,19 @@ Objet qui encapsule le résultat d’une requête asynchrone, y compris les info
 |`status`| [Office.AsyncResultStatus](Office.md#asyncresultstatus-string)|Obtient l’état de l’opération asynchrone.|
 |`value`| Objet|Obtient la charge utile ou le contenu de l’opération asynchrone, le cas échéant.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
-#### AttachmentDetails
+#### <a name="attachmentdetails"></a>AttachmentDetails
 
 Représente la pièce jointe d’un élément du serveur. Mode lecture uniquement.
 
 Un tableau d’objets `AttachmentDetail` est renvoyé comme propriété `attachments` d’un objet `Appointment` ou `Message`.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -38,20 +38,20 @@ Un tableau d’objets `AttachmentDetail` est renvoyé comme propriété `attachm
 |`name`| String|Obtient le nom de la pièce jointe.|
 |`size`| Nombre|Obtient la taille de la pièce jointe en octets.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### Contact
+#### <a name="contact"></a>Contact
 
 Représente un contact stocké sur le serveur. Mode lecture uniquement.
 
 La liste des contacts associés à un message électronique ou un rendez-vous est renvoyée dans la propriété `contacts` de l’objet [`Entities`](simple-types.md#entities), qui est renvoyé par la méthode `getEntities` ou `getEntitiesByType` de l’élément actif.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -62,22 +62,22 @@ La liste des contacts associés à un message électronique ou un rendez-vous es
 |`phoneNumbers`| Array.&lt;[PhoneNumber](simple-types.md#phonenumber)&gt;| &lt;nullable&gt;|Tableau contenant un objet `PhoneNumber` pour chaque numéro de téléphone associé au contact.|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|Tableau de chaînes contenant les URL Internet associées au contact.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Lecture|
-####  EmailAddressDetails
+####  <a name="emailaddressdetails"></a>EmailAddressDetails
 
 Fournit les propriétés relatives à l’expéditeur ou aux destinataires spécifiés d’un e-mail ou d’un rendez-vous.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Objet
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -86,32 +86,32 @@ Fournit les propriétés relatives à l’expéditeur ou aux destinataires spéc
 |`emailAddress`| String|Obtient l’adresse de messagerie SMTP.|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|Obtient le type d’adresse de messagerie d’un destinataire.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
-#### EmailUser
+#### <a name="emailuser"></a>EmailUser
 
 Représente un compte de messagerie sur un serveur Exchange.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
 |`displayName`| Chaîne|Obtient le nom d’affichage associé à une adresse de messagerie.|
 |`emailAddress`| String|Obtient l’adresse de messagerie SMTP.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### Entités
+#### <a name="entities"></a>Entités
 
 Représente une collection d’entités trouvées dans un message électronique ou un rendez-vous. Mode lecture uniquement.
 
@@ -127,7 +127,7 @@ La reconnaissance d’entité repose sur la reconnaissance du langage naturel qu
 
 Quand les tableaux de propriétés sont renvoyés par la méthode `getEntitiesByType`, seule la propriété de l’entité spécifiée contient des données ; toutes les autres propriétés ont la valeur `null`.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -139,18 +139,18 @@ Quand les tableaux de propriétés sont renvoyés par la méthode `getEntitiesBy
 |`taskSuggestions`| Array.&lt;[TaskSuggestion](simple-types.md#tasksuggestion)&gt;| &lt;nullable&gt;|Obtient les suggestions de tâche trouvées dans un e-mail ou un rendez-vous.|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|Obtient les URL Internet présentes dans un e-mail ou un rendez-vous.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### LocalClientTime
+#### <a name="localclienttime"></a>LocalClientTime
 
 Représente une date et une heure dans le fuseau horaire du client. Mode lecture uniquement.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -163,14 +163,14 @@ Représente une date et une heure dans le fuseau horaire du client. Mode lecture
 |`milliseconds`| Nombre|Nombre entier représentant le nombre de millisecondes.|
 |`timezoneOffset`| Nombre|Nombre entier représentant l’écart en minutes entre le fuseau horaire local et l’heure UTC.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### MeetingSuggestion
+#### <a name="meetingsuggestion"></a>MeetingSuggestion
 
 Représente une réunion proposée trouvée dans un élément. Mode lecture uniquement.
 
@@ -178,7 +178,7 @@ La liste des réunions proposées dans un message électronique est renvoyée da
 
 Les valeurs `start` et `end` sont des représentations sous forme de chaîne d’un objet Date qui contient la date et l’heure à laquelle la réunion proposée doit commencer et se terminer. Les valeurs sont comprises dans le fuseau horaire par défaut spécifié pour l’utilisateur actif.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -189,24 +189,24 @@ Les valeurs `start` et `end` sont des représentations sous forme de chaîne d�
 |`start`| Chaîne|Obtient la date et l’heure de début d’une réunion suggérée.|
 |`subject`| String|Obtient l’objet d’une réunion suggérée.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### PhoneNumber
+#### <a name="phonenumber"></a>PhoneNumber
 
 Représente un numéro de téléphone identifié dans un élément. Mode lecture uniquement.
 
 Un tableau d’objets `PhoneNumber` contenant des numéros de téléphone trouvés dans un message électronique est renvoyé dans la propriété `phoneNumbers` de l’objet [`Entities`](simple-types.md#entities) renvoyé lors de l’appel de la méthode [`getEntities`](Office.context.mailbox.item.md#getentities--entities) pour l’élément sélectionné.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Objet
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -214,30 +214,30 @@ Un tableau d’objets `PhoneNumber` contenant des numéros de téléphone trouv�
 |`phoneString`| String|Obtient une chaîne contenant un numéro de téléphone. Cette chaîne contient uniquement les chiffres du numéro de téléphone et exclut les caractères tels que les parenthèses et les caractères, s’ils existent dans l’élément d’origine.|
 |`type`| String|Obtient une chaîne qui identifie le type de numéro de téléphone : `Home`, `Work`, `Mobile`, `Unspecified`.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### TaskSuggestion
+#### <a name="tasksuggestion"></a>TaskSuggestion
 
 Représente une suggestion de tâche identifiée dans un élément. Mode lecture uniquement.
 
 La liste des tâches proposées dans un message électronique est renvoyée dans la propriété `taskSuggestions` de l’objet [`Entities`Entities`Entities`](simple-types.md#entities) renvoyé lorsque la méthode [`getEntities`](Office.context.mailbox.item.md#getentities--entities) ou [`getEntitiesByType`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) est appelée sur l’élément actif.
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
 |`assignees`| Array.&lt;[EmailUser](simple-types.md#emailuser)&gt;|Obtient les utilisateurs auxquels une tâche suggérée doit être affectée.|
 |`taskString`| String|Obtient le texte d’un élément identifié en tant que suggestion de tâche.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|

@@ -1,11 +1,11 @@
 
-# Id, élément
+# <a name="id-element"></a>Id, élément
 Spécifie l’ID unique de votre complément Office comme GUID.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,7 +13,7 @@ Spécifie l’ID unique de votre complément Office comme GUID.
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

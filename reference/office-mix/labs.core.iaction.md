@@ -1,16 +1,16 @@
 
-# Labs.Core.IAction
+# <a name="labs.core.iaction"></a>Labs.Core.IAction
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.
+Représente une action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.
 
 ```
 interface IAction
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

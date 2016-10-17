@@ -1,7 +1,7 @@
 
-# Labs.Core.IConnectionResponse
+# <a name="labs.core.iconnectionresponse"></a>Labs.Core.IConnectionResponse
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Informations de la réponse renvoyées par l’appel de connexion.
 
@@ -10,7 +10,7 @@ interface IConnectionResponse
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

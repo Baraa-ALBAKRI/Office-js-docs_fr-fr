@@ -1,5 +1,5 @@
 
-# Héberger un complément pour Office sur Microsoft Azure
+# <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
 Le complément Office le plus simple est constitué d’un fichier manifeste XML et d’une page HTML. Le fichier manifeste XML décrit les caractéristiques du complément, telles que son nom, les applications clientes Office dans lesquelles il peut fonctionner et l’URL de la page HTML du complément. La page HTML est contenue sur le site web d’un complément Office et les utilisateurs peuvent la voir et interagir avec elle lors de l’installation et de l’exécution de votre complément. 
 
@@ -20,7 +20,7 @@ Cette rubrique suppose que vous n’avez jamais utilisé Azure. À la fin, vous 
 ![Site web d’un complément Office hébergé dans Microsoft Azure](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
 
 
-## Configurer votre ordinateur de développement avec le kit de développement logiciel Azure SDK pour .NET, un abonnement Azure et Office 2013
+## <a name="set-up-your-development-computer-with-azure-sdk-for-.net,-an-azure-subscription,-and-office-2013"></a>Configurer votre ordinateur de développement avec le kit de développement logiciel Azure SDK pour .NET, un abonnement Azure et Office 2013
 
 
 
@@ -44,7 +44,7 @@ Cette rubrique suppose que vous n’avez jamais utilisé Azure. À la fin, vous 
 Pour que la procédure reste simple et centrée sur l’utilisation d’Azure avec un complément Office, utilisez un partage de fichiers local en tant que catalogue approuvé dans lequel vous stockez le fichier manifeste XML du complément. Pour un complément que vous avez l’intention d’utiliser dans une ou plusieurs entreprises, vous pouvez conserver le fichier manifeste du complément dans SharePoint ou publier le complément dans l’Office Store. 
 
 
-## Étape 1 : créer un partage de fichiers réseau pour héberger votre fichier manifeste de complément
+## <a name="step-1:-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>Étape 1 : créer un partage de fichiers réseau pour héberger votre fichier manifeste de complément
 
 
 
@@ -59,7 +59,7 @@ Pour que la procédure reste simple et centrée sur l’utilisation d’Azure av
 5. Dans  **Partage de fichiers**, sélectionnez la flèche déroulante vers le bas, puis choisissez  **Tout le monde**  >  **Ajouter**  >  **Partager**.
     
 
-## Étape 2 : ajouter le partage de fichiers au catalogue de compléments approuvés de sorte que les applications clientes Office approuvent l’emplacement où vous installez les compléments Office
+## <a name="step-2:-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>Étape 2 : ajouter le partage de fichiers au catalogue de compléments approuvés de sorte que les applications clientes Office approuvent l’emplacement où vous installez les compléments Office
 
 
 
@@ -74,13 +74,13 @@ Pour que la procédure reste simple et centrée sur l’utilisation d’Azure av
 5. Cochez la case correspondant à  **Afficher dans le menu**. Lorsque vous stockez un fichier manifeste XML de complément sur un partage qui est un catalogue de compléments approuvés, le complément apparaît sous  **Dossier partagé** dans la boîte de dialogue **Compléments Office**.
     
 
-## Étape 3 : créer un site web dans Azure
+## <a name="step-3:-create-a-website-in-azure"></a>Étape 3 : créer un site web dans Azure
 
 
 Il existe plusieurs façons de créer un site web Azure vide. Si vous utilisez Visual Studio 2015, suivez les étapes dans la section [Utilisation de Visual Studio 2015](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2015) pour créer un site web Azure à partir de l’IDE de Visual Studio. Vous pouvez également suivre les étapes dans la section [Utilisation du portail de gestion Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-management-portal) pour créer le site web Azure.
 
 
-### Utilisation de Visual Studio 2015
+### <a name="using-visual-studio-2015"></a>Utilisation de Visual Studio 2015
 
 
 
@@ -110,7 +110,7 @@ Il existe plusieurs façons de créer un site web Azure vide. Si vous utilisez V
 6. Dans Visual Studio 2015, cliquez avec le bouton droit sur le nouveau site web dans l’**Explorateur de serveurs**, choisissez  **Télécharger le profil de publication**, puis enregistrez le profil sur votre ordinateur. Le profil de publication contient vos informations d’identification et vous permet de passer à l’[Étape 5 : publier le complément Office sur le site web Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#step-5-publish-your-office-add-in-to-the-azure-website).
     
 
-### Utilisation du portail de gestion Azure
+### <a name="using-the-azure-management-portal"></a>Utilisation du portail de gestion Azure
 
 
 
@@ -124,7 +124,7 @@ Il existe plusieurs façons de créer un site web Azure vide. Si vous utilisez V
     
 5. Choisissez  **CRÉER UNE APPLICATION WEB**. Le portail de gestion Azure crée le site web et vous redirige vers la page des  **sites web** où vous pouvez voir l’état du site web.
     
-    Lorsque l’état du site web est **En cours d’exécution**, choisissez l’URL du site web sous la colonne **NOM**. Votre navigateur s’ouvre et affiche une page web avec le message **Votre application web a été créée !**. 
+    Lorsque l’état du site web est **En cours d’exécution**, choisissez l’URL du site web sous la colonne **NOM**. Votre navigateur s’ouvre et affiche une page web avec le message **Votre application web a été créée !**. 
     
     Dans la barre d’adresse du navigateur, modifiez l’URL du site web afin qu’il utilise le protocole HTTPS, puis appuyez sur **Entrée** pour confirmer que le protocole HTTPS est activé. Le modèle de complément Office exige que les compléments utilisent le protocole HTTPS.
     
@@ -135,7 +135,7 @@ Il existe plusieurs façons de créer un site web Azure vide. Si vous utilisez V
     Le profil de publication contient vos informations d’identification et vous permet de publier en toute sécurité sur Azure. 
     
 
-## Étape 4 : créer un complément Office dans Visual Studio.
+## <a name="step-4:-create-an-office-add-in-in-visual-studio"></a>Étape 4 : créer un complément Office dans Visual Studio.
 
 
 
@@ -153,7 +153,7 @@ Il existe plusieurs façons de créer un site web Azure vide. Si vous utilisez V
     
 Votre complément Office de base est créé et prêt à être publié sur Azure. Dans la mesure où nous vous expliquons comment publier sur Azure, aucune modification ne devra être apportée à l’exemple de complément que vous avez créé avec le modèle de complément Office standard dans Visual Studio.
 
-## Étape 5: publier le complément Office sur le site web d’Azure
+## <a name="step-5:-publish-your-office-add-in-to-the-azure-website"></a>Étape 5: publier le complément Office sur le site web d’Azure
 
 
 
@@ -180,7 +180,7 @@ Votre complément Office de base est créé et prêt à être publié sur Azure.
     Pour afficher la page web de votre complément, modifiez votre l’URL de manière à utiliser le protocole https: et ajoutez le chemin d’accès de la page HTML par défaut de votre complément. Par exemple, l’URL modifiée doit être du type https://VotreDomaine.azurewebsites.net/Addin/Home/Home.html. Cela permet de confirmer que de site web de votre complément est hébergé sur Azure. Copiez cette URL, vous en aurez besoin lorsque vous modifierez le fichier manifeste du complément plus loin dans cette rubrique.
     
 
-## Étape 6 : modifier le fichier manifeste du complément pour qu’il pointe vers le complément Office sur Azure
+## <a name="step-6:-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>Étape 6 : modifier le fichier manifeste du complément pour qu’il pointe vers le complément Office sur Azure
 
 
 
@@ -199,7 +199,7 @@ Votre complément Office de base est créé et prêt à être publié sur Azure.
 7. Accédez au partage de fichiers réseau que vous avez créé plus tôt dans la rubrique et collez le fichier manifeste dans le dossier.
     
 
-## Étape 7 : insérer et exécuter le complément dans l’application cliente Office
+## <a name="step-7:-insert-and-run-the-add-in-in-the-office-client-application"></a>Étape 7 : insérer et exécuter le complément dans l’application cliente Office
 
 
 
@@ -214,7 +214,7 @@ Votre complément Office de base est créé et prêt à être publié sur Azure.
 5. Vérifiez que le complément fonctionne en créant un texte dans le document, puis en sélectionnant ce texte et en choisissant  **Obtenir des données à partir de la sélection**.
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

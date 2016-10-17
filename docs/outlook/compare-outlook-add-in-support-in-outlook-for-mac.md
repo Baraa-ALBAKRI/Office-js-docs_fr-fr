@@ -1,5 +1,5 @@
 
-# Comparaison de la prise en charge de compléments Outlook dans Outlook pour Mac et dans d’autres hôtes Outlook
+# <a name="compare-outlook-add-in-support-in-outlook-for-mac-with-other-outlook-hosts"></a>Comparaison de la prise en charge de compléments Outlook dans Outlook pour Mac et dans d’autres hôtes Outlook
 
 Vous pouvez créer et exécuter un complément Outlook de la même façon dans Outlook pour Mac que dans les autres hôtes, y compris Outlook pour Windows, OWA pour périphériques et Outlook Web App, sans personnaliser JavaScript pour chaque hôte. Les appels du complément vers l’Interface API JavaScript pour Office fonctionnent généralement de la même manière, sauf pour les domaines décrits dans le tableau suivant.
 
@@ -16,7 +16,7 @@ Vous pouvez créer et exécuter un complément Outlook de la même façon dans 
 |Chaîne représentant le fuseau horaire dans les propriétés  **dateTimeCreated** et **dateTimeModified**|Par exemple : Jeu 13 mar 2014 14:09:11 GMT + 0800 (heure standard de la Chine)|Par exemple : Jeu 13 mar 2014 14:09:11 GMT + 0800 (CST)|
 |Précision horaire de  **dateTimeCreated** et **dateTimeModified**|Si un complément utilise le code suivant, la précision est de l’ordre de la milliseconde.<br/><pre lang="javascript">JSON.stringify (Office.context.mailbox.item, null, 4) ;</pre>|La précision peut seulement atteindre une seconde.|
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,11 +1,11 @@
-# Objet Section (interface API JavaScript pour OneNote)
+# <a name="section-object-(javascript-api-for-onenote)"></a>Objet Section (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_   
 
 
 Représente une section OneNote. Les sections peuvent contenir des pages.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -13,17 +13,17 @@ Représente une section OneNote. Les sections peuvent contenir des pages.
 |id|chaîne|Obtient l’ID de la section. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-id)|
 |name|chaîne|Obtient le nom de la section. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-name)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
-|notebook|[Bloc-notes](notebook.md)|Obtient le bloc-notes qui contient la section. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
+|notebook|[Notebook](notebook.md)|Obtient le bloc-notes qui contient la section. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-notebook)|
 |pages|[PageCollection](pagecollection.md)|Collection de pages dans la section. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-pages)|
 |parentSectionGroup|[SectionGroup](sectiongroup.md)|Obtient le groupe de sections qui contient la section. Génère ItemNotFound si la section est un enfant direct du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroup)|
 |parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Obtient le groupe de sections qui contient la section. Renvoie la valeur Null si la section est un enfant direct du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-parentSectionGroupOrNull)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -33,26 +33,26 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[insertSectionAsSibling(location: string, title: string)](#insertsectionassiblinglocation-string-title-string)|[Section](section.md)|Insère une nouvelle section avant ou après la section active.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-insertSectionAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-section-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### addPage(title: string)
+### <a name="addpage(title:-string)"></a>addPage(title: string)
 Ajoute une nouvelle page à la fin de la section.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.addPage(title);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |title|string|Titre de la nouvelle page.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
             
@@ -82,23 +82,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToNotebook(destinationNotebook: Notebook)
+### <a name="copytonotebook(destinationnotebook:-notebook)"></a>copyToNotebook(destinationNotebook: Notebook)
 Copie cette section dans le bloc-notes spécifié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.copyToNotebook(destinationNotebook);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |destinationNotebook|Bloc-notes|Bloc-notes dans lequel cette section doit être copiée.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
     var app = context.application;
@@ -130,23 +130,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToSectionGroup(destinationSectionGroup: SectionGroup)
+### <a name="copytosectiongroup(destinationsectiongroup:-sectiongroup)"></a>copyToSectionGroup(destinationSectionGroup: SectionGroup)
 Copie cette section dans le groupe de sections spécifié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.copyToSectionGroup(destinationSectionGroup);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |destinationSectionGroup|SectionGroup|Groupe de sections dans lequel cette section doit être copiée.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (ctx) {
     var app = ctx.application;
@@ -179,24 +179,24 @@ OneNote.run(function (ctx) {
 ```
 
 
-### insertSectionAsSibling(location: string, title: string)
+### <a name="insertsectionassibling(location:-string,-title:-string)"></a>insertSectionAsSibling(location: string, title: string)
 Insère une nouvelle section avant ou après la section active.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.insertSectionAsSibling(location, title);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |location|chaîne|Emplacement de la nouvelle section par rapport à la section active.  Les valeurs possibles sont les suivantes : Before, After|
 |Fonction|string|Nom de la nouvelle section.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
             
@@ -225,22 +225,22 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 **id**
 ```js
@@ -267,7 +267,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**name and notebook**
+**name et notebook**
 ```js
 OneNote.run(function (context) {
         

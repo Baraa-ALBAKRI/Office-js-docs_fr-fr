@@ -1,48 +1,48 @@
 
 
-# Propriété Office.context
+# <a name="office.context-property"></a>Propriété Office.context
 Obtient l’objet [Context](../../reference/shared/context.md) qui représente l’environnement d’exécution du complément et donne accès aux objets de niveau supérieur de l’API, par exemples les objets [Document](../../reference/shared/document.md) et [Mailbox](http://msdn.microsoft.com/library/a3880d3b-8a09-4cf9-9274-f2682cb3b769%28Office.15%29.aspx).
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```
 var myDocument = Office.context.document;
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Objet [Context](../../reference/shared/context.md).
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Outlook pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Outlook pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|De contenu Outlook, du volet Office|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

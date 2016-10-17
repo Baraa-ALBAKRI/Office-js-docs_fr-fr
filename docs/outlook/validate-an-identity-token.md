@@ -1,5 +1,5 @@
 
-# Valider un jeton d’identité Exchange
+# <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
 Votre complément Outlook peut vous envoyer un jeton d’identité, mais avant d’approuver la demande, vous devez valider le jeton pour garantir qu’il provient du serveur Exchange attendu. Les exemples de cet article montrent comment valider le jeton d’identité Exchange en utilisant un objet de validation écrit en C# ; cependant, vous pouvez utiliser n’importe quel langage de programmation pour effectuer la validation. Les opérations requises pour valider le jeton sont décrites dans le [Document préliminaire Internet JWT (JSON Web Token)](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl). 
 
@@ -9,7 +9,7 @@ Nous vous suggérons d’utiliser un processus en quatre étapes pour valider le
 
 
 
-## Configuration pour valider votre jeton d’identité
+## <a name="set-up-to-validate-your-identity-token"></a>Configuration pour valider votre jeton d’identité
 
 
 Les exemples de code dans cet article dépendent de Windows Identity Foundation (WIF), ainsi que d’une DLL qui prolonge le WIF avec des gestionnaires de jetons JSON. Vous pouvez télécharger les assemblys requis sur les sites suivants :
@@ -17,12 +17,12 @@ Les exemples de code dans cet article dépendent de Windows Identity Foundation 
 
 - [Windows Identity Foundation](http://msdn.microsoft.com/en-us/security/aa570351)
     
-- [Windows.IdentityModel.Extensions.dll pour les applications 32 bits](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-32.msi)
+- [Windows.IdentityModel.Extensions.dll pour les applications 32 bits](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-32.msi)
     
-- [Windows.IdentityModel.Extensions.dll pour les applications 64 bits](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
+- [Windows.IdentityModel.Extensions.dll pour les applications 64 bits](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
     
 
-## Extraction du jeton Web JSON
+## <a name="extract-the-json-web-token"></a>Extraction du jeton Web JSON
 
 
 La méthode de fabrique  **Decode** fractionne le JWT du serveur Exchange en trois chaînes qui composent le jeton, puis utilise la méthode **Base64Decode** (présentée dans le deuxième exemple) pour décoder l’en-tête et la charge JWT en chaînes JSON. Les chaînes sont passées au constructeur **JsonToken**, où le contenu du JWT est validé et une nouvelle instance de l’objet **JsonToken** est renvoyée.
@@ -92,7 +92,7 @@ La méthode **Base64Decode** implémente la logique de décodage qui est décrit
 ```
 
 
-## Analyse du JWT
+## <a name="parse-the-jwt"></a>Analyse du JWT
 
 
 Le constructeur de l’objet  **JsonToken** vérifie la structure et le contenu du JWT pour déterminer s’il est valide. Il convient de le faire avant que vous demandiez le document de métadonnées d’authentification. Si le JWT ne contient pas les revendications appropriées, ou s’il est périmé, vous pouvez éviter un appel au serveur Exchange et le retard associé.
@@ -148,7 +148,7 @@ Les diverses méthodes utilitaires sont décrites plus loin dans cet article.
 ```
 
 
-### Méthode ValidateHeader
+### <a name="validateheader-method"></a>Méthode ValidateHeader
 
 La méthode  **ValidateHeader** vérifie que les revendications requises figurent bien dans l’en-tête du jeton et que les revendications ont les valeurs appropriées. L’en-tête doit correspondre à celui présenté ci-dessous ; sinon, la méthode déclenche une exception et se termine.
 
@@ -185,7 +185,7 @@ La méthode  **ValidateHeader** vérifie que les revendications requises figuren
 ```
 
 
-### Méthode ValidateLifetime
+### <a name="validatelifetime-method"></a>Méthode ValidateLifetime
 
 Deux dates sont fournies dans le jeton JWT : « nbf » (« not before ») indique la date et l’heure marquant le début de validité du jeton, et « exp » indique l’heure d’expiration du jeton. Seuls les jetons présentés entre ces deux dates doivent être considérés valides. Pour tenir compte des différences mineures au niveau des paramètres d’horloge entre le serveur et le client, cette méthode valide les jetons jusqu’à 5 minutes avant et 5 minutes après les heures figurant dans le jeton.
 
@@ -229,7 +229,7 @@ Deux dates sont fournies dans le jeton JWT : « nbf » (« not before ») i
 Les dates  **validFrom** (« nbf ») et **validTo** (« exp ») sont envoyées comme un nombre de secondes depuis Epoch Unix, 1er janvier 1970. Les dates et heures sont calculées à l’aide d’UTC pour éviter tout problème lié à des différences de fuseau horaire entre le serveur Exchange et le serveur exécutant le code de validation.
 
 
-### Méthode ValidateAudience
+### <a name="validateaudience-method"></a>Méthode ValidateAudience
 
 Le jeton d’identité est uniquement valide pour le complément qui l’a demandé. La méthode  **ValidateAudience** vérifie la revendication d’audience dans le jeton pour s’assurer qu’elle correspond à l’URL attendue pour le complément Outlook.
 
@@ -256,7 +256,7 @@ Le jeton d’identité est uniquement valide pour le complément qui l’a deman
 ```
 
 
-### Méthode ValidateVersion
+### <a name="validateversion-method"></a>Méthode ValidateVersion
 
 La méthode  **ValidateVersion** vérifie la version du jeton d’identité et s’assure qu’elle est bien la version attendue. Différentes versions du jeton peuvent apporter différentes revendications. La vérification de la version garantit que les revendications attendues seront contenues dans le jeton d’identité.
 
@@ -280,7 +280,7 @@ La méthode  **ValidateVersion** vérifie la version du jeton d’identité et s
 ```
 
 
-### Méthode ValidateMetadataLocation
+### <a name="validatemetadatalocation-method"></a>Méthode ValidateMetadataLocation
 
 L’objet de métadonnées d’authentification qui est stocké dans le serveur Exchange contient les informations qui sont requises pour valider la signature incluse dans le jeton d’identité. La méthode  **ValidateMetadataLocation** s’assure de la présence d’une revendication URL de métadonnées d’authentification dans le jeton d’identité, garantissant ainsi que la validation de la signature est effectuée à l’étape suivante.
 
@@ -297,7 +297,7 @@ L’objet de métadonnées d’authentification qui est stocké dans le serveur 
 ```
 
 
-## Validation de la signature du jeton d’identité
+## <a name="validate-the-identity-token-signature"></a>Validation de la signature du jeton d’identité
 
 
 Une fois que vous savez que le JWT contient les revendications dont vous avez besoin pour valider la signature, vous pouvez utiliser WIF (Windows Identity Foundation) et les extensions WIF pour valider la signature sur le jeton. Vous avez besoin des informations suivantes pour valider la signature :
@@ -362,7 +362,7 @@ Dans cet exemple, le constructeur pour un objet  **IdentityToken** obtient le do
 La majeure partie du code dans le constructeur de l’objet  **IdentityToken** définit les propriétés sur l’instance avec les revendications provenant du serveur Exchange. Le constructeur appelle la méthode **GetSecurityTokenHandler** pour obtenir un gestionnaire de jetons qui valide le jeton d’identité Exchange. La méthode **GetSecurityTokenHandler** appelle deux méthodes utilitaires, **GetMetadataDocument** et **GetSigningCertificate**, qui se chargent d’obtenir le certificat de signature à partir du serveur Exchange. Ces méthodes sont décrites dans les sections suivantes.
 
 
-### Méthode GetSecurityTokenHandler
+### <a name="getsecuritytokenhandler-method"></a>Méthode GetSecurityTokenHandler
 
 La méthode  **GetSecurityTokenHandler** renvoie un gestionnaire de jetons WIF qui valide le jeton d’identité. La majeure partie du code dans la méthode initialise le gestionnaire de jetons pour effectuer la validation ; cependant, cette méthode appelle la méthode **GetSigningCertificate** pour récupérer le certificat X.509 utilisé pour signer le jeton provenant du serveur Exchange.
 
@@ -398,7 +398,7 @@ La méthode  **GetSecurityTokenHandler** renvoie un gestionnaire de jetons WIF q
 ```
 
 
-### Méthode GetSigningCertificate
+### <a name="getsigningcertificate-method"></a>Méthode GetSigningCertificate
 
 La méthode  **GetSigningCertificate** appelle la méthode **GetMetadataDocument** pour récupérer les métadonnées d’authentification du serveur Exchange, puis renvoie le premier certificat X.509 dans le document de métadonnées d’authentification. Si le document n’existe pas, la méthode génère une exception d’application.
 
@@ -424,7 +424,7 @@ La méthode  **GetSigningCertificate** appelle la méthode **GetMetadataDocument
 ```
 
 
-### Méthode GetMetadataDocument
+### <a name="getmetadatadocument-method"></a>Méthode GetMetadataDocument
 
 Le document de métadonnées d’authentification contient les informations dont vous avez besoin pour valider la signature sur le jeton d’identité Exchange. Le document est envoyé sous la forme d’une chaîne JSON. La méthode  **GetMetatDataDocument** demande le document à l’emplacement spécifié dans le jeton d’identité Exchange et renvoie un objet qui encapsule la chaîne JSON sous la forme d’un objet. Si l’URL ne contient pas de document de métadonnées d’authentification, la méthode génère une exception d’application.
 
@@ -462,7 +462,7 @@ La classe  **ServicePointManager** dans l’espace de noms .NET Framework System
  **Remarque de sécurité**  Si vous utilisez une méthode de rappel de validation de certificat, vous devez vous assurer qu’elle répond aux exigences de sécurité de votre organisation.
 
 
-## Calculer l’ID unique d’un compte Exchange
+## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calculer l’ID unique d’un compte Exchange
 
 
 Vous pouvez créer un identificateur unique pour un compte Exchange en hachant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange du compte. Lorsque vous avez cet identificateur unique, vous pouvez l’utiliser pour créer un système d’authentification unique destiné à votre service web de complément Outlook. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, voir [Authentifier un utilisateur avec un jeton d’identité pour Exchange](../outlook/authenticate-a-user-with-an-identity-token.md).
@@ -504,13 +504,13 @@ La propriété  **UniqueUserIdentification** crée un hachage SHA256 basé sur u
 ```
 
 
-## Objets utilitaires
+## <a name="utility-objects"></a>Objets utilitaires
 
 
 Les exemples de code contenus dans cet article dépendent d’objets utilitaires qui fournissent des noms conviviaux aux constantes utilisées. Le tableau suivant répertorie ces objets utilitaires.
 
 
-**Tableau 1 : Objets utilitaires**
+**Tableau 1 : Objets utilitaires**
 
 
 |**Objet**|**Description**|
@@ -519,7 +519,7 @@ Les exemples de code contenus dans cet article dépendent d’objets utilitaires
 |**Config**|Fournit les constantes pour valider le jeton d’identité. |
 |**JsonAuthMetadataDocument**|Encapsule le document de métadonnées d’authentification JSON envoyé par le serveur Exchange.|
 
-### Objet AuthClaimTypes
+### <a name="authclaimtypes-object"></a>Objet AuthClaimTypes
 
 L’objet  **AuthClaimTypes** collecte en un emplacement unique les identificateurs de revendications qui sont utilisés par le code de validation de jeton. Il inclut des revendications JWT standard mais aussi les revendications spécifiques contenues dans le jeton d’identité Exchange.
 
@@ -554,7 +554,7 @@ L’objet  **AuthClaimTypes** collecte en un emplacement unique les identificate
 ```
 
 
-### Objet Config
+### <a name="config-object"></a>Objet Config
 
 L’objet  **Config** contient les constantes qui sont utilisées pour valider le jeton d’identité, ainsi qu’une méthode de rappel de validation de certificat que vous pouvez utiliser si votre serveur n’a pas de certificat X509 qui retrace un certificat racine.
 
@@ -595,7 +595,7 @@ L’objet  **Config** contient les constantes qui sont utilisées pour valider l
 ```
 
 
-### Objet JsonAuthMetadataDocument
+### <a name="jsonauthmetadatadocument-object"></a>Objet JsonAuthMetadataDocument
 
 L’objet  **JsonAuthMetadataDocument** expose le contenu du document de métadonnées d’authentification au moyen de propriétés.
 
@@ -641,7 +641,7 @@ namespace IdentityTest
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,11 +1,11 @@
 
-# ProjectTaskFields, énumération
+# <a name="projecttaskfields-enumeration"></a>ProjectTaskFields, énumération
 Spécifie les champs de tâche disponibles en tant que paramètres pour la méthode **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)**.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Ajouté dans**|1,0|
+|**Hôtes :**|Project|
+|**Ajouté dans**|1.0|
 
 ```js
 Microsoft.Office.WebExtension.ProjectTaskFields={
@@ -295,7 +295,7 @@ Microsoft.Office.WebExtension.ProjectTaskFields={
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 L’énumération **ProjectTaskFields** contient les membres suivants.
@@ -587,42 +587,42 @@ L’énumération **ProjectTaskFields** contient les membres suivants.
 |WBSSUCCESSORS|280|Codes de structure de répartition du travail des successeurs, séparés par le séparateur de liste.|
 |WSSID|281|ID de la tâche dans une liste SharePoint, pour un projet synchronisé avec une liste de tâches SharePoint.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 
 Une constante **ProjectTaskFields** peut être utilisée en tant que paramètre de la méthode **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)**.<br/><br/>Pour plus d’informations sur l’utilisation des champs dans Project, voir la [référence sur les champs disponibles](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). Dans l’aide de Project, recherchez _Available fields_.
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette énumération est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette énumération.<br/><br/>
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).<br/><br/>
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).<br/><br/>
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|
 |:-----|:-----|:-----|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 |**Version**|**Modifications**|
 |:-----|:-----|
-|1,0|Introduit|
+|1.0|Introduit|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 [Méthode getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)
 

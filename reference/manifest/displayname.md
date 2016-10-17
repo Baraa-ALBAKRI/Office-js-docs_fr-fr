@@ -1,11 +1,11 @@
 
-# DisplayName, élément
+# <a name="displayname-element"></a>DisplayName, élément
 Spécifie le nom de votre complément Office sous la forme d’une chaîne de 125 caractères maximum.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,12 +13,12 @@ Spécifie le nom de votre complément Office sous la forme d’une chaîne de 12
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Peut contenir :
+## <a name="can-contain:"></a>Peut contenir :
 
-[Remplacer](../../reference/manifest/override.md)
+[Override](../../reference/manifest/override.md)
 

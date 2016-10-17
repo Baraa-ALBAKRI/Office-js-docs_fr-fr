@@ -1,11 +1,11 @@
 
-# DisableEntityHighlighting, élément
+# <a name="disableentityhighlighting-element"></a>DisableEntityHighlighting, élément
 Spécifie si la mise en surbrillance de l’entité doit être désactivée pour votre complément de messagerie.
 
  **Type de complément :** messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,7 +13,7 @@ Spécifie si la mise en surbrillance de l’entité doit être désactivée pour
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

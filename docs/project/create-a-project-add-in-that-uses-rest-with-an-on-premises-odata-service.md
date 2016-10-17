@@ -1,12 +1,12 @@
-﻿
-# Créer un complément Project qui utilise REST avec un service OData Project Server local
+
+# <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
 Cet article décrit comment créer un complément de volet Office pour Project Professionnel 2013, qui compare les données de coût et les données de travail du projet actif avec les moyennes de tous les projets de l’instance actuelle de Project Web App. Le complément utilise REST avec la bibliothèque jQuery pour accéder au service de création de rapports OData **ProjectData** dans Project Server 2013.
 
 
 Le code de cet article est basé sur un exemple développé par Saurabh Sanghvi et Arvind Iyer, Microsoft Corporation.
 
-## Conditions requises pour la création d’un complément du volet Office qui lit les données de rapport Project Server
+## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Conditions requises pour la création d’un complément du volet Office qui lit les données de rapport Project Server
 
 
 Voici les conditions requises pour la création d’un complément du volet Office pour Project qui lit les informations du service **ProjectData** d’une instance de Project Web App dans une installation locale de Project Server 2013 :
@@ -25,7 +25,7 @@ Voici les conditions requises pour la création d’un complément du volet Offi
     Vérifiez que le service **ProjectData** est accessible à partir de votre ordinateur de développement.
     
 
-### Procédure 1. Pour vérifier que le service ProjectData est accessible
+### <a name="procedure-1.-to-verify-that-the-projectdata-service-is-accessible"></a>Procédure 1. Pour vérifier que le service ProjectData est accessible
 
 
 1- Pour permettre à votre navigateur d’afficher directement les données XML à partir d’une requête REST, désactivez le mode Lecture du flux. Pour plus d’informations sur la façon d’y parvenir dans Internet Explorer, voir la procédure 1, étape 4 dans [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
@@ -52,7 +52,7 @@ Voici les conditions requises pour la création d’un complément du volet Offi
 3- Vous pouvez être amené à fournir vos informations d’identification réseau pour voir les résultats. Si le navigateur affiche un message similaire à « Erreur 403, accès refusé », cela signifie que vous n’avez pas d’autorisation d’ouverture de session pour cette instance de Project Web App, ou qu’il existe un problème réseau qui nécessite une aide de la part d’un administrateur.
     
 
-## Utilisation de Visual Studio pour créer un complément du volet Office pour Project
+## <a name="using-visual-studio-to-create-a-task-pane-add-in-for-project"></a>Utilisation de Visual Studio pour créer un complément du volet Office pour Project
 
 Outils de développement Office pour Visual Studio comprend un modèle pour les compléments du volet Office pour Project 2013. Si vous créez une solution nommée  **HelloProjectOData**, celle-ci contient les deux projets Visual Studio suivants :
 
@@ -62,7 +62,7 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
 - Le projet web est nommé  **HelloProjectODataWeb**. Il comprend les pages web, les fichiers JavaScript, les fichiers CSS, les images, les références et les fichiers de configuration du contenu web dans le volet Office. Le projet cible .NET Framework 4. Les procédures 4 et 5 montrent comment modifier les fichiers du projet web pour créer les fonctionnalités du complément  **HelloProjectOData**.
     
 
-### Procédure 2. Pour créer le complément HelloProjectOData pour Project
+### <a name="procedure-2.-to-create-the-helloprojectodata-add-in-for-project"></a>Procédure 2. Pour créer le complément HelloProjectOData pour Project
 
 
 1. Exécutez Visual Studio 2015 en tant qu’administrateur, puis sélectionnez  **Nouveau projet** sur la page de démarrage.
@@ -71,13 +71,13 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
     
 3. Pour placer les deux projets Visual Studio dans le même répertoire, sélectionnez  **Créer le répertoire pour la solution**, puis accédez à l’emplacement de votre choix.
     
-4. Dans le champ  **Nom**, tapez HelloProjectOData, puis choisissez  **OK**.
+4. Dans le champ **Nom**, tapez HelloProjectOData, puis choisissez **OK**.
     
     **Création d’un complément Office**
 
     ![Création d’une application pour Office 2013](../../images/pj15_HelloProjectOData_CreatingApp.png)
 
-5. Dans la boîte de dialogue  **Choisir le type de complément**, sélectionnez  **Volet Office** et choisissez **Suivant** (voir la capture d’écran suivante).
+5. Dans la boîte de dialogue **Choisir le type de complément**, sélectionnez **Volet Office** et choisissez **Suivant** (voir la capture d’écran suivante).
     
     **Choix du type de complément à créer**
 
@@ -85,7 +85,7 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
 
 6. Dans la boîte de dialogue  **Choisir les applications hôtes**, désélectionnez toutes les cases, sauf la case  **Project** (voir la capture d’écran suivante) et cliquez sur **Terminer**.
     
-    **Choosing the host application**
+    **Choix de l’application hôte**
 
     ![Sélection d’un projet comme application hôte unique](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
@@ -102,7 +102,7 @@ Le manifeste du projet  **HelloProjectOData** est représenté par le fichier He
 Pour plus d’informations sur le manifeste, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md) et [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md).
 
 
-### Procédure 3. Pour modifier le manifeste du complément
+### <a name="procedure-3.-to-modify-the-add-in-manifest"></a>Procédure 3. Pour modifier le manifeste du complément
 
 
 1. Dans Visual Studio, ouvrez le fichier HelloProjectOData.xml.
@@ -119,8 +119,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
     
 2. Pour pouvoir être affichée dans la liste déroulante **Compléments Office**, l’icône doit avoir une taille de 32 x 32 pixels. Par exemple, installez le Kit de développement logiciel (SDK) de Project 2013, puis sélectionnez le dossier **Images** et ajoutez le fichier suivant à partir du Kit de développement logiciel (SDK) : `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Vous pouvez également utiliser votre propre icône 32 x 32. Sinon, copiez l’image suivante dans un fichier nommé NewIcon.png, puis ajoutez ce fichier dans le dossier « HelloProjectODataWeb\Images » :
-![Icône de l’application HelloProjectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Icône de l’application HelloProjectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. Dans le manifeste HelloProjectOData.xml, ajoutez un élément **IconUrl** sous l’élément **Description**, où la valeur de l’URL de l’icône correspond au chemin d’accès relatif du fichier d’icône 32 x 32 pixels. Par exemple, ajoutez la ligne suivante : **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. Le fichier de manifeste HelloProjectOData.xml contient désormais ceci (votre valeur **Id** sera différente) :
 
@@ -146,7 +145,7 @@ Les étapes suivantes montrent comment ajouter un fichier d’icône à la solut
     </OfficeApp>
 ```
 
-## Création du contenu HTML pour le complément HelloProjectOData
+## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Création du contenu HTML pour le complément HelloProjectOData
 
 Le complément  **HelloProjectOData** est un exemple qui inclut une sortie de débogage et d’erreur ; il n’est pas conçu pour une utilisation en production. Avant de commencer à coder le contenu HTML, concevez l’interface utilisateur et l’expérience utilisateur du complément, et définissez également les fonctions JavaScript qui interagissent avec le code HTML. Pour plus d’informations, voir[Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md). 
 
@@ -165,7 +164,7 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
      >**Remarque**  Dans cet exemple, les données relatives au coût et au travail pour le projet actif proviennent des valeurs publiées. Si vous modifiez les valeurs dans le projet, les modifications ne figureront pas dans le service **ProjectData** tant que le projet n’aura pas été publié.
 
 
-### Procédure 4. Pour créer du contenu HTML
+### <a name="procedure-4.-to-create-the-html-content"></a>Procédure 4. Pour créer du contenu HTML
 
 1. Dans l’élément  **head** du fichier Home.html, ajoutez des éléments **link** supplémentaires pour les fichiers CSS utilisés par votre complément. Le modèle de projet Visual Studio inclut un lien pour le fichier App.css que vous pouvez utiliser pour des styles CSS personnalisés.
     
@@ -173,7 +172,7 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
     
      >**Remarque**  Avant de déployer le complément, remplacez la référence à office.js et celle à jQuery par la référence au réseau de distribution de contenu. Cette dernière permet d’accéder à la version la plus récente et d’obtenir de meilleures performances.
 
-    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors.js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _Robust Programming_ de la page [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajoutez un fichier SurfaceErrors.js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb**.
+    Le complément **HelloProjectOData** utilise également le fichier SurfaceErrors.js, qui affiche les erreurs dans un message contextuel. Vous pouvez copier le code à partir de la section _Robust Programming_ de la page [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md), puis ajoutez un fichier SurfaceErrors.js dans le dossier **Scripts\Office** du projet **HelloProjectODataWeb**.
     
     Voici le code HTML mis à jour pour l’élément **head**, avec la ligne supplémentaire pour le fichier SurfaceErrors.js :
     
@@ -272,7 +271,7 @@ Le volet Office indique le nom d’affichage du complément tout en haut, qui re
 ```
 
 
-## Création du code JavaScript pour le complément
+## <a name="creating-the-javascript-code-for-the-add-in"></a>Création du code JavaScript pour le complément
 
 
 Le modèle d’un complément du volet Office pour Project comprend le code d’initialisation par défaut conçu pour illustrer les actions de base en matière d’obtention et de définition des données d’un document pour un complément Office 2013 classique. Comme Project 2013 ne prend pas en charge les actions d’écriture dans le projet actif et que le complément  **HelloProjectOData** n’utilise pas la méthode **getSelectedDataAsync**, vous pouvez supprimer le script contenu dans la fonction  **Office.initialize**. En outre, vous pouvez également supprimer les fonctions  **setData** et **getData** dans le fichier HelloProjectOData.js par défaut.
@@ -282,7 +281,7 @@ JavaScript comprend des constantes globales pour la requête REST et des variabl
 Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  **retrieveOData** est appelée quand l’utilisateur sélectionne **Comparer tous les projets**. Par ailleurs, la fonction  **parseODataResult** calcule les moyennes, puis remplit le tableau de comparaison avec des valeurs mises en forme à l’aide des couleurs et des unités appropriées.
 
 
-### Procédure 5. Pour créer du code JavaScript
+### <a name="procedure-5.-to-create-the-javascript-code"></a>Procédure 5. Pour créer du code JavaScript
 
 
 1. Supprimez tout le code du fichier HelloProjectOData.js par défaut, puis ajoutez les variables globales et la fonction  **Office.initialize**. Les noms de variables en majuscules impliquent qu’il s’agit de constantes. Ces dernières sont ensuite utilisées avec la variable  **_pwa** pour créer la requête REST de cet exemple.
@@ -547,7 +546,7 @@ Le reste du fichier HelloProjectOData.js comprend deux fonctions : la fonction  
 ```
 
 
-## Test du complément HelloProjectOData
+## <a name="testing-the-helloprojectodata-add-in"></a>Test du complément HelloProjectOData
 
 
 Pour tester et déboguer le complément  **HelloProjectOData** avec Visual Studio 2015, Project Professionnel 2013 doit être installé sur l’ordinateur de développement. Pour permettre différents scénarios de test, assurez-vous que vous pouvez choisir si Project ouvre les fichiers sur l’ordinateur local ou s’il se connecte à Project Web App. Par exemple, procédez comme suit :
@@ -569,7 +568,7 @@ Voici les tests de base préconisés :
 - Réexécutez le complément pour créer un projet qui comporte des tâches avec des données de coût et de travail. Vous pouvez enregistrer le projet dans Project Web App mais ne le publiez pas. Vérifiez que le complément affiche les données de Project Server et  **NA** pour le projet actuel.
     
 
-### Procédure 6. Pour tester le complément
+### <a name="procedure-6.-to-test-the-add-in"></a>Procédure 6. Pour tester le complément
 
 
 1. Exécutez Project Professionnel 2013, connectez-vous à Project Web App, puis créez un projet de test. Affectez des tâches aux ressources locales ou à des ressources d’entreprise, définissez diverses valeurs de pourcentage achevé pour certaines tâches, puis publiez le projet. Quittez Project, ce qui permet à Visual Studio de démarrer Project pour le débogage du complément.
@@ -644,7 +643,7 @@ Voici les tests de base préconisés :
 
 7. Arrêtez le débogage (appuyez sur  **Maj + F5**), puis appuyez à nouveau sur  **F5** pour exécuter une nouvelle instance de Project. Dans la boîte de dialogue **Connexion**, choisissez le profil  **Ordinateur** local et non Project Web App. Créez ou ouvrez un fichier Project .mpp local, ouvrez le volet Office **Hello ProjectData**, puis cliquez sur  **Obtenir le point de terminaison ProjectData**. Le complément devrait afficher l’erreur  **Aucune connexion !** (voir la figure 6) et le bouton **Comparer tous les projets** devrait rester désactivé.
     
-    **Figure 6. Utilisation du complément sans connexion à Project Web App**
+    **Figure 6. Utilisation du complément sans connexion à Project Web App**
 
     ![Utilisation de l’application sans connexion à Project Web App](../../images/pj15_HelloProjectData_NoConnection.gif)
 
@@ -663,14 +662,14 @@ Même si votre complément fonctionne correctement dans les tests précédents, 
     
 - Testez un projet qui n’a pas de tâches.
     
-- Si vous modifiez le complément et que vous le publiez, vous devez réexécuter des tests similaires avec le complément publié. Pour d’autres considérations, voir [Étapes suivantes](#étapes-suivantes).
+- Si vous modifiez le complément et que vous le publiez, vous devez réexécuter des tests similaires avec le complément publié. Pour d’autres considérations, voir [Étapes suivantes](#next-steps).
     
 
  >
-  **Remarque**  La quantité de données qui peuvent être renvoyées dans une requête du service  **ProjectData** est limitée. Celle-ci varie selon l’entité. Par exemple, le jeu d’entités **Projects** a une limite par défaut de 100 projets par requête, mais la limite par défaut du jeu d’entités **Risks** est 200. Pour une installation de production, le code de l’exemple **HelloProjectOData** doit être modifié afin de permettre la prise en charge de requêtes de plus de 100 projets. Pour plus d’informations, voir [Étapes suivantes](#étapes-suivantes) et [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+  **Remarque**  La quantité de données qui peuvent être renvoyées dans une requête du service  **ProjectData** est limitée. Celle-ci varie selon l’entité. Par exemple, le jeu d’entités **Projects** a une limite par défaut de 100 projets par requête, mais la limite par défaut du jeu d’entités **Risks** est 200. Pour une installation de production, le code de l’exemple **HelloProjectOData** doit être modifié afin de permettre la prise en charge de requêtes de plus de 100 projets. Pour plus d’informations, voir [Étapes suivantes](#next-steps) et [Interrogation des flux OData pour les données de création de rapports Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
 
 
-## Exemple de code pour le complément HelloProjectOData
+## <a name="example-code-for-the-helloprojectodata-add-in"></a>Exemple de code pour le complément HelloProjectOData
 
 
  **Fichier HelloProjectOData.html**   Le code suivant se trouve dans le fichier  `Pages\HelloProjectOData.html` du projet **HelloProjectODataWeb** :
@@ -1110,7 +1109,7 @@ Table styles
  **Fichier SurfaceErrors.js**   Vous pouvez copier le code du fichier SurfaceErrors.js présenté à la section  _Programmation fiable_ de la page [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Si  **HelloProjectOData** était un complément de production destiné à être vendu sur l’Office Store ou distribué dans un catalogue de compléments SharePoint, il serait conçu différemment. Par exemple, il n’y aurait pas de sortie de débogage dans une zone de texte et probablement pas de bouton permettant d’obtenir le point de terminaison de **ProjectData**. Vous seriez également obligé de réécrire la fonction  **retireveOData** pour gérer les instances de Project Web App qui ont plus de 100 projets.
@@ -1130,12 +1129,12 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
 
 - Réécrivez la fonction **retrieveOData** afin de permettre les requêtes pour plus de 100 projets. Par exemple, vous pouvez obtenir le nombre de projets avec une requête `~/ProjectData/Projects()/$count`, puis utiliser l’opérateur _$skip_ et l’opérateur _$top_ de la requête REST pour les données de projet. Exécutez plusieurs requêtes dans une boucle, puis établissez la moyenne des données de chaque requête. Chaque requête relative aux données de projet est de la forme `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`.
     
-    Pour plus d’informations, voir [Options de requête système OData à l’aide du point de terminaison OData](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) dans Windows PowerShell pour remplacer la taille de page par défaut pour une requête du jeu d’entités **Projects** (ou n’importe lequel des 33 jeux d’entités). Voir [ProjectData – référence de service Project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+    Pour plus d’informations, voir [Options de requête système OData à l’aide du point de terminaison OData](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) dans Windows PowerShell pour remplacer la taille de page par défaut pour une requête du jeu d’entités **Projects** (ou n’importe lequel des 33 jeux d’entités). Voir [ProjectData – Référence de service Project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
     
 - Pour déployer le complément, voir [Publier votre complément Office](../publish/publish.md).
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
@@ -1143,7 +1142,8 @@ Si vous modifiez le complément  **HelloProjectOData** pour une utilisation en p
     
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
-- [ProjectData – Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
+- 
+  [ProjectData – Référence de service Project OData](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
 - [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
     

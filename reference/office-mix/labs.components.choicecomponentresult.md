@@ -1,7 +1,7 @@
 
-# Labs.Components.ChoiceComponentResult
+# <a name="labs.components.choicecomponentresult"></a>Labs.Components.ChoiceComponentResult
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Résultat de l’envoi d’un composant de choix.
 
@@ -10,7 +10,7 @@ class ChoiceComponentResult
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
@@ -18,12 +18,12 @@ class ChoiceComponentResult
 | `public var score: any`|Note associée à l’envoi.|
 | `public var complete: boolean`|Indique si le résultat a mis fin à la tentative.  Indique **True** si le résultat a mis fin à la tentative.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(score: any, complete: boolean)`
 
@@ -34,5 +34,5 @@ Crée une instance de la classe **ChoiceComponentResult**.
 
 |Paramètre|Description|
 |:-----|:-----|
-| _employés_|Note du résultat.|
-| _Intégration_|Indique si le résultat a mis fin à la tentative.|
+| _score_|Note du résultat.|
+| _complete_|Indique si le résultat a mis fin à la tentative.|

@@ -1,7 +1,7 @@
 
-# Labs.SendMessageCommandData
+# <a name="labs.sendmessagecommanddata"></a>Labs.SendMessageCommandData
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Données associées à une commande [Labs.CommandType.TakeAction](http://msdn.microsoft.com/library/4d6f4ca5-56e8-45b4-803c-5b562b2d97c1.aspx).
 

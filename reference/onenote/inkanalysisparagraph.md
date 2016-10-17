@@ -1,49 +1,49 @@
-# Objet InkAnalysisParagraph (interface API JavaScript pour OneNote)
+# <a name="inkanalysisparagraph-object-(javascript-api-for-onenote)"></a>Objet InkAnalysisParagraph (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente les données d’analyse des entrées manuscrites pour un paragraphe identifié formé de traits d’encre.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |id|chaîne|Obtient l’ID de l’objet InkAnalysisParagraph. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraph-id)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |inkAnalysis|[InkAnalysis](inkanalysis.md)|Référence à l’objet InkAnalysisPage parent. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraph-inkAnalysis)|
 |lines|[InkAnalysisLineCollection](inkanalysislinecollection.md)|Obtient les lignes d’analyse des entrées manuscrites dans ce paragraphe d’analyse des entrées manuscrites. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraph-lines)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-inkAnalysisParagraph-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 **lines**
 ```js

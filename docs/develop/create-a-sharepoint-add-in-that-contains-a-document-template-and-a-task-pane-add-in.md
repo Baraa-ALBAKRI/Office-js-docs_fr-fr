@@ -1,5 +1,5 @@
 
-# Créer un complément SharePoint qui contient un modèle de document et un complément du volet Office
+# <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>Créer un complément SharePoint qui contient un modèle de document et un complément du volet Office
 
 
 Vous pouvez créer un SharePoint Add-in qui inclut un modèle de document (par exemple, une note de frais). Le document peut inclure un complément du volet Office qui interagit avec des données SharePoint. Par exemple, les utilisateurs peuvent remplir les champs d’une facture à l’aide des données Business Connectivity Services (BCS) ou créer une note de frais en sélectionnant une catégorie de frais dans une liste SharePoint.
@@ -7,7 +7,7 @@ Vous pouvez créer un SharePoint Add-in qui inclut un modèle de document (par e
 Cette procédure pas à pas vous montre comment créer un SharePoint Add-in qui inclut un classeur Excel. Le classeur Excel contient un complément du volet Office qui utilise l’interface REST fournie par SharePoint 2013 pour remplir une zone de liste déroulante avec des données SharePoint dans le complément du volet Office.
 
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 
 Installez les composants suivants avant de commencer :
@@ -17,7 +17,7 @@ Installez les composants suivants avant de commencer :
 
 - Environnement de développement SharePoint :
     
-      - To develop SharePoint Add-ins that target SharePoint in Office 365, see [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - Pour développer des compléments SharePoint qui ciblent SharePoint dans Office 365, voir [ : Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
     
   - Pour développer des compléments SharePoint qui ciblent une installation locale de SharePoint, reportez-vous à [la procédure : Configurer un environnement de développement local pour les compléments SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
     
@@ -26,7 +26,7 @@ Installez les composants suivants avant de commencer :
 - Excel 2013 ou un compte Office 365.
     
 
-## Créer un projet de SharePoint Add-in dans Visual Studio
+## <a name="create-a-sharepoint-add-in-project-in-visual-studio"></a>Créer un projet de SharePoint Add-in dans Visual Studio
 
 
 
@@ -50,7 +50,7 @@ Installez les composants suivants avant de commencer :
 7. Sur la page suivante, sélectionnez **SharePoint 2013**, puis cliquez sur le bouton **Terminer** pour fermer la boîte de dialogue.
     
 
-## Ajouter un élément de complément du volet Office
+## <a name="add-a-task-pane-add-in-item"></a>Ajouter un élément de complément du volet Office
 
 
 Ajoutez ensuite un Complément Office au projet. Vous pouvez ajouter n’importe quel type de complément. Pour cette procédure pas à pas, nous allons ajouter un complément du volet Office.
@@ -73,7 +73,7 @@ Ajoutez ensuite un Complément Office au projet. Vous pouvez ajouter n’importe
     Visual Studio ajoute une bibliothèque de documents et un modèle de classeur pour la bibliothèque. Le classeur contient un complément de volet Office.
     
 
-## Ajouter une bibliothèque de documents
+## <a name="add-a-document-library"></a>Ajouter une bibliothèque de documents
 
 
 Dans cette procédure, vous allez ajouter une bibliothèque de documents et faire du classeur le modèle par défaut de la bibliothèque de documents.
@@ -103,11 +103,12 @@ Dans cette procédure, vous allez ajouter une bibliothèque de documents et fair
     
 12. Dans le concepteur de manifeste, définissez la valeur de la **page de démarrage** sur ~appWebUrl/Lists/MyDocumentLibrary. Cela la convertit en une valeur de OfficeEnabledAddin/Lists/MyDocumentLibrary.
     
-     >**Remarque** : cette URL fait référence à la bibliothèque de documents. Vous devez utiliser le jeton ~appWebUrl au début des URL dans votre manifeste de complément Office faisant référence à des éléments dans le complément web. Pour plus d’informations sur les jetons d’URL dans un projet de complément SharePoint, consultez l’article [Chaînes URL et jetons dans les compléments pour SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
+     >
+  **Remarque** : cette URL fait référence à la bibliothèque de documents. Vous devez utiliser le jeton ~appWebUrl au début des URL dans votre manifeste de complément Office faisant référence à des éléments dans le complément web. Pour plus d’informations sur les jetons d’URL dans un projet de complément SharePoint, consultez l’article [Chaînes URL et jetons dans les compléments pour SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
 13. Fermez le concepteur de manifeste pour enregistrer la modification.
     
 
-## Utiliser des données SharePoint dans le volet de tâches
+## <a name="consume-sharepoint-data-in-the-task-pane"></a>Utiliser des données SharePoint dans le volet de tâches
 
 
 Dans cette procédure, vous allez afficher la liste des utilisateurs du site à l’aide de l’interface REST fournie par SharePoint 2013.
@@ -115,9 +116,11 @@ Dans cette procédure, vous allez afficher la liste des utilisateurs du site à 
 Dans cet exemple, seules les données de liste SharePoint sont affichées, mais vous pouvez utiliser ce type de données dans le cadre d’un complément d’approbation de document. Si un utilisateur sélectionne un nom dans cette liste, votre code définit la valeur de la colonne du réviseur dans une liste de suivi de document. Un flux de travail associé à cette liste peut envoyer une notification de révision à cet utilisateur. Vous pouvez également enregistrer le nom sélectionné dans les paramètres du document. Dans ce cas, lorsqu’un utilisateur ouvre le document, vous pouvez afficher les contrôles dans le complément du volet Office uniquement si l’utilisateur actuel et l’utilisateur stocké dans les paramètres du document sont identiques. Pour plus d’informations, voir les sections suivantes :
 
 
-- [Effectuer des opérations de base à l’aide de terminaux REST SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
+- 
+  [Effectuer des opérations de base à l’aide de terminaux REST SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
     
-- [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
+- 
+  [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
     
 - [Conservation de l’état et des paramètres des compléments](../../docs/develop/persisting-add-in-state-and-settings.md)
     
@@ -176,13 +179,13 @@ Dans cet exemple, seules les données de liste SharePoint sont affichées, mais 
 10. Dans la liste déroulante située sous la colonne **Autorisation**, sélectionnez l’élément **Lecture**.
     
 
-## Déboguer le complément du volet Office
+## <a name="debug-the-task-pane-add-in"></a>Déboguer le complément du volet Office
 
 
 Vous pouvez déboguer votre complément du volet Office en lançant le document ou en démarrant le SharePoint Add-in, puis en ouvrant un document à partir de la bibliothèque de documents.
 
 
-### Débogage de votre complément du volet Office en lançant le document
+### <a name="debugging-your-task-pane-add-in-by-starting-the-document"></a>Débogage de votre complément du volet Office en lançant le document
 
 
 
@@ -213,12 +216,13 @@ Vous pouvez déboguer votre complément du volet Office en lançant le document
     L’exécution s’arrête au point d’arrêt que vous avez défini en regard de la méthode `getDataFromSelection`.
     
 
-### Débogage de votre complément du volet Office en démarrant SharePoint
+### <a name="debugging-your-task-pane-add-in-by-starting-sharepoint"></a>Débogage de votre complément du volet Office en démarrant SharePoint
 
 
 
 
- >**Remarque** : cette procédure ouvre Excel Online. Cela fonctionne uniquement lorsque vous avez un compte Office 365. Voir la [procédure : Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ >
+  **Remarque** : cette procédure ouvre Excel Online. Cela fonctionne uniquement lorsque vous avez un compte Office 365. Voir la [procédure : Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
 
 
 1. Ouvrez le fichier Home.js dans l’éditeur de code, puis définissez un point d’arrêt en regard de la méthode `getDataFromSelection`.
@@ -257,7 +261,7 @@ Vous pouvez déboguer votre complément du volet Office en lançant le document
     
      >**Remarque** : si le classeur ne contient pas de données, vous pouvez en ajouter en choisissant **MODIFIER LE CLASSEUR**, **Modifier dans Excel Online** dans la barre d’outils du classeur.
 
-## Empaqueter et publier le complément
+## <a name="package-and-publish-the-add-in"></a>Empaqueter et publier le complément
 
 
 Quand vous êtes prêt à empaqueter votre complément pour la publication, ouvrez l’Assistant **Publication des compléments SharePoint et Office**.
@@ -268,7 +272,7 @@ Quand vous êtes prêt à empaqueter votre complément pour la publication, ouvr
     L’Assistant **Publication des compléments SharePoint et Office** apparaît. Pour plus d’informations, consultez [Publier des compléments pour SharePoint à l’aide de Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx).
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 - [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)

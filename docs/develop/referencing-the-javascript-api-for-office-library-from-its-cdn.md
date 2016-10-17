@@ -1,5 +1,5 @@
 
-# Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu
 
 
 La bibliothèque de l’[interface API JavaScript pour Office](../../reference/javascript-api-for-office.md) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
@@ -17,7 +17,7 @@ Si vous envisagez de publier votre complément Office à partir de l’Office St
 
 > **Important :** Quand vous développez un complément pour une application hôte Office, veillez à référencer l’interface API JavaScript pour Office depuis l’intérieur de la section `<head>` de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body. Les hôtes Office exigent que les compléments soient initialisés 5 secondes après l’activation. Au-delà de ce délai, un message d’erreur indiquant que le complément ne répond pas s’affiche à l’écran.       
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

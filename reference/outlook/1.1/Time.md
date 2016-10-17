@@ -1,10 +1,10 @@
 
 
-# Heure
+# <a name="time"></a>Heure
 
 L’objet `Time` est renvoyé comme propriété [`start`](Office.context.mailbox.item.md#start-datetime) ou [`end`](Office.context.mailbox.item.md#end-datetime) d’un rendez-vous en mode composition.
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -12,13 +12,13 @@ L’objet `Time` est renvoyé comme propriété [`start`](Office.context.mailbox
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition|
 
-### Méthodes
+### <a name="methods"></a>Méthodes
 
-####  getAsync([options], callback)
+####  <a name="getasync([options],-callback)"></a>getAsync([options], callback)
 
 Obtient l’heure de début ou de fin d’un rendez-vous.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -27,14 +27,14 @@ Obtient l’heure de début ou de fin d’un rendez-vous.
 
 La date et l’heure sont fournies sous la forme d’un objet Date dans la propriété `asyncResult.value`. La valeur est exprimée au format UTC (temps universel coordonné). Vous pouvez convertir l’heure UTC au format du client avec la méthode [`convertToLocalClientTime`](Office.context.mailbox.md#converttolocalclienttimetimevalue--localclienttime).|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.1|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition|
-####  setAsync(dateTime, [options], [callback])
+####  <a name="setasync(datetime,-[options],-[callback])"></a>setAsync(dateTime, [options], [callback])
 
 Définit l’heure de début ou de fin d’un rendez-vous.
 
@@ -42,7 +42,7 @@ Si la méthode `setAsync` est appelée dans la propriété [`start`](Office.cont
 
 La durée doit être exprimée au format UTC. Vous pouvez obtenir l’heure UTC correcte à l’aide de la méthode [`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date).
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -50,7 +50,7 @@ La durée doit être exprimée au format UTC. Vous pouvez obtenir l’heure UTC 
 |`options`| Objet| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Attributs</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Objet</td><td>&lt;optional&gt;</td><td>Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</td></tr></tbody></table>|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult). <br/>Si la définition de la date et de l’heure échoue, la propriété `asyncResult.error` contient un code d’erreur.<br/><table class="nested-table"><thead><tr><th>Code d'erreur</th><th>Description</th></tr></thead><tbody><tr><td><code>InvalidEndTime</code></td><td>L’heure de fin du rendez-vous est antérieure à l’heure de début du rendez-vous.</td></tr></tbody></table>|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -58,7 +58,7 @@ La durée doit être exprimée au format UTC. Vous pouvez obtenir l’heure UTC 
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Mode Outlook applicable| Composition|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple suivant définit l’heure de début d’un rendez-vous.
 

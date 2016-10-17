@@ -1,14 +1,14 @@
-# Créer votre premier complément Word
+# <a name="build-your-first-word-add-in"></a>Créer votre premier complément Word
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 
 L’interface API JavaScript pour Word est comprise dans le modèle de programmation des compléments Office, qui vise à étendre les applications Office. Ce modèle utilise des applications web pour héberger votre extension dans Word. Vous pouvez désormais prolonger les fonctionnalités de Word avec la plateforme web ou la langue de votre choix.
 
 Un complément Word est exécuté à l’intérieur de Word et peut interagir avec le contenu du document à l’aide des interfaces API JavaScript pour Word disponibles dans Word 2016. Ce système utilise deux composants pour créer un complément : 1) une application web que vous pouvez héberger n’importe où, et 2) le [fichier manifeste de complément](../../docs/overview/add-in-manifests.md) que Word utilise pour repérer l’emplacement où votre application web est hébergée (pour en savoir plus sur les autres fonctions du fichier manifeste, consultez la [vue d’ensemble de la programmation](word-add-ins-programming-overview.md)).
 
->**Complément Word = manifest.xml + application web**
+>**Complément Word = manifest.xml + application web**
 
-### Configuration
+### <a name="set-it-up"></a>Configuration
 Dans cette section, vous allez créer une simple application web, ainsi que le fichier manifeste correspondant. L’application web vous permettra d’ajouter du texte réutilisable dans le document Word.
 
 1- Créez un dossier nommé BoilerplateAddin sur votre disque local (par exemple C:\\BoilerplateAddin). Vous devrez enregistrer tous les fichiers créés au cours des étapes qui suivent dans ce dossier.
@@ -175,7 +175,7 @@ Dans cette section, vous allez créer une simple application web, ainsi que le f
 
 À ce stade, votre premier complément est déployé. Vous devez maintenant indiquer à Word où trouver le complément.
 
-#### Faire un essai dans Word 2016 pour Windows
+#### <a name="try-this-out-in-word-2016-for-windows"></a>Faire un essai dans Word 2016 pour Windows
 
 1. Lancez Word et ouvrez un document.
 2. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
@@ -195,7 +195,7 @@ Vous pouvez à présent exécuter le complément que vous avez créé. Pour le v
 6. Sélectionnez les boutons pour entrer du texte réutilisable dans le document Word.
 
 
-### Faire un essai dans Word 2016 pour Mac
+### <a name="try-it-out-in-word-2016-for-mac"></a>Faire un essai dans Word 2016 pour Mac
 
 Vous pouvez à présent exécuter le complément que vous avez créé. Pour le voir à l’œuvre, procédez comme suit :
 
@@ -206,14 +206,14 @@ Vous pouvez à présent exécuter le complément que vous avez créé. Pour le v
 __Figure 1. Complément de contenu réutilisable chargé dans Word__
 ![Image de l’application Word une fois le complément réutilisable chargé.](../../images/boilerplateAddin.png "Un simple complément Word permettant d’entrer du texte réutilisable.")
 
-## Donnez-nous votre avis.
+## <a name="give-us-your-feedback"></a>Donnez-nous votre avis.
 
 Votre avis compte beaucoup pour nous.
 
 * Consultez les documents et signalez-nous toute question ou tout problème à leur propos en [soumettant une question](https://github.com/OfficeDev/office-js-docs/issues).
 * Faites-nous part de vos expériences de programmation et de ce que vous souhaiteriez voir dans les futures versions ou les exemples de code. Passez par [le site UserVoice](http://officespdev.uservoice.com/) pour soumettre vos suggestions et vos idées.
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Commencer à utiliser les compléments Office](https://dev.office.com/getting-started/addins?product=word)
 * [Compléments Word sur GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)

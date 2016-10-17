@@ -1,21 +1,21 @@
 
-# Élément Host
+# <a name="host-element"></a>Élément Host
 Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 
 > **Important** : La syntaxe des éléments **Host** varie selon que l’élément est défini dans le [manifeste de base](#basic-manifest) ou le nœud [VersionOverrides](#versionoverrides-node). Toutefois, la fonctionnalité est identique.  
 
 
-## Manifeste de base
+## <a name="basic-manifest"></a>Manifeste de base
 
 Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](./officeapp.md)), le type d’hôte est déterminé par l’attribut `Name`.   
 
-### Attributs
+### <a name="attributes"></a>Attributs
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Nom](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | chaîne | obligatoire | Nom du type d’application hôte Office. |
 
 
-### Name
+### <a name="name"></a>Name
 Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
@@ -26,7 +26,7 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 - `Project` (Project)
 - `Workbook` (Excel)
 
-### Exemple
+### <a name="example"></a>Exemple
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -36,23 +36,23 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 
 ---
 
-## Nœud VersionOverrides
+## <a name="versionoverrides-node"></a>Nœud VersionOverrides
 Lorsqu’il est défini dans [VersionOverrides](./versionoverrides), le type d’hôte est déterminé par l’attribut `xsi:type`. 
 
-### Attributs
+### <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  Oui  | Décrit l’hôte d’Office auquel ces paramètres s’appliquent.|
 
-### Éléments enfants
+### <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [FormFactor](./formfactor.md)    |  Oui   |  Définit le facteur de forme affecté. |
 
 
-### xsi:type
+### <a name="xsi:type"></a>xsi:type
 Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’appliquent également les paramètres contenus. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
@@ -61,7 +61,7 @@ Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’a
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## Exemple d’hôte 
+## <a name="host-example"></a>Exemple d’hôte 
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

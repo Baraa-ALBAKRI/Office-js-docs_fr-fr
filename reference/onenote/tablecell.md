@@ -1,11 +1,11 @@
-# Objet TableCell (interface API JavaScript pour OneNote)
+# <a name="tablecell-object-(javascript-api-for-onenote)"></a>Objet TableCell (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente une cellule dans un tableau OneNote.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -14,45 +14,45 @@ Représente une cellule dans un tableau OneNote.
 |rowIndex|int|Obtient l’index de la ligne de la cellule dans le tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-rowIndex)|
 |shadingColor|chaîne|Obtient et définit la couleur d’ombrage de la cellule|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-shadingColor)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtient la collection d’objets Paragraph dans TableCell. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-paragraphs)|
 |parentRow|[TableRow](tablerow.md)|Obtient la ligne parent de la cellule. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentRow)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |[appendHtml(html: string)](#appendhtmlhtml-string)|void|Ajoute le code HTML spécifié dans TableCell.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendHtml)|
 |[appendImage(base64EncodedImage: string, width: double, height: double)](#appendimagebase64encodedimage-string-width-double-height-double)|[Image](image.md)|Ajoute l’image spécifiée à la cellule du tableau.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendImage)|
 |[appendRichText(paragraphText: string)](#appendrichtextparagraphtext-string)|[RichText](richtext.md)|Ajoute le texte spécifié à la cellule du tableau.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendRichText)|
-|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Tableau](table.md)|Ajoute un tableau avec le nombre spécifié de lignes et de colonnes dans une cellule du tableau.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendTable)|
+|[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Ajoute un tableau avec le nombre spécifié de lignes et de colonnes dans une cellule du tableau.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-appendTable)|
 |[clear()](#clear)|void|Efface le contenu de la cellule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-clear)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### appendHtml(html: string)
+### <a name="appendhtml(html:-string)"></a>appendHtml(html: string)
 Ajoute le code HTML spécifié dans TableCell.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCellObject.appendHtml(html);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Html|chaîne|Chaîne HTML à ajouter. Voir [HTML pris en charge](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) pour l’API JavaScript des compléments OneNote.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -93,33 +93,33 @@ Adds the specified image to table cell.
 tableCellObject.appendImage(base64EncodedImage, width, height);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Chaîne HTML à ajouter.|
 |width|double|Facultatif. Largeur de l’unité des points. La valeur par défaut est Null et la largeur d’image est respectée.|
 |height|double|Facultatif. Hauteur de l’unité des points. La valeur par défaut est Null et la hauteur d’image est respectée.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Image](image.md)
 
-### appendRichText(paragraphText: string)
+### <a name="appendrichtext(paragraphtext:-string)"></a>appendRichText(paragraphText: string)
 Ajoute le texte spécifié à la cellule du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCellObject.appendRichText(paragraphText);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|Chaîne HTML à ajouter.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [RichText](richtext.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -153,54 +153,54 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### appendTable(rowCount: number, columnCount: number, values: string[][])
+### <a name="appendtable(rowcount:-number,-columncount:-number,-values:-string[][])"></a>appendTable(rowCount: number, columnCount: number, values: string[][])
 Ajoute un tableau avec le nombre spécifié de lignes et de colonnes dans une cellule du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCellObject.appendTable(rowCount, columnCount, values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |rowCount|number|Obligatoire. Nombre de lignes dans le tableau.|
 |columnCount|number|Obligatoire. Nombre de colonnes dans le tableau.|
 |values|string[][]|Facultatif. Tableau 2D facultatif. Les cellules sont remplies si les chaînes correspondantes sont spécifiées dans le tableau.|
 
-#### Retourne
-[Tableau](table.md)
+#### <a name="returns"></a>Retourne
+[Table](table.md)
 
-### clear()
+### <a name="clear()"></a>clear()
 Efface le contenu de la cellule.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCellObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 **id, cellIndex, rowIndex**
 ```js
 OneNote.run(function(ctx) {

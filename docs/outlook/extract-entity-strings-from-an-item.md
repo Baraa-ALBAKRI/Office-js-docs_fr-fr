@@ -1,5 +1,5 @@
-﻿
-# Extraire des chaînes d’entité d’un élément Outlook
+
+# <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
 Cet article décrit comment créer un complément Outlook pour l’ **affichage des entités** qui extrait des instances de chaînes d’entités connues prises en charge dans l’objet et le corps de l’élément Outlook sélectionné. Cet élément peut être un rendez-vous, un message électronique ou encore une demande, une réponse ou une annulation de réunion. Les entités prises en charge incluent notamment :
 
@@ -21,7 +21,7 @@ La plupart de ces entités s’appuient sur la reconnaissance du langage naturel
 
 Le complément comporte des boutons permettant à l’utilisateur de choisir un type d’entité. Quand l’utilisateur sélectionne une entité, le complément affiche les instances de l’entité sélectionnée dans le volet de complément. Les sections suivantes répertorient les manifestes XML, les fichiers HTML et JavaScript du complément des entités, et met en évidence le code qui prend en charge l’extraction de l’entité associée.
 
-## Manifeste XML
+## <a name="xml-manifest"></a>Manifeste XML
 
 
 Le complément pour entités a deux règles d’activation jointes par une opération OR logique. 
@@ -85,10 +85,10 @@ xsi:type="MailApp">
 ```
 
 
-## Implémentation HTML
+## <a name="html-implementation"></a>Implémentation HTML
 
 
-Le fichier HTML du complément pour entités spécifie les boutons permettant à l’utilisateur de sélectionner chaque type d’entité, et un autre bouton pour effacer les instances affichées d’une entité. Il inclut un fichier JavaScript, default_entities.js, qui est décrit dans la section suivante sous [Implémentation JavaScript](#implémentation-javascript). Le fichier JavaScript inclut le gestionnaire d’événements pour chacun des boutons.
+Le fichier HTML du complément pour entités spécifie les boutons permettant à l’utilisateur de sélectionner chaque type d’entité, et un autre bouton pour effacer les instances affichées d’une entité. Il inclut un fichier JavaScript, default_entities.js, qui est décrit dans la section suivante sous [Implémentation JavaScript](#javascript-implementation). Le fichier JavaScript inclut le gestionnaire d’événements pour chacun des boutons.
 
 Notez que tous les compléments Outlook doivent comprendre le fichier office.js. Le fichier HTML suivant inclut la version 1.1 du fichier office.js sur le réseau de distribution de contenu (CDN). 
 
@@ -132,7 +132,7 @@ Notez que tous les compléments Outlook doivent comprendre le fichier office.js
 ```
 
 
-## Feuille de style
+## <a name="style-sheet"></a>Feuille de style
 
 
 Le complément pour entités utilise un fichier CSS facultatif, default_entities.css, pour spécifier la mise en forme de la sortie. Le fichier CSS est présenté ci-dessous.
@@ -190,13 +190,13 @@ div#meeting_suggestions
 ```
 
 
-## Implémentation JavaScript
+## <a name="javascript-implementation"></a>Implémentation JavaScript
 
 
 Les sections suivantes expliquent comment l’exemple suivant (le fichier default_entities.js) extrait des entités connues de l’objet et du corps du message ou du rendez-vous consulté par l’utilisateur. 
 
 
-## Extraction d’entités lors de l’initialisation
+## <a name="extracting-entities-upon-initialization"></a>Extraction d’entités lors de l’initialisation
 
 
 Lors de l’événement [Office.initialize](../../reference/shared/office.initialize.md), le complément pour entités appelle la méthode [getEntities](../../reference/outlook/Office.context.mailbox.item.md) de l’élément actuel. La méthode **getEntities** renvoie à la variable globale `_MyEntities` un groupe d’instances d’entités prises en charge. Le code JavaScript associé est présenté ci-dessous.
@@ -225,7 +225,7 @@ Office.initialize = function () {
 ```
 
 
-## Extraction d’adresses
+## <a name="extracting-addresses"></a>Extraction d’adresses
 
 
 Quand l’utilisateur clique sur le bouton  **Obtenir des adresses**, le gestionnaire d’événements  `myGetAddresses` obtient un tableau d’adresses à partir de la propriété [addresses](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des adresses ont été extraites. Chaque adresse extraite est stockée sous la forme d’une chaîne dans le tableau. `myGetAddresses` forme une chaîne HTML locale dans .mdText` pour afficher la liste des adresses extraites. Le code JavaScript associé est présenté ci-dessous.
@@ -249,7 +249,7 @@ function myGetAddresses()
 ```
 
 
-## Extraction d’informations de contact
+## <a name="extracting-contact-information"></a>Extraction d’informations de contact
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des informations de contact**, le gestionnaire d’événements  `myGetContacts` obtient un tableau de contacts avec leurs informations à partir de la propriété [contacts](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des contacts ont été extraits. Chaque contact extrait est stocké sous la forme d’un objet [Contact](../../reference/outlook/simple-types.md) dans le tableau. `myGetContacts` obtient d’autres données sur le contact. Notez que le contexte détermine si Outlook peut extraire un contact à partir d’un élément. Il doit exister une signature à la fin d’un message électronique ou au moins une partie des informations suivantes à proximité du contact :
@@ -337,7 +337,7 @@ function myGetContacts()
 ```
 
 
-## Extraction des adresses électroniques
+## <a name="extracting-email-addresses"></a>Extraction des adresses électroniques
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des adresses électroniques**, le gestionnaire d’événements  `myGetEmailAddresses` obtient un tableau d’adresses électroniques SMTP à partir de la propriété [emailAddresses](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des adresses ont été extraites. Chaque adresse électronique extraite est stockée sous la forme d’une chaîne dans le tableau.  `myGetEmailAddresses` forme une chaîne HTML locale dans `htmlText` pour afficher la liste des adresses électroniques extraites. Le code JavaScript associé est présenté ci-dessous.
@@ -360,7 +360,7 @@ function myGetEmailAddresses() {
 ```
 
 
-## Extraction de suggestions de réunion
+## <a name="extracting-meeting-suggestions"></a>Extraction de suggestions de réunion
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des suggestions de réunion**, le gestionnaire d’événements  `myGetMeetingSuggestions` obtient un tableau de suggestions de réunion à partir de la propriété [meetingSuggestions](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des suggestions ont été extraites.
@@ -445,7 +445,7 @@ function myGetMeetingSuggestions() {
 ```
 
 
-## Extraction de numéros de téléphone
+## <a name="extracting-phone-numbers"></a>Extraction de numéros de téléphone
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des numéros de téléphone**, le gestionnaire d’événements  `myGetPhoneNumbers` obtient un tableau de numéros de téléphone à partir de la propriété [phoneNumbers](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des numéros de téléphone ont été extraits. Chaque numéro de téléphone extrait est stocké sous la forme d’un objet [PhoneNumber](../../reference/outlook/simple-types.md) dans le tableau. `myGetPhoneNumbers` obtient d’autres données sur chaque numéro de téléphone :
@@ -496,7 +496,7 @@ function myGetPhoneNumbers()
 ```
 
 
-## Extraction de suggestions de tâches
+## <a name="extracting-task-suggestions"></a>Extraction de suggestions de tâches
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des suggestions de tâches**, le gestionnaire d’événements  `myGetTaskSuggestions` obtient un tableau de suggestions de tâches à partir de la propriété [taskSuggestions](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des suggestions ont été extraites. Chaque suggestion de tâche extraite est stockée sous la forme d’un objet [TaskSuggestion](../../reference/outlook/simple-types.md) dans le tableau. `myGetTaskSuggestions` obtient d’autres données sur chaque suggestion de tâche :
@@ -561,7 +561,7 @@ function myGetTaskSuggestions()
 ```
 
 
-## Extraction d’URL
+## <a name="extracting-urls"></a>Extraction d’URL
 
 
 Lorsque l’utilisateur clique sur le bouton  **Obtenir des URL**, le gestionnaire d’événements  `myGetUrls` obtient un tableau d’URL à partir de la propriété [urls](../../reference/outlook/simple-types.md) de l’objet `_MyEntities`, si des URL ont été extraites. Chaque URL extraite est stockée sous la forme d’une chaîne dans le tableau.  `myGetUrls` forme une chaîne HTML locale dans `htmlText` pour afficher la liste des URL extraites.
@@ -586,7 +586,7 @@ function myGetUrls()
 ```
 
 
-## Effacement des chaînes d’entités affichées
+## <a name="clearing-displayed-entity-strings"></a>Effacement des chaînes d’entités affichées
 
 
 Enfin, le complément pour entités spécifie un gestionnaire d’événements  `myClearEntitiesBox` qui efface les chaînes affichées. Le code associé est présenté ci-dessous.
@@ -601,7 +601,7 @@ function myClearEntitiesBox()
 ```
 
 
-## Listing JavaScript
+## <a name="javascript-listing"></a>Listing JavaScript
 
 
 Le listing complet de l’implémentation JavaScript est présenté ci-dessous.
@@ -819,7 +819,7 @@ function myGetUrls()
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
@@ -827,5 +827,5 @@ function myGetUrls()
     
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [Méthode item.getEntities](../../reference/outlook/Office.context.mailbox.item.md)
+- Méthode [item.getEntities](../../reference/outlook/Office.context.mailbox.item.md)
     

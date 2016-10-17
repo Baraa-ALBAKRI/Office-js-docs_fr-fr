@@ -1,30 +1,30 @@
 
-# Propriété BindingSelectionChangedEventArgs.startRow
+# <a name="bindingselectionchangedeventargs.startrow-property"></a>Propriété BindingSelectionChangedEventArgs.startRow
 Obtient l’index de la première ligne de la sélection (de base zéro).
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```
 var startRw = eventArgsObj.startRow;
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Index de base zéro de la première ligne de la sélection à partir de la première ligne de la liaison.
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Si l’utilisateur effectue une sélection non contiguë, les coordonnées de la dernière sélection contiguë au sein de la liaison sont retournées. 
 
 En ce qui concerne Word, cette propriété ne fonctionne que pour les liaisons dont le [BindingType](../../reference/shared/bindingtype-enumeration.md) est « table ». Si la liaison est de type « matrix », une valeur **null** est retournée. En outre, l’appel échoue si le tableau contient des cellules fusionnées, car la structure du tableau doit être uniforme pour que cette propriété fonctionne correctement.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant ajoute un gestionnaire d’événements pour l’événement [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) à la liaison dont l’[id](../../reference/shared/binding.id.md) est `myTable`. Quand l’utilisateur modifie la sélection, le gestionnaire affiche les coordonnées de la première cellule de la sélection, ainsi que le nombre de lignes et de colonnes sélectionnées.
 
@@ -49,31 +49,31 @@ function write(message){
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette propriété est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette propriété.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

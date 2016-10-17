@@ -1,7 +1,7 @@
 
-# Labs.ConnectionState
+# <a name="labs.connectionstate"></a>Labs.ConnectionState
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Énumère les états de connexion possibles entre l’atelier et l’hôte.
 
@@ -10,7 +10,7 @@ enum ConnectionState
 ```
 
 
-## Valeurs d’énumération
+## <a name="enumeration-values"></a>Valeurs d’énumération
 
 
 |||

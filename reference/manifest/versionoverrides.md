@@ -1,8 +1,8 @@
-# Élément VersionOverrides
+# <a name="versionoverrides-element"></a>Élément VersionOverrides
 
 Élément racine qui contient des informations pour les commandes de complément implémentées par le complément. **VersionOverrides** est un élément enfant de l’élément [OfficeApp](./officeapp.md) dans le manifeste. Cet élément est pris en charge dans le schéma de manifeste v1.1 et versions ultérieures, mais est défini dans le schéma VersionOverrides v1.0. 
 
-## Attributs
+## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
@@ -10,7 +10,7 @@
 |  **xsi:type**  |  Oui  | Version du schéma. À ce stade, la seule valeur valide est `VersionOverridesV1_0`. |
 
 
-## Éléments enfants
+## <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
@@ -21,7 +21,7 @@
 
 
 
-### Exemple VersionOverrides
+### <a name="versionoverrides-example"></a>Exemple VersionOverrides
 ```xml
 <OfficeApp>
 ...

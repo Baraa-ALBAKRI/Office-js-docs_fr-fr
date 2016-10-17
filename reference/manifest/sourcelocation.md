@@ -1,11 +1,11 @@
 
-# Élément SourceLocation
+# <a name="sourcelocation-element"></a>Élément SourceLocation
 Spécifie les emplacements des fichiers source pour votre complément Office sous forme d’URL comprenant entre 1 et 2 018 caractères. L’emplacement source doit être une adresse HTTPS, et non un chemin d’accès de fichier.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,22 +13,22 @@ Spécifie les emplacements des fichiers source pour votre complément Office sou
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [DefaultSettings](../../reference/manifest/defaultsettings.md) (compléments de contenu et de volet Office)
 
 [FormSettings](../../reference/manifest/formsettings.md) (compléments de messagerie)
 
 
-## Peut contenir :
+## <a name="can-contain:"></a>Peut contenir :
 
-[Remplacer](../../reference/manifest/override.md)
-
-
-## Attributs
+[Override](../../reference/manifest/override.md)
 
 
+## <a name="attributes"></a>Attributs
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+
+
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|URL|obligatoire|Spécifie la valeur par défaut de ce paramètre pour les paramètres régionaux spécifiés dans l’élément [DefaultLocale](../../reference/manifest/defaultlocale.md).|

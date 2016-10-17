@@ -1,5 +1,5 @@
 
-# Publier des compléments de contenu et du volet Office dans un catalogue de compléments sur SharePoint
+# <a name="publish-task-pane-and-content-add-ins-to-an-add-in-catalog-on-sharepoint"></a>Publier des compléments de contenu et du volet Office dans un catalogue de compléments sur SharePoint
 
 Un catalogue de compléments est une collection de sites dédiée dans une application web SharePoint ou une location SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office et SharePoint. Les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue de compléments pour les utiliser dans leur organisation. Lorsqu’un administrateur enregistre un catalogue de compléments en tant que catalogue approuvé, les utilisateurs peuvent insérer le complément à partir de l’interface utilisateur d’insertion dans une application cliente Office.
 
@@ -7,7 +7,7 @@ Un catalogue de compléments est une collection de sites dédiée dans une appli
 
 Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à l’[Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
 
-## Configuration d’un catalogue de compléments sur SharePoint
+## <a name="to-set-up-an-add-in-catalog-on-sharepoint"></a>Configuration d’un catalogue de compléments sur SharePoint
 
 1. Accédez au **site Administration centrale** (**Démarrer** > **Tous les programmes** > **Produits Microsoft SharePoint 2013** > **Administration centrale SharePoint 2013**).
     
@@ -27,7 +27,7 @@ Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac.
     
 9. Pour ajouter des compléments au catalogue de compléments Office, choisissez **Compléments Office**.
 
-## Configuration d’un catalogue de compléments sur Office 365
+## <a name="to-set-up-an-add-in-catalog-on-office-365"></a>Configuration d’un catalogue de compléments sur Office 365
 
 1. Sur la page Centre d’administration Office 365, sélectionnez **Administrateur**, puis **SharePoint**.
     
@@ -49,7 +49,7 @@ Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac.
     
 Pour ajouter des complément au site de catalogue de compléments, accédez au site que vous venez de créer. Dans le volet de navigation de gauche, choisissez  **Compléments Office**, puis, pour télécharger un fichier manifeste Office, sélectionnez  **Nouveau complément**.    
 
-## Publication dans un catalogue de compléments
+## <a name="publish-to-an-add-in-catalog"></a>Publication dans un catalogue de compléments
 
 
 1. Accédez au catalogue de compléments :

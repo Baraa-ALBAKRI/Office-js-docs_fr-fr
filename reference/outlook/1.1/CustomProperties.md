@@ -1,20 +1,20 @@
 
 
-# CustomProperties
+# <a name="customproperties"></a>CustomProperties
 
 L’objet `CustomProperties` représente les propriétés personnalisées qui sont propres à un élément particulier et à un complément de messagerie pour Outlook. Par exemple, il peut s’avérer nécessaire pour un complément de messagerie d’enregistrer certaines données propres au message électronique actif ayant activé le complément. Quand l’utilisateur consulte à nouveau le même message et réactive le complément de messagerie, ce dernier peut récupérer les données enregistrées en tant que propriétés personnalisées.
 
 Étant donné qu’Outlook pour Mac ne met pas en cache les propriétés personnalisées, si le réseau de l’utilisateur tombe en panne, les compléments de messagerie ne peuvent pas accéder à leurs propriétés personnalisées.
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Exemple
+### <a name="example"></a>Exemple
 
 L’exemple suivant montre comment utiliser la méthode `loadCustomPropertiesAsync` pour charger de manière asynchrone des propriétés personnalisées spécifiques vers l’élément actif. L’exemple montre également comment utiliser la méthode [`saveAsync`](CustomProperties.md#saveasynccallback-asynccontext) pour réenregistrer ces propriétés sur le serveur. Une fois le chargement des propriétés personnalisées terminé, l’exemple utilise la méthode [`get`](CustomProperties.md#get) pour lire la propriété personnalisée `myProp`, utilise la méthode [`set`](CustomProperties.md#set) pour écrire la propriété personnalisée `otherProp`, puis appelle enfin la méthode `saveAsync` pour enregistrer les propriétés personnalisées.
 
@@ -39,27 +39,27 @@ function saveCallback(asyncResult) {
 }
 ```
 
-### Méthodes
+### <a name="methods"></a>Méthodes
 
-####  get(name) → {String}
+####  <a name="get(name)-→-{string}"></a>get(name) → {String}
 
 Retourne la valeur de la propriété personnalisée spécifiée.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`name`| Chaîne|Nom de la propriété personnalisée à retourner.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Renvoie :
+##### <a name="returns:"></a>Renvoie :
 
 Valeur de la propriété personnalisée spécifiée.
 
@@ -71,26 +71,26 @@ Valeur de la propriété personnalisée spécifiée.
 
 </dl>
 
-####  remove(name)
+####  <a name="remove(name)"></a>remove(name)
 
 Supprime la propriété spécifiée de la collection de propriétés personnalisées.
 
 Pour rendre la suppression de la propriété permanente, vous devez appeler la méthode [`saveAsync`](CustomProperties.md#saveasynccallback-asynccontext) de l’objet `CustomProperties`.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`name`| Chaîne|Nom de la propriété à supprimer.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
-####  saveAsync([callback], [asyncContext])
+####  <a name="saveasync([callback],-[asynccontext])"></a>saveAsync([callback], [asyncContext])
 
 Enregistre les propriétés personnalisées propres aux éléments sur le serveur.
 
@@ -98,22 +98,22 @@ Vous devez appeler la méthode `saveAsync` pour conserver les modifications effe
 
 Il est recommandé de faire en sorte que la fonction de rappel vérifie et traite les erreurs provenant de `saveAsync`. Plus particulièrement, un complément de lecture peut être activé lorsque l’utilisateur est connecté dans un formulaire de lecture, puis l’utilisateur peut se déconnecter. Si le complément appelle `saveAsync` lorsqu’il est déconnecté, `saveAsync` renvoie une erreur. La méthode de rappel doit pouvoir gérer cette erreur.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
 |`callback`| function| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult). |
 |`asyncContext`| Object| &lt;facultatif&gt;|Toutes les données d’état transmises à la méthode de rappel.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple de code JavaScript suivant montre comment utiliser de manière asynchrone la méthode `loadCustomPropertiesAsync` pour charger des propriétés personnalisées propres à l’élément actif, ainsi que la méthode [`saveAsync`](CustomProperties.md#saveasynccallback-asynccontext) pour réenregistrer ces propriétés sur le serveur. Une fois le chargement des propriétés personnalisées terminé, l’exemple de code utilise la méthode [`get`](CustomProperties.md#get) pour lire la propriété personnalisée `myProp`, utilise la méthode [`set`](CustomProperties.md#set) pour écrire la propriété personnalisée `otherProp`, puis appelle enfin la méthode `saveAsync` pour enregistrer les propriétés personnalisées.
 
@@ -151,7 +151,7 @@ function write(message){
 }
 ```
 
-####  set(name, value)
+####  <a name="set(name,-value)"></a>set(name, value)
 
 Affecte la valeur spécifiée à la propriété spécifiée.
 
@@ -159,17 +159,17 @@ La méthode `set` affecte la valeur spécifiée à la propriété spécifiée. V
 
 La méthode `set` crée une propriété si la propriété spécifiée n’existe pas déjà ; sinon, la valeur existante est remplacée par la nouvelle valeur. Le paramètre `value` peut être de n’importe quel type ; toutefois, il est toujours transmis au serveur sous forme de chaîne.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
 |`name`| Chaîne|Nom de la propriété à définir.|
 |`value`| Object|Valeur de la propriété à définir.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|

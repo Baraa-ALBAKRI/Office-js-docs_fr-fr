@@ -1,52 +1,52 @@
  
 
-# MailboxEnums
+# <a name="mailboxenums"></a>MailboxEnums
 
 ## [Office](Office.md). MailboxEnums
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Membres
+### <a name="members"></a>Membres
 
-#### AttachmentType :String
+#### <a name="attachmenttype-:string"></a>AttachmentType :String
 
 Spécifie le type d’une pièce jointe.
 
 AttachmentType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
 |`File`| String|`file`|La pièce jointe est un fichier.|
 |`Item`| String|`item`|La pièce jointe est un élément Exchange.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
-#### EntityType :String
+#### <a name="entitytype-:string"></a>EntityType :String
 
 Spécifie le type d’une entité.
 
 EntityType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
@@ -58,23 +58,23 @@ EntityType
 |`TaskSuggestion`| Chaîne|`taskSuggestion`|Spécifie que l’entité est une suggestion de tâche.|
 |`URL`| String|`url`|Spécifie que l’entité est une URL Internet.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
-#### ItemNotificationMessageType :String
+#### <a name="itemnotificationmessagetype-:string"></a>ItemNotificationMessageType :String
 
 Spécifie le type de message de notification pour un rendez-vous ou un message.
 
 ItemNotificationMessageType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
@@ -82,46 +82,46 @@ ItemNotificationMessageType
 |`InformationalMessage`| String|`informationalMessage`|Le message de notification est un message d’information.|
 |`ErrorMessage`| String|`errorMessage`|Le message de notification est un message d’erreur.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.3|
 |Mode Outlook applicable| Composition ou lecture|
-#### ItemType :String
+#### <a name="itemtype-:string"></a>ItemType :String
 
 Spécifie le type d’un élément.
 
 ItemType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
 |`Message`| Chaîne|`message`|Message électronique, demande de réunion, réponse à une demande de réunion ou annulation d’une réunion.|
 |`Appointment`| Chaîne|`appointment`|Élément de rendez-vous.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
-#### RecipientType :String
+#### <a name="recipienttype-:string"></a>RecipientType :String
 
 Spécifie le type de destinataire d’un rendez-vous.
 
 RecipientType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
@@ -130,23 +130,23 @@ RecipientType
 |`User`| Chaîne|`user`|Le destinataire est une adresse de messagerie SMTP qui se trouve sur le serveur Exchange.|
 |`ExternalUser`| String|`externalUser`|Le destinataire est une adresse de messagerie SMTP qui ne se trouve pas sur le serveur Exchange.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.1|
 |Mode Outlook applicable| Composition ou lecture|
-#### ResponseType :String
+#### <a name="responsetype-:string"></a>ResponseType :String
 
 Spécifie le type de réponse à une invitation à une réunion.
 
 ResponseType
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
@@ -156,24 +156,24 @@ ResponseType
 |`Accepted`| String|`accepted`|La demande de réunion a été acceptée par le participant.|
 |`Declined`| String|`declined`|La demande de réunion a été refusée par le participant.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
 
-#### RestVersion :String
+#### <a name="restversion-:string"></a>RestVersion :String
 
 Spécifie la version de l’API REST qui correspond à un ID d’élément au format REST. 
 
 RestVersion
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   String
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Valeur | Description|
 |---|---|---|---|
@@ -181,7 +181,7 @@ RestVersion
 |`v2_0`| String|`v2.0`|Version 2.0.|
 |`Beta`| String|`beta`|Bêta.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|

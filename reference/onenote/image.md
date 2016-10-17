@@ -1,11 +1,11 @@
-# Objet Image (interface API JavaScript pour OneNote)
+# <a name="image-object-(javascript-api-for-onenote)"></a>Objet Image (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente une image. Une image peut être un enfant direct d’un objet PageContent ou Paragraph.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -15,40 +15,40 @@ Représente une image. Une image peut être un enfant direct d’un objet PageCo
 |id|string|Obtient l’ID de l’objet Image. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-id)|
 |width|double|Obtient ou définit la largeur de la disposition de l’image.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-width)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |ocrData|[ImageOcrData](imageocrdata.md)|Obtient les données obtenues suite à la reconnaissance optique des caractères (OCR) de cette image, par exemple la langue et le texte OCR. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-ocrData)|
 |pageContent|[PageContent](pagecontent.md)|Obtient l’objet PageContent qui contient l’image. Indique si l’image n’est pas un enfant direct d’un objet PageContent. Cet objet définit la position de l’image sur la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-pageContent)|
 |paragraph|[Paragraph](paragraph.md)|Obtient l’objet Paragraph qui contient l’image. Indique si l’image n’est pas un enfant direct d’un objet Paragraph. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-paragraph)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |[getBase64Image()](#getbase64image)|chaîne|Obtient la représentation binaire encodée en Base64 de l’image.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-getBase64Image)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-image-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getBase64Image()
+### <a name="getbase64image()"></a>getBase64Image()
 Obtient la représentation binaire encodée en Base64 de l’image.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 imageObject.getBase64Image();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 
 var image = null;
@@ -83,22 +83,22 @@ OneNote.run(function(ctx){
         });
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 **ID, largeur, hauteur, description et lien hypertexte**
 ```js
 OneNote.run(function(ctx){
@@ -175,7 +175,7 @@ OneNote.run(function(ctx){
 });
 ```
 
-**Paragraph**
+**paragraph**
 ```js
 OneNote.run(function(ctx){
     // Get the current outline.         

@@ -1,5 +1,5 @@
 
-# Déploiement et publication de votre complément Office
+# <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
 
 Vous pouvez utiliser plusieurs méthodes pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs :
@@ -11,7 +11,7 @@ Vous pouvez utiliser plusieurs méthodes pour déployer votre complément Office
 
 Les options disponibles dépendent de l’hôte Office que vous ciblez et du type de complément.
 
-### Options de déploiement pour les compléments Word, Excel et PowerPoint
+### <a name="deployment-options-for-word,-excel,-and-powerpoint-add-ins"></a>Options de déploiement pour les compléments Word, Excel et PowerPoint
 
 | Point d’extension            | Chargement de version test | Catalogue SharePoint | Aperçu du Centre d’administration Office 365 | Office Store |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@ Les options disponibles dépendent de l’hôte Office que vous ciblez et du typ
 
 > **REMARQUE :** Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à l’[Office Store].    
 
-### Options de déploiement pour les compléments Outlook
+### <a name="deployment-options-for-outlook-add-ins"></a>Options de déploiement pour les compléments Outlook
 
 | Point d’extension     | Chargement de version test | Serveur Exchange | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|
@@ -34,14 +34,16 @@ Pour plus d’informations sur la gestion des licences pour vos compléments Off
 
 Pour plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finals, voir [Commencer à utiliser votre complément Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Disponibilité des compléments Office sur les plateformes et les hôtes]
 - [Déployer et installer des compléments Outlook à des fins de test](../outlook/testing-and-tips.md) 
 - [Soumission de compléments et d’applications web dans l’Office Store][Office Store]
-- [Instructions de conception pour les compléments Office](../design/add-in-design)
-- [Création de compléments efficaces pour l’Office Store](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
-- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
+- [Instructions de conception pour les compléments Office](../design/add-in-design)
+- 
+  [Création de compléments efficaces pour l’Office Store](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 
-[Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
-[Disponibilité des compléments Office sur les plateformes et les hôtes]: http://dev.office.com/add-in-availability
+
+  [Office Store]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
+[Disponibilité des compléments Office sur les plateformes et les hôtes]: http://dev.office.com/add-in-availability

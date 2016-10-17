@@ -1,12 +1,12 @@
 
-# Authentifier un utilisateur avec un jeton d’identité pour Exchange
+# <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 
 Vous pouvez implémenter un schéma d’authentification unique pour un service d’information qui permet à vos clients utilisant des compléments Outlook de se connecter à votre service à l’aide des informations d’identification de leur serveur Exchange. Cet article montre comment faire correspondre des informations d’identification à l’aide d’un simple magasin de données utilisateur basé sur un objet  **Dictionary**.
 
  >**Remarque**  Il s’agit d’un simple exemple de l’authentification unique que vous ne devez pas utiliser dans votre code de production. Comme toujours, lorsqu’il est question d’identité et d’authentification, vous devez vous assurer que votre code respecte les exigences en matière de sécurité de votre organisation.
 
 
-## Conditions préalables à l’utilisation de l’authentification unique
+## <a name="prerequisites-for-using-sso-authentication"></a>Conditions préalables à l’utilisation de l’authentification unique
 
 
 Pour utiliser un jeton de sécurité pour l’authentification unique, votre application de service a besoin d’un jeton d’identité valide. Pour plus d’informations sur les jetons d’identité et la manière de demander et valider un jeton d’identité, voir les articles suivants :
@@ -19,7 +19,7 @@ Pour utiliser un jeton de sécurité pour l’authentification unique, votre app
 - [Utiliser la bibliothèque de validation des jetons Exchange](../outlook/use-the-token-validation-library.md) si vous utilisez du code managé ou [Valider un jeton d’identité Exchange](../outlook/validate-an-identity-token.md) si vous écrivez votre propre méthode de validation de jeton.
     
 
-## Authentifier un utilisateur
+## <a name="authenticate-a-user"></a>Authentifier un utilisateur
 
 
 L’exemple de code suivant montre un objet d’authentification simple qui fait correspondre l’identité unique représentée par un jeton d’identité à un ensemble d’informations d’identification pour un service. La classe  **TokenAuthentication** fournit une méthode, **GetResponseFromService**, qui retourne une réponse pour les jetons précédemment authentifiés, ou qui invite l’utilisateur à fournir des informations d’identification pouvant être authentifiées et associées au jeton d’identité. Le code n’est pas complet ; il suppose que vous fournissiez les objets et méthodes suivants.
@@ -155,7 +155,7 @@ L’exemple de code suivant montre un objet d’authentification simple qui fait
 ```
 
 
-## Authentification d’un utilisateur auprès de la bibliothèque de validation gérée
+## <a name="authenticating-a-user-with-the-managed-validation-library"></a>Authentification d’un utilisateur auprès de la bibliothèque de validation gérée
 
 
 Si vous utilisez la bibliothèque gérée pour valider les jetons d’identité, il n’est pas nécessaire de calculer la clé unique. La propriété  **UniqueUserIdentification** de la classe **AppIdentityToken** peut être utilisée directement en tant que clé unique pour l’utilisateur. L’exemple de code suivant montre les modifications à apporter à la méthode **GetResponseFromService** dans l’exemple précédent afin d’utiliser la classe **AppIdentityToken**.
@@ -233,7 +233,7 @@ Si vous utilisez la bibliothèque gérée pour valider les jetons d’identité,
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

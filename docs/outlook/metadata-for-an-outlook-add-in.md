@@ -1,5 +1,5 @@
 
-# Obtenir et définir des métadonnées pour un complément Outlook
+# <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées pour un complément Outlook
 
 Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant une des solutions suivantes :
 
@@ -9,7 +9,7 @@ Vous pouvez gérer les données personnalisées dans votre complément Outlook e
     
 Ces deux méthodes donnent accès aux données personnalisées auxquelles seul votre complément Outlook a accès, mais chaque méthode stocke les données de façon distincte. Autrement dit, les propriétés personnalisées n’ont pas accès aux données stockées par le biais des paramètres d’itinérance et inversement. Les données sont stockées sur le serveur de la boîte aux lettres et sont accessibles dans les sessions Outlook ultérieures sur tous les formats pris en charge par le complément. 
 
-## Données personnalisées par boîte aux lettres : paramètres d’itinérance
+## <a name="custom-data-per-mailbox:-roaming-settings"></a>Données personnalisées par boîte aux lettres : paramètres d’itinérance
 
 
 Vous pouvez indiquer des données propres à la boîte aux lettres Exchange d’un utilisateur, à l’aide de l’objet [RoamingSettings](../../reference/outlook/RoamingSettings.md), telles que les préférences et les données personnelles de l’utilisateur. Votre complément de messagerie peut accéder aux paramètres d’itinérance lorsqu’il est en itinérance sur un appareil pour lequel il a été conçu (ordinateur, tablette ou smartphone).
@@ -17,7 +17,7 @@ Vous pouvez indiquer des données propres à la boîte aux lettres Exchange d’
  Les modifications apportées à ces données sont stockées dans une copie en mémoire de ces paramètres pour la session Outlook en cours. Vous devez explicitement enregistrer tous les paramètres d’itinérance après les avoir mis à jour afin qu’ils soient disponibles lors de la prochaine ouverture de votre complément, sur le même appareil ou sur un autre appareil pris en charge.
 
 
-### Format des paramètres d’itinérance
+### <a name="roaming-settings-format"></a>Format des paramètres d’itinérance
 
 
 Les données dans un objet  **RoamingSettings** sont stockées sous la forme d’une chaîne JSON (JavaScript Object Notation) sérialisée. L’exemple suivant illustre la structure, en partant du principe que trois paramètres d’itinérance sont définis et nommés `add-in_setting_name_0`,  `add-in_setting_name_1` et `add-in_setting_name_2`.
@@ -32,7 +32,7 @@ Les données dans un objet  **RoamingSettings** sont stockées sous la forme d�
 ```
 
 
-### Chargement des paramètres d’itinérance
+### <a name="loading-roaming-settings"></a>Chargement des paramètres d’itinérance
 
 
 Un complément de messagerie charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](../../reference/shared/office.initialize.md). L’exemple de code JavaScript suivant montre comment charger des paramètres d’itinérance existants et obtenir la valeur de deux paramètres : « customerName » et « customerBalance ».
@@ -56,7 +56,7 @@ Office.initialize = function () {
 ```
 
 
-### Création ou affectation d’un paramètre d’itinérance
+### <a name="creating-or-assigning-a-roaming-setting"></a>Création ou affectation d’un paramètre d’itinérance
 
 
 Pour faire suite à l’exemple précédent, la fonction JavaScript suivante,  `setAddInSetting`, illustre l’utilisation de la méthode [RoamingSettings.set](../../reference/outlook/RoamingSettings.md) pour régler un paramètre nommé `cookie` à la date d’aujourd’hui, et rendre les données persistantes en utilisant la méthode [RoamingSettings.saveAsync](../../reference/outlook/RoamingSettings.md) pour réenregistrer tous les paramètres d’itinérance sur le serveur. La méthode **set** crée le paramètre si celui-ci n’existe pas déjà, et affecte au paramètre la valeur spécifiée. La méthode **saveAsync** enregistre les paramètres d’itinérance en mode asynchrone. Cet exemple de code passe une méthode de rappel, `saveMyAddInSettingsCallback`, à  **saveAsync**. Lorsque l’appel asynchrone se termine,  `saveMyAddInSettingsCallback` est appelé à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](../../reference/outlook/simple-types.md) qui contient les résultats de l’appel asynchrone et de tous les détails le concernant. Vous pouvez utiliser le paramètre facultatif _userContext_ pour passer des informations d’état de l’appel asynchrone à la fonction de rappel.
@@ -81,7 +81,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 ```
 
 
-### Suppression d’un paramètre d’itinérance
+### <a name="removing-a-roaming-setting"></a>Suppression d’un paramètre d’itinérance
 
 
 Toujours dans le prolongement des exemples précédents, la fonction JavaScript suivante,  `removeAddInSetting`, illustre l’utilisation de la méthode [RoamingSettings.remove](../../reference/outlook/RoamingSettings.md) pour supprimer le paramètre `cookie` et réenregistrer tous les paramètres d’itinérance sur le serveur Exchange.
@@ -100,7 +100,7 @@ function removeAddInSetting()
 ```
 
 
-## Données personnalisées par élément dans une boîte aux lettres : propriétés personnalisées
+## <a name="custom-data-per-item-in-a-mailbox:-custom-properties"></a>Données personnalisées par élément dans une boîte aux lettres : propriétés personnalisées
 
 
 Vous pouvez spécifier les données propres à un élément dans la boîte aux lettres de l’utilisateur à l’aide de l’objet [CustomProperties](../../reference/outlook/CustomProperties.md). Par exemple, votre complément de messagerie peut catégoriser certains messages et noter la catégorie à l’aide d’une propriété personnalisée  `messageCategory`. Si votre complément de messagerie crée des rendez-vous à partir de suggestions de réunion dans un message, vous pouvez utiliser une propriété personnalisée pour suivre chacun de ces rendez-vous. Cela garantit que si l’utilisateur ouvre à nouveau le message, votre complément de messagerie ne propose pas de créer le rendez-vous une seconde fois.
@@ -114,7 +114,7 @@ Cependant, un complément de messagerie peut obtenir des propriétés étendues 
 
 
 
-### Utilisation de propriétés personnalisées
+### <a name="using-custom-properties"></a>Utilisation de propriétés personnalisées
 
 
 Avant de pouvoir utiliser des propriétés personnalisées, vous devez les charger en appelant la méthode [loadCustomPropertiesAsync](../../reference/outlook/Office.context.mailbox.item.md). Si des propriétés personnalisées sont déjà définies pour l’élément actif, elles sont chargées depuis le serveur Exchange à ce stade. Une fois que vous avez créé le conteneur de propriétés, vous pouvez utiliser les méthodes [set](../../reference/outlook/CustomProperties.md) et [get](../../reference/outlook/CustomProperties.md) pour ajouter et récupérer des propriétés personnalisées. Pour enregistrer les modifications que vous apportez au conteneur de propriétés, vous devez utiliser la méthode [saveAsync](../../reference/outlook/CustomProperties.md) pour conserver les modifications sur le serveur Exchange.
@@ -123,7 +123,7 @@ Avant de pouvoir utiliser des propriétés personnalisées, vous devez les charg
  >**Remarque**  Comme Outlook pour Mac ne met pas en cache les propriétés personnalisées, si le réseau de l’utilisateur tombe en panne, les compléments de messagerie dans Outlook pour Mac ne seront pas en mesure d’accéder à leurs propriétés personnalisées.
 
 
-### Exemple de propriétés personnalisées
+### <a name="custom-properties-example"></a>Exemple de propriétés personnalisées
 
 
 L’exemple suivant illustre un ensemble simplifié des méthodes pour un complément Outlook qui utilise des propriétés personnalisées. Vous pouvez utiliser cet exemple comme point de départ pour votre complément qui utilise des propriétés personnalisées. 
@@ -192,18 +192,22 @@ function saveCallback() {
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
     
-- [Vue d'ensemble de la propriété MAPI](http://msdn.microsoft.com/library/02e5b23f-1bdb-4fbf-a27d-e3301a359573%28Office.15%29.aspx)
+- 
+  [Vue d’ensemble de la propriété MAPI](http://msdn.microsoft.com/library/02e5b23f-1bdb-4fbf-a27d-e3301a359573%28Office.15%29.aspx)
     
-- [Présentation des propriétés Outlook](http://msdn.microsoft.com/library/242c9e89-a0c5-ff89-0d2a-410bd42a3461%28Office.15%29.aspx)
+- 
+  [Présentation des propriétés Outlook](http://msdn.microsoft.com/library/242c9e89-a0c5-ff89-0d2a-410bd42a3461%28Office.15%29.aspx)
     
 - [Appeler des services web à partir d’un complément Outlook](../outlook/web-services.md)
     
-- [Les propriétés et les propriétés étendues dans EWS dans Exchange](http://msdn.microsoft.com/library/68623048-060e-4602-b3fa-62617a94cf72%28Office.15%29.aspx)
+- 
+  [Les propriétés et les propriétés étendues dans EWS dans Exchange](http://msdn.microsoft.com/library/68623048-060e-4602-b3fa-62617a94cf72%28Office.15%29.aspx)
     
-- [Jeux de propriétés et de réponse des formes dans EWS dans Exchange](http://msdn.microsoft.com/library/04a29804-6067-48e7-9f5c-534e253a230e%28Office.15%29.aspx)
+- 
+  [Jeux de propriétés et de réponse des formes dans EWS dans Exchange](http://msdn.microsoft.com/library/04a29804-6067-48e7-9f5c-534e253a230e%28Office.15%29.aspx)
     
 
 

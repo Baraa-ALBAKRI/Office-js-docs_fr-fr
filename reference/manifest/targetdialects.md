@@ -1,11 +1,11 @@
 
-# Élément TargetDialects
+# <a name="targetdialects-element"></a>Élément TargetDialects
 Définit les langues régionales prises en charge par ce dictionnaire.
 
  **Type de complément :** volet Office
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,12 +15,12 @@ Définit les langues régionales prises en charge par ce dictionnaire.
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

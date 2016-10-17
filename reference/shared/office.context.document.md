@@ -1,28 +1,28 @@
 
-# Propriété Context.document
+# <a name="context.document-property"></a>Propriété Context.document
 Obtient un objet qui représente le document avec lequel le complément interagit.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```js
 var _document = Office.context.document;
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Objet [Document](../../reference/shared/document.md).
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Votre complément peut utiliser la propriété **document** pour accéder à l’API afin d’interagir avec le contenu des documents, classeurs, présentations, projets et bases de données (dans les applications web Access).
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 
 
@@ -44,30 +44,30 @@ Office.initialize = function () {
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette propriété est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette propriété.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
 |**PowerPoint**|v|v|v|
-|**Projet**|v|||
+|**Project**|v|||
 |**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

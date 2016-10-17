@@ -1,5 +1,5 @@
 
-# CoercionType, énumération
+# <a name="coerciontype-enumeration"></a>CoercionType, énumération
 Indique comment forcer le type des données retournées ou définies par la méthode appelée.
 
 |||
@@ -11,7 +11,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 Office.CoercionType
 ```
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Valeurs**
@@ -31,33 +31,33 @@ PowerPoint prend en charge uniquement **Office.CoercionType.Text**, **Office.Coe
 Project prend en charge uniquement **Office.CoercionType.Text**.
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette énumération est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette énumération.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Office pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Office pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**|v|||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
 |**Types de complément**|Contenu, Outlook (mode composition), volet Office|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 |**Version**|**Modifications**|

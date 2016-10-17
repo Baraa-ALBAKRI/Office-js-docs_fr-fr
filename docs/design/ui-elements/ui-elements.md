@@ -1,11 +1,11 @@
-# Éléments de l’interface utilisateur des compléments Office
+# <a name="office-add-in-ui-elements"></a>Éléments de l’interface utilisateur des compléments Office
 
 Vous pouvez utiliser deux types d’éléments d’interface utilisateur dans vos compléments Office : 
 
 - Des commandes de complément 
 - Des éléments d’interface HTML personnalisés
 
-## Des commandes de complément
+## <a name="add-in-commands"></a>Des commandes de complément
 Les commandes sont définies dans le [fichier manifeste XML du complément](../../outlook/manifests/define-add-in-commands.md) et sont restituées sous forme d’extensions natives dans l’interface utilisateur d’Office. Par exemple, vous pouvez utiliser des commandes de complément pour ajouter des boutons au ruban Office. 
 
 ![Image illustrant des commandes et des éléments d’interface utilisateur HTML personnalisés dans un complément](../../../images/layouts_addInCommands_v0.03.png)
@@ -16,7 +16,7 @@ Excel, PowerPoint et Word disposent de points d’entrée prédéfinis pour les 
 
 ![Image présentant l’onglet Insertion du ruban Word](../../../images/Word-insert-tab.png)
 
-## Éléments d’interface utilisateur HTML personnalisés
+## <a name="custom-html-based-ui"></a>Éléments d’interface utilisateur HTML personnalisés
 Les compléments peuvent incorporer des éléments d’interface utilisateur HTML personnalisés aux clients Office. Les conteneurs disponibles pour afficher ces éléments varient selon le type de complément. Par exemple, les compléments de volet de tâches affichent les éléments d’interface utilisateur HTML personnalisés dans le volet droit du document, tandis que les compléments de contenu les affichent directement dans les documents Office.
 
 Quel que soit le type de complément que vous créez, vous pouvez utiliser des blocs de construction communs pour créer des éléments d’interface utilisateur HTML personnalisés. Nous vous recommandons d’utiliser la [structure d’IU d’Office](https://github.com/OfficeDev/Office-UI-Fabric) pour ces éléments, afin que votre complément s’intègre harmonieusement à l’interface Office. Vous pouvez également utiliser vos propres éléments d’interface utilisateur pour obtenir un rendu plus personnalisé.
@@ -37,7 +37,7 @@ Vous pouvez également consulter un [exemple d’utilisation de la structure d�
 
 **Remarque :** si vous décidez d’utiliser votre propre jeu de polices et d’icônes, assurez-vous qu’elles n’entrent pas en conflit avec celles d’Office. Par exemple, n’utilisez pas d’icônes qui sont identiques ou semblable à celles d’Office, mais représentent quelque chose de différent dans votre complément. 
 
-### Création d’une palette de couleurs personnalisée
+### <a name="creating-a-customized-color-palette"></a>Création d’une palette de couleurs personnalisée
 Si vous décidez d’utiliser votre propre palette de couleurs, gardez les points suivants à l’esprit : 
  
 - Utilisez la couleur pour mettre votre marque en valeur et rendre l’expérience utilisateur de votre complément plus agréable et conviviale.
@@ -46,7 +46,7 @@ Si vous décidez d’utiliser votre propre palette de couleurs, gardez les point
 - Si vous utilisez de la couleur pour le texte ou du texte blanc sur un fond de couleur, veillez à ce que le contraste de ces couleurs soit suffisant pour répondre aux directives d’accessibilité (rapport de contraste de 4,5:1).
 - Pensez aux personnes atteintes de daltonisme : n’utilisez pas que des couleurs pour indiquer l’interactivité.
 
-### Thèmes 
+### <a name="theming"></a>Thèmes 
 Que vous décidiez d’adopter le jeu de couleurs Office ou d’utiliser le vôtre, nous vous encourageons à utiliser nos API d’application de thèmes. Les compléments qui reprennent les thèmes visuels d’Office s’intégreront bien plus harmonieusement avec les produits Office.
 
 

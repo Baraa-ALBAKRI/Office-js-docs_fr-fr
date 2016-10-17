@@ -1,4 +1,4 @@
-# Vue d’ensemble de la programmation de l’API JavaScript de OneNote
+# <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
 OneNote présente une API JavaScript pour les compléments OneNote Online. Vous pouvez créer des compléments de volet de tâches et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
 
@@ -12,14 +12,14 @@ Les compléments sont constitués de deux composants de base :
 
 ![Un complément Office se compose d’un manifeste et d’une page web](../../images/onenote-add-in.png)
 
-### Utilisation de l’API JavaScript
+### <a name="using-the-javascript-api"></a>Utilisation de l’API JavaScript
 
 Les compléments utilisent le contexte d’exécution de l’application hôte pour accéder à l’API JavaScript. L’API comporte deux couches : 
 
 - Une **API enrichie** pour les opérations spécifiques de OneNote, accessible via l’objet **Application**.
 - Une **API commune** qui est partagée entre les applications Office, accessible via l’objet **Document**.
 
-#### Accès à l’API enrichie via l’objet *Application*
+#### <a name="accessing-the-rich-api-through-the-*application*-object"></a>Accès à l’API enrichie via l’objet *Application*
 
 Utilisez l’objet **Application** pour accéder aux objets OneNote tels que **Notebook**, **Section** et **Page**. Grâce à l’API enrichie, vous pouvez exécuter des opérations par lot sur les objets proxy. Le flux de base ressemble à ceci : 
 
@@ -69,7 +69,7 @@ Par exemple :
 
 Vous pouvez déterminer les objets et les opérations OneNote pris en charge dans la [référence de l’API](../../reference/onenote/onenote-add-ins-javascript-reference.md).
 
-### Accès à l’API commune via l’objet *Document*
+### <a name="accessing-the-common-api-through-the-*document*-object"></a>Accès à l’API commune via l’objet *Document*
 
 Utilisez l’objet **Document** pour accéder à l’API commune, par exemple les méthodes [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) et [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync). 
 
@@ -91,25 +91,29 @@ function getSelectionFromPage() {
 ```
 Les compléments OneNote prennent en charge uniquement les API communes suivantes :
 
-| API | Notes |
+| API | Commentaires |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** et **Office.CoercionType.Matrix** uniquement |
-| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
-| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| 
+  [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** et **Office.CoercionType.Matrix** uniquement |
+| 
+  [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
+| 
+  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| 
+  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, voir la [documentation](https://dev.office.com/docs/add-ins/overview/office-add-ins) et les [références](https://dev.office.com/reference/add-ins/javascript-api-for-office) concernant les compléments Office.
 
 
 <a name="om-diagram"></a>
-## Diagramme du modèle objet OneNote 
+## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote 
 Le diagramme suivant représente ce qui est actuellement disponible dans l’API JavaScript de OneNote.
 
   ![Diagramme du modèle objet OneNote](../../images/onenote-om.png)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Créer votre premier complément OneNote](onenote-add-ins-getting-started.md)
 - [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)

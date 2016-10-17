@@ -1,19 +1,19 @@
 
-# Objet Document
+# <a name="document-object"></a>Objet Document
 Une classe abstraite qui représente le document avec lequel interagit le complément.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, PowerPoint, Project, Word|
-|**Ajouté dans**|1,0|
-|**Dernière modification dans **|1.1|
+|**Ajouté dans**|1.0|
+|**Dernière modification dans**|1.1|
 
 ```
 Office.context.document
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Propriétés**
@@ -24,7 +24,7 @@ Office.context.document
 |[bindings](../../reference/shared/document.bindings.md)|Obtient un objet qui fournit l’accès aux liaisons définies dans le document.|Dans la version 1.1, prise en charge supplémentaire des compléments de contenu pour Access.|
 |[customXmlParts](../../reference/shared/document.customxmlparts.md)|Obtient un objet qui représente les parties XML personnalisées contenues dans le document.||
 |[mode](../../reference/shared/document.mode.md)|Obtient le mode dans lequel se trouve le document.|Dans la version 1.1, prise en charge supplémentaire des compléments de contenu pour Access.|
-|[paramètres](../../reference/shared/document.settings.md)|Obtient un objet qui représente les paramètres personnalisés enregistrés du complément de contenu ou de volet des tâches pour le document actif.|Dans la version 1.1, prise en charge supplémentaire des compléments de contenu pour Access.|
+|[settings](../../reference/shared/document.settings.md)|Obtient un objet qui représente les paramètres personnalisés enregistrés du complément de contenu ou de volet des tâches pour le document actif.|Dans la version 1.1, prise en charge supplémentaire des compléments de contenu pour Access.|
 |[url](../../reference/shared/document.url.md)|Obtient l’URL du document actuellement ouvert dans l’application hôte.|Dans la version 1.1, prise en charge supplémentaire des compléments de contenu pour Access.|
 
 **Méthodes**
@@ -49,12 +49,12 @@ Office.context.document
 |[ActiveViewChanged](../../reference/shared/document.activeviewchanged.md)|Survient lorsque l’utilisateur modifie l’affichage actuel du document.|Dans la version 1.1, prise en charge supplémentaire de compléments pour PowerPoint.||
 |[SelectionChanged](../../reference/shared/document.selectionchanged.event.md)|Se produit quand la sélection change dans le document.|||
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 N’instanciez pas l’objet **Document** directement dans votre script. Pour appeler des membres de l’objet **Document** afin d’interagir avec le document actif ou la feuille de calcul active, utilisez `Office.context.document` dans votre script.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant utilise la méthode **getSelectedDataAsync** de l’objet **Document** pour récupérer la sélection actuelle de l’utilisateur sous forme de texte et l’afficher ensuite dans la page du complément.
 
@@ -82,18 +82,18 @@ function write(message){
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 La prise en charge de chaque membre d’API de l’objet **Document** diffère dans les applications hôtes Office. Voir la section « Informations de prise en charge » de la rubrique de chaque membre pour découvrir les informations de prise en charge d’hôte.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 |||
 |:-----|:-----|
-|**Ajouté dans**|1,0|
-|**Dernière modification dans **|1.1|
+|**Ajouté dans**|1.0|
+|**Dernière modification dans**|1.1|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|

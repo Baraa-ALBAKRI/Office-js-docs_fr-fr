@@ -1,13 +1,12 @@
 
-# Créer un complément dictionnaire du volet Office
+# <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
 
 Cet article présente un exemple de complément du volet Office et d’un service web associé qui fournissent des définitions de dictionnaire ou des entrées du dictionnaire des synonymes sur la sélection actuelle de l’utilisateur dans un document Word 2013. 
 
 Une Complément Office de dictionnaire est basée sur le complément du volet Office standard avec des fonctionnalités supplémentaires pour prendre en charge l’interrogation et l’affichage de définitions à partir d’un service web XML de dictionnaire à des endroits supplémentaires dans l’interface utilisateur du complément Office. 
 
-Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une phrase dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur.
-Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
+Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une phrase dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur. Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
 
 **Figure 1. Complément de dictionnaire affichant des définitions pour le mot sélectionné**
 
@@ -46,13 +45,13 @@ Pour créer un complément du volet Office qui fournit une recherche de dictionn
     
 Les sections suivantes fournissent des exemples sur la création de ces composants.
 
-## Création d’un service web XML de dictionnaire
+## <a name="creating-a-dictionary-xml-web-service"></a>Création d’un service web XML de dictionnaire
 
 
 Le service web XML doit renvoyer des requêtes au service web sous la forme de code XML conforme au schéma XML OfficeDefinitions. Les deux sections suivantes décrivent le schéma XML OfficeDefinitions, et fournissent un exemple illustrant comment coder un service web XML qui renvoie des requêtes dans ce format XML.
 
 
-### Schéma XML OfficeDefinitions
+### <a name="officedefinitions-xml-schema"></a>Schéma XML OfficeDefinitions
 
 Le code suivant illustre le XSD pour le schéma XML OfficeDefinitions.
 
@@ -105,7 +104,7 @@ Le XML renvoyé conforme au schéma OfficeDefinitions consiste en un élément r
 ```
 
 
-### Exemple de service web XML de dictionnaire
+### <a name="sample-dictionary-xml-web-service"></a>Exemple de service web XML de dictionnaire
 
 Le code C# suivant fournit un exemple simple d’écriture de code pour un service web XML qui renvoie le résultat d’une interrogation de dictionnaire dans le format XML OfficeDefinitions.
 
@@ -179,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## Création des composants d’un complément de dictionnaire
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>Création des composants d’un complément de dictionnaire
 
 
 Un complément de dictionnaire est composé de trois fichiers de composants principaux.
@@ -192,7 +191,7 @@ Un complément de dictionnaire est composé de trois fichiers de composants prin
 - Un fichier JavaScript qui fournit la logique pour obtenir la sélection de l’utilisateur dans le document, envoie la sélection sous forme de requête au service web, puis affiche les résultats renvoyés dans l’interface utilisateur du complément.
     
 
-### Création du fichier de manifeste d’un complément de dictionnaire
+### <a name="creating-a-dictionary-add-in's-manifest-file"></a>Création du fichier de manifeste d’un complément de dictionnaire
 
 L’exemple suivant illustre un fichier de manifeste pour un complément de dictionnaire.
 
@@ -257,7 +256,7 @@ L’exemple suivant illustre un fichier de manifeste pour un complément de dict
 L’élément  **Dictionary** et ses éléments enfants qui sont spécifiques à la création d’un fichier de manifeste de complément de dictionnaire sont décrits dans les sections suivantes. Pour plus d’informations sur les autres éléments du fichier de manifeste, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md).
 
 
-### Élément Dictionary
+### <a name="dictionary-element"></a>Élément Dictionary
 
 
 Spécifie les paramètres pour les compléments de dictionnaire.
@@ -272,10 +271,10 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
  **Remarques**
 
-L’élément  **Dictionary** et ses éléments enfants sont ajoutés au manifeste d’un complément du volet Office quand vous créez un complément de dictionnaire.
+L’élément **Dictionary** et ses éléments enfants sont ajoutés au manifeste d’un complément du volet Office quand vous créez un complément de dictionnaire.
 
 
-#### Élément TargetDialects
+#### <a name="targetdialects-element"></a>Élément TargetDialects
 
 
 Spécifie les variantes régionales que ce dictionnaire prend en charge. Requis (pour les compléments de dictionnaire).
@@ -321,7 +320,7 @@ L’élément  **TargetDialects** et ses éléments enfants spécifient l’ense
 ```
 
 
-#### Élément TargetDialect
+#### <a name="targetdialect-element"></a>Élément TargetDialect
 
 
 Spécifie une variante régionale que ce dictionnaire prend en charge. Requis (pour les compléments de dictionnaire).
@@ -332,7 +331,7 @@ Spécifie une variante régionale que ce dictionnaire prend en charge. Requis (p
 
  **Remarques**
 
-Spécifie la valeur pour un variantes régionales dans le format de balise RFC1766  `language`, telle que EN-US.
+Spécifie la valeur pour une variante régionale dans le format de balise RFC1766 `language`, telle qu’EN-US.
 
  **Exemple**
 
@@ -344,10 +343,10 @@ Spécifie la valeur pour un variantes régionales dans le format de balise RFC17
 ```
 
 
-#### Élément QueryUri
+#### <a name="queryuri-element"></a>Élément QueryUri
 
 
-Spécifie le point d’extrémité pour le service de requête de dictionnaire. Requis (pour les compléments de dictionnaire).
+Spécifie le point de terminaison du service de requête de dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -355,7 +354,7 @@ Spécifie le point d’extrémité pour le service de requête de dictionnaire. 
 
  **Remarques**
 
-C’est l’URI du service web XML pour le fournisseur de dictionnaire. La requête correctement formulée sera ajoutée à cette URI. 
+Il s’agit de l’URI du service web XML pour le fournisseur de dictionnaire. La requête correctement formulée sera ajoutée à cet URI. 
 
  **Exemple**
 
@@ -367,7 +366,7 @@ C’est l’URI du service web XML pour le fournisseur de dictionnaire. La requ�
 ```
 
 
-#### Élément CitationText
+#### <a name="citationtext-element"></a>Élément CitationText
 
 
 Spécifie le texte à utiliser dans les citations. Requis (pour les compléments de dictionnaire).
@@ -392,7 +391,7 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 ```
 
 
-#### Élément DictionaryName
+#### <a name="dictionaryname-element"></a>Élément DictionaryName
 
 
 Spécifie le nom de ce dictionnaire. Requis (pour les compléments de dictionnaire).
@@ -417,10 +416,10 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 ```
 
 
-#### Élément DictionaryHomePage
+#### <a name="dictionaryhomepage-element"></a>Élément DictionaryHomePage
 
 
-Spécifie l’URL de la page d’accueil pour le dictionnaire. Requis (pour les compléments de dictionnaire).
+Spécifie l’URL de la page d’accueil du dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -442,7 +441,7 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 ```
 
 
-### Création de l’interface utilisateur HTML du complément de dictionnaire
+### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>Création de l’interface utilisateur HTML du complément de dictionnaire
 
 
 Les deux exemples suivants montrent les fichiers HTML et CSS pour l’interface utilisateur du complément de dictionnaire de démonstration. Pour découvrir comment l’interface utilisateur s’affiche dans le volet Office du complément, voir la figure 6 à la suite du code. Pour voir comment l’implémentation du JavaScript dans le fichier Dictionary.js fournit la logique de programmation de cette interface utilisateur HTML, voir « Écriture de l’implémentation JavaScript » immédiatement à la suite de cette section.
@@ -532,12 +531,12 @@ a:hover, a:active
 ```
 
 
-**Figure 6. Interface utilisateur du dictionnaire de démonstration**
+**Figure 6. Interface utilisateur du dictionnaire de démonstration**
 
 ![Interface utilisateur du dictionnaire de démonstration](../../images/DictionaryAgave06.jpg)
 
 
-### Écriture de l’implémentation JavaScript
+### <a name="writing-the-javascript-implementation"></a>Écriture de l’implémentation JavaScript
 
 
 L’exemple suivant montre l’implémentation JavaScript dans le fichier Dictionary.js qui est appelé dans la page HTML du complément pour fournir la logique de programmation du complément de dictionnaire de démonstration. Ce script réutilise le service web XML décrit précédemment. Lorsqu’il est placé dans le même répertoire que l’exemple de service web, le script obtient des définitions de ce service. Il peut être utilisé avec un service web XML conforme au schéma OfficeDefinitions public en modifiant la variable  `xmlServiceURL` en haut du fichier, et en remplaçant ensuite la clé de l’API Bing pour obtenir des prononciations adéquates.

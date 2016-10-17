@@ -1,39 +1,39 @@
-# Objet RequestContext (interface API JavaScript pour Word)
+# <a name="requestcontext-object-(javascript-api-for-word)"></a>Objet RequestContext (interface API JavaScript pour Word)
 
 L’objet RequestContext facilite les demandes du complément auprès de l’application Word (rappelez-vous que les deux applications utilisent des processus différents).
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 Aucun
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode         | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Insère l’objet de proxy créé dans le calque JavaScript avec les propriétés et les options spécifiées dans le paramètre.|
 |[sync()](#sync)  |Objet de promesse |Envoie les demandes en file d’attente à Word et renvoie un objet de promesse, qui peut être utilisé pour ajouter d’autres actions en chaîne.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### load(object: object, option: object)
+### <a name="load(object:-object,-option:-object)"></a>load(object: object, option: object)
 Insère l’objet de proxy créé dans le calque JavaScript avec les propriétés et les options spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 requestContextObject.load(object, loadOption);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
 |:----------------|:--------|:----------|
 |object|object|Facultatif. Indiquez le nom de l’objet à charger.|
 |Option|[loadOption](loadoption.md)|Propriété facultative, mais recommandée. Spécifiez les options de chargement (select, expand, skip ou top). |
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-##### Exemples
+##### <a name="examples"></a>Exemples
 
 L’exemple suivant montre comment charger la propriété de texte sur une collection de paragraphe à l’aide du contexte de demande.
 
@@ -70,25 +70,25 @@ Word.run(function (context) {
 
 ```
 
-#### Informations supplémentaires
+#### <a name="additional-information"></a>Informations supplémentaires
 
 Vous devez appeler l’objet load() une fois les objets suivis ajoutés.
 
-### sync()
+### <a name="sync()"></a>sync()
 Envoie les demandes en file d’attente à Word et renvoie un objet de promesse, qui peut être utilisé pour ajouter d’autres actions en chaîne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 requestContextObject.sync();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 Objet de promesse.
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 L’exemple suivant illustre la méthode de synchronisation, qui est utilisée deux fois : 1) pour charger la collection de contrôles de contenu avec la propriété de texte associée à chaque contrôle ; 2) pour désactiver le contenu du premier contrôle de contenu de la collection.
 
@@ -130,5 +130,5 @@ Word.run(function (context) {
 
 ```
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

@@ -1,5 +1,5 @@
 
-# Référence de l’interface API JavaScript pour Office
+# <a name="javascript-api-for-office-reference"></a>Référence de l’interface API JavaScript pour Office
 
 L’interface API JavaScript pour Office vous permet de créer des applications web qui interagissent avec les modèles objet dans les applications hôtes Office. Votre application fera référence à la bibliothèque office.js, qui est un chargeur de script. La bibliothèque office.js charge les modèles objet applicables à l’application Office qui exécute le complément. Vous pouvez utiliser les modèles objet JavaScript suivants :
 
@@ -10,7 +10,7 @@ L’interface API JavaScript pour Office vous permet de créer des applications 
 
 Sélectionnez le client Office dans la liste déroulante au-dessus de la table des matières pour filtrer le contenu en fonction de votre application hôte cible.
 
-## Applications hôtes prises en charge
+## <a name="supported-host-applications"></a>Applications hôtes prises en charge
 * Access
 * Excel
 * Outlook
@@ -20,7 +20,7 @@ Sélectionnez le client Office dans la liste déroulante au-dessus de la table d
 
 En savoir plus sur les [hôtes pris en charge et les autres exigences](../docs/overview/requirements-for-running-office-add-ins.md)
 
-## Spécifications d’ouverture de l’API
+## <a name="open-api-specifications"></a>Spécifications d’ouverture de l’API
 
 Au fur et à mesure que nous concevons et développons de nouvelles API pour les compléments Office, nous les mettons à votre disposition sur notre page de [spécifications d’ouverture de l’API](openspec.md) pour que vous puissiez fournir vos commentaires. Découvrez les nouvelles fonctionnalités dans le pipeline et donnez votre avis sur nos spécifications de conception.
 

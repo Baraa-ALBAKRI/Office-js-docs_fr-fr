@@ -1,28 +1,28 @@
 
-# Labs.Components.ChoiceComponentInstance
+# <a name="labs.components.choicecomponentinstance"></a>Labs.Components.ChoiceComponentInstance
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Instance d’un composant de choix.
+Représente une instance d’un composant de choix.
 
 ```
 class ChoiceComponentInstance extends Labs.ComponentInstance<Components.ChoiceComponentAttempt>
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Propriété|Description|
 |:-----|:-----|
 | `public var component: Components.IChoiceComponentInstance`|Instance du composant [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) sous-jacent représentée par cette classe.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(component: Components.IChoiceComponentInstance)`
 
@@ -33,9 +33,9 @@ Crée une instance de la classe **ChoiceComponentInstance**.
 
 |Paramètre|Description|
 |:-----|:-----|
-| _composant_|Objet [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) à utiliser pour créer cette classe.|
+| _component_|Objet [Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md) à utiliser pour créer cette classe.|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.ChoiceComponentAttempt`
 

@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ISubmitAnswerResult
+# <a name="labs.core.actions.isubmitanswerresult"></a>Labs.Core.Actions.ISubmitAnswerResult
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Résultat de l’envoi d’une réponse pour une tentative.
 
@@ -10,7 +10,7 @@ interface ISubmitAnswerResult extends Core.IActionResult
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

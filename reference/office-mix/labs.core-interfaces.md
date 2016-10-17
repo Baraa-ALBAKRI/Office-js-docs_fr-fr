@@ -1,8 +1,8 @@
 
-# Interfaces Labs.Core
+# <a name="labs.core-interfaces"></a>Interfaces Labs.Core
 Interfaces figurant dans le module **LabsJS.Labs.Core**.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le module **LabsJS.Labs.Core** contient les interfaces suivantes.
 
@@ -11,12 +11,12 @@ Le module **LabsJS.Labs.Core** contient les interfaces suivantes.
 
 |||
 |:-----|:-----|
-|[Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)|Action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.|
+|[Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)|Représente une action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.|
 |[Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md)|Résultats d’une action. Selon le type d’action, les résultats sont définis par le serveur ou fournis par le client au cours de l’action.|
 |[Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md)|Classe de base pour les instances des composants de l’atelier.|
 |[Labs.Core.IConfigurationInfo](../../reference/office-mix/labs.core.iconfigurationinfo.md)|Informations sur la configuration de l’atelier.|
 |[Labs.Core.IConnectionResponse](../../reference/office-mix/labs.core.iconnectionresponse.md)|Informations de la réponse renvoyées par l’appel de connexion.|
-|[Labs.Core.IGetActionOptions](../../reference/office-mix/labs.core.igetactionoptions.md)|Options transmises dans le cadre d’une action  **get**.|
+|[Labs.Core.IGetActionOptions](../../reference/office-mix/labs.core.igetactionoptions.md)|Options transmises dans le cadre d’une action **get**.|
 |[Labs.Core.ILabCreationOptions](../../reference/office-mix/labs.core.ilabcreationoptions.md)|Options transmises dans le cadre d’une opération Création d’un atelier.|
 |[Labs.Core.ILabHostVersionInfo](../../reference/office-mix/labs.core.ilabhostversioninfo.md)|Informations sur la version de l’hôte de l’atelier.|
 |[Labs.Core.IActionOptions](../../reference/office-mix/labs.core.iactionoptions.md)|Définition des options de l’action d’atelier. Options transmises lors de l’exécution d’une action donnée.|

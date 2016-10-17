@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.IAttemptTimeoutOptions
+# <a name="labs.core.actions.iattempttimeoutoptions"></a>Labs.Core.Actions.IAttemptTimeoutOptions
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Options disponibles pour l’expiration de la tentative en cours.
 
@@ -10,7 +10,7 @@ interface IAttemptTimeoutOptions extends Core.IActionOptions
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

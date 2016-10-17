@@ -1,14 +1,11 @@
 
-# Créer et déboguer des compléments Office dans Visual Studio
+# <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Créer et déboguer des compléments Office dans Visual Studio
 
+Cet article explique comment utiliser Visual Studio pour créer votre premier complément Office. Les étapes décrites dans cet article concernent Visual Studio 2015. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
 
+>**Remarque :** si vous débutez avec les compléments pour OneNote, voir [Créer votre premier complément OneNote](../onenote/onenote-add-ins-getting-started.md).
 
-
- >**Remarque**  ces instructions sont valables pour Visual Studio 2015. Si vous utilisez une autre version de Visual Studio, les procédures peuvent légèrement varier.
-
-
-
-## Créer un projet d’Complément Office dans Visual Studio.
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>Créer un projet de complément Office dans Visual Studio.
 
 
 Pour commencer, vérifiez que les [Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx) sont installés. 
@@ -41,13 +38,13 @@ Lorsque vous avez terminé l’Assistant, Visual Studio crée une solution qui 
 |Projet de complément|Contient seulement un fichier de manifeste XML, qui contient tous les paramètres qui décrivent votre complément. Ces paramètres aident l’hôte Office à déterminer quand votre complément doit être activé et où il doit apparaître. Visual Studio génère le contenu de ce fichier pour vous afin que vous puissiez exécuter le projet et utiliser immédiatement votre complément. Vous pouvez modifier ces paramètres à tout moment à l’aide de l’éditeur de manifeste.|
 |Projet d’application web|Contient les pages de contenu de votre complément, notamment tous les fichiers et références de fichiers dont vous avez besoin pour développer des pages HTML et JavaScript compatibles avec Office. Pendant que vous développez votre complément, Visual Studio héberge l’application web sur votre serveur IIS local. Lorsque vous êtes prêt à la publier, vous devez trouver un serveur pour héberger ce projet.Pour en savoir plus sur les projets d’applications web ASP.NET, voir [Projets web ASP.NET](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
-## Modifier les paramètres de votre complément
+## <a name="modify-your-add-in-settings"></a>Modifier les paramètres de votre complément
 
 
 Pour modifier les paramètres de votre complément, modifiez le fichier manifeste XML du projet. Dans l’**Explorateur de solutions**, développez le nœud de projet du complément et le dossier contenant le manifeste XML, puis sélectionnez le manifeste XML. Vous pouvez pointer sur n’importe quel élément du fichier pour afficher une info-bulle qui décrit l’objectif de l’élément. Pour plus d’informations sur le fichier manifeste, voir l’article sur le [manifeste XML de compléments Office](../../docs/overview/add-in-manifests.md).
 
 
-## Développer le contenu de votre complément
+## <a name="develop-the-contents-of-your-add-in"></a>Développer le contenu de votre complément
 
 
 Alors que le projet de complément vous permet de modifier les paramètres qui décrivent le complément, l’application web fournit le contenu qui apparaît dans le complément. 
@@ -67,18 +64,18 @@ Au fur et à mesure que votre complément devient plus complexe, vous pouvez ajo
  >**Remarque**  Vous n’êtes pas obligé d’utiliser ces fichiers. N’hésitez pas à ajouter d’autres fichiers au projet et à les utiliser à la place. Si vous souhaitez voir apparaître un autre fichier HTML comme page initiale du complément, ouvrez l’éditeur de manifeste et définissez la propriété  **SourceLocation** sur le nom du fichier.
 
 
-## Déboguer votre complément
+## <a name="debug-your-add-in"></a>Déboguer votre complément
 
 
 Lorsque vous êtes prêt à démarrer votre complément, vérifiez les propriétés liées à la génération et au débogage, puis démarrez la solution.
 
 
-### Réviser les propriétés de génération et de débogage
+### <a name="review-the-build-and-debug-properties"></a>Réviser les propriétés de génération et de débogage
 
 Avant de démarrer la solution, assurez-vous que Visual Studio va ouvrir l’application hôte souhaitée. Cette information apparaît dans les pages de propriétés du projet avec d’autres propriétés liées à la génération et au débogage du complément.
 
 
-### Pour ouvrir les pages de propriétés d’un projet
+### <a name="to-open-the-property-pages-of-a-project"></a>Pour ouvrir les pages de propriétés d’un projet
 
 
 1. Dans l’ **Explorateur de solutions**, choisissez le nom du projet.
@@ -101,13 +98,13 @@ Le tableau suivant décrit les propriétés du projet.
 |**Fichier du projet**|Indique le nom du fichier contenant la version, la configuration et d’autres informations sur le projet.|
 |**Dossier du projet**|Emplacement du fichier de projet.|
 
-### Utiliser un document existant pour déboguer le complément (compléments de contenu et du volet Office uniquement)
+### <a name="use-an-existing-document-to-debug-the-add-in-(content-and-task-pane-add-ins-only)"></a>Utiliser un document existant pour déboguer le complément (compléments de contenu et du volet Office uniquement)
 
 
 Vous pouvez ajouter des documents au projet de complément. Si vous disposez d’un document qui contient des données de test que vous souhaitez utiliser avec votre application, Visual Studio ouvre ce document lorsque vous commencez le projet.
 
 
-### Pour utiliser un document existant pour déboguer le complément
+### <a name="to-use-an-existing-document-to-debug-the-add-in"></a>Pour utiliser un document existant pour déboguer le complément
 
 
 1. Dans l’ **Explorateur de solutions**, choisissez le dossier du projet de complément.
@@ -126,7 +123,7 @@ Vous pouvez ajouter des documents au projet de complément. Si vous disposez d�
 6. Dans la liste  **Document de démarrage**, choisissez le document que vous avez ajouté au projet, puis cliquez sur le bouton  **OK** pour fermer les pages de propriétés.
     
 
-### Démarrer la solution
+### <a name="start-the-solution"></a>Démarrer la solution
 
 
 Visual Studio génère automatiquement la solution lorsque vous la démarrez. Vous pouvez la démarrer à partir de la barre de  **Menu** en choisissant **Débogage**,  **Démarrer**. 
@@ -157,20 +154,21 @@ Visual Studio n’affiche pas les erreurs de validation dans la fenêtre  **OUTP
 
 - [Options, Éditeur de texte, JavaScript, IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [Comment : définir des options de validation pour l’édition HTML dans Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- 
+  [Procédure : définir des options de validation pour l’édition HTML dans Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [Validation, CSS, Éditeur de texte, boîte de dialogue Options](http://go.microsoft.com/fwlink/?LinkID=238780)
     
 Pour réviser les règles de validation du fichier manifeste XML dans votre projet, voir [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md).
 
 
-### Afficher un complément dans Excel, Word ou Project, et avancer pas à pas dans votre code
+### <a name="show-an-add-in-in-excel,-word,-or-project-and-step-through-your-code"></a>Afficher un complément dans Excel, Word ou Project, et avancer pas à pas dans votre code
 
 
 Si vous définissez la propriété  **Document de démarrage** du projet de complément sur Excel ou Word, Visual Studio crée un document et le complément apparaît. Si vous définissez la propriété **Document de démarrage** du projet de complément afin d’utiliser un document existant, Visual Studio ouvre le document, mais vous devez insérer manuellement le complément. Si vous définissez la propriété **Document de démarrage** sur **Microsoft Project**, vous devez également insérer le complément manuellement.
 
 
-### Pour afficher une Complément Office dans Excel ou Word
+### <a name="to-show-an-office-add-in-in-excel-or-word"></a>Pour afficher une Complément Office dans Excel ou Word
 
 
 1. Dans Excel ou Word, dans l’onglet  **Insertion**, choisissez  **Compléments Office**.
@@ -178,7 +176,7 @@ Si vous définissez la propriété  **Document de démarrage** du projet de comp
 2. Dans la liste qui apparaît, choisissez votre complément.
     
 
-### Pour afficher une Complément Office dans Project
+### <a name="to-show-an-office-add-in-in-project"></a>Pour afficher une Complément Office dans Project
 
 
 1. Dans Project, dans l’onglet  **Projet**, choisissez  **Compléments Office**.
@@ -188,7 +186,7 @@ Si vous définissez la propriété  **Document de démarrage** du projet de comp
 Dans Visual Studio, vous pouvez définir des points d’interruption, puis pendant l’interaction avec votre complément et l’exécution pas à pas du code de vos fichiers HTML, JavaScript et C# ou VB.
 
 
-### Afficher le complément Outlook dans Outlook et avancer pas à pas dans votre code
+### <a name="show-the-outlook-add-in-in-outlook-and-step-through-your-code"></a>Afficher le complément Outlook dans Outlook et avancer pas à pas dans votre code
 
 
 Pour voir le complément dans Outlook, ouvrez un message électronique ou un élément de rendez-vous.
@@ -202,13 +200,13 @@ Dans Visual Studio, vous pouvez définir des points d’interruption, puis pend
 Vous pouvez également modifier votre code et vérifier les effets de ces modifications dans votre complément Outlook sans devoir fermer le Complément Office ni redémarrer le projet. Dans Outlook, ouvrez simplement le menu contextuel du complément Outlook, puis choisissez **Recharger**.
 
 
-### Modifier le code et continuer le débogage du complément sans redémarrer le projet
+### <a name="modify-code-and-continue-to-debug-the-add-in-without-having-to-start-the-project-again"></a>Modifier le code et continuer le débogage du complément sans redémarrer le projet
 
 
 Vous pouvez modifier votre code et vérifier les effets de ces modifications dans votre complément sans avoir à fermer l’application hôte et à redémarrer le projet. Après avoir modifié votre code, ouvrez le menu contextuel du complément, puis choisissez  **Recharger**. Quand vous rechargez le complément, il est déconnecté du débogueur Visual Studio. Vous pouvez constater les effets de vos modifications, mais vous ne pouvez pas parcourir pas à pas le code tant que vous n’attachez pas le débogueur Visual Studio à tous les processus Iexplore.exe disponibles.
 
 
-### Pour attacher le débogueur Visual Studio à tous les processus Iexplore.exe disponibles
+### <a name="to-attach-the-visual-studio-debugger-to-all-of-the-available-iexplore.exe-processes"></a>Pour attacher le débogueur Visual Studio à tous les processus Iexplore.exe disponibles
 
 
 1. Dans Visual Studio, choisissez  **DÉBOGUER**,  **Attacher au processus**.
@@ -216,7 +214,7 @@ Vous pouvez modifier votre code et vérifier les effets de ces modifications dan
 2. Dans la boîte de dialogue  **Attacher au processus**, choisissez tous les processus  **Iexplore.exe** disponibles, puis sélectionnez le bouton **Attacher**.
     
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Publier votre complément Office](../publish/publish.md)
     

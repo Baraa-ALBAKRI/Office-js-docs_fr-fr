@@ -1,7 +1,7 @@
 
-# Labs.ComponentInstanceBase
+# <a name="labs.componentinstancebase"></a>Labs.ComponentInstanceBase
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Classe de base pour l’initialisation d’instances de composant.
 
@@ -10,10 +10,10 @@ class ComponentInstanceBase
 ```
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
-### Constructeur
+### <a name="constructor"></a>Constructeur
 
  `function constructor()`
 

@@ -1,5 +1,5 @@
 
-# Obtenir des pièces jointes d’un élément Outlook à partir du serveur
+# <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
 Un complément Outlook ne peut pas transmettre les pièces jointes d’un élément sélectionné directement au service distant exécuté sur votre serveur. À la place, le complément peut utiliser l’API de pièces jointes pour envoyer des informations relatives aux pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
 
@@ -13,7 +13,7 @@ Pour envoyer des informations sur les pièces jointes au service distant, vous u
 - Fonction [Office.context.mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md) -- Réalise un appel asynchrone vers le serveur Exchange hébergeant la boîte aux lettres pour obtenir un jeton de rappel que le serveur renvoie au serveur Exchange afin d’authentifier une demande de pièce jointe.
     
 
-## Utilisation de l’API de pièces jointes
+## <a name="using-the-attachments-api"></a>Utilisation de l’API de pièces jointes
 
 
 Pour utiliser l’API de pièces jointes afin d'obtenir des pièces jointes à partir d’une boîte aux lettres Exchange, procédez comme suit : 
@@ -33,7 +33,7 @@ Chacune de ces étapes est décrite en détail dans les sections suivantes à l�
  >**Remarque**  Le code de ces exemples a été raccourci pour se concentrer sur les informations liées aux pièces jointes. L’exemple contient du code supplémentaire pour l’authentification du complément auprès du serveur distant et la gestion de l’état de la demande.
 
 
-### Activer le complément
+### <a name="activate-the-add-in"></a>Activer le complément
 
 
 Vous pouvez utiliser une règle [ItemHasAttachment ](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx) du fichier manifeste du complément pour afficher votre complément quand l’élément contient des pièces jointes, comme dans l’exemple suivant.
@@ -44,7 +44,7 @@ Vous pouvez utiliser une règle [ItemHasAttachment ](http://msdn.microsoft.com/e
 ```
 
 
-### Obtenir un jeton de rappel
+### <a name="get-a-callback-token"></a>Obtenir un jeton de rappel
 
 
 L’objet [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) fournit la fonction **getCallbackTokenAsync** pour obtenir un jeton que le serveur distant peut utiliser pour s’authentifier auprès du serveur Exchange. Le code suivant indique une fonction dans un complément qui démarre la demande asynchrone pour obtenir le jeton de rappel et la fonction de rappel qui obtient la réponse. Le jeton de rappel est stocké dans l’objet de demande de service défini dans la prochaine section.
@@ -69,7 +69,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 ```
 
 
-### Envoyer des informations de pièce jointe au service distant
+### <a name="send-attachment-information-to-the-remote-service"></a>Envoyer des informations de pièce jointe au service distant
 
 
 Le service distant appelé par votre complément définit les informations spécifiques relatives à l’envoi des informations de pièce jointe au service. Dans cet exemple, le service distant est une application d’API web créée avec Visual Studio 2013. Le service distant attend les informations de pièce jointe dans un objet JSON. Le code suivant initialise un objet qui contient les informations de pièce jointe.
@@ -126,7 +126,7 @@ La propriété  `Office.context.mailbox.item.attachments` contient une collectio
 ```
 
 
-### Obtenir des pièces jointes à partir du serveur Exchange
+### <a name="get-the-attachments-from-the-exchange-server"></a>Obtenir des pièces jointes à partir du serveur Exchange
 
 
 Votre service distant peut utiliser la méthode [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) de l’API managée EWS ou l’opération EWS [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) pour récupérer des pièces jointes à partir du serveur. L’application de service a besoin de deux objets pour désérialiser la chaîne JSON en objets .NET Framework pouvant être utilisés sur le serveur. Le code suivant indique les définitions des objets de désérialisation.
@@ -159,7 +159,7 @@ namespace AttachmentsSample
 ```
 
 
-#### Utiliser l’API managée EWS pour obtenir des pièces jointes
+#### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>Utiliser l’API managée EWS pour obtenir des pièces jointes
 
 Si vous utilisez l’[API managée EWS](http://go.microsoft.com/fwlink/?LinkID=255472) dans votre service distant, vous pouvez utiliser la méthode [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) qui va construire, recevoir et envoyer une demande SOAP EWS pour obtenir les pièces jointes. Nous vous recommandons d’utiliser l’API managée EWS car elle requiert moins de lignes de code et fournit une interface plus intuitive pour les appels vers EWS. Le code suivant effectue une demande pour récupérer toutes les pièces jointes et renvoie le nombre, ainsi que les noms des pièces jointes traitées.
 
@@ -229,7 +229,7 @@ Si vous utilisez l’[API managée EWS](http://go.microsoft.com/fwlink/?LinkID=2
 ```
 
 
-#### Utiliser EWS pour obtenir les pièces jointes
+#### <a name="use-ews-to-get-the-attachments"></a>Utiliser EWS pour obtenir les pièces jointes
 
 Si vous utilisez EWS dans votre service distant, vous devez construire une demande SOAP [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) pour obtenir les pièces jointes à partir du serveur Exchange. Le code suivant renvoie une chaîne qui fournit la demande SOAP. Le service distant utilise la méthode **String.Format** pour insérer l'ID d'une pièce jointe dans la chaîne.
 
@@ -434,15 +434,17 @@ Chaque réponse de l’opération  **GetAttachment** est envoyée à la méthode
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
 - [Créer des compléments Outlook pour des formulaires de lecture](../outlook/read-scenario.md)
     
-- [Explorer l’API managée EWS, EWS et les services web dans Exchange](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
+- 
+  [Explorer l’API managée EWS, EWS et les services web dans Exchange](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
     
-- [Prise en main des applications clientes d’API managée EWS](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
+- 
+  [Prise en main des applications clientes d’API managée EWS](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
     
-- [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples):  `MyAttachments` et `AttachmentsDemo`
+- [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples): `MyAttachments` et `AttachmentsDemo`
     

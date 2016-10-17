@@ -1,8 +1,8 @@
 
-# Interfaces Labs.Core.Actions
+# <a name="labs.core.actions-interfaces"></a>Interfaces Labs.Core.Actions
 Interfaces figurant dans le module **LabsJS.Labs.Core.Actions**
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le module **LabsJS.Labs.Core.Actions** contient les interfaces suivantes.
 

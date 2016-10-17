@@ -1,5 +1,5 @@
 
-# Compléments Outlook avec volet personnalisé
+# <a name="custom-pane-outlook-add-ins"></a>Compléments Outlook avec volet personnalisé
 
 Un volet personnalisé est un point d’extension d’un complément qui s’active lorsque certaines conditions spécifiques sont remplies par l’élément sélectionné. Il est défini dans l’élément  **VersionOverrides** manifeste du complément, avec toutes les commandes de complément implémentées par le complément. Pour plus d’informations, voir [Définir des commandes de complément dans votre manifeste de complément Outlook](../outlook/manifests/define-add-in-commands.md). Un volet personnalisé ne peut apparaître que dans une vue de message lu ou de participant à un rendez-vous. Il affiche une entrée dans la barre de complément. Lorsque l’utilisateur clique sur l’entrée, le volet personnalisé s’affiche dans le sens horizontal, au-dessus du corps de l’élément. L’affichage et le comportement sont identiques à ceux des compléments en mode Lecture qui n’implémentent pas de commandes de complément.
 
@@ -33,11 +33,11 @@ L’exemple suivant définit un volet personnalisé pour des éléments qui sont
   **Rule** spécifie la règle ou l’ensemble de règles qui précisent dans quelles conditions le complément est activé. Ce paramètre est tel que défini dans [Manifestes des compléments Outlook](../outlook/manifests/manifests.md), sauf que la règle [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) a été modifiée de la manière suivante : l’élément **ItemType** est « Message » ou « AppointmentAttendee », et l’attribut **FormType** est absent. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../outlook/manifests/activation-rules.md).
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted)
+- [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted)
     
 - [Règles d’activation pour les compléments Outlook](../outlook/manifests/activation-rules.md)
     

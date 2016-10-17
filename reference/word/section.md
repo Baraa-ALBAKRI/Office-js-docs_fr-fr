@@ -1,18 +1,18 @@
-# Objet Section (interface API JavaScript pour Word)
+# <a name="section-object-(javascript-api-for-word)"></a>Objet Section (interface API JavaScript pour Word)
 
 Représente une section d’un document Word.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 Aucun
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |corps|[Body](body.md)|Obtient le corps de la section. L’en-tête/le pied de page et les autres métadonnées de section ne sont pas inclus. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -20,25 +20,25 @@ Aucun
 |[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Obtient l’un des en-têtes de la section.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### getFooter(type: HeaderFooterType)
+### <a name="getfooter(type:-headerfootertype)"></a>getFooter(type: HeaderFooterType)
 Obtient l’un des pieds de page de la section.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.getFooter(type);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |type|HeaderFooterType|Obligatoire. Type de pied de page à renvoyer. Cette valeur peut être : « primary » (primaire), « firstPage » (première page) ou « evenPages » (pages paires).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Body](body.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -77,23 +77,23 @@ Word.run(function (context) {
     }
 });
 ```
-### getHeader(type: HeaderFooterType)
+### <a name="getheader(type:-headerfootertype)"></a>getHeader(type: HeaderFooterType)
 Obtient l’un des en-têtes de la section.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionObject.getHeader(type);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |type|HeaderFooterType|Obligatoire. Type d’en-tête à retourner. Cette valeur peut être : « primary » (primaire), « firstPage » (première page) ou « evenPages » (pages paires).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Body](body.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -133,21 +133,21 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

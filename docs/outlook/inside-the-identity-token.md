@@ -1,12 +1,12 @@
 
-# Présentation du jeton d’identité Exchange
+# <a name="inside-the-exchange-identity-token"></a>Présentation du jeton d’identité Exchange
 Découvrez le contenu d’un jeton d’identité d’Exchange 2013.
 
 
 
 Le jeton d’identité d’authentification que le serveur Exchange envoie à votre complément Outlook est transparent pour votre complément ; vous n’avez pas à connaître son contenu pour l’envoyer à votre serveur. Mais lorsque vous écrivez le code du service web qui interagit avec votre complément Outlook, vous devez savoir ce que ce jeton contient.
 
-## Qu’entend-on par jeton d’identité ?
+## <a name="what-is-an-identity-token?"></a>Qu’entend-on par jeton d’identité ?
 
 
 Un jeton d’identité est une chaîne à codage URL base-64 autosignée par le serveur Exchange qui l’envoie. Le jeton n’est pas chiffré, et la clé publique que vous utilisez pour valider la signature est stockée sur le serveur Exchange qui a émis le jeton. Le jeton est composé de trois parties : un en-tête, une charge utile et une signature. Dans la chaîne du jeton, les différentes parties sont séparées par un caractère « . » pour simplifier le fractionnement du jeton.
@@ -14,7 +14,7 @@ Un jeton d’identité est une chaîne à codage URL base-64 autosignée par le 
 Exchange 2013 utilise un jeton JWT (JSON Web Token) pour le jeton d’identité. Pour plus d’informations sur les jetons JWT, voir le [document préliminaire Internet sur JWT (JSON Web Token)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
 
 
-### En-tête du jeton d’identité
+### <a name="identity-token-header"></a>En-tête du jeton d’identité
 
 L’en-tête identifie le jeton et permet au service web de reconnaître le type de jeton présenté. L’exemple suivant montre comment se présente l’en-tête du jeton.
 
@@ -34,7 +34,7 @@ Le tableau suivant décrit les parties de l’en-tête du jeton d’identité.
 |alg|« RS256 »|L’algorithme de hachage qui est utilisé pour créer la signature. Tous les jetons fournis par le serveur Exchange utilisent algorithme RS-256.|
 |x5t|Empreinte de certificat|L’empreinte X.509 du jeton.|
 
-### Charge utile du jeton d’identité
+### <a name="identity-token-payload"></a>Charge utile du jeton d’identité
 
 La charge utile contient les revendications d’authentification qui identifient le compte de messagerie et identifient le serveur Exchange qui a envoyé le jeton. L’exemple suivant montre à quoi ressemble la section de charge utile.
 ```js
@@ -76,12 +76,12 @@ L’information dans la revendication appctx vous fournit l’adresse du compte 
 |version|Numéro de version du jeton. Pour tous les jetons fournis par un serveur qui exécute Exchange 2013, la valeur est « ExIdTok.V1 ».|
 |amurl|URL du document de métadonnées d’authentification qui contient la clé publique du certificat X.509 qui est utilisée pour signer le jeton. Pour plus d’informations sur l’utilisation du document de métadonnées d’authentification, voir [Valider un jeton d’identité Exchange](../outlook/validate-an-identity-token.md).|
 
-### Signature du jeton d’identité
+### <a name="identity-token-signature"></a>Signature du jeton d’identité
 
 La signature est créée par hachage des sections d’en-tête et de charge utile avec l’algorithme spécifié dans l’en-tête et en utilisant le certificat X509 autosigné situé sur le serveur à l’emplacement spécifié dans la charge utile. Votre service web peut valider cette signature pour contribuer à assurer que le jeton d’identité provient bien du serveur prévu pour son envoie.
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

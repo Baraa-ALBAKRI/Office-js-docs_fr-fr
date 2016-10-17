@@ -1,47 +1,47 @@
-# Objet Binding (interface API JavaScript pour Excel)
+# <a name="binding-object-(javascript-api-for-excel)"></a>Objet Binding (interface API JavaScript pour Excel)
 
 Représente une liaison Office.js définie dans le classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |id|string|Représente l’identificateur de liaison. En lecture seule.|
 |type|string|Renvoie le type de la liaison. En lecture seule. Les valeurs possibles sont les suivantes : Range, Table, Text.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[getRange()](#getrange)|[Range](range.md)|Renvoie la plage représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
-|[getTable()](#gettable)|[Table](table.md)|Renvoie le tableau représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
-|[getText()](#gettext)|string|Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
+|[getTable()](#gettable)|[Table](table.md)|Renvoie la table représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
+|[getText()](#gettext)|chaîne|Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 Renvoie la plage représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bindingObject.getRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 L’exemple ci-dessous utilise un objet de liaison pour obtenir la plage associée.
 
 ```js
@@ -61,21 +61,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTable()
+### <a name="gettable()"></a>getTable()
 Renvoie le tableau représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bindingObject.getTable();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var binding = ctx.workbook.bindings.getItemAt(0);
@@ -93,21 +93,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getText()
+### <a name="gettext()"></a>getText()
 Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bindingObject.getText();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -126,22 +126,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, accepte un objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

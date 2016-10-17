@@ -1,7 +1,7 @@
 
-# Labs.Core.IActionResult
+# <a name="labs.core.iactionresult"></a>Labs.Core.IActionResult
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Résultats d’une action. Selon le type d’action, les résultats sont définis par le serveur ou fournis par le client au cours de l’action.
 
@@ -10,7 +10,7 @@ interface IActionResult
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun.
 

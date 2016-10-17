@@ -1,22 +1,22 @@
-# Objet Document (interface API JavaScript pour Word)
+# <a name="document-object-(javascript-api-for-word)"></a>Objet Document (interface API JavaScript pour Word)
 
 L’objet Document est l’objet de niveau supérieur. Un objet Document comporte des sections, des contrôles de contenu et le corps dans lequel se trouve le contenu du document.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |Saved|bool|Indique si les modifications apportées au document ont été enregistrées. La valeur true indique que le document n’a pas été modifié depuis son enregistrement. En lecture seule.|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |corps|[Body](body.md)|Obtient le corps du document. Le corps du document correspond à l’ensemble du texte, à l’exception des en-têtes, des pieds de page, des notes de bas de page, des zones de texte, etc. En lecture seule.|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtient la collection d’objets de contrôle de contenu qui se trouvent dans le document, à savoir ceux qui se trouvent dans le corps du document, dans les en-têtes, dans les pieds de page, dans les zones de texte, etc. En lecture seule.|
 |Sections|[SectionCollection](sectioncollection.md)|Obtient la collection d’objets de section qui se trouvent dans le document. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -24,23 +24,23 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 |[save()](#save)|void|Enregistre le document. Cette option utilise la convention de dénomination des fichiers par défaut de Word si le document n’a jamais été enregistré précédemment.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### getSelection()
+### <a name="getselection()"></a>getSelection()
 Obtient la sélection actuelle du document. Les sélections multiples ne sont pas prises en charge.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 documentObject.getSelection();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -71,23 +71,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### save()
+### <a name="save()"></a>save()
 Enregistre le document. Cette option utilise la convention de dénomination des fichiers par défaut de Word si le document n’a jamais été enregistré précédemment.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 documentObject.save();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -171,5 +171,5 @@ Word.run(function (context) {
 });
 ```
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

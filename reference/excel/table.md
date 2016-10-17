@@ -1,10 +1,10 @@
-# Objet Table (interface API JavaScript pour Excel)
+# <a name="table-object-(javascript-api-for-excel)"></a>Objet Table (interface API JavaScript pour Excel)
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
 Représente un tableau Excel.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -14,17 +14,17 @@ Représente un tableau Excel.
 |showTotals|bool|Indique si la ligne de total est visible ou non. Cette valeur peut être définie de manière à afficher ou à masquer la ligne de total.|
 |style|string|Valeur de constante qui représente le style du tableau. Les valeurs possibles sont les suivantes : TableStyleLight1 à TableStyleLight21, TableStyleMedium1 à TableStyleMedium28, TableStyleStyleDark1 à TableStyleStyleDark11. Vous pouvez également indiquer un style personnalisé présent dans le classeur.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |colonnes|[TableColumnCollection](tablecolumncollection.md)|Représente une collection de toutes les colonnes du tableau. En lecture seule.|
-|Objet Rows|[TableRowCollection](tablerowcollection.md)|Représente une collection de toutes les lignes du tableau. En lecture seule.|
-|tri|[TableSort](tablesort.md)|Configuration de tri du tableau. En lecture seule.|
-|worksheet|[Feuille de calcul](worksheet.md)|Feuille de calcul contenant le tableau actif. En lecture seule.|
+|lignes|[TableRowCollection](tablerowcollection.md)|Représente une collection de toutes les lignes du tableau. En lecture seule.|
+|tri|[TableSort](tablesort.md)|Représente la configuration de tri du tableau. En lecture seule.|
+|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant le tableau actuel. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -38,38 +38,38 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 |[reapplyFilters()](#reapplyfilters)|void|Applique de nouveau tous les filtres actuellement appliqués sur le tableau.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### clearFilters()
+### <a name="clearfilters()"></a>clearFilters()
 Supprime tous les filtres appliqués actuellement sur le tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.clearFilters();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-### convertToRange()
+### <a name="converttorange()"></a>convertToRange()
 Convertit le tableau en plage normale de cellules. Toutes les données sont conservées.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.convertToRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -84,21 +84,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### delete()
+### <a name="delete()"></a>delete()
 Supprime le tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.delete();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -114,21 +114,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getDataBodyRange()
+### <a name="getdatabodyrange()"></a>getDataBodyRange()
 Obtient l’objet de plage associé au corps de données du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.getDataBodyRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -146,21 +146,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getHeaderRowRange()
+### <a name="getheaderrowrange()"></a>getHeaderRowRange()
 Obtient l’objet de plage associé à la ligne d’en-tête du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.getHeaderRowRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -179,21 +179,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 Renvoie l’objet de plage associé à l’intégralité du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.getRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var table = ctx.workbook.tables.getItem(tableName);
@@ -211,21 +211,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTotalRowRange()
+### <a name="gettotalrowrange()"></a>getTotalRowRange()
 Obtient l’objet de plage associé à la ligne de total du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.getTotalRowRange();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -244,22 +244,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Obtenir un tableau par son nom 
 

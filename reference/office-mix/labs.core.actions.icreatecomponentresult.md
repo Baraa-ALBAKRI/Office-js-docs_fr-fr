@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ICreateComponentResult
+# <a name="labs.core.actions.icreatecomponentresult"></a>Labs.Core.Actions.ICreateComponentResult
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Résultat [Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md) de la création d’un composant.
 
@@ -10,7 +10,7 @@ interface ICreateComponentResult extends Core.IActionResult
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

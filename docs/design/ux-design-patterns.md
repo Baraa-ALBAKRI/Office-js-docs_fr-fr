@@ -1,4 +1,4 @@
-# Modèles de conception d’expérience utilisateur pour les compléments Office 
+# <a name="ux-design-pattern-templates-for-office-add-ins"></a>Modèles de conception d’expérience utilisateur pour les compléments Office 
 
 Le [projet de modèles de conception de l’expérience utilisateur pour compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "projet de modèles de conception de l’expérience utilisateur pour compléments Office") inclut des fichiers HTML, JavaScript et CSS que vous pouvez utiliser pour créer l’expérience utilisateur de votre complément.   
 
@@ -6,10 +6,10 @@ Utiliser le projet de modèles de conception d’expérience utilisateur aux fin
 
 * Appliquer des solutions à des scénarios client courants.
 * Appliquer les meilleures pratiques en matière de conception.
-* Incorporer les composants et styles de la [structure de l’interface utilisateur d’Office](https://dev.office.com/fabric/getting-started/).
+* Incorporer les composants et styles de la [structure de l’interface utilisateur d’Office](https://dev.office.com/fabric#/get-started).
 * Créer des compléments qui s’intègrent visuellement à l’interface utilisateur d’Office par défaut.  
 
-## Utilisation des modèles de conception d’expérience utilisateur
+## <a name="using-the-ux-design-patterns"></a>Utilisation des modèles de conception d’expérience utilisateur
 
 Vous pouvez utiliser les [spécifications du concepteur d’expérience utilisateur](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Source%20Files) comme guide lorsque vous créez votre propre conception d’expérience utilisateur. Vous pouvez également ajouter le [code source](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) directement à votre projet.
 
@@ -29,8 +29,8 @@ Pour ajouter le code source, procédez comme suit :
     - Utilisez le modèle de conception d’expérience utilisateur en tant que modèle pour d’autres pages.
     - Lien vers ou à partir du modèle de conception d’expérience utilisateur.
 
-## Types de modèles de conception de l’expérience utilisateur
-### Pages génériques
+## <a name="types-of-ux-design-patterns"></a>Types de modèles de conception de l’expérience utilisateur
+### <a name="generic-pages"></a>Pages génériques
 
 Les modèles de page générique peuvent être appliqués à n’importe quelle page de votre complément et n’ont pas d’usage particulier. L’un des modèles de première utilisation constitue un exemple de page à usage spécifique. La liste suivante décrit les pages génériques disponibles :
 
@@ -47,7 +47,7 @@ Les modèles de page générique peuvent être appliqués à n’importe quelle 
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../../images/brand.bar.PNG" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
  
-### Première expérience d’utilisation
+### <a name="first-run-experience"></a>Première expérience d’utilisation
 
 Il s’agit de l’expérience vécue par un utilisateur lorsqu’il ouvre votre complément pour la première fois. Les modèles de modèle de conception de première utilisation suivants sont disponibles : 
 
@@ -57,7 +57,7 @@ Il s’agit de l’expérience vécue par un utilisateur lorsqu’il ouvre votre
 * **Valeur** - Communique la proposition de valeur de votre complément.
     * [Spécification de la valeur](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_ValuePlacemat.md)
     * [Code de la valeur](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/value-placemat)
-* **Vidéo** - Explique aux utilisateurs une vidéo avant qu’ils commencent à utiliser votre complément.
+* **Vidéo** - Montre une vidéo aux utilisateurs avant qu’ils commencent à utiliser votre complément.
     * [Spécification de la vidéo](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_VideoPlacemat.md)
     * [Code de la vidéo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat)
 * **Procédure pas à pas** - Explique aux utilisateurs une série de fonctionnalités ou d’informations avant qu’ils commencent à utiliser le complément.
@@ -93,7 +93,7 @@ Déterminez s’il convient de montrer la vidéo sur la première expérience d�
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature"><img src="../../images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></A></td></tr>
  </table> 
 
-### Navigation
+### <a name="navigation"></a>Navigation
 
 Les utilisateurs doivent naviguer entre les différentes pages de votre complément. Les modèles de navigation suivants indiquent différentes options que vous pouvez utiliser afin d’organiser les pages et les commandes de votre complément.
 
@@ -103,7 +103,7 @@ Les utilisateurs doivent naviguer entre les différentes pages de votre complém
 * **Navigation** - Affiche un menu, communément appelé menu hamburger, avec les éléments de menu de la page dans un volet Office. 
     * [Spécification de la navigation](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Navigation.md)
     * [Code de la navigation](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation) 
-* **Navigation à l’aide de commandes** -Affiche le menu hamburger avec les boutons de commande (ou d’action) dans un volet Office. Utilisez ce modèle lorsque vous voulez fournir des options de navigation et de commande ensemble.  
+* **Navigation à l’aide de commandes** - Affiche le menu hamburger avec les boutons de commande (ou d’action) dans un volet Office. Utilisez ce modèle lorsque vous voulez fournir des options de navigation et de commande ensemble.  
     * [Spécification de la navigation à l’aide de commandes](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Navigation_%26_Commands.md)
     * [Code de la navigation à l’aide de commandes](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation-commands)
 * **Tableau croisé dynamique** - Affiche la navigation du tableau croisé dynamique dans un volet Office. Utilisez la navigation du tableau croisé dynamique pour permettre aux utilisateurs de naviguer entre les différents contenus.
@@ -140,7 +140,7 @@ Les utilisateurs doivent naviguer entre les différentes pages de votre complém
 </tr>
  </table>
 
-### Notifications
+### <a name="notifications"></a>Notifications
 
 Votre complément peut avertir les utilisateurs d’événements, tels qu’une erreur, ou de l’état d’avancement d’un élément de plusieurs façons. Les modèles de notification suivants sont disponibles : 
 
@@ -179,11 +179,11 @@ Votre complément peut avertir les utilisateurs d’événements, tels qu’une 
  
 
 
-### Composants généraux
+### <a name="general-components"></a>Composants généraux
 
 Les éléments suivants constituent des composants généraux que vous pouvez utiliser avec vos compléments dans différents scénarios.  
 
-#### Boîtes de dialogue client
+#### <a name="client-dialog-boxes"></a>Boîtes de dialogue client
 
 Les boîtes de dialogue client fournissent aux utilisateurs un autre moyen de travailler avec votre complément en dehors d’un volet Office. Les modèles de boîte de dialogue suivants sont disponibles :
 
@@ -212,7 +212,7 @@ Les boîtes de dialogue client fournissent aux utilisateurs un autre moyen de tr
  </table>
 
 
-#### Évaluations et commentaires
+#### <a name="feedback-and-ratings"></a>Évaluations et commentaires
 
 Pour améliorer la visibilité et l’adoption de votre complément, il est utile de fournir aux utilisateurs la possibilité de noter et de commenter votre complément dans l’Office Store. Ce modèle comporte deux méthodes pour effectuer des commentaires et des évaluations dans le complément :
 
@@ -232,7 +232,7 @@ Les deux méthodes ouvrent une boîte de dialogue qui contient la page de l’Of
 </tr>
  </table>
 
-#### Paramètres et confidentialité
+#### <a name="settings-and-privacy"></a>Paramètres et confidentialité
 
 Les compléments peuvent nécessiter une page des paramètres afin que les utilisateurs puissent configurer les paramètres qui contrôlent le comportement du complément. Vous pouvez également fournir aux utilisateurs les politiques de confidentialité auxquelles votre complément adhère. 
 
@@ -251,7 +251,7 @@ Les compléments peuvent nécessiter une page des paramètres afin que les utili
 </tr></tr>
  </table>
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Meilleures pratiques en matière de développement de compléments Office](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices)
 * [Structure de l’interface utilisateur Office](http://dev.office.com/fabric/)

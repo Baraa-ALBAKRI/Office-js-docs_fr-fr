@@ -1,4 +1,4 @@
-#Mise en page pour les compléments de contenu
+#<a name="layout-for-content-add-ins"></a>Mise en page pour les compléments de contenu
 
 Créez un style visuel cohérent pour vos compléments de contenu en utilisant la mise en page recommandée. Celle-ci contient les éléments suivants : 
 

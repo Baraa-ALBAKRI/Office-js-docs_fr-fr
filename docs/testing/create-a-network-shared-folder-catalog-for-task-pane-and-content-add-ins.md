@@ -1,5 +1,5 @@
 
-# Chargement de version test des compléments Office
+# <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test des compléments Office
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau. 
 
@@ -9,7 +9,7 @@ Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagé
 
  >**Important :**  Pour contribuer à sécuriser les compléments accédant à des services et données externes, votre application doit utiliser un protocole sécurisé tel que HTTPS (Hypertext Transfer Protocol Secure) pour se connecter aux services et données externes. Vous devez utiliser HTTPS si votre complément utilise des commandes de complément.
 
-## Partager un dossier
+## <a name="share-a-folder"></a>Partager un dossier
 
 1. Sur l’ordinateur Windows sur lequel vous voulez héberger votre complément, accédez au dossier parent ou à la lettre de lecteur du dossier que vous souhaitez utiliser comme catalogue de dossiers partagés.
 
@@ -21,7 +21,7 @@ Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagé
 
 5. Choisissez **Partager** > **Terminer** > **Fermer**.
 
-## Spécifier le dossier partagé en tant que catalogue approuvé
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Spécifier le dossier partagé en tant que catalogue approuvé
 
       
 3. Ouvrez un nouveau document dans Excel, Word ou PowerPoint.
@@ -38,7 +38,7 @@ Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagé
 
 9. Fermez l’application Office afin que vos modifications prennent effet.
     
-## Charger votre complément
+## <a name="sideload-your-add-in"></a>Charger votre complément
 
 
 1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés.
@@ -50,7 +50,7 @@ Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagé
 4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer le complément.
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Utilisation de la journalisation runtime pour déboguer votre manifeste](../develop/use-runtime-logging-to-debug-manifest.md)
 - [Publier votre complément Office](../publish/publish.md)

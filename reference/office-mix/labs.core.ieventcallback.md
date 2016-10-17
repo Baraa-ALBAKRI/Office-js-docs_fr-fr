@@ -1,7 +1,7 @@
 
-# Labs.Core.IEventCallback
+# <a name="labs.core.ieventcallback"></a>Labs.Core.IEventCallback
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Interface permettant de traiter les rappels EventManager.
 
@@ -10,7 +10,7 @@ interface IEventCallback
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

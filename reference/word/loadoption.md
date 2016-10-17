@@ -1,10 +1,10 @@
-# Objet LoadOption (interface API JavaScript pour Word)
+# <a name="loadoption-object-(javascript-api-for-word)"></a>Objet LoadOption (interface API JavaScript pour Word)
 
 Objet permettant de définir les informations de pagination et les propriétés à charger lors de l’appel de la méthode context.sync().
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description|
 |:---------------|:--------|:----------|
 |select|object|Contient une liste délimitée par des virgules ou un tableau de noms de paramètres/relations. Facultatif.|
@@ -12,7 +12,7 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 |top|int| Spécifie le nombre maximal d’éléments de collection qui peuvent être inclus dans le résultat. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
 |skip|int|Indiquez le nombre d’éléments de la collection devant être ignorés et exclus du résultat. Si une valeur est définie pour `top`, la sélection du jeu de résultats démarre une fois que le nombre spécifié d’éléments a été ignoré. Facultatif. Vous pouvez utiliser cette option uniquement lorsque vous utilisez l’option de notation d’objet.|
 
-## Plus d’informations
+## <a name="more-information"></a>Plus d’informations
 
 La méthode privilégiée pour spécifier les propriétés et les informations de pagination consiste à utiliser un littéral de chaîne. Les deux premiers exemples illustrent la méthode recommandée pour demander les propriétés de texte et de taille de police pour les paragraphes d’une collection :
 
@@ -34,7 +34,7 @@ Voici un exemple similaire qui utilise la notation d’objet (y compris la pagin
 
 Notez que si aucune propriété spécifique n’est définie pour l’objet de police dans l’instruction select, l’instruction expand, si elle est définie seule, indique que toutes les propriétés de police sont chargées.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Cet exemple montre comment obtenir les paragraphes du document Word, ainsi que les propriétés de texte et de taille de police.
 
@@ -66,5 +66,5 @@ Cet exemple montre comment obtenir les paragraphes du document Word, ainsi que 
 
 ```
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

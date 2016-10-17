@@ -1,50 +1,50 @@
-# Objet TableCollection (interface API JavaScript pour Excel)
+# <a name="tablecollection-object-(javascript-api-for-excel)"></a>Objet TableCollection (interface API JavaScript pour Excel)
 
 Représente une collection de tous les tableaux du classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |count|int|Renvoie le nombre de tableaux dans le classeur. En lecture seule.|
-|Items|[Table[]](table.md)|Collection d’objets de tableau. En lecture seule.|
+|items|[Table[]](table.md)|Collection d’objets de tableau. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Crée un tableau. L’adresse de la source de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.|
-|[getItem(key: number ou string)](#getitemkey-number-ou-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Obtient un tableau en fonction de sa position dans la collection.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### add(address: string, hasHeaders: bool)
+### <a name="add(address:-string,-hasheaders:-bool)"></a>add(address: string, hasHeaders: bool)
 Crée un tableau. L’adresse de la source de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCollectionObject.add(address, hasHeaders);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |address|string|Adresse ou nom de l’objet de plage représentant la source de données. Si l’adresse ne contient pas de nom de feuille, la feuille ouverte est utilisée.|
 |hasHeaders|bool|Valeur booléenne qui indique si les données importées disposent d’étiquettes de colonne. Si la source ne contient pas d’en-têtes (autrement dit, lorsque cette propriété est définie sur false), Excel génère automatiquement un en-tête et décale les données d’une ligne vers le bas.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -61,23 +61,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItem(key: number or string)
+### <a name="getitem(key:-number-or-string)"></a>getItem(key: number or string)
 Obtient un tableau à l’aide de son nom ou de son ID.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCollectionObject.getItem(key);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Key|number or string|Nom ou ID du tableau à récupérer.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -95,7 +95,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -112,23 +112,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtient un tableau en fonction de sa position dans la collection.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -145,22 +145,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

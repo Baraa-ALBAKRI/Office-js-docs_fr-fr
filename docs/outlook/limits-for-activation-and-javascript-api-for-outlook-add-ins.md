@@ -1,12 +1,12 @@
 
-# Limites d’activation et d’API JavaScript des compléments Outlook
+# <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites d’activation et d’API JavaScript des compléments Outlook
 
 Pour offrir une expérience satisfaisante aux utilisateurs de compléments Outlook, il convient de connaître certaines recommandations relatives à l’activation et à l’utilisation de l’API afin d’implémenter vos compléments tout en respectant ces limites. Ces recommandations permettent de s’assurer que le traitement par Exchange Server ou Outlook des règles d’activation ou des appels à l’interface API JavaScript pour Office n’est pas anormalement long pour un complément particulier, ce qui aurait une incidence sur l’expérience globale de l’utilisateur dans Outlook et d’autres compléments. Ces limites s’appliquent à la conception de règles d’activation dans le manifeste du complément, ainsi qu’à l’utilisation de propriétés personnalisées, de paramètres d’itinérance, de destinataires, de demandes et réponses de Services Web Exchange (EWS) et d’appels asynchrones. 
 
  >**Remarque** Si votre complément s’exécute sur un client riche Outlook, vous devez également vérifier que le complément s’exécute dans certaines limites d’utilisation des ressources au moment de l’exécution. 
 
 
-## Limites pour les règles d’activation
+## <a name="limits-for-activation-rules"></a>Limites pour les règles d’activation
 
 
 Suivez les recommandations ci-dessous lors de la création de règles d’activation pour les compléments Outlook :
@@ -20,9 +20,9 @@ Suivez les recommandations ci-dessous lors de la création de règles d’activa
     
 - Si vous utilisez des expressions régulières dans les règles  **ItemHasKnownEntity** ou [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx), tenez compte des recommandations et limites suivantes qui s’appliquent généralement à n’importe quel hôte Outlook, et celles décrites dans les tableaux 1, 2 et 3 qui diffèrent en fonction de l’hôte :
     
-      - Spécifiez au maximum cinq expressions régulières dans les règles d’activation d’un complément. Vous ne pouvez pas installer un complément si vous dépassez cette limite.
+      - Spécifiez un maximum de cinq expressions régulières dans les règles d’activation d’un complément. Si vous dépassez cette limite, vous ne pouvez pas installer de complément.
     
-  - Spécifiez des expressions régulières de sorte que les résultats que vous prévoyez d’obtenir soient renvoyés par l’appel de la méthode  **getRegExMatches** dans les 50 premières correspondances.
+  - Spécifiez des expressions régulières de sorte que les résultats que vous prévoyez d’obtenir soient renvoyés par l’appel de la méthode **getRegExMatches** dans les 50 premières correspondances.
     
   - Peut spécifier des assertions avant dans les expressions régulières, mais pas d’assertions arrière, (?<=text), ni d’assertions arrière négatives, (?<!text).
     
@@ -30,21 +30,21 @@ Suivez les recommandations ci-dessous lors de la création de règles d’activa
 Le tableau 1 répertorie les limites et décrit les différences de prise en charge des expressions régulières entre un client riche Outlook et Outlook Web App ou OWA pour les appareils. La prise en charge est indépendante de tout type spécifique d’appareil et de corps d’élément.
 
 
- **Tableau 1. Différences générales dans la prise en charge des expressions régulières**
+ **Tableau 1. Différences générales dans la prise en charge des expressions régulières**
 
 
 |**Client riche Outlook**|**Outlook Web App ou OWA pour périphériques**|
 |:-----|:-----|
-|Utilise le moteur d’expression régulière C++ fourni dans le cadre de la bibliothèque de modèles standard Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. |Utilise l’évaluation d’expression régulière incluse dans JavaScript ; celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.|
+|Utilise le moteur d’expressions régulières C++ fourni avec la bibliothèque de modèles standard de Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. |Utilise l’évaluation d’expression régulière incluse dans JavaScript ; celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.|
 |Étant donné que les moteurs regex sont différents, une expression régulière qui inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfinies peut renvoyer des résultats différents dans le client riche Outlook par rapport à ceux d’Outlook Web App ou d’OWA pour les appareils.<br/><br/>Par exemple, l’expression régulière « [\s\S]{0,100} » donne un nombre, compris entre 0 et 100, de caractères uniques correspondant à un espace blanc ou à un espace non blanc. Dans un client riche Outlook, cette expression régulière renvoie des résultats différents de ceux obtenus dans Outlook Web App et OWA pour les appareils. Vous devez réécrire l’expression régulière « (\s|\S){0,100} » pour contourner ce problème. Cette expression régulière correspond à un nombre, compris entre 0 et 100, d’espace blanc ou d’espace non blanc.<br/><br/>Vous devez tester minutieusement chaque expression régulière sur chaque hôte Outlook et, si une expression régulière renvoie des résultats différents, la réécrire. |Vous devez tester minutieusement chaque expression régulière sur chaque hôte Outlook et, si une expression régulière renvoie des résultats différents, la réécrire.|
 |Par défaut, limite l’évaluation de toutes les expressions régulières pour un complément à 1 seconde. Le dépassement de cette limite engendre une réévaluation à 3 reprises au maximum. Au-delà de la limite de réévaluation, un client riche Outlook désactive l’exécution du complément pour la même boîte aux lettres dans n’importe lequel des hôtes Outlook.<br/><br/>Les administrateurs peuvent remplacer ces limites d’évaluation à l’aide des clés de Registre  **OutlookActivationAlertThreshold** et **OutlookActivationManagerRetryLimit**.|Ne prend pas en charge les mêmes paramètres de surveillance des ressources ou du Registre que dans un client riche Outlook. Toutefois, les compléments avec expressions régulières qui requièrent un temps d’évaluation trop long sur un client riche Outlook sont désactivés pour la même boîte aux lettres sur tous les hôtes Outlook.|
 
 Le tableau 2 répertorie les limites et décrit les différences dans la partie du corps d’élément auquel chaque hôte Outlook applique une expression régulière. Certaines de ces limites dépendent du type d’appareil et de corps d’élément, si l’expression régulière est appliquée sur le corps d’élément.
 
-**Tableau 2. Limites de la taille du corps d’élément évalué**
+**Tableau 2. Limites de la taille du corps d’élément évalué**
 
 
-||**Client riche Outlook**|**Outlook Web App, OWA pour périphériques,OWA pour iPad ou OWA pour iPhone**|**Outlook Web App**|
+||**Client riche Outlook**|**Outlook Web App, OWA pour périphériques, OWA pour iPad ou OWA pour iPhone**|**Outlook Web App**|
 |:-----|:-----|:-----|:-----|
 |Facteur de forme|Tout appareil pris en charge|Smartphones Android, iPad ou iPhone|Tout appareil pris en charge autre que les smartphones Android, l’iPad et l’iPhone|
 |Corps d’élément en texte brut|Applique le regex sur le premier mégaoctet des données du corps, mais pas sur le reste du corps au-delà de cette limite.|Active le complément uniquement si le corps < 16 000 caractères.|Active le complément uniquement si le corps < 500 000 caractères.|
@@ -52,7 +52,7 @@ Le tableau 2 répertorie les limites et décrit les différences dans la partie 
 
 Le tableau 3 répertorie les limites et décrit les différences dans les correspondances que chacun des hôtes Outlook renvoie après avoir évalué une expression régulière. La prise en charge est indépendante du type spécifique d’appareil, mais peut dépendre du type de corps d’élément, si l’expression régulière est appliquée sur le corps d’élément.
 
-**Tableau 3. Limites sur les correspondances retournées**
+**Tableau 3. Limites sur les correspondances renvoyées**
 
 
 ||**Client riche Outlook**|**Outlook Web App ou OWA pour périphériques**|
@@ -61,13 +61,13 @@ Le tableau 3 répertorie les limites et décrit les différences dans les corres
 |Corps d’élément en texte brut|**getRegExMatches** renvoie les correspondances comprenant 1 536 caractères maximum (1,5 Ko), pour un maximum de 50 correspondances.<br/><br/>**Remarque** : **getRegExMatches** ne renvoie pas de correspondances dans un ordre spécifique dans le tableau renvoyé. En général, partez du principe que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui dans Outlook Web App et OWA pour les appareils.|**getRegExMatches** renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
 |Corps d’élément HTML|**getRegExMatches** renvoie les correspondances comprenant 3 072 caractères maximum (3 Ko), pour un maximum de 50 correspondances.<br/> <br/> **Remarque** : **getRegExMatches** ne renvoie pas de correspondances dans un ordre spécifique dans le tableau renvoyé. En général, partez du principe que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui dans Outlook Web App et OWA pour les appareils.|**getRegExMatches** renvoie toute correspondance de 3 072 (3 Ko) caractères au maximum, pour un nombre maximal de 50 correspondances.|
 
-## Limites pour l’API JavaScript
+## <a name="limits-for-javascript-api"></a>Limites pour l’API JavaScript
 
 
 À part les recommandations précédentes relatives aux règles d’activation, chacun des hôtes Outlook applique certaines limites dans le modèle objet JavaScript, comme indiqué dans le tableau 4 :
 
 
-**Tableau 4 : Limites relatives à l’obtention ou à la définition de certaines données à l’aide de l’API JavaScript pour Office**
+**Tableau 4. Limites relatives à l’obtention ou à la définition de certaines données à l’aide de l’API JavaScript pour Office**
 
 
 |**Fonctionnalité**|**Limite**|**API associées**|**Description**|
@@ -90,7 +90,7 @@ Le tableau 3 répertorie les limites et décrit les différences dans les corres
 |ID des pièces jointes|100 caractères|Méthode [item.addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md)<br/><br/> Méthode [item.removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md)|Limite pour la longueur de l’ID de la pièce jointe à ajouter à un élément ou à supprimer d’un élément.|
 |Appels asynchrones|3 appels|Méthode **item.addFileAttachmentAsync**<br/><br/>Méthode **item.addItemAttachmentAsync**<br/><br/><br/>Méthode **item.removeAttachmentAsync**<br/><br/> Méthode [Body.getTypeAsync](../../reference/outlook/Body.md)<br/><br/>Méthode **Body.prependAsync**<br/><br/>Méthode **Body.setSelectedDataAsync**<br/><br/> Méthode [CustomProperties.saveAsync](../../reference/outlook/CustomProperties.md)<br/><br/><br/> Méthode [item.LoadCustomPropertiesAysnc](../../reference/outlook/Office.context.mailbox.item.md)<br/><br/><br/> Méthode [Location.getAsync](../../reference/outlook/Location.md)<br/><br/>Méthode **Location.setAsync**<br/><br/> Méthode [mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md)<br/><br/> Méthode [mailbox.getUserIdentityTokenAsync](../../reference/outlook/Office.context.mailbox.md)<br/><br/> Méthode [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md)<br/><br/>Méthode **Recipients.addAsync**<br/><br/> Méthode [Recipients.getAsync](../../reference/outlook/Recipients.md)<br/><br/>Méthode **Recipients.setAsync**<br/><br/> Méthode [RoamingSettings.saveAsync](../../reference/outlook/RoamingSettings.md)<br/><br/> Méthode [Subject.getAsync](../../reference/outlook/Subject.md)<br/><br/>Méthode **Subject.setAsync**<br/><br/> Méthode [Time.getAsync](../../reference/outlook/Time.md)<br/><br/> Méthode [Time.setAsync](../../reference/outlook/Time.md)|Pour Outlook Web App ou OWA pour périphériques : limite du nombre d’appels asynchrones simultanés, car les navigateurs autorisent uniquement un nombre limité d’appels asynchrones aux serveurs. |
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

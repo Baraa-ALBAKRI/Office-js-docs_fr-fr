@@ -1,8 +1,8 @@
-# Localisation des compléments Office
+# <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
 Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript pour Office pour déterminer un paramètre régional et les chaînes d’affichage en fonction des paramètres régionaux de l’application hôte, ou pour interpréter ou afficher les données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
 
-## Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
+## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
 
 L’API JavaScript pour Office offre deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application hôte et des données :
 
@@ -36,7 +36,7 @@ L’API JavaScript pour Office offre deux propriétés qui prennent en charge l
 ```
 
 
-## Contrôler la localisation à partir du manifeste
+## <a name="control-localization-from-the-manifest"></a>Contrôler la localisation à partir du manifeste
 
 
 Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme de complément Office et les applications hôtes Office appliquent les valeurs des éléments [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
@@ -49,14 +49,14 @@ Chaque complément Office indique un élément [DefaultLocale] élément et un p
 |[Description]   |Les utilisateurs de chaque paramètre régional spécifié peuvent voir une description localisée du complément dans l’Office Store (ou dans un catalogue privé).<br/>Pour les compléments Outlook, les utilisateurs peuvent voir la description dans le Centre d’administration Exchange (EAC) après l’installation.|
 |[DisplayName]   |Les utilisateurs de chaque paramètre régional spécifié peuvent voir une description localisée du complément dans l’Office Store (ou dans un catalogue privé).<br/>Pour les compléments Outlook, les utilisateurs peuvent voir le nom d’affichage sous forme d’étiquette pour le bouton de l’application Outlook ainsi que dans l’EAC après l’installation.<br/>Pour les compléments de contenu et du volet Office, les utilisateurs peuvent voir l’icône dans le ruban après avoir installé l’application.|
 |[IconUrl]        |L’image de l’icône est facultative. Vous pouvez utiliser la même technique de remplacement pour spécifier une image donnée pour une culture particulière. Si vous utilisez et localisez une icône, les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir l’image d’icône localisée pour le complément.<br/>Pour les compléments Outlook, les utilisateurs peuvent voir l’icône dans l’EAC après l’installation du complément.<br/>Pour les compléments de contenu et du volet Office, les utilisateurs peuvent voir l’icône dans le ruban après avoir installé le complément.|
-|[HighResolutionIconUrl] <br/><br/>**Important**  cet élément est disponible uniquement lors de l’utilisation de la version 1.1 du manifeste de complément.|L’image de l’icône de haute résolution est facultative. Néanmoins, si elle est indiquée, elle doit l’être après l’élément [IconUrl]. Si  [HighResolutionIconUrl] est spécifié et que le complément est installé sur un appareil qui prend en charge la haute résolution (dpi), la valeur [HighResolutionIconUrl] est utilisée à la place de la valeur [IconUrl].<br/>Vous pouvez utiliser la même technique de remplacement pour spécifier une image donnée pour une culture particulière. Si vous utilisez et localisez une icône, les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir l’image d’icône localisée pour le complément.<br/>Pour les compléments Outlook, les utilisateurs peuvent voir l’icône dans l’EAC après l’installation du complément.<br/>Pour les compléments de contenu et du volet Office, les utilisateurs peuvent voir l’icône dans le ruban après avoir installé le complément.|
+|[HighResolutionIconUrl] <br/><br/>**Important**  Cet élément est disponible uniquement lors de l’utilisation de la version 1.1 du manifeste de complément.|L’image de l’icône de haute résolution est facultative. Néanmoins, si elle est indiquée, elle doit l’être après l’élément [IconUrl]. Si  [HighResolutionIconUrl] est spécifié et que le complément est installé sur un appareil qui prend en charge la haute résolution (dpi), la valeur [HighResolutionIconUrl] est utilisée à la place de la valeur [IconUrl].<br/>Vous pouvez utiliser la même technique de remplacement pour spécifier une image donnée pour une culture particulière. Si vous utilisez et localisez une icône, les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir l’image d’icône localisée pour le complément.<br/>Pour les compléments Outlook, les utilisateurs peuvent voir l’icône dans l’EAC après l’installation du complément.<br/>Pour les compléments de contenu et du volet Office, les utilisateurs peuvent voir l’icône dans le ruban après avoir installé le complément.|
 |[SourceLocation]   |Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent voir une page web que vous concevez spécifiquement pour le complément pour ce paramètre régional. |
 
  > 
   **Remarque :** Vous ne pouvez localiser la description et le nom d’affichage que pour les paramètres régionaux pris en charge par Office. Voir [Identificateurs de langues et valeurs OptionState Id dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) pour connaître la liste des langues et des paramètres régionaux pour la version actuelle d’Office.
 
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 Par exemple, une Complément Office peut spécifier que  [DefaultLocale] est `en-us`. Pour l’élément  [DisplayName], le complément peut spécifier un élément enfant  [Override] pour le paramètre régional `fr-fr`, comme illustré ci-dessous. 
 
@@ -126,7 +126,7 @@ Pour les compléments Outlook, l’élément [SourceLocation] s’aligne égalem
 ```
 
 
-## Mettre en correspondance le format de date/heure avec le paramètre régional du client
+## <a name="match-date/time-format-with-client-locale"></a>Mettre en correspondance le format de date/heure avec le paramètre régional du client
 
 
 Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l’application d’hébergement en utilisant la propriété [displayLanguage]. Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application hôte. Une solution consiste à préparer un fichier de ressources qui spécifie le format d’affichage de date/heure à utiliser pour chaque paramètre régional pris en charge par le complément Office. Lors de l’exécution, votre complément peut utiliser le fichier de ressources et faire correspondre le format de date/heure approprié avec le paramètre régional obtenu à partir de la propriété [displayLanguage].
@@ -134,7 +134,7 @@ Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l
 Vous pouvez obtenir les paramètres régionaux des données de l’application d’hébergement en utilisant la propriété [contentLanguage]. En fonction de cette valeur, vous pouvez correctement interpréter ou afficher des chaînes de date/heure. Par exemple, dans le paramètre régional `jp-JP`, les valeurs de date/heure sont exprimées sous la forme `yyyy/MM/dd`, alors qu’avec le paramètre régional `fr-FR` elles apparaissent sous la forme `dd/MM/yyyy`.
 
 
-## Utiliser Ajax pour l’internationalisation et la localisation
+## <a name="use-ajax-for-globalization-and-localization"></a>Utiliser Ajax pour l’internationalisation et la localisation
 
 
 Si vous utilisez Visual Studio pour créer des Compléments Office, .NET Framework et Ajax offrent des moyens d’internationaliser et de localiser les fichiers de script client.
@@ -144,7 +144,7 @@ Vous pouvez internationaliser et utiliser les extensions de type JavaScript [Dat
 Vous pouvez inclure des chaînes de ressources localisées directement dans des fichiers JavaScript autonomes pour fournir des fichiers de script client pour les différents paramètres régionaux, qui sont définis dans le navigateur ou fournis par l’utilisateur. Créez un fichier de script distinct pour chaque paramètre régional pris en charge. Dans chaque fichier de script, incluez un objet au format JSON contenant les chaînes de ressources pour ce paramètre régional. Les valeurs localisées sont appliquées lorsque le script s’exécute dans le navigateur. 
 
 
-## Exemple : créer un complément Office localisé
+## <a name="example:-build-a-localized-office-add-in"></a>Exemple : créer un complément Office localisé
 
 
 Cette section inclut des exemples expliquant comment localiser la description, le nom d’affichage et l’interface utilisateur d’une Complément Office.
@@ -156,7 +156,7 @@ En outre, vous devez créer un projet de complément Office Visual Studio 201
 
  > **Remarque :**   Pour télécharger Visual Studio 2015, consultez la [page dédiée aux outils de développement Office](https://www.visualstudio.com/features/office-tools-vs). Cette page contient également un lien pour télécharger les outils de développement Office.
 
-### Configurer Office 2013 pour utiliser des langues supplémentaires pour l’affichage ou l’édition
+### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurer Office 2013 pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
 Vous pouvez utiliser un module linguistique Office 2013 pour installer des langues supplémentaires. Pour plus d’informations sur les modules linguistiques et comment les obtenir, voir [Options de langue Office 2013](http://office.microsoft.com/en-us/language-packs/).
 
@@ -166,7 +166,7 @@ Vous pouvez utiliser un module linguistique Office 2013 pour installer des langu
 Une fois le module linguistique installé, vous pouvez configurer Office 2013 pour utiliser la langue installée pour l’affichage de l’interface utilisateur, pour l’édition du contenu du document, ou les deux. Dans cet exemple, le module linguistique espagnol a été installé sur Office 2013.
 
 
-### Créer un projet de complément Office
+### <a name="create-an-office-add-in-project"></a>Créer un projet de complément Office
 
 
 1. Dans Visual Studio, choisissez  **Fichier**  >  **Nouveau projet**.
@@ -178,7 +178,7 @@ Une fois le module linguistique installé, vous pouvez configurer Office 2013 p
 4. Dans la boîte de dialogue **Créer un complément Office**, sélectionnez  **Volet Office** et cliquez sur **Suivant**. Sur la page suivante, désactivez les cases à cocher pour toutes les applications hôtes à l’exception de Word. Cliquez sur  **Terminer** pour créer le projet.
     
 
-### Localiser le texte utilisé dans votre complément
+### <a name="localize-the-text-used-in-your-add-in"></a>Localiser le texte utilisé dans votre complément
 
 
 Le texte que vous souhaitez localiser dans une autre langue apparaît à deux emplacements :
@@ -257,12 +257,12 @@ Pour mettre en page l’interface utilisateur du complément :
     
 La figure 3 montre l’élément titre (h1) et l’élément paragraphe (p) qui afficheront le texte localisé lors de l’exécution de l’exemple de complément.
 
-**Figure 3. Interface du complément**
+**Figure 3. Interface utilisateur du complément**
 
 ![Interface utilisateur de l’application avec des sections en surbrillance](../../images/off15App_HowToLocalize_fig03.png)
 
 
-#### Ajouter le fichier de ressources qui contient les chaînes localisées
+#### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Ajouter le fichier de ressources qui contient les chaînes localisées
 
 
 Le fichier de ressources JavaScript contient les chaînes utilisées pour l’interface utilisateur du complément. L’interface utilisateur de l’exemple de complément comprend un élément h1 qui affiche un message de bienvenue et un élément p qui présente le complément à l’utilisateur. 
@@ -329,7 +329,7 @@ Pour ajouter le fichier de ressources au projet de complément :
 
 Le fichier de ressources UIStrings.js crée un objet,  **UIStrings**, qui contient les chaînes localisées pour l’interface utilisateur de votre complément. 
 
-#### Localiser le texte utilisé pour l’interface utilisateur du complément
+#### <a name="localize-the-text-used-for-the-add-in-ui"></a>Localiser le texte utilisé pour l’interface utilisateur du complément
 
 
 Pour utiliser le fichier de ressources dans votre complément, vous devez ajouter une balise de script pour ce fichier dans Home.html. Quand Home.html est chargé, UIStrings.js s’exécute et l’objet  **UIStrings** que vous utilisez pour obtenir les chaînes est disponible pour votre code. Ajoutez le code HTML suivant dans la balise head pour Home.html pour que **UIStrings** soit disponible pour votre code.
@@ -394,7 +394,7 @@ Remplacez le code du fichier Home.js par le code suivant. Le code montre comment
 ```
 
 
-### Tester votre complément localisé
+### <a name="test-your-localized-add-in"></a>Tester votre complément localisé
 
 
 Pour tester votre complément localisé, changez la langue utilisée pour l’affichage et l’édition dans l’application hôte, puis exécutez votre complément. 
@@ -402,7 +402,7 @@ Pour tester votre complément localisé, changez la langue utilisée pour l’af
 Pour changer la langue utilisée pour l’affichage ou l’édition dans votre complément :
 
 
-1. Dans Word 2013, choisissez  **Fichier**,  **Options**,  **Langue**. La figure 4 montre la boîte de dialogue  **Options Word** ouverte avec l’onglet Langue.
+1. Dans Word 2013, sélectionnez **Fichier**, **Options**, **Langue**. La figure 4 montre la boîte de dialogue **Options Word** ouverte sous l’onglet Langue.
     
     **Figure 4. Options de langue dans la boîte de dialogue Options Word 2013**
 
@@ -420,11 +420,12 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 ![Application avec texte de l’interface utilisateur localisé](../../images/off15App_HowToLocalize_fig05.png)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
     
-- [Identificateurs de langue et valeurs d'ID de l'élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- 
+  [Identificateurs de langue et valeurs d’ID de l’élément OptionState dans Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         ../../reference/manifest/defaultlocale.md
 [Description]:           ../../reference/manifest/description.md
@@ -432,7 +433,7 @@ Exécutez l’exemple de complément. Le complément de volet de tâches se char
 [IconUrl]:               ../../reference/manifest/iconurl.md
 [HighResolutionIconUrl]: ../../reference/manifest/highresolutioniconurl.md
 [SourceLocation]:        ../../reference/manifest/sourcelocation.md
-[Remplacer]:              ../../reference/manifest/override.md
+[Override]:              ../../reference/manifest/override.md
 [DesktopSettings]:       ../../reference/manifest/desktopsettings.md
 [TabletSettings]:        ../../reference/manifest/tabletsettings.md
 [PhoneSettings]:         ../../reference/manifest/phonesettings.md

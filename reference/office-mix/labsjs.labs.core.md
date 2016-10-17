@@ -1,34 +1,34 @@
 
-# LabsJS.Labs.Core
+# <a name="labsjs.labs.core"></a>LabsJS.Labs.Core
 Fournit une vue d’ensemble de haut niveau de la référence de l’API JavaScript LabsJS.Labs.Core.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Les classes, les structures de données et les interfaces principales sont des composants partagés par LabsJS et le lecteur de présentation (dans ce cas, Office Mix), afin de créer une transition interactive entre les deux.
 
-## Module d’API LabsJS.Labs.Core
+## <a name="labsjs.labs.core-api-module"></a>Module d’API LabsJS.Labs.Core
 
 Le module Labs.Core contient les types suivants :
 
 
-### Classes
+### <a name="classes"></a>Classes
 
 
 |||
 |:-----|:-----|
 |[Labs.Core.Permissions](../../reference/office-mix/labs.core.permissions.md)|Classe statique qui représente les autorisations activées pour un utilisateur donné de l’atelier.|
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||
 |:-----|:-----|
-|[Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)|Action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.|
+|[Labs.Core.IAction](../../reference/office-mix/labs.core.iaction.md)|Représente une action d’atelier correspondant à une interaction entre l’utilisateur et un atelier spécifié.|
 |[Labs.Core.IActionResult](../../reference/office-mix/labs.core.iactionresult.md)|Résultats d’une action. Selon le type d’action, les résultats sont définis par le serveur ou fournis par le client au cours de l’action.|
 |[Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md)|Classe de base pour les instances des composants de l’atelier.|
 |[Labs.Core.IConfigurationInfo](../../reference/office-mix/labs.core.iconfigurationinfo.md)|Informations sur la configuration de l’atelier.|
 |[Labs.Core.IConnectionResponse](../../reference/office-mix/labs.core.iconnectionresponse.md)|Informations de la réponse renvoyées par l’appel de connexion.|
-|[Labs.Core.IGetActionOptions](../../reference/office-mix/labs.core.igetactionoptions.md)|Options transmises dans le cadre d’une action  **get**.|
+|[Labs.Core.IGetActionOptions](../../reference/office-mix/labs.core.igetactionoptions.md)|Options transmises dans le cadre d’une action **get**.|
 |[Labs.Core.ILabCreationOptions](../../reference/office-mix/labs.core.ilabcreationoptions.md)|Options transmises dans le cadre d’une opération Création d’un atelier.|
 |[Labs.Core.ILabHostVersionInfo](../../reference/office-mix/labs.core.ilabhostversioninfo.md)|Informations sur la version de l’hôte de l’atelier.|
 |[Labs.Core.IActionOptions](../../reference/office-mix/labs.core.iactionoptions.md)|Définition des options de l’action d’atelier. Options transmises lors de l’exécution d’une action donnée.|
@@ -49,7 +49,7 @@ Le module Labs.Core contient les types suivants :
 |[Labs.Core.ModeChangedEventData](../../reference/office-mix/labs.core.modechangedeventdata.md)|Données associées à un événement de mode modifié.|
 |[Labs.Core.IEventCallback](../../reference/office-mix/labs.core.ieventcallback.md)|Interface permettant de traiter les rappels EventManager.|
 
-### Énumérations
+### <a name="enumerations"></a>Énumérations
 
 
 |||

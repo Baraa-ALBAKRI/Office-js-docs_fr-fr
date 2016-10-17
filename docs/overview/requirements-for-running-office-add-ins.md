@@ -1,5 +1,5 @@
 
-# Configuration requise pour exécuter des compléments Office
+# <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
@@ -7,7 +7,7 @@ Cet article décrit la configuration logicielle et matérielle requise pour l’
 >**Remarque :** Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability). 
 
 
-## Exigences en matière de serveur
+## <a name="server-requirements"></a>Exigences en matière de serveur
 
 Pour pouvoir installer et exécuter des Complément Office, vous devez d’abord déployer les fichiers manifeste et de pages web pour l’interface utilisateur et le code de votre complément sur les emplacements de serveur appropriés.
 
@@ -25,7 +25,7 @@ Pour tester et exécuter des compléments Outlook, le compte de messagerie Outl
 
 
 
-## Configuration requise pour le client : Ordinateur de bureau et tablette Windows
+## <a name="client-requirements:-windows-desktop-and-tablet"></a>Exigences en matière de client : ordinateur de bureau et tablette Windows
 
 Le logiciel suivant est requis pour développer un Complément Office pour les clients Office ou les clients web pris en charge qui s’exécutent sur un ordinateur de bureau, un ordinateur portable ou une tablette Windows :
 
@@ -43,7 +43,7 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 - Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
 
 
-## Exigences en matière de client : ordinateur de bureau OS X
+## <a name="client-requirements:-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
 Outlook pour Mac, qui est distribué dans le cadre d’Office 365, prend en charge les compléments Outlook. L’exécution des compléments Outlook sur Outlook pour Mac a les mêmes exigences qu’Outlook pour Mac lui-même : le système d’exploitation doit être au minimum OS X v10.10 « Yosemite ». Comme Outlook pour Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
@@ -52,12 +52,12 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 - Excel pour Mac version 15.19 (160206) 
 - PowerPoint pour Mac version 15.24 (160614)
 
-## Configuration requise pour le client : Prise en charge du navigateur pour les clients web Office Online et SharePoint
+## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
 
 Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 9, Chrome 13, Firefox 5, Safari 5.0.6 ou une version ultérieure de ces navigateurs.
 
 
-## Exigences en matière de client : smartphone et tablette autres que Windows
+## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphone et tablette autres que Windows
 
 Plus particulièrement pour OWA pour périphériques et Outlook Web App exécutés dans un navigateur sur des smartphones et des tablettes non Windows, le logiciel suivant est requis pour tester et exécuter des compléments Outlook.
 
@@ -70,8 +70,8 @@ Plus particulièrement pour OWA pour périphériques et Outlook Web App exécu
 |Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Office 365, Exchange Online, ou localement sur Exchange Server 2013 ou version ultérieure|Safari|
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Vue d’ensemble de la plateforme des compléments pour Office](../../docs/overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../../docs/overview/office-add-ins.md)
 - [Disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability)
 

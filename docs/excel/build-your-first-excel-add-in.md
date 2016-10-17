@@ -1,4 +1,4 @@
-# Création de votre premier complément Excel
+# <a name="build-your-first-excel-add-in"></a>Création de votre premier complément Excel
 
 Cet article décrit comment utiliser l’API JavaScript Excel pour créer un complément pour Excel 2016 ou Excel Online. La procédure suivante vous guide tout au long du processus de création d’un simple complément de volet Office permettant de charger des données dans une feuille de calcul et de créer un graphique de base dans Excel 2016.
 
@@ -8,7 +8,7 @@ Cet article décrit comment utiliser l’API JavaScript Excel pour créer un com
 Vous devez commencer par créer une application web en utilisant HTML et JQuery. Ensuite, vous devez créer un fichier manifeste XML qui indique l’endroit où vous souhaitez localiser votre application web et la façon dont elle doit apparaître dans Excel.
 
 
-### Le coder
+### <a name="code-it"></a>Le coder
 
 1- Créez un dossier sur votre lecteur local nommé RapportVentesTrimestrielles (par exemple, C:\\RapportVentesTrimestrielles). Vous devrez enregistrer tous les fichiers créés au cours des étapes qui suivent dans ce dossier.
 
@@ -261,7 +261,7 @@ Vous devez commencer par créer une application web en utilisant HTML et JQuery.
 
 8-  Enregistrez tous les fichiers. Vous venez d’écrire votre premier complément Excel.
 
-### Essayez !
+### <a name="try-it-out"></a>Essayez !
 
 Pour déployer et tester votre complément, le plus simple consiste à copier les fichiers sur un partage réseau.
 
@@ -294,7 +294,7 @@ Pour déployer et tester votre complément, le plus simple consiste à copier le
 ![Complément de rapport sur les ventes trimestrielles](../../images/QuarterlySalesReport_report.PNG)
 
 
-### Ressources supplémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 *  [Présentation de la programmation JavaScript pour les compléments Excel](excel-add-ins-javascript-programming-overview.md)
 *  [Explorateur d’extraits de code pour Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)

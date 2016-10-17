@@ -1,9 +1,9 @@
 
-# Chargement de version test des compléments Office sur iPad et Mac
+# <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
 Pour voir comment votre complément s’exécutera dans Office pour iOS, vous pouvez charger une version test du manifeste de votre complément sur un iPad à l’aide d’iTunes ou directement dans Office pour Mac. Cette opération ne vous permettra pas de définir des points d’arrêt ni de déboguer le code de votre complément pendant son exécution, mais vous pourrez observer son comportement, et vérifier que l’interface utilisateur est fonctionnelle et qu’elle s’affiche correctement. 
 
-## Configuration requise pour Office pour iOS
+## <a name="prerequisites-for-office-for-ios"></a>Configuration requise pour Office pour iOS
 
 
 
@@ -14,7 +14,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 - Le fichier .xml de manifeste pour le complément que vous voulez tester.
     
 
-## Configuration requise pour Office pour Mac
+## <a name="prerequisites-for-office-for-mac"></a>Configuration requise pour Office pour Mac
 
 
 
@@ -29,7 +29,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
 - Le fichier .xml de manifeste pour le complément que vous voulez tester.
     
 
-## Chargement d’une version test d’un complément dans Excel ou Word pour iPad
+## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>Chargement d’une version test d’un complément dans Excel ou Word pour iPad
 
 1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Lorsque vous connectez l’iPad à votre ordinateur pour la première fois, le message **Approuver cet ordinateur ?** s’affiche. Sélectionnez **Approuver** pour continuer.
 
@@ -56,7 +56,7 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     ![Insérer des compléments dans l’application Excel](../../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
 
 
-## Charger une version test de complément dans Office pour Mac
+## <a name="sideload-an-add-in-on-office-for-mac"></a>Charger une version test de complément dans Office pour Mac
 
 > **Remarque :** Pour charger une version test d’un complément Outlook 2016 pour Mac, voir [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md).
 
@@ -70,19 +70,21 @@ Pour voir comment votre complément s’exécutera dans Office pour iOS, vous po
     
     ![Dossier WEF dans Office pour Mac](../../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
 
-3. Ouvrez Word, puis ouvrez un document. Redémarrez Word si cette application est déjà en cours d'exécution.
+3. Ouvrez Word, puis ouvrez un document. Redémarrez Word s’il est déjà ouvert.
     
-4. Dans Word, choisissez  **Insertion**  >  **Compléments**  >  **Mes compléments**, puis choisissez votre complément.
+4. Dans Word, choisissez **Insertion** > **Compléments** > **Mes compléments** (menu déroulant), puis choisissez votre complément.
     
     ![Mes compléments dans Office pour Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-> **Important :** Les versions test chargées de vos compléments ne s’affichent pas dans la boîte de dialogue Mes compléments. Elles sont visibles uniquement dans le menu déroulant (petite flèche vers le bas à droite de Mes compléments). Les versions test chargées de vos compléments sont affichées dans cette liste sous le titre « Compléments de développeur ». 
+  > **Important :** Les versions test chargées de vos compléments ne s’affichent pas dans la boîte de dialogue Mes compléments. Elles sont visibles uniquement dans le menu déroulant (petite flèche vers le bas à droite de Mes compléments). Les versions test chargées de vos compléments sont affichées dans cette liste sous le titre « Compléments de développeur ». 
     
 5. Vérifiez que votre complément apparaît dans Word.
     
     ![Complément Office affiché dans Office pour Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    
+> **Remarque :** Les compléments sont souvent mis en cache dans Office pour Mac, pour des raisons de performances. Si vous avez besoin de forcer le rechargement de votre complément en cours de développement, vous pouvez effacer le dossier Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/. 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 - [Débogage des compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)

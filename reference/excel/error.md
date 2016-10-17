@@ -1,10 +1,10 @@
-# Objet OfficeExtension.Error (API JavaScript pour Excel)
+# <a name="officeextension.error-object-(javascript-api-for-excel)"></a>Objet OfficeExtension.Error (API JavaScript pour Excel)
 
 Représente les erreurs qui se produisent lorsque vous utilisez l’API JavaScript Excel.
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |code|chaîne|Obtient une valeur qui indique le type d’erreur. La valeur peut être « AccessDenied », « ActivityLimitReached », « BadPassword », « GeneralException », « InsertDeleteConflict », « InvalidArgument », « InvalidBinding », « InvalidOperation », « InvalidReference », « InvalidSelection », « ItemAlreadyExists », « ItemNotFound », « NotImplemented » ou « UnsupportedOperation ». |
@@ -13,24 +13,24 @@ _S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 |name |string| Obtient une valeur qui est toujours « OfficeExtension.Error ». |
 |traceMessages |string[]| Obtient un tableau de valeurs qui correspondent aux messages d’instrumentation définis avec context.trace(); |
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|chaîne|Renvoie le code d’erreur et le message au format suivant : « {0}: {1} », code, message.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### toString()
+### <a name="tostring()"></a>toString()
 Renvoie le code d’erreur et le message au format suivant : « {0}: {1} », code, message.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 error.toString()
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string

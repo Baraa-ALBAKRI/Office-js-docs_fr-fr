@@ -1,10 +1,10 @@
-# Objet FilterCriteria (interface API JavaScript pour Excel)
+# <a name="filtercriteria-object-(javascript-api-for-excel)"></a>Objet FilterCriteria (interface API JavaScript pour Excel)
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
-Cet objet représente les critères de filtrage appliqués à une colonne.
+Représente les critères de filtrage appliqués à une colonne.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
@@ -15,33 +15,33 @@ Cet objet représente les critères de filtrage appliqués à une colonne.
 |filterOn|chaîne|Propriété utilisée par le filtre pour déterminer si les valeurs doivent rester visibles. Les valeurs possibles sont les suivantes :    BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom |
 |values|object[]|Valeurs à utiliser pour le filtrage « Values ».|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
-|icône|[Icône](icon.md)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|
+|icône|[Icon](icon.md)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|
 |opérateur|[FilterOperator](filteroperator.md)|Opérateur utilisé pour combiner les critères 1 et 2 lorsque vous utilisez le filtrage « Custom ».|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void

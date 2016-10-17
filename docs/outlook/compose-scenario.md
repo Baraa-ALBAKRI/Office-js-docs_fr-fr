@@ -1,5 +1,5 @@
 
-# Créer des compléments Outlook pour les formulaires de composition
+# <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 
 À partir de la version 1.1 du schéma pour les manifestes des Compléments Office et office.js, vous pouvez créer des compléments de composition, qui sont des compléments Outlook activés dans les formulaires de composition. Contrairement aux compléments de lecture (qui sont des compléments Outlook activés en mode lecture lorsqu’un utilisateur visualise un message ou un rendez-vous), les compléments de composition sont disponibles dans les scénarios suivants :
 
@@ -27,13 +27,13 @@ La figure suivante présente le volet de sélection des compléments constitué
 ![Application de messagerie de modèles activée pour l’élément composé](../../images/mod_off15_MailApps_TemplatesAppSelectionPane.png)
 
 
-## Types de complément disponibles en mode composition
+## <a name="types-of-add-ins-available-in-compose-mode"></a>Types de complément disponibles en mode composition
 
 
 Les compléments de composition sont implémentés en tant que [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
 
 
-## Fonctionnalités de l’API disponibles pour les compléments de composition
+## <a name="api-features-available-to-compose-add-ins"></a>Fonctionnalités de l’API disponibles pour les compléments de composition
 
 
 
@@ -56,7 +56,7 @@ Les compléments de composition sont implémentés en tant que [Commandes de com
 - [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples): `ComposeAppDemo`
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,5 +1,5 @@
 
-# Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
+# <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte
 
 Vous pouvez créer un complément du volet Office pour Project Standard 2013 ou Project Professionnel 2013 à l’aide de Visual Studio 2015 afin de créer une application web complexe ou à l’aide d’un éditeur de texte en vue de créer les fichiers d’un complément local. Cet article indique comment créer un complément simple utilisant un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L’exemple de complément Test du modèle objet de Project teste certaines fonctions JavaScript qui utilisent le modèle objet pour compléments. Une fois que vous avez utilisé le  **Centre de gestion de la confidentialité** dans Project 2013 pour enregistrer le partage de fichiers contenant le fichier manifeste, vous pouvez ouvrir le complément du volet Office à partir de l’onglet **PROJECT** sur le ruban. L’exemple de code dans cet article est basé sur une application de test créée par Arvind Iyer, Microsoft Corporation.
 
@@ -7,7 +7,7 @@ Project 2013 utilise le même schéma de manifeste de complément que d’autres
 
 Le complément Test du modèle objet de Project peut obtenir le GUID d’une tâche, ainsi que les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet qui se trouve dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. Le [ téléchargement du kit de développement logiciel de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) inclut le code source complet. Lorsque vous extrayez et installez le kit de développement logiciel et les exemples contenus dans le fichier Project2013SDK.msi, reportez-vous au sous-répertoire `\Samples\Apps\Copy_to_AppManifests_FileShare` pour le fichier de manifeste et au sous-répertoire `\Samples\Apps\Copy_to_AppSource_FileShare` pour le code source. L’exemple JSOMCall.html utilise des fonctions JavaScript dans les fichiers office.js et project-15.js, qui sont inclus. Vous pouvez utiliser les fichiers de débogage correspondants (office.debug.js et project-15.debug.js) pour examiner les fonctions. Pour une introduction à l’utilisation de JavaScript dans des Compléments Office, voir [Présentation de l’API JavaScript pour Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
 
-## Procédure 1. Pour créer le fichier de manifeste du complément
+## <a name="procedure-1.-to-create-the-add-in-manifest-file"></a>Procédure 1. Pour créer le fichier de manifeste du complément
 
 
 
@@ -51,7 +51,7 @@ Le complément Test du modèle objet de Project peut obtenir le GUID d’une tâ
     
 La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_SimpleOMCalls.xml spécifie pour le complément de test de Project. Les boutons qui sont spécifiés dans le fichier HTML appellent des fonctions JavaScript associées. Vous pouvez ajouter les fonctions JavaScript dans le fichier HTML ou les placer dans un fichier .js distinct.
 
-## Procédure 2. Pour créer les fichiers sources du complément Test du modèle objet de Project
+## <a name="procedure-2.-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procédure 2. Pour créer les fichiers sources du complément Test du modèle objet de Project
 
 
 
@@ -697,7 +697,7 @@ function manageViewEventHandler(docMethod) {
      >**Note**  The  **Task Pane Add-in (Project)** template in Visual Studio 2015 includes default .css files for a common look and feel of add-ins.
 La procédure 3 montre comment installer et utiliser les fonctionnalités du complément Test du modèle objet de Project.
 
-## Procédure 3. Pour installer et utiliser le complément Test du modèle objet de Project
+## <a name="procedure-3.-to-install-and-use-the-project-om-test-add-in"></a>Procédure 3. Pour installer et utiliser le complément Test du modèle objet de Project
 
 
 
@@ -838,7 +838,7 @@ Display language: en-US
 19. Vous pouvez actualiser le complément après avoir édité le code source en fermant et en redémarrant Project. Dans le ruban  **Project**, la liste déroulante  ** Compléments Office** contient la liste des compléments récemment utilisés.
     
 
-## Exemple
+## <a name="example"></a>Exemple
 
 
 Le kit de développement logiciel Project 2013 contient le code complet du fichier JSOMCall.html, le fichier JSOM_Sample.js et les fichiers Office.js, Office.debug.js, Project-15.js et Project-15.debug.js associés. Voici le code du fichier JSOMCall.html.
@@ -927,7 +927,7 @@ Le kit de développement logiciel Project 2013 contient le code complet du fich
 ```
 
 
-## Programmation fiable
+## <a name="robust-programming"></a>Programmation fiable
 
 
 Le complément  **Test du modèle objet de Project** est un exemple qui illustre l’utilisation de certaines fonctions JavaScript pour Project 2013 dans les fichiers Project-15.js et Office.js. L’exemple est destiné uniquement à des fins de test et n’inclut pas de contrôles d’erreur fiables. Par exemple, si vous ne sélectionnez pas de ressources et exécutez la fonction **getSelectedResourceAsync**, la variable  **resourceGuid** n’est pas initialisée et les appels à **getResourceFieldAsync** renvoient une erreur. Pour un complément de production, vous devez vérifier l’absence d’erreurs spécifiques et ignorer les résultats, masquer la fonctionnalité qui ne s’applique pas ou avertir l’utilisateur de choisir une vue et d’effectuer une sélection valide avant d’utiliser une fonction.
@@ -1125,7 +1125,7 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 ![Utilisation des routines SurfaceError pour afficher une erreur](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
@@ -1133,9 +1133,9 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
     
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
     
-- [API JavaScript pour les compléments Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript pour les compléments Office](../../reference/javascript-api-for-office.md)
 
-- [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md)     
+- [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../overview/add-in-manifests.md)     
     
-- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

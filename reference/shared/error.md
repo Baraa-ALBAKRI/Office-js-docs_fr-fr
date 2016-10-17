@@ -1,18 +1,18 @@
 
-# Error, objet
+# <a name="error-object"></a>Error, objet
 Fournit des informations spécifiques sur une erreur qui s’est produite pendant une opération de données asynchrone.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```
 asyncResult.error
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Propriétés**
@@ -24,12 +24,12 @@ asyncResult.error
 |[name](../../reference/shared/error.name.md)|Obtient le nom de l’erreur.|
 |[message](../../reference/shared/error.message.md)|Obtient une description détaillée de l’erreur.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 L’objet **Error** est accessible à partir de l’objet [AsyncResult](../../reference/shared/asyncresult.md) renvoyé dans la fonction transmise en tant qu’argument _callback_ d’une opération de données asynchrone, par exemple la méthode [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) de l’objet **Document**.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant utilise la méthode **setSelectedDataAsync** pour affecter au texte sélectionné la valeur « Hello World! ». En cas d’échec, les valeurs des propriétés **name** et **message** de l’objet **Error** sont affichées.
 
@@ -54,30 +54,30 @@ function write(message){
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Outlook pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Outlook pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|De contenu, de volet de tâche, Outlook|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

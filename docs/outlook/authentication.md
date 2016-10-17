@@ -1,9 +1,9 @@
 
-# Authentifier un complément Outlook à l’aide de jetons d’identité Exchange
+# <a name="authenticate-an-outlook-add-in-by-using-exchange-identity-tokens"></a>Authentifier un complément Outlook à l’aide de jetons d’identité Exchange
 
 Votre complément Outlook peut fournir à vos clients des informations de toute provenance sur Internet, que ce soit à partir du serveur qui héberge le complément, de votre réseau interne ou de tout autre endroit sur le cloud. Cependant, si ces informations sont protégées, votre complément Outlook doit pouvoir associer le compte de messagerie Exchange à votre service d’information. Exchange 2013 peut activer l’authentification unique pour votre complément en fournissant un jeton qui identifie le compte de messagerie à l’origine de la demande. Vous pouvez associer ce jeton à un utilisateur inscrit auprès de votre complément afin qu’il soit reconnu dès lors que le complément se connecte à votre service.
 
-## Jetons d’identité
+## <a name="identity-tokens"></a>Jetons d’identité
 
 
 Deux de nos exemples de compléments utilisent des informations publiquement disponibles, une première affiche une carte Bing pour des adresses dans un message, une autre affiche un aperçu pour vos liens vidéo YouTube dans un message. Mais votre complément peut également accéder à des informations non publiques. Vous pouvez utiliser le serveur qui héberge votre complément pour lier ce dernier aux informations de votre réseau interne ou se trouvant ailleurs dans le cloud.
@@ -36,7 +36,7 @@ Examinons les spécificités de la fonction. Dans les articles suivants, nous ut
 - [Authentifier un utilisateur avec un jeton d’identité pour Exchange](../outlook/validate-an-identity-token.md)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

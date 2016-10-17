@@ -1,5 +1,5 @@
 
-# Vue d’ensemble de l’architecture et des fonctionnalités des compléments Outlook
+# <a name="overview-of-outlook-add-ins-architecture-and-features"></a>Vue d’ensemble de l’architecture et des fonctionnalités des compléments Outlook
 
 Un complément Outlook se compose d’un manifeste XML et d’un code (JavaScript et HTML). Ce manifeste spécifie le nom et la description du complément, ainsi que la manière dont il s’intègre dans Outlook. Le manifeste permet aux développeurs de placer des boutons sur des surfaces de commande, désactiver les correspondances d’expressions régulières, etc. Le manifeste définit également l’URL qui héberge le code JavaScript et HTML du complément.
 
@@ -13,12 +13,12 @@ Les compléments utilisent l’API Office.js pour accéder à l’API du complé
 **Interaction des composants les plus courants lorsque l’utilisateur démarre Outlook**
 
 ![Flux des événements au démarrage de l’application de messagerie Outlook](../../images/olowawecon15_LoadingDOMAgaveRuntime.png)
-### Gestion des versions
+### <a name="versioning"></a>Gestion des versions
 
 Lorsque nous faisons évoluer les clients Outlook et la plateforme des compléments, et que nous ajoutons de nouveaux moyens d’intégration pour ces derniers, il est parfois impossible d’implémenter une fonctionnalité simultanément sur tous les clients (Mac, Windows, web, mobile). Pour gérer cette situation, nous contrôlons la version du manifeste et des API. Ainsi, la plateforme est toujours compatible avec les versions précédentes, ce qui signifie que les développeurs peuvent créer un complément qui fonctionne en version de bas niveau pour les clients plus anciens, mais également tirer parti des nouvelles fonctionnalités pour les clients plus récents. Pour en savoir plus sur le fonctionnement du contrôle de version, voir [Manifestes des compléments Outlook](manifests/manifests.md).
 
 
-## Fonctionnalités des compléments Outlook
+## <a name="outlook-add-in-features"></a>Fonctionnalités des compléments Outlook
 
 Les compléments Outlook offrent de nombreuses fonctionnalités enrichies qui peuvent être utilisées pour prendre en charge différents scénarios.
 
@@ -34,24 +34,26 @@ Les compléments Outlook offrent de nombreuses fonctionnalités enrichies qui pe
 |Obtention des pièces jointes ou de la totalité de l’élément sélectionné|Un complément contextuel Outlook peut accéder à des pièces jointes et à la totalité de l’élément sélectionné à partir du serveur. Consultez les rubriques suivantes :<ul><li>Pièces jointes - voir les articles sur l’[obtention de pièces jointes d’un élément Outlook à partir du serveur](get-attachments-of-an-outlook-item.md) et sur [l’ajout de pièces jointes à un élément et leur suppression dans un formulaire de composition dans Outlook]add-and-remove-attachments-to-an-item-in-a-compose-form.md)</li><li>Totalité de l’élément sélectionné - cela est semblable à l’utilisation d’un jeton de rappel pour obtenir des pièces jointes. Consultez les rubriques suivantes :<ul><li>Méthode **mailbox.getCallbackTokenAsync** dans [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) - Fournit un jeton de rappel pour identifier le code côté serveur du complément pour le serveur Exchange.</li><li>Propriété **item.itemId** dans [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.item.md) - Identifie l’élément que l’utilisateur est en train de lire et qui est en cours d’obtention par le code côté serveur.</li><li>Propriété **mailbox.ewsUrl** dans [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) - Fournit l’URL du point de terminaison EWS, ainsi que le jeton de rappel et l’ID d’élément, pouvant être utilisés par le code côté serveur pour accéder à l’opération EWS [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4(Office.15).aspx) afin d’obtenir l’élément dans son intégralité.</li></ul></li></ul>|
 |Profil utilisateur|Un complément de messagerie peut accéder au nom d’affichage, à l’adresse électronique et au fuseau horaire dans le profil de l’utilisateur. Pour plus d’informations, voir l’objet [UserProfile](../../reference/outlook/Office.context.mailbox.userProfile.md).|
 
-## Commencer à créer des compléments Outlook
+## <a name="get-started-building-outlook-add-ins"></a>Commencer à créer des compléments Outlook
 
 Pour commencer à créer des compléments Outlook, voir [Prise en main des compléments Outlook pour Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted) ou [Intégrer votre complément Outlook dans la barre de navigation Outlook](../outlook/extension-module-outlook-add-ins.md).
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 Pour les concepts applicables au développement des compléments Office en général, voir :
 
-- [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
+- [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
 
 - [Meilleures pratiques en matière de développement de compléments Office](../../docs/design/add-in-development-best-practices.md)
 
-- [Gérer les licences de compléments pour Office et SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- 
+  [Gérer les licences de vos compléments Office et SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 
-- [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Soumission des compléments SharePoint et Office, ainsi que des applications web Office 365 dans l’Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 
-- [Interface API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript pour Office](../../reference/javascript-api-for-office.md)
 
 - [Manifestes des compléments Outlook](../outlook/manifests/manifests.md)
 

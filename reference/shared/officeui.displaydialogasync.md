@@ -1,8 +1,8 @@
-# Méthode UI.displayDialogAsync
+# <a name="ui.displaydialogasync-method"></a>Méthode UI.displayDialogAsync
 
 Affiche une boîte de dialogue dans un hôte Office. 
 
-## Configuration requise
+## <a name="requirements"></a>Configuration requise
 
 |Hôte|Nouveauté de|Dernière modification dans |
 |:---------------|:--------|:----------|
@@ -35,7 +35,7 @@ Pour détecter cette API lors de son exécution, utilisez le code suivant.
 
 
 
-### Plateformes prises en charge
+### <a name="supported-platforms"></a>Plateformes prises en charge
 L’ensemble de conditions requises DialogAPI est actuellement pris en charge sur les plateformes suivantes :
 
   - Office pour Windows 2016 pour ordinateur de bureau (version 16.0.6741.0000 ou ultérieure)
@@ -44,19 +44,19 @@ L’ensemble de conditions requises DialogAPI est actuellement pris en charge su
 
 D’autres plateformes seront bientôt disponibles. 
 
-## Syntaxe
+## <a name="syntax"></a>Syntaxe
 
 ```js
 office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
-##Exemples
+##<a name="examples"></a>Exemples
 
 Pour obtenir un exemple simple qui utilise la méthode **displayDialogAsync**, consultez l’[exemple de boîte de dialogue API de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) sur GitHub.
 
 Pour obtenir un exemple qui illustre un scénario d’authentification, consultez l’exemple d’[authentification client Office 365 de complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) sur GitHub.
 
  
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
@@ -64,18 +64,18 @@ Pour obtenir un exemple qui illustre un scénario d’authentification, consulte
 |options|object|Facultatif. Accepte un objet options pour définir les comportements de la boîte de dialogue.|
 |callback|object|Accepte une méthode de rappel pour gérer la tentative de création de boîte de dialogue.|
     
-### Options de configuration
+### <a name="configuration-options"></a>Options de configuration
 Les options de configuration suivantes sont disponibles pour une boîte de dialogue.
 
 
 | Propriété     | Type   |Description|
 |:---------------|:--------|:----------|
-|**width**|object|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
-|**height**|object|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
-|**displayInIFrame**|object|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame dans les clients Office Online. Ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
+|**width**|objet|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
+|**height**|objet|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
+|**displayInIFrame**|objet|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame dans les clients Office Online. Ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
 
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
 Dans la fonction de rappel transmise à la méthode **displayDialogAsync**, vous pouvez utiliser les propriétés de l’objet **AsyncResult** pour renvoyer les informations suivantes.
@@ -90,7 +90,7 @@ Dans la fonction de rappel transmise à la méthode **displayDialogAsync**, vous
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou objet défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_.|
 
 
-## Considérations relatives à la conception
+## <a name="design-considerations"></a>Considérations relatives à la conception
 Les considérations relatives à la conception ci-dessous s’appliquent aux boîtes de dialogue :
 
 - Un complément Office ne peut comporter qu’une seule boîte de dialogue ouverte à la fois.

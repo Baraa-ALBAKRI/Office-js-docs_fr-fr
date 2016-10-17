@@ -1,22 +1,22 @@
-# Objet TableSort (interface API JavaScript pour Excel)
+# <a name="tablesort-object-(javascript-api-for-excel)"></a>Objet TableSort (interface API JavaScript pour Excel)
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
 Gère les opérations de tri des objets Table.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |matchCase|bool|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|
 |méthode|string|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule. Les valeurs possibles sont les suivantes : PinYin, StrokeCount|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
-|champs|[SortField](sortfield.md)|Dernières conditions utilisées pour trier le tableau. En lecture seule.|
+|champs|[SortField](sortfield.md)|Représente les dernières conditions utilisées pour trier le tableau. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -25,28 +25,28 @@ Gère les opérations de tri des objets Table.
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 |[reapply()](#reapply)|void|Applique à nouveau les paramètres actuels de tri au tableau.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### apply(fields: SortField[], matchCase: bool, method: string)
+### <a name="apply(fields:-sortfield[],-matchcase:-bool,-method:-string)"></a>apply(fields: SortField[], matchCase: bool, method: string)
 Effectue une opération de tri.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableSortObject.apply(fields, matchCase, method);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |champs|SortField[]|Liste des conditions de tri.|
 |matchCase|bool|Facultatif. Indique si la casse influe sur le classement des chaînes.|
 |méthode|string|Facultatif. Méthode de classement utilisée pour les caractères chinois.  Les valeurs possibles sont les suivantes : PinYin, StrokeCount|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -66,21 +66,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### clear()
+### <a name="clear()"></a>clear()
 Efface le tri actuellement appliqué au tableau. Même si le classement du tableau n’est pas modifié, l’état des boutons d’en-tête est rétabli.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableSortObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -95,36 +95,36 @@ Excel.run(function (ctx) {
 });
 
 ### load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
+Fills the proxy object created in the JavaScript layer, with property and object values specified in the parameter.
 
 #### Syntax
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-### reapply()
+### <a name="reapply()"></a>reapply()
 Applique à nouveau les paramètres actuels de tri au tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableSortObject.reapply();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-####Exemples
+####<a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';

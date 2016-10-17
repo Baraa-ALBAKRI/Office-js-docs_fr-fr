@@ -1,7 +1,7 @@
 
-# Labs.Core.LabMode
+# <a name="labs.core.labmode"></a>Labs.Core.LabMode
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le mode actuel du laboratoire, mode Édition ou mode Affichage.
 
@@ -10,10 +10,10 @@ enum LabMode
 ```
 
 
-## Champs
+## <a name="fields"></a>Champs
 
 
 |||
 |:-----|:-----|
 |**Modifier**|Mode Édition.|
-|**Affichage**|Mode Affichage.|
+|**Afficher**|Mode Affichage.|

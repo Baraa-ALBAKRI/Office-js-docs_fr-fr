@@ -1,19 +1,19 @@
 
 
-# Office, objet
+# <a name="office-object"></a>Office, objet
 Représente une instance d’un complément, qui permet d’accéder aux objets de niveau supérieur de l’API.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```js
 Office
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Propriétés**
@@ -37,37 +37,37 @@ Office
 |||
 |:-----|:-----|
 |Nom|Description|
-|[Initialiser](../../reference/shared/office.initialize.md)|Se produit quand l’environnement d’exécution est chargé et que le complément est prêt à interagir avec l’application et le document hébergé.|
+|[initialize](../../reference/shared/office.initialize.md)|Se produit quand l’environnement d’exécution est chargé et que le complément est prêt à interagir avec l’application et le document hébergé.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 L’objet **Office** permet au développeur d’implémenter une fonction de rappel pour l’événement Initialize et donne accès à l’objet [Context](../../reference/shared/context.md).
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet objet est pris en charge dans l’application hôte Office correspondante. Une cellule vide indique que l’application hôte Office ne prend pas en charge cet objet.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Outlook pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Outlook pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
 |**Types de complément**|De contenu Outlook, du volet Office|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 |**Version**|**Modifications**|

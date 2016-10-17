@@ -1,11 +1,11 @@
-# Instructions de conception pour les compléments Office
+# <a name="design-guidelines-for-office-add-ins"></a>Instructions de conception pour les compléments Office
 
 Les compléments Office prolongent les fonctionnalités d’Office en offrant des fonctions contextuelles auxquelles les utilisateurs peuvent accéder au sein de clients Office. Les compléments permettent aux utilisateurs d’être plus productifs en leur donnant accès à des fonctionnalités tierces au sein d’Office, sans avoir à gérer de coûteux changements de contexte. 
 
  Votre complément doit s’intégrer de façon harmonieuse avec Office pour fournir une interaction efficace et naturelle à vos utilisateurs. Vous pouvez tirer parti de commandes de complément (extensions de l’interface utilisateur Office) pour permettre aux utilisateurs d’accéder à votre complément, et utiliser les [éléments d’interface utilisateur](ui-elements/ui-elements.md) et les [meilleures pratiques](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices) que nous vous recommandons lorsque vous créez des éléments d’interface utilisateur HTML personnalisés. 
  
  
-## Principes fondamentaux de la conception de compléments Office
+## <a name="core-office-add-in-design-principles"></a>Principes fondamentaux de la conception de compléments Office
 Quelle que soit l’infrastructure sous-jacente que vous utilisez pour créer votre interface utilisateur personnalisée, appliquez les principes suivants lorsque vous concevez votre complément : 
 
 - **Privilégiez une conception explicitement orientée vers Office**. Les fonctionnalités et l’apparence d’un complément doivent prolonger celles d’Office de façon harmonieuse, notamment en reprenant les thèmes Office ou celui des documents.
@@ -20,11 +20,11 @@ Quelle que soit l’infrastructure sous-jacente que vous utilisez pour créer vo
   **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#bk_Touch). 
 
 
-## Langage de création
+## <a name="design-language"></a>Langage de création
 Nous vous recommandons d’adopter le langage de conception d’Office et d’utiliser la [structure de l’interface utilisateur Office](https://dev.office.com/fabric) pour créer une interface personnalisée utilisant HTML dans vos compléments. Si votre organisation dispose déjà d’un langage de conception, vous pouvez parfaitement utiliser celui-ci, tant que le résultat final offre une expérience harmonieuse pour les utilisateurs d’Office. 
 
 
-## Blocs de construction pour les compléments
+## <a name="add-in-building-blocks"></a>Blocs de construction pour les compléments
 Vous pouvez utiliser deux types d’éléments d’interface utilisateur pour créer vos compléments : 
 
 - Des [commandes de complément](ui-elements/ui-elements.md#add-in-commands), qui vous permettent d’ajouter des hooks natifs à des applications Office.
@@ -32,13 +32,13 @@ Vous pouvez utiliser deux types d’éléments d’interface utilisateur pour cr
 
 Pour plus d’informations sur l’utilisation de ces blocs de construction, reportez-vous à la rubrique relative aux [éléments d’interface utilisateur](ui-elements/ui-elements.md).  
 
-## Modèles de conception de l’expérience utilisateur
+## <a name="ux-design-patterns"></a>Modèles de conception de l’expérience utilisateur
 
 Pour vous aider à créer une expérience utilisateur intéressante pour votre complément, des modèles illustrant les modèles de conception d’expérience utilisateur courants sont disponibles. Ces modèles reflètent les [meilleures pratiques](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices) pour créer des compléments de qualité attrayants, et comprennent des modèles de conception pour créer des premières expériences d’utilisation, des éléments de personnalisation et des notifications utilisateur. Ils utilisent des composants et des styles de la [structure de l’interface utilisateur Office](https://dev.office.com/fabric) et incluent des éléments qui enrichissent l’interface utilisateur Office.
 
 Pour accéder aux modèles, consultez le référentiel relatif aux [modèles de conception de l’expérience utilisateur du complément Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns). Des fichiers Adobe Illustrator sont également disponibles. Vous pouvez les télécharger et les mettre à jour pour refléter vos propres modèles de conception. Vous pouvez également copier les fichiers de code à partir du référentiel relatif au [code des modèles de conception de l’expérience utilisateur du complément Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) dans votre projet de complément et les personnaliser selon vos besoins. 
 
-## Modèles d’interaction et de mises en page recommandés
+## <a name="recommended-layouts-and-interaction-patterns"></a>Modèles d’interaction et de mises en page recommandés
 Nous fournissons des modèles de mises en page recommandés pour chaque type de complément, avec des exemples **complets** pour vous aider à tout comprendre parfaitement. Pour plus d’informations sur la façon de mettre en page votre complément, reportez-vous aux rubriques suivantes :
 
 - [Mise en page des conteneurs du volet Office](ui-elements/layout-for-task-pane-add-ins.md)
@@ -47,7 +47,7 @@ Nous fournissons des modèles de mises en page recommandés pour chaque type de 
 
 Consultez aussi nos modèles d’interaction pour obtenir des exemples de scénarios courants pour les compléments et les modèles d’interaction correspondants.
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Structure de l’interface utilisateur Office](https://dev.office.com/fabric) 
 

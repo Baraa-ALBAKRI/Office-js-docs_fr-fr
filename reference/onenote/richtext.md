@@ -1,51 +1,51 @@
-# Objet RichText (interface API JavaScript pour OneNote)
+# <a name="richtext-object-(javascript-api-for-onenote)"></a>Objet RichText (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente un objet RichText dans un paragraphe.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |id|string|Obtient l’ID de l’objet RichText. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
 |text|string|Obtient le texte de l’objet RichText. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |paragraph|[Paragraph](paragraph.md)|Renvoie l’objet Paragraph qui contient l’objet RichText. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-paragraph)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-**id and text**
+**id et text**
 ```js
 OneNote.run(function (context) {
 

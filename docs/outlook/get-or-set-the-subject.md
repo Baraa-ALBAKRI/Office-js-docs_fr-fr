@@ -1,5 +1,5 @@
 
-# Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
+# <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
 L’interface API JavaScript pour Office fournit des méthodes asynchrones ([subject.getAsync](../../reference/outlook/Subject.md) et [subject.setAsync](../../reference/outlook/Subject.md)) pour obtenir et définir l’objet d’un rendez-vous ou d’un message en cours de composition par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste du complément pour Outlook afin d’activer le complément dans des formulaires de composition.
 
@@ -26,7 +26,7 @@ La propriété  **subject** est disponible pour l’accès en écriture uniqueme
 Comme avec la plupart des méthodes asynchrones dans l’interface API JavaScript pour Office,  **getAsync** et **setAsync** admettent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir la section « Passage de paramètres facultatifs à des méthodes asynchrones » dans la rubrique [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Obtention de l’objet
+## <a name="to-get-the-subject"></a>Obtention de l’objet
 
 
 Cette section présente un exemple de code qui obtient l’objet du rendez-vous ou du message que l’utilisateur compose, et affiche l’objet. Cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message, comme indiqué ci-dessous.
@@ -79,7 +79,7 @@ function write(message){
 ```
 
 
-## Définition de l’objet
+## <a name="to-set-the-subject"></a>Définition de l’objet
 
 
 Cette section présente un exemple de code qui définit l’objet du rendez-vous ou du message que l’utilisateur compose. Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message.
@@ -132,7 +132,7 @@ function write(message){
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

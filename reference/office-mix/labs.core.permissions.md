@@ -1,7 +1,7 @@
 
-# Labs.Core.Permissions
+# <a name="labs.core.permissions"></a>Labs.Core.Permissions
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Classe statique qui représente les autorisations activées pour un utilisateur donné de l’atelier.
 
@@ -10,7 +10,7 @@ class Permissions
 ```
 
 
-## Valeurs
+## <a name="values"></a>Valeurs
 
 
 |||

@@ -1,21 +1,21 @@
 
-# Labs.Components.InputComponentAttempt
+# <a name="labs.components.inputcomponentattempt"></a>Labs.Components.InputComponentAttempt
 
- _**S’applique à :** applications pour Office |Compléments Office | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Tentative d’interaction avec un composant de saisie.
+Représente une tentative d’interaction avec un composant de saisie.
 
 ```
 class InputComponentAttempt extends Components.ComponentAttempt
 ```
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -31,7 +31,7 @@ Crée une instance de la classe **InputComponentAttempt**.
 | _attemptId_|ID de la tentative spécifique.|
 | _values_|Tableau contenant les instances de valeur ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)).|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
@@ -44,14 +44,14 @@ Passe en revue les actions récupérées pour la tentative spécifiée et rensei
 |:-----|:-----|
 | _action_|Action associée à l’état de l’atelier.|
 
-### getSubmissions
+### <a name="getsubmissions"></a>getSubmissions
 
  `public function getSubmissions(): Components.InputComponentSubmission[]`
 
 Récupère tous les envois précédemment effectués pour la tentative spécifiée.
 
 
-### submit
+### <a name="submit"></a>submit
 
  `public function submit(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, callback: Labs.Core.ILabCallback<Components.InputComponentSubmission>): void`
 

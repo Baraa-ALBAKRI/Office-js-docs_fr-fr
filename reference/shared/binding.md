@@ -1,18 +1,18 @@
 
-# Binding, objet
+# <a name="binding-object"></a>Binding, objet
 Classe abstraite qui représente une liaison à une section du document.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Word|
-|**Disponible dans les [ensembles de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBinding, TableBinding, TextBinding|
+|**Disponible dans les [ensembles de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBinding, TableBinding, TextBinding|
 |**Dernière modification dans TableBinding**|1.1|
 
 ```js
 Office.context.document.bindings.getByIdAsync(id);
 ```
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Objets**
@@ -52,24 +52,24 @@ Office.context.document.bindings.getByIdAsync(id);
 |[bindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md)|Se produit quand des données sont modifiées dans la liaison.|
 |[bindingSelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md)|Se produit quand la sélection est modifiée dans la liaison.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 L’objet **Binding** expose les fonctionnalités détenues par toutes les liaisons indépendamment du type.
 
 L’objet **Binding** n’est jamais appelé directement. Il s’agit de la classe parente abstraite des objets qui représentent chaque type de liaison : [MatrixBinding](../../reference/shared/binding.matrixbinding.md), [TableBinding](../../reference/shared/binding.tablebinding.md) ou [TextBinding](../../reference/shared/binding.textbinding.md). Ces trois objets héritent des méthodes **getDataAsync** et **setDataAsync** de l’objet **Binding**, qui vous permettent d’interagir avec les données de la liaison. Elles héritent également des propriétés **id** et **type** pour l’interrogation des valeurs de propriétés correspondantes. En outre, les objets **MatrixBinding** et **TableBinding** exposent des méthodes supplémentaires pour les fonctionnalités relatives aux matrices et aux tableaux, par exemple le dénombrement des lignes et des colonnes.
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 La prise en charge de chaque membre API de l’objet **Binding** diffère dans les applications hôtes Office. Voir la section « Informations de prise en charge » de la rubrique de chaque membre pour découvrir les informations de prise en charge d’hôte.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|MatrixBinding, TableBinding, TextBinding|
+|**Disponible dans les ensembles de conditions requises**|MatrixBinding, TableBinding, TextBinding|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|

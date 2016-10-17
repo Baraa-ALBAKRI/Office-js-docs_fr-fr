@@ -1,29 +1,29 @@
 
-# LabsJS.Labs
+# <a name="labsjs.labs"></a>LabsJS.Labs
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le module LabsJS.Labs contient l’ensemble d’interfaces API JavaScript clés que vous pouvez utiliser pour créer des compléments Office (les ateliers). Les API fournissent le point d’entrée pour développer des ateliers.
 
-## Module d’API LabsJS.Labs
+## <a name="labsjs.labs-api-module"></a>Module d’API LabsJS.Labs
 
 Le module Ateliers contient les types suivants :
 
 
-### Variables
+### <a name="variables"></a>Variables
 
 
 |||
 |:-----|:-----|
 |[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md)|Utilisez cet objet pour créer une instance [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md) par défaut.|
 
-### Fonctions
+### <a name="functions"></a>Fonctions
 
 
 |||
 |:-----|:-----|
 |[Labs.Connect](../../reference/office-mix/labs.connect.md)|Initialise une connexion avec l’hôte.|
-|[Labs.Connect (surcharge)](../../reference/office-mix/labs.connect-overload.md)|Initialise une connexion avec l’hôte et fournit des paramètres d’entrée.|
+|[Labs.connect (surcharge)](../../reference/office-mix/labs.connect-overload.md)|Initialise une connexion avec l’hôte et fournit des paramètres d’entrée.|
 |[Labs.isConnected](../../reference/office-mix/labs.isconnected.md)|Initialise une connexion avec l’hôte.|
 |[Labs.getConnectionInfo](../../reference/office-mix/labs.getconnectioninfo.md)|Récupère des informations de configuration associées à une connexion spécifiée.|
 |[Labs.disconnect](../../reference/office-mix/labs.disconnect.md)|Déconnecte l’atelier de l’hôte et indique que l’atelier est terminé.|
@@ -32,9 +32,9 @@ Le module Ateliers contient les types suivants :
 |[Labs.on](../../reference/office-mix/labs.on.md)|Ajoute un nouveau gestionnaire pour un événement spécifié.|
 |[Labs.off](../../reference/office-mix/labs.off.md)|Supprime un gestionnaire d’événements pour un événement spécifié.|
 |[Labs.getTimeline](../../reference/office-mix/labs.gettimeline.md)|Récupère une instance d’objet [Labs.Timeline](../../reference/office-mix/labs.timeline.md) qui peut être utilisée pour commander le contrôle de lecteur d’hôte.|
-|[Labs.registerDeserializer](../../reference/office-mix/labs.registerdeserializer.md)|Désérialise un objet JSON spécifié en un objet. Seuls les auteurs de composant doivent l’utiliser.|
+|[Labs.registerDeserializer](../../reference/office-mix/labs.registerdeserializer.md)|Désérialise un objet JSON spécifié dans un objet. Seuls les auteurs de composant doivent l’utiliser.|
 
-### Classes
+### <a name="classes"></a>Classes
 
 
 |||
@@ -47,7 +47,7 @@ Le module Ateliers contient les types suivants :
 |[Labs.Timeline](../../reference/office-mix/labs.timeline.md)|Fournit un accès à la fonctionnalité de chronologie labs.js.|
 |[Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)|Objet conteneur comportant et suivant des valeurs pour un atelier spécifié. Les valeurs peuvent être stockées localement ou sur le serveur.|
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||
@@ -58,7 +58,7 @@ Le module Ateliers contient les types suivants :
 |[Labs.SendMessageCommandData](../../reference/office-mix/labs.sendmessagecommanddata.md)|Données associées à une commande [Labs.CommandType.TakeAction](https://msdn.microsoft.com/library/office/mt599680.aspx).|
 |[Labs.TakeActionCommandData](../../reference/office-mix/labs.takeactioncommanddata.md)|Données associées à une commande de prise d’action.|
 
-### Énumérations
+### <a name="enumerations"></a>Énumérations
 
 
 |||

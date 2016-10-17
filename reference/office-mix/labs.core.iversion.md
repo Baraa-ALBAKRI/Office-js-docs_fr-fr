@@ -1,7 +1,7 @@
 
-# Labs.Core.IVersion
+# <a name="labs.core.iversion"></a>Labs.Core.IVersion
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Fournit les informations de la version de l’atelier.
 
@@ -10,7 +10,7 @@ interface IVersion
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

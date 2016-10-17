@@ -1,5 +1,5 @@
 
-# Utilisation d’OAuth dans un complément Office
+# <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Utilisation d’OAuth dans un complément Office
 
 OAuth est le standard d’authentification ouvert utilisé par les fournisseurs de services en ligne (Office 365, Facebook, Google, SalesForce, LinkedIn, etc.) pour procéder à l’authentification des utilisateurs. OAuth est le protocole d’authentification par défaut pour Azure et Office 365. OAuth est utilisé par les entreprises et les consommateurs.
 
@@ -27,7 +27,7 @@ Le schéma illustre la façon dont les composants requis suivants sont utilisés
  **Important**  Les jetons d’accès ne peuvent pas être renvoyés au volet Office, mais ils peuvent être utilisés sur le serveur. Dans cet exemple de code, les jetons d’accès sont stockés dans la base de données pendant 2 minutes. Passé ce délai, ils sont purgés de la base de données et les utilisateurs sont invités à se ré-authentifier. Avant de changer ce délai dans vos paramètres, pensez aux risques de sécurité que peut poser le stockage de jetons d’accès dans une base de données pendant plus de deux minutes.
 
 
-## Étape 1 : démarrer un socket et ouvrer une fenêtre contextuelle
+## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Étape 1 : démarrer un socket et ouvrer une fenêtre contextuelle
 
 Lorsque vous exécutez cet exemple de code, un complément du volet Office apparaît dans Office. Lorsque l’utilisateur choisit un fournisseur OAuth auquel se connecter, le complément crée d’abord un socket. Cet exemple utilise un socket pour offrir à l’utilisateur une expérience conviviale au sein du complément. Le complément utilise le socket pour indiquer le succès ou l’échec de l’authentification à l’utilisateur. En utilisant un socket, l’état d’authentification est facilement mis à jour sur la page principale du complément, sans aucune intervention ou interrogation de l’utilisateur. Le segment de code suivant, extrait de routes/connect.js, montre comment démarrer le socket. Celui-ci est nommé avec l’ID de session du complément, **decodedNodeCookie**. Cet exemple de code crée le socket avec [socket.io](http://socket.io/).
 
@@ -70,7 +70,7 @@ onclick="window.open('/connect/azure/#{sessionID}', 'AuthPopup', 'width=500,heig
 ```
 
 
-## Étapes 2 &amp; 3 : lancer le flux d’authentification et afficher la page de connexion
+## <a name="steps-2-&amp;-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>Étapes 2 &amp; 3 : lancer le flux d’authentification et afficher la page de connexion
 
 Le complément doit démarrer le flux d’authentification. Le segment de code ci-dessous utilise la bibliothèque OAuth Passport. Lors du démarrage du flux d’authentification, veillez à bien transmettre l’URL d’autorisation du fournisseur OAuth et l’ID de session du complément. L’ID de session du complément doit être transmis dans le paramètre d’état. La fenêtre contextuelle affiche maintenant la page de connexion du fournisseur OAuth et les utilisateurs peuvent se connecter.
 
@@ -84,7 +84,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## Étapes 4, 5 &amp; 6 : authentifier l’utilisateur et stocker les jetons sur le serveur web
+## <a name="steps-4,-5-&amp;-6---user-signs-in-and-web-server-receives-tokens"></a>Étapes 4, 5 &amp; 6 : authentifier l’utilisateur et stocker les jetons sur le serveur web
 
  Lorsque la connexion réussit, un jeton d’accès, un jeton d’actualisation et le paramètre d’état sont renvoyés au complément. Le paramètre d’état contient l’ID de session, qui est utilisé pour envoyer des informations sur l’état d’authentification au socket, lors de l’étape 7. Le segment de code suivant, issu de app.js, stocke les jetons d’accès dans la base de données.
 
@@ -101,7 +101,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## Étape 7 : afficher les informations d’authentification dans l’interface utilisateur du complément
+## <a name="step-7---show-authentication-information-in-the-add-in's-ui"></a>Étape 7 : afficher les informations d’authentification dans l’interface utilisateur du complément
 
 Le segment de code suivant, issu de connect.js, met à jour l’interface utilisateur du complément avec les informations de l’état d’authentification. L’interface utilisateur du complément est mise à jour à l’aide du socket qui a été créé à l’étape 1.
 
@@ -114,7 +114,7 @@ Le segment de code suivant, issu de connect.js, met à jour l’interface utilis
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 <a name="bk_addresources"> </a>
 
 

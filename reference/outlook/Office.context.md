@@ -1,42 +1,42 @@
 
 
-# context
+# <a name="context"></a>context
 
-## [Office](Office.md).context
+## <a name="[office](office.md).context"></a>[Office](Office.md).context
 
 L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office.context, consultez la page relative à la [référence Office.context de l’interface API partagée](../shared/office.context.md).
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Espaces de noms
+### <a name="namespaces"></a>Espaces de noms
 
 [mailbox](Office.context.mailbox.md) : Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web.
 
-### Membres
+### <a name="members"></a>Membres
 
-####  displayLanguage :String
+####  <a name="displaylanguage-:string"></a>displayLanguage :String
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office.
 
 La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actuel spécifié dans **Fichier > Options > Langue** dans l’application hôte Office.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Chaîne
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```js
 function sayHelloWithDisplayLanguage() {
@@ -56,17 +56,17 @@ function write(message){
 }
 ```
 
-####  officeTheme :Object
+####  <a name="officetheme-:object"></a>officeTheme :Object
 
 Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
 À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Objet
 
-##### Propriétés :
+##### <a name="properties:"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -75,14 +75,14 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.3|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```js
 function applyOfficeTheme(){
@@ -97,20 +97,20 @@ function applyOfficeTheme(){
 }
 ```
 
-####  roamingSettings :[RoamingSettings](RoamingSettings.md)
+####  <a name="roamingsettings-:[roamingsettings](roamingsettings.md)"></a>roamingSettings :[RoamingSettings](RoamingSettings.md)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
 L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données d’un complément de messagerie conservées dans la boîte aux lettres d’un utilisateur. Ainsi, cet objet est accessible par le complément de messagerie lors de son exécution à partir d’une application cliente hôte utilisée pour accéder à la boîte aux lettres.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   [RoamingSettings](RoamingSettings.md)
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restricted|
 |Mode Outlook applicable| Composition ou lecture|

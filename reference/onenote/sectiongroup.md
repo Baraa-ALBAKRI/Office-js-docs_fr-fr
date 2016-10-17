@@ -1,11 +1,11 @@
-# Objet SectionGroup (interface API JavaScript pour OneNote)
+# <a name="sectiongroup-object-(javascript-api-for-onenote)"></a>Objet SectionGroup (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_   
 
 
 Représente un groupe de sections OneNote. Les groupes de sections peuvent contenir des sections et des groupes de sections.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -13,18 +13,18 @@ Représente un groupe de sections OneNote. Les groupes de sections peuvent conte
 |id|string|Obtient l’ID du groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-id)|
 |name|chaîne|Obtient le nom du groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-name)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
-|notebook|[Bloc-notes](notebook.md)|Obtient le bloc-notes qui contient le groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
+|notebook|[Notebook](notebook.md)|Obtient le bloc-notes qui contient le groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-notebook)|
 |parentSectionGroup|[SectionGroup](sectiongroup.md)|Obtient le groupe de sections qui contient le groupe de sections. Génère ItemNotFound si le groupe de sections est un enfant direct du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroup)|
 |parentSectionGroupOrNull|[SectionGroup](sectiongroup.md)|Obtient le groupe de sections qui contient le groupe de sections. Renvoie la valeur Null si le groupe de sections est un enfant direct du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-parentSectionGroupOrNull)|
 |sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|Collection de groupes de sections dans le groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sectionGroups)|
 |Sections|[SectionCollection](sectioncollection.md)|Collection de sections dans le groupe de sections. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-sections)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -32,26 +32,26 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Ajoute un nouveau groupe de sections à la fin de cet objet sectionGroup.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-addSectionGroup)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-sectionGroup-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### addSection(title: String)
+### <a name="addsection(title:-string)"></a>addSection(title: String)
 Ajoute une nouvelle section à la fin du groupe de sections.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionGroupObject.addSection(title);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |title|String|Nom de la nouvelle section.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -84,23 +84,23 @@ OneNote.run(function (context) {
 ```
 
 
-### addSectionGroup(name: String)
+### <a name="addsectiongroup(name:-string)"></a>addSectionGroup(name: String)
 Ajoute un nouveau groupe de sections à la fin de cet objet sectionGroup.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 sectionGroupObject.addSectionGroup(name);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |name|String|Nom de la nouvelle section.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [SectionGroup](sectiongroup.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js          
 OneNote.run(function (context) {
     var sectionGroup;
@@ -139,22 +139,22 @@ OneNote.run(function (context) {
 }); 
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 **id**
 ```js
@@ -185,7 +185,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**name and notebook**
+**name et notebook**
 ```js
 OneNote.run(function (context) {
         
@@ -248,7 +248,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**Sections**
+**sections**
 ```js
 OneNote.run(function (context) {
 

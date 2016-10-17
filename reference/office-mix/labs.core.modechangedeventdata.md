@@ -1,7 +1,7 @@
 
-# Labs.Core.ModeChangedEventData
+# <a name="labs.core.modechangedeventdata"></a>Labs.Core.ModeChangedEventData
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Données associées à un événement de mode modifié.
 
@@ -10,9 +10,9 @@ interface ModeChangedEventData
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||
 |:-----|:-----|
-|**mode: string**|Mode défini.|
+|**mode : chaîne**|Mode défini.|

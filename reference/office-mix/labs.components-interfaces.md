@@ -1,8 +1,8 @@
 
-# Interfaces Labs.Components
+# <a name="labs.components-interfaces"></a>Interfaces Labs.Components
 Interfaces figurant dans le module **LabsJS.Labs.Components**.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le module **LabsJS.Labs.Components** contient les interfaces suivantes.
 
@@ -11,8 +11,8 @@ Le module **LabsJS.Labs.Components** contient les interfaces suivantes.
 
 |Interface|Description|
 |:-----|:-----|
-|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|Composant d’activité. Étend [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).|
-|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|Instance spécifique d’un composant d’activité. Étend [Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md).|
+|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|Représente un composant d’activité. Étend [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).|
+|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|Représente une instance spécifique d’un composant d’activité. Étend [Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md).|
 |[Labs.Components.IChoice](../../reference/office-mix/labs.components.ichoice.md)|Choix disponible pour un problème donné.|
 |[Labs.Components.IChoiceComponent](../../reference/office-mix/labs.components.ichoicecomponent.md)|Permet des interactions avec un composant de choix.|
 |[Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md)|Instance d’un composant de choix.|

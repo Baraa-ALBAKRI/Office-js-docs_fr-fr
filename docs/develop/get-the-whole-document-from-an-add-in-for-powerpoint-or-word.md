@@ -1,9 +1,9 @@
 
-# Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word
+# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word
 
 Vous pouvez créer un Complément Office pour permettre l’envoi ou la publication en un clic d’un document Word 2013 ou PowerPoint 2013 sur un emplacement distant. Cet article explique comment créer un complément du volet de tâches pour PowerPoint 2013 qui envoie les données d’une présentation sous la forme d’un objet de données à un serveur web via une requête HTTP.
 
-## Éléments requis pour créer un complément pour PowerPoint ou Word
+## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Éléments requis pour créer un complément pour PowerPoint ou Word
 
 
 Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
@@ -22,12 +22,12 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
 Vous pouvez également créer un complément pour PowerPoint ou Word à l’aide de Visual Studio 2015 ou des Outils de développement Office 365 Napa. Pour plus d’informations sur la création de Compléments Office, voir le tableau 1.
 
 
-### Concepts fondamentaux à connaître pour créer un complément du volet Office
+### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
 Avant de commencer à créer ce complément pour PowerPoint ou Word, vous devez savoir comment créer des Compléments Office et utiliser des requêtes HTTP. Cet article n’explique pas comment décoder du texte codé en Base64 à partir d’une requête HTTP sur un serveur web. 
 
 
-## Créer le manifeste pour le complément
+## <a name="create-the-manifest-for-the-add-in"></a>Créer le manifeste pour le complément
 
 
 Le fichier manifeste XML pour le complément PowerPoint fournit des informations importantes sur le complément : les applications qui peuvent l’héberger, l’emplacement du fichier HTML, le titre et la description du complément, et bien d’autres caractéristiques.
@@ -61,7 +61,7 @@ Le fichier manifeste XML pour le complément PowerPoint fournit des informations
 - Enregistrez le fichier avec le nom GetDoc_App.xml et un encodage UTF-8 sur un emplacement réseau ou dans un catalogue de compléments.
     
 
-## Créer l’interface utilisateur pour le complément
+## <a name="create-the-user-interface-for-the-add-in"></a>Créer l’interface utilisateur pour le complément
 
 
 Pour l’interface utilisateur du complément, vous pouvez utiliser du code HTML, écrit directement dans le fichier GetDoc_App.html. La logique de programmation et les fonctionnalités du complément doivent être contenues dans un fichier JavaScript (par exemple, GetDoc_App.js).
@@ -131,7 +131,7 @@ input [type="submit"], input[type="button"]
 - Enregistrez le fichier avec le nom Program.css et un encodage UTF-8 sur l’emplacement réseau ou sur le serveur web sur lequel se trouve le fichier GetDoc_App.html.
     
 
-## Ajouter le code JavaScript pour obtenir le document
+## <a name="add-the-javascript-to-get-the-document"></a>Ajouter le code JavaScript pour obtenir le document
 
 
 Dans le code pour le complément, un gestionnaire vers l’événement [Office.initialize](../../reference/shared/office.initialize.md) ajoute un gestionnaire à l’événement Click du bouton **Envoyer** du formulaire et informe l’utilisateur que le complément est prêt.

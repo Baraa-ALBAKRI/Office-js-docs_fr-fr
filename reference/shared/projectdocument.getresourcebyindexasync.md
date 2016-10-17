@@ -1,13 +1,13 @@
 
-# Méthode getResourceByIndexAsync (API JavaScript pour Office version 1.1)
+# <a name="projectdocument.getresourcebyindexasync-method-(javascript-api-for-office-v1.1)"></a>Méthode getResourceByIndexAsync (API JavaScript pour Office version 1.1)
 Obtient de façon asynchrone le GUID de la ressource contenant l’index indiqué dans la collection de ressources.
 
  **Important :** cette API fonctionne uniquement dans Project 2016 sur le bureau Windows.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Hôtes :**|Project|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
 |**Ajouté dans**|1.1|
 
 ```js
@@ -15,10 +15,10 @@ Office.context.document.getResourceByIndexAsync(resourceIndex[, options][, callb
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 _resourceIndex_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Type : **number**<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Type : **numérique**<br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Index de la ressource dans la collection de ressources pour le projet. Obligatoire.
     
 _options_<br/>
@@ -29,11 +29,11 @@ _options_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Par exemple, vous pouvez transmettre l’argument _asyncContext_ en utilisant le format `{asyncContext: 'Some text'}` ou `{asyncContext: <object>}`.
 
 _callback_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Type : **function**<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Type : **fonction**<br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Fonction appelée quand l’appel de méthode est renvoyé, dont le seul paramètre est de type [AsyncResult](../../reference/shared/asyncresult.md). Facultatif.
     
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Lorsque la fonction _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir du paramètre de la fonction de rappel.
 
@@ -44,16 +44,16 @@ Pour la méthode **getResourceByIndexAsync**, l’objet [AsyncResult](../../ref
 |**Nom**|**Description**|
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Données transmises dans le paramètre _asyncContext_ facultatif si le paramètre a été utilisé.|
-|[erreur](../../reference/shared/asyncresult.error.md)|Informations sur l’erreur, si la propriété **status** est **failed**.|
-|[statut](../../reference/shared/asyncresult.status.md)|Statut **succeeded** ou **failed** de l’appel asynchrone.|
+|[error](../../reference/shared/asyncresult.error.md)|Informations sur l’erreur, si la propriété **status** est **failed**.|
+|[status](../../reference/shared/asyncresult.status.md)|Statut **succeeded** ou **failed** de l’appel asynchrone.|
 |[value](../../reference/shared/asyncresult.value.md)|GUID de la ressource au format **string**.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Pour obtenir l’index maximal de la collection de ressources pour le projet, utilisez la méthode [getMaxResourceIndexAsync](../../reference/shared/projectdocument.getmaxresourceindexasync.md). Une collection de ressources ne contient pas de ressource au niveau de l’index 0.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant appelle [getMaxResourceIndexAsync](../../reference/shared/projectdocument.getmaxresourceindexasync.md) pour obtenir l’index maximal dans la collection de ressources du projet, puis appelle **getResourceByIndexAsync** pour obtenir le GUID de chaque ressource.
 
@@ -142,27 +142,27 @@ L’exemple suppose que votre complément comporte une référence à la bibliot
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|
 |:-----|:-----|:-----|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**||
+|**Disponible dans les ensembles de conditions requises**||
 |**Niveau d’autorisation minimal**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 
@@ -171,15 +171,15 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |:-----|:-----|
 |1.1|Introduit|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 
 [getMaxResourceIndexAsync](../../reference/shared/projectdocument.getmaxresourceindexasync.md)
 
 [Objet AsyncResult](../../reference/shared/asyncresult.md)
 
-[ProjectDocument, objet](../../reference/shared/projectdocument.projectdocument.md)
+[Objet ProjectDocument](../../reference/shared/projectdocument.projectdocument.md)

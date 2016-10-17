@@ -1,11 +1,11 @@
 
-# Élément Sets
+# <a name="sets-element"></a>Élément Sets
 Spécifie le sous-ensemble minimal de l’API JavaScript pour Office nécessaire à l’activation de votre complément Office.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,25 +15,25 @@ Spécifie le sous-ensemble minimal de l’API JavaScript pour Office nécessaire
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
-[Configuration requise](../../reference/manifest/requirements.md)
-
-
-## Peut contenir :
-
-[Set](../../reference/manifest/set.md)
+[Requirements](../../reference/manifest/requirements.md)
 
 
-## Attributs
+## <a name="can-contain:"></a>Peut contenir :
+
+[Ensemble](../../reference/manifest/set.md)
+
+
+## <a name="attributes"></a>Attributs
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
 |DefaultMinVersion|chaîne|facultatif|Spécifie la valeur de l’attribut **MinVersion** par défaut pour tous les éléments [Set](../../reference/manifest/set.md) enfants. La valeur par défaut est « 1.1 ».|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Pour plus d’informations sur les ensembles de conditions requises, voir l’article relatif à la [spécification d’hôtes Office et de conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 

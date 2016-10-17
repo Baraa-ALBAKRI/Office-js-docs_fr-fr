@@ -1,18 +1,18 @@
 
-# Propriété AsyncResult.value
+# <a name="asyncresult.value-property"></a>Propriété AsyncResult.value
 Obtient la charge utile ou le contenu de l’opération asynchrone, le cas échéant.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```js
 var dataValue = asyncResult.value;
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Retourne la valeur de la demande au moment où l’appel asynchrone a été effectué. 
 
@@ -20,12 +20,12 @@ Retourne la valeur de la demande au moment où l’appel asynchrone a été effe
  >**Remarque** : le contenu renvoyé par la propriété **value** pour une méthode « Async » particulière varie selon la finalité et le contexte de cette méthode. Pour déterminer le contenu renvoyé par la propriété **value** pour une méthode « Async », voir la section « Valeur de rappel » de la rubrique relative à la méthode. Pour obtenir la liste complète des méthodes « Async », voir la section « Remarques » de la rubrique relative à l’objet [AsyncResult](../../reference/shared/asyncresult.md).
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Vous accédez à l’objet **AsyncResult** dans la fonction transmise en tant qu’argument au paramètre _callback_ d’une méthode « Async ». C’est le cas par exemple pour les méthodes [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) et [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) de l’objet **Document**.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 
 
@@ -51,30 +51,30 @@ function write(message){
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Office pour Mac**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Office pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|De contenu, de volet de tâche, Outlook|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

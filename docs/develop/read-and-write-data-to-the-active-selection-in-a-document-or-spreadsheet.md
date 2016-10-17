@@ -1,12 +1,12 @@
 
-# Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul
+# <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul
 
 L’objet [Document](../../reference/shared/document.md) expose des méthodes qui vous permettent de lire et d’écrire dans la sélection active de l’utilisateur dans un document ou une feuille de calcul. Pour cela, l’objet **Document** fournit les méthodes **getSelectedDataAsync** et **setSelectedDataAsync**. Cette rubrique explique comment lire, écrire et créer des gestionnaires d’événements pour détecter les changements intervenant dans la sélection de l’utilisateur.
 
 La méthode **getSelectedDataAsync** ne fonctionne que sur la sélection active de l’utilisateur. Si vous devez conserver la sélection dans le document, afin que la même sélection soit disponible en lecture et en écriture dans les sessions exécutant votre complément, vous devez ajouter une liaison à l’aide de la méthode [Bindings.addFromSelectionAsync](http://msdn.microsoft.com/en-us/library/edc99214-e63e-43f2-9392-97ead42fc155.aspx) (ou créer une liaison à l’aide de l’une des autres méthodes « addFrom » de l’objet [Bindings](http://msdn.microsoft.com/en-us/library/09979e31-3bfb-45be-adda-0f7cc2db1fe1.aspx)). Pour plus d’informations sur la création d’une liaison vers une zone d’un document et sur la lecture et l’écriture dans une liaison, voir [Liaisons de régions dans un document ou une feuille de calcul](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
-### Lecture de données sélectionnées
+### <a name="read-selected-data"></a>Lecture de données sélectionnées
 
 
 L’exemple suivant montre comment obtenir les données d’une sélection dans un document en utilisant la méthode [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md).
@@ -38,7 +38,7 @@ La fonction anonyme qui est transmise dans la fonction comme deuxième paramètr
 La propriété [AsyncResult.status](../../reference/shared/asyncresult.error.md) est utilisée dans l’instruction **if** pour tester la réussite de l’appel. [Office.AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md) est une énumération des valeurs de propriété **AsyncResult.status** disponibles. **Office.AsyncResultStatus.Failed** prend la valeur de la chaîne « failed » (et, de nouveau, peut également être spécifié comme chaîne littérale).
 
 
-### Écriture de données dans la sélection
+### <a name="write-data-to-the-selection"></a>Écriture de données dans la sélection
 
 
 L’exemple suivant montre comment définir la sélection pour afficher « Hello World! ».
@@ -64,7 +64,7 @@ La fonction anonyme transmise dans la méthode [setSelectedDataAsync](../../refe
  **Remarque :** depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel Online, vous pouvez désormais [définir la mise en forme lors de l’écriture d’un tableau sur la sélection active](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
 
-### Détection de modifications dans la sélection
+### <a name="detect-changes-in-the-selection"></a>Détection de modifications dans la sélection
 
 
 L’exemple suivant montre comment détecter des modifications dans la sélection à l’aide de la méthode [Document.addHandlerAsync](../../reference/shared/document.addhandlerasync.md) permettant d’ajouter un gestionnaire d’événements pour l’événement [SelectionChanged](../../reference/shared/document.selectionchanged.event.md) sur le document.
@@ -93,7 +93,7 @@ La fonction `myHander()` transmise dans la fonction comme deuxième paramètre _
  >**Remarque**  Vous pouvez ajouter plusieurs gestionnaires d’événements pour un événement donné en rappelant la méthode  **addHandlerAsync** et en passant une fonction de gestionnaire d’événements supplémentaire pour le paramètre _handler_. Cela fonctionnera correctement à condition que le nom de chaque fonction de gestionnaire d’événements soit unique.
 
 
-### Arrêt de la détection de modifications dans la sélection
+### <a name="stop-detecting-changes-in-the-selection"></a>Arrêt de la détection de modifications dans la sélection
 
 
 L’exemple suivant montre comment arrêter l’écoute de l’événement [Document.SelectionChanged](../../reference/shared/document.selectionchanged.event.md) en appelant la méthode [document.removeHandlerAsync](../../reference/shared/document.removehandlerasync.md).

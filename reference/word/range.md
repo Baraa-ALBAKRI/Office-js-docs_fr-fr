@@ -1,61 +1,61 @@
-# Objet Range (interface API JavaScript pour Word)
+# <a name="range-object-(javascript-api-for-word)"></a>Objet Range (interface API JavaScript pour Word)
 
 Représente une zone contiguë dans un document.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |style|string|Obtient ou définit le style utilisé pour la plage. Il s’agit du nom du style pré-installé ou personnalisé.|
 |text|string|Obtient le texte de la plage. En lecture seule.|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtient la collection d’objets de contrôle de contenu qui se trouvent dans la plage. En lecture seule.|
-|font|[Police](font.md)|Obtient le format de texte de la plage. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
+|police|[Font](font.md)|Obtient le format de texte de la plage. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Obtient la collection d’objets inlinePicture qui se trouvent dans la plage. En lecture seule.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtient la collection d’objets de paragraphe qui se trouvent dans la plage. En lecture seule.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Obtient le contrôle de contenu qui contient la plage. Renvoie null s’il n’existe pas de contrôle de contenu parent. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Efface le contenu de l’objet de plage. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.|
 |[delete()](#delete)|void|Supprime la plage et son contenu du document.|
-|[getHtml()](#gethtml)|string|Obtient la représentation HTML de l’objet de plage.|
-|[getOoxml()](#getooxml)|string|Obtient la représentation OOXML de l’objet de plage.|
+|[getHtml()](#gethtml)|chaîne|Obtient la représentation HTML de l’objet de plage.|
+|[getOoxml()](#getooxml)|chaîne|Obtient la représentation OOXML de l’objet de plage.|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Insère un saut à l’emplacement spécifié. Un saut peut uniquement être inséré dans des objets de plage qui sont contenus dans le corps de document principal, sauf s’il s’agit d’un saut de ligne, auquel cas il peut être inséré dans n’importe quel objet de corps. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Encadre l’objet de plage avec un contrôle de contenu de texte enrichi.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Insère un document dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code HTML dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du contenu OOXML ou wordProcessingML dans la plage, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code OOXML ou un élément wordProcessingML dans la plage, à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Insère un paragraphe dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de plage. Les résultats de la recherche sont un ensemble d’objets de plage.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de plage. Les résultats de la recherche sont un ensemble d’objets de plage.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Sélectionne la plage et y accède via l’interface utilisateur de Word. Les valeurs selectionMode peuvent être « Select » (sélectionner), « Start » (début) ou « End » (fin).|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### clear()
+### <a name="clear()"></a>clear()
 Efface le contenu de l’objet de plage. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -80,21 +80,21 @@ Word.run(function (context) {
     }
 });
 ```
-### delete()
+### <a name="delete()"></a>delete()
 Supprime la plage et son contenu du document.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.delete();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 Obtient la représentation HTML de l’objet de plage.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.getHtml();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -160,21 +160,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 Obtient la représentation OOXML de l’objet de plage.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.getOoxml();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -200,27 +200,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Insère un saut à l’emplacement spécifié. Un saut peut uniquement être inséré dans des objets de plage qui sont contenus dans le corps de document principal, sauf s’il s’agit d’un saut de ligne, auquel cas il peut être inséré dans n’importe quel objet de corps. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertBreak(breakType, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |breakType|BreakType|Obligatoire. Type de saut à ajouter à la plage.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Before » (avant) » ou « After » (après).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Détails supplémentaires
+#### <a name="additional-details"></a>Détails supplémentaires
 À l’exception des sauts de ligne, vous ne pouvez pas insérer de saut dans les objets d’en-tête, de pied de page, de note de bas de page, de note de fin, de commentaire et de zone de texte.
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -246,21 +246,21 @@ Word.run(function (context) {
 });
 ```
 
-### insertContentControl()
+### <a name="insertcontentcontrol()"></a>insertContentControl()
 Encadre l’objet de plage avec un contrôle de contenu de texte enrichi.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertContentControl();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [ContentControl](contentcontrol.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -293,24 +293,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Insère un document dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64File|string|Obligatoire. Contenu du fichier encodé au format Base64 à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -337,24 +337,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Insère du code HTML dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertHtml(html, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Html|string|Obligatoire. Code HTML à insérer dans la plage.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -380,39 +380,39 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 rangeObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Obligatoire. Image encodée au format Base64 à insérer dans la plage.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [InlinePicture](inlinepicture.md)
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Insère du contenu OOXML ou wordProcessingML dans la plage, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |ooxml|string|Obligatoire. Contenu OOXML ou wordProcessingML à insérer dans la plage.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -438,27 +438,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Informations supplémentaires
+#### <a name="additional-information"></a>Informations supplémentaires
 Pour obtenir des instructions sur l'utilisation d’OOXML, voir [Création de compléments plus performants pour Word avec Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx).
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Insère un paragraphe dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|Obligatoire. Texte de paragraphe à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Before » (avant) » ou « After » (après).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Paragraph](paragraph.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -484,24 +484,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
 Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.insertText(text, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |text|string|Obligatoire. Texte à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -527,23 +527,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -576,41 +576,41 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de plage. Les résultats de la recherche sont un ensemble d’objets de plage.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.search(searchText, searchOptions);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |searchText|string|Obligatoire. Texte de recherche.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Facultatif. Options de la recherche.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [SearchResultCollection](searchresultcollection.md)
 
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 Sélectionne la plage et y accède via l’interface utilisateur de Word. Les valeurs selectionMode peuvent être « Select » (sélectionner), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeObject.select(selectionMode);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|Facultatif. Le mode de sélection peut être « Select » (sélectionner), « Start » (début) ou « End » (fin). « Select » (sélectionner) est la valeur par défaut.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -639,5 +639,5 @@ Word.run(function (context) {
 });
 ```
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

@@ -1,5 +1,5 @@
 
-# Lignes directrices relatives à la création d’ateliers pour Mix à l’aide de LabsJS
+# <a name="guidelines-for-creating-labs-for-mix-using-labsjs"></a>Lignes directrices relatives à la création d’ateliers pour Mix à l’aide de LabsJS
 
 
 
@@ -8,13 +8,13 @@ La bibliothèque LabsJS (labs.js) prend en charge l’écriture de Compléments
 Le contenu LabsJS vous permet d’implémenter l’API JavaScript labs.js en vous donnant des conseils et des exemples. Cette bibliothèque est créée au-dessus de l’ [Interface API JavaScript pour Office](../../../reference/javascript-api-for-office.md) (Office.js) et fournit une couche d’abstraction optimisée pour les compléments incorporés dans Office Mix.
 
 
-## Recommandations générales
+## <a name="general-guidelines"></a>Recommandations générales
 
 
 Les sections suivantes correspondant aux recommandations générales relatives à l’écriture de compléments à l’aide de l’API LabJS.
 
 
-### Scripts
+### <a name="scripts"></a>Scripts
 
 Étant donné que la bibliothèque labs.js est une couche d’abstraction sur office.js et que, par conséquent, elle comporte une dépendance sur office.js, les fichiers office.js et labs.js doivent être inclus dans vos projets de développement. 
 
@@ -26,7 +26,7 @@ La bibliothèque labs.js est incluse avec le Kit de développement logiciel (SDK
  >**Remarque** :  en plus du fichier JavaScript (labs-1.0.4.js), nous vous fournissons un fichier de définition TypeScript de l’API labs (labs-1.0.4.d.ts). Le fichier de définition a été créé sur TypeScript, version 0.9.1.1.
 
 
-### Rappels et gestion des erreurs
+### <a name="callbacks-and-error-handling"></a>Rappels et gestion des erreurs
 
 Plusieurs méthodes fonctionnent de manière asynchrone dans l’API labs.js. Pour ces opérations, l’API adopte une interface de rappel standard :  **ILabCallback**. 
 
@@ -57,7 +57,7 @@ function createCallback<T>(deferred: JQueryDeferred<T>): Labs.Core.ILabCallback<
 ```
 
 
-### Hôte de l’atelier et DefaultLabHost
+### <a name="lab-host-and-defaultlabhost"></a>Hôte de l’atelier et DefaultLabHost
 
 L’hôte de l’atelier ( **ILabHost**) est le pilote sous-jacent qui prend en charge le développement des ateliers. Par défaut, il s’agit d’un hôte qui s’intègre avec office.js.
 
@@ -77,7 +77,7 @@ Labs.DefaultHostBuilder = function () {
 ```
 
 
-### Initialisation
+### <a name="initialization"></a>Initialisation
 
 L’initialisation établit le chemin de communication entre l’atelier et son hôte. Initialisez votre atelier en appelant la méthode suivante :
 
@@ -89,12 +89,12 @@ Labs.connect((err, connectionResponse) => {});
 Une fois l’initialisation terminée, vous pouvez appeler d’autres méthodes de l’API labs.js. Le paramètre  _connectionResponse_ contient des informations sur l’hôte, l’utilisateur et la connexion. Pour plus d’informations sur les valeurs renvoyées, voir [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md).
 
 
-### Format d’heure
+### <a name="time-format"></a>Format d’heure
 
 Labs.js stocke les nombres sous forme de millisecondes écoulées depuis le 1er janvier 1970 UTC. Cela correspond au format de date de l’ [objet Date](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx)JavaScript.
 
 
-### Chronologie
+### <a name="timeline"></a>Chronologie
 
 L’atelier peut également interagir avec la chronologie du lecteur de leçon. La chronologie permet à l’atelier de demander au lecteur de leçon de passer à la diapositive suivante. L’objet de chronologie est récupéré en appelant la méthode  **Labs.getTimeline**.
 
@@ -104,13 +104,13 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Gestion des événements
+## <a name="handling-events"></a>Gestion des événements
 
 
 L’API d’événements LabsJS suit les événements propres à l’atelier et vous permet d’ajouter des gestionnaires d’événements, afin que vous puissiez agir sur les événements ou y répondre. Les méthodes d’événement, qui sont au nombre de trois, se trouvent sur l’objet  **EventTypes** :  **ModeChanged**,  **Activate** et **Deactivate**. 
 
 
-### Changement de mode
+### <a name="mode-change"></a>Changement de mode
 
 L’événement  **ModeChanged** se déclenche lorsque l’atelier spécifié passe du mode Modification au mode Affichage. Le mode Modification est visible lorsque l’atelier est affiché dans le mode Modification de PowerPoint. Le mode Affichage est visible lorsque PowerPoint affiche le diaporama ou lorsque l’atelier est affiché dans le lecteur de leçon Office Mix. Le mode Affichage doit toujours afficher ce que l’utilisateur voit lorsqu’il commence l’atelier. Le mode Modification permet à l’utilisateur de configurer l’atelier.
 
@@ -127,7 +127,7 @@ Labs.on(Labs.Core.EventTypes.ModeChanged, (data) => {
 ```
 
 
-### Activer
+### <a name="activate"></a>Activer
 
 L’événement  **activate** se déclenche lorsque la diapositive PowerPoint sur laquelle se trouve l’atelier est activée dans le lecteur de leçon.
 
@@ -139,7 +139,7 @@ Labs.on(Labs.Core.EventTypes.Activate, (data) => {
 ```
 
 
-### Désactiver
+### <a name="deactivate"></a>Désactiver
 
 L’événement  **deactivate** se déclenche lorsque la diapositive PowerPoint sur laquelle se trouve l’atelier n’est plus active.
 
@@ -151,7 +151,7 @@ Labs.on(Labs.Core.EventTypes.Deactivate, (data) => {
 ```
 
 
-### Chronologie
+### <a name="timeline"></a>Chronologie
 
 L’atelier peut également interagir avec la chronologie du lecteur de leçon. La chronologie permet à l’atelier de demander au lecteur de leçon de passer à la diapositive suivante. L’objet de chronologie est récupéré en appelant la méthode  **Labs.getTimeline**.
 
@@ -161,9 +161,9 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Compléments Office Mix](../../powerpoint/office-mix/office-mix-add-ins.md)
+- [Compléments Office Mix](../../powerpoint/office-mix/office-mix-add-ins.md)
     

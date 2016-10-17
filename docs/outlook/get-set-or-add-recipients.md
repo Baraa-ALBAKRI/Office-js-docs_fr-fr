@@ -1,5 +1,5 @@
 
-# Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
+# <a name="get,-set,-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
 
 L’interface API JavaScript pour Office fournit des méthodes asynchrones ([Recipients.getAsync](../../reference/outlook/Recipients.md), [Recipients.setAsync](../../reference/outlook/Recipients.md) ou [Recipients.addAysnc](../../reference/outlook/Recipients.md)) pour respectivement obtenir, définir ou ajouter des destinataires dans le formulaire de composition d’un rendez-vous ou d’un message. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste du complément pour Outlook afin d’activer le complément dans les formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](../outlook/compose-scenario.md).
@@ -27,7 +27,7 @@ Ces propriétés sont disponibles pour l’accès en écriture uniquement dans l
 Comme avec la plupart des méthodes asynchrones dans l’interface API JavaScript pour Office, **getAsync**, **setAsync** et **addAsync** admettent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Pour obtenir les destinataires
+## <a name="to-get-recipients"></a>Pour obtenir les destinataires
 
 
 Cette section présente un exemple de code qui obtient les destinataires d’un rendez-vous ou d’un message dont la composition est en cours et affiche les adresses de messagerie des destinataires. L’exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message, comme indiqué ci-dessous. 
@@ -139,7 +139,7 @@ function write(message){
 ```
 
 
-## Pour définir des destinataires
+## <a name="to-set-recipients"></a>Pour définir des destinataires
 
 
 Cette section présente un exemple de code qui définit les destinataires du rendez-vous ou du message que l’utilisateur compose. Le fait de définir des destinataires remplace tous les destinataires existants. Comme dans l’exemple précédent relatif à l’obtention des destinataires dans un formulaire de composition, cet exemple suppose que le complément est activé dans les formulaires de composition pour les rendez-vous et les messages. Cet exemple détermine d’abord si l’élément composé est un rendez-vous ou un message afin d’appliquer la méthode asynchrone  **Recipients.setAsync** sur les propriétés appropriées représentant les destinataires du rendez-vous ou du message.
@@ -266,7 +266,7 @@ function write(message){
 ```
 
 
-## Pour ajouter des destinataires
+## <a name="to-add-recipients"></a>Pour ajouter des destinataires
 
 
 Si vous ne souhaitez pas remplacer les destinataires existants dans un rendez-vous ou un message, vous pouvez utiliser la méthode asynchrone  **Recipients.addAsync** à la place de **Recipients.setAsync** pour ajouter des destinataires. La méthode **addAsync** fonctionne de manière semblable à la méthode **setAsync** dans la mesure où elle requiert un argument d’entrée _recipients_. Vous pouvez éventuellement fournir une méthode de rappel et tous les arguments pour le rappel à l’aide du paramètre asyncContext. Vous pouvez vérifier l’état, le résultat et les erreurs de l’appel asynchrone  **addAsync** en utilisant le paramètre d’entrée _asyncResult_ de la méthode de rappel. L’exemple suivant vérifie que l’élément en cours de composition est un rendez-vous et y ajoute deux participants obligatoires.
@@ -300,7 +300,7 @@ function addAttendees() {
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,5 +1,5 @@
 
-# Déployer et installer des compléments Outlook à des fins de test
+# <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
 
 Dans le cadre du processus de développement d’un complément Outlook, vous devrez déployer et installer de façon itérative le complément à des fins de test, ce qui implique les étapes suivantes :
@@ -14,32 +14,32 @@ Dans le cadre du processus de développement d’un complément Outlook, vous d
 4. Test du complément, mise en œuvre des modifications appropriées dans l’interface utilisateur ou dans les fichiers manifeste, et répétition des étapes 2 et 3 pour tester les modifications.
     
 
-## Création d’un fichier manifeste pour le complément
+## <a name="creating-a-manifest-file-for-the-add-in"></a>Création d’un fichier manifeste pour le complément
 
 Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, décrit le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier local ou sur un serveur, à condition que le complément soit accessible par le serveur Exchange de la boîte aux lettres avec laquelle vous procédez aux tests. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, voir [Manifestes des compléments Outlook](../outlook/manifests/manifests.md). 
 
 
-## Déploiement d’un complément sur un serveur web
+## <a name="deploying-an-add-in-to-a-web-server"></a>Déploiement d’un complément sur un serveur web
 
 Vous pouvez créer l’interface utilisateur du complément en HTML et en JavaScript. Le fichier source obtenu est stocké sur un serveur web auquel a accès le serveur Exchange qui héberge le complément. Ce fichier source est identifié par l’élément enfant  **SourceLocation** dans les éléments [DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx), [TabletSettings](http://msdn.microsoft.com/en-us/library/5c89cc7c-7ae0-49c9-fdd5-4c52118228f6%28Office.15%29.aspx) et/ou [PhoneSettings](http://msdn.microsoft.com/en-us/library/13e4eae3-8e8c-fd55-a1c2-3297b485f327%28Office.15%29.aspx) spécifiés dans le fichier manifeste du complément.
 
 Après le déploiement initial des fichiers d’interface utilisateur pour le complément, vous pouvez mettre à jour l’interface utilisateur et le comportement du complément en remplaçant le fichier HTML stocké sur le serveur web par une nouvelle version du fichier HTML.
 
 
-## Installation du complément
+## <a name="installing-the-add-in"></a>Installation du complément
 
 
 Après la préparation du fichier manifeste du complément et le déploiement de son interface utilisateur sur un serveur web accessible, vous pouvez installer le complément pour une boîte aux lettres sur un serveur Exchange à l’aide d’un client riche Outlook, d’Outlook Web App ou d’OWA pour périphériques, ou en exécutant des applets de commande Windows PowerShell à distance.
 
 
-### Installation d’un complément dans un client riche Outlook
+### <a name="installing-an-add-in-in-an-outlook-rich-client"></a>Installation d’un complément dans un client riche Outlook
 
 Vous pouvez installer un complément si votre boîte aux lettres se trouve sur Exchange Online, Exchange 2013 ou version ultérieure. Dans Outlook pour Windows, vous pouvez installer des compléments via le mode Backstage d’Office Fluent. Sélectionnez **Fichier** et **Gérer les compléments**. Cela vous permet de vous connecter au Centre d’administration Exchange. Une fois connecté, continuez le processus d’installation à l’étape 4 de la section suivante.
 
 Dans Outlook pour Mac, choisissez **Gérer les compléments** à l’extrémité droite de la barre des compléments, puis connectez-vous au Centre d’administration Exchange. Passez à l’étape 4 de la section suivante.
 
 
-### Installation d’un complément à l’aide d’Outlook Web App ou d’Outlook.com
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>Installation d’un complément à l’aide d’Outlook Web App ou d’Outlook.com
 
 Pour utiliser Outlook Web App (OWA) pour installer un complément Outlook, procédez comme suit :
 
@@ -77,7 +77,7 @@ Pour plus d’informations sur le rôle « Mes compléments personnalisés »,
 L’utilisation d’Office 365, des Outils de développement Office 365 « Napa » ou de Visual Studio pour développer des compléments vous amène à endosser le rôle d’administrateur d’organisation, ce qui vous permet d’installer des compléments par fichier ou par URL dans le Centre d’administration Exchange ou via des cmdlets PowerShell.
 
 
-### Installation d’un complément à l’aide de PowerShell à distance
+### <a name="installing-an-add-in-by-using-remote-powershell"></a>Installation d’un complément à l’aide de PowerShell à distance
 
 Après avoir créé une session Windows PowerShell à distance sur votre serveur Exchange, vous pouvez installer un complément Outlook en utilisant l’applet de commande  **New-App** avec la commande PowerShell suivante.
 
@@ -98,11 +98,11 @@ Vous pouvez utiliser les applets de commande supplémentaires suivantes pour gé
 -  **Remove-App** - supprime un complément précédemment installé à partir d’un serveur Exchange.
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
 - [Compléments Outlook](../outlook/outlook-add-ins.md)
     
-- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
     

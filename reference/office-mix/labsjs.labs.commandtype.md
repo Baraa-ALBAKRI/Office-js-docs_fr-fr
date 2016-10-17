@@ -1,12 +1,12 @@
 
-# LabsJS.Labs.CommandType
+# <a name="labsjs.labs.commandtype"></a>LabsJS.Labs.CommandType
 Fournit une vue d’ensemble de haut niveau des interfaces API JavaScript LabsJS Labs.CommandType.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Les membres du module **Labs.CommandType** comprennent uniquement les variables de chaîne déclarées pour représenter les types de commandes pris en charge.
 
-## Variables CommandType
+## <a name="commandtype-variables"></a>Variables CommandType
 
 
 |Variable|Description|

@@ -1,11 +1,11 @@
 
-# Élément DictionaryHomePage
+# <a name="dictionaryhomepage-element"></a>Élément DictionaryHomePage
 Spécifie l’URL de la page d’accueil du dictionnaire.
 
  **Type de complément :** Office
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,12 +13,12 @@ Spécifie l’URL de la page d’accueil du dictionnaire.
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

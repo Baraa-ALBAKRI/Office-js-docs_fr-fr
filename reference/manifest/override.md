@@ -1,11 +1,11 @@
 
-# Élément Override
+# <a name="override-element"></a>Élément Override
 Fournit une manière de spécifier la valeur d’un paramètre pour d’autres paramètres régionaux.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,7 +13,7 @@ Fournit une manière de spécifier la valeur d’un paramètre pour d’autres p
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 
 ||
@@ -29,16 +29,16 @@ Fournit une manière de spécifier la valeur d’un paramètre pour d’autres p
 |[SourceLocation](../../reference/manifest/sourcelocation.md)|
 |[SupportUrl](../../reference/manifest/supporturl.md)|
 
-## Attributs
+## <a name="attributes"></a>Attributs
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
 |Paramètres régionaux|string|obligatoire|Spécifie le nom de culture des paramètres régionaux pour ce remplacement au format de balise de langue BCP 47, comme `"en-US"`.|
 |Valeur|string|obligatoire|Spécifie la valeur du paramètre exprimée pour les paramètres régionaux spécifiés.|
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,11 +1,11 @@
 
-# Élément Rule
+# <a name="rule-element"></a>Élément Rule
 Spécifie les règles d’activation à évaluer pour ce complément de messagerie.
 
  **Type de complément :** messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
  **ItemIs Rule** - Définit une règle qui donne la valeur True si l’élément sélectionné est du type spécifié.
 
@@ -66,20 +66,20 @@ Spécifie les règles d’activation à évaluer pour ce complément de messager
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
  _[OfficeApp](../../reference/manifest/officeapp.md)_
 
 
-## Attributs :
+## <a name="attributes:"></a>Attributs :
 
- **Attributs ItemIs Rule**
+ **Attributs de la règle ItemIs**
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
-|ItemType|ItemType (chaîne)|obligatoire|Spécifie le type d’élément à mettre en correspondance. Les options disponibles sont :
+|ItemType|ItemType (chaîne)|obligatoire|Spécifie le type d’élément à mettre en correspondance. Les options disponibles sont :
 
 |**ItemType**|**Élément ItemClass correspondant**|
 |:-----|:-----|
@@ -103,13 +103,13 @@ Spécifie les règles d’activation à évaluer pour ce complément de messager
 
 Aucun.
 
- **Attributs ItemHasKnownEntity Rule**
+ **Attributs de la règle ItemHasKnownEntity**
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
-|EntityType|KnownEntityType (chaîne)|obligatoire|Spécifie le type d’entité à rechercher pour que la règle donne la valeur True. Il peut s’agir de l’un des éléments suivants :
+|EntityType|KnownEntityType (chaîne)|obligatoire|Spécifie le type d’entité à rechercher pour que la règle donne la valeur true. Les options disponibles sont :
 
 |**KnownEntityType**|**Description**|
 |:-----|:-----|
@@ -123,15 +123,15 @@ Aucun.
 |RegExFilter|chaîne|facultatif|Spécifie une expression régulière à exécuter par rapport à cette entité à des fins d’activation.|
 |FilterName|chaîne|facultatif|Spécifie le nom du filtre d’expression régulière, afin qu’il soit possible par la suite de s’y référer dans le code de votre complément.|
 |IgnoreCase|booléen|facultatif|Indique d’ignorer la casse lors de l’exécution de l’expression régulière spécifiée par l’attribut **RegExFilter**.|
- **Attributs ItemHasRegularExpressionMatch Rule**
+ **Attributs de la règle ItemHasRegularExpressionMatch**
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
 |RegExName|chaîne|obligatoire|Spécifie le nom de l’expression régulière afin que vous puissiez vous référer à l’expression dans le code de votre complément.|
 |RegExValue|chaîne|obligatoire|Spécifie l’expression régulière qui sera évaluée pour déterminer si le complément de messagerie doit être affiché. |
-|PropertyName|PropertyName (chaîne)|obligatoire|Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont :
+|PropertyName|PropertyName (chaîne)|obligatoire|Spécifie le nom de la propriété par rapport à laquelle l’expression sera évaluée. Les options disponibles sont :
 
 |**PropertyName**|**Description**|
 |:-----|:-----|
@@ -140,15 +140,15 @@ Aucun.
 |BodyAsHtml|Évalue l’expression régulière par rapport au corps de l’élément si le corps est disponible en HTML.|
 |SenderSTMPAddress|Évalue l’expression régulière par rapport à l’adresse SMTP de l’expéditeur de l’élément.|
 |IgnoreCase|booléen|facultatif|Indique d’ignorer la casse lors de l’exécution de l’expression régulière.|
- **Attributs RuleCollection Rule**
+ **Attributs de la règle RuleCollection**
 
 
 
-|**Attribut**|**Type**|**Requis**|**Description**|
+|**Attribut**|**Type**|**Obligatoire**|**Description**|
 |:-----|:-----|:-----|:-----|
 |Mode|string|obligatoire|Spécifie l’opérateur logique à utiliser lors de l’évaluation de cette collection de règles. Il peut s’agir des éléments suivants : « And » ou « Or ».|
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

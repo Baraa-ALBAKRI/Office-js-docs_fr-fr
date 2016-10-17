@@ -1,11 +1,11 @@
 
-# Élément QueryUri
+# <a name="queryuri-element"></a>Élément QueryUri
 Spécifie l’URL du point de terminaison du service de requête de dictionnaire.
 
  **Type de complément :** volet Office
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,12 +13,12 @@ Spécifie l’URL du point de terminaison du service de requête de dictionnaire
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

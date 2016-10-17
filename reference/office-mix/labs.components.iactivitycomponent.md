@@ -1,16 +1,16 @@
 
-# Labs.Components.IActivityComponent
+# <a name="labs.components.iactivitycomponent"></a>Labs.Components.IActivityComponent
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
-Composant d’activité. Étend [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).
+Représente un composant d’activité. Étend [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).
 
 ```
 interface IActivityComponent extends Labs.Core.IComponent
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Nom|Description|

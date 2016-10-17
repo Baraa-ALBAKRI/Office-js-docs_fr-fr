@@ -1,5 +1,5 @@
 
-# Débogage des compléments avec les outils de développement F12 sur Windows 10
+# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement F12 sur Windows 10
 
 Les outils de développement F12 inclus dans Windows 10 vous aident à déboguer, tester et accélérer vos pages web. Ils vous aident également à développer et déboguer les compléments Office si vous n’utilisez pas un IDE comme Visual Studio ou si vous devez examiner un problème pendant l’exécution de votre complément hors de l’IDE. Vous pouvez lancer les outils de développement F12 après l’exécution de votre complément.
 
@@ -8,7 +8,7 @@ Dans cet article, vous découvrirez comment utiliser le débogueur des outils de
  >**Remarque**  le débogueur fait partie des outils de développement F12 de Windows 10 et d’Internet Explorer. Il n’est pas inclus dans les versions antérieures de Windows. 
 
 
-### Conditions préalables
+### <a name="prerequisites"></a>Conditions préalables
 
 Les logiciels suivants doivent être installés :
 
@@ -19,7 +19,7 @@ Les logiciels suivants doivent être installés :
     
 - Votre complément. 
     
-### Utilisation du débogueur
+### <a name="using-the-debugger"></a>Utilisation du débogueur
 
 Cet exemple utilise Word et un complément gratuit de l’Office Store.
 
@@ -57,11 +57,13 @@ Cet exemple utilise Word et un complément gratuit de l’Office Store.
     ![Débogueur avec les résultats du point d’arrêt déclenché](../../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Inspecter le code JavaScript en cours d’exécution avec le débogueur](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
+- 
+  [Inspecter le code JavaScript en cours d’exécution avec le débogueur](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
-- [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- 
+  [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
     

@@ -1,62 +1,62 @@
-# Objet Body (interface API JavaScript pour Word)
+# <a name="body-object-(javascript-api-for-word)"></a>Objet Body (interface API JavaScript pour Word)
 
 Représente le corps d’un document ou d’une section.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |style|string|Obtient ou définit le style utilisé pour le corps. Il s’agit du nom du style pré-installé ou personnalisé.|
 |text|string|Obtient le texte du corps. Utilisez la méthode insertText pour insérer du texte. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtient la collection des objets de contrôle de contenu de texte enrichi qui se trouvent dans le corps. En lecture seule.|
-|font|[Police](font.md)|Obtient le format de texte du corps. Utilisez cette propriété pour obtenir et définir le nom, la taille et la couleur de la police, ainsi que d’autres propriétés. En lecture seule.|
+|police|[Font](font.md)|Obtient le format de texte du corps. Utilisez cette propriété pour obtenir et définir le nom de la police, la taille, la couleur et d’autres propriétés. En lecture seule.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Obtient la collection d’objets inlinePicture qui se trouvent dans le corps. La collection n’inclut pas d’images flottantes. En lecture seule.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtient la collection d’objets de paragraphe qui se trouvent dans le corps. En lecture seule.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Obtient le contrôle de contenu qui contient le corps. Renvoie null s’il n’existe pas de contrôle de contenu parent. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Efface le contenu de l’objet de corps. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.|
 |[getHtml()](#gethtml)|chaîne|Obtient la représentation HTML de l’objet de corps.|
-|[getOoxml()](#getooxml)|string|Obtient la représentation OOXML (Office Open XML) de l’objet de corps.|
+|[getOoxml()](#getooxml)|chaîne|Obtient la représentation OOXML (Office Open XML) de l’objet de corps.|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Insère un saut à l’emplacement spécifié. Vous pouvez uniquement insérer un saut dans le corps de document principal, sauf s’il s’agit d’un saut de ligne, auquel cas il peut être inséré dans n’importe quel objet de corps. La valeur insertLocation peut être « Start » (début) ou « End » (fin).|
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Encadre l’objet de corps avec un contrôle de contenu de texte enrichi.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Insère un document dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code HTML à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin). |
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin). |
 |[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin).|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Insère du texte dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de corps. Les résultats de la recherche sont un ensemble d’objets de plage.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de corps. Les résultats de la recherche sont un ensemble d’objets de plage.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Sélectionne le corps et y accède via l’interface utilisateur de Word. Les valeurs selectionMode peuvent être « Select » (sélectionner), « Start » (début) ou « End » (fin).|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### clear()
+### <a name="clear()"></a>clear()
 Efface le contenu de l’objet de corps. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -83,21 +83,21 @@ Word.run(function (context) {
 
 Le complément d’exemple [Silly stories](https://aka.ms/sillystorywordaddin) montre comment utiliser la méthode **clear** pour effacer le contenu d’un document.
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 Obtient la représentation HTML de l’objet de corps.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.getHtml();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -122,21 +122,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 Obtient la représentation OOXML (Office Open XML) de l’objet de corps.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.getOoxml();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,27 +161,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Insère un saut à l’emplacement spécifié. Vous pouvez uniquement insérer un saut dans le corps de document principal, sauf s’il s’agit d’un saut de ligne, auquel cas il peut être inséré dans n’importe quel objet de corps. La valeur insertLocation peut être « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertBreak(breakType, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |breakType|BreakType|Obligatoire. Type de saut à ajouter au corps.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Détails supplémentaires
+#### <a name="additional-details"></a>Détails supplémentaires
 À l’exception des sauts de ligne, vous ne pouvez pas insérer de saut dans les en-têtes, les pieds de page, les notes de bas de page, les notes de fin, les commentaires et les zones de texte.
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (ctx) {
@@ -205,21 +205,21 @@ Word.run(function (ctx) {
     }
 });
 ```
-### insertContentControl()
+### <a name="insertcontentcontrol()"></a>insertContentControl()
 Encadre l’objet de corps avec un contrôle de contenu de texte enrichi.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertContentControl();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [ContentControl](contentcontrol.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -243,24 +243,24 @@ Word.run(function (context) {
     }
 });
 ```
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Insère un document dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64File|string|Obligatoire. Contenu de fichier encodé au format Base64 à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -288,24 +288,24 @@ Word.run(function (context) {
 
 Le complément d’exemple[Silly stories](https://aka.ms/sillystorywordaddin) montre comment utiliser la méthode **insertFileFromBase64** pour insérer des fichiers .docx à partir d’un service.
 
-### insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Insère du code HTML à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertHtml(html, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Html|string|Obligatoire. Code HTML à insérer dans le document.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -330,39 +330,39 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Insère une image dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 bodyObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Obligatoire. Image encodée au format Base64 à insérer dans le corps.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [InlinePicture](inlinepicture.md)
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |ooxml|string|Obligatoire. Contenu OOXML ou wordProcessingML à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -387,27 +387,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Informations supplémentaires
-Pour obtenir des instructions sur l'utilisation d’OOXML, voir [Création de compléments plus performants pour Word avec Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx). L’exemple [Word-Add-in-DocumentAssembly][body.insertOoxml] vous montre comment utiliser cette API pour assembler un document.
+#### <a name="additional-information"></a>Informations supplémentaires
+Pour obtenir des instructions sur l’utilisation d’OOXML, voir [Création de compléments plus performants pour Word avec Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx). L’exemple [Word-Add-in-DocumentAssembly][body.insertOox]ml vous montre comment utiliser cette API pour assembler un document.
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|Obligatoire. Texte de paragraphe à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Paragraph](paragraph.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -432,27 +432,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Informations supplémentaires
+#### <a name="additional-information"></a>Informations supplémentaires
 L’exemple [Word-Add-in-DocumentAssembly][body.insertParagraph] vous montre comment utiliser la méthode insertParagraph pour assembler un document.
 
-### insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
 Insère du texte dans le corps à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.insertText(text, insertLocation);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |text|string|Obligatoire. Texte à insérer.|
 |insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -476,23 +476,23 @@ Word.run(function (context) {
     }
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -523,24 +523,24 @@ Word.run(function (context) {
     }
 });
 ```
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de corps. Les résultats de la recherche sont un ensemble d’objets de plage.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.search(searchText, searchOptions);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |searchText|string|Obligatoire. Texte de recherche.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Facultatif. Options de la recherche.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [SearchResultCollection](searchresultcollection.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -582,26 +582,26 @@ Word.run(function (context) {
 });
 ```
 
-#### Informations supplémentaires
+#### <a name="additional-information"></a>Informations supplémentaires
 L’exemple [Word-Add-in-DocumentAssembly][body.search] fournit un autre exemple de recherche d’un document.
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 Sélectionne le corps et y accède via l’interface utilisateur de Word. Les valeurs selectionMode peuvent être « Select » (sélectionner), « Start » (début) ou « End » (fin).
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 bodyObject.select(selectionMode);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|Facultatif. Le mode de sélection peut être « Select » (sélectionner), « Start » (début) ou « End » (fin). « Select » (sélectionner) est la valeur par défaut.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -627,9 +627,9 @@ Word.run(function (context) {
 });
 ```
 
-## Exemples d’accès aux propriétés
+## <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-### Obtenir la propriété de texte sur l’objet de corps
+### <a name="get-the-text-property-on-the-body-object"></a>Obtenir la propriété de texte sur l’objet de corps
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -653,7 +653,7 @@ Word.run(function (context) {
     }
 });
 ```
-### Obtenir le style et les propriétés de taille de police, nom de police et couleur de police sur l’objet de corps
+### <a name="get-the-style-and-the-font-size,-font-name,-and-font-color-properties-on-the-body-object."></a>Obtenir le style et les propriétés de taille de police, nom de police et couleur de police sur l’objet de corps
 
 ```js
 // Run a batch operation against the Word object model.
@@ -686,7 +686,7 @@ Word.run(function (context) {
 });
 ```
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 

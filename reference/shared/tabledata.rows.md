@@ -1,11 +1,11 @@
 
-# Propriété TableData.rows
+# <a name="tabledata.rows-property"></a>Propriété TableData.rows
 Obtient ou définit les lignes dans le tableau.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Excel, Word|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
 |**Ajouté dans**|1.1|
 
 ```
@@ -13,12 +13,12 @@ var myRows = tableBindingObj.rows;
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Renvoie un tableau de tableaux qui contient les données du tableau. Renvoie un **tableau**`[]` vide en l’absence de lignes.
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Pour spécifier des lignes, vous devez spécifier un tableau de tableaux qui correspond à la structure de la table. Par exemple, pour spécifier les deux lignes de valeurs **string** dans une table à deux colonnes, vous devez définir la propriété **rows** sur ` [['a', 'b'], ['c', 'd']]`.
 
@@ -30,7 +30,7 @@ Si vous spécifiez une valeur **null** pour la propriété **rows** (ou si vous 
 - Si vous remplacez ou mettez à jour un tableau existant, les lignes existantes ne sont pas modifiées.
     
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant crée un tableau d’une seule colonne avec un en-tête et trois lignes.
 
@@ -45,15 +45,15 @@ function createTableData() {
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**|v|v|v|
 |**Word**|v|v|v|
@@ -61,13 +61,13 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|TableBindings|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Disponible dans les ensembles de conditions requises**|TableBindings|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

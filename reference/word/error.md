@@ -1,10 +1,10 @@
-# Objet OfficeExtension.Error (API JavaScript pour Word)
+# <a name="officeextension.error-object-(javascript-api-for-word)"></a>Objet OfficeExtension.Error (API JavaScript pour Word)
 
 Représente des erreurs qui se produisent lorsque vous utilisez l’API JavaScript Word.
 
-_S’applique à : Word 2016, Word pour iPad, Word pour Mac_
+_S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |code|string|Obtient une valeur qui indique le type d’erreur. La valeur peut être « AccessDenied », « GeneralException », « ActivityLimitReached », « InvalidArgument », « ItemNotFound » ou « NotImplemented ». <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
@@ -13,31 +13,31 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 |name |string| Obtient une valeur qui est toujours « OfficeExtension.Error ». |
 |traceMessages |string[]| Obtient un tableau de valeurs qui correspondent aux messages d’instrumentation définis avec context.trace(); |
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|chaîne|Renvoie le code d’erreur et le message au format suivant : « {0}: {1} », code, message.|
 
-## Détails de méthodes
+## <a name="method-details"></a>Détails de méthodes
 
-### toString()
+### <a name="tostring()"></a>toString()
 Renvoie le code d’erreur et le message au format suivant : « {0}: {1} », code, message.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 error.toString()
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 string
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -61,9 +61,9 @@ Word.run(function (context) {
 
 ```
 
-## Exemples d’accès aux propriétés
+## <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-### Instrumentation de message de trace
+### <a name="trace-message-instrumentation"></a>Instrumentation de message de trace
 
 L’exemple suivant montre comment instrumenter un lot de commandes pour déterminer où une erreur s’est produite. Le premier lot insère les deux premiers paragraphes dans le document sans provoquer d’erreurs. Le deuxième lot insère les troisième et quatrième paragraphes, mais l’appel d’insertion du cinquième paragraphe échoue. Aucune des autres commandes du lot après celle en échec n’est exécutée, y compris la commande qui ajoute le cinquième message de trace. Dans ce cas, l’erreur s’est produite après l’insertion du quatrième paragraphe et avant l’ajout du cinquième message de trace.
 

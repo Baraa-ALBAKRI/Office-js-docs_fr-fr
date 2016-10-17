@@ -1,11 +1,11 @@
-# Objet PageContent (interface API JavaScript pour OneNote)
+# <a name="pagecontent-object-(javascript-api-for-onenote)"></a>Objet PageContent (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente une zone sur une page qui contient des types de contenu de niveau supérieur tels que des plans ou des images. Un objet PageContent peut être affecté à une position XY.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -14,7 +14,7 @@ Représente une zone sur une page qui contient des types de contenu de niveau su
 |top|double|Obtient ou définit la position supérieure (axe des ordonnées) de l’objet PageContent.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-top)|
 |type|string|Obtient le type de l’objet PageContent. En lecture seule. Les valeurs possibles sont les suivantes : Outline, Image, Other.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-type)|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |image|[Image](image.md)|Obtient l’image dans l’objet PageContent. Renvoie une exception si PageContentType n’est pas défini sur Image. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-image)|
@@ -22,31 +22,31 @@ Représente une zone sur une page qui contient des types de contenu de niveau su
 |outline|[Outline](outline.md)|Obtient le plan de l’objet PageContent. Renvoie une exception si PageContentType n’est pas défini sur Outline. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-outline)|
 |parentPage|[Page](page.md)|Obtient la page qui contient l’objet PageContent. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-parentPage)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |[delete()](#delete)|void|Supprime l’objet PageContent.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-delete)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Supprime l’objet PageContent.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageContentObject.delete();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -72,18 +72,18 @@ OneNote.run(function (context) {
     }
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void

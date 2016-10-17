@@ -1,8 +1,8 @@
 
-# Variables Labs.Core.Actions
+# <a name="labs.core.actions-variables"></a>Variables Labs.Core.Actions
 Déclarations de variables figurant dans le module Labs.Core.Actions de l’API Labs.js.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le tableau suivant répertorie les déclarations de variables et les descriptions pour le module [LabsJS.Labs.Core.Actions](../../reference/office-mix/labsjs.labs.core.actions.md) de l’API Labs.js.
 

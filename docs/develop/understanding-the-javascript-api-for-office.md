@@ -1,11 +1,11 @@
 
-# Présentation de l’API JavaScript pour Office
+# <a name="understanding-the-javascript-api-for-office"></a>Présentation de l’API JavaScript pour Office
 
 
 
-Cet article fournit des informations sur l’API JavaScript pour Office et sur son utilisation. Pour plus d’informations, voir [API JavaScript pour Office](../../reference/javascript-api-for-office.md). Pour exécuter et modifier du code d’API JavaScript pour Office dans votre navigateur web avec Excel Online, consultez le [didacticiel API JavaScript pour Office](http://msdn.microsoft.com/en-us/office/dn449240.aspx). Pour obtenir des informations sur la mise à jour de fichiers de projet Visual Studio vers la version la plus récente de l’API JavaScript pour Office, voir [Mettre à jour la version de votre API JavaScript pour Office et des fichiers de schéma de manifeste](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
+Cet article fournit des informations sur l’API JavaScript pour Office et son utilisation. Pour obtenir des informations de référence, voir [API JavaScript pour Office](../../reference/javascript-api-for-office.md). Pour plus d’informations sur la mise à jour des fichiers de projet Visual Studio vers la version la plus récente de l’API JavaScript pour Office, voir [Mettre à jour la version de votre API JavaScript pour Office et les fichiers de schéma manifeste](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
-## Référence à la bibliothèque de l’interface API JavaScript pour Office dans votre complément
+## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Référence à la bibliothèque de l’interface API JavaScript pour Office dans votre complément
 
 La bibliothèque de l’[interface API JavaScript pour Office](../../reference/javascript-api-for-office.md) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. La méthode la plus simple pour référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
 
@@ -17,7 +17,7 @@ Cette opération permet de télécharger et de mettre en cache les fichiers de l
 
 Pour obtenir plus d’informations sur le CDN Office.js et la gestion du contrôle de version et de la rétrocompatibilité, consultez la page relative au [référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu (CDN)](referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
-## Initialisation de votre complément
+## <a name="initializing-your-add-in"></a>Initialisation de votre complément
 
 
  **S’applique à :** Tous les types de complément
@@ -40,12 +40,11 @@ Office.initialize = function () {
     });
   };
 ```
-Toutes les pages au sein d’un complément Office sont nécessaires pour attribuer un gestionnaire d’événements à l’événement initialize, **Office.initialize**.
-Si vous ne parvenez pas à attribuer un gestionnaire d’événements, votre complément peut générer une erreur lors de son démarrage. En outre, si un utilisateur essaie d’utiliser votre complément avec un client web Office Online, notamment Excel Online, PowerPoint Online ou Outlook Web App, l’exécution du complément échouera. Si vous n’avez pas besoin de code d’initialisation, le corps de la fonction attribuée à **Office.initialize** peut être vide, comme dans le premier exemple ci-dessus.
+Toutes les pages au sein d’un complément Office sont nécessaires pour attribuer un gestionnaire d’événements à l’événement initialize, **Office.initialize**. Si vous ne parvenez pas à attribuer un gestionnaire d’événements, votre complément peut générer une erreur lors de son démarrage. En outre, si un utilisateur essaie d’utiliser votre complément avec un client web Office Online, notamment Excel Online, PowerPoint Online ou Outlook Web App, l’exécution du complément échouera. Si vous n’avez pas besoin de code d’initialisation, le corps de la fonction attribuée à **Office.initialize** peut être vide, comme dans le premier exemple ci-dessus.
 
 Pour plus de détails sur la séquence d’événements lors de l’initialisation d’un complément, voir [Chargement du DOM et de l’environnement d’exécution](../../docs/develop/loading-the-dom-and-runtime-environment.md).
 
-#### Initialisation de Reason
+#### <a name="initialization-reason"></a>Initialisation de Reason
 Pour les compléments de contenu et du volet Office, Office.initialize fournit un paramètre _reason_ supplémentaire. Ce paramètre peut être utilisé pour savoir comment un complément a été ajouté au document actif. Vous pouvez l’utiliser pour fournir une logique différente quand un complément est inséré pour la première fois par opposition au moment où il fait déjà partie du document. 
 
 ```js
@@ -59,7 +58,7 @@ Office.initialize = function (reason) {
 ```
 Pour plus d’informations, consultez les pages relatives à l’[événement Office.initialize](../../reference/shared/office.initialize.md) et à l’[énumération InitializationReason](../../reference/shared/initializationreason-enumeration.md) 
 
-## Objet Context
+## <a name="context-object"></a>Objet Context
 
  **S’applique à :** tous les types de complément
 
@@ -70,7 +69,7 @@ Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez ut
 L’objet **Context** donne également accès aux propriétés [contentLanguage](../../reference/shared/office.context.contentlanguage.md) et [displayLanguage](../../reference/shared/office.context.displaylanguage.md) qui vous permettent de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application hôte. La propriété [roamingSettings](../../reference/outlook/Office.context.md) vous permet d’accéder aux membres de l’objet [RoamingSettings](../../reference/outlook/RoamingSettings.md). Enfin, l’objet **Context** fournit une propriété [ui](../../reference/shared/officeui.md) qui permet à votre complément de lancer des boîtes de dialogue contextuelles.
 
 
-## Objet Document
+## <a name="document-object"></a>Objet Document
 
 
  **S’applique à :** types de complément de contenu et du volet Office
@@ -108,14 +107,14 @@ L’objet  **Document** prend en charge quatre moyens pour les développeurs d�
 Pour vous aider à comprendre comment fonctionnent les méthodes d’accès aux données par sélection et par liaison, nous expliquerons tout d’abord comment les API d’accès aux données fournissent un accès aux données cohérent parmi les différentes applications Office.
 
 
-### Accès aux données cohérent sur les différentes applications Office
+### <a name="consistent-data-access-across-office-applications"></a>Accès aux données cohérent sur les différentes applications Office
 
  **S’applique à :** types de complément de contenu et du volet Office
 
 Pour créer des extensions qui fonctionnent de manière transparente parmi les différents documents Office, l’API JavaScript pour Office fait abstraction des particularités de chaque application Office par l’intermédiaire des types de données communs et par le forçage de type des différents contenus de documents selon trois types de données communs.
 
 
-#### Type de données communs
+#### <a name="common-data-types"></a>Type de données communs
 
 Dans l’accès aux données basé sur la sélection et basé sur la liaison, les contenus de documents sont exposés via des types de données qui sont communs à toutes les applications Office prises en charge. Dans Office 2013, trois principaux types de données sont pris en charge :
 
@@ -127,7 +126,7 @@ Dans l’accès aux données basé sur la sélection et basé sur la liaison, le
 |Matrice|Fournit les données de la sélection ou de la liaison sous forme d’ **Array** bidimensionnel implémenté dans JavaScript sous forme de tableau de tableaux.Par exemple, deux lignes de valeurs  **string** dans deux colonnes donneront ` [['a', 'b'], ['c', 'd']]`, et une seule colonne de trois lignes donnera  `[['a'], ['b'], ['c']]`.|L’accès aux données de matrice est pris en charge uniquement dans Excel 2013 et Word 2013.|
 |Tableau|Fournit les données dans la sélection ou la liaison sous forme d’objet [TableData](../../reference/shared/tabledata.md). L’objet  **TableData** expose les données via les propriétés **headers** et **rows**.|L’accès aux données de tableau est pris en charge uniquement dans Excel 2013 et Word 2013.|
 
-#### Contrainte du type de données
+#### <a name="data-type-coercion"></a>Contrainte du type de données
 
 Les méthodes d’accès aux données des objets  **Document** et [Binding](../../reference/shared/binding.md) prennent en charge la spécification du type de données voulu à l’aide du paramètre _coercionType_ de ces méthodes, ainsi que les valeurs d’énumération [CoercionType](../../reference/shared/coerciontype-enumeration.md) correspondantes. Quelle que soit la forme réelle de la liaison, les différentes applications Office prennent en charge les types de données communs en tentant de forcer le type des données selon le type demandé. Par exemple, si un tableau ou un paragraphe Word est sélectionné, le développeur peut indiquer qu’il souhaite le lire en tant que texte brut, HTML, Office Open XML ou en tant que tableau, et l’implémentation de l’API gère les transformations et conversions de données nécessaires.
 
@@ -137,7 +136,7 @@ Les méthodes d’accès aux données des objets  **Document** et [Binding](../.
 Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](../../reference/shared/asyncresult.error.md) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](../../reference/shared/asyncresult.context.md) pour accéder à un objet [Error](../../reference/shared/error.md) incluant des informations sur la raison de l’échec de l’appel de la méthode.
 
 
-## Utilisation des sélections à l’aide de l’objet Document
+## <a name="working-with-selections-using-the-document-object"></a>Utilisation des sélections à l’aide de l’objet Document
 
 
 L’objet  **Document** expose des méthodes qui vous permettent de lire et d’écrire dans la sélection actuelle de l’utilisateur selon un mode « prendre et oublier ». Pour cela, l’objet **Document** fournit les méthodes **getSelectedDataAsync** et **setSelectedDataAsync**.
@@ -145,7 +144,7 @@ L’objet  **Document** expose des méthodes qui vous permettent de lire et d’
 Pour obtenir des exemples de code montrant comment effectuer des tâches avec les sélections, voir [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
-## Utilisation des liaisons à l’aide des objets Bindings et Binding
+## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Utilisation des liaisons à l’aide des objets Bindings et Binding
 
 
 L’accès aux données basé sur les liaisons permet aux compléments de contenu et du volet Office d’accéder de manière cohérente à une région particulière d’un document ou d’une feuille de calcul par l’intermédiaire d’un identificateur associé à une liaison. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync](../../reference/shared/bindings.addfrompromptasync.md), [addFromSelectionAsync](../../reference/shared/bindings.addfromselectionasync.md) ou [addFromNamedItemAsync](../../reference/shared/bindings.addfromnameditemasync.md). Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons apporte à votre complément les avantages suivants :
@@ -175,7 +174,7 @@ Une fois la liaison créée à l’aide de l’une des trois méthodes « add »
 Pour obtenir des exemples de code qui montrent comment effectuer des tâches avec les liaisons, voir [Liaisons de régions dans un document ou une feuille de calcul](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
-## Utilisation de parties XML personnalisées à l’aide des objets CustomXmlParts et CustomXmlPart
+## <a name="working-with-custom-xml-parts-using-the-customxmlparts-and-customxmlpart-objects"></a>Utilisation de parties XML personnalisées à l’aide des objets CustomXmlParts et CustomXmlPart
 
 
  **S’applique à :** compléments du volet Office pour Word et PowerPoint
@@ -183,7 +182,7 @@ Pour obtenir des exemples de code qui montrent comment effectuer des tâches ave
 Les objets [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md) et [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) de l’API donnent accès à des parties XML personnalisées dans les documents Word, qui permettent une manipulation orientée XML du contenu du document. Pour une démonstration de l’utilisation des objets **CustomXmlParts** et **CustomXmlPart**, voir l’exemple de code [Word-Add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts).
 
 
-## Utilisation de l’intégralité du document à l’aide de la méthode getFileAsync
+## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>Utilisation de l’intégralité du document à l’aide de la méthode getFileAsync
 
 
  **S’applique à :** compléments du volet Office pour Word et PowerPoint
@@ -191,7 +190,7 @@ Les objets [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts
 La méthode [Document.getFileAsync](../../reference/shared/document.getfileasync.md) et les membres des objets [File](../../reference/shared/file.md) et [Slice](../../reference/shared/slice.md) fournissent les fonctionnalités permettant d’obtenir l’intégralité des fichiers Word et PowerPoint sous forme de sections (blocs) de 4 Mo maximum à la fois. Pour plus d’informations, voir la [procédure permettant d’obtenir l’ensemble du contenu d’un fichier à partir d’un document dans un complément](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
 
 
-## Objet Mailbox
+## <a name="mailbox-object"></a>Objet Mailbox
 
 
  **S’applique à :** compléments Outlook
@@ -219,7 +218,7 @@ De plus, les compléments Outlook peuvent utiliser les objets suivants :
 Pour plus d’informations sur l’utilisation de JavaScript dans les compléments Outlook, voir [Compléments Outlook](../outlook/outlook-add-ins.md) et [Vue d’ensemble de l’architecture et des fonctionnalités des compléments Outlook](../outlook/overview.md).
 
 
-## Matrice de prise en charge d’API
+## <a name="api-support-matrix"></a>Matrice de prise en charge d’API
 
 
 Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les types de complément (contenu, volet Office et Outlook), ainsi que les applications Office qui peuvent les héberger lorsque vous indiquez les [applications hôtes Office prises en charge par votre complément ](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) à l’aide du [schéma de manifeste de complément 1.1 et des fonctionnalités prises en charge par la version 1.1 de l’interface API JavaScript pour Office](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
@@ -227,11 +226,11 @@ Ce tableau récapitule l’API et les fonctionnalités prises en charge dans les
 
 |||||||||
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-||**Nom d’hôte**|Base de données|Classeur|Boîte aux lettres|Présentation|Document|Projet|
-||**Applications hôtes** **prises en charge**|applications web Access|ExcelExcel Online|OutlookOutlook Web AppOWA pour périphériques|PowerPointPowerPoint Online|Word|Projet|
+||**Nom de l’hôte**|Base de données|Classeur|Boîte aux lettres|Présentation|Document|Projet|
+||**Applications hôtes** **prises en charge**|applications web Access|ExcelExcel Online|OutlookOutlook Web AppOWA pour périphériques|PowerPointPowerPoint Online|Word|Project|
 |**Types de compléments pris en charge**|Contenu|v|v||v|||
 ||Volet de tâches||v||v|v|v|
-||Outlook|||v||||
+||Outlook|||O||||
 |**Fonctionnalités d’API prises en charge**|Lecture/écriture de texte||v||v|v|v (Lecture seule)|
 ||Lecture/écriture de matrice||v|||v||
 ||Lecture/écriture de tableau||v|||v||

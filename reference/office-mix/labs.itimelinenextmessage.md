@@ -1,7 +1,7 @@
 
-# Labs.ITimelineNextMessage
+# <a name="labs.itimelinenextmessage"></a>Labs.ITimelineNextMessage
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Interface de base pour le message suivant de la chronologie.
 

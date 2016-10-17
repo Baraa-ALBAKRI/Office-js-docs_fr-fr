@@ -1,21 +1,21 @@
-# Objet RangeBorderCollection (interface API JavaScript pour Excel)
+# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>Objet RangeBorderCollection (interface API JavaScript pour Excel)
 
 Représente les objets de bordure qui composent la bordure de la plage.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |count|int|Nombre d’objets de bordure de la collection. En lecture seule.|
-|Items|[RangeBorder[]](rangeborder.md)|Collection d’objets rangeBorder. En lecture seule.|
+|items|[RangeBorder[]](rangeborder.md)|Collection d’objets rangeBorder. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -23,26 +23,26 @@ Aucun
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son indice.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getItem(index: string)
+### <a name="getitem(index:-string)"></a>getItem(index: string)
 Obtient un objet de bordure à l’aide de son nom. 
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeBorderCollectionObject.getItem(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|string|Valeur d’indice de l’objet de bordure à récupérer.  Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [RangeBorder](rangeborder.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -64,7 +64,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 
 Excel.run(function (ctx) { 
@@ -86,23 +86,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtient un objet de bordure à l’aide de son indice.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeBorderCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [RangeBorder](rangeborder.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 
 Excel.run(function (ctx) { 
@@ -124,22 +124,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 

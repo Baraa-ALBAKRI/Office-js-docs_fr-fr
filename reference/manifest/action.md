@@ -1,14 +1,14 @@
-# Action, élément
+# <a name="action-element"></a>Action, élément
  Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](./button-control.md) ou de [menu](./menu-control.md).
  
-## Attributs
+## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  Oui  | Type d’action à effectuer|
 
 
-## Éléments enfants
+## <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Description  |
 |:-----|:-----|
@@ -16,12 +16,12 @@
 |  [SourceLocation](#sourcelocation) |    Spécifie l’emplacement du fichier source pour cette action. |
   
 
-## xsi:type
+## <a name="xsi:type"></a>xsi:type
 Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :
 - ExecuteFunction
 - ShowTaskpane
 
-## FunctionName
+## <a name="functionname"></a>FunctionName
 Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](./functionfile.md).
 
 ```xml
@@ -30,7 +30,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 </Action>
 ```
 
-## SourceLocation
+## <a name="sourcelocation"></a>SourceLocation
 Élément obligatoire lorsque  **xsi:type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément [Urls](./resources.md#urls) dans l’élément [Resources](./resources.md).
 
 ```xml

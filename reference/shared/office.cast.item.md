@@ -1,12 +1,12 @@
 
-# Propriété Office.cast.item
+# <a name="office.cast.item-property"></a>Propriété Office.cast.item
 Fournit la fonction IntelliSense pour les messages et rendez-vous en mode composition ou lecture.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Outlook|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Boîte aux lettres|
-|**Dernière modification dans **|1,0|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Boîte aux lettres|
+|**Dernière modification dans**|1.0|
 
 
 
@@ -47,12 +47,12 @@ Office.cast.item.toMessage(Office.context.mailbox.item);
 ```
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Ensemble de méthodes permettant de sélectionner la fonction IntelliSense appropriée pour votre complément Outlook.
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Cette propriété et ses méthodes prennent en charge IntelliSense pour le développement de complément Outlook uniquement sur Visual Studio. Elles n’ont pas d’effet sur d’autres outils de développement.
 
@@ -61,7 +61,7 @@ Les méthodes **Office.cast.item** sont utilisées au moment de la conception da
 Lors de l’exécution, les méthodes **Office.cast.item** n’ont aucun effet sur votre complément Outlook.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant utilise la méthode **toMessageCompose** pour effectuer une conversion de type de la propriété **Office.context.mailbox.item** afin de n’afficher la fonction IntelliSense que pour l’objet **Message** en mode composition. Une fois la conversion effectuée, la variable `message` n’affichera la fonction IntelliSense que pour les méthodes et propriétés qui peuvent être utilisées en mode composition.
 
@@ -72,7 +72,7 @@ var message = Office.cast.item.toMessageCompose(Office.context.mailbox.item);
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
@@ -85,16 +85,16 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Boîte aux lettres|
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Disponible dans les ensembles de conditions requises**|Boîte aux lettres|
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Outlook|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 
 |**Version**|**Modifications**|
 |:-----|:-----|
-|1,0|Introduit|
+|1.0|Introduit|

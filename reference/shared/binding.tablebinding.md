@@ -1,11 +1,11 @@
 
-# TableBinding, objet
+# <a name="tablebinding-object"></a>TableBinding, objet
 Représente une liaison à deux dimensions de lignes et de colonnes, avec éventuellement des en-têtes.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, PowerPoint, Project, Word|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
 |**Dernière modification dans la sélection**|1.1|
 
 ```
@@ -13,7 +13,7 @@ TableBinding
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Propriétés**
@@ -38,25 +38,25 @@ TableBinding
 |[setFormatsAsync](../../reference/shared/binding.tablebinding.setformatsasync.md)|Définit la mise en forme de cellule et de tableau sur des éléments et des données spécifiés dans le tableau lié.|Peut définir la mise en forme de tableau dans les compléments pour Excel.|
 |[setTableOptionsAsync](../../reference/shared/binding.tablebinding.settableoptionsasync.md)|Met à jour les options de mise en forme de tableau sur le tableau lié.|Peut définir la mise en forme de tableau dans les compléments pour Excel.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 L’objet **TableBinding** hérite de la propriété [id](../../reference/shared/binding.id.md), de la propriété [type](../../reference/shared/binding.type.md), de la méthode [getDataAsync](../../reference/shared/binding.getdataasync.md) et de la méthode [setDataAsync](../../reference/shared/binding.setdataasync.md) de l’objet abstrait [Binding](../../reference/shared/binding.md).
 
 Une fois que vous avez établi une liaison de tableau dans Excel, chaque nouvelle ligne ajoutée au tableau par un utilisateur est automatiquement incluse dans la liaison (**rowCount** augmente).
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet objet est pris en charge dans l’application hôte Office correspondante. Une cellule vide indique que l’application hôte Office ne prend pas en charge cet objet.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
@@ -64,13 +64,13 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|TableBindings|
+|**Disponible dans les ensembles de conditions requises**|TableBindings|
 |**Niveau d’autorisation minimal**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

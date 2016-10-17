@@ -1,5 +1,5 @@
-﻿
-# Confidentialité, autorisations et sécurité pour les compléments Outlook
+
+# <a name="privacy,-permissions,-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 Les utilisateurs finaux, les développeurs et les administrateurs peuvent appliquer les niveaux d’autorisation hiérarchisés du modèle de sécurité pour les compléments Outlook afin de contrôler les performances et la confidentialité.
 
 
@@ -15,7 +15,7 @@ Cet article décrit les autorisations que les compléments Outlook peuvent dema
 - Administrateurs - privilèges pour définir des seuils de performances.
     
 
-## Modèle d’autorisations
+## <a name="permissions-model"></a>Modèle d’autorisations
 
 
 Comme la façon dont les clients perçoivent la sécurité des compléments peut avoir une incidence sur l’adoption de ces derniers, la sécurité des compléments Outlook repose sur un modèle d’autorisations à plusieurs niveaux. Un complément Outlook indique le niveau d’autorisations dont il a besoin, identifiant ainsi l’accès dont il peut disposer et les actions qu’il peut effectuer sur les données de la boîte aux lettres du client. 
@@ -23,7 +23,7 @@ Comme la façon dont les clients perçoivent la sécurité des compléments peut
 Le schéma de manifeste version 1.1 comprend quatre niveaux d’autorisation. 
 
 
-**Tableau 1. Niveaux d’autorisation d'un complément**
+**Tableau 1. Niveaux d’autorisation d’un complément**
 
 
 |**Niveau d’autorisation**|**Valeur dans le manifeste du complément Outlook**|
@@ -32,15 +32,15 @@ Le schéma de manifeste version 1.1 comprend quatre niveaux d’autorisation.
 |Lire l’élément|ReadItem|
 |Lire/écrire dans l’élément|ReadWriteItem|
 |Lire/écrire dans la boîte aux lettres|ReadWriteMailbox|
-Les quatre niveaux d’autorisation sont cumulatifs : l’autorisation  **Lire/écrire dans la boîte aux lettres** inclut les autorisations **Lire/écrire dans l’élément**,  **Lire l’élément** et **Restreint**. L’autorisation  **Lire/écrire dans l’élément** inclut les autorisations **Lire l’élément** et **Restreint**. Enfin l’autorisation  **Lire l’élément** inclut l’autorisation **Restreint**. La figure 1 montre les quatre niveaux d’autorisation et décrit les possibilités offertes à l’utilisateur final, au développeur et à l’administrateur par chaque niveau. Pour plus d’informations sur ces autorisations, voir [Utilisateurs : problèmes de confidentialité et de performance](#utilisateurs-problèmes-de-confidentialité-et-de-performance), [Développeurs : choix d’autorisations et limites d’utilisation des ressources.](#développeurs-choix-dautorisations-et-limites-dutilisation-des-ressources.) et [Spécifier les autorisations pour l’accès du complément Outlook à la boîte aux lettres de l’utilisateur](../outlook/understanding-outlook-add-in-permissions.md). 
+Les quatre niveaux d’autorisation sont cumulatifs : l’autorisation  **Lire/écrire dans la boîte aux lettres** inclut les autorisations **Lire/écrire dans l’élément**,  **Lire l’élément** et **Restreint**. L’autorisation  **Lire/écrire dans l’élément** inclut les autorisations **Lire l’élément** et **Restreint**. Enfin l’autorisation  **Lire l’élément** inclut l’autorisation **Restreint**. La figure 1 montre les quatre niveaux d’autorisation et décrit les possibilités offertes à l’utilisateur final, au développeur et à l’administrateur par chaque niveau. Pour plus d’informations sur ces autorisations, voir [Utilisateurs : problèmes de confidentialité et de performance](#end-users-privacy-and-performance-concerns), [Développeurs : choix d’autorisations et limites d’utilisation des ressources.](#developers-permission-choices-and-resource-usage-limits) et [Spécifier les autorisations pour l’accès du complément Outlook à la boîte aux lettres de l’utilisateur](../outlook/understanding-outlook-add-in-permissions.md). 
 
 
-**Figure 1. Association du modèle d’autorisation à quatre niveaux à l’utilisateur, au développeur et à l’administrateur**
+**Figure 1 Association du modèle d’autorisation à quatre niveaux à l’utilisateur final, au développeur et à l’administrateur**
 
 ![Modèle d’autorisations à 4 niveaux pour le schéma d’applications de messagerie v1.1](../../images/olowa15wecon_Permissions_4Tier.png)
 
 
-## Office Store : intégrité des compléments
+## <a name="office-store:-add-in-integrity"></a>Office Store : intégrité des compléments
 
 
 Le Office Store héberge des compléments pouvant être installés par les utilisateurs finals et les administrateurs. Le Office Store applique les mesures suivantes pour maintenir l’intégrité de ces compléments Outlook :
@@ -55,7 +55,7 @@ Le Office Store héberge des compléments pouvant être installés par les utili
 - Prend en charge un système d’évaluation par les utilisateurs pour les compléments disponibles afin de promouvoir une communauté exerçant une auto surveillance.
     
 
-## Utilisateurs : problèmes de confidentialité et de performance
+## <a name="end-users:-privacy-and-performance-concerns"></a>Utilisateurs : problèmes de confidentialité et de performance
 
 
 Le modèle de sécurité résout les problèmes de sécurité, de confidentialité et de performance des utilisateurs des manières suivantes :
@@ -77,7 +77,7 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
     
 - Applicable uniquement aux clients riches Outlook : les clients riches Outlook surveillent la performance des compléments Outlook installés, exercent un contrôle de gouvernance et désactivent les compléments Outlook qui dépassent les limites pour les aspects suivants :
     
-      - Response time to activate
+      - Temps de réponse d’activation
     
   - Nombre de défaillances d’activation ou de réactivation
     
@@ -91,13 +91,13 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
 - À tout moment, les utilisateurs finals peuvent vérifier les autorisations demandées par les compléments Outlook installés, et désactiver ou activer ultérieurement tout complément Outlook dans le Centre d’administration Exchange.
     
 
-## Développeurs : choix d’autorisations et limites d’utilisation des ressources.
+## <a name="developers:-permission-choices-and-resource-usage-limits"></a>Développeurs : choix d’autorisations et limites d’utilisation des ressources.
 
 
 Le modèle de sécurité fournit aux développeurs des niveaux précis d’autorisations à choisir, et de strictes directives de performance à observer.
 
 
-### Les autorisations à plusieurs niveaux augmentent la transparence
+### <a name="tiered-permissions-increases-transparency"></a>Les autorisations à plusieurs niveaux augmentent la transparence
 
 Les développeurs doivent suivre le modèle d’autorisations à plusieurs niveaux pour assurer la transparence et apaiser les inquiétudes des utilisateurs concernant ce que les compléments peuvent faire à leurs données et leur boîte aux lettres, en faisant la promotion indirecte de l’adoption du complément :
 
@@ -136,19 +136,19 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
     
 - Les développeurs demandent l’autorisation  **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](../../reference/outlook/Office.context.mailbox.md) :
     
-      - Read or write to properties of items in the mailbox.
+      - Lire ou écrire des propriétés d’éléments dans la boîte aux lettres.
     
   - Créer, lire, écrire ou envoyer des éléments dans la boîte aux lettres.
     
   - Créer, lire ou écrire dans des dossiers de la boîte aux lettres.
     
 
-### Réglage de l’utilisation des ressources
+### <a name="resource-usage-tuning"></a>Réglage de l’utilisation des ressources
 
 Les développeurs doivent connaître les limites de l’utilisation des ressources pour l’activation, incorporer le réglage des performances dans leur flux de travail de développement, afin de réduire le risque d’un complément peu performant refusant le service de l’hôte. Les développeurs doivent suivre les directives concernant la conception des règles d’activation telles que décrites dans [Limites d’activation et d’API JavaScript des compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md). Si un complément Outlook est destiné à être exécuté sur un client riche Outlook, les développeurs doivent vérifier que les performances du complément se situent dans les limites d’utilisation des ressources.
 
 
-### Autres mesures visant à promouvoir la sécurité de l’utilisateur
+### <a name="other-measures-to-promote-user-security"></a>Autres mesures visant à promouvoir la sécurité de l’utilisateur
 
 Les développeurs doivent connaître et planifier les éléments suivants :
 
@@ -157,7 +157,7 @@ Les développeurs doivent connaître et planifier les éléments suivants :
     
 - Les développeurs doivent effectuer ce qui suit lors de la soumission d’un complément Outlook à l’Office Store :
     
-      - Produce an Extended Validation (EV) SSL certificate as a proof of identity.
+      - Produire un certificat SSL EV (Extended Validation) comme preuve d’identité.
     
   - Héberger le complément qu’ils soumettent sur un serveur web qui prend en charge SSL.
     
@@ -166,7 +166,7 @@ Les développeurs doivent connaître et planifier les éléments suivants :
   - Être prêts à signer un accord contractuel lors de la soumission du complément.
     
 
-## Administrateurs : privilèges
+## <a name="administrators:-privileges"></a>Administrateurs : privilèges
 
 
 Le modèle de sécurité fournit les droits et les responsabilités suivants aux administrateurs :
@@ -180,7 +180,7 @@ Le modèle de sécurité fournit les droits et les responsabilités suivants aux
     
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
@@ -192,5 +192,5 @@ Le modèle de sécurité fournit les droits et les responsabilités suivants aux
     
 - [Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
     
-- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
+- [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
     

@@ -1,11 +1,11 @@
 
-# Élément RequestedHeight.
+# <a name="requestedheight-element"></a>Élément RequestedHeight.
 Spécifie la hauteur initiale d’un complément de contenu en pixels, comprise entre 32 et 1 000.
 
  **Type de complément :** Contenu
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,7 +13,7 @@ Spécifie la hauteur initiale d’un complément de contenu en pixels, comprise 
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [DefaultSettings](../../reference/manifest/defaultsettings.md) (compléments de contenu)
 

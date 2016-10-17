@@ -1,40 +1,40 @@
-# Objet ChartFill (interface API JavaScript pour Excel)
+# <a name="chartfill-object-(javascript-api-for-excel)"></a>Objet ChartFill (interface API JavaScript pour Excel)
 
 Représente le format de remplissage d’un élément de graphique.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Supprime la couleur de remplissage d’un élément de graphique.|
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Définit le format de remplissage d’un élément de graphique sur une couleur unie.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### Effacer
+### <a name="clear()"></a>Effacer
 Supprime la couleur de remplissage d’un élément de graphique.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartFillObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 Désactiver le format des lignes de quadrillage principal sur l’axe des ordonnées du graphique « Chart1 »
 
@@ -53,23 +53,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### setSolidColor(color: string)
+### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
 Définit le format de remplissage d’un élément de graphique sur une couleur unie.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartFillObject.setSolidColor(color);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |color|string|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 Définir le rouge comme couleur d’arrière-plan de Chart1
 

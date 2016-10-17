@@ -1,11 +1,11 @@
 
-# Élément CitationText
+# <a name="citationtext-element"></a>Élément CitationText
 Spécifie le texte réutilisable de citation de ce dictionnaire.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,12 +13,12 @@ Spécifie le texte réutilisable de citation de ce dictionnaire.
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,47 +1,47 @@
-# Objet ChartSeriesCollection (interface API JavaScript pour Excel)
+# <a name="chartseriescollection-object-(javascript-api-for-excel)"></a>Objet ChartSeriesCollection (interface API JavaScript pour Excel)
 
 Représente une collection de séries de graphique.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |count|int|Renvoie le nombre de séries de la collection. En lecture seule.|
-|Items|[ChartSeries[]](chartseries.md)|Collection d’objets chartSeries. En lecture seule.|
+|items|[ChartSeries[]](chartseries.md)|Collection d’objets chartSeries. En lecture seule.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Extrait une série en fonction de sa position dans la collection.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Extrait une série en fonction de sa position dans la collection.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 chartSeriesCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [ChartSeries](chartseries.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 
 Obtenir le nom de la première série de la collection.
 
@@ -61,22 +61,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 Obtenir le nom des séries de la collection
 
 ```js

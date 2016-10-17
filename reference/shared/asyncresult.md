@@ -1,18 +1,18 @@
 
-# AsyncResult, objet
+# <a name="asyncresult-object"></a>AsyncResult, objet
 Objet qui encapsule le résultat d’une requête asynchrone, y compris les informations d’état et d’erreur quand la demande a échoué.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel, Outlook, PowerPoint, Project, Word|
-|**Dernière modification dans **|1.1|
+|**Dernière modification dans**|1.1|
 
 ```
 AsyncResult
 ```
 
 
-## Membres
+## <a name="members"></a>Membres
 
 
 **Propriétés**
@@ -21,11 +21,11 @@ AsyncResult
 |**Nom**|**Description**|
 |:-----|:-----|
 |**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|Obtient l’élément défini par l’utilisateur transmis au paramètre facultatif _asyncContext_ de la méthode appelée dans le même état que celui dans lequel il a été transmis.|
-|**[erreur](../../reference/shared/asyncresult.error.md)**|Obtient un objet **Error** qui fournit une description de l’erreur, si une erreur s’est produite.|
-|**[statut](../../reference/shared/asyncresult.status.md)**|Obtient l’état de l’opération asynchrone.|
+|**[error](../../reference/shared/asyncresult.error.md)**|Obtient un objet **Error** qui fournit une description de l’erreur, si une erreur s’est produite.|
+|**[status](../../reference/shared/asyncresult.status.md)**|Obtient l’état de l’opération asynchrone.|
 |**[value](../../reference/shared/asyncresult.value.md)**|Obtient la charge utile ou le contenu de l’opération asynchrone, le cas échéant.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Quand la fonction que vous transmettez au paramètre _callback_ pour une méthode « Async » s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
@@ -58,7 +58,7 @@ La fonction anonyme transmise comme argument _callback_ (`function (result){...}
 
 Notez que d’autres lignes de code de la fonction utilisent le paramètre _result_ de la fonction de rappel pour accéder aux propriétés **status** et **error** de l’objet **AsyncResult**.
 
-L’objet **AsyncResult** est disponible à partir de la fonction transmise comme argument au paramètre _callback_ des méthodes suivantes :
+L’objet **AsyncResult** est disponible à partir de la fonction transmise comme argument au paramètre _callback_ des méthodes suivantes :
 
 
 
@@ -93,37 +93,42 @@ L’objet **AsyncResult** est disponible à partir de la fonction transmise comm
 |**CustomXmlPrefixMappings** (Word uniquement)|[addNamespaceAsync](../../reference/shared/customxmlprefixmappings.addnamespaceasync.md)|
 ||[getNamespaceAsync](../../reference/shared/customxmlprefixmappings.getnamespaceasync.md)|
 ||[getPrefixAsync](../../reference/shared/customxmlprefixmappings.getprefixasync.md)|
-|**Mailbox** (Outlook uniquement)|[getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
-||[makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
-|**CustomProperties** (Outlook uniquement)|[saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
-|**Item** (Outlook uniquement)|[loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
-|**RoamingSettings** (Outlook uniquement)|[saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
+|**Mailbox** (Outlook uniquement)|
+  [getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
+||
+  [makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
+|**CustomProperties** (Outlook uniquement)|
+  [saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
+|**Item** (Outlook uniquement)|
+  [loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
+|**RoamingSettings** (Outlook uniquement)|
+  [saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 
-| |**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour périphériques**|**Outlook pour Mac**|
+| |**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|**OWA pour les appareils**|**Outlook pour Mac**|
 |:-----|:-----|:-----|:-----|:-----|:-----|
 |**Access**||v||||
 |**Excel**|v|v|v|||
 |**Outlook**|v|v||v|v|
 |**PowerPoint**|v|v|v|||
-|**Projet**|v|||||
+|**Project**|v|||||
 |**Word**|v|v|v|||
 
 |||
 |:-----|:-----|
 |**Types de complément**|De contenu, de volet de tâche, Outlook|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

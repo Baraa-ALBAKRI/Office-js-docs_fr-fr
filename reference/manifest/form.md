@@ -1,11 +1,11 @@
 
-# Élément Form
+# <a name="form-element"></a>Élément Form
 Paramètres UX pour les formulaires que votre complément de messagerie utilisera lors de l’exécution sur un appareil particulier (ordinateur de bureau, tablette ou téléphone).
 
  **Type de complément :** messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,12 +15,12 @@ Paramètres UX pour les formulaires que votre complément de messagerie utilise
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [FormSettings](../../reference/manifest/formsettings.md)
 
 
-## Peut contenir :
+## <a name="can-contain:"></a>Peut contenir :
 
 
 ||

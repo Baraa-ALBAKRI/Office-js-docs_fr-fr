@@ -1,5 +1,5 @@
 
-# Ajouter et supprimer des pièces jointes à un élément dans un formulaire de composition dans Outlook
+# <a name="add-and-remove-attachments-to-an-item-in-a-compose-form-in-outlook"></a>Ajouter et supprimer des pièces jointes à un élément dans un formulaire de composition dans Outlook
 
 Vous pouvez utiliser les méthodes [addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) et [addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) pour joindre respectivement un fichier et un élément Outlook à l’élément en cours de composition par l’utilisateur. Les deux méthodes sont asynchrones, ce qui signifie que l’exécution peut se poursuivre sans attendre que l’action d’ajout de pièce jointe se termine. Selon l’emplacement d’origine et la taille de la pièce jointe en cours d’ajout, l’exécution de l’appel asynchrone d’ajout de pièce jointe peut prendre un certain temps. Si des tâches dépendent de l’exécution de l’action, vous devez les réaliser dans une méthode de rappel. Cette méthode de rappel est facultative et elle est appelée lorsque le téléchargement de la pièce jointe est terminé. La méthode de rappel admet un objet [AsyncResult](http://dev.outlook.com/reference/add-ins/simple-types.md) comme paramètre de sortie fournissant un état, une erreur et une valeur renvoyée à partir de l’action d’ajout de pièce jointe. Si le rappel exige des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif _options.aysncContext_.  _options.asyncContext_ peut être de n’importe quel type attendu par votre méthode de rappel.
 
@@ -18,7 +18,7 @@ Vous pouvez vérifier la réussite ou l’erreur d’un appel de méthode asynch
  >**Remarque**  Il est recommandé d’utiliser l’ID de pièce jointe pour la supprimer uniquement si le même complément a ajouté cette pièce jointe dans la même session. Dans Outlook Web App et OWA pour périphériques, l’ID de pièce jointe est valide uniquement dans la même session. Une session est terminée lorsque l’utilisateur ferme le complément, ou si l’utilisateur commence la composition dans un formulaire incorporé, avant de fermer ce formulaire pour continuer dans une fenêtre distincte.
 
 
-## Attachement d’un fichier
+## <a name="attaching-a-file"></a>Attachement d’un fichier
 
 Vous pouvez joindre un fichier à un message ou un rendez-vous dans un formulaire de composition en utilisant la méthode  **addFileAttachmentAsync** et en spécifiant l’URI du fichier. Si le fichier est protégé, vous pouvez inclure une identité appropriée ou un jeton d’authentification comme paramètre de chaîne de requête d’URI. Exchange effectuera un appel à l’URI pour obtenir la pièce jointe, et le service web qui protège le fichier devra utiliser le jeton comme moyen d’authentification.
 
@@ -68,7 +68,7 @@ function write(message){
 ```
 
 
-## Attachement d’un élément Outlook
+## <a name="attaching-an-outlook-item"></a>Attachement d’un élément Outlook
 
 Vous pouvez joindre un élément Outlook (par exemple, un élément de messagerie, de calendrier ou de contact) à un message ou à un rendez-vous dans un formulaire de composition en précisant l’ID des services web Exchange (EWS) de l’élément et en utilisant la méthode  **addItemAttachmentAsync**. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur en utilisant la méthode [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) et en accédant à l’opération EWS [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx). La propriété [item.itemId](http://dev.outlook.com/reference/add-ins/Office.context.mailbox.item.md) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
 
@@ -108,7 +108,7 @@ function addItemAttachment(ID) {
  >**Remarque**  Vous pouvez utiliser un complément de composition pour joindre une instance d’un rendez-vous périodique dans Outlook Web App ou OWA pour périphériques. Cependant, dans le client riche Outlook de prise en charge, la tentative d’attachement d’une instance entraîne l’attachement d’une série périodique (rendez-vous principal).
 
 
-## Suppression d’une pièce jointe
+## <a name="removing-an-attachment"></a>Suppression d’une pièce jointe
 
 
 Vous pouvez supprimer une pièce jointe de fichier ou d’élément d’un élément de rendez-vous ou de message dans un formulaire de composition en indiquant l’ID de pièce jointe correspondant et en utilisant la méthode [removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md). Vous devez supprimer uniquement les pièces jointes que le même complément a ajoutées dans la même session. Vous devez vous assurer que l’ID de pièce jointe correspond à une pièce jointe valide, sinon la méthode renverra une erreur. À l’instar des méthodes  **addFileAttachmentAsync** et **addItemAttachmentAsync**,  **removeAttachmentAsync** est une méthode asynchrone. Vous devez fournir une méthode de rappel pour vérifier l’état et toute erreur en utilisant l’objet de paramètre de sortie **AsyncResult**. Vous pouvez également passer des paramètres supplémentaires à la méthode de rappel à l’aide du paramètre facultatif  **asyncContext**, qui est un objet JSON de paires clé-valeur.
@@ -146,7 +146,7 @@ function removeAttachment(ID) {
 ```
 
 
-## Conseils en matière d’ajout et de suppression de pièces jointes
+## <a name="tips-for-adding-and-removing-attachments"></a>Conseils en matière d’ajout et de suppression de pièces jointes
 
 
 Si votre complément de composition ajoute et supprime des pièces jointes, structurez votre code de façon à passer un ID de pièce jointe valide à l’appel de suppression de pièce jointe et à gérer le cas de figure où  **AsyncResult.error** renvoie **InvalidAttachmentId**. Selon l’emplacement et la taille d’une pièce jointe, l’exécution de l’attachement d’un fichier ou d’un élément peut prendre un certain temps. L’exemple suivant contient un appel à  **addFileAttachmentAsync**,  `write` et **removeAttachmentAsync**. Vous pouvez penser que les appels s’exécutent de façon séquentielle l’un après l’autre.
@@ -288,7 +288,7 @@ Voici un exemple de sortie :
 Remarque : le rappel pour  **removeAttachmentAsync** est imbriqué à l’intérieur du rappel pour **addFileAttachmentAsync**. Comme  **addFileAttachmentAsync** et **removeAttachmentAsync** sont asynchrones, la dernière ligne dans le rappel pour **addFileAttachmentAsync** peut être exécutée avant la fin du rappel pour **removeAttachmentAsync**.
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

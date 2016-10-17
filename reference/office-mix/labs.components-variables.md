@@ -1,15 +1,15 @@
 
-# Variables Labs.Components
+# <a name="labs.components-variables"></a>Variables Labs.Components
 Déclarations de variables pour le module Lab.Components.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Nous fournissons les déclarations et les descriptions des variables dans le module Lab.Components de l’API LabsJS. Ces variables sont tout simplement des constantes qui nous permettent de définir les types respectifs.
 
-## Variables
+## <a name="variables"></a>Variables
 
 
-|**Name**|**Description**|
+|**Nom**|**Description**|
 |:-----|:-----|
 | `var ActivityComponentInstanceType: string`|Nom de l’instance du composant d’activité. Un composant d’activité présente une activité que l’utilisateur doit terminer.|
 | `var ChoiceComponentInstanceType: string`|Nom de l’instance du composant de choix. Un composant de choix comporte plusieurs options de choix et prend en charge zéro ou plusieurs réponses. Il existe éventuellement une liste de choix correcte.|

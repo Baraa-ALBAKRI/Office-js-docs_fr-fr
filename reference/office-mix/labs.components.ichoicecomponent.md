@@ -1,7 +1,7 @@
 
-# Labs.Components.IChoiceComponent
+# <a name="labs.components.ichoicecomponent"></a>Labs.Components.IChoiceComponent
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Permet des interactions avec un composant de choix.
 
@@ -10,7 +10,7 @@ interface IChoiceComponent extends Labs.Core.IComponent
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Nom|Description|

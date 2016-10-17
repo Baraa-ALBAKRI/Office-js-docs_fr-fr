@@ -1,11 +1,11 @@
 
-# Chargement du DOM et de l’environnement d’exécution
+# <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
 
 
 Un complément doit s’assurer que le DOM et l’environnement d’exécution des Compléments Office ont été chargés avant d’exécuter sa propre logique personnalisée. 
 
-## Démarrage d’un complément de contenu ou du volet Office
+## <a name="startup-of-a-content-or-task-pane-add-in"></a>Démarrage d’un complément de contenu ou du volet Office
 
 La figure suivante illustre le flux des événements impliqués au démarrage d’un complément de contenu ou du volet Office dans Excel, PowerPoint, Project, Word ou Access.
 
@@ -30,7 +30,7 @@ Les événements suivants se produisent lors du démarrage d’un complément de
 6. Lorsque le chargement du modèle objet de document (DOM) et du corps HTML est terminé et que le complément s’est initialisé, la fonction principale de l’application peut s’exécuter.
     
 
-## Démarrage d’un complément Outlook
+## <a name="startup-of-an-outlook-add-in"></a>Démarrage d’un complément Outlook
 
 
 
@@ -57,7 +57,7 @@ Les événements suivants se produisent lors du démarrage d’un complément Ou
 7. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
     
 
-## Vérification du statut de chargement
+## <a name="checking-the-load-status"></a>Vérification du statut de chargement
 
 
 Pour vérifier que le chargement du modèle objet de document (DOM) et de l’environnement d’exécution des est terminé, il est notamment possible d’utiliser la fonction jQuery [.ready()](http://api.jquery.com/ready/) :  `$(document).ready()`. Par exemple, la fonction de gestionnaire d’événements  **initialize** ci-dessous s’assure d’abord que le DOM est bien chargé avant l’exécution du code d’initialisation du complément. Par conséquent, le gestionnaire d’événements **initialize** utilise la propriété [mailbox.item](../../reference/outlook/Office.context.mailbox.item.md) pour obtenir l’élément actuellement sélectionné dans Outlook, puis appelle la fonction principale du complément, `initDialer`.
@@ -94,7 +94,7 @@ Si vous n’incluez pas de gestionnaire d’événements  **Office.initialize**,
 Si votre complément comprend plusieurs pages, chaque fois qu’il charge une nouvelle page, celle-ci doit inclure ou appeler un gestionnaire d’événements  **Office.initialize**.
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

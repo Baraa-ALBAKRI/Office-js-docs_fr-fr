@@ -1,5 +1,5 @@
 
-# Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
+# <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
 
 L’interface de l’API JavaScript pour Office fournit des méthodes asynchrones ([Time.getAsync](../../reference/outlook/Time.md) et [Time.setAsync](../../reference/outlook/Time.md)) pour obtenir et définir l’heure de début ou de fin d’un rendez-vous composé par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste du complément pour Outlook afin d’activer le complément dans des formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](../outlook/compose-scenario.md).
 
@@ -42,7 +42,7 @@ item.end.getAsync
 Comme avec la plupart des méthodes asynchrones dans l’interface API JavaScript pour Office, **getAsync** et **setAsync** admettent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Pour obtenir l’heure de début ou de fin
+## <a name="to-get-the-start-or-end-time"></a>Pour obtenir l’heure de début ou de fin
 
 
 Cette section présente un exemple de code qui obtient l’heure de début du rendez-vous que l’utilisateur compose, et affiche cette heure. Vous pouvez utiliser le même code et remplacer la propriété  **start** par la propriété **end** pour obtenir l’heure de fin. Cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous, comme indiqué ci-dessous.
@@ -94,7 +94,7 @@ function write(message){
 ```
 
 
-## Pour définir l’heure de début ou de fin
+## <a name="to-set-the-start-or-end-time"></a>Pour définir l’heure de début ou de fin
 
 
 Cette section présente un exemple de code qui définit l’heure de début du rendez-vous ou le message que l’utilisateur compose. Vous pouvez utiliser le même code et remplacer la propriété  **start** par la propriété **end** pour définir l’heure de fin. Notez que si le formulaire de composition du rendez-vous contient déjà une heure de début, définir l’heure de début ultérieurement entraînera l’ajustement de l’heure de fin afin de maintenir la durée précédemment définie du rendez-vous. Si le formulaire de composition du rendez-vous contient déjà une heure de fin, définir l’heure de fin ultérieurement entraînera l’ajustement de la durée et de l’heure de fin. Si le rendez-vous a été défini comme un événement d’une journée entière, définir l’heure de début entraînera l’ajustement de l’heure de fin pour la définir à 24 heures plus tard et l’option indiquant qu’il s’agit d’un événement d’une journée entière sera désélectionnée dans le formulaire de composition.
@@ -145,7 +145,7 @@ function write(message){
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

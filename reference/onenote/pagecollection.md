@@ -1,24 +1,24 @@
-# Objet TableCollection (interface API JavaScript pour OneNote)
+# <a name="pagecollection-object-(javascript-api-for-onenote)"></a>Objet TableCollection (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente une collection de pages.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |count|int|Renvoie le nombre de pages de la collection. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-count)|
 |items|[Page[]](page.md)|Collection d’objets de page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-items)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -27,26 +27,26 @@ Aucun
 |[getItemAt(index: number)](#getitematindex-number)|[Page](page.md)|Obtient une page en fonction de sa position dans la collection.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-getItemAt)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageCollection-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getByTitle(title: string)
+### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
 Obtient la collection de pages portant le titre spécifié.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageCollectionObject.getByTitle(title);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |title|string|Titre de la page.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [PageCollection](pagecollection.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -87,56 +87,56 @@ OneNote.run(function (context) {
 });
 ```
 
-### getItem(index: number or string)
+### <a name="getitem(index:-number-or-string)"></a>getItem(index: number or string)
 Obtient une page en fonction de son ID ou de son index dans la collection. En lecture seule.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageCollectionObject.getItem(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number or string|ID ou emplacement d’index de la page dans la collection.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtient une page en fonction de sa position dans la collection.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageCollectionObject.getItemAt(index);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-**Items**
+**items**
 ```js
 OneNote.run(function (context) {
     

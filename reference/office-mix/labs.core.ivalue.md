@@ -1,7 +1,7 @@
 
-# Labs.Core.IValue
+# <a name="labs.core.ivalue"></a>Labs.Core.IValue
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Classe de base pour les valeurs stockées avec un atelier.
 
@@ -10,7 +10,7 @@ interface IValue
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

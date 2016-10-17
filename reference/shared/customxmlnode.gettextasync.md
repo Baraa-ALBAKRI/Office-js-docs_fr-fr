@@ -1,11 +1,11 @@
 
-# Méthode CustomXmlNode.getTextAsync
+# <a name="customxmlnode.gettextasync-method"></a>Méthode CustomXmlNode.getTextAsync
 Obtient de manière asynchrone le texte d’un nœud XML dans une partie XML personnalisée.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Word|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Ajouté dans**|1.2|
 
 ```js
@@ -13,16 +13,16 @@ customXmlNodeObj.getTextAsync([asyncContext,]callback(asyncResult);
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
 
 |**Nom**|**Type**|**Description**|
 |:-----|:-----|:-----|
-| _asyncContext_|**object**|Facultatif. Un objet défini par l’utilisateur disponible sur la propriété asyncCesult de l’objet [AsyncResult](../../reference/shared/asyncresult.md). Utilisez ce paramètre pour indiquer un objet ou une valeur à **AsyncResult** lorsque le rappel est une fonction nommée.|
-| _callback_|**object**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.|
+| _asyncContext_|**objet**|Facultatif. Un objet défini par l’utilisateur disponible sur la propriété asyncCesult de l’objet [AsyncResult](../../reference/shared/asyncresult.md). Utilisez ce paramètre pour indiquer un objet ou une valeur à **AsyncResult** lorsque le rappel est une fonction nommée.|
+| _callback_|**objet**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.|
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
@@ -30,14 +30,14 @@ Dans la fonction de rappel transmise à la méthode **getTextAsync**, vous pouve
 
 
 
-|**Propriété**|**Utiliser pour...**|
+|**Propriété**|**Utiliser pour**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Accéder à une **chaîne** qui contient le texte interne des nœuds référencés.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Indique si l’opération a réussi ou échoué.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Accéder à un objet [Error](../../reference/shared/error.md) fournissant des informations sur l’erreur en cas d’échec de l’opération.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou **objet** défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_. Cette propriété renvoie undefined si _asyncContext_ n’a pas été défini.|
 
-## Exemple
+## <a name="example"></a>Exemple
 
 Découvrez comment obtenir la valeur de texte d’un nœud dans une partie XML personnalisée.
 
@@ -72,27 +72,27 @@ Office.context.document.customXmlParts.getByIdAsync("{6C3C8BC8-F283-45AE-878A-BA
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|CustomXmlParts|
+|**Disponible dans les ensembles de conditions requises**|CustomXmlParts|
 |**Niveau d’autorisation minimal**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

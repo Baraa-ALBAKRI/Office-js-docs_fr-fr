@@ -1,7 +1,7 @@
 
-# Labs.Command
+# <a name="labs.command"></a>Labs.Command
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Commande générale permettant de transmettre des messages entre le client et l’hôte.
 
@@ -10,7 +10,7 @@ class Command
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |**Nom**|**Description**|
@@ -18,12 +18,12 @@ class Command
 | `public var type: string`|Type de la commande.|
 | `public var commandData: any`|Données facultatives associées à la commande.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
 
 
-### constructeur
+### <a name="constructor"></a>constructeur
 
  `function constructor(type: string, commandData?: any)`
 

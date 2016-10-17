@@ -1,5 +1,5 @@
 
-# Cycle de vie du développement des compléments Office
+# <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
 
 Le cycle de vie de développement classique d’un complément Office comprend les étapes suivantes :
@@ -20,7 +20,7 @@ Le cycle de vie de développement classique d’un complément Office comprend l
     
 2.  **Identifiez les données et la source de données du complément.**
     
-    Les données proviennent-elles d’un document, d’un classeur, d’une présentation, d’un projet ou sont-elles accessibles via un navigateur Access, ou bien proviennent-elles d’un ou de plusieurs éléments d’une boîte aux lettres Exchange Server ou Exchange Online ? Les données proviennent-elles d’une source externe tel qu’un service web ?
+    Les données proviennent-elles d’un document, d’un classeur, d’une présentation, d’un projet ou sont-elles accessibles via un navigateur Access, ou bien proviennent-elles d’un ou de plusieurs éléments d’une boîte aux lettres Exchange Server ou Exchange Online ? Les données proviennent-elles d’une source externe telle qu’un service web ?
     
 3.  **Identifiez le type de complément et les applications hôtes Office les mieux adaptés pour prendre en charge l’objet de l’application.**
     

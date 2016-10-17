@@ -1,34 +1,34 @@
 
-# Méthode Document.setSelectedDataAsync
+# <a name="document.setselecteddataasync-method"></a>Méthode Document.setSelectedDataAsync
 Écrit des données dans la sélection actuelle au sein du document.
 
 |||
 |:-----|:-----|
 |**Hôtes :** Access, Excel, PowerPoint, Project, Word, Word Online|**Types de complément : ** Contenu, volet Office|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
-|**Dernière modification dans **|1.1|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Dernière modification dans**|1.1|
 
 ```js
 Office.context.document.setSelectedDataAsync(data [, options], callback(asyncResult));
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 |**Nom**|**Type**|**Description**|**Notes de prise en charge**|
 |:-----|:-----|:-----|:-----|
 | _data_|Il existe des données des types suivants :<ul><li><b>string</b> (Office.CoercionType.Text) : s’applique uniquement à Excel, Excel Online, PowerPoint, PowerPoint Online, Word et Word Online.</li><li><b>array</b>, tableau de tableaux (Office.CoercionType.Matrix) : s’applique uniquement à Excel, Word et Word Online.</li><li>[TableData](../../reference/shared/tabledata.md) (Office.CoercionType.Table) : s’applique uniquement à Access, Excel, Word et Word Online.</li><li><b>HTML</b> (Office.CoercionType.Html) : s’applique uniquement à Word et Word Online.</li><li><b>Office Open XML</b> (Office.CoercionType.Ooxml) : s’applique uniquement à Word et Word Online.</li><li><b>Flux d’images encodé au format Base64</b> (Office.CoercionType.Image) : s’applique uniquement à Excel, PowerPoint, Word et Word Online.</li></ul>|Données à définir dans la sélection active. Obligatoire.|**Modifié dans :** 1.1. La prise en charge des compléments de contenu pour Access requiert l’ensemble de ressources requis **Selection** version 1.1 ou ultérieure. La prise en charge de la définition des données d’image requiert l’ensemble de ressources requis **ImageCoercion** version 1.1 ou ultérieure. Pour définir l’activation de l’application, utilisez le code suivant :<br/><br/>`<Requirements>`<br/>&nbsp;&nbsp;`<Sets DefaultMinVersion="1.1">`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<Set Name="ImageCoercion"/>`<br/>&nbsp;&nbsp;`</Sets>`<br/>`</Requirements>`<br/><br/>La détection d’exécution de la fonctionnalité ImageCoercion peut être effectuée par le code suivant :<br/><br/>`if (Office.context.requirements.isSetSupported('ImageCoercion', '1.1')) {)) {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaImageCoercion();`<br/>`} else {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`// insertViaOoxml();`<br/>`}`|
-| _options_|**object**|Spécifie un ensemble de [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). L’objet options peut contenir les propriétés suivantes pour définir les options :<br/><ul><li>coercionType (<b><a href="735eaab6-5e31-4bc2-add5-9d378900a31b.htm">CoercionType</a></b> ) : spécifie comment forcer les données définies. La valeur coercionType par défaut d’Office.CoercionType.Text est utilisée si cette option n’est pas définie.</li><li>tableOptions (<b>object</b> ) : pour le tableau inséré, liste de paires clé-valeur qui spécifient les <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">options de mise en forme de tableau</a>, comme la ligne d’en-tête, le nombre total de lignes et les lignes à bandes. </li><li>cellFormat (<b>object</b> ) : pour le tableau inséré, liste de paires clé-valeur qui spécifient la plage de cellules, lignes ou colonnes et la <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">mise en forme de cellule</a> à appliquer à cette plage. </li><li>imageLeft (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique l’emplacement d’insertion par rapport au côté gauche de la diapositive pour PowerPoint et sa relation avec la cellule actuellement sélectionnée dans Excel. Cette valeur est ignorée pour Word. Cette valeur est exprimée en points.</li><li>imageTop (<b>nombre</b> ) : cette option s’applique à l’insertion des images. Indique l’emplacement d’insertion par rapport à la partie supérieure de la diapositive PowerPoint et sa relation avec la cellule actuellement sélectionnée dans Excel. Cette valeur est ignorée pour Word. Cette valeur est exprimée en points.</li><li>imageWidth (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique la largeur de l’image. Si cette option est indiquée sans imageHeight, l’image sera dimensionnée pour correspondre à la valeur de la largeur de l’image. Si la largeur de l’image et la hauteur de l’image sont indiquées, l’image sera redimensionnée selon ces proportions. Si ni la hauteur ni la largeur de l’image est fournie, la taille de l’image par défaut et les proportions seront utilisées. Cette valeur est exprimée en points.</li><li>imageHeight (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique la hauteur de l’image. Si cette option est indiquée sans imageWidth, l’image sera dimensionnée pour correspondre à la valeur de la hauteur de l’image. Si la largeur de l’image et la hauteur de l’image sont indiquées, l’image sera redimensionnée selon ces proportions. Si ni la hauteur ni la largeur de l’image est fournie, la taille de l’image par défaut et les proportions seront utilisées. Cette valeur est exprimée en points.</li><li>asyncContext (<b>object \| value</b> ) : un objet défini par l’utilisateur disponible sur la propriété asyncCesult de l’objet <a href="540c114f-0398-425c-baf3-7363f2f6bc47.htm">AsyncResult</a>. Utilisez ce paramètre pour indiquer un objet ou une valeur à <b>AsyncResult</b> lorsque le rappel est une fonction nommée.</li></ul>|Les options _tableOptions_ et _cellFormat_ ont été ajoutées à la version 1.1 et sont prises en charge dans Excel 2013 et Excel Online.<br/><br/>Les options _imageLeft_ et _ImageTop_ sont prises en charge dans Excel et PowerPoint.|
-| _callback_|**object**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
+| _options_|**objet**|Spécifie un ensemble de [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). L’objet options peut contenir les propriétés suivantes pour définir les options :<br/><ul><li>coercionType (<b><a href="735eaab6-5e31-4bc2-add5-9d378900a31b.htm">CoercionType</a></b>) : spécifie comment forcer les données définies. La valeur coercionType par défaut d’Office.CoercionType.Text est utilisée si cette option n’est pas définie.</li><li>tableOptions (<b>object</b> ) : pour le tableau inséré, liste de paires clé-valeur qui spécifient les <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">options de mise en forme de tableau</a>, comme la ligne d’en-tête, le nombre total de lignes et les lignes à bandes. </li><li>cellFormat (<b>object</b> ) : pour le tableau inséré, liste de paires clé-valeur qui spécifient la plage de cellules, lignes ou colonnes et la <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">mise en forme de cellule</a> à appliquer à cette plage. </li><li>imageLeft (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique l’emplacement d’insertion par rapport au côté gauche de la diapositive pour PowerPoint et sa relation avec la cellule actuellement sélectionnée dans Excel. Cette valeur est ignorée pour Word. Cette valeur est exprimée en points.</li><li>imageTop (<b>nombre</b> ) : cette option s’applique à l’insertion des images. Indique l’emplacement d’insertion par rapport à la partie supérieure de la diapositive PowerPoint et sa relation avec la cellule actuellement sélectionnée dans Excel. Cette valeur est ignorée pour Word. Cette valeur est exprimée en points.</li><li>imageWidth (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique la largeur de l’image. Si cette option est indiquée sans imageHeight, l’image sera dimensionnée pour correspondre à la valeur de la largeur de l’image. Si la largeur de l’image et la hauteur de l’image sont indiquées, l’image sera redimensionnée selon ces proportions. Si ni la hauteur ni la largeur de l’image est fournie, la taille de l’image par défaut et les proportions seront utilisées. Cette valeur est exprimée en points.</li><li>imageHeight (<b>number</b> ) : cette option s’applique à l’insertion des images. Indique la hauteur de l’image. Si cette option est indiquée sans imageWidth, l’image sera dimensionnée pour correspondre à la valeur de la hauteur de l’image. Si la largeur de l’image et la hauteur de l’image sont indiquées, l’image sera redimensionnée selon ces proportions. Si ni la hauteur ni la largeur de l’image est fournie, la taille de l’image par défaut et les proportions seront utilisées. Cette valeur est exprimée en points.</li><li>asyncContext (<b>object \| value</b>) - un objet défini par l’utilisateur disponible sur la propriété asyncContext de l’objet <a href="540c114f-0398-425c-baf3-7363f2f6bc47.htm">AsyncResult</a>. Utilisez ce paramètre pour indiquer un objet ou une valeur à <b>AsyncResult</b> lorsque le rappel est une fonction nommée.</li></ul>|Les options _tableOptions_ et _cellFormat_ ont été ajoutées à la version 1.1 et sont prises en charge dans Excel 2013 et Excel Online.<br/><br/>Les options _imageLeft_ et _ImageTop_ sont prises en charge dans Excel et PowerPoint.|
+| _callback_|**objet**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
 Dans la fonction de rappel transmise à la méthode **setSelectedDataAsync**, la propriété [AsyncResult.value](../../reference/shared/asyncresult.value.md) renvoie toujours **undefined**, car il n’existe aucun objet ni aucune donnée à récupérer.
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 La valeur transmise pour le paramètre _data_ contient les données à écrire dans la sélection actuelle. Si la valeur est :
 
@@ -39,7 +39,7 @@ La valeur transmise pour le paramètre _data_ contient les données à écrire d
     
     Dans Excel, vous pouvez également spécifier le paramètre _data_ en tant que formule valide pour ajouter cette dernière à la cellule sélectionnée. Par exemple, la définition du paramètre _data_ sur `"=SUM(A1:A5)"` totalisera les valeurs de la plage spécifiée. Toutefois, après avoir défini une formule sur la cellule liée, vous ne pouvez pas lire la formule ajoutée (ni les formules préexistantes) à partir de la cellule liée. Si vous appelez la méthode [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) sur la cellule sélectionnée pour en lire les données, la méthode peut renvoyer uniquement les données affichées dans la cellule (le résultat de la formule).
     
--  **Un tableau de tableaux (« matrice ») :** Des données tabulaires sans en-tête seront insérées. Par exemple, pour écrire des données sur trois lignes dans deux colonnes, vous pouvez transmettre un tableau comme suit : `[["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`. Pour écrire une seule colonne de trois lignes, transmettez un tableau comme suit :  `[["R1C1"], ["R2C1"], ["R3C1"]]`
+-  **Un tableau de tableaux (« matrice ») :** Des données tabulaires sans en-tête seront insérées. Par exemple, pour écrire des données sur trois lignes dans deux colonnes, vous pouvez transmettre un tableau comme suit : `[["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`. Pour écrire une seule colonne de trois lignes, transmettez un tableau comme suit : `[["R1C1"], ["R2C1"], ["R3C1"]]`
     
     
     
@@ -60,7 +60,7 @@ En outre, les actions suivantes (spécifiques aux applications) s’appliquent l
 
 - S’il n’y a aucune sélection et que le point d’insertion se trouve à un emplacement valide, le contenu du paramètre _data_ spécifié est inséré au point d’insertion comme suit :
     
-      - If  _data_ is a string, the specified text is inserted.
+      - Si le paramètre _data_ contient une chaîne, le texte spécifié est inséré.
     
   - Si le paramètre _data_ contient un tableau de tableaux (« matrice ») ou un objet **TableData**, un nouveau tableau Word est inséré.
     
@@ -80,7 +80,7 @@ En outre, les actions suivantes (spécifiques aux applications) s’appliquent l
 
 - Si une seule cellule est sélectionnée :
     
-      - If  _data_ is a string, the specified text is inserted as the value of the current cell.
+      - Si le paramètre _data_ contient une chaîne, le texte spécifié est inséré en tant que valeur de la cellule actuelle.
     
   - Si le contenu du paramètre _data_ est un tableau de tableaux (« matrice »), l’ensemble spécifié de lignes et de colonnes est inséré, à condition qu’aucune autre donnée des cellules environnantes ne soit remplacée.
     
@@ -90,11 +90,11 @@ En outre, les actions suivantes (spécifiques aux applications) s’appliquent l
     
 - Si plusieurs cellules sont sélectionnées et que la forme de la sélection correspond exactement à la forme du contenu du paramètre _data_, les valeurs des cellules sélectionnées sont mises à jour en fonction des valeurs du paramètre _data_.
     
--  **Insérer des images** : Les images insérées sont flottantes. Les paramètres **imageLeft** et **imageTop** de position sont indiqués par rapport à la ou aux cellule(s) actuellement sélectionnée(s). Les valeurs **imageLeft** et **imageTop** négatives sont autorisées et éventuellement réajustées par Excel pour positionner l’image dans une feuille de calcul. Les proportions sont verrouillées à moins que les paramètres **imageWidth** et **imageHeight** soient tous deux indiqués. Si seul un des paramètres **imageWidth** et **imageHeight** est donné, l’autre valeur est automatiquement redimensionnée pour conserver les proportions d’origine.
+-  **Insérer des images** : les images insérées sont flottantes. Les paramètres **imageLeft** et **imageTop** de position sont relatifs à la ou aux cellule(s) actuellement sélectionnée(s). Les valeurs **imageLeft** et **imageTop** négatives sont autorisées et éventuellement réajustées par Excel pour positionner l’image dans une feuille de calcul. Les proportions sont verrouillées à moins que les paramètres **imageWidth** et **imageHeight** soient tous deux indiqués. Si seul un des paramètres **imageWidth** et **imageHeight** est donné, l’autre valeur est automatiquement redimensionnée pour conserver les proportions d’origine.
     
 Dans tous les autres cas, une erreur est retournée.
 
- **Pour Excel Online**
+ **Pour Excel Online**
 
 En plus des comportements décrits pour Excel ci-dessus, les limites suivantes s’appliquent lors de l’écriture de données dans Excel Online. 
 
@@ -113,10 +113,10 @@ En plus des comportements décrits pour Excel ci-dessus, les limites suivantes s
 
  **Pour PowerPoint**
 
-Les images insérées sont flottantes. Les paramètres de position **imageLeft** et **imageTop** sont facultatifs, mais, s’ils sont indiqués, les deux doivent être présents. Si une seule valeur est indiquée, elle sera ignorée. Les valeurs négatives pour **imageLeft** et **imageTop** sont autorisées et peuvent positionner une image en dehors d’une diapositive. Si aucun paramètre facultatif n’est indiqué et qu’une diapositive présente un espace réservé, l’image remplacera l’espace réservé dans la diapositive. Les proportions de l’image seront verrouillées, sauf si les paramètres **imageWidth** et **imageHeight** sont tous deux indiqués. Si seul un des paramètres **imageWidth** et **imageHeight** est donné, l’autre valeur est automatiquement redimensionnée pour conserver les proportions d’origine.
+Les images insérées sont flottantes. Les paramètres de position **imageLeft** et **imageTop** sont facultatifs, mais, s’ils sont indiqués, les deux doivent être présents. Si une seule valeur est indiquée, elle sera ignorée. Les valeurs **imageLeft** et **imageTop** négatives sont autorisées et peuvent positionner une image en dehors d’une diapositive. Si aucun paramètre facultatif n’est indiqué et qu’une diapositive présente un espace réservé, l’image remplacera l’espace réservé dans la diapositive. Les proportions de l’image seront verrouillées, sauf si les paramètres **imageWidth** et **imageHeight** sont tous deux indiqués. Si seul un des paramètres **imageWidth** et **imageHeight** est donné, l’autre valeur est automatiquement redimensionnée pour conserver les proportions d’origine.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple suivant affecte à la cellule ou au texte sélectionné la valeur « Hello World! ». En cas d’échec, la valeur de la propriété [error.message](../../reference/shared/error.message.md) est affichée.
 
@@ -238,33 +238,33 @@ function insertPictureAtSelection(base64EncodedImageStr) {
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Une coche (![symbole de coche](../../images/mod_off15_checkmark.png)) dans la matrice suivante indique que cette méthode est prise en charge dans l’application hôte Office correspondante. Une cellule vide indique que l’application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
-|**Access**|![symbole de coche](../../images/mod_off15_checkmark.png)|||
-|**Excel**|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|
-|**PowerPoint**|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|
-|**Word**|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|
+|**Access**|![Symbole de coche](../../images/mod_off15_checkmark.png)|||
+|**Excel**|![Symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![Symbole de coche](../../images/mod_off15_checkmark.png)|
+|**PowerPoint**|![Symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![Symbole de coche](../../images/mod_off15_checkmark.png)|
+|**Word**|![Symbole de coche](../../images/mod_off15_checkmark.png)|![symbole de coche](../../images/mod_off15_checkmark.png)|![Symbole de coche](../../images/mod_off15_checkmark.png)|
 
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Selection|
+|**Disponible dans les ensembles de conditions requises**|Selection|
 |**Niveau d’autorisation minimal**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

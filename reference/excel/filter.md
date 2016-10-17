@@ -1,19 +1,19 @@
-# Objet Filter (interface API JavaScript pour Excel)
+# <a name="filter-object-(javascript-api-for-excel)"></a>Objet Filter (interface API JavaScript pour Excel)
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
 Gère le filtrage de la colonne d’un tableau.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description|
 |:---------------|:--------|:----------|
 |de réussite|[FilterCriteria](filtercriteria.md)|Le filtre actuellement appliqué à la colonne donnée. En lecture seule.|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
@@ -27,30 +27,30 @@ Aucun
 |[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Appliquer un filtre « Icône » à la colonne pour l’icône donnée.|
 |[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Appliquer un filtre « Élément supérieur » à la colonne pour le nombre d’éléments donné.|
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Appliquer un filtre « Pourcentage supérieur » à la colonne pour le pourcentage d’éléments donné.|
-|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues)|void|Appliquer un filtre « Valeurs » à la colonne pour les valeurs données.|
+|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Appliquer un filtre « Valeurs » à la colonne pour les valeurs données.|
 |[clear()](#clear)|void|Effacer le filtre sur la colonne donnée.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### apply(criteria: FilterCriteria)
+### <a name="apply(criteria:-filtercriteria)"></a>apply(criteria: FilterCriteria)
 Appliquer les critères de filtre donnés à la colonne indiquée. La même fonctionnalité peut être obtenue avec l’une des méthodes d’assistance suivantes. 
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.apply(criteria);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |de réussite|FilterCriteria|Critères à appliquer.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 L’exemple suivant indique comment appliquer un filtre personnalisé avec la méthode apply() générique.
 
 ```js
@@ -72,23 +72,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyBottomItemsFilter(count: number)
+### <a name="applybottomitemsfilter(count:-number)"></a>applyBottomItemsFilter(count: number)
 Appliquer un filtre « Élément inférieur » à la colonne pour le nombre d’éléments donné.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyBottomItemsFilter(count);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |count|number|Nombre d’éléments à partir du bas à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -102,23 +102,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyBottomPercentFilter(percent: number)
+### <a name="applybottompercentfilter(percent:-number)"></a>applyBottomPercentFilter(percent: number)
 Appliquer un filtre « Pourcentage inférieur » à la colonne pour le pourcentage d’éléments donné.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyBottomPercentFilter(percent);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |pourcentage|number|Pourcentage d’éléments à partir du bas à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -131,24 +131,24 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### applyCellColorFilter(color: string)
+### <a name="applycellcolorfilter(color:-string)"></a>applyCellColorFilter(color: string)
 Appliquer un filtre « Couleur de cellule » à la colonne pour la couleur donnée.
 
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyCellColorFilter(color);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |color|string|Couleur d’arrière-plan des cellules à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -162,26 +162,26 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyCustomFilter(criteria1: string, criteria2: string, oper: FilterOperator)
+### <a name="applycustomfilter(criteria1:-string,-criteria2:-string,-oper:-filteroperator)"></a>applyCustomFilter(criteria1: string, criteria2: string, oper: FilterOperator)
 Appliquer un filtre « Icône » à la colonne pour les chaînes de critères données.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |criteria1|string|Première chaîne de critères.|
 |criteria2|string|Facultatif. Deuxième chaîne de critères.|
 |oper|FilterOperator|Facultatif. Opérateur qui décrit comment les deux critères sont joints.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -195,23 +195,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyDynamicFilter(criteria: string)
+### <a name="applydynamicfilter(criteria:-string)"></a>applyDynamicFilter(criteria: string)
 Appliquer un filtre « Dynamique » à la colonne.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyDynamicFilter(criteria);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |de réussite|string|Critères dynamiques à appliquer.  Les valeurs possibles sont les suivantes : Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -225,23 +225,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyFontColorFilter(color: string)
+### <a name="applyfontcolorfilter(color:-string)"></a>applyFontColorFilter(color: string)
 Appliquer un filtre « Couleur de police » à la colonne pour la couleur donnée.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyFontColorFilter(color);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |color|string|Couleur de police des cellules à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -255,23 +255,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyIconFilter(icon: Icon)
+### <a name="applyiconfilter(icon:-icon)"></a>applyIconFilter(icon: Icon)
 Appliquer un filtre « Icône » à la colonne pour l’icône donnée.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyIconFilter(icon);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |icône|Icône|Icônes des cellules à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -285,23 +285,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### applyTopItemsFilter(count: number)
+### <a name="applytopitemsfilter(count:-number)"></a>applyTopItemsFilter(count: number)
 Appliquer un filtre « Élément supérieur » à la colonne pour le nombre d’éléments donné.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyTopItemsFilter(count);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |count|number|Nombre d’éléments à partir du haut à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -316,23 +316,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### applyTopPercentFilter(percent: number)
+### <a name="applytoppercentfilter(percent:-number)"></a>applyTopPercentFilter(percent: number)
 Appliquer un filtre « Pourcentage supérieur » à la colonne pour le pourcentage d’éléments donné.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyTopPercentFilter(percent);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |pourcentage|number|Pourcentage d’éléments à partir du haut à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -345,23 +345,23 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### applyValuesFilter(values: ()[])
+### <a name="applyvaluesfilter(values:-()[])"></a>applyValuesFilter(values: ()[])
 Appliquer un filtre « Valeurs » à la colonne pour les valeurs données.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.applyValuesFilter(values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |values|()[]|Liste des valeurs à afficher.|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -375,21 +375,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### clear()
+### <a name="clear()"></a>clear()
 Effacer le filtre sur la colonne donnée.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 filterObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemple
+#### <a name="example"></a>Exemple
 ```js
 Excel.run(function (ctx) { 
     var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
@@ -403,18 +403,18 @@ Excel.run(function (ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void

@@ -1,5 +1,5 @@
 
-# Commandes de complément pour Outlook
+# <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
 
 Les commandes de complément Outlook permettent d’initier des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants. Les utilisateurs peuvent ainsi accéder aux compléments d’une manière simple, intuitive et discrète. Parce qu’elles offrent des fonctionnalités optimales en toute transparence, les commandes de complément vous permettent de créer des solutions plus attrayantes.
@@ -9,7 +9,7 @@ Les commandes de complément Outlook permettent d’initier des actions de comp
 Les commandes de complément sont uniquement disponibles pour les compléments contextuels qui n’utilisent pas [les règles temHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](manifests/activation-rules.md) qui limitent les types d’éléments sur lesquels elles s’activent. Toutefois, les compléments contextuels peuvent présenter diverses commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../../docs/overview/add-in-development-best-practices.md).
 
 
-## Création d’une commande de complément
+## <a name="creating-the-add-in-command"></a>Création d’une commande de complément
 
 Les commandes de complément sont déclarées dans le manifeste de complément dans l’élément  **VersionOverrides**. Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge  **VersionOverrides**, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
@@ -20,7 +20,7 @@ Lorsqu’un complément doit fournir des mises à jour d’état, telles que des
 Les développeurs doivent définir des icônes pour toutes les tailles nécessaires afin que les commandes de complément puissent s’ajuster parfaitement au ruban. Les tailles d’icônes sont 80 x 80 pixels, 32 x 32 pixels et 16 x 16 pixels.
 
 
-## Comment les commandes de complément apparaissent-elles ?
+## <a name="how-do-add-in-commands-appear?"></a>Comment les commandes de complément apparaissent-elles ?
 
 Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’un utilisateur installe un complément, ses commandes apparaissent dans l’interface utilisateur sous la forme d’un groupe de boutons étiquetés avec le nom du complément. Le groupe peut apparaître dans l’onglet par défaut du ruban ou dans un onglet personnalisé. Pour les messages, il apparaît par défaut dans l’onglet **Accueil** ou **Message**. Pour le calendrier, il apparaît par défaut dans l’onglet **Réunion**, **Occurrence de réunion**, **Série de réunions** ou **Rendez-vous**. Pour les extensions de module, il apparaît par défaut dans un onglet personnalisé. Dans l’onglet par défaut, chaque complément peut avoir un groupe Ruban incluant 6 commandes maximum. Dans les onglets personnalisés, le complément peut avoir jusqu’à 10 groupes, avec 6 commandes chacun. Les compléments sont limités à un seul onglet personnalisé.
 
@@ -32,7 +32,7 @@ Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’u
 Quand une commande de complément est ajoutée à un complément, le nom du complément est enlevé de la barre d’application sauf si le complément comprend également un [complément Outlook avec volet personnalisé](../outlook/custom-pane-outlook-add-ins.md). Seul le bouton de commande du complément reste sur le ruban.
 
 
-## Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
+## <a name="what-ux-shapes-exist-for-add-in-commands?"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
 
 La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application hôte qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
 
@@ -45,7 +45,7 @@ De plus, les compléments contextuels prennent en charge :
 - Un bouton qui lance un volet Office
 
 
-### Exécuter une fonction JavaScript
+### <a name="executing-a-javascript-function"></a>Exécuter une fonction JavaScript
 
 Utilisez un bouton de commande de complément qui exécute une fonction JavaScript pour les scénarios dans lesquels l’utilisateur n’a pas besoin d’effectuer de sélections supplémentaires pour lancer l’action. Cela peut être utile, entre autres, pour les actions de suivi, de rappel, d’impression ou de scénario quand l’utilisateur souhaite obtenir des informations supplémentaires d’un service. 
 
@@ -54,7 +54,7 @@ Dans les extensions de module, le bouton de commande de complément peut exécut
 ![Bouton exécutant une fonction sur le ruban Outlook.](../../images/23ab1de3-3ec4-41a5-ba5b-30b11d464e0c.png)
 
 
-### Lancement d’un volet Office
+### <a name="launching-a-task-pane"></a>Lancement d’un volet Office
 
 Utilisez un bouton de commande de complément pour lancer un volet Office pour les scénarios dans lesquels l’utilisateur doit interagir avec un complément pour une durée plus longue. Par exemple, le complément nécessite des modifications de paramètres ou la saisie de données dans de nombreux champs. 
 
@@ -68,7 +68,7 @@ Cette capture d’écran présente un exemple de volet de tâche vertical. Le vo
 Si l’utilisateur sélectionne une autre commande de complément qui ouvre un volet Office, le volet est remplacé par la commande qui vient d’être utilisée. Si l’utilisateur sélectionne un bouton de commande de complément qui exécute une fonction ou sur un menu déroulant alors que le volet Office est ouvert, l’action est exécutée et le volet Office reste ouvert.
 
 
-### Menu déroulant
+### <a name="drop-down-menu"></a>Menu déroulant
 
 Une commande de complément de menu déroulant définit une liste statique de boutons. Les boutons dans le menu peuvent correspondre à n’importe quelle combinaison de boutons qui exécutent une fonction ou qui ouvrent un volet Office. Les sous-menus ne sont pas pris en charge.
 
@@ -76,35 +76,35 @@ Une commande de complément de menu déroulant définit une liste statique de bo
 ![Bouton permettant de développer un menu sur le ruban Outlook.](../../images/3eff90d6-7822-4fdb-9153-68f754c0c746.png)
 
 
-## Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
+## <a name="where-do-add-in-commands-appear-in-the-ui?"></a>Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
 
 Les commandes de complément sont prises en charge pour quatre scénarios :
 
 
-### Lecture d’un message
+### <a name="reading-a-message"></a>Lecture d’un message
 
 Lorsque l’utilisateur lit un message, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans l’onglet **Accueil** lorsque vous affichez le message dans le volet de lecture et dans l’onglet **Message** pour un formulaire de lecture contextuel.
 
 
-### Composition d’un message
+### <a name="composing-a-message"></a>Composition d’un message
 
 Lorsque l’utilisateur crée un message, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans l’onglet **Message**.
 
 
-### Création ou affichage d’un rendez-vous ou d’une réunion en tant qu’organisateur
+### <a name="creating-or-viewing-an-appointment-or-meeting-as-the-organizer"></a>Création ou affichage d’un rendez-vous ou d’une réunion en tant qu’organisateur
 
 Lorsque vous créez ou visualisez un rendez-vous ou une réunion en tant qu’organisateur, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans les onglets **Réunion**,  **Occurrence de réunion**,  **Série de réunions** ou **Rendez-vous** des formulaires contextuels. Toutefois, si l’utilisateur sélectionne un élément dans le calendrier sans ouvrir la fenêtre contextuelle, le groupe Ruban du complément n’apparaît pas sur le ruban.
 
 
-### Affichage d’une réunion en tant que participant
+### <a name="viewing-a-meeting-as-an-attendee"></a>Affichage d’une réunion en tant que participant
 
 Lorsque vous visualisez une réunion en tant que participant, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans les onglets **Réunion**,  **Occurrence de réunion** ou **Série de réunions** des formulaires contextuels. Toutefois, si l’utilisateur sélectionne un élément dans le calendrier sans ouvrir la fenêtre contextuelle, le groupe Ruban du complément n’apparaît pas sur le ruban.
 
-### Utilisation d’une extension de module
+### <a name="using-a-module-extension"></a>Utilisation d’une extension de module
 
 Quand vous utilisez une extension de module, les commandes de complément apparaissent dans l’onglet personnalisé de l’extension.
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Définir des commandes de complément dans votre manifeste de complément Outlook](../outlook/manifests/define-add-in-commands.md)
     

@@ -1,5 +1,5 @@
 
-# Compléments du volet Office pour Project
+# <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
 
 Project Standard 2013 et Project Professionnel 2013 incluent tous les deux une prise en charge des compléments du volet Office. Vous pouvez exécuter des compléments du volet Office génériques, développés pour Word 2013 ou Excel 2013. Vous pouvez également développer des compléments personnalisés qui gèrent des événements de sélection dans Project et intègrent des tâches, des ressources, des affichages, et d’autres données au niveau des cellules dans un projet avec les listes SharePoint, les compléments SharePoint, les composants WebPart, les services web et les applications d’entreprise.
@@ -8,7 +8,7 @@ Project Standard 2013 et Project Professionnel 2013 incluent tous les deux u
 
 Pour une introduction sur les Compléments Office, voir [Vue d’ensemble de la plateforme des compléments pour Office](../../docs/overview/office-add-ins.md).
 
-## Scénarios de compléments pour Project
+## <a name="add-in-scenarios-for-project"></a>Scénarios de compléments pour Project
 
 
 Les gestionnaires de projet peuvent utiliser les compléments du volet Office dans Project pour les aider dans la gestion de leurs activités. Au lieu de quitter Project et d’ouvrir une nouvelle application pour rechercher les informations qu’ils utilisent fréquemment, les gestionnaires de projet peuvent accéder directement à ces informations à partir de Project. Le contenu d’un complément du volet Office peut être contextuel, basé sur la tâche sélectionnée, la ressource, la vue ou d’autres données dans une cellule de diagramme de Gantt, une vue Utilisation des tâches ou une vue Utilisation des ressources.
@@ -38,7 +38,7 @@ Les scénarios des compléments pour Project comprennent les fonctionnalités su
     Par exemple, reportez-vous à [Créer un complément Project qui utilise REST avec un service OData Project Server local](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
     
 
-## Développement de compléments pour Project
+## <a name="developing-project-add-ins"></a>Développement de compléments pour Project
 
 
 La bibliothèque JavaScript pour les compléments Project comprend des extensions de l’alias de l’espace de nom **Office** qui permet aux développeurs d’accéder aux propriétés de l’application Project, ainsi qu’aux tâches, ressources et vues dans un projet. Les extensions de la bibliothèque JavaScript du fichier Project-15.js sont utilisées dans un complément Project créé avec Visual Studio 2015. Les fichiers Office.js, Office.debug.js, Project-15.js, Project-15.debug.js et autres fichiers associés sont également fournis dans le téléchargement du Kit de développement logiciel (SDK) Project 2013.
@@ -60,13 +60,13 @@ Lorsque vous installez le SDK de Project 2013, le sous-répertoire  `\Samples\Ap
 -  **HelloProject_OData :**  solution Visual Studio pour Project Professionnel 2013 qui résume les données du projet actuel, telles que les coûts, le travail et le pourcentage accompli, et les compare avec la moyenne de tous les projets publiés dans l’instance Project Web App où le projet actif est stocké. Le développement, l’installation et le test de cet exemple qui utilise le protocole REST avec le service  **ProjectData** dans Project Web App, sont décrits dans [Créer un complément Project qui utilise REST avec un service OData Project Server local](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md). .
     
 
-### Création d’un fichier manifeste de complément
+### <a name="creating-an-add-in-manifest-file"></a>Création d’un fichier manifeste de complément
 
 
 Le fichier manifeste spécifie l’URL de la page web du complément ou l’application web, le type de complément (volet Office pour Project), les URL facultatives de contenus pour d’autres langues ou paramètres régionaux, et d’autres propriétés.
 
 
-### Procédure 1. Créer le fichier manifeste du complément pour Bing Search
+### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
 
 
 - Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément  **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
@@ -140,7 +140,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 ```
 
 
-## Installation de compléments Project
+## <a name="installing-project-add-ins"></a>Installation de compléments Project
 
 
 Dans Project 2013, vous pouvez installer des compléments comme solutions autonomes sur un partage de fichiers ou dans un catalogue de compléments privé. Vous pouvez également consulter et acheter des compléments dans le magasin public Office Store.
@@ -153,7 +153,7 @@ Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de compl�
 Dans la procédure 2, le complément Bing Search est installé sur l’ordinateur local où Project 2013 est installé. Toutefois, comme l’infrastructure du complément n’utilise pas directement les chemins de fichiers locaux tels que  `C:\Project\AppManifests`, vous pouvez créer un partage de fichiers sur l’ordinateur local. Si vous préférez, vous pouvez créer un partage de fichiers sur un ordinateur à distance.
 
 
-### Procédure 2. Installer le complément Bing Search
+### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>Procédure 2. Installer le complément Bing Search
 
 
 1. Créez un répertoire local pour les fichiers manifestes des compléments. Par exemple, créez un répertoire qui s’appelle  `C:\Project\AppManifests`.
@@ -178,32 +178,32 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
     
     **Figure 2. Démarrage d’un complément se trouvant sur un partage de fichiers**
 
-    ![Démarrage d’une application Office se trouvant dans un partage de fichiers](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
+    ![Démarrage d’une application Office dans un partage de fichiers](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
 8. Sélectionnez le complément Bing Search, puis choisissez  **Insérer**.
     
 Le complément Bing Search affiche un volet Office comme dans la figure 3. Vous pouvez redimensionner manuellement le volet Office et utiliser le complément Bing Search.
 
-**Figure 3. Utilisation du complément Bing Search**
+**Figure 3. Utilisation de l’application de recherche Bing**
 
 ![Utilisation de l’application de recherche Bing](../../images/pj15_AgaveOverview_BingSearch.gif)
 
 
-## Distribution de compléments Project
+## <a name="distributing-project-add-ins"></a>Distribution de compléments Project
 
 
 Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue de compléments dans une bibliothèque SharePoint, ou une Complément Project dans l’Office Store. Pour plus d’informations, voir [Publier votre complément Office](../publish/publish.md).
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 
-- [Vue d’ensemble de la plateforme des compléments pour Office](../../docs/overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../../docs/overview/office-add-ins.md)
     
 - [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
     
-- [Interface API JavaScript pour Office](../../reference/javascript-api-for-office.md)
+- [API JavaScript pour Office](../../reference/javascript-api-for-office.md)
     
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
@@ -211,5 +211,5 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
     
 - [Connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx)
     
-- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
+- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20)
     

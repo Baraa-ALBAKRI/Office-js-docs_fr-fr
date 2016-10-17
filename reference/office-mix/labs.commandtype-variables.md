@@ -1,14 +1,14 @@
 
-# Variables Labs.CommandType
+# <a name="labs.commandtype-variables"></a>Variables Labs.CommandType
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Les variables du module **Labs.CommandType** sont des chaînes représentant les types de commandes pris en charge.
 
-## Variables
+## <a name="variables"></a>Variables
 
 
-|**Name**|**Description**|
+|**Nom**|**Description**|
 |:-----|:-----|
 | `var Connect: string`||
 | `var Disconnect: string`||

@@ -1,29 +1,29 @@
-﻿# Élément OfficeMenu
+# <a name="officemenu-element"></a>Élément OfficeMenu
 Définit un ensemble d’options à ajouter au menu contextuel Office. S’applique aux compléments Word, Excel, PowerPoint et OneNote.
 
-## Attributs
+## <a name="attributes"></a>Attributs
 
 | Attribut            | Obligatoire | Description                          |
 |:---------------------|:--------:|:-------------------------------------|
 | [xsi:type](#xsitype) | Oui      | Type d’OfficeMenu défini.|
 
-## Éléments enfants
+## <a name="child-elements"></a>Éléments enfants
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [Contrôle](#contrôle)    | Oui |  Ensemble d’un ou de plusieurs objets Control  |
+|  [Control](#control)    | Oui |  Ensemble d’un ou de plusieurs objets Control  |
 
-## xsi:type
+## <a name="xsi:type"></a>xsi:type
 Indique un menu prédéfini de l’application cliente Office sur laquelle ajouter ce complément Office.
 
 - `ContextMenuText` -  Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur ouvre le menu contextuel (clique dessus avec le bouton droit de la souris) du texte sélectionné. S’applique à Word, Excel, PowerPoint et OneNote.
 - `ContextMenuCell` -  Affiche l’élément dans le menu contextuel lorsque l’utilisateur ouvre le menu contextuel (clique avec le bouton droit de la souris) dans une cellule de la feuille de calcul. S’applique à Excel. 
 
-## Contrôle
+## <a name="control"></a>Contrôle
 
 Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](./menu.md#menu-control). 
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 ```xml
 <OfficeMenu id="ContextMenuCell">

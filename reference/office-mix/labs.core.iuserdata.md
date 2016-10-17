@@ -1,7 +1,7 @@
 
-# Labs.Core.IUserData
+# <a name="labs.core.iuserdata"></a>Labs.Core.IUserData
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Interface de base qui représente les données utilisateur personnalisées stockées sur un objet.
 
@@ -10,7 +10,7 @@ interface IUserData
 ```
 
 
-## Champs
+## <a name="fields"></a>Champs
 
 
 |||

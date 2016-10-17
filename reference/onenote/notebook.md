@@ -1,11 +1,11 @@
-# Objet Notebook (interface API JavaScript pour OneNote)
+# <a name="notebook-object-(javascript-api-for-onenote)"></a>Objet Notebook (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_   
 
 
 Représente un bloc-notes OneNote. Les blocs-notes contiennent des groupes de sections et des sections.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -13,15 +13,15 @@ Représente un bloc-notes OneNote. Les blocs-notes contiennent des groupes de se
 |id|chaîne|Obtient l’ID du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-id)|
 |name|chaîne|Obtient le nom du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-name)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |sectionGroups|[SectionGroupCollection](sectiongroupcollection.md)|Obtient les groupes de sections dans le bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sectionGroups)|
 |Sections|[SectionCollection](sectioncollection.md)|Sections du bloc-notes. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-sections)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -29,26 +29,26 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[addSectionGroup(name: String)](#addsectiongroupname-string)|[SectionGroup](sectiongroup.md)|Ajoute un nouveau groupe de sections à la fin du bloc-notes.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-addSectionGroup)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-notebook-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### addSection(name: String)
+### <a name="addsection(name:-string)"></a>addSection(name: String)
 Ajoute une nouvelle section à la fin du bloc-notes.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 notebookObject.addSection(name);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |name|String|Nom de la nouvelle section.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js          
 OneNote.run(function (context) {
 
@@ -76,23 +76,23 @@ OneNote.run(function (context) {
 ```
 
 
-### addSectionGroup(name: String)
+### <a name="addsectiongroup(name:-string)"></a>addSectionGroup(name: String)
 Ajoute un nouveau groupe de sections à la fin du bloc-notes.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 notebookObject.addSectionGroup(name);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |name|String|Nom de la nouvelle section.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [SectionGroup](sectiongroup.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js          
 OneNote.run(function (context) {
 
@@ -119,22 +119,22 @@ OneNote.run(function (context) {
 }); 
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 **id**
 ```js
 OneNote.run(function (context) {
@@ -213,7 +213,7 @@ OneNote.run(function (context) {
 });
 ```
 
-**Sections**
+**sections**
 ```js
 OneNote.run(function (context) {
 

@@ -1,12 +1,12 @@
 
-# Créer un complément Office à l’aide d’un éditeur
+# <a name="create-an-office-add-in-using-any-editor"></a>Créer un complément Office à l’aide d’un éditeur
 
 Un complément Office est une application web que vous hébergez dans une application Office. Cet article explique comment utiliser le générateur Yeoman pour fournir la structure du projet et assurer la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
 
  >**Remarque**  Les instructions comprennent des opérations qui utilisent l’invite de commande Windows, mais qui sont également applicables à d’autres environnements d’interpréteur de commandes. 
 
 
-## Configuration requise pour le générateur Yeoman
+## <a name="prerequisites-for-yeoman-generator"></a>Configuration requise pour le générateur Yeoman
 
 Pour exécuter le générateur Yeoman d’Office, vous avez besoin des éléments suivants :
 
@@ -23,7 +23,7 @@ Pour exécuter le générateur Yeoman d’Office, vous avez besoin des élément
     
 - [TSD](http://definitelytyped.org/tsd/)
     
-Seuls Git et npm doivent être installés de façon séparée. Les autres éléments peuvent être installés à l’aide de npm.
+Seuls Git et npm requièrent une installation séparée. Les autres peuvent être installés à l’aide de npm.
 
 Lorsque vous installez Git, vous devez utiliser les valeurs par défaut, mais choisir les options suivantes : 
 
@@ -42,7 +42,7 @@ npm install -g bower yo generator-office gulp tsd
 ```
 
 
-## Créer les fichiers par défaut pour le complément
+## <a name="create-the-default-files-for-your-add-in"></a>Créer les fichiers par défaut pour le complément
 
 Avant le développement d’un complément Office, vous devez créer un dossier pour votre projet et exécuter le générateur à partir de là. Le générateur Yeoman est exécuté dans le répertoire où vous voulez créer la structure du projet. 
 
@@ -86,12 +86,12 @@ Le générateur vous demande d’indiquer les éléments suivants :
 Ce bloc de code permet de créer la structure et les fichiers de base de votre complément.
 
 
-## Héberger votre complément Office
+## <a name="hosting-your-office-add-in"></a>Héberger votre complément Office
 
 Les compléments Office doivent être traités via HTTPS ; l’application Office ne charge pas d’application web en tant que complément si elle est traitée via HTTP. Pour développer, déboguer et héberger le complément localement, vous devez pouvoir créer et traiter une application web localement à l’aide du protocole HTTPS. Vous pouvez par exemple créer un site HTTPS auto-hébergé via Gulp (décrit dans la section suivante) ou utiliser Azure. 
 
 
-### Utilisation d’un site HTTPS auto-hébergé
+### <a name="using-a-self-hosted-https-site"></a>Utilisation d’un site HTTPS auto-hébergé
 
 Le plug-in gulp-webserver crée un site HTTPS auto-hébergé. Le générateur Office l’ajoute au fichier gulpfile.js sous forme de tâche nommée serve-static pour le projet qui est généré. Démarrez le serveur web auto-hébergé à l’aide de l’instruction suivante : 
 
@@ -103,19 +103,19 @@ gulp serve-static
 Cette instruction lance un serveur HTTPS à l’adresse https://localhost:8443.
 
 
-## Développer votre complément Office
+## <a name="develop-your-office-add-in"></a>Développer votre complément Office
 
 Vous pouvez utiliser n’importe quel éditeur de texte pour développer les fichiers de votre complément Office personnalisé.
 
 
-### Prise en charge du projet JavaScript
+### <a name="javascript-project-support"></a>Prise en charge du projet JavaScript
 
 Le générateur Office crée un fichier jsconfig.json lors de la création de votre projet. Ce fichier permet de déduire tous les fichiers JavaScript dans votre projet et évite de devoir inclure les blocs de code répétitifs /// <reference path="../App.js" />.
 
 Pour en savoir plus sur le fichier jsconfig.json, rendez-vous sur la page relative au [langage JavaScript](https://code.visualstudio.com/docs/languages/javascript#_javascript-projects-jsconfigjson).
 
 
-### Prise en charge de JavaScript IntelliSense
+### <a name="javascript-intellisense-support"></a>Prise en charge de JavaScript IntelliSense
 
 En outre, même si vous écrivez du code JavaScript simple, vous pouvez utiliser des fichiers de définition de type TypeScript ( `*.d.ts`) pour bénéficier d’une prise en charge supplémentaire d’IntelliSense. Le générateur Office ajoute un fichier  `tsd.json` aux fichiers créés, avec des références à toutes les bibliothèques tierces utilisées par le type de projet sélectionné.
 
@@ -129,13 +129,13 @@ tsd install
 ```
 
 
-### Création d’une Complément Office Hello World
+### <a name="create-a-hello-world-office-add-in"></a>Création d’une Complément Office Hello World
 
 
 Pour cet exemple, nous allons créer un complément Hello World. L’interface utilisateur du complément est fournie par un fichier HTML pouvant éventuellement fournir une logique de programmation JavaScript. 
 
 
-### Pour créer le fichier pour un complément Hello World
+### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Pour créer le fichier pour un complément Hello World
 
 
 - Dans le dossier de votre projet, accédez à _[dossier du projet]/app/home_ (dans notre exemple, il s’agit de myHelloWorldaddin/app/home), ouvrez home.html et remplacez le code existant par le code suivant, qui fournit l’ensemble minimal de balises HTML pour afficher l’interface utilisateur d’un complément.
@@ -208,7 +208,7 @@ Pour cet exemple, nous allons créer un complément Hello World. L’interface u
 ```
 
 
-### Exécution du complément en local
+### <a name="running-the-add-in-locally"></a>Exécution du complément en local
 
 
 Pour tester votre complément localement, ouvrez votre navigateur et saisissez l’URL de votre fichier home.html. Vous pouvez effectuer cette opération sur le serveur web ou sur le site HTTPS auto-hébergé. Si vous l’avez hébergé localement, il suffit d’entrer l’URL dans votre navigateur. Dans notre exemple, il s’agit de  `https://localhost:8443/app/home/home.html`. 
@@ -219,7 +219,7 @@ L’erreur « Il existe un problème avec le certificat de sécurité de ce sit
  >**Remarque**  Le complément généré est livré avec une clé et un certificat auto-signés. Ajoutez-les à la liste des certificats de votre autorité de confiance afin que le navigateur n’émette pas d’avertissement concernant le certificat. Reportez-vous à la documentation sur [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) si vous souhaitez utiliser vos propres certificats auto-signés.Reportez-vous à [l’article PH18677 de la base de connaissances](https://support.apple.com/kb/PH18677?locale=en_US) pour obtenir des instructions sur l’approbation d’un certificat dans OS X Yosemite.
 
 
-## Installation du complément dans une application Office
+## <a name="install-the-add-in-for-testing"></a>Installation du complément dans une application Office
 
 Vous pouvez utiliser le chargement de version test pour installer votre complément pour le tester :
 
@@ -231,7 +231,7 @@ Vous pouvez utiliser le chargement de version test pour installer votre complém
 Vous pouvez également publier le complément dans un catalogue ou un partage réseau et l’installer à la manière des utilisateurs finals. Pour plus de détails, [créez un catalogue de dossiers partagés réseau pour des compléments de contenu et de volet des tâches](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14)).
 
 
-## Débogage de votre complément Office
+## <a name="debugging-your-office-add-in"></a>Débogage de votre complément Office
 
 Il existe différentes façons de déboguer un complément :
 
@@ -243,7 +243,7 @@ Il existe différentes façons de déboguer un complément :
 
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

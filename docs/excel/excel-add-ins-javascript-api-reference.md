@@ -1,4 +1,4 @@
-# Référence de l’API JavaScript d’Excel
+# <a name="excel-javascript-api-reference"></a>Référence de l’API JavaScript d’Excel
 
 Vous pouvez utiliser l’API JavaScript d’Excel pour créer des compléments pour Excel 2016. La liste suivante affiche les objets de haut niveau Excel qui sont disponibles dans l’API. Chaque page d’objet contient une description des propriétés, des relations et des méthodes disponibles sur l’objet. Cliquez sur les liens suivants pour en savoir plus.
 
@@ -25,7 +25,7 @@ Vous pouvez utiliser l’API JavaScript d’Excel pour créer des compléments p
 * [Request Context](../../reference/excel/requestcontext.md) : l’objet de contexte de demande facilite les demandes auprès de l’application Excel.
 
 
-##### Ressources supplémentaires
+##### <a name="additional-resources"></a>Ressources supplémentaires
 
 *  [Présentation de la programmation JavaScript pour les compléments Excel](excel-add-ins-javascript-programming-overview.md)
 *  [Création de votre premier complément Excel](build-your-first-excel-add-in.md)

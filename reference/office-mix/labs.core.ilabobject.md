@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabObject
+# <a name="labs.core.ilabobject"></a>Labs.Core.ILabObject
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Objet associé à un atelier. L’objet contient un champ Type qui indique le type de l’objet.
 
@@ -10,7 +10,7 @@ interface ILabObject
 ```
 
 
-## Champs
+## <a name="fields"></a>Champs
 
 
 |||

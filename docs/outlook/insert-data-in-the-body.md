@@ -1,5 +1,5 @@
 
-# Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
+# <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
 Vous pouvez utiliser les méthodes asynchrones ([Body.getAsync](../../reference/outlook/Body.md), [Body.getTypeAsync](../../reference/outlook/Body.md), [Body.prependAsync](../../reference/outlook/Body.md), [Body.setAsync](../../reference/outlook/Body.md) et [Body.setSelectedDataAsync](../../reference/outlook/Body.md)) pour obtenir le type de corps et insérer des données dans le corps d’un élément de rendez-vous ou de message en cours de composition par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement défini le manifeste du complément afin qu’Outlook active le complément dans les formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](../outlook/compose-scenario.md).
 
@@ -21,7 +21,7 @@ Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF
 En plus de _coercionType_, comme avec la plupart des méthodes asynchrones dans l’interface API JavaScript pour Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** admettent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Pour insérer des données à l’emplacement du curseur
+## <a name="to-insert-data-at-the-current-cursor-position"></a>Pour insérer des données à l’emplacement du curseur
 
 
 Cette section présente un exemple de code qui utilise la méthode  **getTypeAsync** pour vérifier le type de corps de l’élément dont la composition est en cours, puis la méthode **setSelectedDataAsync** pour insérer des données à l’emplacement du curseur.
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## Pour insérer des données au début du corps de l’élément
+## <a name="to-insert-data-at-the-beginning-of-the-item-body"></a>Pour insérer des données au début du corps de l’élément
 
 
 Vous pouvez également utiliser  **prependAsync** pour insérer des données au début du corps de l’élément et ne pas tenir compte de l’emplacement du curseur. Mis à part le point d’insertion, les méthodes **prependAsync** et **setSelectedDataAsync** se comportent de façon similaire :
@@ -215,7 +215,7 @@ function write(message){
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

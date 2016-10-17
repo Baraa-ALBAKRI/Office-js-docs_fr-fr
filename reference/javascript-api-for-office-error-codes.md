@@ -1,11 +1,11 @@
 
-# Codes d’erreur de l’API JavaScript pour Office
+# <a name="javascript-api-for-office-error-codes"></a>Codes d’erreur de l’API JavaScript pour Office
 Cet article décrit les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Office (Office.js).
 
- _**S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word_
+ _**S’applique à :** Compléments Office | Compléments SharePoint | Excel | Outlook | PowerPoint | Project | Word_
 
 
-## Codes d’erreur
+## <a name="error-codes"></a>Codes d’erreur
 
 Le tableau suivant répertorie les codes d’erreur, les noms et les messages affichés, ainsi que les conditions qu’ils indiquent.
 
@@ -13,7 +13,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 
 |**[Error.code](../reference/shared/error.code.md)**|**[Error.name](../reference/shared/error.name.md)**|**[Error.message](../reference/shared/error.message.md)**|**Condition**|
 |:-----|:-----|:-----|:-----|
-|1000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
+|1 000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de forçage de type n’est pas pris en charge dans l’application hôte. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
 |1001|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas prise en charge.|La sélection actuelle de l’utilisateur n’est pas prise en charge. (Autrement dit, il y a quelque chose de différent des types de forçage de type pris en charge.)|
 |1002|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas compatible avec ce type de liaison.|Le développeur de solutions a fourni une combinaison incompatible de type de forçage de type et de type de liaison.|
 |1003|Une erreur s’est produite lors de la lecture des données|Les valeurs rowCount ou columnCount spécifiées sont incorrectes.|L’utilisateur fournit un nombre de lignes ou de colonnes incorrect.|
@@ -72,12 +72,12 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
 
-## Conditions d’erreur de création de liaison
+## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 
 Lorsqu’une liaison est créée dans l’API, le développeur de solutions doit indiquer le type de liaison qu’il veut utiliser. Les tableaux suivants résument les différentes possibilités et les comportements de liaison correspondants qui sont attendus.
 
 
-### Comportement dans Excel
+### <a name="behavior-in-excel"></a>Comportement dans Excel
 
 Le tableau suivant résume le comportement de liaison dans Excel.
 
@@ -99,7 +99,7 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Texte|Cellule unique dans un tableau|Une liaison de type  _texte_ est créée.|
 |Texte|Texte sélectionné dans la cellule|Une liaison de type  _texte_ dans la cellule entière est créée.|
 
-### Comportement dans Word
+### <a name="behavior-in-word"></a>Comportement dans Word
 
 Le tableau suivant résume le comportement de liaison dans Word.
 
@@ -120,10 +120,10 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |Texte|Sélection multiple|La dernière sélection sera encapsulée avec un contrôle de contenu et une liaison à ce contrôle. Un contrôle de contenu de type  _texte_ est créé.|
 |Texte|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-- [API et schémas de référence pour les compléments Office](../reference/reference.md)
+- [Références de schéma et API pour les compléments Office](../reference/reference.md)
     
 - [Cycle de vie du développement des compléments Office](../docs/design/add-in-development-lifecycle.md)
     

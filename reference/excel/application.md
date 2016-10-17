@@ -1,46 +1,46 @@
-# Objet Application (interface API JavaScript pour Excel)
+# <a name="application-object-(javascript-api-for-excel)"></a>Objet Application (interface API JavaScript pour Excel)
 
 Représente l’application Excel qui gère le classeur.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
 |calculationMode|string|Renvoie le mode de calcul du classeur. En lecture seule. Les valeurs possibles sont les suivantes : `Automatic` Excel contrôle le recalcul, `AutomaticExceptTables` Excel contrôle le recalcul, mais ignore les modifications apportées aux tables, `Manual` le calcul est effectué lorsque l’utilisateur le demande.|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalcule tous les classeurs actuellement ouverts dans Excel.|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### calculate(calculationType: string)
+### <a name="calculate(calculationtype:-string)"></a>calculate(calculationType: string)
 Recalcule tous les classeurs actuellement ouverts dans Excel.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.calculate(calculationType);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |calculationType|string|Spécifie le type de calcul à utiliser. Les valeurs possibles sont les suivantes : `Recalculate` (option par défaut), effectue le calcul normalement en appliquant toutes les formules du classeur, `Full` force le calcul intégral des données, `FullRebuild` force le calcul intégral des données et régénère les dépendances.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     ctx.workbook.application.calculate('Full');
@@ -54,22 +54,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, accepte un objet [loadOption](loadoption.md).|
 
-#### Renvoie
+#### <a name="returns"></a>Renvoie
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js
 Excel.run(function (ctx) { 
     var application = ctx.workbook.application;

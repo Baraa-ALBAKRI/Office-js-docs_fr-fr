@@ -1,82 +1,82 @@
 
 
-# userProfile
+# <a name="userprofile"></a>userProfile
 
 ## [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). userProfile
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-### Membres
+### <a name="members"></a>Membres
 
-####  displayName :String
+####  <a name="displayname-:string"></a>displayName :String
 
 Obtient le nom d’affichage de l’utilisateur.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Chaîne
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 // Example: Allie Bellew
 console.log(Office.context.mailbox.userProfile.displayName);
 ```
 
-####  emailAddress :String
+####  <a name="emailaddress-:string"></a>emailAddress :String
 
 Obtient l’adresse de messagerie SMTP de l’utilisateur.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Chaîne
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 // Example: allieb@contoso.com
 console.log(Office.context.mailbox.userProfile.emailAddress);
 ```
 
-####  timeZone :String
+####  <a name="timezone-:string"></a>timeZone :String
 
 Obtient le fuseau horaire par défaut de l’utilisateur.
 
-##### Type :
+##### <a name="type:"></a>Type :
 
 *   Chaîne
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1,0|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 ```
 // Example: Pacific Standard Time

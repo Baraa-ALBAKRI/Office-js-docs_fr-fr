@@ -1,7 +1,7 @@
 
-# Labs.Core.IValueInstance
+# <a name="labs.core.ivalueinstance"></a>Labs.Core.IValueInstance
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Instance d’objet [Labs.Core.IValue](../../reference/office-mix/labs.core.ivalue.md) qui contient les éventuelles données de la valeur.
 
@@ -10,7 +10,7 @@ interface IValueInstance
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |||

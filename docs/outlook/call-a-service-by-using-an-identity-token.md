@@ -1,5 +1,5 @@
 
-# Appeler un service à partir d’un complément Outlook à l’aide d’un jeton d’identité dans Exchange
+# <a name="call-a-service-from-an-outlook-add-in-by-using-an-identity-token-in-exchange"></a>Appeler un service à partir d’un complément Outlook à l’aide d’un jeton d’identité dans Exchange
 
 Un jeton d’identité fournit un identificateur unique pour chacun de vos clients, que vous pouvez utiliser afin de personnaliser le service que vous fournissez. Votre code peut demander au serveur Exchange un jeton d’identité en utilisant une méthode asynchrone qui renvoie une chaîne à votre complément Outlook. La chaîne contient un jeton d’identité JSON Web Token (JWT). Votre complément n’a pas besoin de décompresser le jeton. Au lieu de cela, il le transmet à votre service web de façon que ce dernier puisse authentifier la demande du complément.
 
@@ -7,7 +7,7 @@ Le service web qui prend en charge votre complément doit s’exécuter sur le s
 
 Il est simple d’ajouter un jeton d’identité à la demande de service que votre complément envoie : demandez le jeton, utilisez-le, puis utilisez la réponse du service web. Voici ce à quoi cela ressemble dans le cas d’un document XML simple que vous envoyez à votre serveur avec la méthode **XmlHttpRequest**.
 
-## Demande d’un jeton à votre serveur Exchange
+## <a name="request-a-token-from-your-exchange-server"></a>Demande d’un jeton à votre serveur Exchange
 
 
 Cette méthode d’initialisation simple d’un complément utilise la méthode  **getUserIdentityTokenAsync** pour demander un jeton d’identité au serveur Exchange. Le paramètre _getUserIdentityToken_ est la fonction qui est appelée au retour de la demande asynchrone adressée au serveur. Voir l’étape suivante pour la méthode de rappel.
@@ -29,7 +29,7 @@ Office.initialize = function () {
 ```
 
 
-## Utilisation du jeton d’identité
+## <a name="use-the-identity-token"></a>Utilisation du jeton d’identité
 
 
 La fonction de rappel pour la méthode  **getUserIdentityTokenAsync** possède un paramètre qui contient le jeton d’identité de l’utilisateur dans sa propriété **value**.
@@ -57,7 +57,7 @@ function getUserIdentityTokenCallback(asyncResult) {
 ```
 
 
-## Utilisation de la réponse du service web
+## <a name="use-the-web-service-response"></a>Utilisation de la réponse du service web
 
 
 Il s’agit d’une autre fonction simple qui traite la réponse du service web. Elle respecte le modèle standard pour les fonctions de rappel  **XHMHttpResponse**. Elle attend que la réponse entière arrive du service web et place le contenu de la réponse dans l’interface utilisateur du complément. La réponse que cette fonction analyse est la réponse du service web. Pour plus d’informations sur cette réponse, voir [Valider un jeton d’identité Exchange](../outlook/validate-an-identity-token.md). 
@@ -86,7 +86,7 @@ function readyStateChange() {
 ```
 
 
-## Exemple : appel d’un service Web avec des jetons d’identité
+## <a name="example:-calling-a-web-service-with-identity-tokens"></a>Exemple : appel d’un service Web avec des jetons d’identité
 
 
 Les jetons d’identité fournissent des informations d’identité sur le client qui appelle votre service auprès d’un service web s’exécutant sur votre serveur. Pour utiliser les jetons d’identité, vous avez besoin de ce qui suit :
@@ -101,7 +101,7 @@ Les jetons d’identité fournissent des informations d’identité sur le clien
   - [Valider un jeton d’identité Exchange](../outlook/validate-an-identity-token.md) -- Si vous écrivez votre propre code de validation.
     
 
-### Code pour l’exemple de complément
+### <a name="code-for-the-sample-add-in"></a>Code pour l’exemple de complément
 
 
 Les fichiers suivants sont nécessaires pour le complément décrit dans cet article :
@@ -114,7 +114,7 @@ Les fichiers suivants sont nécessaires pour le complément décrit dans cet art
 Vous aurez également besoin du service web Identity Test. Pour plus d’informations sur ce service web, voir [Valider un jeton d’identité Exchange](../outlook/validate-an-identity-token.md).
 
 
-#### IdentityTest.js
+#### <a name="identitytest.js"></a>IdentityTest.js
 
 L’exemple suivant présente le fichier IdentityTest.js.
 
@@ -169,7 +169,7 @@ function readyStateChange() {
 ```
 
 
-#### IdentityTest.html
+#### <a name="identitytest.html"></a>IdentityTest.html
 
 L’exemple suivant présente le fichier IdentityTest.html.
 
@@ -272,7 +272,7 @@ L’exemple suivant présente le fichier IdentityTest.html.
 ```
 
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Une fois que vous savez comment demander un jeton d’identité, vous devez utiliser le jeton du côté serveur de la requête. Les articles suivants vous aideront à démarrer :
@@ -285,7 +285,7 @@ Une fois que vous savez comment demander un jeton d’identité, vous devez util
 - [Authentifier un utilisateur avec un jeton d’identité pour Exchange](../outlook/authenticate-a-user-with-an-identity-token.md)
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

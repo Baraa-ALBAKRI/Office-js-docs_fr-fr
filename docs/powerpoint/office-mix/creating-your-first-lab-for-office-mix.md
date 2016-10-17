@@ -1,5 +1,5 @@
 
-# Procédure : Création de votre premier atelier pour Office Mix
+# <a name="walkthrough:-creating-your-first-lab-for-office-mix"></a>Procédure : Création de votre premier atelier pour Office Mix
 Créez votre premier atelier LabsJS en suivant une procédure pas à pas.
 
 
@@ -32,7 +32,7 @@ Vous pouvez utiliser l’éditeur de code de votre choix pour modifier ces fichi
 
 Enfin, vous pouvez voir les fichiers JavaScript achevés (TrueFalse.js) parmi les fichiers distribués avec ce SDK. Vous trouverez ci-dessous une procédure pas à pas du processus de codage.
 
-## Connexion à l’hôte de l’atelier
+## <a name="connecting-to-the-lab-host"></a>Connexion à l’hôte de l’atelier
 
 Dans cet environnement, les ateliers sont en mesure de fonctionner soit avec l’hôte d’atelier (pour le développement et les tests), soit avec l’hôte d’exécution par défaut fourni par l’hôte Office.js. La fonction d’ouverture utilise ensuite une expression simple if/else pour tester lequel de ces contextes d’hébergement s’applique.
 
@@ -101,7 +101,7 @@ function getConfiguration(question, answer) {
 ```
 
 
-## Changement de mode
+## <a name="mode-changes"></a>Changement de mode
 
 Un atelier est toujours dans l’un des deux états ou modes :  **view** et **edit**. Par conséquent, nous devons capturer et maintenir l’état et le comportement pour le questionnaire. Nous allons créer une classe à cet effet.
 
@@ -430,9 +430,9 @@ $(document).ready(function () {
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 <a name="bk_addresources"> </a>
 
 
-- [Compléments Office Mix](office-mix-add-ins.md)
+- [Compléments Office Mix](office-mix-add-ins.md)
     

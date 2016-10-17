@@ -1,11 +1,11 @@
-﻿
-# Méthode Document.getFileAsync
+
+# <a name="document.getfileasync-method"></a>Méthode Document.getFileAsync
 Renvoie l’intégralité du fichier de document sous forme de sections pouvant aller jusqu’à 4 194 304 octets (4 Mo). Pour des compléments pour iOS, la section de fichier est prise en charge jusqu'à 65 536 (64 Ko). Remarque : la spécification de la taille de section de fichier au-dessus de la limite autorisée entraîne une erreur interne. 
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Excel, PowerPoint, Word|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Fichier|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Fichier|
 |**Dernière modification dans le fichier**|1.1|
 
 ```js
@@ -13,19 +13,19 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
 
 |**Nom**|**Type**|**Description**|**Notes de prise en charge**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Spécifie le format dans lequel le fichier est renvoyé. Obligatoire.<br/><table><tr><th>Hôte</th><th>Type de fichier pris en charge</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>PowerPoint sur le bureau Windows</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr><tr><td>Word sur le bureau de Windows, MAC et iPad</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr></table>|**Modifié dans** 1.1, voir [Historique de prise en charge](#historique-de-prise-en-charge)|
-| _options_|**object**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants||
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Spécifie le format dans lequel le fichier est renvoyé. Obligatoire.<br/><table><tr><th>Hôte</th><th>Type de fichier pris en charge</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>PowerPoint sur le bureau Windows</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr><tr><td>Word sur le bureau de Windows, MAC et iPad</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr></table>|**Modifié dans** 1.1, voir [Historique de prise en charge](#support-history)|
+| _options_|**objet**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants||
 | _sliceSize_|**number**|Spécifie la taille de section souhaitée (en octets) pouvant aller jusqu’à 4 194 304 octets (4 Mo). Si aucune valeur n’est spécifiée, une taille de section par défaut de 4 194 304 octets (4 Mo) est utilisée. ||
 | _asyncContext_|**tableau**, **booléen**, **null**, **numérique**, **objet**, **chaîne** ou **non défini**|Élément défini par l’utilisateur de n’importe quel type qui est renvoyé dans l’objet **AsyncResult** sans être modifié.||
-| _callback_|**object**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
+| _callback_|**objet**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
@@ -33,21 +33,21 @@ Dans la fonction de rappel transmise à la méthode **getFileAsync**, vous pouve
 
 
 
-|**Propriété**|**Utiliser pour...**|
+|**Propriété**|**Utiliser pour**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Accéder à l’objet [File](../../reference/shared/file.md).|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Déterminer si l’opération a réussi ou échoué.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Accéder à un objet [Error](../../reference/shared/error.md) fournissant des informations sur l’erreur en cas d’échec de l’opération.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou **objet** défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Pour les compléments exécutés dans des applications hôtes Office autres qu’Office pour iOS, la méthode **getFileAsync** prend en charge l’obtention de fichiers sous forme de sections pouvant aller jusqu’à 4 194 304 octets (4 Mo). Pour les compléments exécutés dans Office d’applications iOS, la méthode **getFileAsync** prend en charge l’obtention de fichiers sous forme de sections pouvant aller jusqu’à 65 536 octets (64 Ko).
 
 Le paramètre _fileType_ peut être spécifié à l’aide des énumérations ou des valeurs de texte suivantes.
 
 
-**FileType, énumération**
+**Énumération FileType**
 
 
 |**Énumération**|**Valeur**|**Description**|
@@ -58,7 +58,7 @@ Le paramètre _fileType_ peut être spécifié à l’aide des énumérations ou
 Au maximum deux documents sont autorisés à se trouver en mémoire ; autrement, l’opération **getFileAsync** échoue. Utilisez la méthode [File.closeAsync](../../reference/shared/file.closeasync.md) pour fermer le fichier lorsque vous avez terminé de l’utiliser.
 
 
-## Exemple : obtenir un document au format (« compressé ») Office Open XML
+## <a name="example---get-a-document-in-office-open-xml-("compressed")-format"></a>Exemple : obtenir un document au format (« compressé ») Office Open XML
 
 L’exemple suivant permet d’obtenir le document au format Office Open XML (« compressé ») sous forme de sections de 65 536 octets (64 Ko). Remarque : l’implémentation d’`app.showNotification` dans cet exemple provient du modèle Visual Studio pour les compléments Office.
 
@@ -130,7 +130,7 @@ function onGotAllSlices(docdataSlices) {
 ```
 
 
-## Exemple : obtenir un document au format PDF
+## <a name="example---get-a-document-in-pdf-format"></a>Exemple : obtenir un document au format PDF
 
 L’exemple suivant obtient le document au format PDF.
 
@@ -156,18 +156,18 @@ Office.context.document.getFileAsync(Office.FileType.Pdf,
 ```
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||v||
 |**PowerPoint**|v|v|v|
@@ -175,13 +175,13 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Fichier|
+|**Disponible dans les ensembles de conditions requises**|Fichier|
 |**Niveau d’autorisation minimal**|[ReadAllDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 |**Version**|**Modifications**|

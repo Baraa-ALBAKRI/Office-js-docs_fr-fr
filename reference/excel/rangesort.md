@@ -1,35 +1,35 @@
-# Objet RangeSort (interface API JavaScript pour Excel)
+# <a name="rangesort-object-(javascript-api-for-excel)"></a>Objet RangeSort (interface API JavaScript pour Excel)
 
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
 
 Gère les opérations de tri des objets Range.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun
 
-## Relations
+## <a name="relationships"></a>Relations
 Aucun
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Effectue une opération de tri.|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
+### <a name="apply(fields:-sortfield[],-matchcase:-bool,-hasheaders:-bool,-orientation:-string,-method:-string)"></a>apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
 Effectue une opération de tri.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |champs|SortField[]|Liste des conditions de tri.|
@@ -38,10 +38,10 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 |orientation|string|Facultatif. Indique si l’opération trie les lignes ou les colonnes.  Les valeurs possibles sont les suivantes : Rows, Columns|
 |méthode|string|Facultatif. Méthode de classement utilisée pour les caractères chinois.  Les valeurs possibles sont les suivantes : PinYin, StrokeCount|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";

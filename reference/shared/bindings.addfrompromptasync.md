@@ -1,11 +1,11 @@
 
-# Méthode Bindings.addFromPromptAsync
+# <a name="bindings.addfrompromptasync-method"></a>Méthode Bindings.addFromPromptAsync
  Affiche l’interface utilisateur qui permet à l’utilisateur de spécifier une sélection à lier.
 
 |||
 |:-----|:-----|
 |**Hôtes :**|Access, Excel|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Pas dans un ensemble|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Pas dans un ensemble|
 |**Dernière modification**|1.1|
 
 ```
@@ -13,21 +13,21 @@ _bindingsObj.addFromPromptAsync(bindingType [, options], callback);
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 
 
 |**Nom**|**Type**|**Description**|**Notes de prise en charge**|
 |:-----|:-----|:-----|:-----|
 | _bindingType_|[BindingType](../../reference/shared/bindingtype-enumeration.md)|Spécifie le type de l’objet de liaison à créer. Obligatoire. Renvoie **null** si le type spécifié ne peut pas être forcé sur l’objet sélectionné.||
-| _options_|**object**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants.||
-| _id_|**string**|Spécifie le nom unique à utiliser pour identifier le nouvel objet de liaison. Si aucun argument n’est transmis pour le paramètre _id_, le [Binding.id](../../reference/shared/binding.id.md) est généré automatiquement.||
-| _promptText_|**string**|Spécifie la chaîne à afficher dans l’interface utilisateur d’invite qui indique à l’utilisateur quoi sélectionner. Limité à 200 caractères. Si aucun argument _promptText_ n’est transmis, un message invitant l’utilisateur à effectuer une sélection s’affiche.||
+| _options_|**objet**|Spécifie l’un des [paramètres facultatifs](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) suivants.||
+| _id_|**chaîne**|Spécifie le nom unique à utiliser pour identifier le nouvel objet de liaison. Si aucun argument n’est transmis pour le paramètre _id_, le [Binding.id](../../reference/shared/binding.id.md) est généré automatiquement.||
+| _promptText_|**chaîne**|Spécifie la chaîne à afficher dans l’interface utilisateur d’invite qui indique à l’utilisateur quoi sélectionner. Limité à 200 caractères. Si aucun argument _promptText_ n’est transmis, un message invitant l’utilisateur à effectuer une sélection s’affiche.||
 | _sampleData_|[TableData](../../reference/shared/tabledata.md)|Spécifie un tableau d’exemples de données affiché dans l’interface utilisateur d’invite comme exemple des types de champs (colonnes) qui peuvent être liés par votre complément. Les en-têtes indiqués dans l’objet **TableData** spécifient les étiquettes utilisées dans l’interface utilisateur de sélection de champs. Facultatif. **Remarque** : ce paramètre est utilisé uniquement dans les compléments pour Access. Il est ignorée si indiqué lors de l’appel de la méthode dans un complément pour Excel.||
 | _asyncContext_|**tableau**, **booléen**, **null**, **numérique**, **objet**, **chaîne** ou **non défini**|Élément défini par l’utilisateur de n’importe quel type qui est renvoyé dans l’objet **AsyncResult** sans être modifié.||
-| _callback_|**object**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
+| _callback_|**objet**|Fonction appelée quand le rappel est renvoyé, dont le seul paramètre est de type **AsyncResult**.||
 
-## Valeur de rappel
+## <a name="callback-value"></a>Valeur de rappel
 
 Quand la fonction que vous avez transmise au paramètre _callback_ s’exécute, elle reçoit un objet [AsyncResult](../../reference/shared/asyncresult.md) accessible à partir de l’unique paramètre de la fonction de rappel.
 
@@ -35,19 +35,19 @@ Dans la fonction de rappel transmise à la méthode **addFromPromptAsync**, vous
 
 
 
-|**Propriété**|**Utiliser pour...**|
+|**Propriété**|**Utiliser pour**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Accéder à l’objet [Binding](../../reference/shared/binding.md) représentant la sélection spécifiée par l’utilisateur.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Déterminer si l’opération a réussi ou échoué.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Accéder à un objet [Error](../../reference/shared/error.md) fournissant des informations sur l’erreur en cas d’échec de l’opération.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou **objet** défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_.|
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 Ajoute un objet de liaison du type spécifié à la collection [Bindings](../../reference/shared/bindings.bindings.md), qui est identifiée à l’aide du paramètre _id_ indiqué. La méthode échoue si la sélection spécifiée est introuvable.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 
 
@@ -68,28 +68,28 @@ function write(message){
 
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-|**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
+|**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**|Pas dans un ensemble|
+|**Disponible dans les ensembles de conditions requises**|Pas dans un ensemble|
 |**Niveau d’autorisation minimal**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

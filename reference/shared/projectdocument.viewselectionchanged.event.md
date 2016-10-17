@@ -1,25 +1,25 @@
 
 
-# Événement ProjectDocument.ViewSelectionChanged
+# <a name="projectdocument.viewselectionchanged-event"></a>Événement ProjectDocument.ViewSelectionChanged
 Se produit quand l’affichage actif change dans le projet actif.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Projet|
-|**Disponible dans l’[ensemble de ressources requis](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
-|**Ajouté dans**|1,0|
+|**Hôtes :**|Project|
+|**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selection|
+|**Ajouté dans**|1.0|
 
 ```js
 Office.EventType.ViewSelectionChanged
 ```
 
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
  **ViewSelectionChanged** est une constante d’énumération [EventType](../../reference/shared/eventtype-enumeration.md) pouvant être utilisée dans les méthodes [ProjectDocument.addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md) et [ProjectDocument.removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md) pour ajouter ou supprimer un gestionnaire pour l’événement.
 
 
-## Exemple
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant ajoute un gestionnaire pour l’événement **ViewSelectionChanged**. Lorsque l’affichage actif change, il obtient le nom et le type de l’affichage actif.
 
@@ -78,40 +78,40 @@ L’exemple suppose que votre complément comporte une référence à la bibliot
 Pour obtenir un exemple qui montre comment utiliser un gestionnaire d’événements **ViewSelectionChanged** dans un complément Projet, voir l’article expliquant comment [créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cet événement est pris en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cet événement.
 
-Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments pour Office](../../docs/overview/requirements-for-running-office-add-ins.md).
+Pour plus d’informations sur les exigences de l’application et du serveur hôtes Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
 
-||**Office pour Bureau Windows**|**Office Online (dans un navigateur)**|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|
 |:-----|:-----|:-----|
-|**Projet**|v||
+|**Project**|v||
 
 |||
 |:-----|:-----|
-|**Disponible dans les ensembles de ressources requis**||
-|**Niveau d’autorisation minimal**|[Restricted](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
+|**Disponible dans les ensembles de conditions requises**||
+|**Niveau d’autorisation minimal**|[Restreint](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Types de complément**|Volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 
 |**Version**|**Modifications**|
 |:-----|:-----|
-|1,0|Introduit|
+|1.0|Introduit|
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 
 
 
-#### Autres ressources
+#### <a name="other-resources"></a>Autres ressources
 
 
 [Création de votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)

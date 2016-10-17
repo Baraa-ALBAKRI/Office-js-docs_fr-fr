@@ -1,30 +1,30 @@
-# Objet Page (interface API JavaScript pour OneNote)
+# <a name="page-object-(javascript-api-for-onenote)"></a>Objet Page (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_   
 
 
 Représente une page OneNote.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |clientUrl|chaîne|URL du client de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-clientUrl)|
 |id|chaîne|Obtient l’ID de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-id)|
 |pageLevel|int|Obtient ou définit le niveau de retrait de la page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-pageLevel)|
-|Fonction|string|Obtient ou définit le titre de la page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
+|titre|string|Obtient ou définit le titre de la page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-title)|
 |webUrl|chaîne|URL web de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-webUrl)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |contents|[PageContentCollection](pagecontentcollection.md)|Collection d’objets PageContent dans la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-contents)|
 |inkAnalysisOrNull|[InkAnalysis](inkanalysis.md)|Interprétation du texte de l’entrée manuscrite sur la page. Renvoie la valeur null s’il n’existe aucune information d’analyse des entrées manuscrites. En lecture seule. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-inkAnalysisOrNull)|
 |parentSection|[Section](section.md)|Obtient la section qui contient la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-parentSection)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -33,28 +33,28 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[insertPageAsSibling(location: string, title: string)](#insertpageassiblinglocation-string-title-string)|[Page](page.md)|Insère une nouvelle page avant ou après la page active.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-insertPageAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-page-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### addOutline(left: double, top: double, html: String)
+### <a name="addoutline(left:-double,-top:-double,-html:-string)"></a>addOutline(left: double, top: double, html: String)
 Ajoute un plan à la page à la position spécifiée.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageObject.addOutline(left, top, html);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |left|double|Position gauche du coin supérieur gauche du plan.|
 |top|double|Position du haut du coin supérieur gauche du plan.|
 |html|String|Chaîne HTML qui décrit la présentation visuelle du plan. Voir [HTML pris en charge](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) pour l’API JavaScript des compléments OneNote.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Outline](outline.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -92,23 +92,23 @@ OneNote.run(function (context) {
 ```
 
 
-### copyToSection(destinationSection: Section)
+### <a name="copytosection(destinationsection:-section)"></a>copyToSection(destinationSection: Section)
 Copie cette page dans la section spécifiée.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageObject.copyToSection(destinationSection);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |destinationSection|Section|Section dans laquelle copier cette page.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -146,24 +146,24 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### insertPageAsSibling(location: string, title: string)
+### <a name="insertpageassibling(location:-string,-title:-string)"></a>insertPageAsSibling(location: string, title: string)
 Insère une nouvelle page avant ou après la page active.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 pageObject.insertPageAsSibling(location, title);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |location|string|Emplacement de la nouvelle page par rapport à la page active.  Les valeurs possibles sont les suivantes : Before, After|
 |Fonction|string|Titre de la nouvelle page.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -191,22 +191,22 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 **contents**
 ```js

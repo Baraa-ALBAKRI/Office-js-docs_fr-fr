@@ -1,10 +1,10 @@
-# Utilisation de la journalisation runtime pour déboguer le manifeste pour votre complément Office
+# <a name="use-runtime-logging-to-debug-the-manifest-for-your-office-add-in"></a>Utilisation de la journalisation runtime pour déboguer le manifeste pour votre complément Office
 
 Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément. Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources. La journalisation runtime est particulièrement utile pour le débogage des compléments implémentant des commandes de complément.  
 
 >**Remarque :** La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 pour ordinateur de bureau.
 
-## Activation de la journalisation runtime
+## <a name="turn-on-runtime-logging"></a>Activation de la journalisation runtime
 
 >**Important** : La journalisation runtime affecte les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
 
@@ -14,12 +14,11 @@ Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de vo
 
  > **Remarque :** Le répertoire dans lequel le fichier journal sera écrit doit déjà exister et vous devez disposer des autorisations d’écriture correspondantes. 
  
-L’image suivante indique à quoi doit ressembler le registre.
-![Capture d’écran de l’Éditeur du registre avec une clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+L’image suivante indique à quoi doit ressembler le registre. ![Capture d’écran de l’Éditeur du registre avec une clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
 
 Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`. 
 
-## Résolution des problèmes avec votre manifeste
+## <a name="troubleshoot-issues-with-your-manifest"></a>Résolution des problèmes avec votre manifeste
 
 Pour utiliser la journalisation runtime pour résoudre les problèmes de chargement d’un complément, procédez comme suit :
  
@@ -33,14 +32,14 @@ Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe v
 
 ![Capture d’écran d’un fichier journal avec une entrée qui spécifie un ID de ressource qui est introuvable](http://i.imgur.com/f8bouLA.png) 
 
-##Problèmes connus avec la journalisation runtime
+##<a name="known-issues-with-runtime-logging"></a>Problèmes connus avec la journalisation runtime
 Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :
 
 - Le message `Medium   Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.
 - Si vous voyez le message `Unexpected    Add-in is missing required manifest fields  DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez. 
 - Tous les messages `Monitorable` sont des erreurs attendues du point de vue du système. Parfois, ils indiquent un problème avec votre manifeste, comme un élément mal orthographié qui a été ignoré, mais n’a pas provoqué l’échec du manifeste. 
 
-##Ressources supplémentaires
+##<a name="additional-resources"></a>Ressources supplémentaires
 
 - [Chargement de version test des compléments Office](../testing/sideload-office-add-ins-for-testing.md)
 - [Débogage des compléments Office](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md)

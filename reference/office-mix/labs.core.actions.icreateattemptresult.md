@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ICreateAttemptResult
+# <a name="labs.core.actions.icreateattemptresult"></a>Labs.Core.Actions.ICreateAttemptResult
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Résultat de la création d’une tentative pour le composant donné.
 
@@ -10,7 +10,7 @@ interface ICreateAttemptResult extends Core.IActionResult
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |**Nom**|**Description**|

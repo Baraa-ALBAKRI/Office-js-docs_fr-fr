@@ -1,36 +1,36 @@
-# Objet RequestContext (interface API JavaScript pour Excel)
+# <a name="requestcontext-object-(javascript-api-for-excel)"></a>Objet RequestContext (interface API JavaScript pour Excel)
 
 l’objet de contexte de demande facilite les demandes auprès de l’application Excel. L’exécution du complément Office et de l’application Excel faisant appel à deux processus différents, il est nécessaire de fournir le contexte des demandes pour accéder à Excel et aux objets associés, tels que les feuilles de calcul, les tableaux, etc. à partir du complément. 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 Aucun
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode         | Type renvoyé    |Description|
 |:---------------|:--------|:----------|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Insère l’objet de proxy créé dans le calque JavaScript avec les propriétés et les options spécifiées dans le paramètre.|
 
-## Spécification d’API
+## <a name="api-specification"></a>Spécification d’API
 
-### load(object: object, option: object)
+### <a name="load(object:-object,-option:-object)"></a>load(object: object, option: object)
 Insère l’objet de proxy créé dans le calque JavaScript avec les propriétés et les options spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 requestContextObject.load(object, loadOption);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
 |:----------------|:--------|:----------|
 |object|object|Facultatif. Indiquez le nom de l’objet à charger.|
-|Option|[loadOption](loadoption.md)|Facultatif. Spécifiez les options de chargement (select, expand, skip ou top). Pour plus d’informations, reportez-vous à l’objet loadOption.|
+|Option|[loadOption](loadoption.md)|Facultatif. Spécifiez les options de chargement (select, expand, skip ou top). Pour plus d’informations, voir l’objet loadOption.|
 
-#### Renvoie
+#### <a name="returns"></a>Retourne
 void
 
-##### Exemples
+##### <a name="examples"></a>Exemples
 
 L’exemple suivant charge les valeurs de propriété d’une plage et les copie dans une autre plage.
 

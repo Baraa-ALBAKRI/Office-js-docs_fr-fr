@@ -1,4 +1,4 @@
-# Installer la dernière version d’Office 2016
+# <a name="install-the-latest-version-of-office-2016"></a>Installer la dernière version d’Office 2016
 
 De nouvelles fonctionnalités de développeur, y compris celles en version d’évaluation, sont mises à la disposition des abonnés qui souhaitent obtenir les dernières versions d’Office. Pour obtenir les dernières versions d’Office 2016, procédez comme suit : 
 

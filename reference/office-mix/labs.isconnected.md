@@ -1,7 +1,7 @@
 
-# Labs.isConnected
+# <a name="labs.isconnected"></a>Labs.isConnected
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Indique si l’atelier est connecté à l’hôte.
 
@@ -10,12 +10,12 @@ function isConnected(): boolean
 ```
 
 
-## Paramètres
+## <a name="parameters"></a>Paramètres
 
 Aucun.
 
 
-## Valeur renvoyée
+## <a name="return-value"></a>Valeur renvoyée
 
 Renvoie **true** si l’atelier est connecté à l’hôte.
 

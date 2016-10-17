@@ -1,8 +1,8 @@
 
-# Classes Labs.Core
+# <a name="labs.core-classes"></a>Classes Labs.Core
 Classe figurant dans le module **LabsJS.Labs.Core**
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Le module **LabsJS.Labs.Core** contient les classes suivantes.
 

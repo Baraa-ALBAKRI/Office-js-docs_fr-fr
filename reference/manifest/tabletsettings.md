@@ -1,11 +1,11 @@
 
-# TabletSettings, élément
+# <a name="tabletsettings-element"></a>TabletSettings, élément
 Spécifie les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur une tablette.
 
  **Type de complément :** messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,7 +15,7 @@ Spécifie les paramètres de contrôle qui s’appliquent lorsque votre complém
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
-[Formulaire](../../reference/manifest/form.md)
+[Form](../../reference/manifest/form.md)
 

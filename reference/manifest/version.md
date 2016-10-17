@@ -1,11 +1,11 @@
 
-# Version, élément
+# <a name="version-element"></a>Version, élément
 Spécifie la version de votre complément Office.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -13,7 +13,7 @@ Spécifie la version de votre complément Office.
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

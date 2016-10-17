@@ -1,26 +1,26 @@
-﻿# Control, élément
+# <a name="control-element"></a>Control, élément
 
 Définit une fonction JavaScript qui exécute une action ou lance un volet Office. Un élément **Control** peut être une option de bouton ou de menu. Au moins un élément **Control** doit être inclus dans un élément [Group](group.md).
 
-## Attributs
+## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |**xsi:type**|Oui|Type de contrôle défini. Peut être un bouton ou un menu.|
 |**id**|Non|ID de l’élément de contrôle. Il doit comporter 125 caractères au maximum.|
 
-## Contrôle de bouton
+## <a name="button-control"></a>Contrôle de bouton
 
 Un bouton effectue une action unique quand il est sélectionné. Il peut exécuter une fonction ou afficher un volet Office. Chaque contrôle bouton doit avoir un `id` unique dans le manifeste. 
 
-### Éléments enfants
+### <a name="child-elements"></a>Éléments enfants
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément [ShortStrings](./resources.md#shortstrings) de l’élément [Resources](./resources.md).        |
-|  **Tooltip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resource.md).|     
+|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resource.md).|     
 |  [Supertip](./supertip.md)  | Oui |  Info-bulle pour le bouton.    |
-|  [Icône](./icon.md)      | Oui |  Image du bouton.         |
-|  [Opération](./action.md)    | Oui |  Spécifie l’action à effectuer.  |
+|  [Icon](./icon.md)      | Oui |  Image du bouton.         |
+|  [Action](./action.md)    | Oui |  Spécifie l’action à effectuer.  |
 
 
 
@@ -65,7 +65,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
                 </Control>
 ```
 
-### Exemple du bouton ExecuteFunction
+### <a name="executefunction-button-example"></a>Exemple du bouton ExecuteFunction
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -85,7 +85,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 </Control>
 ```
 
-### Exemple du bouton ShowTaskpane
+### <a name="showtaskpane-button-example"></a>Exemple du bouton ShowTaskpane
 
 ```xml
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
@@ -104,7 +104,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
   </Action>
 </Control>
 ```
-## Contrôles de menu (bouton déroulant)
+## <a name="menu-(dropdown-button)-controls"></a>Contrôles de menu (bouton déroulant)
 
 Un menu définit une liste statique d’options. Chaque option de menu exécute une fonction ou affiche un volet Office. Les sous-menus ne sont pas pris en charge. 
 
@@ -168,18 +168,18 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 
 ```
 
-### Éléments enfants
+### <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Oui |  Texte du bouton. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément [ShortStrings](./resources.md#shortstrings) de l’élément [Resources](./resources.md).      |
-|  **Tooltip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resource.md).|     
+|  **Label**     | Oui |  Texte du bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément [ShortStrings](./resources.md#shortstrings) de l’élément [Resources](./resources.md).      |
+|  **ToolTip**  |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resource.md).|     
 |  [Supertip](./supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
-|  [Icône](./icon.md)      | Oui |  Image du bouton.         |
-|  [Éléments](#éléments)     | Oui |  Ensemble de boutons à afficher dans le menu Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#contrôle-de-bouton).|
+|  [Icon](./icon.md)      | Oui |  Image du bouton.         |
+|  [Items](#items)     | Oui |  Ensemble de boutons à afficher dans le menu Contient les éléments **Item** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle de bouton](#button-control).|
 
 
-### Exemples de contrôle de menu
+### <a name="menu-control-examples"></a>Exemples de contrôle de menu
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">

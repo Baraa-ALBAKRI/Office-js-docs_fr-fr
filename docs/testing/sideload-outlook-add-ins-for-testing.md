@@ -1,12 +1,12 @@
 
-# Chargement de version test des compléments Outlook
+# <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
  >**Remarque**  Vous pouvez également charger une version test des compléments pour d’autres applications de la suite Office. Pour plus d’informations, voir [Chargement de version test des compléments Office](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 
-## Chargement de version test des compléments Outlook
+## <a name="to-sideload-outlook-add-ins"></a>Chargement de version test des compléments Outlook
 
 
 1. Accédez à [Outlook Web App](https://outlook.office365.com).

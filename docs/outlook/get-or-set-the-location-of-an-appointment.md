@@ -1,5 +1,5 @@
 
-# Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
+# <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
 L’interface de l’API JavaScript pour Office fournit des méthodes asynchrones ([getAsync](../../reference/outlook/Location.md) et [setAsync](../../reference/outlook/Location.md)) pour obtenir et définir l’emplacement d’un rendez-vous composé par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste du complément pour Outlook afin d’activer le complément dans des formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](../outlook/compose-scenario.md).
 
@@ -26,7 +26,7 @@ La propriété  **location** est disponible pour l’accès en écriture uniquem
 Comme avec la plupart des méthodes asynchrones dans l’interface API JavaScript pour Office,  **getAsync** et **setAsync** admettent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir la rubrique [Programmation asynchrone dans des compléments Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Obtention de l’emplacement
+## <a name="to-get-the-location"></a>Obtention de l’emplacement
 
 
 Cette section présente un exemple de code qui obtient l’emplacement du rendez-vous que l’utilisateur compose, et affiche cet emplacement. Cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous, comme indiqué ci-dessous.
@@ -76,7 +76,7 @@ function write(message){
 ```
 
 
-## Définition de l’emplacement
+## <a name="to-set-the-location"></a>Définition de l’emplacement
 
 
 Cette section présente un exemple de code qui définit l’emplacement du rendez-vous que l’utilisateur compose. Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste de complément qui active le complément dans un formulaire de composition pour un rendez-vous.
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

@@ -1,5 +1,5 @@
 
-# Chargement de version test des compléments Office dans Office Online
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Chargement de version test des compléments Office dans Office Online
 
 Vous pouvez installer un complément Office test sans avoir à le placer au préalable dans un catalogue de compléments en utilisant le chargement de version test. Le chargement de version test peut être effectué sur Office 365 ou Office Online. La procédure présente de légères différences d’une plateforme à l’autre. 
 
@@ -9,7 +9,7 @@ Lorsque vous chargez une version test d’un complément, le manifeste du compl�
  >**Remarque**  Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md).
 
 
-## Sideload an Complément Office on Office 365
+## <a name="sideload-an-office-add-in-on-office-365"></a>Sideload an Complément Office on Office 365
 
 
 1. Connectez-vous à votre compte Office 365.
@@ -29,7 +29,7 @@ Lorsque vous chargez une version test d’un complément, le manifeste du compl�
 6. Verify that your complément is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## Charger une version test d’un complément Office sur Office Online
+## <a name="sideload-an-office-add-in-on-office-online"></a>Charger une version test d’un complément Office sur Office Online
 
 
 

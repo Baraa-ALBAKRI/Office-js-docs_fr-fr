@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabHost
+# <a name="labs.core.ilabhost"></a>Labs.Core.ILabHost
 
- _**S’applique à :** applications pour Office |Compléments Office | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Fournit une couche d’abstraction pour connecter Labs.js à l’hôte.
 
@@ -10,10 +10,10 @@ interface ILabHost
 ```
 
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 
-### getSupportedVersions
+### <a name="getsupportedversions"></a>getSupportedVersions
 
  `getSupportedVersions(): Core.ILabHostVersionInfo[]`
 
@@ -24,7 +24,7 @@ Récupère les versions prises en charge par l’hôte de l’atelier.
 Aucun.
 
 
-### connect
+### <a name="connect"></a>connect
 
  `connect(versions: Core.ILabHostVersionInfo[], callback: Core.ILabCallback<Core.IConnectionResponse>)`
 
@@ -38,7 +38,7 @@ Initialise une connexion avec l’hôte.
 | _versions_|Liste des versions hôtes que le client peut utiliser.|
 | _callback_|Fonction de rappel qui se déclenche une fois la connexion établie.|
 
-### disconnect
+### <a name="disconnect"></a>disconnect
 
  `disconnect(callback: Core.ILabCallback<void>)`
 
@@ -52,7 +52,7 @@ Met fin à la communication avec l’hôte.
 | _completionStatus_|État de l’atelier lors de la déconnexion.|
 | _callback_|Fonction de rappel qui se déclenche une fois la déconnexion terminée.|
 
-### actif
+### <a name="on"></a>actif
 
  `on(handler: (string: any, any: any): void)`
 
@@ -65,7 +65,7 @@ Ajoute un gestionnaire d’événements pour gérer les messages provenant de l�
 |:-----|:-----|
 | _handler_|Gestionnaire d’événements.|
 
-### sendMessage
+### <a name="sendmessage"></a>sendMessage
 
  `sendMessage(type: string, options: Core.IMessage, callback: Core.ILabCallback<Core.IMessageResponse>)`
 
@@ -80,7 +80,7 @@ Envoie un message à l’hôte.
 | _options_|Options des messages.|
 | _callback_|Fonction de rappel qui se déclenche une fois le message reçu.|
 
-### rapidement
+### <a name="create"></a>rapidement
 
  `create(options: Core.ILabCreationOptions, callback: Core.ILabCallback<void>)`
 
@@ -94,7 +94,7 @@ Crée l’atelier. Stocke les informations de l’hôte et prévoit de l’espac
 | _options_|Options transmises dans le cadre de l’opération Création.|
 | _callback_|Fonction de rappel qui se déclenche une fois l’atelier créé.|
 
-### getConfiguration
+### <a name="getconfiguration"></a>getConfiguration
 
  `getConfiguration(callback: Core.ILabCallback<Core.IConfiguration>)`
 
@@ -107,7 +107,7 @@ Récupère la configuration de l’atelier en cours depuis l’hôte.
 |:-----|:-----|
 | _callback_|Fonction de rappel pour récupérer les informations de configuration.|
 
-### setConfiguration
+### <a name="setconfiguration"></a>setConfiguration
 
  `setConfiguration(configuration: Core.IConfiguration, callback: Core.ILabCallback<void>)`
 
@@ -121,7 +121,7 @@ Définit une nouvelle configuration pour l’atelier sur l’hôte.
 | _configuration_|Configuration de l’atelier définie.|
 | _callback_|Fonction de rappel qui se déclenche une fois la configuration définie.|
 
-### getConfigurationInstance
+### <a name="getconfigurationinstance"></a>getConfigurationInstance
 
  `getConfigurationInstance(callback: Core.ILabCallback<Core.IConfigurationInstance>)`
 
@@ -134,7 +134,7 @@ Récupère la configuration de l’instance pour l’atelier.
 |:-----|:-----|
 | _callback_|Fonction de rappel qui se déclenche une fois l’instance de configuration récupérée.|
 
-### getState
+### <a name="getstate"></a>getState
 
  `getState(callback: Core.ILabCallback<any>)`
 
@@ -147,7 +147,7 @@ Récupère l’état actuel de l’atelier pour un utilisateur donné.
 |:-----|:-----|
 | _completionStatus_|Fonction de rappel qui renvoie l’état actuel de l’atelier.|
 
-### setState
+### <a name="setstate"></a>setState
 
  `setState(state: any, callback: Core.ILabCallback<void>)`
 
@@ -161,7 +161,7 @@ Définit l’état de l’atelier pour un utilisateur donné.
 | _state_|État de l’atelier.|
 | _callback_|Fonction de rappel qui se déclenche une fois l’état défini.|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, callback: Core.ILabCallback<Core.IAction>)`
 
@@ -176,7 +176,7 @@ Tente une action.
 | _options_|Options fournies avec l’action.|
 | _callback_|Fonction de rappel qui renvoie la dernière action exécutée.|
 
-### takeAction
+### <a name="takeaction"></a>takeAction
 
  `takeAction(type: string, options: Core.IActionOptions, result: Core.IActionResult, callback: Core.ILabCallback<Core.IAction>)`
 
@@ -192,7 +192,7 @@ Exécute une action qui a déjà été effectuée.
 | _result_|Résultat de l’action.|
 | _callback_|Fonction de rappel qui renvoie la dernière action exécutée.|
 
-### getActions
+### <a name="getactions"></a>getActions
 
  `getActions(type: string, options: Core.IGetActionOptions, callback: Core.ILabCallback<Core.IAction[]>)`
 

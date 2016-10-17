@@ -1,5 +1,5 @@
 
-# Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
+# <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
 Parfois, vos utilisateurs peuvent rencontrer des problèmes avec les compléments Office que vous développez. Par exemple, il se peut qu’un complément ne se charge pas ou soit inaccessible. Utilisez les informations de cet article pour résoudre les problèmes courants que vos utilisateurs rencontrent avec votre complément Office. 
 
@@ -7,7 +7,7 @@ Vous pouvez également utiliser [Fiddler](http://www.telerik.com/fiddler) pour i
 
 Une fois le problème de l’utilisateur résolu, vous pouvez [répondre directement aux avis des clients dans l’Office Store](https://msdn.microsoft.com/library/jj635874.aspx).
 
-## Erreurs courantes et étapes de dépannage
+## <a name="common-errors-and-troubleshooting-steps"></a>Erreurs courantes et étapes de dépannage
 
 Le tableau suivant répertorie les messages d’erreur courants que les utilisateurs pourraient rencontrer, ainsi que les étapes que les utilisateurs peuvent suivre pour résoudre les erreurs.
 
@@ -20,7 +20,7 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 |Erreur : l’objet ne prend pas en charge la propriété ou la méthode « defineProperty »|Vérifiez qu’Internet Explorer ne fonctionne pas en mode de compatibilité. Accédez à Outils >  **Paramètres d’affichage de compatibilité**.|
 |Désolé, nous n’avons pas pu charger l’application, car la version de votre navigateur n’est pas prise en charge. Cliquez ici pour obtenir la liste des versions de navigateur prises en charge.|Assurez-vous que le navigateur prend en charge le stockage local HTML5 ou réinitialisez les paramètres d’Internet Explorer.Pour plus d’informations sur les navigateurs pris en charge, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).|
 
-## §LTA Le complément Outlook ne fonctionne pas correctement
+## <a name="outlook-add-in-doesn't-work-correctly"></a>§LTA Le complément Outlook ne fonctionne pas correctement
 
 §LTA Si un complément Outlook s’exécutant sous Windows ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer. 
 
@@ -32,7 +32,7 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 Nous vous recommandons de décocher ces paramètres uniquement pour résoudre le problème. Si vous ne les réactivez pas, vous recevrez des invites. Une fois que le problème est résolu, recochez les cases  **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 
-## Le complément ne s’active pas dans Office 2013
+## <a name="add-in-doesn't-activate-in-office-2013"></a>Le complément ne s’active pas dans Office 2013
 
 Le complément ne s’active pas lorsque l’utilisateur effectue les étapes suivantes :
 
@@ -46,7 +46,7 @@ Le complément ne s’active pas lorsque l’utilisateur effectue les étapes su
 Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

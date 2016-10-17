@@ -1,8 +1,8 @@
 
-# Énumérations Labs
+# <a name="labs-enumerations"></a>Énumérations Labs
 Énumérations figurant dans le module Labs.
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Voici les descriptions de deux énumérations du module LabJS.Labs.
 

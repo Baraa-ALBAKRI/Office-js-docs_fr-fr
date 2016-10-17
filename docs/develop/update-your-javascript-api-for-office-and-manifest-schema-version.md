@@ -1,11 +1,11 @@
 
-# Mettre à jour la version de votre API JavaScript pour Office et des fichiers de schéma de manifeste
+# <a name="update-the-version-of-your-javascript-api-for-office-and-manifest-schema-files"></a>Mettre à jour la version de votre API JavaScript pour Office et des fichiers de schéma de manifeste
 
 
 
 Cet article décrit comment mettre à jour vers la version 1.1 les fichiers JavaScript pour Office (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet de complément Office.
 
-## Utilisation des fichiers de projet les plus récents
+## <a name="using-the-most-up-to-date-project-files"></a>Utilisation des fichiers de projet les plus récents
 
 Si vous utilisez Visual Studio pour développer votre complément, et que vous souhaitez utiliser les [nouveaux membres d’API](../../reference/what's-changed-in-the-javascript-api-for-office.md) de l’interface API JavaScript pour Office et les [fonctionnalités de la version 1.1 du manifeste du complément](../../docs/overview/add-in-manifests.md) (qui est validé par rapport à offappmanifest-1.1.xsd), vous devez télécharger et installer [Visual Studio 2015 et les derniers Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs).
 
@@ -23,7 +23,7 @@ Pour télécharger des produits Office, SharePoint et Exchange SP1, voir :
 - [Description du Service Pack 1 d’Exchange Server 2013](http://support.microsoft.com/kb/2926248)
     
 
-## Mise à jour d’un projet de Complément Office créé à l’aide de Visual Studio pour utiliser le schéma de manifeste de complément version 1.1 et la bibliothèque de l’API JavaScript pour Office la plus récente
+## <a name="updating-an-office-add-in-project-created-with-visual-studio-to-use-the-latest-javascript-api-for-office-library-and-version-1.1-add-in-manifest-schema"></a>Mise à jour d’un projet de Complément Office créé à l’aide de Visual Studio pour utiliser le schéma de manifeste de complément version 1.1 et la bibliothèque de l’API JavaScript pour Office la plus récente
 
 
 Pour les projets créés avant la sortie de la version 1.1 de l’API JavaScript pour Office et du schéma de manifeste de complément, vous pouvez mettre à jour les fichiers d’un projet à l’aide du  **gestionnaire de package NuGet**, puis mettre à jour les pages HTML de votre complément pour les référencer. 
@@ -33,7 +33,7 @@ Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devre
 
 
 
-### Mise à jour des fichiers de bibliothèque de l’API JavaScript pour Office dans votre projet vers la dernière version
+### <a name="to-update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>Mise à jour des fichiers de bibliothèque de l’API JavaScript pour Office dans votre projet vers la dernière version
 
 
 1. Dans Visual Studio 2015, ouvrez ou créez un projet **Complément Office**.
@@ -57,7 +57,7 @@ Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devre
 ```
 
 
-### Pour mettre à jour le fichier manifeste dans votre projet afin d’utiliser la version 1.1 du schéma
+### <a name="to-update-the-manifest-file-in-your-project-to-use-schema-version-1.1"></a>Pour mettre à jour le fichier manifeste dans votre projet afin d’utiliser la version 1.1 du schéma
 
 
 - Dans le fichier de manifeste de complément de votre projet ( _projectname_ Manifest.xml), mettez à jour l’attribut **xmlns** de l’élément **OfficeApp** en appliquant la valeur « 1.1 » à la version (sans modifier les attributs autres que **xmlns**) :
@@ -70,7 +70,7 @@ Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devre
 >
   **Remarque**  Après la mise à jour de la version du schéma de manifeste de complément vers 1.1, vous devrez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les [éléments Hosts et Host](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) ou les [éléments Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-## Mise à jour d’un projet d’Complément Office créée à l’aide d’un éditeur de texte ou d’une autre interface IDE en vue d’utiliser le schéma de manifeste de complément version 1.1 ou la dernière bibliothèque de l’API JavaScript pour Office
+## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide-to-use-the-newest-javascript-api-for-office-library-and-version-1.1-add-in-manifest-schema"></a>Mise à jour d’un projet d’Complément Office créée à l’aide d’un éditeur de texte ou d’une autre interface IDE en vue d’utiliser le schéma de manifeste de complément version 1.1 ou la dernière bibliothèque de l’API JavaScript pour Office
 
 
 Pour les projets créés avant la publication de la version 1.1 de l’API JavaScript pour Office et du schéma de manifeste de complément, vous devez mettre à jour les pages HTML de votre complément afin de faire référence au CDN de la bibliothèque version 1.1, ainsi que mettre à jour le fichier de manifeste de votre complément pour utiliser le schéma version 1.1. 
@@ -82,7 +82,7 @@ Vous n’avez pas besoin de copies locales des fichiers de l’interface API Jav
  > **Remarque** : pour obtenir une copie du fichier XSD (définition de schéma XML) pour le manifeste de complément version 1.1, consultez la liste dans [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../overview/add-in-manifests.md).
 
 
-### Mise à jour des fichiers de bibliothèque de l’API JavaScript pour Office dans votre projet pour utiliser la dernière version
+### <a name="to-update-the-javascript-api-for-office-library-files-in-your-project-to-use-the-newest-release"></a>Mise à jour des fichiers de bibliothèque de l’API JavaScript pour Office dans votre projet pour utiliser la dernière version
 
 
 1. Ouvrez les pages HTML de votre complément dans un éditeur de texte ou une interface IDE.
@@ -97,7 +97,7 @@ Vous n’avez pas besoin de copies locales des fichiers de l’interface API Jav
     The  `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
     
 
-### Pour mettre à jour le fichier manifeste dans votre projet afin d’utiliser la version 1.1 du schéma
+### <a name="to-update-the-manifest-file-in-your-project-to-use-schema-version-1.1"></a>Pour mettre à jour le fichier manifeste dans votre projet afin d’utiliser la version 1.1 du schéma
 
 
 - Dans le fichier de manifeste de complément de votre projet ( _projectname_ Manifest.xml), mettez à jour l’attribut **xmlns** de l’élément **OfficeApp** en appliquant la valeur `1.1` à la version (sans modifier les attributs autres que **xmlns**) :
@@ -110,7 +110,7 @@ Vous n’avez pas besoin de copies locales des fichiers de l’interface API Jav
   **Remarque**  Après la mise à jour de la version du schéma de manifeste de complément vers 1.1, vous devrez supprimer les éléments **Capabilities** et **Capability**, et les remplacer par les [éléments Hosts et Host](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) ou les [éléments Requirements et Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
     
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

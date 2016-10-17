@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabCallback
+# <a name="labs.core.ilabcallback"></a>Labs.Core.ILabCallback
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Interface de gestion des méthodes de rappel Labs.js.
 
@@ -10,7 +10,7 @@ interface ILabCallback<T>
 ```
 
 
-## Signature de rappel
+## <a name="callback-signature"></a>Signature de rappel
 
  `(err: any, data: T): void`
 

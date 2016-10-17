@@ -1,10 +1,10 @@
-﻿
-# Meilleures pratiques en matière de développement de compléments Office
+
+# <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
 
 Des compléments efficaces proposent des fonctionnalités uniques et attrayantes qui étendent les applications Office d’une manière visuellement attractive. Pour créer un complément intéressant, offrez une première expérience attractive à vos utilisateurs, concevez une interface utilisateur de premier choix et optimisez les performances de votre complément. Appliquez les meilleures pratiques décrites dans cet article pour créer des compléments permettant aux utilisateurs d’accomplir leurs tâches rapidement et efficacement.
 
-## Indication d’une valeur claire
+## <a name="provide-clear-value"></a>Indication d’une valeur claire
 
 
 
@@ -13,11 +13,11 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
  - Développez de nouveaux scénarios dans Office.
  - Intégrez des services complémentaires dans des hôtes Office.
  - Améliorez l’expérience Office pour accroître la productivité.
-- Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#première-expérience-enrichissante).
+- Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
 - Rédigez une [description claire sur l’Office Store](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
 
 
-## Création d’une première expérience intéressante
+## <a name="create-an-engaging-first-run-experience"></a>Création d’une première expérience intéressante
 
 
 
@@ -45,7 +45,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
 Pour obtenir les modèles illustrant les modèles de conception à appliquer lors du développement de votre première expérience d’utilisation, voir [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-## Utilisation des commandes de complément
+## <a name="use-add-in-commands"></a>Utilisation des commandes de complément
 
 - Définissez des accès pertinents à vos compléments dans l’interface utilisateur en utilisant des [commandes de complément](../design/add-in-commands.md).
 
@@ -60,7 +60,8 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
   - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
   - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
-     >  **Remarque**  Les compléments qui prennent trop d’espace peuvent ne pas obtenir la [validation de l’Office Store](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >
+  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - Pour toutes les icônes, procédez comme suit :
     - Utilisez des icônes significatives et des [étiquettes](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) pour les boutons qui identifient clairement l’action effectuée par l’utilisateur.
@@ -92,7 +93,7 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 
 
 
-## Application des principes de conception de l’expérience utilisateur
+## <a name="apply-ux-design-principles"></a>Application des principes de conception de l’expérience utilisateur
 
 
 
@@ -112,11 +113,11 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 
 - Soulignez l’[accessibilité](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx) : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
 
-- Adaptez-le à toutes les plateformes et méthodes d’entrée, y compris la souris/le clavier et la [fonction tactile](#fonction-tactile). Assurez-vous que votre interface utilisateur réagit à différents formats.
+- Adaptez-le à toutes les plateformes et méthodes d’entrée, y compris la souris/le clavier et la [fonction tactile](#optimize-for-touch). Assurez-vous que votre interface utilisateur réagit à différents formats.
 
 Pour les modèles appliquant des principes de conception que vous pouvez utiliser et personnaliser lors du développement de votre complément, voir [Modèles de conception de l’expérience utilisateur pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-### Optimisation de la fonction tactile
+### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
 
 
@@ -135,7 +136,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
  >**Remarque**  Si vous utilisez [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) pour vos éléments de conception, un grand nombre de ces éléments sont pris en charge.
 
 
-## Optimisation et contrôle des performances du complément
+## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément
 
 
 
@@ -154,7 +155,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 
 |**Classe d’interaction**|**Cible**|**Limite supérieure**|**Perception humaine**|
 |:-----|:-----|:-----|:-----|
-|Instantané|<= 50 ms|100 ms|Aucun délai notable.|
+|Instantanée|<= 50 ms|100 ms|Aucun délai notable.|
 |Rapide|50-100 ms|200 ms|Délai notable minime. Aucun commentaire n’est nécessaire.|
 |Normale|100-300 ms|500 ms|L’opération va assez vite, sans pour autant pouvoir être qualifiée de rapide. Aucun commentaire n’est nécessaire.|
 |Réactive|300-500 ms|1 seconde|L’opération n’est pas rapide, mais le système donne l’impression de répondre. Aucun commentaire n’est nécessaire.|
@@ -165,11 +166,11 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 - Surveillez l’état de votre service et utilisez la télémétrie pour surveiller le succès d’utilisateur.
 
 
-## Commercialisation de votre complément
+## <a name="market-your-add-in"></a>Commercialisation de votre complément
 
 
 
-- Publiez votre complément sur l’[Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) et faites-en la[promotion](http://msdn.microsoft.com/library/b19e21f8-76f5-44e1-9971-bef79cad4c71%28Office.15%29.aspx)sur votre site web. Créez des [listes Office Store efficaces](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx).
+- Publiez votre complément sur l’[Office Store](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) et faites-en la[promotion](http://msdn.microsoft.com/library/b19e21f8-76f5-44e1-9971-bef79cad4c71%28Office.15%29.aspx)sur votre site web. Créez des [listes Office Store efficaces](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx).
 
 - Utilisez des titres et des descriptifs courts pour le complément. Ils ne doivent pas comporter plus de 128 caractères.
 

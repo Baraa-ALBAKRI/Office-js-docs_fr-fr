@@ -1,23 +1,23 @@
-# Objet Outline (interface API JavaScript pour OneNote)
+# <a name="outline-object-(javascript-api-for-onenote)"></a>Objet Outline (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente un conteneur pour les objets Paragraph.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |id|chaîne|Obtient l’ID de l’objet Outline. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-id)|
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |pageContent|[PageContent](pagecontent.md)|Obtient l’objet PageContent qui contient le plan. Cet objet définit la position du plan sur la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-pageContent)|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtient la collection d’objets Paragraph dans le plan. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-paragraphs)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -27,26 +27,26 @@ Représente un conteneur pour les objets Paragraph.
 |[appendTable(rowCount: number, columnCount: number, values: string[][])](#appendtablerowcount-number-columncount-number-values-string)|[Table](table.md)|Ajoute un tableau avec le nombre spécifié de lignes et de colonnes dans la partie inférieure du plan.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-appendTable)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-outline-load)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### appendHtml(html: string)
+### <a name="appendhtml(html:-string)"></a>appendHtml(html: string)
 Ajoute le code HTML spécifié dans la partie inférieure du plan.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 outlineObject.appendHtml(html);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |Html|chaîne|Chaîne HTML à ajouter. Voir [HTML pris en charge](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) pour l’API JavaScript des compléments OneNote.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -84,59 +84,59 @@ OneNote.run(function (context) {
 ```
 
 
-### appendImage(base64EncodedImage: string, width: double, height: double)
+### <a name="appendimage(base64encodedimage:-string,-width:-double,-height:-double)"></a>appendImage(base64EncodedImage: string, width: double, height: double)
 Ajoute l’image spécifiée dans la partie inférieure du plan.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 outlineObject.appendImage(base64EncodedImage, width, height);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Chaîne HTML à ajouter.|
 |width|double|Facultatif. Largeur de l’unité des points. La valeur par défaut est Null et la largeur d’image est respectée.|
 |height|double|Facultatif. Hauteur de l’unité des points. La valeur par défaut est Null et la hauteur d’image est respectée.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Image](image.md)
 
-### appendRichText(paragraphText: string)
+### <a name="appendrichtext(paragraphtext:-string)"></a>appendRichText(paragraphText: string)
 Ajoute le texte spécifié dans la partie inférieure du plan.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 outlineObject.appendRichText(paragraphText);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |paragraphText|string|Chaîne HTML à ajouter.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [RichText](richtext.md)
 
-### appendTable(rowCount: number, columnCount: number, values: string[][])
+### <a name="appendtable(rowcount:-number,-columncount:-number,-values:-string[][])"></a>appendTable(rowCount: number, columnCount: number, values: string[][])
 Ajoute un tableau avec le nombre spécifié de lignes et de colonnes dans la partie inférieure du plan.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 outlineObject.appendTable(rowCount, columnCount, values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |rowCount|number|Obligatoire. Nombre de lignes dans le tableau.|
 |columnCount|number|Obligatoire. Nombre de colonnes dans le tableau.|
 |values|string[][]|Facultatif. Tableau 2D facultatif. Les cellules sont remplies si les chaînes correspondantes sont spécifiées dans le tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -172,18 +172,18 @@ OneNote.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void

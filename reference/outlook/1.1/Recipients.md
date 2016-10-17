@@ -1,8 +1,8 @@
 
 
-# Destinataires
+# <a name="recipients"></a>Destinataires
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -10,9 +10,9 @@
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition|
 
-### Méthodes
+### <a name="methods"></a>Méthodes
 
-####  addAsync(recipients, [options], [callback])
+####  <a name="addasync(recipients,-[options],-[callback])"></a>addAsync(recipients, [options], [callback])
 
 Ajoute une liste de destinataires aux destinataires existants d’un rendez-vous ou d’un message.
 
@@ -22,7 +22,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 *   Objets `EmailUser`
 *   Objets `EmailAddressDetails`
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -30,7 +30,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 |`options`| Object| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Attributs</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Objet</td><td>&lt;optional&gt;</td><td>Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</td></tr></tbody></table>|
 |`callback`| fonction| &lt;optional&gt;|Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult). <br/>En cas d’échec de l’ajout des destinataires, la propriété `asyncResult.error` contient un code d’erreur.<br/><table class="nested-table"><thead><tr><th>Code d'erreur</th><th>Description</th></tr></thead><tbody><tr><td>`NumberOfRecipientsExceeded</td><td>Le nombre de destinataires est supérieur à 100 entrées.</td></tr></tbody></table>|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -38,7 +38,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Mode Outlook applicable| Composition|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple suivant crée un tableau des objets `EmailUser` et les ajoute aux destinataires de la ligne À du message.
 
@@ -63,11 +63,11 @@ Office.context.mailbox.item.to.addAsync(newRecipients, function(result) {
 });
 ```
 
-####  getAsync([options], callback)
+####  <a name="getasync([options],-callback)"></a>getAsync([options], callback)
 
 Obtient une liste de destinataires pour un rendez-vous ou un message.
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -76,7 +76,7 @@ Obtient une liste de destinataires pour un rendez-vous ou un message.
 
 Une fois l’appel terminé, la propriété `asyncResult.value` contient un tableau des objets [`EmailAddressDetails`](simple-types.md#emailaddressdetails).|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -84,7 +84,7 @@ Une fois l’appel terminé, la propriété `asyncResult.value` contient un tabl
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple suivant obtient les participants facultatifs d’une réunion.
 
@@ -102,7 +102,7 @@ Office.context.mailbox.item.optionalAttendees.getAsync(function(result) {
 });
 ```
 
-####  setAsync(recipients, [options], callback)
+####  <a name="setasync(recipients,-[options],-callback)"></a>setAsync(recipients, [options], callback)
 
 Définit une liste de destinataires pour un rendez-vous ou un message.
 
@@ -114,7 +114,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 *   Objets `EmailUser`
 *   Objets `EmailAddressDetails`
 
-##### Paramètres :
+##### <a name="parameters:"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -122,7 +122,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 |`options`| Object| &lt;optional&gt;|Littéral d’objet contenant une ou plusieurs des propriétés suivantes.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Attributs</th><th>Description</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Objet</td><td>&lt;optional&gt;</td><td>Les développeurs peuvent indiquer un objet auquel ils souhaitent accéder dans la méthode de rappel.</td></tr></tbody></table>|
 |`callback`| fonction||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult). <br/>En cas d’échec de la définition des destinataires, la propriété `asyncResult.error` contient un code indiquant toute erreur survenue lors de l’ajout des données.<br/><table class="nested-table"><thead><tr><th>Code d'erreur</th><th>Description</th></tr></thead><tbody><tr><td>`NumberOfRecipientsExceeded</td><td>Le nombre de destinataires est supérieur à 100 entrées.</td></tr></tbody></table>|
 
-##### Configuration requise
+##### <a name="requirements"></a>Configuration requise
 
 |Conditions requises| Valeur|
 |---|---|
@@ -130,7 +130,7 @@ Le paramètre `recipients` peut être un tableau d’un des éléments suivants�
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Mode Outlook applicable| Composition|
 
-##### Exemple
+##### <a name="example"></a>Exemple
 
 L’exemple suivant crée un tableau des objets `EmailUser` et remplace les destinataires de la ligne Cc du message par le tableau.
 

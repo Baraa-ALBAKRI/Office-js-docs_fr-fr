@@ -1,11 +1,11 @@
 
-# Élément Dictionary
+# <a name="dictionary-element"></a>Élément Dictionary
 Définit les paramètres pour un complément de volet Office qui implémente la prise en charge d’un dictionnaire supplémentaire.
 
  **Type de complément :** Office
 
 
-## Syntaxe :
+## <a name="syntax:"></a>Syntaxe :
 
 
 ```XML
@@ -15,12 +15,12 @@ Définit les paramètres pour un complément de volet Office qui implémente la 
 ```
 
 
-## Contenu dans :
+## <a name="contained-in:"></a>Contenu dans :
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Peut contenir :
+## <a name="can-contain:"></a>Peut contenir :
 
 
 
@@ -32,7 +32,7 @@ Définit les paramètres pour un complément de volet Office qui implémente la 
 |[DictionaryName](../../reference/manifest/dictionaryname.md)|
 |[DictionaryHomePage](../../reference/manifest/dictionaryhomepage.md)|
 
-## Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 
 

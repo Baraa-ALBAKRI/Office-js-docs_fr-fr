@@ -1,5 +1,5 @@
 
-# Bindings, objet
+# <a name="bindings-object"></a>Bindings, objet
 Représente les liaisons du complément au sein du document.
 
 |||
@@ -31,7 +31,7 @@ Office.context.document.bindings
 |[getByIdAsync](../../reference/shared/bindings.getbyidasync.md)|Obtient la liaison spécifiée par son identificateur.|
 |[releaseByIdAsync](../../reference/shared/bindings.releasebyidasync.md)|Supprime la liaison spécifiée.|
 
-## Informations de prise en charge
+## <a name="support-details"></a>Informations de prise en charge
 
 
 Un Y majuscule dans la matrice suivante indique que cette méthode est prise en charge dans l'application hôte Office correspondante. Une cellule vide indique que l'application hôte Office ne prend pas en charge cette méthode.
@@ -44,15 +44,15 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 ||Office pour Bureau Windows|Office Online (dans un navigateur)|Office pour iPad|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
 |**Types de complément**|Application de contenu et de volet de tâches|
 |**Bibliothèque**|Office.js|
-|**Espace de noms**|Bureau|
+|**Espace de noms**|Office|
 
-## Historique de prise en charge
+## <a name="support-history"></a>Historique de prise en charge
 
 
 

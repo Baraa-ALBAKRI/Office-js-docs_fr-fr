@@ -1,7 +1,7 @@
 
-# Labs.Components.IChoice
+# <a name="labs.components.ichoice"></a>Labs.Components.IChoice
 
- _**S’applique à :** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**S’applique à :** applications pour Office | Compléments Office | Office Mix | PowerPoint_
 
 Choix disponible pour un problème donné.
 
@@ -10,7 +10,7 @@ interface IChoice
 ```
 
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 
 |Nom|Description|
