@@ -9,7 +9,7 @@ Vous pouvez créer un complément Office simple à l’aide de « Napa ». Pou
 
 - Un [compte Microsoft](http://www.microsoft.com/en-us/account/default.aspx)
     
-- L’URL de l’application web [Napa](https://www.napacloudapp.com/ )
+- L’URL de l’application web [Napa](https://www.napacloudapp.com)
 
 >**Remarque :** si vous débutez avec les compléments pour OneNote, voir [Créer votre premier complément OneNote](../onenote/onenote-add-ins-getting-started.md).
 
@@ -17,7 +17,7 @@ Vous pouvez créer un complément Office simple à l’aide de « Napa ». Pou
 
 
 
-1. Ouvrez [Napa](https://www.napacloudapp.com/ ) dans votre navigateur.
+1. Ouvrez [Napa](https://www.napacloudapp.com) dans votre navigateur.
     
 2. Sélectionnez la vignette  **Ajouter un nouveau projet**.
     
@@ -31,7 +31,8 @@ Vous pouvez créer un complément Office simple à l’aide de « Napa ». Pou
 
     L’éditeur de code s’ouvre et affiche la page web par défaut dans laquelle figure déjà du code fourni à titre d’exemple que vous pouvez exécuter tel quel.
     
-4. Sur le côté de la page, sélectionnez le bouton Exécuter (![Bouton Exécuter](../../images/Apps_NAPA_Run_Button.png)).
+4. Sur le côté de la page, sélectionnez le bouton Exécuter (
+![Bouton Exécuter](../../images/Apps_NAPA_Run_Button.png)).
     
     L’application Office associée au type de complément que vous avez choisi s’ouvre et le complément fourni à titre d’exemple s’affiche. Vous pouvez maintenant tester les fonctionnalités du complément.
     

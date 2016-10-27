@@ -85,7 +85,7 @@ Le point d’extension CustomPane définit un complément qui s’active lorsque
 |:-----|:-----|:-----|
 |  **RequestedHeight** | Non |  Il s’agit de la hauteur demandée, en pixels, pour le volet d’informations lorsqu’il est exécuté sur un ordinateur de bureau. La taille peut être comprise entre 32 et 450 pixels.  |
 |  **SourceLocation**  | Oui |  URL du fichier de code source du complément. Fait référence à un élément **Url** dans l’élément [Resources](./resources.md).  |
-|  **Rule**  | Oui |  Règle ou ensemble de règles qui spécifie quand le complément doit être activé. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../../outlook/manifests/activation-rules.md). |
+|  **Rule**  | Oui |  Règle ou ensemble de règles qui spécifie quand le complément doit être activé. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../../docs/outlook/manifests/activation-rules.md). |
 |  **DisableEntityHighlighting**  | Non |  Spécifie si la mise en surbrillance de l’entité doit être désactivée. |
 
 

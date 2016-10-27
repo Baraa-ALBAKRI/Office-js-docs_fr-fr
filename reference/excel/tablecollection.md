@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|address|string|Adresse ou nom de l’objet de plage représentant la source de données. Si l’adresse ne contient pas de nom de feuille, la feuille ouverte est utilisée.|
+|address|string|Adresse ou nom de l’objet de plage représentant la source de données. Notez que l’adresse de la plage doit inclure la feuille de calcul dans laquelle le tableau doit être ajouté. Exemple `Sheet1!A1:D4`.|
 |hasHeaders|bool|Valeur booléenne qui indique si les données importées disposent d’étiquettes de colonne. Si la source ne contient pas d’en-têtes (autrement dit, lorsque cette propriété est définie sur false), Excel génère automatiquement un en-tête et décale les données d’une ligne vers le bas.|
 
 #### <a name="returns"></a>Retourne

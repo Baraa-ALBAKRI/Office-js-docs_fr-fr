@@ -20,7 +20,8 @@
       </Item>	
     	<Item text="Modèles de conception de l’expérience utilisateur" url="design/ux-design-patterns" SEODescription="Utilisez les modèles de conception de l’expérience utilisateur pour les compléments Office afin de créer des extensions de l’interface utilisateur." />
 	<Item text="Commandes de complément pour Excel, Word et PowerPoint" url="design/add-in-commands" SEODescription="Utilisez des commandes de complément dans votre complément pour étendre l’interface utilisateur d’Office par défaut dans Excel, Word et PowerPoint." />
-  	<Item text="Conseils sur le style des visualisations de données" url="design/data-visualization-guidelines" SEODescription="Fournit des conseils sur les visualisations de données dans les compléments Office." />
+  	<Item text="Concevoir des icônes pour les commandes de complément" url="design/design-icons" SEODescription="Concevez des icônes pour les commandes de complément s’intégrant parfaitement avec l’interface utilisateur Office." />
+	<Item text="Conseils sur le style des visualisations de données" url="design/data-visualization-guidelines" SEODescription="Fournit des conseils sur les visualisations de données dans les compléments Office." />
     	<Item text="Conseils sur le ton" url="design/voice-guidelines" SEODescription="Découvrez des conseils sur le ton à employer dans l’interface utilisateur des compléments Office" />
     	<Item text="Conseils sur l’accessibilité" url="design/accessibility-guidelines" SEODescription="Découvrez comment rendre vos compléments Office accessibles à tous les utilisateurs." />
     </Item>

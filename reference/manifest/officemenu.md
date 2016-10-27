@@ -20,7 +20,7 @@ Indique un menu prédéfini de l’application cliente Office sur laquelle ajout
 
 ## <a name="control"></a>Contrôle
 
-Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](./menu.md#menu-control). 
+Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](./control.md#menu-dropdown-button-controls). 
 
 
 ## <a name="example"></a>Exemple

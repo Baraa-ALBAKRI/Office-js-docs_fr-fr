@@ -24,8 +24,6 @@ Pour les services qui le prennent en charge, nous fournissons une bibliothèque 
 
 [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-Le dossier \demo du référentiel contient un exemple de complément qui utilise la bibliothèque pour accéder à certains services populaires, y compris Google, Facebook et Office 365.
-
 Reportez-vous également à la section **Bibliothèques** plus loin dans cet article.
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Utilisation du flux de code d’autorisation dans les compléments Office
@@ -39,7 +37,8 @@ De nombreuses bibliothèques sont disponibles pour l’implémentation du flux d
 
 ### <a name="relay/proxy-functions"></a>Fonctions de relais/proxy
 
-Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’*ID client* et de *clé secrète client* dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda). La fonction remplace un code donné par un *jeton d’accès* approprié et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
+Vous pouvez utiliser le flux de code d’autorisation même avec une application web sans serveur en stockant les valeurs d’*ID client* et de *clé secrète client* dans une fonction simple, hébergée dans un service tel qu’[Azure Functions](https://azure.microsoft.com/en-us/services/functions) ou [Amazon Lambda](https://aws.amazon.com/lambda). 
+La fonction remplace un code donné par un *jeton d’accès* approprié et le transmet au client. La sécurité de cette approche dépend de la surveillance de l’accès à la fonction.
 
 Pour utiliser cette technique, votre complément ouvre une interface utilisateur/un menu contextuel pour afficher l’écran de connexion au service en ligne (Google, Facebook, etc.). Lorsque l’utilisateur est connecté et accorde l’autorisation au complément d’accéder à ses ressources dans le service en ligne, le développeur reçoit un code qui peut être envoyé à la fonction en ligne. Les services décrits dans la section **Services intermédiaires** de cet article utilisent un flux semblable à celui-ci. 
 

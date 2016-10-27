@@ -362,6 +362,9 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
+#### <a name="known-issues"></a>Problèmes connus
+Cette méthode engendre une longue latence dans Word Online, ce qui peut affecter l’expérience des utilisateurs de votre complément. Nous vous recommandons d’utiliser cette méthode uniquement lorsqu’aucune solution n’est disponible. 
+
 #### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.

@@ -20,7 +20,7 @@ Obligatoire. Identificateur unique du groupe. Il s’agit d’une chaîne avec u
 Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément [ShortStrings](./resources.md#shortstrings) de l’élément [Resources](./resources.md).
 
 ## <a name="control"></a>Contrôle
-Un groupe requiert au moins un contrôle. Actuellement, seuls les [boutons](./control.md#button-control) et les [menus](./menu.md#menu-control) sont pris en charge. 
+Un groupe requiert au moins un contrôle. Actuellement, seuls les [boutons](./control.md#button-control) et les [menus](./control.md#menu-dropdown-button-controls) sont pris en charge. 
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

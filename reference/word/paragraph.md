@@ -350,7 +350,7 @@ Word.run(function (context) {
 L’exemple [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] vous montre comment utiliser la méthode insertContentControl.
 
 ### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Insère un document dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Start » (début) ou « End » (fin).
+Insère un document dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -361,7 +361,7 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64File|string|Obligatoire. Contenu du fichier encodé au format Base64 à insérer.|
-|insertLocation|InsertLocation|Obligatoire. La valeur peut être « Start » (début) ou « End » (fin).|
+|insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Insère une image dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant), « After » (après), « Start » (début) ou « End » (fin).
+Insère une image dans le paragraphe à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -470,7 +470,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Obligatoire. Code HTML à insérer dans le paragraphe.|
-|insertLocation|InsertLocation|Obligatoire. La valeur peut être définie sur « Before » (avant), « After » (après), « Start » (début) ou « End » (fin).|
+|insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 
 #### <a name="returns"></a>Retourne
 [InlinePicture](inlinepicture.md)
@@ -517,7 +517,7 @@ Word.run(function (context) {
 L’exemple [Word-Add-in-DocumentAssembly][paragraph.insertpicture] fournit un autre exemple de la façon d’insérer une image dans un paragraphe.
 
 ### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Insère du contenu OOXML ou wordProcessingML dans le paragraphe, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
+Insère du code OOXML ou un élément wordProcessingML dans le paragraphe, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -532,6 +532,9 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
+
+#### <a name="known-issues"></a>Problèmes connus
+Cette méthode engendre une longue latence dans Word Online, ce qui peut affecter l’expérience des utilisateurs de votre complément. Nous vous recommandons d’utiliser cette méthode uniquement lorsqu’aucune solution n’est disponible. 
 
 #### <a name="examples"></a>Exemples
 ```js
@@ -774,7 +777,7 @@ paragraphObject.select(selectionMode);
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|Facultatif. Le mode de sélection peut être « Select » (sélectionner), « Start » (début) ou « End » (fin). « Select » (sélectionner) est la valeur par défaut.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 void
 
 #### <a name="examples"></a>Exemples

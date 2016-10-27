@@ -1,5 +1,5 @@
 ## <a name="supertip"></a>Supertip
-Définit une info-bulle enrichie (titre et description). Il est utilisé par les contrôles de [bouton](./button.md) et de [menu](./menu-control.md). 
+Définit une info-bulle enrichie (titre et description). Il est utilisé par les contrôles de [bouton](./control.md#button-control) ou de [menu](./control.md#menu-dropdown-button-controls). 
 
 ## <a name="child-elements"></a>Éléments enfants
 |  Élément |  Obligatoire  |  Description  |

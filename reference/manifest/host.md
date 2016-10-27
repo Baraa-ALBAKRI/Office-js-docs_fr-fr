@@ -12,7 +12,7 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](./officeapp.md)
 ### <a name="attributes"></a>Attributs
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | chaîne | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
 
 
 ### <a name="name"></a>Name
@@ -37,7 +37,7 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 ---
 
 ## <a name="versionoverrides-node"></a>Nœud VersionOverrides
-Lorsqu’il est défini dans [VersionOverrides](./versionoverrides), le type d’hôte est déterminé par l’attribut `xsi:type`. 
+Lorsqu’il est défini dans [VersionOverrides](./versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`. 
 
 ### <a name="attributes"></a>Attributs
 

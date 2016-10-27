@@ -412,6 +412,9 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
+#### <a name="known-issues"></a>Problèmes connus
+Cette méthode engendre une longue latence dans Word Online, ce qui peut affecter l’expérience des utilisateurs de votre complément. Nous vous recommandons d’utiliser cette méthode uniquement lorsqu’aucune solution n’est disponible. 
+
 #### <a name="examples"></a>Exemples
 ```js
 // Run a batch operation against the Word object model.
@@ -485,7 +488,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
-Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
+Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -496,7 +499,7 @@ rangeObject.insertText(text, insertLocation);
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |text|string|Obligatoire. Texte à insérer.|
-|insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
+|insertLocation|InsertLocation|Obligatoire. La valeur peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)

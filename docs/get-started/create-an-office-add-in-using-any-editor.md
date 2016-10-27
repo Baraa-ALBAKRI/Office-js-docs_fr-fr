@@ -1,9 +1,9 @@
 
 # <a name="create-an-office-add-in-using-any-editor"></a>Créer un complément Office à l’aide d’un éditeur
 
-Un complément Office est une application web que vous hébergez dans une application Office. Cet article explique comment utiliser le générateur Yeoman pour fournir la structure du projet et assurer la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
+Vous pouvez utiliser le générateur Yeoman pour votre complément Office. Le générateur Yeoman fournit la structure du projet et assure la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
 
- >**Remarque**  Les instructions comprennent des opérations qui utilisent l’invite de commande Windows, mais qui sont également applicables à d’autres environnements d’interpréteur de commandes. 
+ >**Remarque :** ces instructions utilisent l’invite de commande Windows, mais vous pouvez également utiliser d’autres environnements d’interpréteur de commandes. 
 
 
 ## <a name="prerequisites-for-yeoman-generator"></a>Configuration requise pour le générateur Yeoman
@@ -11,31 +11,21 @@ Un complément Office est une application web que vous hébergez dans une applic
 Pour exécuter le générateur Yeoman d’Office, vous avez besoin des éléments suivants :
 
 
-- [Git](https://git-scm.com/downloads)
-    
+- [Git](https://git-scm.com/downloads)  
 - [npm](https://www.nodejs.org/en/download)
-    
 - [Bower](http://bower.io/)
-    
 - [Générateur OfficeYeoman](https://www.npmjs.com/package/generator-office)
-    
 - [Gulp](http://gulpjs.com/)
-    
 - [TSD](http://definitelytyped.org/tsd/)
     
 Seuls Git et npm requièrent une installation séparée. Les autres peuvent être installés à l’aide de npm.
 
 Lorsque vous installez Git, vous devez utiliser les valeurs par défaut, mais choisir les options suivantes : 
 
-
 - Utiliser Git à partir de l’invite de commande Windows
-    
 - Utiliser la fenêtre de console par défaut de Windows
     
-Installez npm en utilisant les paramètres par défaut. Ensuite, ouvrez une invite de commande en tant qu’administrateur et installez l’autre logiciel de façon globale à l’aide de la commande suivante :
-
-
-
+Installez npm en utilisant les valeurs par défaut. Ouvrez une invite de commandes en tant qu’administrateur, puis installez les autres logiciels globalement :
 
 ```
 npm install -g bower yo generator-office gulp tsd
@@ -44,7 +34,7 @@ npm install -g bower yo generator-office gulp tsd
 
 ## <a name="create-the-default-files-for-your-add-in"></a>Créer les fichiers par défaut pour le complément
 
-Avant le développement d’un complément Office, vous devez créer un dossier pour votre projet et exécuter le générateur à partir de là. Le générateur Yeoman est exécuté dans le répertoire où vous voulez créer la structure du projet. 
+Avant de développer un complément Office, vous devez tout d’abord créer un dossier pour votre projet, puis exécuter le générateur à partir de là. Le générateur Yeoman s’exécute dans le répertoire où vous souhaitez structurer le projet. 
 
 Dans l’invite de commandes, accédez au dossier parent où vous souhaitez créer le projet. Ensuite, utilisez les commandes suivantes pour créer un dossier nommé  _myHelloWorldaddin_ et y déplacer le répertoire en cours :
 
@@ -56,7 +46,7 @@ mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
 
-Utilisez le générateur Yeoman pour créer le complément Office de votre choix : Outlook, de contenu ou de volet de tâches. Dans cette rubrique, nous allons créer un complément de volet de tâches. Pour exécuter le générateur, entrez l’instruction suivante :
+Utilisez le générateur Yeoman pour créer le complément de votre choix : Outlook, contenu ou volet des tâches. Les étapes décrites dans cet article créent un complément de volet des tâches. Pour exécuter le générateur, entrez l’instruction suivante :
 
 
 
@@ -68,14 +58,10 @@ yo office
 Le générateur vous demande d’indiquer les éléments suivants : 
 
 
-- Le nom du complément - utilisez  _myHelloWorldaddin_
-    
+- Le nom du complément - utilisez  _myHelloWorldaddin_ 
 - Le dossier racine du projet - utilisez  _current folder_
-    
 - Le type de complément - utilisez  _taskpane_
-    
 - La technologie utilisée pour créer le complément - utilisez  _HTML, CSS &amp; JavaScript_
-    
 - L’application Office prise en charge -- vous pouvez choisir n’importe quelle application
     
 
@@ -88,7 +74,7 @@ Ce bloc de code permet de créer la structure et les fichiers de base de votre c
 
 ## <a name="hosting-your-office-add-in"></a>Héberger votre complément Office
 
-Les compléments Office doivent être traités via HTTPS ; l’application Office ne charge pas d’application web en tant que complément si elle est traitée via HTTP. Pour développer, déboguer et héberger le complément localement, vous devez pouvoir créer et traiter une application web localement à l’aide du protocole HTTPS. Vous pouvez par exemple créer un site HTTPS auto-hébergé via Gulp (décrit dans la section suivante) ou utiliser Azure. 
+Les compléments Office doivent être traités via le protocole HTTPS ; l’application Office ne chargera pas une application web sous la forme d’un complément via HTTP. Pour développer, déboguer et héberger le complément localement, vous avez besoin d’un moyen de créer et servir une application web utilisant le protocole HTTPS localement. Vous pouvez créer un site HTTPS auto-hébergé via Gulp (décrit dans la section suivante) ou vous pouvez utiliser Azure. 
 
 
 ### <a name="using-a-self-hosted-https-site"></a>Utilisation d’un site HTTPS auto-hébergé
@@ -129,16 +115,16 @@ tsd install
 ```
 
 
-### <a name="create-a-hello-world-office-add-in"></a>Création d’une Complément Office Hello World
+### <a name="create-a-hello-world-office-add-in"></a>Création d’un complément Office Hello World
 
 
-Pour cet exemple, nous allons créer un complément Hello World. L’interface utilisateur du complément est fournie par un fichier HTML pouvant éventuellement fournir une logique de programmation JavaScript. 
+Dans cet exemple, vous allez créer un complément Hello World. L’interface utilisateur du complément est fournie par un fichier HTML pouvant éventuellement fournir une logique de programmation JavaScript. 
 
 
 ### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Pour créer le fichier pour un complément Hello World
 
 
-- Dans le dossier de votre projet, accédez à _[dossier du projet]/app/home_ (dans notre exemple, il s’agit de myHelloWorldaddin/app/home), ouvrez home.html et remplacez le code existant par le code suivant, qui fournit l’ensemble minimal de balises HTML pour afficher l’interface utilisateur d’un complément.
+- Dans le dossier de votre projet, accédez à _[dossier du projet]/app/home_ (dans cet exemple, il s’agit de myHelloWorldaddin/app/home), ouvrez home.html et remplacez le code existant par le code suivant, qui fournit l’ensemble minimal de balises HTML pour afficher l’interface utilisateur d’un complément.
     
 ```HTML
         <!DOCTYPE html>  
@@ -179,7 +165,7 @@ Pour cet exemple, nous allons créer un complément Hello World. L’interface u
     
 - Enfin, revenez au dossier du projet parent et assurez-vous que le fichier XML nommé manifest-myHelloWorldaddin.xml contient le code XML suivant.
     
-     >**Important**  La valeur de la balise `<id>` est un GUID créé par le générateur yeoman lorsqu’il génère le projet. Ne modifiez pas le GUID créé par le générateur yeoman pour votre complément. Si l’hôte est Azure, la valeur `SourceLocation` sera une URL semblable à _https:// [nom de votre application web].azurewebsites.net/[chemin d’accès au complément]_. Si vous utilisez l’option d’auto-hébergement, comme dans cet exemple, l’URL sera _https://localhost:8443 /[chemin d’accès au complément]_.
+     >**Important :**  La valeur de la balise `<id>` est un GUID créé par le générateur yeoman lorsqu’il génère le projet. Ne modifiez pas le GUID que le générateur yeoman a créé pour votre complément. Si l’hôte est Azure, la valeur `SourceLocation` sera une URL semblable à _https:// [nom de votre application web].azurewebsites.net/[chemin d’accès au complément]_. Si vous utilisez l’option d’auto-hébergement, comme dans cet exemple, l’URL sera _https://localhost:8443 /[chemin d’accès au complément]_.
 
 ```XML
      <?xml version="1.0" encoding="utf-8"?> 
@@ -211,25 +197,22 @@ Pour cet exemple, nous allons créer un complément Hello World. L’interface u
 ### <a name="running-the-add-in-locally"></a>Exécution du complément en local
 
 
-Pour tester votre complément localement, ouvrez votre navigateur et saisissez l’URL de votre fichier home.html. Vous pouvez effectuer cette opération sur le serveur web ou sur le site HTTPS auto-hébergé. Si vous l’avez hébergé localement, il suffit d’entrer l’URL dans votre navigateur. Dans notre exemple, il s’agit de  `https://localhost:8443/app/home/home.html`. 
+Pour tester votre complément localement, ouvrez votre navigateur et entrez l’URL de votre fichier home.html. Il peut se trouver sur le serveur web ou sur le site HTTPS auto-hébergé. Si vous l’hébergez localement, tapez simplement cette URL dans votre navigateur. Dans cet exemple, il s’agit de `https://localhost:8443/app/home/home.html`. 
 
 L’erreur « Il existe un problème avec le certificat de sécurité de ce site web » apparaît. Sélectionnez « Poursuivre sur ce site Web », puis le texte « Hello World! » s’affiche.
 
 
- >**Remarque**  Le complément généré est livré avec une clé et un certificat auto-signés. Ajoutez-les à la liste des certificats de votre autorité de confiance afin que le navigateur n’émette pas d’avertissement concernant le certificat. Reportez-vous à la documentation sur [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) si vous souhaitez utiliser vos propres certificats auto-signés.Reportez-vous à [l’article PH18677 de la base de connaissances](https://support.apple.com/kb/PH18677?locale=en_US) pour obtenir des instructions sur l’approbation d’un certificat dans OS X Yosemite.
+ >**Remarque :**  le complément généré est livré avec un certificat auto-signé et une clé. Ajoutez-les à la liste des certificats de votre autorité de confiance afin que le navigateur n’émette pas d’avertissement concernant le certificat. Reportez-vous à la documentation sur [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) si vous souhaitez utiliser vos propres certificats auto-signés. Pour plus d’informations sur la façon d’approuver un certificat dans OS X Yosemite, consultez [OS X Yosemite : Si votre certificat n’est pas accepté](https://support.apple.com/kb/PH18677?locale=en_US).
 
 
 ## <a name="install-the-add-in-for-testing"></a>Installation du complément dans une application Office
 
 Vous pouvez utiliser le chargement de version test pour installer votre complément pour le tester :
 
-
-- [Chargement de version test des compléments Office](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
+- [Chargement de version test des compléments Office](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
 - [Chargement de version test des compléments Outlook](../outlook/testing-and-tips.md)
     
-Vous pouvez également publier le complément dans un catalogue ou un partage réseau et l’installer à la manière des utilisateurs finals. Pour plus de détails, [créez un catalogue de dossiers partagés réseau pour des compléments de contenu et de volet des tâches](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14)).
-
 
 ## <a name="debugging-your-office-add-in"></a>Débogage de votre complément Office
 
@@ -237,14 +220,9 @@ Il existe différentes façons de déboguer un complément :
 
 
 - Vous pouvez utiliser les clients web Office et ouvrir les outils de développement du navigateur, puis déboguer le complément comme toute autre application JavaScript côté client. 
-    
 - Si vous utilisez la version bureau d’Office sur Windows 10, vous pouvez [déboguer des compléments à l’aide des outils de développement F12 sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
     
-
-
-
 ## <a name="additional-resources"></a>Ressources supplémentaires
-
 
 
 - [Créer et déboguer des compléments Office dans Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)

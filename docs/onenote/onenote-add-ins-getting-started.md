@@ -152,7 +152,9 @@ function addOutlineToPage() {
 3 - Accédez à [OneNote Online](https://www.onenote.com/notebooks) et ouvrez le Bloc-notes.
 
 4 - Sélectionnez **Insérer > Compléments Office**. Cette action ouvre la boîte de dialogue Compléments Office.
+
   - Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.
+  
   - Si vous êtes connecté avec votre compte professionnel ou scolaire, sélectionnez l’onglet **MON ORGANISATION**, puis choisissez **Télécharger mon complément**. 
   
   L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.
@@ -172,12 +174,14 @@ function addOutlineToPage() {
 
 - Vous devez activer le contenu mixte dans le navigateur si votre complément utilise des ressources HTTP. Les compléments de production doivent uniquement utiliser des ressources HTTPS sécurisées.
 
--  Les compléments de volet Office peuvent être ouverts à partir de n’importe où, mais les compléments de contenu peuvent uniquement être insérés à l’intérieur de contenu de page normal (et non dans des titres, des images, des iFrames, etc.). 
+- Les compléments de volet Office peuvent être ouverts à partir de n’importe quel emplacement, mais les compléments de contenu peuvent uniquement être insérés à l’intérieur d’un contenu de page normal (et non dans des titres, des images, des iFrames, etc.). 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
-- [Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Vue d’ensemble de la plateforme des compléments pour Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+-[Vue d’ensemble de la programmation de l’API JavaScript de OneNote](onenote-add-ins-programming-overview.md)
 
+-[Référence de l’API JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+
+-[Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+
+-[Vue d’ensemble de la plateforme des compléments pour Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

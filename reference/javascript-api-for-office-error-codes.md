@@ -125,5 +125,5 @@ Le tableau suivant résume le comportement de liaison dans Word.
 
 - [Références de schéma et API pour les compléments Office](../reference/reference.md)
     
-- [Cycle de vie du développement des compléments Office](../docs/design/add-in-development-lifecycle.md)
+- [Cycle de vie du développement des compléments Office](../docs/develop/add-in-development-lifecycle.md)
     

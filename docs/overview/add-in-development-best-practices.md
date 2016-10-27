@@ -35,7 +35,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
     ![Capture d’écran illustrant un complément de contenu avec des données en regard d’un complément de contenu sans données](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- Offrez des [essais gratuits](http://msdn.microsoft.com/library/145d9466-3c3d-4294-aa23-82068a8e7ae9.aspx%28Office.15%29.aspx#sectionSection1). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
+- Offrez des [essais gratuits](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
 - Facilitez l’inscription. Préremplissez les informations (e-mail, nom d’affichage) et ignorez les vérifications d’adresses e-mail.
 
@@ -60,32 +60,9 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
   - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
   - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
 
-     >
-  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >**Remarque**  Les compléments qui prennent trop d’espace peuvent ne pas obtenir la [validation de l’Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx).
 
-- Pour toutes les icônes, procédez comme suit :
-    - Utilisez des icônes significatives et des [étiquettes](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) pour les boutons qui identifient clairement l’action effectuée par l’utilisateur.
-
-
- - Utilisez un format PNG avec un arrière-plan transparent.
-
- - Incluez les [huit formats pris en charge](https://msdn.microsoft.com/EN-US/library/mt267547.aspx#bk_resources). Toutes les résolutions prises en charge bénéficient ainsi d’une expérience optimale.
-
-  - Respectez le style visuel d’Office. Par exemple :
-
-    - Utilisez des formes simples et évitez d’utiliser trop de couleurs. Des graphiques complexes sont difficiles à lire avec des résolutions et des tailles moindres.
-
-    - N’utilisez pas des thèmes visuels identiques pour des commandes distinctes. Une même icône utilisée pour des actions différentes porterait à confusion.
-
-    - Simplifiez au maximum le nom de vos boutons. Utilisez une combinaison d’informations visuelles et textuelles pour transmettre sa signification.
-
-    - Testez vos icônes avec des thèmes Office clairs et foncés, ainsi qu’avec des paramètres de contraste élevé. Il est en effet possible que les icônes soient moins visibles sur des arrière-plans foncés ou avec un contraste élevé.
-
-    - Utilisez des positions et des tailles d’icône cohérentes pour améliorer l’alignement visuel sur le ruban.
-
-
-    ![Capture d’écran illustrant des boutons de commande de complément qui correspondent au style Office en regard de boutons qui n’y correspondent pas](../../images/31e11214-61e8-41c1-888c-29d167cb9486.png)
-
+- Pour toutes les icônes, suivez les [règles de conception d’icône](../design/design-icons.md).
 
 - Proposez une version de complément qui fonctionne aussi sur les hôtes qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner sur les hôtes tenant compte ou non des commandes (par exemple, un volet de tâches dans le second cas).
 
@@ -109,9 +86,9 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 
 - N’incluez pas d’image sans licence.
 
-- Utilisez un [langage clair et simple](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) dans votre complément.
+- Utilisez un [langage clair et simple](../design/voice-guidelines.md) dans votre complément.
 
-- Soulignez l’[accessibilité](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx) : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
+- Soulignez l’[accessibilité](../design/accessibility-guidelines.md) : votre complément doit être facile à utiliser pour tous les utilisateurs et s’accommoder de technologies d’assistance telles que les lecteurs d’écran.
 
 - Adaptez-le à toutes les plateformes et méthodes d’entrée, y compris la souris/le clavier et la [fonction tactile](#optimize-for-touch). Assurez-vous que votre interface utilisateur réagit à différents formats.
 

@@ -47,7 +47,7 @@ D’autres plateformes seront bientôt disponibles.
 ## <a name="syntax"></a>Syntaxe
 
 ```js
-office.context.ui.displayDialogAsync(startAddress, options, callback);
+Office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##<a name="examples"></a>Exemples
 
@@ -72,7 +72,7 @@ Les options de configuration suivantes sont disponibles pour une boîte de dialo
 |:---------------|:--------|:----------|
 |**width**|objet|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
 |**height**|objet|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
-|**displayInIFrame**|objet|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame dans les clients Office Online. Ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
+|**displayInIframe**|object|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame dans les clients Office Online. Ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
 
 
 ## <a name="callback-value"></a>Valeur de rappel
