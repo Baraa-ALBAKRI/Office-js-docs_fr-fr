@@ -9,7 +9,7 @@
 |  **xsi:type**  |  Oui  | Type de point d’extension défini.|
 
 
-## <a name="extension-points-for-word,-excel,-powerpoint,-and-onenote-add-in-commands"></a>Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-addin-commands"></a>Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
 
 - **PrimaryCommandSurface** : ruban dans Office.
 - **ContextMenu** : menu contextuel qui apparaît lorsque vous cliquez avec le bouton droit de la souris dans l’interface utilisateur Office.
@@ -66,41 +66,13 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 |**Tooltip**|Facultatif. Info-bulle du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
 |**Control**|Chaque groupe exige au moins un contrôle. Un élément  **Control** peut être de type **Button** ou **Menu**. Utilisez  **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge.Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](#button-controls) et [Contrôles de menu](#menu-controls).<br/>**Remarque**  Pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.
 
-## <a name="extension-points-for-outlook-add-in-commands"></a>Points d’extension pour les commandes de complément Outlook
+## <a name="extension-points-for-outlook-addin-commands"></a>Points d’extension pour les commandes de complément Outlook
 
-- [CustomPane](#custompane) 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](./formfactor.md).)
-
-### <a name="custompane"></a>CustomPane
-
-Le point d’extension CustomPane définit un complément qui s’active lorsque des règles spécifiées sont respectées. Il est destiné uniquement au formulaire de lecture et s’affiche dans un volet horizontal. 
-
-**Éléments enfants**
-
-|  Élément |  Obligatoire  |  Description  |
-|:-----|:-----|:-----|
-|  **RequestedHeight** | Non |  Il s’agit de la hauteur demandée, en pixels, pour le volet d’informations lorsqu’il est exécuté sur un ordinateur de bureau. La taille peut être comprise entre 32 et 450 pixels.  |
-|  **SourceLocation**  | Oui |  URL du fichier de code source du complément. Fait référence à un élément **Url** dans l’élément [Resources](./resources.md).  |
-|  **Rule**  | Oui |  Règle ou ensemble de règles qui spécifie quand le complément doit être activé. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../../docs/outlook/manifests/activation-rules.md). |
-|  **DisableEntityHighlighting**  | Non |  Spécifie si la mise en surbrillance de l’entité doit être désactivée. |
-
-
-#### <a name="custompane-example"></a>Exemple CustomPane
-```xml
-<ExtensionPoint xsi:type="CustomPane">
-   <RequestedHeight>100< /RequestedHeight> 
-   <SourceLocation resid="residReadTaskpaneUrl"/>
-   <Rule xsi:type="RuleCollection" Mode="Or">
-     <Rule xsi:type="ItemIs" ItemType="Message"/>
-     <Rule xsi:type="ItemHasAttachment"/>
-     <Rule xsi:type="ItemHasKnownEntity" EntityType="Address"/>
-   </Rule>
-</ExtensionPoint>
-```
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.

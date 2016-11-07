@@ -1,5 +1,5 @@
 
-# <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
+# <a name="addin-commands-for-outlook"></a>Commandes de complément pour Outlook
 
 
 Les commandes de complément Outlook permettent d’initier des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants. Les utilisateurs peuvent ainsi accéder aux compléments d’une manière simple, intuitive et discrète. Parce qu’elles offrent des fonctionnalités optimales en toute transparence, les commandes de complément vous permettent de créer des solutions plus attrayantes.
@@ -9,7 +9,7 @@ Les commandes de complément Outlook permettent d’initier des actions de comp
 Les commandes de complément sont uniquement disponibles pour les compléments contextuels qui n’utilisent pas [les règles temHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](manifests/activation-rules.md) qui limitent les types d’éléments sur lesquels elles s’activent. Toutefois, les compléments contextuels peuvent présenter diverses commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../../docs/overview/add-in-development-best-practices.md).
 
 
-## <a name="creating-the-add-in-command"></a>Création d’une commande de complément
+## <a name="creating-the-addin-command"></a>Création d’une commande de complément
 
 Les commandes de complément sont déclarées dans le manifeste de complément dans l’élément  **VersionOverrides**. Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge  **VersionOverrides**, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
@@ -20,7 +20,7 @@ Lorsqu’un complément doit fournir des mises à jour d’état, telles que des
 Les développeurs doivent définir des icônes pour toutes les tailles nécessaires afin que les commandes de complément puissent s’ajuster parfaitement au ruban. Les tailles d’icônes sont 80 x 80 pixels, 32 x 32 pixels et 16 x 16 pixels.
 
 
-## <a name="how-do-add-in-commands-appear?"></a>Comment les commandes de complément apparaissent-elles ?
+## <a name="how-do-addin-commands-appear"></a>Comment les commandes de complément apparaissent-elles ?
 
 Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’un utilisateur installe un complément, ses commandes apparaissent dans l’interface utilisateur sous la forme d’un groupe de boutons étiquetés avec le nom du complément. Le groupe peut apparaître dans l’onglet par défaut du ruban ou dans un onglet personnalisé. Pour les messages, il apparaît par défaut dans l’onglet **Accueil** ou **Message**. Pour le calendrier, il apparaît par défaut dans l’onglet **Réunion**, **Occurrence de réunion**, **Série de réunions** ou **Rendez-vous**. Pour les extensions de module, il apparaît par défaut dans un onglet personnalisé. Dans l’onglet par défaut, chaque complément peut avoir un groupe Ruban incluant 6 commandes maximum. Dans les onglets personnalisés, le complément peut avoir jusqu’à 10 groupes, avec 6 commandes chacun. Les compléments sont limités à un seul onglet personnalisé.
 
@@ -29,10 +29,10 @@ Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’u
 
 ![Captures d’écran présentant des boutons de commande de complément dans un état normal et réduit.](../../images/6fcb64d8-9598-41d1-8944-f6d1f6d2edb6.png)
 
-Quand une commande de complément est ajoutée à un complément, le nom du complément est enlevé de la barre d’application sauf si le complément comprend également un [complément Outlook avec volet personnalisé](../outlook/custom-pane-outlook-add-ins.md). Seul le bouton de commande du complément reste sur le ruban.
+Lorsqu’une commande de complément est ajoutée à un complément, le nom du complément est supprimé de la barre d’application. Seul le bouton de commande du complément dans le ruban est conservé.
 
 
-## <a name="what-ux-shapes-exist-for-add-in-commands?"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
+## <a name="what-ux-shapes-exist-for-addin-commands"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
 
 La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application hôte qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
 
@@ -68,7 +68,7 @@ Cette capture d’écran présente un exemple de volet de tâche vertical. Le vo
 Si l’utilisateur sélectionne une autre commande de complément qui ouvre un volet Office, le volet est remplacé par la commande qui vient d’être utilisée. Si l’utilisateur sélectionne un bouton de commande de complément qui exécute une fonction ou sur un menu déroulant alors que le volet Office est ouvert, l’action est exécutée et le volet Office reste ouvert.
 
 
-### <a name="drop-down-menu"></a>Menu déroulant
+### <a name="dropdown-menu"></a>Menu déroulant
 
 Une commande de complément de menu déroulant définit une liste statique de boutons. Les boutons dans le menu peuvent correspondre à n’importe quelle combinaison de boutons qui exécutent une fonction ou qui ouvrent un volet Office. Les sous-menus ne sont pas pris en charge.
 
@@ -76,7 +76,7 @@ Une commande de complément de menu déroulant définit une liste statique de bo
 ![Bouton permettant de développer un menu sur le ruban Outlook.](../../images/3eff90d6-7822-4fdb-9153-68f754c0c746.png)
 
 
-## <a name="where-do-add-in-commands-appear-in-the-ui?"></a>Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
+## <a name="where-do-addin-commands-appear-in-the-ui"></a>Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
 
 Les commandes de complément sont prises en charge pour quatre scénarios :
 

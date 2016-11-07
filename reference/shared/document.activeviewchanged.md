@@ -1,5 +1,5 @@
 
-# <a name="document.activeviewchanged-event"></a>Événement Document.ActiveViewChanged
+# <a name="documentactiveviewchanged-event"></a>Événement Document.ActiveViewChanged
 Survient lorsque l’utilisateur modifie l’affichage actuel du document.
 
 |||
@@ -30,7 +30,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 ||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
-|**PowerPoint**|v|v|v|
+|**PowerPoint**|v||v|
 
 |||
 |:-----|:-----|

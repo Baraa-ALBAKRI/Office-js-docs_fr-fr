@@ -1,5 +1,5 @@
 
-# <a name="office-add-in-requirement-sets"></a>Ensemble de conditions requises pour les compléments Office
+# <a name="office-addin-requirement-sets"></a>Ensemble de conditions requises pour les compléments Office
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent des ensembles de conditions spécifiés dans le manifeste ou utilisant une vérification à l’exécution pour déterminer si un hôte Office prend en charge les API nécessaires au complément. Pour plus d’informations, voir l’article sur la [spécification des conditions requises pour les API et les hôtes Office](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -23,7 +23,7 @@ Pour plus d’informations sur les ensembles de conditions requises pour Outlook
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad<br/>Excel Online<br/>PowerPoint Online|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
 | CustomXmlParts    | 1.1 |Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogAPI | 1.1 | Excel<br>PowerPoint<br>Word 2016<br>Outlook|Office.context.ui.displayDialogAsync()<br>Office.context.ui.messageParent()<br>Office.context.ui.close()|
-| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | Fichier  | 1.1 | PowerPoint<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | 1.1 | Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|Prend en charge le forçage au format HTML (Office.CoercionType.Html) lors de la lecture et de l’écriture des données à l’aide des méthodes Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 | ImageCoercion | 1.1 | Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|Prise en charge de la conversion en une image (Office.CoercionType.Image) lors de l’écriture des données à l’aide de la méthode Document.setSelectedDataAsync.|
@@ -41,7 +41,7 @@ Pour plus d’informations sur les ensembles de conditions requises pour Outlook
 | TextCoercion  | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Project<br>Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad|Prise en charge du forçage de type au format texte (Office.CoercionType.Text) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 | TextFile  | 1.1 | Word 2013 et versions ultérieures<br>Word 2016 pour Mac<br>Word Online<br>Word pour iPad<br/>|Prise en charge de sortie au format texte (Office.FileType.Text) lors de l’utilisation de la méthode Document.getFileAsync.|
 
-## <a name="methods-that-aren't-part-of-a-requirement-set"></a>Méthodes qui ne font pas partie d’un ensemble de conditions requises
+## <a name="methods-that-arent-part-of-a-requirement-set"></a>Méthodes qui ne font pas partie d’un ensemble de conditions requises
 
 
 Les méthodes suivantes dans l’interface API JavaScript pour Office ne font pas partie d’un ensemble de conditions requises. Si l’une de ces méthodes est nécessaire pour votre complément, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’elles sont obligatoires ou effectuez la vérification à l’exécution à l’aide d’une instruction if. Pour plus d’informations, voir l’article sur la [spécification des conditions requises pour les API et les hôtes Office](../docs/overview/specify-office-hosts-and-api-requirements.md).

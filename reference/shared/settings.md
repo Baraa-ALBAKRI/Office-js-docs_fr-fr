@@ -58,7 +58,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |**Access**||v||
 |**Excel**|v|v|v|
 |**PowerPoint**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|

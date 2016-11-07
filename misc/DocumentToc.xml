@@ -26,9 +26,10 @@
     	<Item text="Conseils sur l’accessibilité" url="design/accessibility-guidelines" SEODescription="Découvrez comment rendre vos compléments Office accessibles à tous les utilisateurs." />
     </Item>
   <Item text="Développer" url="develop">
-	<Item text="Cycle de vie de développement du complément" url="design/add-in-development-lifecycle" SEODescription="Planifiez le processus de bout en bout pour développer des compléments de volet des tâches, de contenu et Outlook pour étendre des applications Office." />
+	<Item text="Cycle de vie de développement du complément" url="develop/add-in-development-lifecycle" SEODescription="Planifiez le processus de bout en bout pour développer des compléments de volet des tâches, de contenu et Outlook pour étendre des applications Office." />
 	<Item text="Installer la dernière version d’Office" url="develop/install-latest-office-version" SEODescription="Découvrez comment obtenir les dernières versions d’Office." />
 	<Item text="Développement de compléments pour l’iPad" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="Vérifiez que vos compléments Office sont disponibles dans Office pour iPad." />
+	<Item text="Conseils pour la création de compléments avec Angular 2" url="develop/add-ins-with-angular2" SEODescription="Angular 2 permet de développer des compléments Office." />
 	<Item text="Manifeste" url="overview/add-in-manifests">	
 		<Item text="Définir des commandes de complément" url="outlook/manifests/define-add-in-commands" SEODescription="Utilisez l’élément VersionOverrides dans votre manifeste de complément pour définir des commandes de complément." />
 		<Item text="Spécifier les hôtes Office" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Découvrez comment spécifier les exigences en matière d’hôtes Office et d’API dans votre manifeste." /> 	
@@ -85,8 +86,7 @@
     <Item text="Vue d’ensemble" url="outlook/overview" SEODescription="Découvrez les fonctionnalités et l’architecture des compléments Outlook." Scope="outlook" />
     <Item text="Commandes de complément pour Outlook" url="outlook/add-in-commands-for-outlook" SEODescription="Utilisez des commandes de complément pour intégrer des compléments Outlook à l’interface utilisateur Outlook." Scope="outlook" />
     <Item text="Compléments Outlook contextuels" url="outlook/contextual-outlook-add-ins" SEODescription="Activez un complément Outlook sur la base du texte spécifié dans un message ou un rendez-vous." Scope="outlook" />
-    <Item text="Compléments Outlook de volet personnalisé" url="outlook/custom-pane-outlook-add-ins" SEODescription="Découvrez comment définir un complément Outlook qui est activé selon des règles spécifiques." Scope="outlook" />
-	<Item text="Compléments Outlook d’extension de module" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Étendez l’interface utilisateur Outlook en ajoutant des extensions de module dans la barre de navigation." /> 
+    <Item text="Compléments Outlook d’extension de module" url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Étendez l’interface utilisateur Outlook en ajoutant des extensions de module dans la barre de navigation." /> 
 	<Item text="API" url="outlook/apis" SEODescription="Découvrez comment spécifier les API nécessaires à votre complément Outlook." Scope="outlook" />
 	<Item text="Manifestes" url="overview/add-in-manifests" Scope="outlook" SEODescription="Utilisez le manifeste XML pour spécifier la manière dont votre complément est activé.">
       <Item text="Manifestes" url="outlook/manifests/manifests" SEODescription="Créez un manifeste pour un complément Outlook pour le formulaire de lecture ou de composition." Scope="outlook" /><Item text="Règles d’activation" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Définissez des règles d’activation dans le manifeste d’un complément Outlook pour spécifier quand Outlook affiche le complément." Scope="outlook" />

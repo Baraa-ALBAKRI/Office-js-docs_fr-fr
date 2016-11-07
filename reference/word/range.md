@@ -1,4 +1,4 @@
-# <a name="range-object-(javascript-api-for-word)"></a>Objet Range (interface API JavaScript pour Word)
+# <a name="range-object-javascript-api-for-word"></a>Objet Range (interface API JavaScript pour Word)
 
 Représente une zone contiguë dans un document.
 
@@ -7,7 +7,7 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 ## <a name="properties"></a>Propriétés
 | Propriété     | Type   |Description
 |:---------------|:--------|:----------|
-|style|string|Obtient ou définit le style utilisé pour la plage. Il s’agit du nom du style pré-installé ou personnalisé.|
+|style|string|Obtient ou définit le style utilisé pour la plage. Il s’agit du nom du style pré-installé ou personnalisé. Dans Word Online, si un nom de style contient uniquement des caractères alphabétiques, le style *doit* être tout en minuscules, à l’exception du premier caractère, qui *doit* être en majuscule. Si le style contient au moins un caractère non alphabétique, il est comparé aux styles connus, quelle que soit la casse, et si plusieurs styles correspondent, le dernier style défini est appliqué.|
 |text|string|Obtient le texte de la plage. En lecture seule.|
 
 ## <a name="relationships"></a>Relations
@@ -31,8 +31,8 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Encadre l’objet de plage avec un contrôle de contenu de texte enrichi.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Insère un document dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code HTML dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du code OOXML ou un élément wordProcessingML dans la plage, à l’emplacement spécifié.  La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Insère du contenu OOXML ou wordProcessingML dans la plage, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Insère un paragraphe dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
@@ -41,7 +41,7 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 
 ## <a name="method-details"></a>Détails de méthodes
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Efface le contenu de l’objet de plage. L’utilisateur peut effectuer l’opération d’annulation sur le contenu effacé.
 
 #### <a name="syntax"></a>Syntaxe
@@ -80,7 +80,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Supprime la plage et son contenu du document.
 
 #### <a name="syntax"></a>Syntaxe
@@ -120,7 +120,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 Obtient la représentation HTML de l’objet de plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -160,7 +160,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 Obtient la représentation OOXML de l’objet de plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -200,7 +200,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Insère un saut à l’emplacement spécifié. Un saut peut uniquement être inséré dans des objets de plage qui sont contenus dans le corps de document principal, sauf s’il s’agit d’un saut de ligne, auquel cas il peut être inséré dans n’importe quel objet de corps. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).
 
 #### <a name="syntax"></a>Syntaxe
@@ -246,7 +246,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 Encadre l’objet de plage avec un contrôle de contenu de texte enrichi.
 
 #### <a name="syntax"></a>Syntaxe
@@ -293,7 +293,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Insère un document dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
@@ -337,7 +337,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Insère du code HTML dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
@@ -380,7 +380,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Insère une image dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
 
 #### <a name="syntax"></a>Syntaxe
@@ -395,7 +395,7 @@ rangeObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>Retourne
 [InlinePicture](inlinepicture.md)
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Insère du contenu OOXML ou wordProcessingML dans la plage, à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe
@@ -415,7 +415,7 @@ rangeObject.insertOoxml(ooxml, insertLocation);
 #### <a name="known-issues"></a>Problèmes connus
 Cette méthode engendre une longue latence dans Word Online, ce qui peut affecter l’expérience des utilisateurs de votre complément. Nous vous recommandons d’utiliser cette méthode uniquement lorsqu’aucune solution n’est disponible. 
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -444,7 +444,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>Informations supplémentaires
 Pour obtenir des instructions sur l'utilisation d’OOXML, voir [Création de compléments plus performants pour Word avec Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx).
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Insère un paragraphe dans la plage à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).
 
 #### <a name="syntax"></a>Syntaxe
@@ -487,7 +487,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation: InsertLocation)
 Insère du texte dans la plage à l’emplacement spécifié. La valeur insertLocation peut être « Replace » (remplacer), « Start » (début), « End » (fin), « Before » (avant) ou « After » (après).
 
 #### <a name="syntax"></a>Syntaxe
@@ -530,7 +530,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -579,7 +579,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Effectue une recherche avec les options de recherche spécifiées dans l’étendue de l’objet de plage. Les résultats de la recherche sont un ensemble d’objets de plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -597,7 +597,7 @@ rangeObject.search(searchText, searchOptions);
 [SearchResultCollection](searchresultcollection.md)
 
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 Sélectionne la plage et y accède via l’interface utilisateur de Word. Les valeurs selectionMode peuvent être « Select » (sélectionner), « Start » (début) ou « End » (fin).
 
 #### <a name="syntax"></a>Syntaxe

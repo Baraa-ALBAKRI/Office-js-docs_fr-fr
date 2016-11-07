@@ -1,5 +1,5 @@
 
-# <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
+# <a name="requirements-for-running-office-addins"></a>Configuration requise pour exécuter des compléments Office
 
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
@@ -25,7 +25,7 @@ Pour tester et exécuter des compléments Outlook, le compte de messagerie Outl
 
 
 
-## <a name="client-requirements:-windows-desktop-and-tablet"></a>Exigences en matière de client : ordinateur de bureau et tablette Windows
+## <a name="client-requirements-windows-desktop-and-tablet"></a>Exigences en matière de client : ordinateur de bureau et tablette Windows
 
 Le logiciel suivant est requis pour développer un Complément Office pour les clients Office ou les clients web pris en charge qui s’exécutent sur un ordinateur de bureau, un ordinateur portable ou une tablette Windows :
 
@@ -36,14 +36,14 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
     - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professionnel 2013, Project 2013 SP1 ou Word 2013, ou une version ultérieure du client Office, si vous testez ou exécutez un Complément Office, notamment pour l’un de ces clients de bureau Office. Les clients de bureau Office peuvent être installés sur site ou par le biais de « Démarrer en un clic » sur l’ordinateur client.
 
-- Internet Explorer 9 ou une version ultérieure, qui doit être installé mais pas nécessairement défini comme le navigateur par défaut. Pour prendre en charge des Compléments Office, le client Office qui sert d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 9 ou d’une version ultérieure.
+- Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
 
-- L’un des navigateurs suivants comme navigateur par défaut : Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13 ou une version ultérieure de ces navigateurs.
+- L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou version ultérieure, ou la dernière version d’Edge, de Chrome, de Firefox ou de Safari (Mac OS).
 
 - Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
 
 
-## <a name="client-requirements:-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
+## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
 Outlook pour Mac, qui est distribué dans le cadre d’Office 365, prend en charge les compléments Outlook. L’exécution des compléments Outlook sur Outlook pour Mac a les mêmes exigences qu’Outlook pour Mac lui-même : le système d’exploitation doit être au minimum OS X v10.10 « Yosemite ». Comme Outlook pour Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
@@ -52,12 +52,12 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 - Excel pour Mac version 15.19 (160206) 
 - PowerPoint pour Mac version 15.24 (160614)
 
-## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Configuration requise pour le client : Prise en charge du navigateur pour les clients web Office Online et SharePoint
 
-Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 9, Chrome 13, Firefox 5, Safari 5.0.6 ou une version ultérieure de ces navigateurs.
+Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou une version ultérieure, ou la dernière version d’Edge, de Chrome, de Firefox ou de Safari (Mac OS).
 
 
-## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphone et tablette autres que Windows
+## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
 
 Plus particulièrement pour OWA pour périphériques et Outlook Web App exécutés dans un navigateur sur des smartphones et des tablettes non Windows, le logiciel suivant est requis pour tester et exécuter des compléments Outlook.
 

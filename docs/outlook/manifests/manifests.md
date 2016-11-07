@@ -1,12 +1,9 @@
 
-# <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
+# <a name="outlook-addin-manifests"></a>Manifestes des compléments Outlook
 
 Un complément Outlook se compose de deux éléments : le manifeste de complément XML et une page web, pris en charge par la bibliothèque JavaScript pour les Compléments Office (office.js). Le manifeste décrit la manière dont le complément est intégré dans les clients Outlook. Actuellement, il existe trois versions du schéma de manifeste, dont  **VersionOverrides**. Pour créer votre complément, nous vous recommandons d’utiliser la version 1.1 **VersionOverrides** 1.0 du schéma de manifeste. Voici un exemple.
 
  >**Remarque**  Dans l’exemple suivant, toutes les valeurs d’URL commencent par « YOUR_WEB_SERVER ». Cette valeur est un espace réservé. Dans un manifeste valide réelle, ces valeurs contiendraient des URL web HTTPS valides.
-
-
-
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -112,16 +109,6 @@ Un complément Outlook se compose de deux éléments : le manifeste de compléme
 
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-
-                    <!-- Custom pane, only applies to read form -->
-                    <ExtensionPoint xsi:type="CustomPane">
-                        <RequestedHeight>100</RequestedHeight>
-                        <SourceLocation resid="customPaneUrl" />
-                        <Rule xsi:type="RuleCollection" Mode="Or">
-                            <Rule xsi:type="ItemIs" ItemType="Message" />
-                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
-                        </Rule>
-                    </ExtensionPoint>
 
                     <!-- Message compose form -->
                     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -549,7 +536,6 @@ Un complément Outlook se compose de deux éléments : le manifeste de compléme
                 <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
                 <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
                 <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
-                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
@@ -794,7 +780,7 @@ Les règles d’activation peuvent être utilisées pour activer un complément 
 Pour plus de détails et pour des exemples de règles d’activation, voir [Règles d’activation pour les compléments Outlook](../../outlook/manifests/activation-rules.md).
 
 
-## <a name="next-steps:-add-in-commands"></a>Prochaines étapes : commandes de complément
+## <a name="next-steps-addin-commands"></a>Prochaines étapes : commandes de complément
 
 
 Après avoir défini un manifeste de base, [définissez des commandes pour votre complément](../../outlook/manifests/define-add-in-commands.md). Les commandes de complément se présentent sous forme de bouton dans le ruban. Ainsi, les utilisateurs peuvent activer votre complément de façon simple et intuitive. Pour plus d’informations, voir [Commandes de complément pour Outlook](../../outlook/add-in-commands-for-outlook.md).
@@ -810,8 +796,7 @@ Après avoir défini un manifeste de base, [définissez des commandes pour votre
     
 - [Localisation des compléments Office](../../develop/localization.md)
     
-- 
-  [Créer un complément de messagerie pour Outlook qui s’exécute sur des ordinateurs de bureau, des tablettes et des appareils mobiles (schéma version 1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- [Créer un complément de messagerie pour Outlook qui s’exécute sur des ordinateurs de bureau, des tablettes et des appareils mobiles (schéma version 1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Confidentialité, autorisations et sécurité pour les compléments Outlook](../../outlook/privacy-and-security.md)
     
@@ -821,8 +806,7 @@ Après avoir défini un manifeste de base, [définissez des commandes pour votre
     
 - [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../../overview/add-in-manifests.md)
     
-- 
-  [Types d’éléments et classes de messages](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [Types d’éléments et classes de messages](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
 - [Instructions de conception pour les compléments Office](../../design/add-in-design.md)
     

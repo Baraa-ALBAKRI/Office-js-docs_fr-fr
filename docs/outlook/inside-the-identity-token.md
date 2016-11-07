@@ -6,12 +6,12 @@ Découvrez le contenu d’un jeton d’identité d’Exchange 2013.
 
 Le jeton d’identité d’authentification que le serveur Exchange envoie à votre complément Outlook est transparent pour votre complément ; vous n’avez pas à connaître son contenu pour l’envoyer à votre serveur. Mais lorsque vous écrivez le code du service web qui interagit avec votre complément Outlook, vous devez savoir ce que ce jeton contient.
 
-## <a name="what-is-an-identity-token?"></a>Qu’entend-on par jeton d’identité ?
+## <a name="what-is-an-identity-token"></a>Qu’entend-on par jeton d’identité ?
 
 
 Un jeton d’identité est une chaîne à codage URL base-64 autosignée par le serveur Exchange qui l’envoie. Le jeton n’est pas chiffré, et la clé publique que vous utilisez pour valider la signature est stockée sur le serveur Exchange qui a émis le jeton. Le jeton est composé de trois parties : un en-tête, une charge utile et une signature. Dans la chaîne du jeton, les différentes parties sont séparées par un caractère « . » pour simplifier le fractionnement du jeton.
 
-Exchange 2013 utilise un jeton JWT (JSON Web Token) pour le jeton d’identité. Pour plus d’informations sur les jetons JWT, voir le [document préliminaire Internet sur JWT (JSON Web Token)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
+Exchange 2013 utilise un jeton JWT (JSON Web Token) pour le jeton d’identité. Pour plus d’informations sur les jetons JWT, voir le [document préliminaire Internet sur JWT (JSON Web Token)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 
 ### <a name="identity-token-header"></a>En-tête du jeton d’identité

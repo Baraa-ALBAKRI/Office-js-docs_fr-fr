@@ -1,7 +1,7 @@
 
-# <a name="activation-rules-for-outlook-add-ins"></a>Règles d’activation pour les compléments Outlook
+# <a name="activation-rules-for-outlook-addins"></a>Règles d’activation pour les compléments Outlook
 
-Outlook active certains compléments si le message ou le rendez-vous que l’utilisateur lit ou compose répond aux règles d’activation du complément. Cette règle vaut pour tous les compléments qui utilisent le schéma de manifeste version 1.1, ainsi que pour les compléments de volet personnalisé. L’utilisateur peut alors choisir le complément dans l’interface utilisateur d’Outlook afin de le lancer pour l’élément actuel.
+Outlook active certains types de compléments si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément. Cela est vrai pour tous les compléments qui utilisent le schéma de manifeste 1.1. L’utilisateur peut choisir le complément à partir de l’interface utilisateur Outlook afin de le démarrer pour l’élément actuel.
 
 La figure suivante illustre les compléments Outlook activés dans la barre des compléments pour le message dans le volet de lecture. 
 
@@ -24,11 +24,11 @@ Le tableau suivant répertorie les types de règle disponibles. Vous trouverez p
 
 |**Nom de la règle**|**Formulaires applicables**|**Description**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis-rule)|Volet de lecture, de composition, personnalisé|Vérifie si l’élément actuel est du type spécifié (message ou rendez-vous). Peut également vérifier la classe de l’élément et le type de formulaire, ainsi qu’éventuellement la classe de message de l’élément.|
-|[ItemHasAttachment](#itemhasattachment-rule)|Volet personnalisé et de lecture|Vérifie si l’élément sélectionné contient une pièce jointe.|
-|[ItemHasKnownEntity](#itemhasknownentity-rule)|Volet personnalisé et de lecture|Vérifie si l’élément sélectionné contient une ou plusieurs entités reconnues. Plus d’informations : [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Volet personnalisé et de lecture|Vérifie si l’adresse électronique de l’expéditeur, l’objet et/ou le corps de l’élément sélectionné contient une correspondance avec une expression régulière.Plus d’informations : [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
-|[RuleCollection](#rulecollection-rule)|Volet de lecture, de composition, personnalisé|Associe un ensemble de règles pour vous permettre de former des règles plus complexes.|
+|[ItemIs](#itemis-rule)|Lecture, composition|Vérifie si l’élément actuel est du type spécifié (message ou rendez-vous). Peut également vérifier la classe de l’élément et le type de formulaire, ainsi qu’éventuellement la classe de message de l’élément.|
+|[ItemHasAttachment](#itemhasattachment-rule)|Lecture|Vérifie si l’élément sélectionné contient une pièce jointe.|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|Lecture|Vérifie si l’élément sélectionné contient une ou plusieurs entités reconnues. Plus d’informations : [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Lecture|Vérifie si l’adresse électronique de l’expéditeur, l’objet et/ou le corps de l’élément sélectionné contient une correspondance avec une expression régulière.Plus d’informations : [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
+|[RuleCollection](#rulecollection-rule)|Lecture, composition|Associe un ensemble de règles pour vous permettre de former des règles plus complexes.|
 
 ## <a name="itemis-rule"></a>Règle ItemIs
 
@@ -178,8 +178,7 @@ Pour fournir une expérience satisfaisante avec les compléments Outlook, vous d
 - [Compléments Outlook](../../outlook/outlook-add-ins.md)
 - [Créer des compléments Outlook pour les formulaires de composition](../../outlook/compose-scenario.md)
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- 
-  [Types d’éléments et classes de messages](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [Types d’éléments et classes de messages](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

@@ -1,5 +1,5 @@
 
-# <a name="create-outlook-add-ins-for-read-forms"></a>Créer des compléments Outlook pour des formulaires de lecture
+# <a name="create-outlook-addins-for-read-forms"></a>Créer des compléments Outlook pour des formulaires de lecture
 
 Les compléments de lecture sont des compléments Outlook activés dans le volet de lecture ou l’inspecteur de lecture d’Outlook. Contrairement aux compléments de composition (qui sont des compléments Outlook activés lorsqu’un utilisateur crée un message ou un rendez-vous), les compléments de lecture sont disponibles dans les scénarios suivants :
 
@@ -21,7 +21,7 @@ Dans chacun de ces scénarios de lecture, Outlook active les compléments lorsqu
 ![Application de messagerie avec carte Bing dans Outlook](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## <a name="types-of-add-ins-available-in-read-mode"></a>Types de complément disponibles en mode de lecture
+## <a name="types-of-addins-available-in-read-mode"></a>Types de complément disponibles en mode de lecture
 
 
 Les compléments de lecture peuvent correspondre à n’importe quelle combinaison des types suivants.
@@ -31,10 +31,8 @@ Les compléments de lecture peuvent correspondre à n’importe quelle combinais
     
 - [Compléments Outlook contextuels](../outlook/contextual-outlook-add-ins.md)
     
-- [Compléments Outlook de volet personnalisé](../outlook/custom-pane-outlook-add-ins.md)
-    
 
-## <a name="api-features-available-to-read-add-ins"></a>Fonctionnalités de l’API disponibles pour les compléments de lecture
+## <a name="api-features-available-to-read-addins"></a>Fonctionnalités de l’API disponibles pour les compléments de lecture
 
 
 Pour obtenir la liste des fonctionnalités que l’API JavaScript pour Office fournit aux compléments Outlook dans les formulaires de lecture, voir les tableaux 1 et 2 dans [Fonctionnalités des applications de messagerie par version](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx). 
