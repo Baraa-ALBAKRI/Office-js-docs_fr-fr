@@ -1,19 +1,22 @@
 
-# <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
+# <a name="create-a-dictionary-task-pane-addin"></a>Créer un complément dictionnaire du volet Office
 
 
 Cet article présente un exemple de complément du volet Office et d’un service web associé qui fournissent des définitions de dictionnaire ou des entrées du dictionnaire des synonymes sur la sélection actuelle de l’utilisateur dans un document Word 2013. 
 
 Une Complément Office de dictionnaire est basée sur le complément du volet Office standard avec des fonctionnalités supplémentaires pour prendre en charge l’interrogation et l’affichage de définitions à partir d’un service web XML de dictionnaire à des endroits supplémentaires dans l’interface utilisateur du complément Office. 
 
-Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une phrase dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur. Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
+Dans un complément du volet Office classique, un utilisateur sélectionne un mot ou une phrase dans son document, puis la logique JavaScript sous-jacente du complément transmet cette sélection au service web XML du fournisseur de dictionnaire. 
+La page web du fournisseur de dictionnaire s’actualise ensuite pour afficher les définitions de la sélection pour l’utilisateur. Le composant du service web XML renvoie jusqu’à trois définitions dans le format défini par le schéma XML OfficeDefinitions, qui sont ensuite affichées à l’utilisateur à d’autres endroits dans l’interface utilisateur de l’application Office d’hébergement. 
+La figure 1 illustre l’expérience de sélection et d’affichage pour un complément de dictionnaire Bing s’exécutant dans Word 2013.
 
 **Figure 1. Complément de dictionnaire affichant des définitions pour le mot sélectionné**
 
 
 ![Application de dictionnaire affichant une définition](../../images/DictionaryAgave01.jpg)
 
-Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’autres résultats** dans l’interface utilisateur HTML du complément de dictionnaire affiche d’autres informations dans le volet Office ou ouvre une fenêtre de navigateur séparée dans la page web complète pour le mot ou l’expression sélectionné. La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
+Il vous incombe de déterminer si le fait de cliquer sur le lien **Afficher d’autres résultats** dans l’interface utilisateur HTML du complément de dictionnaire affiche d’autres informations dans le volet Office ou ouvre une fenêtre de navigateur séparée dans la page web complète pour le mot ou l’expression sélectionné. 
+La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
 
 **Figure 2. Commande Définir dans le menu contextuel**
 
@@ -178,7 +181,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-add-in"></a>Création des composants d’un complément de dictionnaire
+## <a name="creating-the-components-of-a-dictionary-addin"></a>Création des composants d’un complément de dictionnaire
 
 
 Un complément de dictionnaire est composé de trois fichiers de composants principaux.
@@ -191,7 +194,7 @@ Un complément de dictionnaire est composé de trois fichiers de composants prin
 - Un fichier JavaScript qui fournit la logique pour obtenir la sélection de l’utilisateur dans le document, envoie la sélection sous forme de requête au service web, puis affiche les résultats renvoyés dans l’interface utilisateur du complément.
     
 
-### <a name="creating-a-dictionary-add-in's-manifest-file"></a>Création du fichier de manifeste d’un complément de dictionnaire
+### <a name="creating-a-dictionary-addins-manifest-file"></a>Création du fichier de manifeste d’un complément de dictionnaire
 
 L’exemple suivant illustre un fichier de manifeste pour un complément de dictionnaire.
 
@@ -222,7 +225,7 @@ L’exemple suivant illustre un fichier de manifeste pour un complément de dict
   <!--Permissions is the set of permissions a user will have to give your dictionary. If you need write access, such as to allow a user to replace the highlighted word with a synonym, use ReadWriteDocument. -->
   <Permissions>ReadDocument</Permissions>
   <Dictionary>
-    <!--TargetDialects is the set of dialects your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. This is for different dialects of the same language. Please do NOT put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
+    <!--TargetDialects is the set of regional languages your dictionary contains. For example, if your dictionary applies to Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that here. Do not put more than one language (for example, Spanish and English) here. Publish separate languages as separate dictionaries. -->
     <TargetDialects>
       <TargetDialect>EN-AU</TargetDialect>
       <TargetDialect>EN-BZ</TargetDialect>
@@ -277,7 +280,7 @@ L’élément **Dictionary** et ses éléments enfants sont ajoutés au manifest
 #### <a name="targetdialects-element"></a>Élément TargetDialects
 
 
-Spécifie les variantes régionales que ce dictionnaire prend en charge. Requis (pour les compléments de dictionnaire).
+Indique les langues régionales prises en charge par ce dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -289,7 +292,7 @@ Spécifie les variantes régionales que ce dictionnaire prend en charge. Requis 
 
  **Remarques**
 
-L’élément  **TargetDialects** et ses éléments enfants spécifient l’ensemble de variantes régionales que contient votre dictionnaire. Par exemple, si votre dictionnaire s’applique à la fois aux variétés de l’espagnol (Mexique) et de l’espagnol (Pérou), mais pas l’espagnol (Espagne), vous pouvez le spécifier dans cet élément. Cet élément a pour but de spécifier uniquement différents variantes régionales de la même langue. Ne spécifiez pas plusieurs langues (par exemple, espagnol et anglais) dans ce manifeste. Publiez des langues différentes sous forme de dictionnaires séparés.
+L’élément **TargetDialects** et ses éléments enfant indiquent l’ensemble de langues régionales disponibles dans votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
 
  **Exemple**
 
@@ -323,7 +326,7 @@ L’élément  **TargetDialects** et ses éléments enfants spécifient l’ense
 #### <a name="targetdialect-element"></a>Élément TargetDialect
 
 
-Spécifie une variante régionale que ce dictionnaire prend en charge. Requis (pour les compléments de dictionnaire).
+Spécifie une langue régionale prise en charge par ce dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -331,7 +334,7 @@ Spécifie une variante régionale que ce dictionnaire prend en charge. Requis (p
 
  **Remarques**
 
-Spécifie la valeur pour une variante régionale dans le format de balise RFC1766 `language`, telle qu’EN-US.
+Spécifie la valeur pour une langue régionale dans le format de balise RFC1766 `language`, comme EN-US.
 
  **Exemple**
 
@@ -346,7 +349,7 @@ Spécifie la valeur pour une variante régionale dans le format de balise RFC176
 #### <a name="queryuri-element"></a>Élément QueryUri
 
 
-Spécifie le point de terminaison du service de requête de dictionnaire. Requis (pour les compléments de dictionnaire).
+Spécifie le point d’extrémité pour le service de requête de dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -354,7 +357,7 @@ Spécifie le point de terminaison du service de requête de dictionnaire. Requis
 
  **Remarques**
 
-Il s’agit de l’URI du service web XML pour le fournisseur de dictionnaire. La requête correctement formulée sera ajoutée à cet URI. 
+C’est l’URI du service web XML pour le fournisseur de dictionnaire. La requête correctement formulée sera ajoutée à cette URI. 
 
  **Exemple**
 
@@ -419,7 +422,7 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 #### <a name="dictionaryhomepage-element"></a>Élément DictionaryHomePage
 
 
-Spécifie l’URL de la page d’accueil du dictionnaire. Requis (pour les compléments de dictionnaire).
+Spécifie l’URL de la page d’accueil pour le dictionnaire. Requis (pour les compléments de dictionnaire).
 
  **Élément parent**
 
@@ -441,7 +444,7 @@ Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres rég
 ```
 
 
-### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>Création de l’interface utilisateur HTML du complément de dictionnaire
+### <a name="creating-a-dictionary-addins-html-user-interface"></a>Création de l’interface utilisateur HTML du complément de dictionnaire
 
 
 Les deux exemples suivants montrent les fichiers HTML et CSS pour l’interface utilisateur du complément de dictionnaire de démonstration. Pour découvrir comment l’interface utilisateur s’affiche dans le volet Office du complément, voir la figure 6 à la suite du code. Pour voir comment l’implémentation du JavaScript dans le fichier Dictionary.js fournit la logique de programmation de cette interface utilisateur HTML, voir « Écriture de l’implémentation JavaScript » immédiatement à la suite de cette section.

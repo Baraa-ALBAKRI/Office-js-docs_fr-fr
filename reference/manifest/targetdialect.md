@@ -2,10 +2,10 @@
 # <a name="targetdialect-element"></a>Élément TargetDialect
  Définit une langue régionale prise en charge par ce dictionnaire, représentée sous forme de chaîne de nom de culture.
 
- **Type de complément :** volet Office
+ **Type de complément :** volet Office
 
 
-## <a name="syntax:"></a>Syntaxe :
+## <a name="syntax"></a>Syntaxe :
 
 
 ```XML
@@ -15,7 +15,7 @@
 ```
 
 
-## <a name="contained-in:"></a>Contenu dans :
+## <a name="contained-in"></a>Contenu dans :
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 

@@ -1,4 +1,4 @@
-# <a name="ui.displaydialogasync-method"></a>Méthode UI.displayDialogAsync
+# <a name="uidisplaydialogasync-method"></a>Méthode UI.displayDialogAsync
 
 Affiche une boîte de dialogue dans un hôte Office. 
 
@@ -53,7 +53,14 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 
 Pour obtenir un exemple simple qui utilise la méthode **displayDialogAsync**, consultez l’[exemple de boîte de dialogue API de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) sur GitHub.
 
-Pour obtenir un exemple qui illustre un scénario d’authentification, consultez l’exemple d’[authentification client Office 365 de complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) sur GitHub.
+Pour obtenir des exemples de scénario d’authentification, consultez les pages suivantes :
+
+- [Complément PowerPoint dans Microsoft Graph - ASP.Net - Insérer un graphique](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Complément Office dans Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complément Excel - ASP.NET - QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Exemple d’authentification du complément Office sur le serveur pour ASP.net MVC](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth/tree/Office2016DisplayDialog)
+- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+
 
  
 ## <a name="parameters"></a>Paramètres
@@ -70,8 +77,8 @@ Les options de configuration suivantes sont disponibles pour une boîte de dialo
 
 | Propriété     | Type   |Description|
 |:---------------|:--------|:----------|
-|**width**|objet|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
-|**height**|objet|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
+|**width**|object|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
+|**height**|object|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
 |**displayInIframe**|object|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame dans les clients Office Online. Ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
 
 
@@ -88,6 +95,17 @@ Dans la fonction de rappel transmise à la méthode **displayDialogAsync**, vous
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Déterminer si l’opération a réussi ou échoué.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Accéder à un objet [Error](../../reference/shared/error.md) fournissant des informations sur l’erreur en cas d’échec de l’opération.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Accéder à votre valeur ou objet défini par l’utilisateur, si vous en avez transmis un en tant que paramètre _asyncContext_.|
+
+### <a name="errors-from-displaydialogasync"></a>Erreurs provenant de displayDialogAsync
+
+En plus des erreurs générales liées à la plateforme et au système, les erreurs suivantes sont propres à l’appel de la méthode **displayDialogAsync**.
+
+|**Numéro de code**|**Signification**|
+|:-----|:-----|
+|12004|Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit soit être identique à la page hôte (y compris le protocole et le numéro de port), soit être inscrit dans la section `<AppDomains>` du manifeste du complément.|
+|12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
+|12007|Une boîte de dialogue est déjà ouverte à partir du volet Office. Une seule boîte de dialogue à la fois peut être ouverte dans un complément de volet Office.|
+
 
 
 ## <a name="design-considerations"></a>Considérations relatives à la conception

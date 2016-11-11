@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test des compléments Office
+# <a name="sideload-office-addins-for-testing"></a>Chargement de version test des compléments Office
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau. 
 
@@ -8,6 +8,11 @@ Vous pouvez installer un complément Office à des fins de test dans un client O
 Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagés. Déployez l’application web en elle-même vers un serveur web et spécifiez l’URL dans l’élément **SourceLocation** du fichier manifeste.
 
  >**Important :**  Pour contribuer à sécuriser les compléments accédant à des services et données externes, votre application doit utiliser un protocole sécurisé tel que HTTPS (Hypertext Transfer Protocol Secure) pour se connecter aux services et données externes. Vous devez utiliser HTTPS si votre complément utilise des commandes de complément.
+
+La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
 
 ## <a name="share-a-folder"></a>Partager un dossier
 
@@ -38,7 +43,7 @@ Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagé
 
 9. Fermez l’application Office afin que vos modifications prennent effet.
     
-## <a name="sideload-your-add-in"></a>Charger votre complément
+## <a name="sideload-your-addin"></a>Charger votre complément
 
 
 1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés.

@@ -38,7 +38,7 @@ Le logiciel suivant est requis pour développer un Complément Office pour les c
 
 - Internet Explorer 11 ou version ultérieure, qui doit être installé, mais ne doit pas être le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office qui s’exécute en tant qu’hôte utilise des composants de navigateur qui font partie d’Internet Explorer 11 ou version ultérieure.
 
-- L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou version ultérieure, ou la dernière version d’Edge, de Chrome, de Firefox ou de Safari (Mac OS).
+- L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 - Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
 
@@ -54,7 +54,7 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Configuration requise pour le client : Prise en charge du navigateur pour les clients web Office Online et SharePoint
 
-Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou une version ultérieure, ou la dernière version d’Edge, de Chrome, de Firefox ou de Safari (Mac OS).
+Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
