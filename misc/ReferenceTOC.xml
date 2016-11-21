@@ -87,6 +87,7 @@
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="Contient une collection d’objets de Range obtenus à la suite d’une opération de recherche." />
     <Item text="Section" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Représente une section d’un document Word." />
     <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contient la collection d’objets de section du document." />
+	<Item text="Ensembles de conditions requises de l’API JavaScript pour Word" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Trouver des informations sur les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge cet ensemble de conditions et les numéros de build ou de version de ces applications." />
   </Item>
   
   <Item text="Excel" url="excel" Scope="excel">
@@ -144,6 +145,7 @@
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Représente une collection d’objets de feuille de calcul qui font partie du classeur." />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Utilisé comme un conteneur pour les fonctions de feuille de calcul Excel pouvant être appelées via JavaScript ou REST." />
     <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Cet objet représente la protection d’un objet de la feuille." />
+	<Item text="Ensembles de conditions requises de l’API JavaScript pour Excel" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Trouver des informations sur les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge ces conditions et les numéros de build ou de version de ces applications." />
   </Item>
   
   <Item text="Outlook" url="outlook" Scope="Outlook">
@@ -412,11 +414,12 @@
     <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="Référence des compléments OneNote." />
     <Item text="Outline" url="onenote/outline" SEODescription="Référence des compléments OneNote." />
     <Item text="Image" url="onenote/image" SEODescription="Référence des compléments OneNote." />
+	<Item text="Ensembles de conditions requises de l’API JavaScript pour OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Trouver des informations sur les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité." />
   </Item>  
   <Item text="API partagée" url="shared/shared-api">
     <Item text="Interface API JavaScript pour Office" url="javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office comprend des objets, méthodes, propriétés, événements et énumérations que vous pouvez utiliser dans votre code des compléments Office." />
-	<Item text="Nouveautés de l’API JavaScript pour Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office est mise à jour régulièrement mis à jour avec de nouveaux objets, méthodes, propriétés, événements et énumérations mis à jour afin d’étendre les fonctionnalités de vos compléments Office." />
-	<Item text="Ensembles de conditions requises pour les compléments Office" url="office-add-in-requirement-sets" SEODescription="Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément." />
+	<Item text="Nouveautés de l’API JavaScript pour Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office est mise à jour régulièrement avec de nouveaux objets, méthodes, propriétés, événements et énumérations mis à jour afin d’étendre les fonctionnalités de vos compléments Office." />
+	<Item text="Ensembles de conditions requises communes pour Office" url="requirement-sets/office-add-in-requirement-sets" SEODescription="Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément." />
 	<Item text="Codes d’erreur de l’API JavaScript pour Office" url="javascript-api-for-office-error-codes" SEODescription="Les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’interface API JavaScript pour Office (Office.js)." />
 	<Item text="Énumérations" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
       <Item text="Énumération ActiveView" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="Spécifie l’état de l’affichage dynamique du document, par exemple, si l’utilisateur peut modifier le document." />
@@ -643,6 +646,7 @@
     	<Item text="Objet Dialogue" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="Objet renvoyé lorsque la méthode displayDialogAsync est appelée." />
     	<Item text="Méthode DisplayDialog" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Affiche une boîte de dialogue web à l’intérieur des hôtes Office." />
     	<Item text="Méthode MessageParent" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Remet un message de la part de la boîte de dialogue à sa page parent/d’ouverture." />
+		<Item text="Ensembles de conditions requises de l’API de boîte de dialogue" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="Trouver des informations sur les ensembles de conditions requises pour l’API de boîte de dialogue, les applications hôtes Office qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office." />
     </Item>
   </Item>
   <Item text="Spécifications ouvertes" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="Découvrez les efforts de conception de l’API en cours et fournissez des commentaires" />

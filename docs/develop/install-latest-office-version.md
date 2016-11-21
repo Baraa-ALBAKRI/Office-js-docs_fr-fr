@@ -21,3 +21,13 @@ Pour obtenir la dernière version :
 Une fois le processus d’installation terminé, les dernières applications d’Office 2016 sont installées. Pour vérifier que la dernière version est bien installée, accédez à **Fichier**  >  **Compte** à partir de n’importe quelle application Office. Sous Mises à jour Office, vous verrez la mention (Office Insiders) au-dessus du numéro de version.
 
 ![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../../images/officeinsider.PNG)
+
+## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
+
+Pour plus d’informations sur les versions minimum des produits pour chaque plate-forme pour les ensembles de conditions requises pour les API, voir les rubriques suivantes :
+
+- [Ensembles de conditions requises de l’API JavaScript pour Word](../../reference/requirement-sets/word-api-requirement-sets.md)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](../../reference/requirement-sets/excel-api-requirement-sets.md)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](../../reference/requirement-sets/onenote-api-requirement-sets.md)
+- [Ensembles de conditions requises de l’API de boîte de dialogue](../../reference/requirement-sets/dialog-api-requirement-sets.md)
+- [Ensembles de conditions requises des API communes pour Office](../../reference/requirement-sets/office-add-in-requirement-sets.md)

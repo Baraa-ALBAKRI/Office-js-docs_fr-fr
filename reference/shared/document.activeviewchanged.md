@@ -28,9 +28,9 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 **Hôtes pris en charge par la plateforme**
 
 
-||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
-|:-----|:-----|:-----|:-----|
-|**PowerPoint**|v||v|
+||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour Mac**|**Office pour iPad**|
+|:-----|:-----|:-----|:-----|:-----|
+|**PowerPoint**|v||v|v|
 
 |||
 |:-----|:-----|

@@ -38,6 +38,7 @@ Pour détecter cette API lors de son exécution, utilisez le code suivant.
 ### <a name="supported-platforms"></a>Plateformes prises en charge
 L’ensemble de conditions requises DialogAPI est actuellement pris en charge sur les plateformes suivantes :
 
+  - Office pour Windows 2013 pour ordinateur de bureau (version 15.0.4855.1000 ou ultérieure)
   - Office pour Windows 2016 pour ordinateur de bureau (version 16.0.6741.0000 ou ultérieure)
   - Office pour iPad (version 1.22 ou ultérieure)
   - Office pour Mac (version 15.20 ou ultérieure) 
