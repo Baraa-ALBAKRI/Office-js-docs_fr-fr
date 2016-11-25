@@ -1,7 +1,7 @@
 
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de boîte de dialogue
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de boîte de dialogue, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office.
 
@@ -25,5 +25,6 @@ L’API de boîte de dialogue 1.1 est la première version de l’API. Pour plus
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+

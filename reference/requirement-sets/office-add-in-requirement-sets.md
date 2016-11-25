@@ -1,18 +1,18 @@
 # <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Pour plus d’informations sur la prise en charge des compléments par l’hôte Office, reportez-vous à la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability).
 
-## <a name="hostspecific-api-requirement-sets"></a>Ensembles de conditions requises de l’API spécifique à l’hôte
+## <a name="host-specific-api-requirement-sets"></a>Ensembles de conditions requises de l’API spécifique à l’hôte
 
 Pour plus d’informations sur les ensembles de conditions requises des API pour Excel, Word, OneNote, Outlook et Dialog, reportez-vous à :
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md)
-- [Ensembles de conditions requises de l’API JavaScript pour Word](word-api-requirement-sets.md)
-- [Ensembles de conditions requises de l’API JavaScript pour OneNote](onenote-api-requirement-sets.md)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](../outlook/tutorial-api-requirement-sets.md)
-[Ensembles de conditions requises de l’API de boîte de dialogue](dialog-api-requirement-sets.md)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md) (ExcelApi)
+- [Ensembles de conditions requises de l’API JavaScript pour Word](word-api-requirement-sets.md) (WordApi)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](../outlook/tutorial-api-requirement-sets.md) (MailBox)
+- [Ensembles de conditions requises de l’API de dialogue](dialog-api-requirement-sets.md) (DialogApi)
 
 ## <a name="common-api-requirement-sets"></a>Ensembles de conditions requises des API communes
 
@@ -68,7 +68,9 @@ Les méthodes suivantes dans l’interface API JavaScript pour Office ne font 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+
 
 
 

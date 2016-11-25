@@ -30,7 +30,10 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 
 ||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour Mac**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|:-----|
-|**PowerPoint**|v||v|v|
+|**PowerPoint**|v||v|Y|
+
+>**Remarque : Cet événement ne se déclenche pas dans les scénarios PowerPoint Online, car le mode diaporama est considéré comme une nouvelle session. Pour obtenir la vue active, vous devez envoyer la requête correspondante pendant Office.Initialize.
+ 
 
 |||
 |:-----|:-----|

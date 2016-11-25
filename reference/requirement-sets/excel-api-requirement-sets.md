@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge ces conditions et la version ou le numéro de build de ces applications. 
 
@@ -102,7 +102,7 @@ Les ajouts apportés aux API JavaScript pour Excel dans l’ensemble de conditio
 |[filterCriteria](../excel/filtercriteria.md)|_Propriété_ > filterOn|Propriété utilisée par le filtre pour déterminer si les valeurs doivent rester visibles. Les valeurs possibles sont les suivantes : BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom.|1.2|
 |[filterCriteria](../excel/filtercriteria.md)|_Propriété_ > operator|Opérateur utilisé pour combiner les critères 1 et 2 lorsque vous utilisez le filtrage « Custom ». Les valeurs possibles sont les suivantes : And, Or.|1.2|
 |[filterCriteria](../excel/filtercriteria.md)|_Propriété_ > values|Valeurs à utiliser pour le filtrage « Values ».|1.2|
-|[filterCriteria](../excel/filtercriteria.md)|_Relation_ > icon|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « icon ».|1.2|
+|[filterCriteria](../excel/filtercriteria.md)|_Relation_ > icon|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|1.2|
 |[filterDatetime](../excel/filterdatetime.md)|_Propriété_ > date|Date au format ISO8601 utilisée pour filtrer des données.|1.2|
 |[filterDatetime](../excel/filterdatetime.md)|_Propriété_ > specificity|Utilisation de la date pour conserver des données. Par exemple, si la date est 2005-04-02 et la spécificité est définie sur « mois », le filtre conservera toutes les lignes dont la date correspond au mois d’avril 2009. Les valeurs possibles sont les suivantes : Year (année), Monday (lundi), Day (jour), Hour (heure), Minute (minute), Second (seconde).|1.2|
 |[formatProtection](../excel/formatprotection.md)|_Propriété_ > formulaHidden|Indique si Excel masque la formule des cellules dans la plage. Une valeur null indique que les paramètres de formule masquée ne sont pas les mêmes sur l’ensemble de la plage.|1.2|
@@ -116,8 +116,8 @@ Les ajouts apportés aux API JavaScript pour Excel dans l’ensemble de conditio
 |[range](../excel/range.md)|_Relation_ > sort|Représente le tri de plage de la plage actuelle. En lecture seule.|1.2|
 |[range](../excel/range.md)|_Méthode_ > [merge(across: bool)](../excel/range.md#mergeacross-bool)|Fusionne la plage de cellules dans une zone de la feuille de calcul.|1.2|
 |[range](../excel/range.md)|_Méthode_ > [unmerge()](../excel/range.md#unmerge)|Annule la fusion de la plage de cellules.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Propriété_ > columnWidth|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Propriété_ > rowHeight|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de lignes ne sont pas uniformes, la valeur « null » est renvoyée.|1.2|
+|[rangeFormat](../excel/rangeformat.md)|_Propriété_ > columnWidth|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|1.2|
+|[rangeFormat](../excel/rangeformat.md)|_Propriété_ > rowHeight|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de lignes ne sont pas uniformes, la valeur « null » est renvoyée.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Relation_ > protection|Renvoie l’objet de protection du format pour une plage. En lecture seule.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Méthode_ > [autofitColumns()](../excel/rangeformat.md#autofitcolumns)|Modifie la largeur des colonnes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Méthode_ > [autofitRows()](../excel/rangeformat.md#autofitrows)|Modifie la hauteur des lignes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|1.2|
@@ -125,19 +125,19 @@ Les ajouts apportés aux API JavaScript pour Excel dans l’ensemble de conditio
 |[rangeSort](../excel/rangesort.md)|_Méthode_ > [apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: chaîne, method: chaîne)](../excel/rangesort.md#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|Effectue une opération de tri.|1.2|
 |[sortField](../excel/sortfield.md)|_Propriété_ > ascending|Indique si le tri s’effectue dans l’ordre croissant.|1.2|
 |[sortField](../excel/sortfield.md)|_Propriété_ > color|Couleur ciblée par la condition si le tri est appliqué à la couleur ou à la police de la cellule.|1.2|
-|[sortField](../excel/sortfield.md)|_Propriété_ > dataOption|Options de tri supplémentaires pour ce champ. Les valeurs possibles sont les suivantes : Normal, TextAsNumber.|1.2|
+|[sortField](../excel/sortfield.md)|_Propriété_ > dataOption|Options de tri supplémentaires pour ce champ. Les valeurs possibles sont les suivantes : Normal, TextAsNumber.|1.2|
 |[sortField](../excel/sortfield.md)|_Propriété_ > key|Colonne (ou ligne, selon l’orientation du tri) ciblée par la condition. Représentée sous forme d’un décalage par rapport à la première colonne (ou ligne).|1.2|
-|[sortField](../excel/sortfield.md)|_Propriété_ > sortOn|Type de tri de cette condition. Les valeurs possibles sont les suivantes : Value, CellColor, FontColor, Icon.|1.2|
+|[sortField](../excel/sortfield.md)|_Propriété_ > sortOn|Type de tri de cette condition. Les valeurs possibles sont les suivantes : Value, CellColor, FontColor, Icon.|1.2|
 |[sortField](../excel/sortfield.md)|_Relation_ > icon|Représente l’icône ciblée par la condition si le tri est appliqué à l’icône de la cellule.|1.2|
 |[table](../excel/table.md)|_Relation_ > sort|Représente le tri du tableau. En lecture seule.|1.2|
-|[table](../excel/table.md)|_Relation_ > worksheet|Feuille de calcul contenant le tableau actuel. En lecture seule.|1.2|
+|[table](../excel/table.md)|_Relation_ > worksheet|Feuille de calcul contenant le tableau actif. En lecture seule.|1.2|
 |[table](../excel/table.md)|_Méthode_ > [clearFilters()](../excel/table.md#clearfilters)|Supprime tous les filtres appliqués actuellement sur le tableau.|1.2|
 |[table](../excel/table.md)|_Méthode_ > [convertToRange()](../excel/table.md#converttorange)|Convertit le tableau en plage normale de cellules. Toutes les données sont conservées.|1.2|
 |[table](../excel/table.md)|_Méthode_ > [reapplyFilters()](../excel/table.md#reapplyfilters)|Applique de nouveau tous les filtres actuellement appliqués sur le tableau.|1.2|
 |[tableColumn](../excel/tablecolumn.md)|_Relation_ > filter|Extrait le filtre appliqué à la colonne. En lecture seule.|1.2|
 |[tableSort](../excel/tablesort.md)|_Propriété_ > matchCase|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|1.2|
-|[tableSort](../excel/tablesort.md)|_Propriété_ > method|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule. Les valeurs possibles sont les suivantes : PinYin, StrokeCount|1.2|
-|[tableSort](../excel/tablesort.md)|_Relation_ > fields|Représente les dernières conditions utilisées pour trier le tableau. En lecture seule.|1.2|
+|[tableSort](../excel/tablesort.md)|_Propriété_ > method|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule. Les valeurs possibles sont les suivantes : PinYin, StrokeCount|1.2|
+|[tableSort](../excel/tablesort.md)|_Relation_ > fields|Dernières conditions utilisées pour trier le tableau. En lecture seule.|1.2|
 |[tableSort](../excel/tablesort.md)|_Méthode_ > [apply(fields: SortField[], matchCase: bool, method: chaîne)](../excel/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Effectue une opération de tri.|1.2|
 |[tableSort](../excel/tablesort.md)|_Méthode_ > [clear()](../excel/tablesort.md#clear)|Efface le tri actuellement appliqué au tableau. Même si le classement du tableau n’est pas modifié, l’état des boutons d’en-tête est rétabli.|1.2|
 |[tableSort](../excel/tablesort.md)|_Méthode_ > [reapply()](../excel/tablesort.md#reapply)|Applique à nouveau les paramètres actuels de tri au tableau.|1.2|
@@ -164,5 +164,6 @@ L’API JavaScript 1.1 pour Excel est la première version de l’API. Pour plus
     
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+

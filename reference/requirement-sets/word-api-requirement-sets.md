@@ -1,6 +1,6 @@
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
 
@@ -257,7 +257,7 @@ Les ajouts apportés aux API JavaScript pour Word dans l’ensemble de condition
 |[inlinePicture](../word/inlinepicture.md)|_Method_ > [insertFileFromBase64(base64File: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#insertfilefrombase64base64file-string-insertlocation-insertlocation)|Insère un document à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertHtml(html: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#inserthtmlhtml-string-insertlocation-insertlocation)|Insère du code HTML à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertInlinePictureFromBase64(base64EncodedImage: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|Insère une image insérée à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Replace » (remplacer), « Before » (avant) ou « After » (après).|1.2|
-|[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertOoxml (ooxml: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|Insère du code OOXML à l’emplacement spécifié.  La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
+|[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertOoxml (ooxml: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#insertooxmlooxml-string-insertlocation-insertlocation)|Insère du code OOXML à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertParagraph(paragraphText: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#insertparagraphparagraphtext-string-insertlocation-insertlocation)|Insère un paragraphe à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [insertText(text: chaîne, insertLocation: InsertLocation)](../word/inlinepicture.md#inserttexttext-string-insertlocation-insertlocation)|Insère du texte à l’emplacement spécifié. La valeur insertLocation peut être définie sur « Before » (avant) ou « After » (après).|1.2|
 |[inlinePicture](../word/inlinepicture.md)|_Méthode_ > [select(selectionMode: SelectionMode)](../word/inlinepicture.md#selectselectionmode-selectionmode)|Sélectionne l’image insérée. Word fait défiler le document jusqu’à accéder à la sélection.|1.2|
@@ -269,5 +269,6 @@ L’API JavaScript 1.1 pour Word est la première version de l’API. Pour plus 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Spécification des exigences en matière d’hôtes Office et d’API](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
+

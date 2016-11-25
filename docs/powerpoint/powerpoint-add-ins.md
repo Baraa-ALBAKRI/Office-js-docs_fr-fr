@@ -1,19 +1,50 @@
+# <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
-# <a name="create-content-and-task-pane-add-ins-for-powerpoint"></a>Création de compléments de contenu et du volet Office pour PowerPoint
+Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur toutes les plateformes, y compris Windows, iOS, Office Online et Mac. Vous pouvez créer l’un des deux types de compléments :
 
-Les exemples de code dans l’article illustrent quelques tâches élémentaires de développement de compléments de contenu PowerPoint. Les informations affichées dans ces exemples dépendent de la fonction  `app.showNotification`, qui figure dans les modèles de projet Visual Studio d’Compléments Office. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devez remplacer la fonction  `showNotification` par votre propre code. Un certain nombre de ces exemples dépendent également de cet objet `globals` qui se trouve en dehors de la portée des fonctions suivantes : `var globals = {activeViewHandler:0, firstSlideId:0};`
+- Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://store.office.com/en-us/app.aspx?assetid=WA104380117&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Productivity&homapppos=3&homchv=2&appredirect=false), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
+- Utilisez des **compléments de volet Office** pour faire apparaître des informations de référence ou insérer des données dans la diapositive via un service. Par exemple, consultez le complément [Images Shutterstock](https://store.office.com/en-us/app.aspx?assetid=WA104380169&ui=en-US&rs=en-US&ad=US&clickedfilter=OfficeProductFilter%3APowerPoint&productgroup=PowerPoint&homprd=PowerPoint&sourcecorrid=950950b7-aa6c-4766-95fa-e75d37266c21&homappcat=Editor%2527s%2BPicks&homapppos=0&homchv=1&appredirect=false), qui vous permet d’ajouter des photos professionnelles à votre présentation. 
+
+
+## <a name="powerpoint-add-in-scenarios"></a>Scénarios de complément PowerPoint
+
+Les exemples de code figurant dans l’article vous présentent certaines tâches de base en matière de développement de compléments de contenu pour PowerPoint. 
+
+Pour afficher des informations, ces exemples dépendent de la fonction `app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction `showNotification` par votre propre code. Plusieurs de ces exemples dépendent également de l’objet `globals` qui est déclaré en dehors de la portée de ces fonctions : `var globals = {activeViewHandler:0, firstSlideId:0};`
 
 Pour obtenir ces exemples de code, votre projet doit faire référence à la [bibliothèque Office.js v1.1 ou version ultérieure](../../docs/develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 
-## <a name="detect-the-presentation's-active-view-and-handle-the-activeviewchanged-event"></a>Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
+## <a name="detect-the-presentations-active-view-and-handle-the-activeviewchanged-event"></a>Détecter l’affichage actif de la présentation et gérer l’événement ActiveViewChanged
 
-La fonction  `getFileView` appelle la méthode [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
+Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer l’événement ActiveViewChanged dans le cadre de votre gestionnaire Office.Initialize.
+
+
+- La fonction  `getActiveFileView` appelle la méthode [Document.getActiveViewAsync](../../reference/shared/document.getactiveviewasync.md) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
+
+
+- La fonction `registerActiveViewChanged` appelle la méthode [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md). 
+> Remarque : Dans PowerPoint Online, l’événement [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md) ne se déclenche jamais, car le mode diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
+
 
 
 ```js
-function getFileView() {
+
+//general Office.initialize function. Fires on load of the add-in.
+Office.initialize = function(){
+
     //Gets whether the current view is edit or read.
+    var currentView = getActiveFileView();
+
+    //register for the active view changed handler
+    registerActiveViewChanged();
+
+    //render the content based off of the currentView
+    //....
+}
+
+function getActiveFileView()
+{
     Office.context.document.getActiveViewAsync(function (asyncResult) {
         if (asyncResult.status == "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
@@ -22,15 +53,10 @@ function getFileView() {
             app.showNotification(asyncResult.value);
         }
     });
+
 }
-```
-
-La fonction  `registerActiveViewChanged` appelle la méthode [addHandlerAsync](../../reference/shared/document.addhandlerasync.md) pour inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](../../reference/shared/document.activeviewchanged.md). Après l’exécution de la fonction, lorsque vous modifiez la vue de la présentation, la notification  `app.showNotification` affiche le mode d’affichage actif (« lecture » ou « modification »).
 
 
-
-
-```js
 function registerActiveViewChanged() {
     Globals.activeViewHandler = function (args) {
         app.showNotification(JSON.stringify(args));
@@ -39,7 +65,7 @@ function registerActiveViewChanged() {
     Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler, 
         function (asyncResult) {
             if (asyncResult.status == "failed") {
-            app.showNotification("Action failed with error: " + asyncResult.error.message);
+           app.showNotification("Action failed with error: " + asyncResult.error.message);
         }
             else {
             app.showNotification(asyncResult.status);
@@ -47,28 +73,7 @@ function registerActiveViewChanged() {
         });
 }
 ```
-
-
-## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
-
-La fonction `getFileUrl` appelle la méthode [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) pour obtenir l’URL du fichier de présentation.
-
-
-```js
-function getFileUrl() {
-    //Get the URL of the current file.
-    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
-        var fileUrl = asyncResult.value.url;
-        if (fileUrl == "") {
-            app.showNotification("The file hasn't been saved yet. Save the file and try again");
-        }
-        else {
-            app.showNotification(fileUrl);
-        }
-    });
-}
-```
-
+    
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
@@ -113,7 +118,7 @@ function goToFirstSlide() {
 
 ## <a name="navigate-between-slides-in-the-presentation"></a>Naviguer entre les diapositives de la présentation
 
-La fonction  `goToSlideByIndex` appelle la méthode **Document.goToByIdAsync** pour passer à la diapositive suivante dans la présentation.
+La fonction `goToSlideByIndex` appelle la méthode **Document.goToByIdAsync** pour passer à la diapositive suivante dans la présentation.
 
 
 ```js
@@ -134,10 +139,30 @@ function goToSlideByIndex() {
 }
 ```
 
+## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
+
+La fonction `getFileUrl` appelle la méthode [Document.getFileProperties](../../reference/shared/document.getfilepropertiesasync.md) pour obtenir l’URL du fichier de présentation.
+
+
+```js
+function getFileUrl() {
+    //Get the URL of the current file.
+    Office.context.document.getFilePropertiesAsync(function (asyncResult) {
+        var fileUrl = asyncResult.value.url;
+        if (fileUrl == "") {
+            app.showNotification("The file hasn't been saved yet. Save the file and try again");
+        }
+        else {
+            app.showNotification(fileUrl);
+        }
+    });
+}
+```
 
 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
+- [Exemples de code PowerPoint](https://dev.office.com/code-samples#?filters=powerpoint)
 
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../../docs/develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 

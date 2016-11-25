@@ -1,10 +1,10 @@
-c
-# <a name="addin-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
+# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Commandes de complément pour Excel, Word et PowerPoint
 
 Les commandes de complément sont des éléments qui étendent l’interface utilisateur d’Office et qui lancent des actions dans votre complément. Vous pouvez ajouter un bouton sur le ruban ou un élément à un menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page de complément dans un volet Office. Les commandes de complément permettent aux utilisateurs de trouver et d’utiliser votre complément, ce qui contribue à augmenter l’adoption et la réutilisation de votre complément, ainsi qu’à améliorer la fidélisation des clients.
 
 Pour en savoir plus sur les fonctionnalités, regardez la vidéo sur les [commandes de complément du ruban Office](https://channel9.msdn.com/events/Build/2016/P551).
 
+>**Remarque :** les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) ou l’[Office Store](https://msdn.microsoft.com/en-us/library/jj220033.aspx), ou utiliser le [chargement de version test](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) pour déployer votre commande de complément à des fins de test. 
 
 **Complément incluant des commandes en cours d’exécution dans Excel (version Bureau)**
 ![Commandes de complément](../../images/addincommands1.png)
@@ -39,11 +39,11 @@ Les commandes de complément sont actuellement prises en charge sur les platefor
 
 D’autres plateformes seront bientôt disponibles.
 
-## <a name="get-started-with-addin-commands"></a>Prise en main des commandes de complément
+## <a name="get-started-with-add-in-commands"></a>Prise en main des commandes de complément
 
-La meilleure façon de commencer à utiliser des commandes de complément, consiste à utiliser des **exemples**, consultez la page relative aux [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
+La meilleure façon de commencer à employer les commandes de complément est par l’intermédiaire d’**exemples**. Consultez les [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
-Pour obtenir des informations de référence détaillées sur le manifeste, voir [Définir des commandes de complément dans votre manifeste](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands).
+Pour obtenir des informations de référence détaillées sur le manifeste, consultez la rubrique relative à la [définition de commandes de complément dans votre manifeste](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands).
 
 
 
