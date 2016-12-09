@@ -1,13 +1,13 @@
-# <a name="chartcollection-object-(javascript-api-for-excel)"></a>Objet ChartCollection (interface API JavaScript pour Excel)
+# <a name="chartcollection-object-javascript-api-for-excel"></a>Objet ChartCollection (interface API JavaScript pour Excel)
 
 Collection de tous les objets de graphique d’une feuille de calcul.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|count|int|Renvoie le nombre de graphiques dans la feuille de calcul. En lecture seule.|
-|items|[Chart[]](chart.md)|Collection d’objets de graphique. En lecture seule.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|count|int|Renvoie le nombre de graphiques dans la feuille de calcul. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|éléments|[Chart[]](chart.md)|Collection d’objets de graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -17,17 +17,18 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Crée un graphique.|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Extrait un graphique en fonction de sa position dans la collection.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Crée un graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Extrait un graphique en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: chaîne)](#getitemornullname-string)|[Graphique](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="add(type:-string,-sourcedata:-range,-seriesby:-string)"></a>add(type: string, sourceData: Range, seriesBy: string)
+### <a name="addtype-string-sourcedata-range-seriesby-string"></a>add(type: string, sourceData: Range, seriesBy: string)
 Crée un graphique.
 
 #### <a name="syntax"></a>Syntaxe
@@ -37,24 +38,25 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |type|string|Représente le type d’un graphique. Les valeurs possibles sont les suivantes : ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
-|sourceData|Range|Plage qui contient les données sources.|
-|seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique.  Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes)|
+|sourceData|Range|Objet Range correspondant aux données source.|
+|seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes)|
 
 #### <a name="returns"></a>Retourne
 [Chart](chart.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
-Ajouter un graphique dont la valeur `chartType` est « ColumnClustered » dans la feuille de calcul « Charts », avec la propriété `sourceData` définie sur la plage « A1:B4 » et la propriété `seriesBy` définie sur « auto »
+Ajouter un graphique dont la valeur `chartType` est « ColumnClustered » dans la feuille de calcul « Charts », avec la propriété `sourceData` définie sur la plage « A1:B4 » et la propriété `seriresBy` définie sur « auto ».
 
 ```js
 Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var sourceData = sheetName + "!" + "A1:B4";
-    var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
-    return ctx.sync().then(function() {
+    var rangeSelection = "A1:B4";
+    var range = ctx.workbook.worksheets.getItem(sheetName)
+        .getRange(rangeSelection);
+    var chart = ctx.workbook.worksheets.getItem(sheetName)
+        .charts.add("ColumnClustered", range, "auto");  return ctx.sync().then(function() {
             console.log("New Chart Added");
     });
 }).catch(function(error) {
@@ -66,7 +68,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitem(name:-string)"></a>getItem(name: string)
+### <a name="getitemname-string"></a>getItem(name: string)
 Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.
 
 #### <a name="syntax"></a>Syntaxe
@@ -76,7 +78,7 @@ chartCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|Nom du graphique à extraire.|
 
 #### <a name="returns"></a>Retourne
@@ -137,7 +139,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 Extrait un graphique en fonction de sa position dans la collection.
 
 #### <a name="syntax"></a>Syntaxe
@@ -147,13 +149,13 @@ chartCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
 [Chart](chart.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 Excel.run(function (ctx) { 
@@ -171,7 +173,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="getitemornullname-string"></a>getItemOrNull(name: chaîne)
+Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+chartCollectionObject.getItemOrNull(name);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|name|string|Nom du graphique à extraire.|
+
+#### <a name="returns"></a>Retourne
+[Graphique](chart.md)
+
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -181,10 +199,10 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
@@ -196,7 +214,6 @@ Excel.run(function (ctx) {
         for (var i = 0; i < charts.items.length; i++)
         {
             console.log(charts.items[i].name);
-            console.log(charts.items[i].index);
         }
     });
 }).catch(function(error) {

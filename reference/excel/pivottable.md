@@ -1,26 +1,26 @@
-# <a name="chartseries-object-javascript-api-for-excel"></a>Objet ChartSeries (interface API JavaScript pour Excel)
+# <a name="pivottable-object-javascript-api-for-excel"></a>Objet PivotTable (API JavaScript pour Excel)
 
-Cet objet représente une série dans un graphique.
+Représente un tableau croisé dynamique Excel.
 
 ## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|name|string|Représente le nom d’une série dans un graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|chaîne|Nom du tableau croisé dynamique.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartSeriesFormat](chartseriesformat.md)|Représente le format d’une série de graphique, à savoir le format de remplissage et des lignes. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|points|[ChartPointsCollection](chartpointscollection.md)|Représente la collection de tous les points de la série. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant le tableau croisé dynamique. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[refresh()](#refresh)|void|Actualise le tableau croisé dynamique.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -40,21 +40,17 @@ object.load(param);
 
 #### <a name="returns"></a>Retourne
 void
-### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-Renommer la 1ère série de Chart1 sur « New Series Name »
+### <a name="refresh"></a>refresh()
+Actualise le tableau croisé dynamique.
 
+#### <a name="syntax"></a>Syntaxe
 ```js
-Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
-    chart.series.getItemAt(0).name = "New Series Name";
-    return ctx.sync().then(function() {
-            console.log("Series1 Renamed");
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
+pivotTableObject.refresh();
 ```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Retourne
+void

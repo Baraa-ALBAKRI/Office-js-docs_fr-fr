@@ -1,4 +1,4 @@
-# <a name="workbook-object-(javascript-api-for-excel)"></a>Objet Workbook (interface API JavaScript pour Excel)
+# <a name="workbook-object-javascript-api-for-excel"></a>Objet Workbook (interface API JavaScript pour Excel)
 
 Le classeur est l’objet de niveau supérieur qui contient des objets connexes tels que des feuilles de calcul, des tableaux, des plages, etc.
 
@@ -7,26 +7,28 @@ Le classeur est l’objet de niveau supérieur qui contient des objets connexes 
 Aucun
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description|
-|:---------------|:--------|:----------|
-|application|[Application](application.md)|Représente une instance de l’application Excel contenant ce classeur. En lecture seule.|
-|liaisons|[BindingCollection](bindingcollection.md)|Représente une collection de liaisons appartenant au classeur. En lecture seule.|
-|fonctions|[Functions](functions.md)|Représente l’instance de l’application Excel contenant ce classeur. En lecture seule.|
-|noms|[NamedItemCollection](nameditemcollection.md)|Représente une collection d’éléments nommés portant sur le classeur (appelés plages et constantes). En lecture seule.|
-|tableaux|[TableCollection](tablecollection.md)|Représente une collection de tableaux associés au classeur. En lecture seule.|
-|feuilles de calcul|[WorksheetCollection](worksheetcollection.md)|Représente une collection de feuilles de calcul associées au classeur. En lecture seule.|
+| Relation | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|application|[Application](application.md)|Représente l’instance de l’application Excel contenant ce classeur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|bindings|[BindingCollection](bindingcollection.md)|Représente une collection de liaisons appartenant au classeur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|fonctions|[Functions](functions.md)|Représente l’instance de l’application Excel contenant ce classeur. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|noms|[NamedItemCollection](nameditemcollection.md)|Représente une collection d’éléments nommés portant sur le classeur (appelés plages et constantes). En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|pivotTables|[PivotTableCollection](pivottablecollection.md)|Représente une collection de tableaux croisés dynamiques associés au classeur. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|paramètres|[SettingCollection](settingcollection.md)|Représente une collection d’objets Settings associés au classeur. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|tables|[TableCollection](tablecollection.md)|Représente une collection de tableaux associés au classeur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheets|[WorksheetCollection](worksheetcollection.md)|Représente une collection de feuilles de calcul associées au classeur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Obtient la plage sélectionnée dans le classeur.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Obtient la plage sélectionnée dans le classeur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="getselectedrange()"></a>getSelectedRange()
+### <a name="getselectedrange"></a>getSelectedRange()
 Obtient la plage sélectionnée dans le classeur.
 
 #### <a name="syntax"></a>Syntaxe
@@ -56,7 +58,7 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -66,8 +68,8 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void

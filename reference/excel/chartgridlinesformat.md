@@ -1,4 +1,4 @@
-# <a name="chartgridlinesformat-object-(javascript-api-for-excel)"></a>Objet ChartGridlinesFormat (interface API JavaScript pour Excel)
+# <a name="chartgridlinesformat-object-javascript-api-for-excel"></a>Objet ChartGridlinesFormat (interface API JavaScript pour Excel)
 
 Regroupe les propriétés de format du quadrillage du graphique.
 
@@ -7,20 +7,20 @@ Regroupe les propriétés de format du quadrillage du graphique.
 Aucun
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description|
-|:---------------|:--------|:----------|
-|line|[ChartLineFormat](chartlineformat.md)|Représente le format des lignes du graphique. En lecture seule.|
+| Relation | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|line|[ChartLineFormat](chartlineformat.md)|Représente le format des lignes du graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -30,8 +30,8 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void

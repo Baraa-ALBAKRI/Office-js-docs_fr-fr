@@ -1,13 +1,12 @@
-# <a name="icon-object-javascript-api-for-excel"></a>Objet Icon (interface API JavaScript pour Excel)
+# <a name="setting-object-javascript-api-for-excel"></a>Objet Setting ( API JavaScript pour Excel)
 
-Représente une icône de cellule.
+Setting représente une paire clé-valeur d’un paramètre conservé dans le document.
 
 ## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|index|int|Représente l’index de l’icône dans l’ensemble donné.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|set|chaîne|Représente l’ensemble dont fait partie l’icône. Les valeurs possibles sont les suivantes : Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|Key|chaîne|Renvoie la clé qui représente l’ID du paramètre. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -19,10 +18,25 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Supprime le paramètre.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
+
+### <a name="delete"></a>delete()
+Supprime le paramètre.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+settingObject.delete();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Retourne
+void
 
 ### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.

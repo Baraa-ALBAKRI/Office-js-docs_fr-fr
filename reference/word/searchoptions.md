@@ -1,4 +1,4 @@
-# <a name="searchoptions-object-(javascript-api-for-word)"></a>Objet SearchOptions (interface API JavaScript pour Word)
+# <a name="searchoptions-object-javascript-api-for-word"></a>Objet SearchOptions (interface API JavaScript pour Word)
 
 Spécifie les options à inclure dans une opération de recherche.
 
@@ -14,7 +14,7 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac, Word Online_
 |matchSoundsLike|bool|**Cette option a été déconseillée dans la mise à jour de juin 2016**. Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots dont la prononciation est semblable à celle de la chaîne de recherche. Correspond à la case à cocher Recherche phonétique de la boîte de dialogue Rechercher et remplacer|
 |matchSuffix|bool|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui se terminent par la chaîne entrée. Correspond à la case à cocher Suffixe de la boîte de dialogue Rechercher et remplacer.|
 |matchWholeWord|bool|Obtient ou définit une valeur indiquant si la recherche doit uniquement porter sur des mots entiers et exclure le texte s’il est inclus dans un mot plus long. Correspond à la case à cocher Mot entier de la boîte de dialogue Rechercher et remplacer.|
-|matchWildCards|bool|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case Caractères génériques de la boîte de dialogue Rechercher et remplacer.|
+|matchWildCards|bool|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case Caractères génériques de la boîte de dialogue Rechercher et remplacer. Pour obtenir des informations importantes sur l’utilisation de cette option, consultez les conseils relatifs aux caractères génériques ci-dessous.|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -38,7 +38,7 @@ Aucun
 
 ## <a name="method-details"></a>Détails de méthodes
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -218,6 +218,9 @@ Word.run(function (context) {
 |Entre n et m occurrences de l’expression ou du caractère précédent|{n,m} |10{1,3} trouve 10, 100 et 1000.|
 |Une ou plusieurs occurrences de l’expression ou du caractère précédent|@ |mar@e trouve mare et marre.|
 
+### <a name="escaping-the-special-characters"></a>Échappement des caractères spéciaux
+
+La recherche avec des caractères génériques est essentiellement la même que la recherche sur une expression régulière. Il existe des caractères spéciaux dans les expressions régulières, notamment « [ », « ] », « ( »,« ) », « { », « } », « \* », « ? », « < », « > », « ! » et « @ ». Si l’un de ces caractères fait partie de la chaîne littérale que recherche le code, il doit être échappé, afin que Word sache qu’il faut le traiter littéralement et non dans le cadre de la logique de l’expression régulière. Pour échapper un caractère dans la fonction de recherche de l’interface utilisateur de Word, faites-le précéder d’un « \' », mais pour un échappement par programme, placez-le entre les caractères « [] ». Par exemple, « [\*]\* » recherche une chaîne qui commence par « \* », suivie d’autres caractères. 
 
 ## <a name="support-details"></a>Informations de prise en charge
 Utilisez l’[ensemble de conditions requises](../office-add-in-requirement-sets.md) dans les vérifications à l’exécution pour vous assurer que votre application est prise en charge par la version d’hôte de Word. Pour plus d’informations sur la configuration requise pour le serveur et l’application d’hôte Office, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).

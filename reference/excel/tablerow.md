@@ -1,13 +1,13 @@
-# <a name="tablerow-object-(javascript-api-for-excel)"></a>Objet TableRow (interface API JavaScript pour Excel)
+# <a name="tablerow-object-javascript-api-for-excel"></a>Objet TableRow (interface API JavaScript pour Excel)
 
 Représente une ligne d’un tableau.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|index|int|Renvoie le numéro d’indice de la ligne dans la collection de lignes du tableau. Avec indice zéro. En lecture seule.|
-|values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie une chaîne d’erreur.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|index|int|Renvoie le numéro d’indice de la ligne dans la collection de lignes du tableau. Avec indice zéro. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie la chaîne d’erreur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -17,16 +17,16 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Supprime la ligne du tableau.|
-|[getRange()](#getrange)|[Range](range.md)|Renvoie l’objet de plage associé à la ligne entière.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Supprime la ligne du tableau.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Renvoie l’objet de plage associé à la ligne entière.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Supprime la ligne du tableau.
 
 #### <a name="syntax"></a>Syntaxe
@@ -45,10 +45,9 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.delete();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -58,7 +57,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 Renvoie l’objet de plage associé à la ligne entière.
 
 #### <a name="syntax"></a>Syntaxe
@@ -77,7 +76,7 @@ Aucun
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(0);
     var rowRange = row.getRange();
     rowRange.load('address');
     return ctx.sync().then(function() {
@@ -92,7 +91,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -102,17 +101,17 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItem(0);
     row.load('index');
     return ctx.sync().then(function() {
         console.log(row.index);
@@ -129,7 +128,8 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
     var tables = ctx.workbook.tables;
     var newValues = [["New", "Values", "For", "New", "Row"]];
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var tableName = 'Table1';
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.values = newValues;
     row.load('values');
     return ctx.sync().then(function() {

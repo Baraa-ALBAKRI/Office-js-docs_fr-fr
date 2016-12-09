@@ -1,13 +1,13 @@
-# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>Objet RangeBorderCollection (interface API JavaScript pour Excel)
+# <a name="rangebordercollection-object-javascript-api-for-excel"></a>Objet RangeBorderCollection (interface API JavaScript pour Excel)
 
 Représente les objets de bordure qui composent la bordure de la plage.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|count|int|Nombre d’objets de bordure de la collection. En lecture seule.|
-|items|[RangeBorder[]](rangeborder.md)|Collection d’objets rangeBorder. En lecture seule.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|count|int|Nombre d’objets de bordure de la collection. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|éléments|[RangeBorder[]](rangeborder.md)|Collection d’objets rangeBorder. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -17,17 +17,17 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son nom.|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son indice.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son nom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son indice.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="getitem(index:-string)"></a>getItem(index: string)
-Obtient un objet de bordure à l’aide de son nom. 
+### <a name="getitemindex-string"></a>getItem(index: string)
+Obtient un objet de bordure à l’aide de son nom.
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -36,8 +36,8 @@ rangeBorderCollectionObject.getItem(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
-|index|string|Valeur d’indice de l’objet de bordure à récupérer.  Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|
+|:---------------|:--------|:----------|:---|
+|index|string|Valeur d’indice de l’objet de bordure à récupérer. Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|
 
 #### <a name="returns"></a>Retourne
 [RangeBorder](rangeborder.md)
@@ -72,7 +72,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtient un objet de bordure à l’aide de son indice.
 
 #### <a name="syntax"></a>Syntaxe
@@ -96,7 +96,7 @@ rangeBorderCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -110,7 +110,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -124,7 +124,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -134,10 +134,10 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
     var borders = range.format.borders;
-    borders.load('items');
+    border.load('items');
     return ctx.sync().then(function() {
         console.log(borders.count);
         for (var i = 0; i < borders.items.length; i++)
@@ -163,7 +163,7 @@ Excel.run(function (ctx) {
         }
 });
 ```
-L’exemple suivant ajoute une bordure de grille autour de la plage.
+L’exemple suivant ajoute des bordures de grille autour de la plage.
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,68 +1,73 @@
-# <a name="range-object-(javascript-api-for-excel)"></a>Objet Range (interface API JavaScript pour Excel)
-
-_S’applique à : Excel 2016, Excel Online, Excel pour iOS, Office 2016_
+# <a name="range-object-javascript-api-for-excel"></a>Objet Range (interface API JavaScript pour Excel)
 
 Une plage représente un ensemble constitué d’une ou de plusieurs cellules contiguës comme une cellule, une ligne, une colonne, un bloc de cellules, etc.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|address|string|Représente la référence de plage dans le style A1. La valeur d’adresse contient la référence de feuille (par exemple, Feuille1! A1:B4). En lecture seule.|
-|addressLocal|string|Représente la référence de la plage spécifiée dans le langage de l’utilisateur. En lecture seule.|
-|cellCount|int|Nombre de cellules dans la plage. En lecture seule.|
-|columnCount|int|Représente le nombre total de colonnes dans la plage. En lecture seule.|
-|columnHidden|bool|Indique si toutes les colonnes de la plage active sont masquées.|
-|columnIndex|int|Représente le numéro de colonne de la première cellule de la plage. Avec indice zéro. En lecture seule.|
-|formulas|object[]|Représente la formule dans le style de notation A1.|
-|formulasLocal|object[][]|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur. Par exemple, la formule « =SUM(A1, 1.5) » en anglais deviendrait « =SUMME(A1; 1,5) » en allemand.|
-|formulasR1C1|object[][]|Représente la formule dans le style de notation R1C1.|
-|masqués|bool|Indique si toutes les cellules de la plage active sont masquées. En lecture seule.|
-|numberFormat|object[][]|Représente le code de format de nombre pour une cellule donnée.|
-|rowCount|int|Renvoie le nombre total de lignes de la plage. En lecture seule.|
-|rowHidden|bool|Indique si toutes les lignes de la plage active sont masquées.|
-|rowIndex|int|Renvoie le numéro de ligne de la première cellule de la plage. Avec indice zéro. En lecture seule.|
-|text|object[][]|Valeurs de texte de la plage spécifiée. La valeur de texte ne dépend pas de la largeur de la cellule. Le remplacement par le signe # qui se produit dans l’interface utilisateur d’Excel n’a aucun effet sur la valeur de texte renvoyée par l’API. En lecture seule.|
-|valueTypes|string|Représente le type de données de chaque cellule. En lecture seule. Les valeurs possibles sont les suivantes : Unknown (inconnu), Empty (vide), String (chaîne), Integer (entier), Double (double), Boolean (valeur booléenne), Error (erreur).|
-|values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie une chaîne d’erreur.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|adresse|string|Représente la référence de plage dans le style A1. La valeur d’adresse contient la référence de feuille (par exemple, Feuille1! A1:B4). En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|addressLocal|chaîne|Représente la référence de la plage spécifiée dans le langage de l’utilisateur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|cellCount|int|Nombre de cellules dans la plage. Cette API renvoie -1 si le nombre de cellules est supérieur à 2^31-1 (2 147 483 647). En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|columnCount|int|Représente le nombre total de colonnes dans la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|columnHidden|bool|Indique si toutes les colonnes de la plage active sont masquées.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|columnIndex|int|Représente le numéro de colonne de la première cellule de la plage. Avec indice zéro. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|formulas|object[][]|Représente la formule dans le style de notation A1.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|formulasLocal|object[][]|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur. Par exemple, la formule « =SUM(A1, 1.5) » en anglais deviendrait « =SUMME(A1; 1,5) » en allemand.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|formulasR1C1|object[][]|Représente la formule dans le style de notation R1C1.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|hidden|bool|Indique si toutes les cellules de la plage active sont masquées. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|numberFormat|object[][]|Représente le code de format de nombre d’Excel pour une cellule donnée.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|rowCount|int|Renvoie le nombre total de lignes de la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|rowHidden|bool|Indique si toutes les lignes de la plage active sont masquées.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|rowIndex|int|Renvoie le numéro de ligne de la première cellule de la plage. Avec indice zéro. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|text|object[][]|Valeurs de texte de la plage spécifiée. La valeur de texte ne dépend pas de la largeur de la cellule. Le remplacement par le signe # qui se produit dans l’interface utilisateur d’Excel n’a aucun effet sur la valeur de texte renvoyée par l’API. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|valueTypes|string|Représente le type de données de chaque cellule. En lecture seule. Les valeurs possibles sont les suivantes : Unknown (inconnu), Empty (vide), String (chaîne), Integer (entier), Double (double), Boolean (valeur booléenne), Error (erreur).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie la chaîne d’erreur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description|
-|:---------------|:--------|:----------|
-|format|[RangeFormat](rangeformat.md)|Renvoie un objet de format, qui comprend les propriétés de police, de remplissage, de bordures, d’alignement, etc. de la plage. En lecture seule.|
-|tri|[RangeSort](rangesort.md)|Représente la configuration de tri de la plage. En lecture seule.|
-|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant la plage. En lecture seule.|
+| Relation | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|format|[RangeFormat](rangeformat.md)|Renvoie un objet de format, qui comprend les propriétés de police, de remplissage, de bordures, d’alignement, etc. de la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|tri|[RangeSort](rangesort.md)|Représente le tri de plage de la plage actuelle. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[clear(applyTo: string)](#clearapplyto-string)|void|Supprime les valeurs et les propriétés de format, de remplissage, de bordure, etc. de la plage.|
-|[delete(shift: string)](#deleteshift-string)|void|Supprime les cellules associées à la plage.|
-|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Renvoie le plus petit objet de plage qui englobe les plages données. Par exemple, la valeur getBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E15 ».|
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut se trouver en dehors des limites de ses plages parent, pour peu qu’elle reste dans la grille de la feuille de calcul. L’emplacement de la cellule renvoyée est déterminé à partir de la cellule supérieure gauche de la plage.|
-|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Obtient une colonne contenue dans la plage.|
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Obtient un objet qui représente la colonne entière de la plage.|
-|[getEntireRow()](#getentirerow)|[Range](range.md)|Obtient un objet qui représente la ligne entière de la plage.|
-|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.|
-|[getLastCell()](#getlastcell)|[Range](range.md)|Obtient la dernière cellule de la plage. Par exemple, la dernière cellule de la plage « B2:D5 » est « D5 ».|
-|[getLastColumn()](#getlastcolumn)|[Range](range.md)|Obtient la dernière colonne de la plage. Par exemple, la dernière colonne de la plage « B2:D5 » est « D2:D5 ».|
-|[getLastRow()](#getlastrow)|[Range](range.md)|Obtient la dernière ligne de la plage. Par exemple, la dernière ligne de la plage « B2:D5 » est « B5:D5 ».|
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Obtient un objet qui représente une plage décalée par rapport à la plage spécifiée. Les dimensions de la plage renvoyée correspondent à celle de la plage initiale. Si la plage obtenue se retrouve en dehors des limites de la grille de la feuille de calcul, une exception est déclenchée.|
-|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Obtient une ligne contenue dans la plage.|
-|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Renvoie la sous-plage utilisée de l’objet de la plage.|
-|[insert(shift: string)](#insertshift-string)|[Range](range.md)|Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
-|[merge(across: bool)](#mergeacross-bool)|void|Fusionne la plage de cellules dans une zone de la feuille de calcul.|
-|[select()](#select)|void|Sélectionne la plage spécifiée dans l’interface utilisateur d’Excel.|
-|[unmerge()](#unmerge)|void|Annule la fusion de la plage de cellules.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[clear(applyTo: string)](#clearapplyto-string)|void|Supprime les valeurs et les propriétés de format, de remplissage, de bordure, etc. de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete(shift: string)](#deleteshift-string)|void|Supprime les cellules associées à la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Renvoie le plus petit objet plage qui englobe les plages données. Par exemple, la valeur GetBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E16 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut se trouver en dehors des limites de ses plages parent, pour peu qu’elle reste dans la grille de la feuille de calcul. L’emplacement de la cellule renvoyée est déterminé à partir de la cellule supérieure gauche de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Obtient une colonne contenue dans la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsAfter(count: nombre)](#getcolumnsaftercount-number)|[Range](range.md)|Obtient un certain nombre de colonnes à droite de l’objet de plage actuel.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getColumnsBefore(count: nombre)](#getcolumnsbeforecount-number)|[Range](range.md)|Obtient un certain nombre de colonnes à gauche de l’objet de plage actuel.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Obtient un objet qui représente la colonne entière de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Obtient un objet qui représente la ligne entière de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersectionOrNull(anotherRange: plage ou chaîne)](#getintersectionornullanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLastCell()](#getlastcell)|[Range](range.md)|Obtient la dernière cellule de la plage. Par exemple, la dernière cellule de la plage « B2:D5 » est « D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLastColumn()](#getlastcolumn)|[Range](range.md)|Obtient la dernière colonne de la plage. Par exemple, la dernière colonne de la plage « B2:D5 » est « D2:D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getLastRow()](#getlastrow)|[Range](range.md)|Obtient la dernière ligne de la plage. Par exemple, la dernière ligne de la plage « B2:D5 » est « B5:D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Obtient un objet qui représente une plage décalée par rapport à la plage spécifiée. Les dimensions de la plage renvoyée correspondent à celle de la plage initiale. Si la plage obtenue se retrouve en dehors des limites de la grille de la feuille de calcul, une exception est déclenchée.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getResizedRange(deltaRows: nombre, deltaColumns: nombre)](#getresizedrangedeltarows-number-deltacolumns-number)|[Range](range.md)|Obtient un objet de plage semblable à l’objet de plage actuel, mais avec le coin inférieur droit développé (ou contracté) selon un certain nombre de lignes et de colonnes.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Obtient une ligne contenue dans la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsAbove(count: nombre)](#getrowsabovecount-number)|[Range](range.md)|Obtient un certain nombre de lignes au-dessus de l’objet de plage actuel.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRowsBelow(count: nombre)](#getrowsbelowcount-number)|[Range](range.md)|Obtient un certain nombre de lignes en dessous de l’objet de plage actuel.|[1.2, 1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly)](#getusedrangevaluesonly)|[Range](range.md)|Renvoie la plage utilisée d’un objet de plage donné.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Représente les lignes visibles de la plage en cours.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[insert(shift: string)](#insertshift-string)|[Range](range.md)|Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[merge(across: bool)](#mergeacross-bool)|void|Fusionne la plage de cellules dans une zone de la feuille de calcul.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[select()](#select)|void|Sélectionne la plage spécifiée dans l’interface utilisateur d’Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[unmerge()](#unmerge)|void|Annule la fusion de la plage de cellules.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="clear(applyto:-string)"></a>clear(applyTo: string)
+### <a name="clearapplyto-string"></a>clear(applyTo: string)
 Supprime les valeurs et les propriétés de format, de remplissage, de bordure, etc. de la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -72,8 +77,8 @@ rangeObject.clear(applyTo);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
-|applyTo|string|Facultatif. Détermine le type d’action de suppression. Les valeurs possibles sont les suivantes : `All` (option par défaut),`Formats` ,`Contents`|
+|:---------------|:--------|:----------|:---|
+|applyTo|string|Facultatif. Détermine le type d’action de suppression. Les valeurs possibles sont les suivantes : `All` Option par défaut,`Formats`, ,`Contents` |
 
 #### <a name="returns"></a>Retourne
 void
@@ -98,7 +103,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="delete(shift:-string)"></a>delete(shift: string)
+### <a name="deleteshift-string"></a>delete(shift: string)
 Supprime les cellules associées à la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -108,10 +113,10 @@ rangeObject.delete(shift);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
-|Shift|string|Indique la façon dont les cellules doivent être décalées.  Les valeurs possibles sont les suivantes : Up (vers le haut), Left (vers la gauche)|
+|:---------------|:--------|:----------|:---|
+|Shift|string|Indique la façon dont les cellules doivent être décalées. Les valeurs possibles sont les suivantes : Up (vers le haut), Left (vers la gauche)|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 void
 
 #### <a name="examples"></a>Exemples
@@ -132,8 +137,8 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getboundingrect(anotherrange:-range-or-string)"></a>getBoundingRect(anotherRange: Range or string)
-Renvoie le plus petit objet de plage qui englobe les plages données. Par exemple, la valeur GetBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E15 ».
+### <a name="getboundingrectanotherrange-range-or-string"></a>getBoundingRect(anotherRange: Range or string)
+Renvoie le plus petit objet de plage qui englobe les plages données. Par exemple, la valeur GetBoundingRect pour « B2:C5 » et « D10:E15 » est « B2:E16 ».
 
 #### <a name="syntax"></a>Syntaxe
 ```js
@@ -142,7 +147,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |anotherRange|range ou string|Nom, adresse ou objet de plage.|
 
 #### <a name="returns"></a>Retourne
@@ -170,7 +175,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getcell(row:-number,-column:-number)"></a>getCell(row: number, column: number)
+### <a name="getcellrow-number-column-number"></a>getCell(row: number, column: number)
 Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut se trouver en dehors des limites de ses plages parent, pour peu qu’elle reste dans la grille de la feuille de calcul. L’emplacement de la cellule renvoyée est déterminé à partir de la cellule supérieure gauche de la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -180,7 +185,7 @@ rangeObject.getCell(row, column);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |row|number|Numéro de ligne de la cellule à récupérer. Avec indice zéro.|
 |column|number|Numéro de colonne de la cellule à récupérer. Avec indice zéro.|
 
@@ -195,7 +200,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var cell = range.getCell(0,0);
+    var cell = range.cell(0,0);
     cell.load('address');
     return ctx.sync().then(function() {
         console.log(cell.address);
@@ -209,7 +214,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getcolumn(column:-number)"></a>getColumn(column: number)
+### <a name="getcolumncolumn-number"></a>getColumn(column: number)
 Obtient une colonne contenue dans la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -219,13 +224,13 @@ rangeObject.getColumn(column);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |column|number|Numéro de colonne de la plage à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 
@@ -246,7 +251,39 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getentirecolumn()"></a>getEntireColumn()
+### <a name="getcolumnsaftercount-number"></a>getColumnsAfter(count: nombre)
+Obtient un certain nombre de colonnes à droite de l’objet de plage actuel.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getColumnsAfter(count);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Facultatif. Nombre de colonnes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getcolumnsbeforecount-number"></a>getColumnsBefore(count: nombre)
+Obtient un certain nombre de colonnes à gauche de l’objet de plage actuel.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getColumnsBefore(count);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Facultatif. Nombre de colonnes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getentirecolumn"></a>getEntireColumn()
 Obtient un objet qui représente la colonne entière de la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -260,9 +297,9 @@ Aucun
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
-Remarque : les propriétés de grille de la plage (valeurs, format de nombre, formules) contiennent la valeur `null` car la plage en question est illimitée.
+Remarque : les propriétés de grille de la plage (valeurs, format de nombre, formules) contiennent la valeur `null`, car la plage en question est illimitée.
 
 ```js
 
@@ -283,7 +320,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getentirerow()"></a>getEntireRow()
+### <a name="getentirerow"></a>getEntireRow()
 Obtient un objet qui représente la ligne entière de la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -297,7 +334,7 @@ Aucun
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 ```js
 
 Excel.run(function (ctx) {
@@ -316,9 +353,10 @@ Excel.run(function (ctx) {
         }
 });
 ```
-Les propriétés de grille de la plage (valeurs, format de nombre, formules) contiennent la valeur `null` car la plage en question est illimitée.
+Les propriétés de grille de la plage (valeurs, format de nombre, formules) contiennent la valeur `null`, car la plage en question est illimitée.
 
-### <a name="getintersection(anotherrange:-range-or-string)"></a>getIntersection(anotherRange: Range or string)
+
+### <a name="getintersectionanotherrange-range-or-string"></a>getIntersection(anotherRange: Range or string)
 Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.
 
 #### <a name="syntax"></a>Syntaxe
@@ -328,13 +366,13 @@ rangeObject.getIntersection(anotherRange);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |anotherRange|range ou string|Objet de plage ou adresse de plage utilisé pour déterminer l’intersection des plages.|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 
@@ -355,7 +393,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getlastcell()"></a>getLastCell()
+### <a name="getintersectionornullanotherrange-range-or-string"></a>getIntersectionOrNull(anotherRange: Range or string)
+Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getIntersectionOrNull(anotherRange);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|anotherRange|range ou string|Objet de plage ou adresse de plage utilisé pour déterminer l’intersection des plages.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getlastcell"></a>getLastCell()
 Obtient la dernière cellule de la plage. Par exemple, la dernière cellule de la plage « B2:D5 » est « D5 ».
 
 #### <a name="syntax"></a>Syntaxe
@@ -390,7 +444,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getlastcolumn()"></a>getLastColumn()
+### <a name="getlastcolumn"></a>getLastColumn()
 Obtient la dernière colonne de la plage. Par exemple, la dernière colonne de la plage « B2:D5 » est « D2:D5 ».
 
 #### <a name="syntax"></a>Syntaxe
@@ -425,7 +479,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getlastrow()"></a>getLastRow()
+### <a name="getlastrow"></a>getLastRow()
 Obtient la dernière ligne de la plage. Par exemple, la dernière ligne de la plage « B2:D5 » est « B5:D5 ».
 
 #### <a name="syntax"></a>Syntaxe
@@ -461,7 +515,7 @@ Excel.run(function (ctx) {
 
 
 
-### <a name="getoffsetrange(rowoffset:-number,-columnoffset:-number)"></a>getOffsetRange(rowOffset: number, columnOffset: number)
+### <a name="getoffsetrangerowoffset-number-columnoffset-number"></a>getOffsetRange(rowOffset: number, columnOffset: number)
 Obtient un objet qui représente une plage décalée par rapport à la plage spécifiée. Les dimensions de la plage renvoyée correspondent à celle de la plage initiale. Si la plage obtenue se retrouve en dehors des limites de la grille de la feuille de calcul, une exception est déclenchée.
 
 #### <a name="syntax"></a>Syntaxe
@@ -471,14 +525,14 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |rowOffset|number|Nombre de lignes (positif, négatif ou nul) duquel décaler la plage. Les valeurs positives représentent un décalage vers le bas et les valeurs négatives un décalage vers le haut.|
 |columnOffset|number|Nombre de colonnes (positif, négatif ou nul) duquel décaler la plage. Les valeurs positives représentent un décalage vers la droite et les valeurs négatives un décalage vers la gauche.|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 Excel.run(function (ctx) { 
@@ -498,7 +552,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getrow(row:-number)"></a>getRow(row: number)
+### <a name="getresizedrangedeltarows-number-deltacolumns-number"></a>getResizedRange(deltaRows: nombre, deltaColumns: nombre)
+Obtient un objet de plage semblable à l’objet de plage actuel, mais avec le coin inférieur droit développé (ou contracté) selon un certain nombre de lignes et de colonnes.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getResizedRange(deltaRows, deltaColumns);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|deltaRows|number|Nombre de lignes par lequel développer le coin inférieur droit, par rapport à la plage actuelle. Utilisez un nombre positif pour étendre la plage ou un nombre négatif pour la réduire.|
+|deltaColumns|number|Nombre de colonnes par lequel développer le coin inférieur droit, par rapport à la plage actuelle. Utilisez un nombre positif pour étendre la plage ou un nombre négatif pour la réduire.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getrowrow-number"></a>getRow(row: number)
 Obtient une ligne contenue dans la plage.
 
 #### <a name="syntax"></a>Syntaxe
@@ -508,13 +579,13 @@ rangeObject.getRow(row);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |row|number|Numéro de ligne de la plage à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 
@@ -535,7 +606,39 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getusedrange(valuesonly:-bool)"></a>getUsedRange(valuesOnly: bool)
+### <a name="getrowsabovecount-number"></a>getRowsAbove(count: nombre)
+Obtient un certain nombre de lignes au-dessus de l’objet de plage actuel.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getRowsAbove(count);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Facultatif. Nombre de lignes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getrowsbelowcount-number"></a>getRowsBelow(count: nombre)
+Obtient un certain nombre de lignes en dessous de l’objet de plage actuel.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getRowsBelow(count);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|count|number|Facultatif. Nombre de lignes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
+
+#### <a name="returns"></a>Retourne
+[Range](range.md)
+
+### <a name="getusedrangevaluesonly"></a>getUsedRange(valuesOnly)
 Renvoie la plage utilisée d’un objet de plage donné.
 
 #### <a name="syntax"></a>Syntaxe
@@ -545,13 +648,13 @@ rangeObject.getUsedRange(valuesOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
-|valuesOnly|bool|Facultatif. Lorsque des cellules « true » qui ont actuellement des valeurs sont considérées comme des cellules utilisées. La valeur par défaut, « false », compte les cellules qui ont déjà eu une valeur en étant utilisées.|
+|:---------------|:--------|:----------|:---|
+|valuesOnly|[ApiSet(Version|Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 
@@ -573,7 +676,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="insert(shift:-string)"></a>insert(shift: string)
+### <a name="getvisibleview"></a>getVisibleView()
+Représente les lignes visibles de la plage en cours.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeObject.getVisibleView();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Retourne
+[RangeView](rangeview.md)
+
+### <a name="insertshift-string"></a>insert(shift: string)
 Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.
 
 #### <a name="syntax"></a>Syntaxe
@@ -583,8 +700,8 @@ rangeObject.insert(shift);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
-|Shift|string|Indique la façon dont les cellules doivent être décalées.  Les valeurs possibles sont les suivantes : Down (vers le bas), Right (vers la droite)|
+|:---------------|:--------|:----------|:---|
+|Shift|string|Indique la façon dont les cellules doivent être décalées. Les valeurs possibles sont les suivantes : Down (vers le bas), Right (vers la droite)|
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
@@ -609,7 +726,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -619,13 +736,13 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 
-### <a name="merge(across:-bool)"></a>merge(across: bool)
+### <a name="mergeacross-bool"></a>merge(across: bool)
 Fusionne la plage de cellules dans une zone de la feuille de calcul.
 
 #### <a name="syntax"></a>Syntaxe
@@ -635,13 +752,13 @@ rangeObject.merge(across);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |across|bool|Facultatif. Définit la valeur « true » pour fusionner séparément les cellules de chaque ligne de la plage spécifiée. La valeur par défaut est « false ».|
 
 #### <a name="returns"></a>Retourne
 void
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -658,7 +775,25 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="select()"></a>select()
+
+#### <a name="examples"></a>範例
+```js
+Excel.run(function (ctx) { 
+    var sheetName = "Sheet1";
+    var rangeAddress = "A1:C3";
+    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    range.unmerge();
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+
+### <a name="select"></a>select()
 Sélectionne la plage spécifiée dans l’interface utilisateur d’Excel.
 
 #### <a name="syntax"></a>Syntaxe
@@ -682,7 +817,6 @@ Excel.run(function (ctx) {
     var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
     range.select();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -692,7 +826,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="unmerge()"></a>unmerge()
+### <a name="unmerge"></a>unmerge()
 Annule la fusion de la plage de cellules.
 
 #### <a name="syntax"></a>Syntaxe
@@ -724,7 +858,7 @@ Excel.run(function (ctx) {
 
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-Cet exemple utilise l’adresse de la plage pour obtenir l’objet de la plage.
+L’exemple ci-dessous utilise l’adresse de la plage pour obtenir l’objet de la plage.
 
 ```js
 
@@ -745,7 +879,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Cet exemple utilise une plage nommée pour obtenir l’objet de la plage.
+L’exemple ci-dessous utilise une plage nommée pour obtenir l’objet de la plage.
 
 ```js
 
@@ -788,37 +922,16 @@ Excel.run(function (ctx) {
         }
 });
 ```
-L’exemple suivant est identique au précédent, sauf qu’il utilise la notation R1C1 pour les formules.
-
-```js
-Excel.run(function (ctx) { 
-    var sheetName = "Sheet1";
-    var rangeAddress = "F5:G7";
-    var numberFormat = [[null, "d-mmm"], [null, "d-mmm"], [null, null]]
-    var values = [["Today", 42147], ["Tomorrow", "5/24"], ["Difference in days", null]];
-    var formulasR1C1 = [[null,null], [null,null], [null,"=R[-1]C-R[-2]C"]];
-    var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-    range.numberFormat = numberFormat;
-    range.values = values;
-    range.formulasR1C1= formulasR1C1;
-    range.load('text');
-    return ctx.sync().then(function() {
-        console.log(range.text);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
 Obtenir la feuille de calcul contenant la plage 
 
 ```js
+/* This might be broken still - it was broken before because it 
+    it was missing 'var', but might still be wrong because of
+    getting information without loading properly. */
 Excel.run(function (ctx) { 
     var names = ctx.workbook.names;
     var namedItem = names.getItem('MyRange');
-    range = namedItem.range;
+    var range = namedItem.range;
     var rangeWorksheet = range.worksheet;
     rangeWorksheet.load('name');
     return ctx.sync().then(function() {

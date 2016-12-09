@@ -1,36 +1,36 @@
-# <a name="chartaxis-object-(javascript-api-for-excel)"></a>Objet ChartAxis (interface API JavaScript pour Excel)
+# <a name="chartaxis-object-javascript-api-for-excel"></a>Objet ChartAxis (interface API JavaScript pour Excel)
 
 Représente un axe unique dans un graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|majorUnit|object|Représente l’intervalle entre deux graduations principales. Peut être défini sur une valeur numérique ou une chaîne vide. La valeur renvoyée est toujours un nombre.|
-|maximum|object|Représente la valeur maximale pour l’axe des ordonnées. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|
-|minimum|object|Représente la valeur minimale pour l’axe des ordonnées. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|
-|minorUnit|object|Représente l’intervalle entre deux graduations secondaires. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|majorUnit|object|Représente l’intervalle entre deux graduations principales. Peut être défini sur une valeur numérique ou une chaîne vide.  La valeur renvoyée est toujours un nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|maximum|object|Représente la valeur maximale sur l’axe des ordonnées.  Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique).  La valeur renvoyée est toujours un nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|minimum|object|Représente la valeur minimale sur l’axe des ordonnées. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|minorUnit|object|Représente l’intervalle entre deux graduations secondaires. Peut être défini sur une valeur numérique ou une chaîne vide (pour les valeurs d’axe automatique). La valeur renvoyée est toujours un nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description|
-|:---------------|:--------|:----------|
-|format|[ChartAxisFormat](chartaxisformat.md)|Représente la mise en forme d’un objet de graphique, à savoir le format des lignes et de la police. En lecture seule.|
-|majorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage principal de l’axe spécifié. En lecture seule.|
-|minorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage secondaire de l’axe spécifié. En lecture seule.|
-|titre|[ChartAxisTitle](chartaxistitle.md)|Représente le titre de l’axe. En lecture seule.|
+| Relation | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|format|[ChartAxisFormat](chartaxisformat.md)|Représente la mise en forme d’un objet de graphique, à savoir le format des lignes et de la police. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|majorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage principal de l’axe spécifié. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|minorGridlines|[ChartGridlines](chartgridlines.md)|Renvoie un objet de quadrillage qui représente les lignes de quadrillage secondaire de l’axe spécifié. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|title|[ChartAxisTitle](chartaxistitle.md)|Représente le titre de l’axe. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -40,10 +40,10 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 Obtenir la valeur `maximum` de l’axe du graphique Chart1
@@ -51,7 +51,7 @@ Obtenir la valeur `maximum` de l’axe du graphique Chart1
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
-    var axis = chart.axes.valueaxis;
+    var axis = chart.axes.valueAxis;
     axis.load('maximum');
     return ctx.sync().then(function() {
             console.log(axis.maximum);
@@ -64,15 +64,15 @@ Excel.run(function (ctx) {
 });
 ```
 
-Définir la valeur `maximum`, `minimum`, `majorunit` ou `minorunit` de l’axe des ordonnées. 
+Définir les valeurs `maximum`, `minimum`, `majorunit` et `minorunit` pour valueaxis. 
 
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
-    chart.axes.valueaxis.maximum = 5;
-    chart.axes.valueaxis.minimum = 0;
-    chart.axes.valueaxis.majorunit = 1;
-    chart.axes.valueaxis.minorunit = 0.2;
+    chart.axes.valueAxis.maximum = 5;
+    chart.axes.valueAxis.minimum = 0;
+    chart.axes.valueAxis.majorUnit = 1;
+    chart.axes.valueAxis.minorUnit = 0.2;
     return ctx.sync().then(function() {
             console.log("Axis Settings Changed");
     });

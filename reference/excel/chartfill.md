@@ -1,4 +1,4 @@
-# <a name="chartfill-object-(javascript-api-for-excel)"></a>Objet ChartFill (interface API JavaScript pour Excel)
+# <a name="chartfill-object-javascript-api-for-excel"></a>Objet ChartFill (interface API JavaScript pour Excel)
 
 Représente le format de remplissage d’un élément de graphique.
 
@@ -12,15 +12,15 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Supprime la couleur de remplissage d’un élément de graphique.|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Définit le format de remplissage d’un élément de graphique sur une couleur unie.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Supprime la couleur de remplissage d’un élément de graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Définit le format de remplissage d’un élément de graphique sur une couleur unie.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="clear()"></a>Effacer
+### <a name="clear"></a>Effacer
 Supprime la couleur de remplissage d’un élément de graphique.
 
 #### <a name="syntax"></a>Syntaxe
@@ -40,7 +40,7 @@ Désactiver le format des lignes de quadrillage principal sur l’axe des ordonn
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -53,7 +53,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
+### <a name="setsolidcolorcolor-string"></a>setSolidColor(color: string)
 Définit le format de remplissage d’un élément de graphique sur une couleur unie.
 
 #### <a name="syntax"></a>Syntaxe
@@ -63,10 +63,10 @@ chartFillObject.setSolidColor(color);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |color|string|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 void
 
 #### <a name="examples"></a>Exemples

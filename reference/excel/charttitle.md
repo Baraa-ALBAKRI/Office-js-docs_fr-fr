@@ -1,32 +1,32 @@
-# <a name="charttitle-object-(javascript-api-for-excel)"></a>Objet ChartTitle (interface API JavaScript pour Excel)
+# <a name="charttitle-object-javascript-api-for-excel"></a>Objet ChartTitle (interface API JavaScript pour Excel)
 
 Représente un objet de titre pour un graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|overlay|bool|Valeur booléenne indiquant si le titre du graphique recouvre le graphique ou non.|
-|text|string|Représente le texte du titre d’un graphique.|
-|visible|bool|Valeur booléenne qui représente la visibilité d’un objet de titre de graphique.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|overlay|bool|Valeur booléenne indiquant si le titre du graphique recouvre le graphique ou non.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|text|string|Représente le texte du titre d’un graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|Valeur booléenne qui représente la visibilité d’un objet de titre de graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description|
-|:---------------|:--------|:----------|
-|format|[ChartTitleFormat](charttitleformat.md)|Représente le format du titre d’un graphique, à savoir le format de remplissage et de la police. En lecture seule.|
+| Relation | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|format|[ChartTitleFormat](charttitleformat.md)|Représente le format du titre d’un graphique, à savoir le format de remplissage et de la police. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -36,14 +36,14 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
-Obtenir la valeur `text` du titre du graphique Chart1
+Obtenir la valeur `text` du titre du graphique Chart1.
 
 ```js
 Excel.run(function (ctx) { 
@@ -59,9 +59,10 @@ return ctx.sync().then(function() {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
 });
+});
 ```
 
-Définir la valeur `text` du titre du graphique sur « My Chart » et placer le titre en haut du graphique, sans superposition
+Définir la valeur `text` du titre du graphique sur « My Chart » et placer le titre en haut du graphique, sans superposition.
 
 ```js
 Excel.run(function (ctx) { 
@@ -78,5 +79,6 @@ return ctx.sync().then(function() {
         if (error instanceof OfficeExtension.Error) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
+});
 });
 ```

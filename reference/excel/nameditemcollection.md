@@ -1,12 +1,12 @@
-# <a name="nameditemcollection-object-(javascript-api-for-excel)"></a>Objet NamedItemCollection (interface API JavaScript pour Excel)
+# <a name="nameditemcollection-object-javascript-api-for-excel"></a>Objet NamedItemCollection (interface API JavaScript pour Excel)
 
 Collection de tous les objets NamedItem du classeur.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description
-|:---------------|:--------|:----------|
-|items|[NamedItem[]](nameditem.md)|Collection d’objets NamedItem. En lecture seule.|
+| Propriété     | Type   |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|éléments|[NamedItem[]](nameditem.md)|Collection d’objets NamedItem. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -16,15 +16,16 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description|
-|:---------------|:--------|:----------|
-|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Obtient un objet NamedItem à l’aide de son nom.|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+| Méthode           | Type renvoyé    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Obtient un objet NamedItem à l’aide de son nom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: chaîne)](#getitemornullname-string)|[NamedItem](nameditem.md)|Obtient un objet NamedItem à l’aide de son nom. Si l’objet NamedItem n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="getitem(name:-string)"></a>getItem(name: string)
+### <a name="getitemname-string"></a>getItem(name: string)
 Obtient un objet NamedItem à l’aide de son nom.
 
 #### <a name="syntax"></a>Syntaxe
@@ -34,17 +35,18 @@ namedItemCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |name|string|nom de l’objet NamedItem.|
 
 #### <a name="returns"></a>Retourne
 [NamedItem](nameditem.md)
 
-#### <a name="examples"></a>Exemples
+#### <a name="examples"></a>範例
 
 ```js
 Excel.run(function (ctx) { 
-    var nameditem = ctx.workbook.names.getItem(wSheetName);
+    var sheetName = 'Sheet1';
+    var nameditem = ctx.workbook.names.getItem(sheetName);
     nameditem.load('type');
     return ctx.sync().then(function() {
             console.log(nameditem.type);
@@ -56,24 +58,23 @@ Excel.run(function (ctx) {
         }
 });
 ```
+### <a name="getitemornullname-string"></a>getItemOrNull(name: chaîne)
+Obtient un objet NamedItem à l’aide de son nom. Si l’objet NamedItem n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.
 
-#### <a name="examples"></a>Exemples
-
+#### <a name="syntax"></a>Syntaxe
 ```js
-Excel.run(function (ctx) { 
-    var nameditem = ctx.workbook.names.getItemAt(0);
-    nameditem.load('name');
-    return ctx.sync().then(function() {
-            console.log(nameditem.name);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
+namedItemCollectionObject.getItemOrNull(name);
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|name|string|nom de l’objet NamedItem.|
+
+#### <a name="returns"></a>Retourne
+[NamedItem](nameditem.md)
+
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -83,10 +84,10 @@ object.load(param);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
@@ -109,20 +110,4 @@ Excel.run(function (ctx) {
 });
 ```
 
-Obtenir le nombre d’objets NamedItem
-
-```js
-Excel.run(function (ctx) { 
-    var nameditems = ctx.workbook.names;
-    nameditems.load('count');
-    return ctx.sync().then(function() {
-        console.log("nameditems: Count= " + nameditems.count);
-    });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
 

@@ -1,13 +1,12 @@
-# <a name="icon-object-javascript-api-for-excel"></a>Objet Icon (interface API JavaScript pour Excel)
+# <a name="rangeviewcollection-object-javascript-api-for-excel"></a>Objet RangeViewCollection (API JavaScript pour Excel)
 
-Représente une icône de cellule.
+Représente une collection d’objets de feuille de calcul qui font partie du classeur.
 
 ## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|index|int|Représente l’index de l’icône dans l’ensemble donné.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|set|chaîne|Représente l’ensemble dont fait partie l’icône. Les valeurs possibles sont les suivantes : Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|éléments|[RangeView[]](rangeview.md)|Collection d’objets rangeView. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -19,10 +18,27 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeView](rangeview.md)|Obtient une ligne d’affichage de plage par l’intermédiaire de son index. Avec index de base zéro.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
+
+### <a name="getitematindex-number"></a>getItemAt(index: number)
+Obtient une ligne d’affichage de plage par l’intermédiaire de son index. Avec index de base zéro.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+rangeViewCollectionObject.getItemAt(index);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre    | Type   |Description|
+|:---------------|:--------|:----------|:---|
+|index|number|Index de la ligne visible.|
+
+#### <a name="returns"></a>Retourne
+[RangeView](rangeview.md)
 
 ### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
