@@ -1,28 +1,28 @@
-# Objet Table (interface API JavaScript pour OneNote)
+# <a name="table-object-javascript-api-for-onenote"></a>Objet Table (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
 
 Représente une table dans une page OneNote.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
 |borderVisible|bool|Obtient ou définit si les bordures sont visibles ou non. True si elles sont visibles, false si elles sont masquées.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-borderVisible)|
 |columnCount|int|Obtient le nombre de colonnes dans le tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-columnCount)|
-|id|chaîne|Obtient l’ID du tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
+|id|string|Obtient l’ID du tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
 |rowCount|int|Obtient le nombre de lignes dans le tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
 
-_Voir des [exemples](#exemples) d’accès aux propriétés._
+_Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
 |paragraph|[Paragraph](paragraph.md)|Obtient l’objet Paragraph qui contient l’objet Table. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
-|Objet Rows|[TableRowCollection](tablerowcollection.md)|Obtient toutes les lignes de la table. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
+|Objet Rows|[TableRowCollection](tablerowcollection.md)|Obtient toutes les lignes du tableau. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
@@ -35,26 +35,26 @@ _Voir des [exemples](#exemples) d’accès aux propriétés._
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-load)|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Définit la couleur d’ombrage de toutes les cellules du tableau.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-setShadingColor)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### appendColumn(values: string[])
+### <a name="appendcolumnvalues-string"></a>appendColumn(values: string[])
 Ajoute une colonne à la fin du tableau. Si elles sont spécifiées, les valeurs sont définies dans la nouvelle colonne. Dans le cas contraire, la colonne est vide.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.appendColumn(values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |values|string[]|Facultatif. Facultatif. Chaînes à insérer dans la nouvelle colonne, spécifiées sous forme de tableau. Elles ne doivent pas contenir plus de valeurs que de lignes dans le tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -87,23 +87,23 @@ OneNote.run(function(ctx) {
 ```
 
 
-### appendRow(values: string[])
+### <a name="appendrowvalues-string"></a>appendRow(values: string[])
 Ajoute une ligne à la fin du tableau. Si elles sont spécifiées, les valeurs sont définies dans la nouvelle ligne. Dans le cas contraire, la ligne est vide.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.appendRow(values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |values|string[]|Facultatif. Facultatif. Chaînes à insérer dans la nouvelle ligne, spécifiées sous forme de tableau. Elles ne doivent pas contenir plus de valeurs que de colonnes dans le tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableRow](tablerow.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -136,38 +136,38 @@ OneNote.run(function(ctx) {
 ```
 
 
-### clear()
+### <a name="clear"></a>clear()
 Efface le contenu du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.clear();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-### getCell(rowIndex: number, cellIndex: number)
+### <a name="getcellrowindex-number-cellindex-number"></a>getCell(rowIndex: number, cellIndex: number)
 Obtient la cellule du tableau correspondant à une ligne et une colonne spécifiées.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.getCell(rowIndex, cellIndex);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |rowIndex|number|Index de la ligne.|
 |cellIndex|number|Index de la cellule dans la ligne.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableCell](tablecell.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -200,24 +200,24 @@ OneNote.run(function(ctx) {
 ```
 
 
-### insertColumn(index: number, values: string[])
+### <a name="insertcolumnindex-number-values-string"></a>insertColumn(index: number, values: string[])
 Insère une colonne au niveau de l’index donné dans le tableau. Si elles sont spécifiées, les valeurs sont définies dans la nouvelle colonne. Dans le cas contraire, la colonne est vide.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.insertColumn(index, values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Index au niveau duquel la colonne est insérée dans le tableau.|
 |values|string[]|Facultatif. Facultatif. Chaînes à insérer dans la nouvelle colonne, spécifiées sous forme de tableau. Elles ne doivent pas contenir plus de valeurs que de lignes dans le tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -250,24 +250,24 @@ OneNote.run(function(ctx) {
 ```
 
 
-### insertRow(index: number, values: string[])
+### <a name="insertrowindex-number-values-string"></a>insertRow(index: number, values: string[])
 Insère une ligne à l’index donné dans le tableau. Si elles sont spécifiées, les valeurs sont définies dans la nouvelle ligne. Dans le cas contraire, la ligne est vide.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.insertRow(index, values);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |index|number|Index au niveau duquel la ligne est insérée dans le tableau.|
 |values|string[]|Facultatif. Facultatif. Chaînes à insérer dans la nouvelle ligne, spécifiées sous forme de tableau. Elles ne doivent pas contenir plus de valeurs que de colonnes dans le tableau.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [TableRow](tablerow.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -300,38 +300,38 @@ OneNote.run(function(ctx) {
 ```
 
 
-### load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Renvoie
 void
 
-### setShadingColor(colorCode: string)
+### <a name="setshadingcolorcolorcode-string"></a>setShadingColor(colorCode: string)
 Définit la couleur d’ombrage de toutes les cellules du tableau.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 tableObject.setShadingColor(colorCode);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|colorCode|chaîne|Code de couleur selon lequel sont définies les cellules/param|
+|colorCode|string|Code de couleur selon lequel sont définies les cellules/param|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
-### Exemples d’accès aux propriétés
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 **columnCount, rowCount, id**
 ```js
 OneNote.run(function(ctx) {

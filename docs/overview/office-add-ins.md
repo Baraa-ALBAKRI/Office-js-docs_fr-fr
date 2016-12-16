@@ -12,9 +12,11 @@ Vous pouvez utiliser des compléments Office pour effectuer les actions suivante
     
 **Les compléments Office peuvent être exécutés dans différentes versions d’Office**, notamment Office pour Windows pour ordinateur de bureau, Office Online, Office pour Mac et Office pour iPad.
 
->**Remarque :** Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability). 
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
-## <a name="what-can-an-office-add-in-do?"></a>Que peut faire un complément Office ?
+Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability). 
+
+## <a name="what-can-an-office-add-in-do"></a>Que peut faire un complément Office ?
 
 Un complément Office peut pratiquement faire tout ce qu’une page web peut effectuer dans le navigateur, notamment :
 
@@ -42,7 +44,7 @@ Vous pouvez créer les types de compléments Office suivants :
 - Compléments de création d’objets pour Excel et PowerPoint
 - Compléments d’extension des fonctionnalités pour Outlook
 
-### <a name="word,-excel,-and-powerpoint-add-ins-that-extend-functionality"></a>Compléments d’extension des fonctionnalités pour Word, Excel et PowerPoint 
+### <a name="word-excel-and-powerpoint-add-ins-that-extend-functionality"></a>Compléments d’extension des fonctionnalités pour Word, Excel et PowerPoint 
 Vous pouvez **ajouter de nouvelles fonctionnalités** dans Word, Excel ou PowerPoint en enregistrant votre complément à l’aide d’un [manifeste de complément du volet Office](../design/add-in-commands.md). Ce manifeste prend en charge **deux modes d’intégration** :
 
 - Commandes de compléments
@@ -110,7 +112,9 @@ Le manifeste spécifie les paramètres et les possibilités du complément, nota
     
 - Le nom d’affichage, la description, l’ID, la version et les paramètres régionaux par défaut du complément.
     
-- Intégration du complément avec Office :     - Pour les compléments qui étendent Word/Excel/PowerPoint/Outlook : les points d’extension native que le complément utilise pour exposer les fonctionnalités, tels que les boutons du ruban.     - Pour les compléments qui créent des objets pouvant être intégrés : l’URL de la page par défaut qui est chargée pour l’objet.
+- Intégration du complément avec Office :     
+      - Pour les compléments qui étendent Word/Excel/PowerPoint/Outlook : les points d’extension native que le complément utilise pour exposer les fonctionnalités, tels que les boutons du ruban.     
+      - Pour les compléments qui créent des objets pouvant être intégrés : l’URL de la page par défaut qui est chargée pour l’objet.
        
     
 - Le niveau d’autorisation et les conditions d’accès aux données pour le complément.

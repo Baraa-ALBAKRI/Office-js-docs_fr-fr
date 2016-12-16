@@ -20,7 +20,7 @@ La définition d’une version minimale d’ensemble de conditions requises dans
 
 ## <a name="using-apis-from-later-requirement-sets"></a>Utilisation des API d’un ensemble de conditions requises ultérieure
 
-La définition d’un ensemble de conditions requises ne limite pas votre complément à utiliser les API de cette version. Par exemple, si le complément indique l’ensemble de conditions requises 1.1, mais qu’il s’est exécuté dans un client Outlook prenant en charge la version 1.3, le complément peut utiliser les API de l’ensemble de conditions requises 1.3\.
+La définition d’un ensemble de conditions requises ne limite pas votre complément à utiliser les API de cette version. Par exemple, si le complément indique l’ensemble de conditions requises 1.1, mais qu’il s’est exécuté dans un client Outlook prenant en charge la version 1.3, le complément peut utiliser les API de l’ensemble de conditions requises 1.3\.
 
 Pour utiliser des API plus récentes, les développeurs peuvent simplement vérifier leur disponibilité en utilisant la technique JavaScript standard.
 
@@ -42,10 +42,10 @@ Les clients suivants prennent en charge des compléments Outlook.
 
 | Client | Ensembles de conditions requises des API prises en charge |
 | --- | --- |
-| Outlook 2016 pour Windows | 1.1, 1.2, 1.3 |
+| Outlook 2016 pour Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 pour Mac | 1.1 |
 | Outlook 2013 pour Windows | 1.1, 1.2, 1.3 |
-| Outlook sur le web (Office 365 et Outlook.com) | 1.1, 1.2, 1.3 |
+| Outlook sur le web (Office 365 et Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
 | Outlook Web App (Exchange 2013 sur site) | 1.1 |
 | Outlook Web App (Exchange 2016 sur site) | 1.1, 1.2. 1.3 |
 >**Remarque** La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [Mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/en-us/kb/3114349)    

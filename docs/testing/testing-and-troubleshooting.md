@@ -20,7 +20,7 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 |Erreur : l’objet ne prend pas en charge la propriété ou la méthode « defineProperty »|Vérifiez qu’Internet Explorer ne fonctionne pas en mode de compatibilité. Accédez à Outils >  **Paramètres d’affichage de compatibilité**.|
 |Désolé, nous n’avons pas pu charger l’application, car la version de votre navigateur n’est pas prise en charge. Cliquez ici pour obtenir la liste des versions de navigateur prises en charge.|Assurez-vous que le navigateur prend en charge le stockage local HTML5 ou réinitialisez les paramètres d’Internet Explorer.Pour plus d’informations sur les navigateurs pris en charge, voir [Configuration requise pour exécuter des compléments Office](../../docs/overview/requirements-for-running-office-add-ins.md).|
 
-## <a name="outlook-add-in-doesn't-work-correctly"></a>§LTA Le complément Outlook ne fonctionne pas correctement
+## <a name="outlook-add-in-doesnt-work-correctly"></a>§LTA Le complément Outlook ne fonctionne pas correctement
 
 §LTA Si un complément Outlook s’exécutant sous Windows ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer. 
 
@@ -32,7 +32,7 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 Nous vous recommandons de décocher ces paramètres uniquement pour résoudre le problème. Si vous ne les réactivez pas, vous recevrez des invites. Une fois que le problème est résolu, recochez les cases  **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 
-## <a name="add-in-doesn't-activate-in-office-2013"></a>Le complément ne s’active pas dans Office 2013
+## <a name="add-in-doesnt-activate-in-office-2013"></a>Le complément ne s’active pas dans Office 2013
 
 Le complément ne s’active pas lorsque l’utilisateur effectue les étapes suivantes :
 
@@ -45,6 +45,9 @@ Le complément ne s’active pas lorsque l’utilisateur effectue les étapes su
     
 Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
+## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
+
+Tentez d’utiliser la [journalisation runtime](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) pour résoudre les problèmes liés au manifeste du complément.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -59,4 +62,6 @@ Pour résoudre ce problème, vérifiez que les dernières mises à jour Office s
 - [Créer et déboguer des compléments Office dans Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
     
 - [Déployer et installer des compléments Outlook à des fins de test](../outlook/testing-and-tips.md)
+    
+- [Utiliser la journalisation runtime pour déboguer votre manifeste](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
     

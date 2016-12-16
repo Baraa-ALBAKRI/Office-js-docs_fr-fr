@@ -1,11 +1,12 @@
 
-# <a name="requirements-for-running-office-addins"></a>Configuration requise pour exécuter des compléments Office
+# <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
 
->**Remarque :** Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability). 
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
+Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability).
 
 ## <a name="server-requirements"></a>Exigences en matière de serveur
 
@@ -52,12 +53,12 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 - Excel pour Mac version 15.19 (160206) 
 - PowerPoint pour Mac version 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Configuration requise pour le client : Prise en charge du navigateur pour les clients web Office Online et SharePoint
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office Online et SharePoint
 
 Tout navigateur qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou version ultérieure, ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
-## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
 
 Plus particulièrement pour OWA pour périphériques et Outlook Web App exécutés dans un navigateur sur des smartphones et des tablettes non Windows, le logiciel suivant est requis pour tester et exécuter des compléments Outlook.
 

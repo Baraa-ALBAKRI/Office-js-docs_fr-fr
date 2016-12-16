@@ -5,6 +5,8 @@
 
 Cet article fournit des informations sur l’API JavaScript pour Office et son utilisation. Pour obtenir des informations de référence, voir [API JavaScript pour Office](../../reference/javascript-api-for-office.md). Pour plus d’informations sur la mise à jour des fichiers de projet Visual Studio vers la version la plus récente de l’API JavaScript pour Office, voir [Mettre à jour la version de votre API JavaScript pour Office et les fichiers de schéma manifeste](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Référence à la bibliothèque de l’interface API JavaScript pour Office dans votre complément
 
 La bibliothèque de l’[interface API JavaScript pour Office](../../reference/javascript-api-for-office.md) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. La méthode la plus simple pour référencer l’interface API est d’utiliser notre CDN en ajoutant le `<script>` suivant à la balise `<head>` de votre page :  
@@ -20,7 +22,7 @@ Pour obtenir plus d’informations sur le CDN Office.js et la gestion du contrô
 ## <a name="initializing-your-add-in"></a>Initialisation de votre complément
 
 
- **S’applique à :** Tous les types de complément
+ **S’applique à :** tous les types de complément
 
 
 Office.js fournit un événement d’initialisation qui se déclenche lorsque l’API est entièrement chargée et prête à interagir avec l’utilisateur. Vous pouvez utiliser le gestionnaire d’événements **initialize** afin de mettre en œuvre des scénarios d’initialisation de complément courants, comme inviter l’utilisateur à sélectionner des cellules dans Excel, puis insérer un graphique initialisé avec les valeurs sélectionnées. Vous pouvez également utiliser le gestionnaire d’événements initialize pour initialiser d’autres logiques personnalisées pour votre complément, telles que l’établissement de liaisons, la demande de valeurs de paramètres de complément par défaut, et ainsi de suite.

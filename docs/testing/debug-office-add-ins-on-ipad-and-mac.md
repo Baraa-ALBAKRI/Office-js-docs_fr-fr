@@ -3,7 +3,7 @@
 
 Vous pouvez utiliser Visual Studio pour le développement et le débogage des compléments sur Windows. Toutefois, vous ne pouvez pas l’utiliser pour déboguer les compléments sur iPad ou sur Mac. Dans la mesure où les compléments sont développés dans le code HTML et Javascript, ils devraient fonctionner sur différentes plateformes. Il peut toutefois exister de légères différences dans l’affichage du code HTML dans les différents navigateurs. Cette rubrique explique comment déboguer les compléments en exécution sur iPad ou sur Mac. 
 
-## <a name="debugging-with-vorlon.js"></a>Débogage avec Vorlon.js 
+## <a name="debugging-with-vorlonjs"></a>Débogage avec Vorlon.js 
 
 Vorlon.js est un débogueur de pages web, semblable aux outils F12, conçu pour fonctionner à distance et pour vous permettre de déboguer des pages web sur différents appareils. Pour plus d’informations, accédez au [site web de Vorlon](http://www.vorlonjs.com).  
 
@@ -19,7 +19,7 @@ Pour installer et configurer Vorlon :
 
 5.  Exécutez le serveur Vorlon avec la commande `sudo vorlon`. 
 
-6.  Ouvrez une fenêtre de navigateur et accédez à [http://localhost:1337](http://localhost:1337), qui correspond à l’interface Vorlon. Approuvez le certificat de sécurité lorsque vous y serez invité. Vous pouvez également trouver le certificat de sécurité dans le dossier Vorlon sous /Server/cert. 
+6.  Ouvrez une fenêtre de navigateur et accédez à [http://localhost:1337](http://localhost:1337), qui correspond à l’interface Vorlon. Lorsque vous y êtes invité, sélectionnez **Toujours** pour approuver le certificat de sécurité. Vous pouvez également trouver le certificat de sécurité dans le dossier Vorlon sous /Server/cert. 
 
 7.  Ajoutez la balise de script suivante à la section `<head>` du fichier home.html (ou fichier HTML principal) de votre complément :
 ```    

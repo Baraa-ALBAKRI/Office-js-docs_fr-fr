@@ -2,6 +2,8 @@
 
 Cet article décrit comment utiliser l’API JavaScript Excel pour créer des compléments pour Excel 2016. Il présente des concepts fondamentaux pour l’utilisation d’API, notamment concernant les objets RequestContext, les objets de proxy JavaScript, ainsi que les méthodes sync(), Excel.run() et load(). Les exemples de code à la fin de l’article vous montrent comment appliquer les concepts.
 
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 ## <a name="requestcontext"></a>RequestContext
 
 L’objet RequestContext facilite les demandes auprès de l’application Excel. L’exécution du complément Office et de l’application Excel faisant appel à deux processus différents, il est nécessaire de fournir le contexte des demandes pour accéder à Excel et aux objets associés, tels que les feuilles de calcul et les tableaux, à partir du complément. L’exemple suivant illustre la création d’un contexte de demande.
@@ -20,17 +22,17 @@ Par exemple, l’objet `selectedRange` JavaScript local est déclaré pour réf�
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-## <a name="sync()"></a>sync()
+## <a name="sync"></a>Sync
 
 La méthode sync() disponible dans le contexte de demande synchronise l’état des objets de proxy JavaScript et des objets réels d’Excel en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés à utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue lorsque la synchronisation est terminée.
 
-## <a name="excel.run(function(context)-{-batch-})"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() exécute un script de commandes qui effectue des actions sur le modèle objet Excel. Les commandes de traitement par lots incluent les définitions des objets de proxy JavaScript locaux et des méthodes sync() qui synchronisent l’état des objets locaux et Excel, ainsi que la résolution de la promesse. L’avantage de traiter les demandes par lots avec Excel.run() est que, une fois la promesse résolue, tous les objets de plage faisant l’objet d’un suivi qui ont été alloués lors de l’exécution sont automatiquement libérés.
 
 La méthode d’exécution utilise le contexte de demande et renvoie une promesse (en général, le résultat de la méthode ctx.sync()). Il est possible d’exécuter l’opération par lots en dehors de la méthode Excel.run(). Toutefois, dans ce cas, toutes les références d’objet de plage doivent être suivies et gérées manuellement.
 
-## <a name="load()"></a>load()
+## <a name="load"></a>load()
 
 La méthode load() permet de remplir les objets de proxy créés dans le calque JavaScript du complément. Lorsque vous essayez de récupérer un objet, une feuille de calcul par exemple, un objet de proxy local est tout d’abord créé dans le calque JavaScript. Cet objet peut être utilisé pour mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Toutefois, pour la lecture des propriétés ou des relations de l’objet, les méthodes load() et sync() doivent d’abord être appelées. La méthode load() utilise les propriétés et les relations qui doivent être chargées lors de l’appel de la méthode sync().
 
@@ -48,7 +50,7 @@ où :
 * `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les méthodes .load() décrites sous chaque objet.
 * `loadOption` spécifie un objet qui décrit les propriétés select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](../../reference/excel/loadoption.md) de chargement d’objet.
 
-## <a name="example:-write-values-from-an-array-to-a-range-object"></a>Exemple : écrire des valeurs d’un tableau vers un objet de plage
+## <a name="example-write-values-from-an-array-to-a-range-object"></a>Exemple : écrire des valeurs d’un tableau vers un objet de plage
 
 L’exemple suivant vous montre comment écrire des valeurs d’un tableau vers un objet de plage.
 
@@ -83,7 +85,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## <a name="example:-copy-values"></a>Exemple : copier des valeurs
+## <a name="example-copy-values"></a>Exemple : copier des valeurs
 
 L’exemple suivant montre comment copier les valeurs de la plage A1:A2 vers la plage B1:B2 de la feuille de calcul en utilisant la méthode load() sur l’objet de plage.
 

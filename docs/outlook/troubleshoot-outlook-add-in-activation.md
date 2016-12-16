@@ -5,7 +5,7 @@
 L’activation des compléments Outlook est contextuelle et basée sur les règles d’activation du manifeste du complément. Quand les conditions de l’élément actuellement sélectionné satisfont aux règles d’activation du complément, l’application hôte s’active et affiche le bouton du complément dans l’interface utilisateur d’Outlook (dans le volet de sélection de complément pour les compléments de composition et dans la barre de complément pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
 
 <a name="troubleshootingmailapps"></a>
-## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
+## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
 
 En premier lieu, assurez-vous que le compte de messagerie utilisateur que vous employez pour le test se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013. Si vous utilisez des fonctionnalités spécifiques ultérieures à Exchange 2013, assurez-vous que le compte utilisateur se trouve sur une version appropriée d’Exchange.
@@ -25,8 +25,8 @@ Vous pouvez vérifier la version d’Exchange 2013 en adoptant l’une des appr
     
       2. Sous l’onglet **Développeur** du ruban, choisissez **Visual Basic**.
     
-     >
-  **Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 3. Dans Visual Basic Editor, choisissez  **Affichage**,  **Fenêtre exécution**.
+     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 
+	  3. Dans Visual Basic Editor, choisissez  **Affichage**,  **Fenêtre exécution**.
     
       4. Tapez ce qui suit dans la fenêtre Exécution pour afficher la version du serveur Exchange Server. La version principale de la valeur retournée doit être égale ou supérieure à 15.
     
@@ -49,7 +49,7 @@ Vous pouvez vérifier la version d’Exchange 2013 en adoptant l’une des appr
         
 
 
-## <a name="is-the-add-in-disabled?"></a>Le complément est-il désactivé ?
+## <a name="is-the-add-in-disabled"></a>Le complément est-il désactivé ?
 
 
 N’importe lequel des clients riches Outlook peut désactiver un complément pour des raisons de performances, notamment en cas de dépassement des seuils suivants : utilisation de l’UC ou de la mémoire, tolérance des incidents et durée nécessaire au traitement de toutes les expressions régulières pour un complément. Quand cela se produit, le client riche Outlook affiche une notification pour indiquer qu’il désactive le complément. 
@@ -67,7 +67,7 @@ Utilisez l’une des approches suivantes pour vérifier si un complément est d�
 - Dans Outlook pour Mac, choisissez  **Gérer les compléments** dans la barre du complément. Connectez-vous au Centre d’administration Exchange pour vérifier si le complément est activé.
     
 
-## <a name="does-the-tested-item-support-outlook-add-ins?-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>Les éléments testés prennent-ils en charge les compléments Outlook et sont-ils remis par une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
+## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Les éléments testés prennent-ils en charge les compléments Outlook et sont-ils remis par une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
 
 Si votre complément Outlook est un complément de lecture et qu’il est censé être activé lorsque l’utilisateur affiche un message (messages électroniques, demandes de réunion, réponses et annulations) ou un rendez-vous, et même si ces éléments prennent généralement en charge les compléments, il existe certaines exceptions quand l’élément sélectionné est :
@@ -92,7 +92,7 @@ Même si un élément de messagerie ne correspond pas à l’un des types ci-des
 Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM.
 
 
-## <a name="is-the-add-in-manifest-installed-properly,-and-does-outlook-have-a-cached-copy?"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
+## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
 
 Ce scénario s’applique uniquement à Outlook pour Windows. Normalement, quand vous installez un complément Outlook pour une boîte aux lettres, le serveur Exchange copie le manifeste du complément de l’emplacement que vous indiquez vers la boîte aux lettres située sur ce serveur Exchange. Chaque fois qu’Outlook démarre, il lit l’ensemble des manifestes installés pour cette boîte aux lettres dans un cache temporaire situé à l’emplacement suivant : 
@@ -157,13 +157,17 @@ La figure 1 montre un résumé des étapes à suivre pour vérifier si Outlook 
 7. Si Outlook n’active pas le complément, revenez à l’étape 3 pour revérifier si Outlook a correctement lu le manifeste.
     
 
-## <a name="are-you-using-the-appropriate-activation-rules?"></a>Utilisez-vous les règles d’activation appropriées ?
+## <a name="is-the-add-in-manifest-valid"></a>Le manifeste du complément est-il valide ?
+
+Tentez d’utiliser la [journalisation runtime](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) pour résoudre les problèmes liés au manifeste du complément.
+
+## <a name="are-you-using-the-appropriate-activation-rules"></a>Utilisez-vous les règles d’activation appropriées ?
 
 
 À partir de la version 1.1 du schéma des manifestes des Compléments Office, vous pouvez créer des compléments qui sont activés lorsque l’utilisateur se trouve dans un formulaire de composition (compléments de composition) ou de lecture (compléments de lecture). Assurez-vous que vous spécifiez les règles d’activation appropriées pour chaque type de formulaire dans lequel votre complément est censé être activé. Par exemple, vous ne pouvez activer des compléments de composition qu’à l’aide des règles [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) avec l’attribut **FormType** défini sur **Edit** ou **ReadOrEdit** et vous ne pouvez utiliser aucun autre type de règle, comme les règles [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) et [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) pour les compléments de composition. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](../outlook/manifests/activation-rules.md).
 
 
-## <a name="if-you-use-a-regular-expression,-is-it-properly-specified?"></a>Si vous utilisez une expression régulière, est-elle correctement spécifiée ?
+## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>Si vous utilisez une expression régulière, est-elle correctement spécifiée ?
 
 
 Les expressions régulières contenues dans les règles d’activation font partie du fichier manifeste XML d’un complément de lecture. Si une expression régulière utilise certains caractères, veillez à bien suivre la séquence d’échappement correspondante prise en charge par les processeurs XML. Le tableau 1 répertorie ces caractères spéciaux. 
@@ -180,7 +184,7 @@ Les expressions régulières contenues dans les règles d’activation font part
 |<|Signe inférieur à|&amp;lt;|
 |>|Signe supérieur à|&amp;gt;|
 
-## <a name="if-you-use-a-regular-expression,-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices,-but-not-in-any-of-the-outlook-rich-clients?"></a>Si vous utilisez une expression régulière, est-ce que le complément de lecture s’active dans Outlook Web App ou OWA pour périphériques, mais pas dans l’un des clients riches Outlook ?
+## <a name="if-you-use-a-regular-expression-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices-but-not-in-any-of-the-outlook-rich-clients"></a>Si vous utilisez une expression régulière, est-ce que le complément de lecture s’active dans Outlook Web App ou OWA pour périphériques, mais pas dans l’un des clients riches Outlook ?
 
 
 Les clients riches Outlook ont recours à un autre moteur d’expressions régulières que Outlook Web App et OWA pour périphériques. Ils utilisent le moteur d’expressions régulières C++ fourni dans le cadre de la bibliothèque de modèles standard Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. Outlook Web App et OWA pour périphériques utilisent l’évaluation d’expression régulière incluse dans JavaScript. Celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5. 
@@ -190,7 +194,7 @@ Dans la plupart des cas, ces applications hôtes trouvent les mêmes corresponda
 Testez minutieusement votre expression régulière. Si elle renvoie des résultats distincts, réécrivez-la pour assurer sa compatibilité avec les deux moteurs. Pour vérifier les résultats de l’évaluation sur un client riche Outlook, écrivez un petit programme en C++ qui applique l’expression régulière à un échantillon du texte que vous essayez de faire correspondre. S’exécutant dans Visual Studio, le programme de test en C++ utilise la bibliothèque de modèles standard, ce qui permet de simuler le comportement du client riche Outlook lors de l’exécution de la même expression régulière. Pour vérifier les résultats de l’évaluation dans Outlook Web App ou OWA pour périphériques, utilisez le programme de test d’expression régulière en JavaScript de votre choix.
 
 
-## <a name="if-you-use-an-itemis,-itemhasattachment,-or-itemhasregularexpressionmatch-rule,-have-you-verified-the-related-item-property?"></a>Si vous utilisez une règle ItemIs, ItemHasAttachment ou ItemHasRegularExpressionMatch, avez-vous vérifié la propriété de l’élément connexe ?
+## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>Si vous utilisez une règle ItemIs, ItemHasAttachment ou ItemHasRegularExpressionMatch, avez-vous vérifié la propriété de l’élément connexe ?
 
 
 Si vous utilisez une règle d’activation  **ItemHasRegularExpressionMatch**, vérifiez si la valeur de l’attribut  **PropertyName** correspond à ce que vous attendez pour l’élément sélectionné. Voici quelques conseils pour déboguer les propriétés correspondantes :
@@ -239,18 +243,14 @@ Si la règle d’activation  **ItemHasRegularExpressionMatch** spécifie **Subje
 
 |**Type de règle**|**Vérifier cette propriété MAPI**|
 |:-----|:-----|
-|Règle **ItemHasRegularExpressionMatch** avec **Subject**|
-  [PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
-|Règle **ItemHasRegularExpressionMatch** avec **SenderSMTPAddress**|
-  [PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) et [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
-|**ItemIs**|
-  [PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
-|**ItemHasAttachment**|
-  [PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
+|Règle **ItemHasRegularExpressionMatch** avec **Subject**|[PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
+|Règle **ItemHasRegularExpressionMatch** avec **SenderSMTPAddress**|[PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) et [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
+|**ItemIs**|[PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
+|**ItemHasAttachment**|[PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
 Après avoir vérifié la valeur de propriété, vous pouvez utiliser un outil d’évaluation d’expression régulière pour vérifier si l’expression régulière trouve une correspondance dans cette valeur.
 
 
-## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect?"></a>Est-ce que l’application hôte applique toutes les expressions régulières à la partie du corps de l’élément comme prévu ?
+## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Est-ce que l’application hôte applique toutes les expressions régulières à la partie du corps de l’élément comme prévu ?
 
 
 Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières ; en particulier, celles appliquées au corps d’élément, qui peut être volumineux et demander plus de temps pour l’évaluation des correspondances. Notez que même si la propriété d’élément dont dépend une règle d’activation a la valeur attendue, l’application hôte ne parvient pas toujours à évaluer toutes les expressions régulières pour la valeur complète de la propriété d’élément. Pour offrir des performances raisonnables et contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook, Outlook Web App et OWA pour les appareils respectent les limites suivantes en matière de traitement des expressions régulières des règles d’activation au moment de l’exécution :
@@ -287,15 +287,14 @@ Cette section s’applique à toutes les règles d’activation qui utilisent de
     
 - [Ouvrir l’Observateur d’événements](http://windows.microsoft.com/en-US/windows7/Open-Event-Viewer)
     
-- 
-  [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
+- [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
     
-- 
-  [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
+- [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
     
-- 
-  [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
+- [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
     
-- 
-  [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
+- [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
+- - [Utilisation de la journalisation runtime pour déboguer votre manifeste](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+    
+

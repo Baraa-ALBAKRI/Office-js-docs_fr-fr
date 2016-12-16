@@ -1,6 +1,5 @@
 
-# <a name="deploy-and-publish-your-office-addin"></a>Déploiement et publication de votre complément Office
-
+# <a name="deploy-and-publish-your-office-add-in"></a>Déploiement et publication de votre complément Office
 
 Vous pouvez utiliser plusieurs méthodes pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs : 
 
@@ -10,8 +9,9 @@ Vous pouvez utiliser plusieurs méthodes pour déployer votre complément Office
 - [Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) : utilisez cette méthode dans le cadre de votre processus de développement pour tester votre complément ou, dans un environnement local, pour le distribuer auprès des utilisateurs de votre organisation.
 
 Les options disponibles dépendent de l’hôte Office que vous ciblez et du type de complément.
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
-### <a name="deployment-options-for-word-excel-and-powerpoint-addins"></a>Options de déploiement pour les compléments Word, Excel et PowerPoint
+## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Options de déploiement pour les compléments Word, Excel et PowerPoint
 
 | Point d’extension            | Chargement de version test | Aperçu du Centre d’administration Office 365 |Office Store  | Catalogue SharePoint  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@ Les options disponibles dépendent de l’hôte Office que vous ciblez et du typ
 
 > **REMARQUE :** Les catalogues SharePoint ne sont pas pris en charge dans Office 2016 pour Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à l’[Office Store].    
 
-### <a name="deployment-options-for-outlook-addins"></a>Options de déploiement pour les compléments Outlook
+## <a name="deployment-options-for-outlook-add-ins"></a>Options de déploiement pour les compléments Outlook
 
 | Point d’extension     | Chargement de version test | Serveur Exchange | Office Store |
 |:---------|:-----------:|:---------------:|:------------:|

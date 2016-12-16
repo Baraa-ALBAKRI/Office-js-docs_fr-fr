@@ -1,5 +1,5 @@
 
-# <a name="outlook-addins"></a>Compléments Outlook
+# <a name="outlook-add-ins"></a>Compléments Outlook
 
 Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de la nouvelle plateforme de technologies web. Les compléments Outlook comportent trois aspects clés :
 
@@ -14,6 +14,7 @@ Les compléments Outlook sont différents des compléments COM ou VSTO, qui sont
 
 Les éléments Outlook qui prennent en charge les compléments de messagerie incluent notamment les messages électroniques, les demandes de réunion, les réponses à des demandes de réunion, les annulations de réunion et les rendez-vous. Chaque complément de messagerie définit le contexte dans lequel il est disponible, y compris les types d’éléments et si l’utilisateur lit ou compose un élément.
 
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
 ## <a name="extension-points"></a>Points d’extension
 
@@ -34,7 +35,7 @@ Les points d’extension correspondent à la manière dont les compléments sont
     ![Présente une application contextuelle dans une carte](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-addins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
+## <a name="mailbox-items-available-to-add-ins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
 
 
 Les compléments Outlook sont disponibles pour les messages ou les rendez-vous en mode de lecture ou de composition, mais pas pour d’autres types d’élément. Outlook ne les active pas si l’élément de message actuel, en mode de composition ou de lecture, fait partie des éléments suivants :
@@ -59,7 +60,7 @@ En général, Outlook peut activer des compléments dans des formulaires de lect
 Les compléments Outlook sont pris en charge dans Outlook 2013 et versions ultérieures, Outlook 2016 pour Mac, Outlook Web App pour Exchange 2013 en local, Outlook Web App dans Office 365 et Outlook.com. Toutes les nouvelles fonctionnalités ne sont pas prises en charge dans tous les clients en même temps. Reportez-vous aux rubriques spécifiques et aux références d’API, pour identifier les hôtes qui sont pris en charge ou non.
 
 
-## <a name="get-started-building-outlook-addins"></a>Commencer à créer des compléments Outlook
+## <a name="get-started-building-outlook-add-ins"></a>Commencer à créer des compléments Outlook
 
 
 Pour commencer à créer des compléments Outlook, voir [Get Started with Outlook add-ins for Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).

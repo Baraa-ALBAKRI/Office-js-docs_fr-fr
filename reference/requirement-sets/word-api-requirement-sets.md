@@ -4,19 +4,20 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
 
-|  Ensemble de conditions requises  |   Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  |
-|:-----|-----|:-----|:-----|:-----|
-| WordApi 1.3  | En présentation, version 1605 (Build 6925.1000) ou version ultérieure| En présentation, mai 2016, 1.22 ou version ultérieure | En présentation, 15.22 ou version ultérieure| Nous y travaillons. | 
-| WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | 
-| WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | 
+|  Ensemble de conditions requises  |   Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  | Office Online Server  |
+|:-----|-----|:-----|:-----|:-----|:-----|
+| WordApi 1.3  | En présentation, version 1605 (Build 6925.1000) ou version ultérieure| En présentation, mai 2016, 1.22 ou version ultérieure | En présentation, 15.22 ou version ultérieure| Nous y travaillons. ||
+| WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | Version 1608 (Build 7601.6800) ou version ultérieure|
+| WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
 
-> &#42; **Remarque** : Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble d’exigences WordApi 1.1.
+> **Remarque** : Le numéro de build d’Office 2016 installé via MSI est 16.0.4266.1001. Cette version ne contient que l’ensemble d’exigences WordApi 1.1.
 
-Pour en savoir plus sur les numéros de version et de build, voir :
+Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 
 - [Numéros de version et de build des canaux de réception des mises à jour pour les clients Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [Quelle est la version d’Office que j’utilise ?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
 - [Où trouver le numéro de version et de build pour une application cliente Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Présentation d’Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).

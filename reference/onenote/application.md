@@ -1,53 +1,53 @@
-# Objet Application (interface API JavaScript pour OneNote)
+# <a name="application-object-javascript-api-for-onenote"></a>Objet Application (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_
 
 
 Représente l’objet de niveau supérieur qui contient tous les objets OneNote globalement adressables tels que les blocs-notes, le bloc-notes actif et la section active.
 
-## Propriétés
+## <a name="properties"></a>Propriétés
 
 Aucun
 
-## Relations
+## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
-|notebooks|[NotebookCollection](notebookcollection.md)|Obtient la collection de blocs-notes ouverts dans l’instance de l’application OneNote. Dans OneNote Online, un seul bloc-notes est ouvert à la fois dans l’instance de l’application. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
+|Blocs-notes|[NotebookCollection](notebookcollection.md)|Obtient la collection de blocs-notes ouverts dans l’instance de l’application OneNote. Dans OneNote Online, un seul bloc-notes est ouvert à la fois dans l’instance de l’application. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
 
-## Méthodes
+## <a name="methods"></a>Méthodes
 
 | Méthode           | Type renvoyé    |Description| Commentaires|
 |:---------------|:--------|:----------|:-------|
-|[getActiveNotebook()](#getactivenotebook)|[Bloc-notes](notebook.md)|Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebook)|
-|[getActiveNotebookOrNull()](#getactivenotebookornull)|[Bloc-notes](notebook.md)|Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebookOrNull)|
-|[getActiveOutline()](#getactiveoutline)|[Outline](outline.md)|Obtient le plan actif s’il existe. Si aucun plan n’est actif, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutline)|
-|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[Outline](outline.md)|Obtient le plan actif s’il existe. Sinon, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutlineOrNull)|
+|[getActiveNotebook()](#getactivenotebook)|[Notebook](notebook.md)|Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebook)|
+|[getActiveNotebookOrNull()](#getactivenotebookornull)|[Notebook](notebook.md)|Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveNotebookOrNull)|
+|[getActiveOutline()](#getactiveoutline)|[Plan](outline.md)|Obtient le plan actif s’il existe. Si aucun plan n’est actif, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutline)|
+|[getActiveOutlineOrNull()](#getactiveoutlineornull)|[Plan](outline.md)|Obtient le plan actif s’il existe. Sinon, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveOutlineOrNull)|
 |[getActivePage()](#getactivepage)|[Page](page.md)|Obtient la page active si elle existe. Si aucune page n’est active, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePage)|
 |[getActivePageOrNull()](#getactivepageornull)|[Page](page.md)|Obtient la page active si elle existe. Si aucune page n’est active, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActivePageOrNull)|
 |[getActiveSection()](#getactivesection)|[Section](section.md)|Obtient la section active si elle existe. Si aucune section n’est active, génère ItemNotFound.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSection)|
 |[getActiveSectionOrNull()](#getactivesectionornull)|[Section](section.md)|Obtient la section active si elle existe. Si aucune section n’est active, renvoie la valeur Null.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-getActiveSectionOrNull)|
 |[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-load)|
-|[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Ouvre la page spécifiée dans l’instance de l’application.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
+|[navigateToPage(page : Page)](#navigatetopagepage-page)|void|Ouvre la page spécifiée dans l’instance de l’application.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
 |[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|Obtient la page spécifiée et ouvre celle-ci dans l’instance de l’application.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPageWithClientUrl)|
 
-## Détails des méthodes
+## <a name="method-details"></a>Détails des méthodes
 
 
-### getActiveNotebook()
+### <a name="getactivenotebook"></a>getActiveNotebook()
 Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, génère ItemNotFound.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveNotebook();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
-[Bloc-notes](notebook.md)
+#### <a name="returns"></a>Retourne
+[Notebook](notebook.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
         
@@ -77,21 +77,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveNotebookOrNull()
+### <a name="getactivenotebookornull"></a>getActiveNotebookOrNull()
 Obtient le bloc-notes actif s’il existe. Si aucun bloc-notes n’est actif, renvoie la valeur Null.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveNotebookOrNull();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
-[Bloc-notes](notebook.md)
+#### <a name="returns"></a>Retourne
+[Notebook](notebook.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -122,21 +122,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutline()
+### <a name="getactiveoutline"></a>getActiveOutline()
 Obtient le plan actif s’il existe. Si aucun plan n’est actif, génère ItemNotFound.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveOutline();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Outline](outline.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
 
@@ -163,21 +163,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutlineOrNull()
+### <a name="getactiveoutlineornull"></a>getActiveOutlineOrNull()
 Obtient le plan actif s’il existe. Sinon, renvoie la valeur Null.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveOutlineOrNull();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Outline](outline.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
 
@@ -205,21 +205,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePage()
+### <a name="getactivepage"></a>getActivePage()
 Obtient la page active si elle existe. Si aucune page n’est active, génère ItemNotFound.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActivePage();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
         
@@ -249,21 +249,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePageOrNull()
+### <a name="getactivepageornull"></a>getActivePageOrNull()
 Obtient la page active si elle existe. Si aucune page n’est active, renvoie la valeur Null.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActivePageOrNull();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
 
@@ -294,21 +294,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSection()
+### <a name="getactivesection"></a>getActiveSection()
 Obtient la section active si elle existe. Si aucune section n’est active, génère ItemNotFound.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveSection();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
         
@@ -338,21 +338,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSectionOrNull()
+### <a name="getactivesectionornull"></a>getActiveSectionOrNull()
 Obtient la section active si elle existe. Si aucune section n’est active, renvoie la valeur Null.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.getActiveSectionOrNull();
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 Aucun
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Section](section.md)
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js
 OneNote.run(function (context) {
 
@@ -382,39 +382,39 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 object.load(param);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### Retourne
+#### <a name="returns"></a>Renvoie
 void
 
-### navigateToPage(page: Page)
+### <a name="navigatetopagepage-page"></a>navigateToPage(page: Page)
 Ouvre la page spécifiée dans l’instance de l’application.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.navigateToPage(page);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
 |page|Page|Page à ouvrir.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 void
 
-#### Exemples
+#### <a name="examples"></a>Exemples
 ```js        
 OneNote.run(function (context) {
         
@@ -448,23 +448,23 @@ OneNote.run(function (context) {
 ```
 
 
-### navigateToPageWithClientUrl(url: string)
+### <a name="navigatetopagewithclienturlurl-string"></a>navigateToPageWithClientUrl(url: string)
 Obtient la page spécifiée et ouvre celle-ci dans l’instance de l’application.
 
-#### Syntaxe
+#### <a name="syntax"></a>Syntaxe
 ```js
 applicationObject.navigateToPageWithClientUrl(url);
 ```
 
-#### Paramètres
+#### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|url|chaîne|URL du client de la page à ouvrir.|
+|url|string|URL du client de la page à ouvrir.|
 
-#### Retourne
+#### <a name="returns"></a>Retourne
 [Page](page.md)
 
-#### Exemples
+#### <a name="examples"></a>範例
 ```js
 OneNote.run(function (context) {
 
