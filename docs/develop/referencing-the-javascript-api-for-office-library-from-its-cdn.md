@@ -1,5 +1,5 @@
 
-# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Référencement de la bibliothèque de l’interface API JavaScript pour Office à partir de son réseau de distribution de contenu
 
 
 La bibliothèque de l’[interface API JavaScript pour Office](../../reference/javascript-api-for-office.md) comprend le fichier Office.js et des fichiers .js propres aux applications hôtes associées, comme Excel-15.js et Outlook15.js. 
@@ -11,7 +11,7 @@ La méthode la plus simple pour référencer l’interface API est d’utiliser 
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-L’élément `/1/` devant `office.js` dans l’URL CDN indique que vous devez utiliser la dernière version incrémentielle au sein de la version 1 d’Office.js. Étant donné que l’interface API JavaScript pour Office assure une compatibilité descendante, la dernière version continuera à prendre en charge les membres de l’API qui ont été introduits précédemment dans la version 1. Si vous devez mettre à niveau un projet existant, voir [Mettre à jour la version de votre API JavaScript pour Office et des fichiers de schéma de manifeste] (../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+La valeur `/1/` devant `office.js` dans l’URL CDN préconise l’utilisation de la dernière version incrémentielle comprise dans la version 1 d’Office.js. Étant donné que l’interface API JavaScript pour Office maintient la compatibilité descendante, la dernière version continuera de prendre en charge les membres de l’API ajoutés précédemment dans la version 1. Si vous devez mettre à jour un projet existant, consultez la rubrique relative à la [mise à jour de la version de votre interface API JavaScript pour Office et des fichiers de schéma de manifeste](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
 Si vous envisagez de publier votre complément Office à partir de l’Office Store, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 

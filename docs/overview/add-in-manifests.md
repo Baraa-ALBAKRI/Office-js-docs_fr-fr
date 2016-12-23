@@ -16,7 +16,8 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
     
 - Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
 
->**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
+
 
 ## <a name="required-elements"></a>Éléments requis
 
@@ -59,21 +60,6 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
 *Ajouté dans le schéma de manifeste du complément Office version 1.1.
-
-
-## <a name="validate-the-office-add-ins-manifest"></a>Valider le manifeste des compléments Office
-
-Pour vous aider à vous assurer que le fichier manifeste qui décrit votre complément Office est correct et complet, validez-le par rapport aux fichiers [de définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). Vous pouvez utiliser un outil de validation de schéma XML ou [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) pour valider le manifeste. 
-
-Pour utiliser Visual Studio, accédez à Générer > Publier, et choisissez **Effectuer la vérification de la validation**.
-
-Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste :
-
-1.  Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait. 
-2.  Exécutez la commande suivante. Remplacez XSD_FILE par le chemin d’accès au fichier XSD manifeste et XML_FILE par le chemin d’accès au fichier XML manifeste.
-
-    xmllint --noout --schema XSD_FILE XML_FILE
-
 
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
@@ -435,6 +421,10 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
 
 ```
 
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Valider et résoudre des problèmes avec votre manifeste
+
+Pour résoudre les problèmes rencontrés avec votre manifeste, consultez la rubrique relative à la [validation et à la résolution des problèmes avec votre manifeste](../../docs/testing/troubleshoot-manifest.md). Vous apprendrez à valider le manifeste par rapport à la [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas) et à utiliser la journalisation runtime pour déboguer le manifeste.
+
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
@@ -442,5 +432,5 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
 - [Spécification des exigences en matière d’hôtes Office et d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localisation des compléments Office](../../docs/develop/localization.md)
 - [Référence de schéma pour les manifestes des compléments Office](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Utilisation de la journalisation runtime pour déboguer votre manifeste](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Valider et résoudre des problèmes avec votre manifeste](../../docs/testing/troubleshoot-manifest.md)
 

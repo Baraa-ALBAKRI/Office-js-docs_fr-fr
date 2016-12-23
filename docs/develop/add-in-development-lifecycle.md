@@ -1,7 +1,7 @@
 
 # <a name="office-add-ins-development-lifecycle"></a>Cycle de vie du développement des compléments Office
 
->**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
 
 Le cycle de vie de développement classique d’un complément Office comprend les étapes suivantes :
 

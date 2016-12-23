@@ -12,7 +12,8 @@ Vous pouvez utiliser des compléments Office pour effectuer les actions suivante
     
 **Les compléments Office peuvent être exécutés dans différentes versions d’Office**, notamment Office pour Windows pour ordinateur de bureau, Office Online, Office pour Mac et Office pour iPad.
 
->**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
+
 
 Pour savoir de manière détaillée quelle version d’Office prend en charge les compléments Office, consultez la page relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](http://dev.office.com/add-in-availability). 
 

@@ -47,7 +47,7 @@ Pour résoudre ce problème, vérifiez que les dernières mises à jour Office s
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
 
-Tentez d’utiliser la [journalisation runtime](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) pour résoudre les problèmes liés au manifeste du complément.
+Consultez la rubrique relative à la [validation et à la résolution des problèmes de votre manifeste](troubleshoot-manifest.md) pour déboguer le manifeste de votre complément.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -63,5 +63,5 @@ Tentez d’utiliser la [journalisation runtime](https://dev.office.com/docs/add-
     
 - [Déployer et installer des compléments Outlook à des fins de test](../outlook/testing-and-tips.md)
     
-- [Utiliser la journalisation runtime pour déboguer votre manifeste](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [Valider et résoudre des problèmes avec votre manifeste](troubleshoot-manifest.md)
     

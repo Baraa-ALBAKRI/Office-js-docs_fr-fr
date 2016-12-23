@@ -159,7 +159,7 @@ La figure 1 montre un résumé des étapes à suivre pour vérifier si Outlook 
 
 ## <a name="is-the-add-in-manifest-valid"></a>Le manifeste du complément est-il valide ?
 
-Tentez d’utiliser la [journalisation runtime](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) pour résoudre les problèmes liés au manifeste du complément.
+Consultez la rubrique relative à la [validation et à la résolution des problèmes de votre manifeste](../testing/troubleshoot-manifest.md) pour déboguer le manifeste de votre complément.
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>Utilisez-vous les règles d’activation appropriées ?
 
@@ -295,6 +295,6 @@ Cette section s’applique à toutes les règles d’activation qui utilisent de
     
 - [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
-- - [Utilisation de la journalisation runtime pour déboguer votre manifeste](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest)
+- [Valider et résoudre des problèmes avec votre manifeste](../testing/troubleshoot-manifest.md)
     
 

@@ -35,8 +35,7 @@
 		<Item text="Définir des commandes de complément" url="outlook/manifests/define-add-in-commands" SEODescription="Utilisez l’élément VersionOverrides dans votre manifeste de complément pour définir des commandes de complément." />
 		<Item text="Spécifier les hôtes Office" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Découvrez comment spécifier les exigences en matière d’hôtes Office et d’API dans votre manifeste." /> 	
 		<Item text="Demande d’autorisations d’utilisation de l’API dans des compléments de contenu et de volet des tâches" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Spécifiez le niveau d’accès à l’API que votre complément nécessite dans votre manifeste." />
-		<Item text="Mettre à jour la version du manifeste et de l’API" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1." />
-		<Item text="Utilisation de la journalisation runtime pour déboguer votre manifeste" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="Utilisez la journalisation runtime pour déboguer le manifeste pour votre complément Office." />
+		<Item text="Mettre à jour la version du manifeste et de l’API" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1." />		
 	</Item>	
 	<Item text="API JavaScript pour Office" url="develop/understanding-the-javascript-api-for-office" SEODescription="Découvrez les domaines fonctionnels de l’API JavaScript pour Office, implémentée dans le fichier Office.js.">
 		<Item text="Prise en charge des compléments de contenu et de volet des tâches" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Décrit les différents niveaux d’autorisation que vous pouvez déclarer dans le manifeste de votre complément de volet des tâches ou de contenu pour spécifier le niveau d’accès de l’API JavaScript nécessaire à votre complément pour ses fonctionnalités." />
@@ -51,8 +50,8 @@
 	<Item text="Localisation" url="develop/localization" SEODescription="Cet article décrit quelques moyens de fournir un contenu propre aux paramètres régionaux pour un complément Office, y compris les chaînes d’interface utilisateur, le nom du complément, la description, l’icône, le fichier source et le format de date/heure." />
     <Item text="Performances" url="develop/resource-limits-and-performance-optimization" SEODescription="Appliquez des limites d’utilisation des ressources à vos compléments Office et optimisez les performances de votre complément." />
   </Item>
-  <Item text="Tester" url="testing">
-    	<Item text="Sideload Office Add-ins for testing" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Installez un complément Office en cours d’exécution sur Windows pour les tests." Scope="Excel, Word, PowerPoint, Project, Access" />
+  <Item text="Test et débogage" url="testing">
+    	<Item text="Chargement de compléments Office pour des tests" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Installez un complément Office en cours d’exécution sur Windows pour les tests." Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="Chargement de version test des compléments Office dans Office Online" url="testing/sideload-office-add-ins-for-testing" SEODescription="Découvrez comment charger un complément dans une application Office pour les tests." />
 	    <Item text="Chargement de version test des compléments Outlook" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="Installez un complément Outlook pour les tests." />
     	<Item text="Chargement de version test sur iPad et Mac" url="testing/sideload-an-office-add-in-on-ipad-and-mac" SEODescription="Chargez une version test de votre complément Office sur iPad ou Mac pour tester la manière dont elle s’exécutera dans Office pour iOS ou Office pour Mac." />
@@ -60,11 +59,13 @@
     	<Item text="Déboguer dans Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Utilisez Office Online pour déboguer des compléments sans exécuter Office sur la plateforme Windows (par exemple, si vous effectuez le développement sur un Mac)." />
     	<Item text="Déboguer sur iPad et Mac" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Déboguez des compléments Office exécutés sur iPad ou Mac à l’aide de l’inspecteur web distant Weinre." />
         <Item text="Résolution des erreurs de l’utilisateur" url="testing/testing-and-troubleshooting" SEODescription="Résolution des problèmes rencontrés par vos utilisateurs avec des compléments Office." />
+		<Item text="Valider et résoudre des problèmes avec votre manifeste" url="testing/troubleshoot-manifest" SEODescription="Résoudre des problèmes avec le manifeste de vos compléments Office." />
 	</Item>
   <Item text="Publier" url="publish/publish">
     <Item text="Héberger un complément pour Office sur Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Utilisez Visual Studio 2015 et les outils de développement de Microsoft Office pour publier puis héberger un complément Office sur Microsoft Azure." />
     <Item text="Créer un package de votre complément avec Napa ou Visual Studio" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="Créez un package de votre complément Office afin de le préparer pour la publication." />
     <Item text="Publier  des compléments du volet Office et de contenu dans un catalogue de compléments" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurer les clients Office pour que votre complément soit disponible à partir de la boîte de dialogue des compléments Office" />
+	<Item text="Soumettre des compléments dans l’Office Store" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Utilisez les API JavaScript pour créer des compléments Word." Scope="word">
@@ -146,4 +147,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Compléments d’application web Access" url="access/access-web-app-add-ins" SEOKeyword="Compléments Access" SEODescription="Créez un complément Office qui étend les applications web Access avec HTML et JavaScript personnalisés." Scope="access" />
   </Item>
+  <Item text="Référence d’API JavaScript" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

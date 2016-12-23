@@ -2,7 +2,7 @@
 
 Cet article décrit comment utiliser l’API JavaScript Excel pour créer des compléments pour Excel 2016. Il présente des concepts fondamentaux pour l’utilisation d’API, notamment concernant les objets RequestContext, les objets de proxy JavaScript, ainsi que les méthodes sync(), Excel.run() et load(). Les exemples de code à la fin de l’article vous montrent comment appliquer les concepts.
 
->**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -26,7 +26,7 @@ var selectedRange = ctx.workbook.getSelectedRange();
 
 La méthode sync() disponible dans le contexte de demande synchronise l’état des objets de proxy JavaScript et des objets réels d’Excel en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés à utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue lorsque la synchronisation est terminée.
 
-## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext--batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() exécute un script de commandes qui effectue des actions sur le modèle objet Excel. Les commandes de traitement par lots incluent les définitions des objets de proxy JavaScript locaux et des méthodes sync() qui synchronisent l’état des objets locaux et Excel, ainsi que la résolution de la promesse. L’avantage de traiter les demandes par lots avec Excel.run() est que, une fois la promesse résolue, tous les objets de plage faisant l’objet d’un suivi qui ont été alloués lors de l’exécution sont automatiquement libérés.
 

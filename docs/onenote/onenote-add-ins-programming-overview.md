@@ -2,7 +2,7 @@
 
 OneNote présente une API JavaScript pour les compléments OneNote Online. Vous pouvez créer des compléments de volet de tâches et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
 
->**Remarque :** Lorsque vous créez votre complément, si vous envisagez de [publier](../publish/publish.md) votre complément dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour passer avec succès la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes que vous définissez dans l’élément Requirements de votre manifeste (voir [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Remarque :** Lorsque vous créez votre complément, si vous envisagez de le [publier](../publish/publish.md) dans Office Store, assurez-vous que vous respectez les [stratégies de validation Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Par exemple, pour réussir la validation, votre complément doit fonctionner sur toutes les plateformes qui prennent en charge les méthodes définies (pour en savoir plus, consultez la [section 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) et la [page relative à la disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability)).
 
 Les compléments sont constitués de deux composants de base :
 
@@ -99,9 +99,7 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 | [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** et **Office.CoercionType.Html** uniquement | 
 | [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
-
-En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, voir la [documentation](https://dev.office.com/docs/add-ins/overview/office-add-ins) et les [références](https://dev.office.com/reference/add-ins/javascript-api-for-office) concernant les compléments Office.
+| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||En règle générale, vous utilisez uniquement l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API enrichie. Pour en savoir plus sur l’utilisation de l’API commune, voir la [documentation](https://dev.office.com/docs/add-ins/overview/office-add-ins) et les [références](https://dev.office.com/reference/add-ins/javascript-api-for-office) concernant les compléments Office.
 
 
 <a name="om-diagram"></a>

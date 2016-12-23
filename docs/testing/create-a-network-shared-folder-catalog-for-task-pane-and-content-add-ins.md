@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-addins-for-testing"></a>Chargement de version test des compléments Office
+# <a name="sideload-office-add-ins-for-testing"></a>Chargement de version test des compléments Office
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau. 
 
@@ -43,7 +43,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 9. Fermez l’application Office afin que vos modifications prennent effet.
     
-## <a name="sideload-your-addin"></a>Charger votre complément
+## <a name="sideload-your-add-in"></a>Charger votre complément
 
 
 1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés.
@@ -57,6 +57,6 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Utilisation de la journalisation runtime pour déboguer votre manifeste](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Valider et résoudre des problèmes avec votre manifeste](troubleshoot-manifest.md)
 - [Publier votre complément Office](../publish/publish.md)
     
