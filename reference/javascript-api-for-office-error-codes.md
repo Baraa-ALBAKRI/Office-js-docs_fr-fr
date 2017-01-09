@@ -57,7 +57,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |5006|Expiration de la session|La session de document a expiré. Rechargez le document. |La session a expiré.|
 |5007|L’appel d’API est incorrect|L’énumération n’est pas prise en charge dans le contexte actuel.|L’énumération n’est pas prise en charge dans le contexte actuel.|
 |5009|Autorisation refusée|Accès refusé|Le complément n’est pas autorisé à appeler l’API spécifique.|
-|6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le nœud  **CustomXmlPart** est introuvable.|
+|6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le nœud **CustomXmlPart** est introuvable.|
 |6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect|
 |7000|ID incorrect|L’ID spécifié n’existe pas.|ID incorrect|
 |7001|Navigation non valide|L’objet se trouve à un emplacement dans lequel la navigation n’est pas prise en charge.|L’utilisateur peut trouver l’objet, mais ne peut pas naviguer jusqu’à celui-ci. (Par exemple, dans Word, la liaison est effectuée avec l’en-tête, le pied de page ou un commentaire.)|
@@ -74,7 +74,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 
-Lorsqu’une liaison est créée dans l’API, le développeur de solutions doit indiquer le type de liaison qu’il veut utiliser. Les tableaux suivants résument les différentes possibilités et les comportements de liaison correspondants qui sont attendus.
+Lorsqu’une liaison est créée dans l’API, indiquez le type de liaison que vous souhaitez utiliser. Le tableau suivant répertorie les types de liaisons et les comportements de liaison attendus.
 
 
 ### <a name="behavior-in-excel"></a>Comportement dans Excel
@@ -85,9 +85,9 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 
 |**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
 |:-----|:-----|:-----|
-|Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type  _matrice_ est créée sur les cellules sélectionnées.Aucune modification dans le document n’est attendue.|
-|Matrice|Texte sélectionné dans la cellule|Une liaison de type  _matrice_ est créée dans la cellule entière.Aucune modification dans le document n’est attendue.|
-|Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
+|Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type _matrice_ est créée dans les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
+|Matrice|Texte sélectionné dans la cellule|Une liaison de type _matrice_ est créée dans la cellule entière. Aucune modification dans le document n’est attendue.|
+|Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
 |Tableau|Demi-sélection dans un tableau et demie sélection en dehors du tableau|Impossible de créer la liaison.|

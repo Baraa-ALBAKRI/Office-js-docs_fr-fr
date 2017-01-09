@@ -38,7 +38,7 @@ La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts import
 * le tableau de fusion de cellules ;
 * le tableau de fusion de lignes et de fractionnement de colonnes.
 
-**Consultez la [page de l’API Word JS 1.4](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word) pour en savoir plus et fournir vos commentaires.**
+**Consultez la [page de l’API Word JS 1.4](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) pour en savoir plus et fournir vos commentaires.**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>Hôte, informations sur la plateforme et informations de diagnostic 
 Consultez les ajouts prévus dans l’objet Office.Context pour fournir aux développeurs des informations sur l’environnement runtime du complément et des informations de diagnostic. 

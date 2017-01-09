@@ -28,7 +28,7 @@ Suivez ces instructions lorsque vous créez vos icônes :
 - Utilisez le format PNG avec un arrière-plan transparent. 
 - Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. 
 - Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différentes actions peut semer la confusion. 
-- Rendez vos étiquettes de bouton claires et concises. Utilisez une combinaison d’informations visuelles et textuelles pour assurer la lisibilité. 
+- Simplifiez au maximum le nom de vos boutons. Utilisez une combinaison d’informations visuelles et textuelles pour transmettre sa signification. 
 
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Configuration requise et recommandations sur la taille des icônes
@@ -43,6 +43,10 @@ Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles a
 - 48 px
 - 64 px (recommandé)
 - 80 px (obligatoire)  
+
+Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
+
+![Illustration présentant la recommandation qui indique de redimensionner les icônes plutôt que de les réduire](../../images/icon_resizing.png)
 
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.

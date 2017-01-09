@@ -7,12 +7,13 @@ Représente la classe PageView.
 
 ## <a name="properties"></a>Propriétés
 
-Aucun
+| Propriété | Type |Description| Commentaires|
+|:---------------|:--------|:----------|:---|
+|zoom|int|Obtient/Définit le niveau de zoom de l’objet Page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|zoom|[Double](double.md)|Obtient/Définit le niveau de zoom de l’objet Page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+
+Aucun
 
 ## <a name="methods"></a>Méthodes
 
