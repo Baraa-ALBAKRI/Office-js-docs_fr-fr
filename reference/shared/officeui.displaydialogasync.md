@@ -9,31 +9,53 @@ Affiche une boîte de dialogue dans un hôte Office.
 |Word, Excel, PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-Cette méthode est disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md) DialogAPI. Pour spécifier l’ensemble de conditions requises DialogAPI, utilisez le code suivant dans votre manifeste.
+Cette méthode est disponible dans [l’ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md) DialogAPI pour les compléments Word, Excel ou PowerPoint, et dans l’ensemble de conditions requises Mailbox 1.4 pour Outlook. Pour spécifier l’ensemble de conditions requises DialogAPI, utilisez le code suivant dans votre manifeste.
 
 ```xml
- <Requirements> 
-   <Sets DefaultMinVersion="1.1"> 
-     <Set Name="DialogAPI"/> 
-   </Sets> 
- </Requirements> 
-
+<Requirements> 
+  <Sets DefaultMinVersion="1.1"> 
+    <Set Name="DialogAPI"/> 
+  </Sets> 
+</Requirements> 
 ```
 
-Pour détecter cette API lors de son exécution, utilisez le code suivant.
+Pour spécifier l’ensemble de conditions requises Mailbox 1.4, utilisez le code suivant dans votre manifeste.
+
+```xml
+<Requirements> 
+  <Sets DefaultMinVersion="1.4"> 
+    <Set Name="Mailbox"/> 
+  </Sets> 
+</Requirements> 
+```
+
+Pour détecter cette API en cours d’exécution dans un complément Word, Excel ou PowerPoint, utilisez le code suivant.
 
 ```js
- if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) 
-    {  
-         // Use Office UI methods; 
-    } 
- else 
-     { 
-         // Alternate path 
-     } 
+if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
 ```
 
+Pour détecter cette API en cours d’exécution dans un complément Outlook, utilisez le code suivant.
 
+```js
+if (Office.context.requirements.isSetSupported('Mailbox', 1.4)) {  
+  // Use Office UI methods; 
+} else { 
+  // Alternate path 
+} 
+```
+
+Vous pouvez également vérifier si la méthode `displayDialogAsync` n’est pas définie avant de l’utiliser.
+
+```js
+if (Office.context.ui.displayDialogAsync !== undefined) {
+  // Use Office UI methods
+}
+```
 
 ### <a name="supported-platforms"></a>Plateformes prises en charge
 Pour plus d’informations sur les plateformes prises en charge, voir la page relative aux [ensembles de conditions requises DialogAPI](../requirement-sets/dialog-api-requirement-sets.md).

@@ -1,5 +1,5 @@
 
-#<a name="use-office-ui-fabric-in-office-addins"></a>Utiliser la structure d’interface utilisateur d’Office dans des compléments Office
+#<a name="use-office-ui-fabric-261-in-office-add-ins"></a>Utiliser la structure d’interface utilisateur d’Office 2.6.1 dans des compléments Office
 
 Si vous créez un complément Office, nous vous encourageons à utiliser la [structure d’interface utilisateur d’Office](https://github.com/OfficeDev/Office-UI-Fabric) pour mettre au point l’expérience utilisateur. La procédure suivante présente les opérations de base pour l’utilisation de cette structure.  
 

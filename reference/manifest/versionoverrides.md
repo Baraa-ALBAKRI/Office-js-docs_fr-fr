@@ -1,14 +1,15 @@
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
-Élément racine qui contient des informations pour les commandes de complément implémentées par le complément. **VersionOverrides** est un élément enfant de l’élément [OfficeApp](./officeapp.md) dans le manifeste. Cet élément est pris en charge dans le schéma de manifeste v1.1 et versions ultérieures, mais est défini dans le schéma VersionOverrides v1.0. 
+Élément racine qui contient des informations pour les commandes de complément implémentées par le complément. **VersionOverrides** est un élément enfant de l’élément [OfficeApp](./officeapp.md) dans le manifeste. Cet élément est pris en charge dans le schéma de manifeste v1.1 et versions ultérieures, mais est défini dans le schéma VersionOverrides v1.0 ou v1.1. 
 
 ## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Oui  |  Emplacement du schéma, qui doit être `http://schemas.microsoft.com/office/mailappversionoverrides`.|
-|  **xsi:type**  |  Oui  | Version du schéma. À ce stade, la seule valeur valide est `VersionOverridesV1_0`. |
+|  **xmlns**       |  Oui  |  Emplacement du schéma, qui doit être `http://schemas.microsoft.com/office/mailappversionoverrides` lorsque `xsi:type` est `VersionOverridesV1_0`, et `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` lorsque `xsi:type` est `VersionOverridesV1_1`.|
+|  **xsi:type**  |  Oui  | Version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
 
+> **Remarque :** actuellement, seul Outlook 2016 prend en charge le schéma VersionOverrides v1.1 et le type `VersionOverridesV1_1`.
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -18,6 +19,7 @@
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.| 
 |  [Hôtes](./hosts.md)                |  Oui  |  Spécifie une collection d’hôtes d’Office. L’élément Hosts enfant remplace l’élément Hosts dans la partie parent du manifeste.  |
 |  [Ressources](./resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
+|  **VersionOverrides**    |  Non  | Définit des commandes de complément sous une version plus récente du schéma. Voir [Mise en œuvre de plusieurs versions](#implementing_multiple_versions) pour plus d’informations. |
 
 
 
@@ -37,8 +39,52 @@
     </Hosts>
     <Resources> 
       <!-- add information on resources -->
-   </Resources>
-</VersionOverrides>
+    </Resources>
+  </VersionOverrides>
+...
+</OfficeApp>
+```
+
+## <a name="implementing-multiple-versions"></a>Mise en œuvre de plusieurs versions
+
+Un manifeste peut implémenter plusieurs versions de l’élément `VersionOverrides` qui prennent en charge différentes versions du schéma VersionOverrides. Cette opération permet éventuellement la prise en charge de nouvelles fonctionnalités dans un schéma plus récent tout en prenant en charge des clients plus anciens qui ne prennent pas en charge les nouvelles fonctionnalités.
+
+Pour mettre en œuvre plusieurs versions, l’élément `VersionOverrides` de la nouvelle version doit être un enfant de l’élément `VersionOverrides` de l’ancienne version. L’élément enfant `VersionOverrides` n’hérite pas des valeurs du parent.
+
+Par exemple, pour mettre en œuvre le schéma VersionOverrides v1.0 et v1.1, le manifeste devrait ressembler à l’exemple suivant.
+
+```xml
+<OfficeApp>
+...
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Description resid="residDescription" />
+    <Requirements>
+      <!-- add information on requirements -->
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <!-- add information on form factors -->
+      </Host>
+    </Hosts>
+    <Resources> 
+      <!-- add information on resources -->
+    </Resources>
+
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Description resid="residDescription" />
+      <Requirements>
+        <!-- add information on requirements -->
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <!-- add information on form factors -->
+        </Host>
+      </Hosts>
+      <Resources> 
+        <!-- add information on resources -->
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
 ...
 </OfficeApp>
 ```

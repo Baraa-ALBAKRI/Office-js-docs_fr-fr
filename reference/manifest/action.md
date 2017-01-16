@@ -15,12 +15,14 @@
 |  [FunctionName](#functionname) |    Spécifie le nom de la fonction à exécuter. |
 |  [SourceLocation](#sourcelocation) |    Spécifie l’emplacement du fichier source pour cette action. |
 |  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches.|
+|  [SupportsPinning](#supportspinning) | Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.|
   
 
-## <a name="xsi:type"></a>xsi:type
+## <a name="xsitype"></a>xsi:type
 Cet attribut indique le type d’action réalisée lorsque l’utilisateur sélectionne le bouton. Il peut s’agir de l’une des actions suivantes :
-- ExecuteFunction
-- ShowTaskpane
+
+- `ExecuteFunction`
+- `ShowTaskpane`
 
 ## <a name="functionname"></a>FunctionName
 
@@ -28,7 +30,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ```xml
 <Action xsi:type="ExecuteFunction">
-    <FunctionName>getSubject</FunctionName>
+  <FunctionName>getSubject</FunctionName>
 </Action>
 ```
 
@@ -36,9 +38,9 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 Élément obligatoire lorsque  **xsi:type** est « ShowTaskpane ». Indique l’emplacement du fichier source pour cette action. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément [Urls](./resources.md#urls) dans l’élément [Resources](./resources.md).
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <SourceLocation resid="readTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+</Action>
 ```  
 
 ## <a name="taskpaneid"></a>TaskpaneId
@@ -50,13 +52,25 @@ L’exemple suivant montre deux actions qui partagent le même **TaskpaneId**.
 
 
 ```xml
- <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="aTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="aTaskPaneUrl" />
+</Action>
 
-  <Action xsi:type="ShowTaskpane">
-    <TaskpaneId>MyPane</TaskpaneId>
-    <SourceLocation resid="anotherTaskPaneUrl" />
-  </Action>
+<Action xsi:type="ShowTaskpane">
+  <TaskpaneId>MyPane</TaskpaneId>
+  <SourceLocation resid="anotherTaskPaneUrl" />
+</Action>
 ```  
+
+## <a name="supportspinning"></a>SupportsPinning
+Élément facultatif quand **xsi:type** est « ShowTaskpane ». Les éléments [VersionOverrides](./versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur de `true` pour prendre en charge l’épinglage du volet des tâches. L’utilisateur sera en mesure d’« épingler » le volet des tâches, il restera alors ouvert lors de la modification de la sélection.
+
+>**Remarque :** cet élément est actuellement pris en charge uniquement par Outlook 2016.
+
+```xml
+<Action xsi:type="ShowTaskpane">
+  <SourceLocation resid="readTaskPaneUrl" />
+  <SupportsPinning>true</SupportsPinning>
+</Action>
+```

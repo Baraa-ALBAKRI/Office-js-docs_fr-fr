@@ -1,5 +1,5 @@
 
-# <a name="outlook-addin-manifests"></a>Manifestes des compléments Outlook
+# <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
 Un complément Outlook se compose de deux éléments : le manifeste de complément XML et une page web, pris en charge par la bibliothèque JavaScript pour les Compléments Office (office.js). Le manifeste décrit la manière dont le complément est intégré dans les clients Outlook. Actuellement, il existe trois versions du schéma de manifeste, dont  **VersionOverrides**. Pour créer votre complément, nous vous recommandons d’utiliser la version 1.1 **VersionOverrides** 1.0 du schéma de manifeste. Voici un exemple.
 
@@ -780,11 +780,12 @@ Les règles d’activation peuvent être utilisées pour activer un complément 
 Pour plus de détails et pour des exemples de règles d’activation, voir [Règles d’activation pour les compléments Outlook](../../outlook/manifests/activation-rules.md).
 
 
-## <a name="next-steps-addin-commands"></a>Prochaines étapes : commandes de complément
+## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
 
 
 Après avoir défini un manifeste de base, [définissez des commandes pour votre complément](../../outlook/manifests/define-add-in-commands.md). Les commandes de complément se présentent sous forme de bouton dans le ruban. Ainsi, les utilisateurs peuvent activer votre complément de façon simple et intuitive. Pour plus d’informations, voir [Commandes de complément pour Outlook](../../outlook/add-in-commands-for-outlook.md).
 
+Pour un exemple de complément qui définit les commandes du complément, voir [command-demo](https://github.com/jasonjoh/command-demo).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
