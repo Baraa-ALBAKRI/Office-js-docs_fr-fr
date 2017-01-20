@@ -1,5 +1,5 @@
 # <a name="action-element"></a>Action, élément
- Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](./control.md#button-control) ou de [menu](./control.md#menu-dropdown-button-controls).
+Indique l’action à réaliser lorsque l’utilisateur sélectionne des contrôles de [bouton](./control.md#button-control) ou de [menu](./control.md#menu-dropdown-button-controls).
  
 ## <a name="attributes"></a>Attributs
 
@@ -64,9 +64,9 @@ L’exemple suivant montre deux actions qui partagent le même **TaskpaneId**.
 ```  
 
 ## <a name="supportspinning"></a>SupportsPinning
-Élément facultatif quand **xsi:type** est « ShowTaskpane ». Les éléments [VersionOverrides](./versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur de `true` pour prendre en charge l’épinglage du volet des tâches. L’utilisateur sera en mesure d’« épingler » le volet des tâches, il restera alors ouvert lors de la modification de la sélection.
+Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](./versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur de `true` pour prendre en charge l’épinglage du volet des tâches. L’utilisateur sera en mesure d’« épingler » le volet des tâches, il restera alors ouvert lors de la modification de la sélection. Pour plus d’informations, voir [Mettre en œuvre un volet des tâches épinglable dans Outlook](../../docs/outlook/manifests/pinnable-taskpane).
 
->**Remarque :** cet élément est actuellement pris en charge uniquement par Outlook 2016.
+> **Remarque** : SupportsPinning n’est actuellement pris en charge que par Outlook 2016 pour Windows (build 7628.1000 ou version ultérieure).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

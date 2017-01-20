@@ -30,4 +30,10 @@ Lorsque vous concevez et développez des compléments Office, il est important d
 - Fournissez un moyen aux utilisateurs d’activer des légendes ou une description audio avec les sources audio.
 - Prévoyez d’autres solutions que des signaux audio pour informer les utilisateurs, telles que des indications visuelles ou des vibrations.
 
+##<a name="accessibility-resources"></a>Ressources d’accessibilité
+
+- [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
+- [Conseils sur l’application de WCAG 2.0 aux technologies d’information et de communication non web (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)
+- [Norme européenne sur les conditions d’accessibilité pour les technologies d’information et de communication (ICT)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf)
+
 

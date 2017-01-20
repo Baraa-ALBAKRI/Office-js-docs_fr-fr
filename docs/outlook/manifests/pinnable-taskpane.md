@@ -4,7 +4,7 @@ La commande de forme UX [taskpane](../add-in-commands-for-outlook.md#launching-a
 
 Toutefois, par défaut, si un utilisateur a un complément de volet des tâches ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet des tâches est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets des tâches épinglables, votre complément peut donner à l’utilisateur cette option.
 
-> **Remarque** : Les volets des tâches épinglables sont actuellement uniquement pris en charge par Outlook 2016 (version 7628.1000).
+> **Remarque** : les volets de tâches épinglables ne sont actuellement pris en charge que par Outlook 2016 pour Windows (build 7628.1000 ou version ultérieure).
 
 ## <a name="support-taskpane-pinning"></a>Prise en charge de l’épinglage des volets des tâches
 

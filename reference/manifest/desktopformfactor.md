@@ -1,12 +1,8 @@
-# <a name="formfactor-element"></a>Élément FormFactor
+# <a name="desktopformfactor-element"></a>Élément DesktopFormFactor
 
-Spécifie les paramètres d’un complément pour un facteur de forme donné. Par exemple, la définition d’un `Host` avec le type `MailHost` et `DesktopFormFactor` s’applique à Outlook pour le bureau, mais _pas_ à Outlook Web App ou à Outlook.com. Il contient toutes les informations de complément pour ce facteur de forme à l’exception du nœud **Resources**.
+Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau. Le facteur de forme pour bureau inclut Office pour Windows, Office pour Mac et Office Online. Il contient toutes les informations de complément pour ce facteur de forme à l’exception du nœud **Resources**.
 
-Chaque définition de facteur de forme contient l’élément **FunctionFile** et au moins un élément **ExtensionPoint**. Pour plus d’informations, voir [Élément FunctionFile](./functionfile.md) et [Élément ExtensionPoint](./extensionpoint.md). 
-
-Les facteurs de forme suivants sont pris en charge :
-
-- `DesktopFormFactor` (Office pour les clients Windows ou Mac)
+Chaque définition de facteur de forme pour bureau contient l’élément **FunctionFile** et au moins un élément **ExtensionPoint**. Pour plus d’informations, voir [Élément FunctionFile](./functionfile.md) et [Élément ExtensionPoint](./extensionpoint.md). 
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -16,7 +12,7 @@ Les facteurs de forme suivants sont pris en charge :
 | [FunctionFile](./functionfile.md)     | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
 | [GetStarted](./getstarted.md)         | Non       | Définit la légende qui s’affiche lorsque vous installez le complément dans des hôtes Word, Excel ou PowerPoint. |
 
-## <a name="formfactor-example"></a>Exemple FormFactor
+## <a name="desktopformfactor-example"></a>Exemple pour DesktopFormFactor
 
 ```xml
 ...

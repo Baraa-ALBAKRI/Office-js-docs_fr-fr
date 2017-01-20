@@ -14,7 +14,7 @@ Vous souhaiterez peut-être ouvrir une boîte de dialogue à partir d’un volet
 
 L’image suivante montre un exemple de boîte de dialogue. 
 
-![Commandes de complément](../../images/Auth0DialogOpen.PNG)
+![Commandes de compléments](../../images/Auth0DialogOpen.PNG)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre est *non modale* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office, le cas échéant.
 
@@ -155,7 +155,10 @@ if (loginSuccess) {
 }
 ```
 
-Pour voir un exemple qui utilise la messagerie conditionnelle, consultez la rubrique relative à l’exemple [Complément Office qui utilise le service Auth0 pour simplifier la connexion aux réseaux sociaux](https://github.com/OfficeDev/Office-Add-in-Auth0).
+Pour obtenir des exemples qui utilisent la messagerie conditionnelle, voir 
+
+- [Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 Le code du gestionnaire dans la page hôte utilise la valeur de la propriété `messageType` pour créer une branche comme dans l’exemple suivant. Notez que la fonction `showUserName` est identique à celle de l’exemple ci-dessus et que la fonction `showNotification` affiche l’erreur dans l’interface utilisateur de la page hôte. 
 
@@ -302,7 +305,10 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-Pour voir un exemple de complément qui utilise le stockage local de cette façon, consultez la rubrique relative à l’exemple [Complément Office qui utilise le service Auth0 pour simplifier la connexion aux réseaux sociaux](https://github.com/OfficeDev/Office-Add-in-Auth0).
+Pour obtenir des exemples de compléments qui utilisent le stockage local de cette façon, voir 
+
+- [Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ### <a name="using-query-parameters"></a>Utilisation des paramètres de requête
 
@@ -353,9 +359,9 @@ Pour voir un exemple de complément qui utilise ce modèle, consultez la rubriqu
 
 #### <a name="addressing-slow-network"></a>Prise en charge des lenteurs de réseau
 
-Si le réseau ou le fournisseur d’identité est lent, la boîte de dialogue ne peut pas s’ouvrir immédiatement lorsque l’utilisateur sélectionne l’IU correspondante. Cela peut donner l’impression que rien ne se passe. Un moyen de s’assurer une meilleure expérience est de faire en sorte que la première page qui s’ouvre dans la boîte de dialogue soit une page locale hébergée dans le domaine du complément, autrement dit le domaine de la fenêtre hôte. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». 
+Si le réseau ou le fournisseur d’identité est lent, la boîte de dialogue ne peut pas s’ouvrir immédiatement lorsque l’utilisateur sélectionne l’élément d’IU correspondant. Cela peut donner l’impression que rien ne se passe. Un moyen de s’assurer une meilleure expérience est de faire en sorte que la première page qui s’ouvre dans la boîte de dialogue soit une page locale hébergée dans le domaine du complément, autrement dit le domaine de la fenêtre hôte. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». 
 
-Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](#passing-information-to-the-dialog-box). Il redirige alors vers la page de connexion. Dans cette conception, la page du fournisseur n’est pas la première page ouverte dans la boîte de dialogue. Il est donc inutile de répertorier le domaine du fournisseur dans la section `<AppDomains>` du manifeste du complément.
+Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](#passing-information-to-the-dialog-box). Il redirige alors l’utilisateur vers la page de connexion. Dans cette conception, la page du fournisseur n’est pas la première page ouverte dans la boîte de dialogue. Il est donc inutile de répertorier le domaine du fournisseur dans la section `<AppDomains>` du manifeste du complément.
 
 Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
 
@@ -386,6 +392,7 @@ Les exemples suivants utilisent les API de dialogue à cet effet :
 
 - [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
 - [Complément Excel avec ASP.NET et QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) : transmet le jeton d’accès dans `messageParent`.
+- [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>Plus d’informations sur l’authentification et l’autorisation dans des compléments
 

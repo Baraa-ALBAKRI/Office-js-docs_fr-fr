@@ -12,10 +12,10 @@ Lorsqu’il est défini dans le manifeste base (sous [OfficeApp](./officeapp.md)
 ### <a name="attributes"></a>Attributs
 | Attribut     | Type   | Requis | Description                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Name](#name) | string | obligatoire | Nom du type d’application hôte Office. |
+| [Name](#name) | chaîne | obligatoire | Nom du type d’application hôte Office. |
 
 
-### <a name="name"></a>Name
+### <a name="name"></a>Nom
 Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)
@@ -49,10 +49,10 @@ Lorsqu’il est défini dans [VersionOverrides](./versionoverrides.md), le type 
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  Oui   |  Définit le facteur de forme affecté. |
+|  [DesktopFormFactor](./desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
 
 
-### <a name="xsi:type"></a>xsi:type
+### <a name="xsitype"></a>xsi:type
 Contrôle à quel hôte Office (Word, Excel, PowerPoint, Outlook, OneNote) s’appliquent également les paramètres contenus. La valeur doit être l’une des suivantes :
 
 - `Document` (Word)

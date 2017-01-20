@@ -3,6 +3,8 @@
 
 Si vous créez un complément Office, nous vous encourageons à utiliser la [structure d’interface utilisateur d’Office](https://github.com/OfficeDev/Office-UI-Fabric) pour mettre au point l’expérience utilisateur. La procédure suivante présente les opérations de base pour l’utilisation de cette structure.  
 
+> **Remarque :** pour plus d’informations sur la structure de l’interface utilisateur Office JS, voir [Utilisation de la structure de l’interface utilisateur Office JS](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js).
+
 ##<a name="1-set-up-fabric"></a>1. Configurer la structure
 Ajoutez les lignes suivantes à votre code HTML dans la section d’en-tête pour référencer la structure à partir du réseau de diffusion de contenu (CDN).
 

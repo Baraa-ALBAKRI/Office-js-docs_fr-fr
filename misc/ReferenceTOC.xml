@@ -47,7 +47,7 @@
 			<Item text="Contrôle" url="manifest/control" SEODescription="Indique le contrôle à réaliser lorsque l’utilisateur sélectionne un bouton ou un menu." />
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Indique l’onglet et le groupe pour les commandes de complément." />
 			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Définit l’emplacement où se trouvent les fonctionnalités d’un complément" />
-			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
+			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
 			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur." />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Fournit les informations utilisées par la légende qui s’affiche lorsque le complément est installé sur des hôtes Word, Excel et PowerPoint." />
 			<Item text="Groupe" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Définit un groupe de points d’extension d’interface utilisateur dans un onglet." />

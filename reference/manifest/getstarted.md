@@ -1,6 +1,6 @@
 # <a name="getstarted-element"></a>Élément GetStarted
 
-Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [FormFactor](./formfactor.md).
+Fournit des informations utilisées par la légende qui s’affiche lorsque le complément est installé dans des hôtes Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](./desktopformfactor.md).
 
 ## <a name="child-elements"></a>Éléments enfants
 

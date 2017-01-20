@@ -4,6 +4,8 @@ _S’applique à : Word 2016, Word pour iPad, Word pour Mac_
 
 L’interface API JavaScript pour Word est comprise dans le modèle de programmation des compléments Office, qui vise à étendre les applications Office. Ce modèle utilise des applications web pour héberger votre extension dans Word. Vous pouvez désormais prolonger les fonctionnalités de Word avec la plateforme web ou la langue de votre choix.
 
+> **Remarque** : pour développer des compléments pour Word 2013, vous devrez utiliser l’[API Javascript Office]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word)partagée. Pour en savoir plus sur les plateformes et les différentes API disponibles, cliquez [ici](https://dev.office.com/add-in-availability). À moins qu’il soit précisé qu’elles s’appliquent à Word 2016, les rubriques s’appliquent normalement à différents hôtes.
+
 Un complément Word est exécuté à l’intérieur de Word et peut interagir avec le contenu du document à l’aide des interfaces API JavaScript pour Word disponibles dans Word 2016. Ce système utilise deux composants pour créer un complément : 1) une application web que vous pouvez héberger n’importe où, et 2) le [fichier manifeste de complément](../../docs/overview/add-in-manifests.md) que Word utilise pour repérer l’emplacement où votre application web est hébergée (pour en savoir plus sur les autres fonctions du fichier manifeste, consultez la [vue d’ensemble de la programmation](word-add-ins-programming-overview.md)).
 
 >**Complément Word = manifest.xml + application web**
