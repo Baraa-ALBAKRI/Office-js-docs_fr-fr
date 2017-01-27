@@ -1,7 +1,7 @@
 # <a name="shape-object-javascript-api-for-visio"></a>Objet Shape (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
+>**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
 
 Représente la classe Shape.
 
@@ -10,9 +10,9 @@ Représente la classe Shape.
 | Propriété     | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |id|int|Identificateur de l’objet Shape. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-id)|
-|name|chaîne|Nom de l’objet Shape. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
+|name|string|Nom de l’objet Shape. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
 |select|bool|Renvoie True si l’objet Shape est sélectionné. L’utilisateur peut le définir sur True pour sélectionner explicitement l’objet Shape.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
-|text|chaîne|Texte de l’objet Shape. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-text)|
+|text|string|Texte de l’objet Shape. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-text)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 

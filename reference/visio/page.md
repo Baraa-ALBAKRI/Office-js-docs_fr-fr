@@ -1,7 +1,7 @@
 # <a name="page-object-javascript-api-for-visio"></a>Objet Page (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
+>**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
 
 Représente la classe Page.
 
@@ -11,7 +11,7 @@ Représente la classe Page.
 |:---------------|:--------|:----------|:---|
 |index|int|Index de l’objet Page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|Indique s’il s’agit d’une page d’arrière-plan ou non. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
-|name|chaîne|Nom de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
+|name|string|Nom de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
 
 ## <a name="relationships"></a>Relations
 | Relation | Type   |Description| Commentaires|

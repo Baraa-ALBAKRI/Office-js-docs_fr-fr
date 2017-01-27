@@ -41,7 +41,7 @@ Les icônes du bureau Office 2016 sont des images bitmap. Différentes tailles a
 - 32 px (obligatoire)
 - 40 px
 - 48 px
-- 64 px (recommandé)
+- 64 px (recommandé, meilleur choix pour Mac)
 - 80 px (obligatoire)  
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.

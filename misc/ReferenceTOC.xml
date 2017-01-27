@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|V1.3|V1.2|V1.1|">
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|" SupportedVersion="|V1.3|V1.2|V1.1|">
 	<Item text="Manifeste" url="manifest">
 		<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="Indique si une capture instantanée de votre complément de contenu est enregistrée avec le document hôte." />
 		<Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Indique l’ID secondaire de votre complément Office tel qu’il est émis par l’Office Store." />
@@ -284,21 +284,6 @@
 		<Item text="Outline" url="onenote/outline" SEODescription="Référence des compléments OneNote." />
 		<Item text="Image" url="onenote/image" SEODescription="Référence des compléments OneNote." />
 		<Item text="Ensembles de conditions requises de l’API JavaScript pour OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Trouver des informations sur les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité." />
-	</Item>
-	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio">
-		<Item text="Application" url="visio/application" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="Document" url="visio/document" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="LoadOption" url="visio/loadoption" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="Page" url="visio/page" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="PageView" url="visio/pageview" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="Shape" url="visio/shape" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Référence de l’API JavaScript pour Visio" />
-		<Item text="ShapeView" url="visio/shapeview" SEODescription="Référence de l’API JavaScript pour Visio" />
 	</Item>
 	<Item text="API partagée" url="shared/shared-api">
 		<Item text="Interface API JavaScript pour Office" url="javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office comprend des objets, méthodes, propriétés, événements et énumérations que vous pouvez utiliser dans votre code des compléments Office." />

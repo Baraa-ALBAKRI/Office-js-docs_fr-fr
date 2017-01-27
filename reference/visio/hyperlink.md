@@ -1,7 +1,7 @@
 # <a name="hyperlink-object-javascript-api-for-visio"></a>Objet Hyperlink (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
+>**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
 
 Représente l’objet Hyperlink.
 
@@ -9,7 +9,7 @@ Représente l’objet Hyperlink.
 
 | Propriété     | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
-|address|chaîne|Obtient l’adresse de l’objet Hyperlink. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
+|address|string|Obtient l’adresse de l’objet Hyperlink. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
 |description|chaîne|Obtient la description d’un lien hypertexte. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
 |subAddress|chaîne|Obtient la sous-adresse de l’objet Hyperlink. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
 

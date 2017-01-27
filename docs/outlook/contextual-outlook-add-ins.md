@@ -14,6 +14,8 @@ Les compléments contextuels sont différents des compléments relatifs aux piè
     
 Actuellement, les compléments contextuels sont limités à Outlook Web App.
 
+>**Remarque :** Les compléments contextuels ne prennent pas en charge les commandes de complément.
+
 ## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 
 Pour créer un complément contextuel, le manifeste du complément doit spécifier l’entité ou l’expression régulière qui peut l’activer. L’entité peut être l’une des propriétés de l’objet [Entities](../../reference/outlook/simple-types.md). Par conséquent, le manifeste du complément doit contenir une règle de type  **ItemHasKnownEntity** ou **ItemHasRegularExpressionMatch**. L’exemple suivant montre comment spécifier un numéro de téléphone en tant qu’entité :

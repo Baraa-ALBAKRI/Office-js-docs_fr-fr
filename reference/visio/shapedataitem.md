@@ -1,7 +1,7 @@
 # <a name="shapedataitem-object-javascript-api-for-visio"></a>Objet ShapeDataItem (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
+>**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
 
 Représente l’objet ShapeDataItem.
 
@@ -9,7 +9,7 @@ Représente l’objet ShapeDataItem.
 
 | Propriété     | Type   |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
-|label|chaîne|Chaîne qui spécifie l’étiquette de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
+|label|string|Chaîne qui spécifie l’étiquette de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
 |value|chaîne|Chaîne qui spécifie la valeur de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_

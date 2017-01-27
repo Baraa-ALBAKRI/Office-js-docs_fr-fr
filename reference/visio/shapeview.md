@@ -1,7 +1,7 @@
 # <a name="shapeview-object-javascript-api-for-visio"></a>Objet ShapeView (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
+>**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
 
 Représente la classe ShapeView.
 
@@ -71,9 +71,9 @@ shapeViewObject.removeOverlay(OverlayId);
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|:---|
-|OverlayId|valeur numérique|ID de la superposition. Supprime l’ID de la superposition de la forme.|
+|OverlayId|number|ID de la superposition. Supprime l’ID de la superposition de la forme.|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 void
 
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés

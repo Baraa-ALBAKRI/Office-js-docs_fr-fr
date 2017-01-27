@@ -71,6 +71,8 @@ Les clients ne prenant pas en charge les commandes de complément (Office 2013, 
 
 Utilisez un manifeste de complément de contenu pour intégrer des **objets web pouvant être incorporés dans les documents**. Les compléments de contenu vous permettent d’intégrer des visualisations de données web enrichies, du contenu multimédia incorporé (comme un lecteur vidéo YouTube ou une galerie d’images) et d’autres types de contenu externe.
 
+>**Remarque :** les compléments de contenu ne prennent actuellement pas en charge les commandes de complément.
+
 **Complément de contenu**
 
 ![Complément d’insertion de contenu](../../images/DK2_AgaveOverview05.png)
@@ -113,8 +115,8 @@ Le manifeste spécifie les paramètres et les possibilités du complément, nota
     
 - Le nom d’affichage, la description, l’ID, la version et les paramètres régionaux par défaut du complément.
     
-- Intégration du complément avec Office :     
-      - Pour les compléments qui étendent Word/Excel/PowerPoint/Outlook : les points d’extension native que le complément utilise pour exposer les fonctionnalités, tels que les boutons du ruban.     
+- Intégration du complément avec Office : 
+      - Pour les compléments d’extension pour Word/Excel/PowerPoint/Outlook : les points d’extension native que le complément utilise pour exposer les fonctionnalités, tels que les boutons du ruban. 
       - Pour les compléments qui créent des objets pouvant être intégrés : l’URL de la page par défaut qui est chargée pour l’objet.
        
     

@@ -14,7 +14,7 @@ Vous souhaiterez peut-être ouvrir une boîte de dialogue à partir d’un volet
 
 L’image suivante montre un exemple de boîte de dialogue. 
 
-![Commandes de compléments](../../images/Auth0DialogOpen.PNG)
+![Commandes de complément](../../images/Auth0DialogOpen.PNG)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre est *non modale* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office, le cas échéant.
 
@@ -24,7 +24,7 @@ Les API JavaScript Office prennent en charge les scénarios suivants avec un obj
 
 ### <a name="opening-a-dialog-box"></a>Ouverture d’une boîte de dialogue
 
-Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) et lui transmet l’URL de la page qui doit s’ouvrir. Voici un exemple simple.
+Pour ouvrir une boîte de dialogue, votre code dans le volet Office appelle la méthode [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) et lui transmet l’URL de la ressource qui doit s’ouvrir. Il s’agit généralement d’une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Voici un exemple simple.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
@@ -33,9 +33,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 > **Remarques :**
 
 > - L’URL utilise le protocole HTTP**S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
-> - Le domaine est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://dev.office.com/reference/add-ins/manifest/functionfile) d’une commande de complément. Ceci n’est pas obligatoire pour la première page chargée dans la boîte de dialogue, mais si la première page n’est pas dans le même domaine que votre complément, vous devez répertorier ce domaine dans l’élément [`<AppDomains>`](../../reference/manifest/appdomains.md) du manifeste de votre complément.
+> - Le domaine est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](https://dev.office.com/reference/add-ins/manifest/functionfile) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte. 
 
-Une fois que la première page est chargée, un utilisateur peut accéder à n’importe quel site web utilisant le protocole HTTPS. Vous pouvez également concevoir la première page de façon à ce que l’utilisateur soit immédiatement redirigé vers un autre site. 
+Une fois que la première page (ou toute autre ressource) est chargée, un utilisateur peut accéder à n’importe quel site web (ou n’importe quelle autre ressource) qui utilise le protocole HTTPS. Vous pouvez également concevoir la première page de façon à ce que l’utilisateur soit immédiatement redirigé vers un autre site. 
 
 Par défaut, la boîte de dialogue occupera 80 % de la hauteur et de la largeur de l’écran de l’appareil, mais vous pouvez définir des pourcentages différents en transmettant un objet de configuration à la méthode, comme indiqué dans l’exemple suivant.
 
@@ -48,6 +48,20 @@ Pour voir un exemple de complément qui effectue ce type d’action, consultez l
 Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’expérience de plein écran. (Le maximum réel est de 99,5 %, et la fenêtre peut toujours être déplacée et redimensionnée.)
 
 >**Remarque :** une seule boîte de dialogue peut être ouverte à partir d’une fenêtre hôte. Toute tentative d’ouverture d’une autre boîte de dialogue génère une erreur. (Pour plus d’informations, consultez la rubrique relative aux [erreurs de displayDialogAsync](#errors-from-displaydialogAsync).) Ainsi, par exemple, si un utilisateur ouvre une boîte de dialogue à partir d’un volet Office, il ne peut pas ouvrir une seconde boîte de dialogue à partir d’une autre page dans le volet Office. Toutefois, quand une boîte de dialogue est ouverte à partir d’une [commande de complément](https://dev.office.com/docs/add-ins/design/add-in-commands), la commande ouvre un nouveau fichier HTML (mais invisible) chaque fois qu’elle est sélectionnée. Cela crée une nouvelle fenêtre hôte (invisible), afin que chaque fenêtre de ce type puisse lancer sa propre boîte de dialogue. 
+
+### <a name="take-advantage-of-a-performance-option-in-office-online"></a>Tirer parti d’une option de performances dans Office Online
+
+La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office Online, la boîte de dialogue s’ouvre sous la forme d’un iframe flottant et non d’une fenêtre indépendante ; elle s’ouvre ainsi plus rapidement. Voici un exemple.
+
+```js
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+```
+
+La valeur par défaut est `false`, ce qui revient au même que d’omettre entièrement la propriété.
+
+Si le complément n’est pas exécuté dans Office Online, `displayInIframe` est ignoré, mais sa présence n’est pas problématique.
+
+> **Remarque :** vous ne devez ***pas*** utiliser `displayInIframe: true` si la boîte de dialogue redirige à un moment donné l’utilisateur vers une page qui ne peut pas être ouverte dans un iframe. Par exemple, les pages de connexion de nombreux services web connus, comme un compte Microsoft et Google, ne peuvent pas être ouvertes dans un iframe. 
 
 ### <a name="sending-information-from-the-dialog-box-to-the-host-page"></a>Envoi d’informations à partir de la boîte de dialogue à la page hôte
 
@@ -217,7 +231,7 @@ En plus des erreurs système et de plateforme générales, trois erreurs sont pr
 
 |Numéro de code|Signification|
 |:-----|:-----|
-|12004|Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être identique à celui de la page hôte (y compris le protocole et le numéro de port) **ou** doit être inscrit dans la section `<AppDomains>` du manifeste du complément.|
+|12004|Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port).|
 |12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
 |12007|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 
@@ -267,8 +281,7 @@ function processDialogEvent(arg) {
             showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
             break;
         case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");
-            break;
+            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
         case 12006:
             showNotification("Dialog closed.");
             break;
@@ -281,7 +294,7 @@ function processDialogEvent(arg) {
 
 Pour voir un exemple de complément qui gère les erreurs de cette façon, consultez la rubrique relative à l’[exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-  
+ 
 ## <a name="passing-information-to-the-dialog-box"></a>Transmission d’informations à la boîte de dialogue
 
 Parfois, la page hôte doit transmettre des informations à la boîte de dialogue. Pour ce faire, il existe deux moyens :
@@ -322,7 +335,7 @@ Pour voir un exemple qui utilise cette technique, consultez la rubrique relative
 
 Le code dans votre fenêtre de dialogue peut analyser l’URL et lire la valeur du paramètre.
 
->**Remarque :** Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n'est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
+ ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n'est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>Utilisation des API de dialogue pour afficher une vidéo
 
@@ -335,8 +348,7 @@ Pour afficher une vidéo dans une boîte de dialogue :
             frameborder="0" allowfullscreen>
         </iframe>
 
-2.  La page video.dialogbox.html doit être dans le même domaine
-3.   que la page hôte ou dans un domaine qui est inscrit dans la section `<AppDomains>` du manifeste du complément.
+2.  La page video.dialogbox.html doit se trouver dans le même domaine que la page hôte.
 3.  Utilisez un appel de `displayDialogAsync` dans la page hôte pour ouvrir video.dialogbox.html.
 4.  Si votre complément a besoin de savoir quand l’utilisateur ferme la boîte de dialogue, inscrivez un gestionnaire pour l’événement `DialogEventReceived` et gérez l’événement 12006. Pour plus d’informations, consultez la section [Erreurs et événements dans la fenêtre de dialogue](#errors-and-events-in-the-dialog-window).
 
@@ -346,27 +358,22 @@ Pour voir un exemple qui affiche une vidéo dans une boîte de dialogue, consult
 
 ## <a name="using-the-dialog-apis-in-an-authentication-flow"></a>Utilisation des API de dialogue dans un flux d’authentification
 
-Le scénario principal des API de dialogue consiste à activer l’authentification auprès d’un fournisseur de ressources ou d’identité qui n’autorise pas l’ouverture de sa page de connexion dans un iframe, comme un compte Microsoft, Office 365, Google et Facebook. Voici un flux d’authentification simple et standard :
+Le scénario principal des API de dialogue consiste à activer l’authentification auprès d’un fournisseur de ressources ou d’identité qui n’autorise pas l’ouverture de sa page de connexion dans un iframe, comme un compte Microsoft, Office 365, Google et Facebook. 
 
-1. L’utilisateur sélectionne un élément d’IU sur la page hôte pour se connecter. Le gestionnaire de l’élément appelle `displayDialogAsync` et transmet l’URL de la page de connexion d’un fournisseur d’identité. *Comme il s’agit de la première page ouverte dans la boîte de dialogue et qu’elle n’a pas le même domaine que la fenêtre hôte, son domaine doit être répertorié dans la section `<AppDomains>` du manifeste du complément.* L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Dans cet article, nous appellerons la page « redirectPage.html ». (*Il doit s’agir d’une page ayant le même domaine que la fenêtre hôte*, car le seul moyen pour que la fenêtre de dialogue transmette les résultats de la tentative de connexion consiste en un appel de `messageParent`, qui ne peut être appelé que sur une page ayant le même domaine que la fenêtre hôte.) 
+>**Remarque :** lorsque vous utilisez les API de dialogue pour ce scénario, n’utilisez *pas* l’option `displayInIframe: true` dans l’appel de `displayDialogAsync`. Reportez-vous aux sections précédentes de cet article pour obtenir plus d’informations sur cette option. 
+
+Voici un flux d’authentification simple et standard. 
+
+1. La première page qui s’ouvre dans la boîte de dialogue est une page locale (ou toute autre ressource) qui est hébergée dans le domaine du complément. Autrement dit, le domaine de la fenêtre hôte. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](#passing-information-to-the-dialog-box). 
+2. La fenêtre de dialogue redirige alors l’utilisateur vers la page de connexion. L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Dans cet article, nous appellerons cette page « redirectPage.html ». (*Il doit s’agir d’une page ayant le même domaine que la fenêtre hôte*, car le seul moyen pour que la fenêtre de dialogue transmette les résultats de la tentative de connexion est un appel de `messageParent`, qui ne peut être appelé que sur une page ayant le même domaine que la fenêtre hôte.) 
 2. Le service du fournisseur d’identité traite la requête GET entrante à partir de la fenêtre de dialogue. Si l’utilisateur est déjà connecté, il redirige immédiatement la fenêtre vers redirectPage.html et inclut les données utilisateur sous la forme d’un paramètre de requête. Si l’utilisateur n’est pas encore connecté, la page de connexion du fournisseur apparaît dans la fenêtre et l’utilisateur se connecte. Pour la plupart des fournisseurs, si l’utilisateur ne parvient pas à se connecter, le fournisseur affiche une page d’erreur dans la fenêtre de dialogue et ne redirige pas vers redirectPage.html. L’utilisateur doit fermer la fenêtre en sélectionnant le **X** dans le coin. Si l’utilisateur se connecte avec succès, la fenêtre de dialogue est redirigée vers redirectPage.html et les données utilisateur sont incluses sous la forme d’un paramètre de requête.
 3. Lorsque la page redirectPage.html s’ouvre, elle appelle `messageParent` pour indiquer le succès ou l’échec à la page hôte et éventuellement indiquer également des données utilisateur ou des données d’erreur. 
 4. L’événement `DialogMessageReceived` se déclenche dans la page hôte, et son gestionnaire ferme la fenêtre de dialogue et effectue éventuellement d’autres traitements du message. 
 
-Pour voir un exemple de complément qui utilise ce modèle, consultez la rubrique relative au [complément Excel avec ASP.NET et QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks).
-
-### <a name="alternate-authentication-and-authorization-scenarios"></a>Autres scénarios d’autorisation et d’authentification
-
-#### <a name="addressing-slow-network"></a>Prise en charge des lenteurs de réseau
-
-Si le réseau ou le fournisseur d’identité est lent, la boîte de dialogue ne peut pas s’ouvrir immédiatement lorsque l’utilisateur sélectionne l’élément d’IU correspondant. Cela peut donner l’impression que rien ne se passe. Un moyen de s’assurer une meilleure expérience est de faire en sorte que la première page qui s’ouvre dans la boîte de dialogue soit une page locale hébergée dans le domaine du complément, autrement dit le domaine de la fenêtre hôte. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». 
-
-Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](#passing-information-to-the-dialog-box). Il redirige alors l’utilisateur vers la page de connexion. Dans cette conception, la page du fournisseur n’est pas la première page ouverte dans la boîte de dialogue. Il est donc inutile de répertorier le domaine du fournisseur dans la section `<AppDomains>` du manifeste du complément.
-
 Pour voir des exemples de compléments qui utilisent ce modèle, consultez les pages suivantes :
 
-- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+- [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : La ressource qui s’ouvre initialement dans la fenêtre de la boîte de dialogue est une méthode du contrôleur qui ne dispose d’aucun affichage propre. Elle redirige l’utilisateur vers la page de connexion Office 365.
+- [Authentification client Office 365 du complément Office pour AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) : La ressource qui s’ouvre initialement dans la fenêtre de dialogue est une page. 
 
 #### <a name="supporting-multiple-identity-providers"></a>Prise en charge de plusieurs fournisseurs d’identité
 
@@ -391,7 +398,6 @@ Vous pouvez utiliser les API de dialogue pour gérer ce processus à l’aide d�
 Les exemples suivants utilisent les API de dialogue à cet effet :
 
 - [Insérer des graphiques Excel à l’aide de Microsoft Graph dans un complément PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart) : stocke le jeton d’accès dans une base de données.
-- [Complément Excel avec ASP.NET et QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks) : transmet le jeton d’accès dans `messageParent`.
 - [Complément Office qui utilise le service OAuth.io pour simplifier l’accès aux services en ligne populaires](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>Plus d’informations sur l’authentification et l’autorisation dans des compléments
