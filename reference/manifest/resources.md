@@ -10,25 +10,27 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 |:-----|:-----|:-----|
 |  [Images](#images)            |  image   |  Fournit l’URL HTTPS de l’image d’une icône. |
 |  **URL**                |  url     |  Fournit l’URL HTTPS. Une URL peut comporter jusqu’à 2 048 caractères. |
-|  **ShortStrings** |  chaîne  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
-|  **LongStrings**  |  chaîne  | Texte pour les attributs **Description**. Chaque **chaîne** comporte 250 caractères au maximum.|
+|  **ShortStrings** |  string  |  Texte pour les éléments **Label** et **Title**. Chaque élément **String** comporte 125 caractères au maximum.|
+|  **LongStrings**  |  string  | Texte pour les attributs **Description**. Chaque **chaîne** comporte 250 caractères au maximum.|
 
 >**Remarque**  Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
 ### <a name="images"></a>Images
 Chaque icône doit disposer de trois éléments **Images**, un pour chacune des trois tailles obligatoires :
+
 - 16x16
 - 32x32
 - 80x80
 
 Les tailles supplémentaires suivantes sont également prises en charge, mais ne sont pas obligatoires :
+
 - 20x20
 - 24x24
 - 40x40
 - 48x48
 - 64x64
 
-> **Important : ** Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.    
+> **Important :** Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.    
 
 
 ## <a name="resources-examples"></a>Exemples de ressources 
@@ -36,14 +38,14 @@ Les tailles supplémentaires suivantes sont également prises en charge, mais ne
 ```XML
 <Resources>
       <bt:Images>
-        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp16-icon_default.png" />
+        <bt:Image id="icon1_16x16" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp16-icon_default.png" />
         </bt:Image>
-        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp32-icon_default.png" />
+        <bt:Image id="icon1_32x32" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp32-icon_default.png" />
         </bt:Image>
-        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/Images/icon_default.png">
-          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/Images/ja-jp80-icon_default.png" />
+        <bt:Image id="icon1_80x80" DefaultValue="https://www.contoso.com/icon_default.png">
+          <bt:Override Locale="ja-jp" Value="https://www.contoso.com/ja-jp80-icon_default.png" />
         </bt:Image>
       </bt:Images>
       <bt:Urls>
@@ -69,9 +71,9 @@ Les tailles supplémentaires suivantes sont également prises en charge, mais ne
 <Resources>
   <bt:Images>
     <!-- Blue icon -->
-    <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/images/blue-16.png"/>
-    <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER/images/blue-32.png"/>
-    <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/images/blue-80.png"/>
+    <bt:Image id="blue-icon-16" DefaultValue="YOUR_WEB_SERVER/blue-16.png"/>
+    <bt:Image id="blue-icon-32" DefaultValue="YOUR_WEB_SERVER//blue-32.png"/>
+    <bt:Image id="blue-icon-80" DefaultValue="YOUR_WEB_SERVER/blue-80.png"/>
   </bt:Images>
   <bt:Urls>
     <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html"/>

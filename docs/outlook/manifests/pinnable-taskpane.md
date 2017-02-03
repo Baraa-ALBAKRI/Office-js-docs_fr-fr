@@ -12,6 +12,8 @@ La première étape consiste à ajouter une prise en charge de l’épinglage, c
 
 L’élément `SupportsPinning` est défini dans le schéma VersionOverrides V1.1, vous devez donc inclure un élément [VersionOverrides](../../../reference/manifest/versionoverrides.md) à la fois pour les versions 1.0 et 1.1.
 
+> **Remarque :** Si vous envisagez de [publier](../../publish/publish.md) votre complément Outlook sur l’Office Store, lorsque vous utilisez l’élément **SupportsPinning** afin d’obtenir la [validation de l’Office Store](https://msdn.microsoft.com/en-us/library/jj220035.aspx), le contenu de votre complément ne doit pas être statique et doit afficher clairement les données liées au message qui est ouvert ou sélectionné dans la boîte aux lettres.
+
 ```xml
 <!-- Task pane button -->
 <Control xsi:type="Button" id="msgReadOpenPaneButton">

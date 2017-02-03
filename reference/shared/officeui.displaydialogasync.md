@@ -9,12 +9,12 @@ Affiche une boîte de dialogue dans un hôte Office.
 |Word, Excel, PowerPoint|1.1|1.1|
 |Outlook|Mailbox 1.4|Mailbox 1.4|
 
-Cette méthode est disponible dans [l’ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md) DialogAPI pour les compléments Word, Excel ou PowerPoint, et dans l’ensemble de conditions requises Mailbox 1.4 pour Outlook. Pour spécifier l’ensemble de conditions requises DialogAPI, utilisez le code suivant dans votre manifeste.
+Cette méthode est disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md) DialogApi pour les compléments Word, Excel ou PowerPoint, et dans l’ensemble de conditions requises Mailbox 1.4 pour Outlook. Pour spécifier l’ensemble de conditions requises DialogAPI, utilisez le code suivant dans votre manifeste.
 
 ```xml
 <Requirements> 
   <Sets DefaultMinVersion="1.1"> 
-    <Set Name="DialogAPI"/> 
+    <Set Name="DialogApi"/> 
   </Sets> 
 </Requirements> 
 ```
@@ -32,7 +32,7 @@ Pour spécifier l’ensemble de conditions requises Mailbox 1.4, utilisez le co
 Pour détecter cette API en cours d’exécution dans un complément Word, Excel ou PowerPoint, utilisez le code suivant.
 
 ```js
-if (Office.context.requirements.isSetSupported('DialogAPI', 1.1)) {  
+if (Office.context.requirements.isSetSupported('DialogApi', 1.1)) {  
   // Use Office UI methods; 
 } else { 
   // Alternate path 

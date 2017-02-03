@@ -14,7 +14,7 @@ Vous souhaiterez peut-être ouvrir une boîte de dialogue à partir d’un volet
 
 L’image suivante montre un exemple de boîte de dialogue. 
 
-![Commandes de complément](../../images/Auth0DialogOpen.PNG)
+![Commandes de compléments](../../images/Auth0DialogOpen.PNG)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre est *non modale* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office hôte et avec la page hôte dans le volet Office, le cas échéant.
 
@@ -54,7 +54,7 @@ Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’ex
 La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office Online, la boîte de dialogue s’ouvre sous la forme d’un iframe flottant et non d’une fenêtre indépendante ; elle s’ouvre ainsi plus rapidement. Voici un exemple.
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
 La valeur par défaut est `false`, ce qui revient au même que d’omettre entièrement la propriété.
@@ -335,7 +335,7 @@ Pour voir un exemple qui utilise cette technique, consultez la rubrique relative
 
 Le code dans votre fenêtre de dialogue peut analyser l’URL et lire la valeur du paramètre.
 
- ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n'est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
+> **Remarque** : Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. (Il est ajouté après vos paramètres de requête personnalisés, le cas échéant. Il n'est pas ajouté à toutes les autres URL auxquelles la boîte de dialogue accède.) Microsoft peut modifier le contenu de cette valeur, ou le supprimer entièrement, à l’avenir, donc votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue. Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>Utilisation des API de dialogue pour afficher une vidéo
 

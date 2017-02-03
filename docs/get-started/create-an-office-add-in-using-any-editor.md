@@ -18,7 +18,7 @@ Pour exécuter le générateur Yeoman d’Office, vous avez besoin des élément
 - [Gulp](http://gulpjs.com/)
 - [TSD](http://definitelytyped.org/tsd/)
     
-Seuls Git et npm requièrent une installation séparée. Les autres peuvent être installés à l’aide de npm.
+Seuls Git et npm doivent être installés de façon séparée. Les autres éléments peuvent être installés à l’aide de npm.
 
 Lorsque vous installez Git, vous devez utiliser les valeurs par défaut, mais choisir les options suivantes : 
 
@@ -214,13 +214,43 @@ Vous pouvez utiliser le chargement de version test pour installer votre complém
 - [Chargement de version test des compléments Outlook](../outlook/testing-and-tips.md)
     
 
-## <a name="debugging-your-office-add-in"></a>Débogage de votre complément Office
+## <a name="debug-your-add-in"></a>Déboguer votre complément
 
-Il existe différentes façons de déboguer un complément :
+Vous pouvez déboguer votre complément de plusieurs façons :
 
+- attacher un débogueur à partir du volet Office (Office 2016 pour Windows) ;
+- utiliser les outils de développement de votre navigateur ;
+- utiliser les outils de développement F12 dans Windows 10.
 
-- Vous pouvez utiliser les clients web Office et ouvrir les outils de développement du navigateur, puis déboguer le complément comme toute autre application JavaScript côté client. 
-- Si vous utilisez la version bureau d’Office sur Windows 10, vous pouvez [déboguer des compléments à l’aide des outils de développement F12 sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+### <a name="attach-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
+
+Dans Office 2016 pour Windows, version 77xx.xxxx ou ultérieure, vous pouvez attacher le débogueur à partir du volet Office. 
+
+Pour lancer l’outil **Attacher le débogueur**, cliquez sur le coin supérieur droit du volet Office pour activer le menu **Caractéristique** (comme illustré dans le cercle rouge dans l’image suivante).   
+
+![Capture d’écran du menu Attacher le débogueur](../../images/attach-debugger.png)
+
+Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialogue **Débogueur juste-à-temps Visual Studio**, comme illustré dans l’image suivante. 
+
+![Capture d’écran de la boîte de dialogue Débogueur juste-à-temps Visual Studio](../../images/visual-studio-debugger.png)
+
+Vous pouvez ensuite l’attacher et effectuer le débogage dans Visual Studio.   
+
+  >  **Remarque** :  actuellement, le seul outil de débogage pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx). Si vous n’avez pas installé Visual Studio, la sélection de l’option **Attacher le débogueur** ne produit aucune action.  
+  
+Pour plus d’informations, consultez les rubriques suivantes :
+
+-   Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
+-   Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx).
+-   Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx).
+
+### <a name="browser-developer-tools"></a>Outils de développement du navigateur 
+
+Vous pouvez utiliser les clients web Office et ouvrir les outils de développement du navigateur pour déboguer votre complément comme toute autre application JavaScript côté client. 
+
+### <a name="f12-developer-tools-on-windows-10"></a>Outils de développement F12 sur Windows 10
+
+Si vous utilisez le client de bureau d’Office sur Windows 10, vous pouvez [déboguer des compléments à l’aide des outils de développement F12 sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
     
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
