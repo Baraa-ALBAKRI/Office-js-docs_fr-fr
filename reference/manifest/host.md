@@ -50,6 +50,7 @@ Lorsqu’il est défini dans [VersionOverrides](./versionoverrides.md), le type 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
+|  [MobileFormFactor](./mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** cet élément est uniquement pris en charge dans Outlook pour iOS. |
 
 
 ### <a name="xsitype"></a>xsi:type

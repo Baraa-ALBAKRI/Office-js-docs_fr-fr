@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-onenote)"></a>Objet Paragraph (interface API JavaScript pour OneNote)
+# <a name="paragraph-object-javascript-api-for-onenote"></a>Objet Paragraph (interface API JavaScript pour OneNote)
 
 _S’applique à : OneNote Online_  
 
@@ -9,7 +9,7 @@ Conteneur pour le contenu visible d’une page. Un paragraphe peut contenir n’
 
 | Propriété     | Type   |Description|Commentaires|
 |:---------------|:--------|:----------|:-------|
-|id|chaîne|Obtient l’ID de l’objet Paragraph. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
+|id|string|Obtient l’ID de l’objet Paragraph. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
 |type|string|Obtient le type de l’objet Paragraph. En lecture seule. Les valeurs possibles sont les suivantes : RichText, Image, Table, Other.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
@@ -42,7 +42,7 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Supprime le paragraphe.
 
 #### <a name="syntax"></a>Syntaxe
@@ -94,7 +94,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserthtmlassibling(insertlocation:-string,-html:-string)"></a>insertHtmlAsSibling(insertLocation: string, html: string)
+### <a name="inserthtmlassiblinginsertlocation-string-html-string"></a>insertHtmlAsSibling(insertLocation: string, html: string)
 Insère le contenu HTML spécifié.
 
 #### <a name="syntax"></a>Syntaxe
@@ -108,7 +108,7 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 |insertLocation|string|Emplacement du nouveau contenu relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
 |Html|string|Chaîne HTML qui décrit la présentation visuelle du contenu. Voir [HTML pris en charge](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) pour l’API JavaScript des compléments OneNote.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 void
 
 #### <a name="examples"></a>Exemples
@@ -148,7 +148,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertimageassibling(insertlocation:-string,-base64encodedimage:-string,-width:-double,-height:-double)"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
+### <a name="insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 Insère l’image à l’emplacement d’insertion spécifié.
 
 #### <a name="syntax"></a>Syntaxe
@@ -159,12 +159,12 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|insertLocation|chaîne|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
+|insertLocation|string|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
 |base64EncodedImage|string|Chaîne HTML à ajouter.|
 |width|double|Facultatif. Largeur de l’unité des points. La valeur par défaut est Null et la largeur d’image est respectée.|
 |height|double|Facultatif. Hauteur de l’unité des points. La valeur par défaut est Null et la hauteur d’image est respectée.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 [Image](image.md)
 
 #### <a name="examples"></a>Exemples
@@ -204,7 +204,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertrichtextassibling(insertlocation:-string,-paragraphtext:-string)"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
+### <a name="insertrichtextassiblinginsertlocation-string-paragraphtext-string"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 Insère le texte du paragraphe à l’emplacement d’insertion spécifié.
 
 #### <a name="syntax"></a>Syntaxe
@@ -215,7 +215,7 @@ paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|insertLocation|chaîne|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
+|insertLocation|string|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
 |paragraphText|string|Chaîne HTML à ajouter.|
 
 #### <a name="returns"></a>Retourne
@@ -258,7 +258,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserttableassibling(insertlocation:-string,-rowcount:-number,-columncount:-number,-values:-string[][])"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### <a name="inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 Ajoute un tableau avec le nombre spécifié de lignes et de colonnes avant ou après le paragraphe en cours.
 
 #### <a name="syntax"></a>Syntaxe
@@ -269,7 +269,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="parameters"></a>Paramètres
 | Paramètre    | Type   |Description|
 |:---------------|:--------|:----------|
-|insertLocation|chaîne|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
+|insertLocation|string|Emplacement du tableau relatif au paragraphe actif.  Les valeurs possibles sont les suivantes : Before, After|
 |rowCount|number|Nombre de lignes dans le tableau.|
 |columnCount|number|Nombre de colonnes dans le tableau.|
 |values|string[][]|Facultatif. Tableau 2D facultatif. Les cellules sont remplies si les chaînes correspondantes sont spécifiées dans le tableau.|
@@ -277,7 +277,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="returns"></a>Retourne
 [Table](table.md)
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
 
 #### <a name="syntax"></a>Syntaxe
@@ -290,7 +290,7 @@ object.load(param);
 |:---------------|:--------|:----------|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 

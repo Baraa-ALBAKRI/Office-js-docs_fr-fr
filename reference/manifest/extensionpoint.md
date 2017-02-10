@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
- Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [DesktopFormFactor](./desktopformfactor.md). 
+ Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [DesktopFormFactor](./desktopformfactor.md) ou [MobileFormFactor](./mobileformfactor.md). 
 
 ## <a name="attributes"></a>Attributs
 
@@ -73,6 +73,7 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](./desktopformfactor.md).)
+- [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
@@ -198,3 +199,37 @@ Ce point d’extension place des boutons sur le ruban pour l’extension de modu
 |  [OfficeTab](./officetab.md) |  Ajoute les commandes à l’onglet de ruban par défaut.  |
 |  [CustomTab](./customtab.md) |  Ajoute les commandes à l’onglet de ruban personnalisé.  |
 
+### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique dans le facteur de forme pour environnement mobile.
+
+> **Remarque :** ce type d’élément est uniquement pris en charge dans Outlook pour iOS.
+
+**Éléments enfants**
+
+|  Élément |  Description  |
+|:-----|:-----|
+|  [Group](./group.md) |  Ajoute un groupe de boutons à la surface de commande.  |
+|  [Control](./control.md) |  Ajoute un seul bouton à la surface de commande.  |
+
+Les éléments **ExtensionPoint** de ce type peuvent uniquement avoir un élément enfant, soit un élément **Group**, soir un élément **Control**.
+
+Pour les éléments **Control** contenus dans ce point d’extension, l’attribut **xsi:type** doit avoir la valeur `MobileButton`.
+
+#### <a name="group-example"></a>Exemple Group
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Group id="mobileGroupID">
+    <Label resid="residAppName"/>
+    <!-- one or more Control elements -->
+  </Group>
+</ExtensionPoint>
+```
+
+#### <a name="control-example"></a>Exemple Control
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Control id="mobileButton1" xsi:type="MobileButton">
+    <!-- Control definition -->
+  </Control>
+</ExtensionPoint>
+```

@@ -2,7 +2,7 @@
 
 # <a name="context"></a>context
 
-## <a name="[office](office.md).context"></a>[Office](Office.md).context
+## <a name="officeofficemdcontext"></a>[Office](Office.md).context
 
 L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office.context, consultez la page relative à la [référence Office.context de l’interface API partagée](../shared/office.context.md).
 
@@ -19,13 +19,13 @@ L’espace de noms Office.context fournit des interfaces partagées qui sont uti
 
 ### <a name="members"></a>Membres
 
-####  <a name="displaylanguage-:string"></a>displayLanguage :String
+####  <a name="displaylanguage-string"></a>displayLanguage :String
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office.
 
 La valeur `displayLanguage` reflète le paramètre **Langue d’affichage** actuel spécifié dans **Fichier > Options > Langue** dans l’application hôte Office.
 
-##### <a name="type:"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -56,17 +56,19 @@ function write(message){
 }
 ```
 
-####  <a name="officetheme-:object"></a>officeTheme :Object
+####  <a name="officetheme-object"></a>officeTheme :Object
 
 Permet d’accéder aux propriétés pour les couleurs du thème Office.
 
+> **Remarque :** Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+
 À l’aide des couleurs du thème Office, vous pouvez coordonner le modèle de couleurs de votre complément avec le thème Office actuel sélectionné par l’utilisateur dans **Fichier > Compte Office > Thème Office**, qui est appliqué à toutes les applications hôtes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
-##### <a name="type:"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Objet
 
-##### <a name="properties:"></a>Propriétés :
+##### <a name="properties"></a>Propriétés :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -97,13 +99,13 @@ function applyOfficeTheme(){
 }
 ```
 
-####  <a name="roamingsettings-:[roamingsettings](roamingsettings.md)"></a>roamingSettings :[RoamingSettings](RoamingSettings.md)
+####  <a name="roamingsettings-roamingsettingsroamingsettingsmd"></a>roamingSettings :[RoamingSettings](RoamingSettings.md)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
 L’objet `RoamingSettings` vous permet de stocker et d’accéder aux données d’un complément de messagerie conservées dans la boîte aux lettres d’un utilisateur. Ainsi, cet objet est accessible par le complément de messagerie lors de son exécution à partir d’une application cliente hôte utilisée pour accéder à la boîte aux lettres.
 
-##### <a name="type:"></a>Type :
+##### <a name="type"></a>Type :
 
 *   [RoamingSettings](RoamingSettings.md)
 

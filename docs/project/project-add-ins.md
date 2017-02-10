@@ -47,10 +47,7 @@ Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afi
 
 Pour les applications complexes personnalisées, et pour un débogage plus facile, nous vous recommandons d’utiliser Visual Studio 2015 pour développer des sites web pour les compléments. Visual Studio 2015 contient des modèles pour les projets de compléments qui permettent de choisir le type de complément (volet Office, contenu ou messagerie) et l’application hôte (Project, Word, Excel ou Outlook). Pour obtenir un exemple qui intègre des données de Project Online, voir l’article relatif à la [connexion d’un complément du volet Office Project à PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx) dans le blog Project Programmability sur MSDN.
 
-
- >**Remarque**  La version Project 2013 ne prend pas en charge les Outils de développement Office 365 « Napa ».
-
-Lorsque vous installez le SDK de Project 2013, le sous-répertoire  `\Samples\Apps\` inclut les exemples d’compléments suivants :
+Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants :
 
 
 -  **Bing Search :**  le fichier manifeste BingSearch.xml pointe vers la page de recherche Bing pour les périphériques mobiles. Comme l’application web Bing existe déjà sur Internet, le complément de recherche Bing n’utilise pas d’autres fichiers de code source ou le modèle objet de complément pour Project.
@@ -66,7 +63,7 @@ Lorsque vous installez le SDK de Project 2013, le sous-répertoire  `\Samples\Ap
 Le fichier manifeste spécifie l’URL de la page web du complément ou l’application web, le type de complément (volet Office pour Project), les URL facultatives de contenus pour d’autres langues ou paramètres régionaux, et d’autres propriétés.
 
 
-### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
+### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
 
 
 - Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément  **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
@@ -153,7 +150,7 @@ Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de compl�
 Dans la procédure 2, le complément Bing Search est installé sur l’ordinateur local où Project 2013 est installé. Toutefois, comme l’infrastructure du complément n’utilise pas directement les chemins de fichiers locaux tels que  `C:\Project\AppManifests`, vous pouvez créer un partage de fichiers sur l’ordinateur local. Si vous préférez, vous pouvez créer un partage de fichiers sur un ordinateur à distance.
 
 
-### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>Procédure 2. Installer le complément Bing Search
+### <a name="procedure-2-to-install-the-bing-search-add-in"></a>Procédure 2. Installer le complément Bing Search
 
 
 1. Créez un répertoire local pour les fichiers manifestes des compléments. Par exemple, créez un répertoire qui s’appelle  `C:\Project\AppManifests`.

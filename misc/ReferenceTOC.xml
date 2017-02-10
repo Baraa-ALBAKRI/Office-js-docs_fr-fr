@@ -11,8 +11,7 @@
 		<Item text="Description" url="manifest/description" SEODescription="Spécifie la description de votre complément Office sous forme d’une chaîne de 250 caractères maximum." />
 		<Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="Spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un ordinateur de bureau." />
 		<Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="Définit les paramètres pour un complément de volet Office qui implémente la prise en charge d’un dictionnaire supplémentaire." />
-		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="Spécifie l’URL de la page d’accueil du dictionnaire." />
-		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="Spécifie le nom de ce dictionnaire." />
+		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="Spécifie l’URL de la page d’accueil du dictionnaire." />		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="Spécifie le nom de ce dictionnaire." />
 		<Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="Spécifie si la mise en surbrillance de l’entité doit être désactivée pour votre complément de messagerie." />
 		<Item text="DisplayName" url="manifest/displayname" SEODescription="Spécifie le nom de votre complément Office sous la forme d’une chaîne de 125 caractères maximum." />
 		<Item text="Formulaire" url="manifest/form" Scope="outlook" SEODescription="Définit les paramètres d’expérience utilisateur pour les formulaires que votre complément de messagerie utilisera lors de l’exécution sur un appareil particulier (ordinateur de bureau, tablette ou téléphone)." />
@@ -42,21 +41,23 @@
 		<Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Définit une langue régionale prise en charge par ce dictionnaire, représentée sous forme de chaîne de nom de culture." />
 		<Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Définit les langues régionales prises en charge par ce dictionnaire." />
 		<Item text="Version" url="manifest/version" SEODescription="Spécifie la version de votre complément Office." />
-		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="Élément racine qui contient des informations pour les commandes de complément implémentées par le complément.">
-			<Item text="Opération" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Indique l’action à réaliser lorsque l’utilisateur sélectionne un contrôle de bouton ou de menu." />
+		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint, outlook" SEODescription="Élément racine qui contient des informations pour les commandes de complément implémentées par le complément.">
+			<Item text="Opération" url="manifest/action" Scope="excel, word, powerpoint, outlook" SEODescription="Indique l’action à réaliser lorsque l’utilisateur sélectionne un contrôle de bouton ou de menu." />
 			<Item text="Contrôle" url="manifest/control" SEODescription="Indique le contrôle à réaliser lorsque l’utilisateur sélectionne un bouton ou un menu." />
-			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Indique l’onglet et le groupe pour les commandes de complément." />
-			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Définit l’emplacement où se trouvent les fonctionnalités d’un complément" />
-			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
-			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur." />
+
+			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="Indique l’onglet et le groupe pour les commandes de complément." />
+			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint, outlook" SEODescription="Définit l’emplacement où se trouvent les fonctionnalités d’un complément" />
+			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
+			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur." />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Fournit les informations utilisées par la légende qui s’affiche lorsque le complément est installé sur des hôtes Word, Excel et PowerPoint." />
-			<Item text="Groupe" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Définit un groupe de points d’extension d’interface utilisateur dans un onglet." />
-			<Item text="Hôtes" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Spécifie les types d’application hôte Office pris en charge par votre complément Office." />
-			<Item text="Icône" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="Définit les éléments d’image pour les options de menu et de bouton." />
+			<Item text="Groupe" url="manifest/group" Scope="excel, word, powerpoint, outlook" SEODescription="Définit un groupe de points d’extension d’interface utilisateur dans un onglet." />
+			<Item text="Hôtes" url="manifest/hosts" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie les types d’application hôte Office pris en charge par votre complément Office." />
+			<Item text="Icône" url="manifest/icon" Scope="excel, word, powerpoint, outlook" SEODescription="Définit les éléments d’image pour les options de menu et de bouton." />
+      <Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme pour environnement mobile." />
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Définit un ensemble de contrôles à inclure dans le menu contextuel d’Office." />
-			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="Spécifie l’onglet préexistant à utiliser pour une commande de complément." />
-			<Item text="Ressources" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="Contient des icônes, des chaînes et des URL pour le nœud VersionOverrides." />
-			<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="Définit une info-bulle enrichie (titre et description)." />
+			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie l’onglet préexistant à utiliser pour une commande de complément." />
+			<Item text="Ressources" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="Contient des icônes, des chaînes et des URL pour le nœud VersionOverrides." />
+			<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint, outlook" SEODescription="Définit une info-bulle enrichie (titre et description)." />
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Fournit une vue d’ensemble de l’API Javascript de Word.">

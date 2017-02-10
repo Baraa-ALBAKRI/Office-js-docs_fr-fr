@@ -33,7 +33,7 @@ La bibliothèque labs.js sert de couche d’abstraction sur la bibliothèque off
 
 La première étape consiste à vous inscrire auprès d’un Site du développeur Office 365. Cela vous permet d’héberger et de tester votre atelier avant de le soumettre à l’Office Store. Le site vous permet de publier votre complément sur Office Mix et de le tester dans un environnement réel.
 
-Pour plus d’informations, voir [Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). Vous ne devez suivre que les deux premières étapes. L’installation des outils de développement « Napa » est facultative.
+Pour plus d’informations, voir [Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). 
 
 
 ### <a name="set-up-an-app-catalog-on-sharepoint-online"></a>Configuration d’un catalogue d’applications sur SharePoint Online
@@ -71,7 +71,7 @@ Commencez par mettre à jour votre catalogue PowerPoint 2013. Lancez PowerPoint 
 Enfin, reconnectez-vous en utilisant votre compte du développeur. Choisissez votre nom d’ouverture de session dans le coin supérieur droit dans PowerPoint 2013 et connectez-vous en utilisant votre compte du développeur. Vous pouvez maintenant insérer votre complément.
 
 
-### <a name="insert,-publish,-and-view-your-app"></a>Insertion, publication et visualisation de votre application
+### <a name="insert-publish-and-view-your-app"></a>Insertion, publication et visualisation de votre application
 
 Pour insérer votre complément au catalogue, choisissez le ruban  **Insérer**, puis sélectionnez  **Stocker** dans la section **Applications**. Sélectionnez  **Mon organisation** et le complément apparaît dans votre catalogue de complément. Cliquez sur le complément, sélectionnez **Insérer** et votre complément (votre atelier) est inséré dans le document PowerPoint 2013.
 

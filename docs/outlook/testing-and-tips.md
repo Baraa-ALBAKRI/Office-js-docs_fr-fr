@@ -39,7 +39,7 @@ Vous pouvez installer un complément si votre boîte aux lettres se trouve sur E
 Dans Outlook pour Mac, choisissez **Gérer les compléments** à l’extrémité droite de la barre des compléments, puis connectez-vous au Centre d’administration Exchange. Passez à l’étape 4 de la section suivante.
 
 
-### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>Installation d’un complément à l’aide d’Outlook Web App ou d’Outlook.com
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlookcom"></a>Installation d’un complément à l’aide d’Outlook Web App ou d’Outlook.com
 
 Pour utiliser Outlook Web App (OWA) pour installer un complément Outlook, procédez comme suit :
 
@@ -59,8 +59,7 @@ Pour utiliser Outlook Web App (OWA) pour installer un complément Outlook, pr
 
 >**Remarque :**  si vous n’utilisez aucun des éléments suivants pour développer votre complément : 
 - Client de développeur Office 365
-- Outils de développement Office 365 Napa
-- Visual Studio
+- Visual Studio
 
 Et, si vous n’avez pas au minimum le rôle « Mes applications personnalisées » de votre serveur Exchange, vous pouvez installer les compléments uniquement à partir de l’Office Store. Pour tester votre complément ou installer des compléments en général en spécifiant une URL ou un nom de fichier pour le manifeste de complément, vous devez demander à votre administrateur Exchange de vous octroyer les autorisations nécessaires.
 
@@ -74,7 +73,7 @@ Selon les besoins, l’administrateur peut exécuter l’applet de commande suiv
 
 Pour plus d’informations sur le rôle « Mes compléments personnalisés », consultez la rubrique relative au [rôle « Mes compléments personnalisés »](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx). 
 
-L’utilisation d’Office 365, des Outils de développement Office 365 « Napa » ou de Visual Studio pour développer des compléments vous amène à endosser le rôle d’administrateur d’organisation, ce qui vous permet d’installer des compléments par fichier ou par URL dans le Centre d’administration Exchange ou via des cmdlets PowerShell.
+L’utilisation d’Office 365 ou de Visual Studio pour développer des compléments vous amène à endosser le rôle d’administrateur d’organisation, ce qui vous permet d’installer des compléments par fichier ou par URL dans le Centre d’administration Exchange ou via des cmdlets PowerShell.
 
 
 ### <a name="installing-an-add-in-by-using-remote-powershell"></a>Installation d’un complément à l’aide de PowerShell à distance

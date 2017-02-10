@@ -15,7 +15,7 @@ Pour pouvoir installer et exécuter des Complément Office, vous devez d’abord
 Pour tous les types de complément (compléments de contenu, Outlook et volet Office, et les commandes de compléments), vous devez déployer les fichiers de pages web de votre complément sur un serveur web ou un service d’hébergement web, tel que [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
- >**Remarque :**   lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de pages web de votre complément localement avec IIS Express, et ne requiert pas de serveur web supplémentaire. De la même manière, lorsque vous développez et déboguez un complément avec les Outils de développement Office 365 « Napa » dans le navigateur, il déploie et exécute les fichiers de pages web de votre complément à partir de l’emplacement de stockage associé au compte que vous avez utilisé pour vous connecter à Napa.
+ >**Remarque :**   lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires. 
 
 Pour les compléments du volet Office et de contenu, dans les applications hôtes Office prises en charge (applications web Access, Word, Excel, PowerPoint ou Project), vous avez également besoin d’un [catalogue de compléments](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour télécharger les fichiers manifeste XML des compléments.
 

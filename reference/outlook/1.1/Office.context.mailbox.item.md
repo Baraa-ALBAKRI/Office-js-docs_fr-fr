@@ -34,7 +34,7 @@ Office.initialize = function () {
 
 ### <a name="members"></a>Membres
 
-#### <a name="attachments-arrayattachmentdetailssimpletypesmdattachmentdetails"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailssimple-typesmdattachmentdetails"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
 Obtient un tableau des pièces jointes de l’élément. Mode lecture uniquement.
 
@@ -196,6 +196,8 @@ var created = Office.context.mailbox.item.dateTimeCreated;
 
 Obtient la date et l’heure de la dernière modification d’un élément. Mode lecture uniquement.
 
+> **Remarque :** Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+
 ##### <a name="type"></a>Type :
 
 *   Date
@@ -263,7 +265,7 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### <a name="from-emailaddressdetailssimpletypesmdemailaddressdetails"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="from-emailaddressdetailssimple-typesmdemailaddressdetails"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lecture uniquement.
 
@@ -366,7 +368,7 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-officemailboxenumsitemtypeofficemailboxenumsmditemtypestring"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
+####  <a name="itemtype-officemailboxenumsitemtypeofficemailboxenumsmditemtype-string"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
 Obtient le type d’élément représenté par une instance.
 
@@ -453,7 +455,7 @@ La propriété normalizedSubject obtient l’objet de l’élément, sans les pr
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
 
-####  <a name="optionalattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="optionalattendees-arrayemailaddressdetailssimple-typesmdemailaddressdetailsrecipientsrecipientsmd"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Obtient ou définit la liste des adresses de messagerie des participants facultatifs.
 
@@ -488,7 +490,7 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-emailaddressdetailssimpletypesmdemailaddressdetails"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="organizer-emailaddressdetailssimple-typesmdemailaddressdetails"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’organisateur de la réunion spécifiée. Mode lecture uniquement.
 
@@ -511,7 +513,7 @@ var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
-####  <a name="requiredattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="requiredattendees-arrayemailaddressdetailssimple-typesmdemailaddressdetailsrecipientsrecipientsmd"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Obtient ou définit la liste des adresses de messagerie des participants obligatoires.
 
@@ -546,9 +548,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="resources-emailaddressdetailssimpletypesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="resources-emailaddressdetailssimple-typesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtient les ressources requises pour un rendez-vous. Mode lecture uniquement.
+
+> **Remarque :** Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
 
 ##### <a name="type"></a>Type :
 
@@ -561,7 +565,7 @@ Obtient les ressources requises pour un rendez-vous. Mode lecture uniquement.
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../tutorial-api-requirement-sets.md)| 1.0|
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Lecture|
-#### <a name="sender-emailaddressdetailssimpletypesmdemailaddressdetails"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="sender-emailaddressdetailssimple-typesmdemailaddressdetails"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
@@ -810,6 +814,8 @@ function addAttachment() {
 
 Affiche un formulaire de réponse qui inclut, soit l’expéditeur et tous les destinataires du message sélectionné, soit l’organisateur et tous les participants du rendez-vous sélectionné.
 
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+
 Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.
 
 Si un des paramètres de chaîne dépasse la limite, `displayReplyAllForm` génère une exception.
@@ -871,6 +877,8 @@ Office.context.mailbox.item.displayReplyAllForm(
 
 Affiche un formulaire de réponse qui comprend uniquement l’expéditeur du message sélectionné ou l’organisateur du rendez-vous sélectionné.
 
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+
 Dans Outlook Web App, le formulaire de réponse s’affiche sous forme de formulaire isolé dans l’affichage à 3 colonnes et sous forme de formulaire contextuel dans l’affichage à 1 ou 2 colonnes.
 
 Si un des paramètres de chaîne dépasse la limite, `displayReplyForm` génère une exception.
@@ -928,9 +936,11 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities-entitiessimpletypesmdentities"></a>getEntities() → {[Entities](simple-types.md#entities)}
+#### <a name="getentities--entitiessimple-typesmdentities"></a>getEntities() → {[Entities](simple-types.md#entities)}
 
 Obtient les entités figurant dans l’élément sélectionné.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -942,8 +952,7 @@ Obtient les entités figurant dans l’élément sélectionné.
 
 ##### <a name="returns"></a>Renvoie :
 
-Type : 
-[Entities](simple-types.md#entities)
+Type : [Entities](simple-types.md#entities)
 
 ##### <a name="example"></a>Exemple
 
@@ -953,9 +962,11 @@ L’exemple suivant accède aux entités des contacts dans l’élément actif.
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytypeentitytype-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getentitiesbytypeentitytype--nullable-arraystringcontactsimple-typesmdcontactmeetingsuggestionsimple-typesmdmeetingsuggestionphonenumbersimple-typesmdphonenumbertasksuggestionsimple-typesmdtasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Obtient un tableau de toutes les entités du type spécifié trouvées dans l’élément sélectionné.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 ##### <a name="parameters"></a>Paramètres :
 
@@ -1008,9 +1019,11 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbynamename-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getfilteredentitiesbynamename--nullable-arraystringcontactsimple-typesmdcontactmeetingsuggestionsimple-typesmdmeetingsuggestionphonenumbersimple-typesmdphonenumbertasksuggestionsimple-typesmdtasksuggestion"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Renvoie des entités reconnues dans l’élément sélectionné, qui transmettent le filtre nommé défini au fichier manifeste XML.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `getFilteredEntitiesByName` renvoie les entités qui correspondent à l’expression régulière définie dans l’élément de règle [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) du fichier manifeste XML ayant la valeur de l’élément `FilterName` spécifié.
 
@@ -1036,9 +1049,11 @@ Si aucun élément `ItemHasKnownEntity` dans le manifeste n’a une valeur d’�
 Type : Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
 
-#### <a name="getregexmatches-object"></a>getRegExMatches() → {Object}
+#### <a name="getregexmatches--object"></a>getRegExMatches() → {Object}
 
 Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières définies dans le fichier manifeste XML.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `getRegExMatches` renvoie les chaînes qui correspondent à l’expression régulière définie dans chaque élément de règle `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` du fichier manifeste XML. Pour une règle `ItemHasRegularExpressionMatch`, une chaîne correspondante doit être présente dans la propriété de l’élément spécifié par cette règle. Le type simple `PropertyName` définit les propriétés prises en charge.
 
@@ -1077,10 +1092,10 @@ Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriét�
 
 Un objet qui contient les tableaux des chaînes correspondant aux expressions régulières définies dans le fichier manifeste XML. Le nom de chaque tableau est égal à la valeur correspondante de l’attribut `RegExName` de la règle `ItemHasRegularExpressionMatch` correspondante ou de l’attribut `FilterName` de la règle `ItemHasKnownEntity` correspondante.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
+<dl class="param-type">
+
+<dt>Type</dt>
+
 <dd>Object</dd>
 
 </dl>
@@ -1095,9 +1110,11 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbynamename-nullable-arraystring"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
+#### <a name="getregexmatchesbynamename--nullable-arraystring"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 Renvoie des valeurs de chaîne dans l’élément sélectionné, qui correspondent aux expressions régulières nommées définies dans le fichier manifeste XML.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `getRegExMatchesByName` renvoie les chaînes qui correspondent à l’expression régulière définie dans l’élément de règle `ItemHasRegularExpressionMatch` du fichier manifeste XML ayant la valeur de l’élément `RegExName` spécifié.
 
@@ -1121,10 +1138,10 @@ Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriét�
 
 Un tableau qui contient les chaînes correspondant à l’expression régulière définie dans le fichier manifeste XML.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
+<dl class="param-type">
+
+<dt>Type</dt>
+
 <dd>Array.<String></dd>
 
 </dl>
@@ -1136,7 +1153,7 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasynccoerciontype-options-callback-string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  <a name="getselecteddataasynccoerciontype-options-callback--string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Renvoie de manière asynchrone les données sélectionnées à partir de l’objet ou du corps d’un message.
 
@@ -1164,10 +1181,10 @@ Pour accéder aux données sélectionnées via la méthode de rappel, appelez la
 
 Les données sélectionnées en tant que chaîne dont le format est déterminé par `coercionType`.
 
-<dl class="param-type">
-
-<dt>Type</dt>
-
+<dl class="param-type">
+
+<dt>Type</dt>
+
 <dd>String</dd>
 
 </dl>
@@ -1204,8 +1221,7 @@ Les propriétés personnalisées sont stockées sous la forme de paires clé/val
 |---|---|---|---|
 |`callback`| function||Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [`AsyncResult`](simple-types.md#asyncresult).
 
-Les propriétés personnalisées sont fournies sous la forme d’un objet [`CustomProperties`](CustomProperties.md) dans la propriété `asyncResult.value`. Cet objet peut être utilisé pour obtenir, définir et supprimer des propriétés personnalisées à partir de l’élément et réenregistrer les modifications apportées au jeu de propriétés personnalisées sur le serveur.| 
-|`userContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent fournir un objet auquel ils souhaitent accéder dans la fonction de rappel. Cet objet est accessible via la propriété `asyncResult.asyncContext` dans la fonction de rappel.|
+Les propriétés personnalisées sont fournies sous la forme d’un objet [`CustomProperties`](CustomProperties.md) dans la propriété `asyncResult.value`. Cet objet peut être utilisé pour obtenir, définir et supprimer des propriétés personnalisées à partir de l’élément et réenregistrer les modifications apportées au jeu de propriétés personnalisées sur le serveur.| |`userContext`| Objet| &lt;facultatif&gt;|Les développeurs peuvent fournir un objet auquel ils souhaitent accéder dans la fonction de rappel. Cet objet est accessible via la propriété `asyncResult.asyncContext` dans la fonction de rappel.|
 
 ##### <a name="requirements"></a>Configuration requise
 

@@ -24,13 +24,15 @@ Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft 
 
 ### <a name="members"></a>Membres
 
-#### <a name="ewsurl-:string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl :String
 
 Obtient l’URL du point de terminaison des services Web Exchange (EWS) pour ce compte de messagerie. Mode lecture uniquement.
 
+> **Remarque :** Ce membre n’est pas pris en charge dans Outlook pour iOS ou Outlook pour Android.
+
 La valeur `ewsUrl` peut être utilisée par un service distant pour émettre des appels EWS vers la boîte aux lettres de l’utilisateur. Par exemple, vous pouvez créer un service distant pour [obtenir des pièces jointes à partir de l’élément sélectionné](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
-##### <a name="type:"></a>Type :
+##### <a name="type"></a>Type :
 
 *   Chaîne
 
@@ -44,7 +46,7 @@ La valeur `ewsUrl` peut être utilisée par un service distant pour émettre des
 
 ### <a name="methods"></a>Méthodes
 
-####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttimetimevalue--localclienttimesimple-typesmdlocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 Obtient un dictionnaire contenant les informations d’heure dans l’heure locale du client.
 
@@ -52,7 +54,7 @@ Les dates et heures utilisées par une application de messagerie pour Outlook ou
 
 Si l’application de messagerie est en cours d’exécution dans Outlook, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire de l’ordinateur client. Si l’application de messagerie est en cours d’exécution dans Outlook Web App, la méthode `convertToLocalClientTime` renvoie un objet de dictionnaire dont les valeurs sont définies pour le fuseau horaire spécifié dans le CAE.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -66,17 +68,17 @@ Si l’application de messagerie est en cours d’exécution dans Outlook, la m�
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### <a name="returns:"></a>Renvoie :
+##### <a name="returns"></a>Renvoie :
 
 Type : [LocalClientTime](simple-types.md#localclienttime)
 
-####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 Obtient un objet Date à partir d’un dictionnaire contenant des informations d’heure.
 
 La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une date et une heure locales en objet Date avec les valeurs appropriées pour la date et l’heure locales.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -90,7 +92,7 @@ La méthode `convertToUtcClientTime` convertit un dictionnaire contenant une dat
 |[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Mode Outlook applicable| Composition ou lecture|
 
-##### <a name="returns:"></a>Renvoie :
+##### <a name="returns"></a>Renvoie :
 
 Objet Date avec l’heure exprimée au format UTC.
 
@@ -102,9 +104,11 @@ Objet Date avec l’heure exprimée au format UTC.
 
 </dl>
 
-####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
+####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Affiche un rendez-vous de calendrier existant.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `displayAppointmentForm` ouvre un rendez-vous du calendrier existant dans une nouvelle fenêtre du Bureau ou dans une boîte de dialogue sur les appareils mobiles.
 
@@ -114,7 +118,7 @@ Dans Outlook Web App, cette méthode ouvre le formulaire spécifié uniquement
 
 Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vous existant, un volet vierge s’ouvre sur l’ordinateur ou l’appareil client. Par ailleurs, aucun message d’erreur n’est retourné.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -134,9 +138,11 @@ Si l’identificateur de l’élément spécifié n’identifie aucun rendez-vou
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
+####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 Affiche un message existant.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `displayMessageForm` ouvre un message existant dans une nouvelle fenêtre du Bureau ou dans une boîte de dialogue sur les appareils mobiles.
 
@@ -146,7 +152,7 @@ Si l’identificateur de l’élément spécifié n’identifie aucun message ex
 
 N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui représente un rendez-vous. Utilisez la méthode `displayAppointmentForm` pour afficher un rendez-vous existant, et `displayNewAppointmentForm` pour afficher un formulaire afin de créer un nouveau rendez-vous.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
@@ -166,9 +172,11 @@ N’utilisez pas la méthode `displayMessageForm` ayant une valeur `itemId` qui 
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
 Affiche un formulaire permettant de créer un rendez-vous du calendrier.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `displayNewAppointmentForm` ouvre un formulaire qui permet à l’utilisateur de créer un rendez-vous ou une réunion. Si des paramètres sont spécifiés, les champs du formulaire de rendez-vous sont remplis automatiquement avec le contenu des paramètres.
 
@@ -178,11 +186,11 @@ Dans le client riche Outlook et Outlook RT, si vous indiquez des participants ou
 
 Si l’un des paramètres dépasse les limites définies en matière de taille ou si un nom de paramètre inconnu est spécifié, une exception est levée.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Description|
 |---|---|---|
-|`parameters`| Object|Dictionnaire de paramètres décrivant le nouveau rendez-vous.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet <code>EmailAddressDetails</code> pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>optionalAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet EmailAddressDetails pour chacun des participants facultatifs au rendez-vous. Le tableau est limité à 100 entrées au maximum.</td></tr><tr><td><code>start</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de début du rendez-vous.</td></tr><tr><td><code>end</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de fin du rendez-vous.</td></tr><tr><td><code>location</code></td><td>String</td><td>Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>subject</code></td><td>String</td><td>Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>body</code></td><td>String</td><td>Corps du message du rendez-vous. La taille du corps du message est limitée à 32 Ko.</td></tr></tbody></table>|
+|`parameters`| Object|Dictionnaire de paramètres décrivant le nouveau rendez-vous.<br/><br/>**Propriétés**<br/><table class="nested-table"><thead><tr><th>Nom</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>requiredAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet <code>EmailAddressDetails</code> pour chacun des participants requis du rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>optionalAttendees</code></td><td>Tableau.&lt;Chaîne&gt; &#124; Tableau.&lt;<a href="simple-types.md#emailaddressdetails">EmailAddressDetails</a>&gt;</td><td>Tableau de chaînes contenant les adresses de messagerie ou tableau contenant un objet EmailAddressDetails pour chacun des participants facultatifs au rendez-vous. Le tableau est limité à 100 entrées au maximum.</td></tr><tr><td><code>start</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de début du rendez-vous.</td></tr><tr><td><code>end</code></td><td>Date</td><td>Objet Date spécifiant la date et l’heure de fin du rendez-vous.</td></tr><tr><td><code>location</code></td><td>Chaîne</td><td>Chaîne contenant l’emplacement du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>resources</code></td><td>Array.&lt;String&gt;</td><td>Tableau de chaînes contenant les ressources requises pour le rendez-vous. Le tableau est limité à 100 entrées maximum.</td></tr><tr><td><code>subject</code></td><td>String</td><td>Chaîne contenant l’objet du rendez-vous. La chaîne est limitée à 255 caractères maximum.</td></tr><tr><td><code>body</code></td><td>String</td><td>Corps du message du rendez-vous. La taille du corps du message est limitée à 32 Ko.</td></tr></tbody></table>|
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -212,7 +220,7 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtient une chaîne qui contient un jeton servant à obtenir une pièce jointe ou un élément à partir d’un serveur Exchange.
 
@@ -222,7 +230,7 @@ Vous pouvez passer le jeton et un identificateur de pièce jointe ou d’éléme
 
 Votre application doit disposer de l’autorisation **ReadItem** spécifiée dans son manifeste pour pouvoir appeler la méthode `getCallbackTokenAsync`.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -250,13 +258,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtient un jeton qui identifie l’utilisateur et le complément Office.
 
 La méthode `getUserIdentityTokenAsync` renvoie un jeton qui vous permet d’identifier et d’[authentifier le complément et l’utilisateur à l’aide d’un système tiers](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx).
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|
@@ -284,9 +292,11 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 Envoie une demande asynchrone à un des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres de l’utilisateur.
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
 
 La méthode `makeEwsRequestAsync` envoie une demande EWS à Exchange de la part du complément.
 
@@ -312,7 +322,7 @@ Lorsque vous utilisez la méthode `makeEwsRequestAsync` dans les applications de
 
 Lorsque votre application de messagerie s’exécute dans Outlook sur le web, vous n’avez pas à définir la valeur d’encodage. Pour déterminer si votre application de messagerie s’exécute dans Outlook ou Outlook sur le web, utilisez la propriété mailbox.diagnostics.hostName. Pour déterminer la version d’Outlook qui est exécutée, utilisez la propriété mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters:"></a>Paramètres :
+##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|
 |---|---|---|---|

@@ -19,7 +19,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
     
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
     
-Vous pouvez également créer un complément pour PowerPoint ou Word à l’aide de Visual Studio 2015 ou des Outils de développement Office 365 Napa. Pour plus d’informations sur la création de Compléments Office, voir le tableau 1.
+Vous pouvez également créer un complément pour PowerPoint ou Word à l’aide de Visual Studio 2015. 
 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
