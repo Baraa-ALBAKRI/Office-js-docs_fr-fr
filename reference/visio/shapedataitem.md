@@ -1,16 +1,16 @@
 # <a name="shapedataitem-object-javascript-api-for-visio"></a>Objet ShapeDataItem (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente l’objet ShapeDataItem.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Commentaires|
+| Propriété       | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |label|string|Chaîne qui spécifie l’étiquette de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|value|chaîne|Chaîne qui spécifie la valeur de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+|value|string|Chaîne qui spécifie la valeur de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -36,7 +36,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 

@@ -3,40 +3,30 @@
 
 Vous pouvez utiliser le générateur Yeoman pour votre complément Office. Le générateur Yeoman fournit la structure du projet et assure la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
 
- >**Remarque :** ces instructions utilisent l’invite de commande Windows, mais vous pouvez également utiliser d’autres environnements d’interpréteur de commandes. 
+ >**Remarque :** ces instructions utilisent Terminal sur un Mac, mais vous pouvez également utiliser d’autres environnements de ligne de commande Exchange Management Shell. 
 
 
-## <a name="prerequisites-for-yeoman-generator"></a>Configuration requise pour le générateur Yeoman
+## <a name="prerequisites-for-the-yeoman-generator"></a>Configuration requise pour le générateur Yeoman
 
-Pour exécuter le générateur Yeoman d’Office, vous avez besoin des éléments suivants :
+Pour installer le générateur Yeoman Office, [git](https://git-scm.com/downloads) et node.js doivent être installés sur votre ordinateur. Si vous utilisez un Mac, nous vous recommandons d’utiliser [Node Version Manager](https://github.com/creationix/nvm) pour installer node.js avec les autorisations appropriées. Si vous utilisez Windows, vous pouvez installer node.js depuis [nodejs.org](https://nodejs.org/en/).
 
+>**Remarque :** si vous êtes sous Windows, utilisez les valeurs par défaut lorsque vous installez git, avec les exceptions suivantes :
 
-- [Git](https://git-scm.com/downloads)  
-- [npm](https://www.nodejs.org/en/download)
-- [Bower](http://bower.io/)
-- [Générateur OfficeYeoman](https://www.npmjs.com/package/generator-office)
-- [Gulp](http://gulpjs.com/)
-- [TSD](http://definitelytyped.org/tsd/)
-    
-Seuls Git et npm doivent être installés de façon séparée. Les autres éléments peuvent être installés à l’aide de npm.
+>- Utiliser Git à partir de l’invite de commande Windows
+>- Utiliser la fenêtre de console par défaut de Windows
 
-Lorsque vous installez Git, vous devez utiliser les valeurs par défaut, mais choisir les options suivantes : 
-
-- Utiliser Git à partir de l’invite de commande Windows
-- Utiliser la fenêtre de console par défaut de Windows
-    
-Installez npm en utilisant les valeurs par défaut. Ouvrez une invite de commandes en tant qu’administrateur, puis installez les autres logiciels globalement :
+Après avoir installé node.js, ouvrez Terminal et installez le générateur de manière globale.
 
 ```
-npm install -g bower yo generator-office gulp tsd
+npm install -g yo generator-office
 ```
 
 
 ## <a name="create-the-default-files-for-your-add-in"></a>Créer les fichiers par défaut pour le complément
 
-Avant de développer un complément Office, vous devez tout d’abord créer un dossier pour votre projet, puis exécuter le générateur à partir de là. Le générateur Yeoman s’exécute dans le répertoire où vous souhaitez structurer le projet. 
+Le générateur Yeoman s’exécute dans le répertoire où vous souhaitez structurer le projet. Avant de développer un complément Office, vous devez tout d’abord créer un dossier pour votre projet.
 
-Dans l’invite de commandes, accédez au dossier parent où vous souhaitez créer le projet. Ensuite, utilisez les commandes suivantes pour créer un dossier nommé  _myHelloWorldaddin_ et y déplacer le répertoire en cours :
+Dans Terminal, accédez au dossier parent dans lequel vous voulez créer votre projet. Utilisez ensuite les commandes suivantes pour créer un dossier nommé _myHelloWorldaddin_ et déplacer le répertoire actif vers celui-ci :
 
 
 
@@ -46,7 +36,7 @@ mkdir myHelloWorldaddin
 cd myHelloWorldaddin
 ```
 
-Utilisez le générateur Yeoman pour créer le complément de votre choix : Outlook, contenu ou volet des tâches. Les étapes décrites dans cet article créent un complément de volet des tâches. Pour exécuter le générateur, entrez l’instruction suivante :
+Utilisez le générateur Yeoman pour créer le complément de votre choix. Les étapes décrites dans cet article créent un complément de volet des tâches simple. Pour exécuter le générateur, entrez la commande suivante :
 
 
 
@@ -55,166 +45,58 @@ Utilisez le générateur Yeoman pour créer le complément de votre choix : Out
 yo office
 ```
 
+**Entrée dans le générateur Yeoman pour un complément**
+
 Le générateur vous demande d’indiquer les éléments suivants : 
 
 
-- Le nom du complément - utilisez  _myHelloWorldaddin_ 
-- Le dossier racine du projet - utilisez  _current folder_
-- Le type de complément - utilisez  _taskpane_
-- La technologie utilisée pour créer le complément - utilisez  _HTML, CSS &amp; JavaScript_
-- L’application Office prise en charge -- vous pouvez choisir n’importe quelle application
-    
+- Nouveau sous-dossier : utilisez _N_
+- Nom du complément : utilisez _myHelloWorldaddin_ 
+- Application Office prise en charge : vous pouvez choisir n’importe quelle application
+- Créer un complément : utiliser _Oui, je souhaite un nouveau complément._
+- Ajouter [TypeScript](https://www.typescriptlang.org/) : utiliser _N_
+- Choisir l’infrastructure : utiliser _Jquery_
 
-**Entrée dans le générateur Yeoman pour un complément**
 
-![Capture d’écran du générateur yeoman invitant à saisir des informations sur le projet](../../images/338cf34b-fe8d-4a2f-9e38-e4bbca996139.PNG)
+![Image GIF du générateur Yeoman invitant à saisir des informations sur le projet](../../images/gettingstarted-fast.gif)
 
 Ce bloc de code permet de créer la structure et les fichiers de base de votre complément.
 
 
 ## <a name="hosting-your-office-add-in"></a>Héberger votre complément Office
 
-Les compléments Office doivent être traités via le protocole HTTPS ; l’application Office ne chargera pas une application web sous la forme d’un complément via HTTP. Pour développer, déboguer et héberger le complément localement, vous avez besoin d’un moyen de créer et servir une application web utilisant le protocole HTTPS localement. Vous pouvez créer un site HTTPS auto-hébergé via Gulp (décrit dans la section suivante) ou vous pouvez utiliser Azure. 
+Les compléments Office doivent être hébergés via HTTPS, même au cours de leur développement. Yo Office crée un fichier bsconfig.json qui utilise Browsersync pour accélérer le processus d’adaptation et de test de votre complément en synchronisant les modifications de fichier sur plusieurs appareils. 
 
-
-### <a name="using-a-self-hosted-https-site"></a>Utilisation d’un site HTTPS auto-hébergé
-
-Le plug-in gulp-webserver crée un site HTTPS auto-hébergé. Le générateur Office l’ajoute au fichier gulpfile.js sous forme de tâche nommée serve-static pour le projet qui est généré. Démarrez le serveur web auto-hébergé à l’aide de l’instruction suivante : 
+Lancez le site HTTPS local sur https://localhost:3000 en tapant la commande suivante dans votre console :
 
 
 ```
-gulp serve-static
+npm start
 ```
 
-Cette instruction lance un serveur HTTPS à l’adresse https://localhost:8443.
+Browsersync démarre un serveur HTTPS et lance le fichier index.html dans votre projet. Vous verrez une erreur indiquant « Un problème s’est produit avec le certificat de sécurité du site Web. »
 
+
+![Image GIF affichant le processus qui permet de contourner l’erreur et d’afficher le fichier index.html par défaut](../../images/ssl-chrome-bypass.gif)
+
+Cette erreur se produit, car Browsersync contient un certificat SSL auto-signé que votre environnement de développement doit approuver. Pour plus d’informations sur la résolution de cette erreur, consultez la rubrique relative à l’[ajout de certificats auto-signés](https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md).
+
+## <a name="sideload-the-add-in-into-office"></a>Charger une version test du complément sur Office
+
+Vous pouvez utiliser le chargement de version test pour installer votre complément pour le tester dans les clients Office :
+
+- [Chargement de version test des compléments Office](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
+- [Chargement de version test des compléments Outlook](../outlook/testing-and-tips.md)
 
 ## <a name="develop-your-office-add-in"></a>Développer votre complément Office
 
 Vous pouvez utiliser n’importe quel éditeur de texte pour développer les fichiers de votre complément Office personnalisé.
 
-
-### <a name="javascript-project-support"></a>Prise en charge du projet JavaScript
-
-Le générateur Office crée un fichier jsconfig.json lors de la création de votre projet. Ce fichier permet de déduire tous les fichiers JavaScript dans votre projet et évite de devoir inclure les blocs de code répétitifs /// <reference path="../App.js" />.
-
-Pour en savoir plus sur le fichier jsconfig.json, rendez-vous sur la page relative au [langage JavaScript](https://code.visualstudio.com/docs/languages/javascript#_javascript-projects-jsconfigjson).
+> **Important :** Le fichier manifest-myHelloWorldaddin.xml indique aux applications clientes Office comment interagir avec votre complément. La valeur de la balise `<id>` est un GUID créé par Yo Office lorsqu’il génère le projet. Ne modifiez pas le GUID de votre complément. Si l’hôte est Azure, la valeur `SourceLocation` sera une URL semblable à _https:// [nom de votre application web].azurewebsites.net/[chemin d’accès au complément]_. Si vous utilisez l’option d’auto-hébergement, comme dans cet exemple, l’URL sera _https://localhost:3000 /[chemin d’accès au complément]_.
 
 
-### <a name="javascript-intellisense-support"></a>Prise en charge de JavaScript IntelliSense
-
-En outre, même si vous écrivez du code JavaScript simple, vous pouvez utiliser des fichiers de définition de type TypeScript ( `*.d.ts`) pour bénéficier d’une prise en charge supplémentaire d’IntelliSense. Le générateur Office ajoute un fichier  `tsd.json` aux fichiers créés, avec des références à toutes les bibliothèques tierces utilisées par le type de projet sélectionné.
-
-Après la création du projet avec le générateur Yeoman d’Office, il ne vous reste plus qu’à exécuter la commande suivante pour télécharger les fichiers de définition de type référencés :
-
-
-
-
-```
-tsd install
-```
-
-
-### <a name="create-a-hello-world-office-add-in"></a>Création d’un complément Office Hello World
-
-
-Dans cet exemple, vous allez créer un complément Hello World. L’interface utilisateur du complément est fournie par un fichier HTML pouvant éventuellement fournir une logique de programmation JavaScript. 
-
-
-### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Pour créer le fichier pour un complément Hello World
-
-
-- Dans le dossier de votre projet, accédez à _[dossier du projet]/app/home_ (dans cet exemple, il s’agit de myHelloWorldaddin/app/home), ouvrez home.html et remplacez le code existant par le code suivant, qui fournit l’ensemble minimal de balises HTML pour afficher l’interface utilisateur d’un complément.
-    
-```HTML
-        <!DOCTYPE html>  
-      <html> 
-        <head> 
-           <meta charset="UTF-8" /> 
-           <meta http-equiv="X-UA-Compatible" content="IE=Edge"/> 
-           <link rel="stylesheet" type="text/css" href="program.css" />
-         </head> 
-   
-        <body> 
-           <p>Hello World!</p> 
-        </body> 
-      
-       </html> 
-```
-
-  
-    
-- Ensuite, dans le même dossier, ouvrez le fichier home.css et ajoutez le code CSS suivant.
-    
-```css
-     body 
-   { 
-        position:relative; 
-   } 
-   li :hover 
-   { 
-        text-decoration: underline; 
-        cursor:pointer; 
-   } 
-   h1,h3,h4,p,a,li 
-   { 
-        font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif; 
-        text-decoration-color:#4ec724; 
-   } 
-```
-    
-- Enfin, revenez au dossier du projet parent et assurez-vous que le fichier XML nommé manifest-myHelloWorldaddin.xml contient le code XML suivant.
-    
-     >**Important :**  La valeur de la balise `<id>` est un GUID créé par le générateur yeoman lorsqu’il génère le projet. Ne modifiez pas le GUID que le générateur yeoman a créé pour votre complément. Si l’hôte est Azure, la valeur `SourceLocation` sera une URL semblable à _https:// [nom de votre application web].azurewebsites.net/[chemin d’accès au complément]_. Si vous utilisez l’option d’auto-hébergement, comme dans cet exemple, l’URL sera _https://localhost:8443 /[chemin d’accès au complément]_.
-
-```XML
-     <?xml version="1.0" encoding="utf-8"?> 
-   <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-              xsi:type="TaskPaneApp"> 
-   <Id>[GUID-for-your-add-in]</Id> 
-   <Version>1.0</Version> 
-   <ProviderName>Microsoft</ProviderName> 
-   <DefaultLocale>EN-US</DefaultLocale> 
-   <DisplayName DefaultValue="myHelloWorldaddin"/> 
-   <Description DefaultValue="My first app."/> 
-    
-   <Hosts> 
-     <Host Name="Document"/> 
-     <Host Name="Workbook"/> 
-   </Hosts>
-    
-   <DefaultSettings> 
-     <SourceLocation DefaultValue="https://localhost:8443/app/home/home.html"/> 
-   </DefaultSettings> 
-   
-   <Permissions>ReadWriteDocument</Permissions>
-    
-   </OfficeApp> 
-```
-
-
-### <a name="running-the-add-in-locally"></a>Exécution du complément en local
-
-
-Pour tester votre complément localement, ouvrez votre navigateur et entrez l’URL de votre fichier home.html. Il peut se trouver sur le serveur web ou sur le site HTTPS auto-hébergé. Si vous l’hébergez localement, tapez simplement cette URL dans votre navigateur. Dans cet exemple, il s’agit de `https://localhost:8443/app/home/home.html`. 
-
-L’erreur « Il existe un problème avec le certificat de sécurité de ce site web » apparaît. Sélectionnez « Poursuivre sur ce site Web », puis le texte « Hello World! » s’affiche.
-
-
- >**Remarque :**  le complément généré est livré avec un certificat auto-signé et une clé. Ajoutez-les à la liste des certificats de votre autorité de confiance afin que le navigateur n’émette pas d’avertissement concernant le certificat. Reportez-vous à la documentation sur [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) si vous souhaitez utiliser vos propres certificats auto-signés. Pour plus d’informations sur la façon d’approuver un certificat dans OS X Yosemite, consultez [OS X Yosemite : Si votre certificat n’est pas accepté](https://support.apple.com/kb/PH18677?locale=en_US).
-
-
-## <a name="install-the-add-in-for-testing"></a>Installation du complément dans une application Office
-
-Vous pouvez utiliser le chargement de version test pour installer votre complément pour le tester :
-
-- [Chargement de version test des compléments Office](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-- [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)   
-- [Chargement de version test des compléments Outlook](../outlook/testing-and-tips.md)
-    
-
-## <a name="debug-your-add-in"></a>Déboguer votre complément
+## <a name="debug-your-office-add-in"></a>Déboguer votre complément Office
 
 Vous pouvez déboguer votre complément de plusieurs façons :
 
@@ -240,9 +122,9 @@ Vous pouvez ensuite l’attacher et effectuer le débogage dans Visual Studio.
   
 Pour plus d’informations, consultez les rubriques suivantes :
 
--   Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
--   Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx).
--   Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx).
+-    Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
+-    Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx).
+-    Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx).
 
 ### <a name="browser-developer-tools"></a>Outils de développement du navigateur 
 

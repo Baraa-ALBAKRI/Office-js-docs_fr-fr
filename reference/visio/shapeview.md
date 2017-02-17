@@ -1,7 +1,7 @@
 # <a name="shapeview-object-javascript-api-for-visio"></a>Objet ShapeView (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe ShapeView.
 
@@ -32,10 +32,10 @@ shapeViewObject.addOverlay(OverlayType, Content, HorizontalAlignment, VerticalAl
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |OverlayType|OverlayType|Type de superposition (texte, image).|
-|Contenu|chaîne|Contenu de la superposition.|
+|Contenu|string|Contenu de la superposition.|
 |HorizontalAlignment|HorizontalAlignment|Alignement horizontal de la superposition (gauche, centre, droite)|
 |VerticalAlignment|VerticalAlignment|Alignement vertical de la superposition (haut, milieu, bas)|
 |Width|valeur numérique|Largeur de la superposition.|
@@ -53,7 +53,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
@@ -69,7 +69,7 @@ shapeViewObject.removeOverlay(OverlayId);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |OverlayId|number|ID de la superposition. Supprime l’ID de la superposition de la forme.|
 

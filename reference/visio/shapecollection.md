@@ -2,13 +2,13 @@
 
 S’applique à : _Visio Online_
 
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la collection Shape.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Commentaires|
+| Propriété       | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |items|[Shape[]](shape.md)|Collection d’objets de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-items)|
 
@@ -67,7 +67,7 @@ shapeCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |Key|valeur numérique ou chaîne|La clé est le nom ou l’index de la forme à récupérer.|
 
@@ -83,7 +83,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 

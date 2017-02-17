@@ -14,11 +14,11 @@ Vous avez seulement besoin de cinq participants pour révéler la plupart des pr
 
 > **Remarque :** nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément sur l’Office Store](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](https://dev.office.com/add-in-availability).
 
-## <a name="1---sign-up-for-a-testing-service"></a>1.   Inscrivez-vous à un service de test.
+## <a name="1----sign-up-for-a-testing-service"></a>1.    Inscrivez-vous à un service de test
 
 Pour plus d’informations, voir la section sur la [sélection d’un outil en ligne pour les tests utilisateur distants sans modérateur](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
-## <a name="2-develop-your-research-questions"></a>2. Développez vos questions de recherche.
+## <a name="2-develop-your-research-questions"></a>2. Développez vos questions de recherche
  
 Les questions de recherche définissent les objectifs de votre recherche et guident votre plan de test. Vos questions vous aideront à identifier les participants à recruter et les tâches qu’ils exécuteront. Rédigez vos questions de recherche avec autant de précision que possible. Vous pouvez également rechercher des réponses à des questions plus larges.
  
@@ -47,38 +47,38 @@ Il est important d’obtenir des données sur l’intégralité du parcours des 
 
 Pour plus d’informations, voir la section sur la [rédaction de questions efficaces](http://help.usertesting.com/customer/en/portal/articles/2077663-writing-effective-questions).
  
-## <a name="3-identify-participants-to-target"></a>3. Identifiez les participants à cibler.
+## <a name="3-identify-participants-to-target"></a>3. Identifiez les participants à cibler
  
 Les services de test à distance peuvent permettre de contrôler de nombreuses caractéristiques de vos participants aux tests. Réfléchissez soigneusement aux types d’utilisateurs que vous souhaitez cibler. Lors des premières étapes de collecte de données, il peut être préférable de recruter un large éventail de participants différents pour identifier les problèmes d’utilisation plus évidents. Plus tard, vous pourrez décider de cibler des groupes comme les utilisateurs Office avancés, des professions en particulier ou des tranches d’âge spécifiques.
  
-## <a name="4-create-the-participant-screener"></a>4. Créez le filtre de participants.
+## <a name="4-create-the-participant-screener"></a>4. Créez le filtre de participants
  
 Le filtre est l’ensemble de questions et d’exigences que vous allez présenter aux participants potentiels des tests afin de les filtrer. N’oubliez pas que les participants pour les services tels que UserTesting.com sont financièrement motivés pour être sélectionnés pour votre test. Il est conseillé d’inclure des questions piège dans votre filtre si vous souhaitez exclure certains utilisateurs des tests. 
  
 Par exemple, si vous recherchez des participants qui connaissent GitHub, pour exclure les utilisateurs qui mentent, incluez des réponses qui ne vous intéressent pas dans la liste des réponses possibles.
 
 **Parmi les référentiels de code source suivants, lesquels connaissez-vous ?**  
- a. SourceShelf  [*Réponse disqualifiante*]  
- b. CodeContainer  [*Réponse disqualifiante*]  
- c. GitHub  [*Doit sélectionner cette réponse*]  
- d. BitBucket  [*Peut sélectionner cette réponse*]  
- e. CloudForge  [*Peut sélectionner cette réponse*]  
+ a.    SourceShelf  [*Réponse disqualifiante*]  
+ b.    CodeContainer  [*Réponse disqualifiante*]  
+ c.    GitHub  [*Doit sélectionner cette réponse*]  
+ d.    BitBucket  [*Peut sélectionner cette réponse*]  
+ e.    CloudForge  [*Peut sélectionner cette réponse*]  
 
 
 Si vous envisagez de tester une version déjà en ligne de votre complément, les questions suivantes peuvent permettre de sélectionner les utilisateurs qui seront en mesure de le faire. 
 
    **Ce test exige que vous disposiez de Microsoft PowerPoint 2016. Avez-vous PowerPoint 2016 ?**  
-   a.   Oui [*Doit sélectionner cette réponse*]  
-   b.   Non [*Réponse disqualifiante*]  
-   c.   Je ne sais pas [*Réponse disqualifiante*]  
+   a.    Oui [*Doit sélectionner cette réponse*]  
+   b.    Non [*Réponse disqualifiante*]  
+   c.    Je ne sais pas [*Réponse disqualifiante*]  
 
    **Pour ce test, vous devez installer un complément gratuit pour PowerPoint 2016 et créer un compte gratuit pour l’utiliser. Êtes-vous prêt à installer un complément et à créer un compte gratuit ?**  
-    a.  Oui [*Doit sélectionner cette réponse*]  
-    b.  Non [*Réponse disqualifiante*]  
+    a.    Oui [*Doit sélectionner cette réponse*]  
+    b.    Non [*Réponse disqualifiante*]  
 
 Pour plus d’informations, voir les [meilleures pratiques en matière de questions de filtrage](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices).
  
-## <a name="5-create-tasks-and-questions-for-participants"></a>5. Créez des tâches et des questions pour les participants.
+## <a name="5-create-tasks-and-questions-for-participants"></a>5. Créez des tâches et des questions pour les participants
  
 Essayez de classer ce que vous voulez tester par ordre de priorité afin de limiter le nombre de tâches et de questions pour le participant. Certains services paient les participants uniquement pour une certaine durée ; veillez donc à ne pas dépasser ce temps.
 
@@ -90,7 +90,7 @@ Ne supposez jamais que l’utilisateur sera sur l’écran où il est censé êt
 
 Pour plus d’informations, voir la section expliquant [comment rédiger des instructions efficaces pour les tâches](http://help.usertesting.com/customer/en/portal/articles/2077824-writing-great-tasks).
 
-## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Créez un prototype pour faire correspondre les tâches et les questions.
+## <a name="6-create-a-prototype-to-match-the-tasks-and-questions"></a>6. Créez un prototype pour faire correspondre les tâches et les questions
  
 Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire tester un prototype. N’oubliez pas que si vous souhaitez tester un complément déjà en ligne, vous devez filtrer les participants pour ne sélectionner que ceux qui ont Office 2016, qui sont prêts à installer le complément et qui sont prêts à créer un compte (sauf si vous leur fournissez des informations d’identification). Vous devez ensuite pour vous assurer qu’ils installent correctement votre complément. 
 
@@ -109,15 +109,15 @@ En moyenne, aider un utilisateur à installer un complément prend environ 5 mi
 
 Vous pouvez tester un prototype à n’importe quel niveau d’interaction et de fidélité visuelle. Pour une liaison et une interactivité plus complexes, pensez à utiliser un outil de prototypage tel que [InVision](https://www.invisionapp.com). Si vous souhaitez simplement tester des écrans statiques, vous pouvez héberger les images en ligne et envoyer l’URL correspondante aux participants, ou leur donner un lien vers une présentation PowerPoint en ligne. 
 
-## <a name="7-run-a-pilot-test"></a>7. Effectuez un test pilote.
+## <a name="7-run-a-pilot-test"></a>7. Effectuez un test pilote
 
 Il peut être difficile de mettre au point le prototype approprié et la liste de tâches/question adéquate. Les utilisateurs peuvent ne pas comprendre certaines tâches, ou se perdre dans votre prototype. Vous devez exécuter un test pilote avec 1 à 3 utilisateurs pour solutionner les problèmes inévitables au niveau du format du test. Cette opération permet de s’assurer que vos questions sont claires, que le prototype est correctement configuré et que vous allez pouvoir recueillir le type de données que vous recherchez.
 
-## <a name="8-run-the-test"></a>8. Lancez le test.
+## <a name="8-run-the-test"></a>8. Lancez le test
 
 Une fois que vous avez commandé votre test, vous obtenez des notifications par courrier électronique lorsque les participants l’effectuent. Sauf si vous avez ciblé un groupe spécifique de participants, les tests sont généralement effectués en quelques heures.
 
-## <a name="9-analyze-results"></a>9. Analysez les résultats.
+## <a name="9-analyze-results"></a>9. Analysez les résultats
 
 Vous devez maintenant essayer d’interpréter les données que vous avez collectées. Pendant que vous regardez les vidéos des tests, notez les problèmes que rencontre l’utilisateur, ainsi que les points positifs. N’essayez pas d’interpréter la signification des données tant que vous n’avez pas affiché tous les résultats. 
 

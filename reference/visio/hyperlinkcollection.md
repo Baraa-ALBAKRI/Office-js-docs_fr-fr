@@ -1,13 +1,13 @@
 # <a name="hyperlinkcollection-object-javascript-api-for-visio"></a>Objet HyperlinkCollection (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente l’objet HyperlinkCollection.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Commentaires|
+| Propriété       | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |items|[Hyperlink[]](hyperlink.md)|Collection d’objets de lien hypertexte. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-items)|
 
@@ -51,7 +51,7 @@ hyperlinkCollectionObject.getItem(Key);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |Clé|valeur numérique ou chaîne|La clé est le nom ou l’index de l’objet Hyperlink à récupérer.|
 
@@ -67,7 +67,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 

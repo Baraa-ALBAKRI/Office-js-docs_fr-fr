@@ -1,13 +1,13 @@
 # <a name="shapedataitemcollection-object-javascript-api-for-visio"></a>Objet ShapeDataItemCollection (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la collection d’éléments de données d’une forme donnée.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Commentaires|
+| Propriété       | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |items|[ShapeDataItem[]](shapedataitem.md)|Collection d’objets ShapeDataItem. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
 
@@ -51,9 +51,9 @@ shapeDataItemCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
-|Key|chaîne|La clé est le nom de l’élément de données de forme à récupérer.|
+|Key|string|La clé est le nom de l’élément de données de forme à récupérer.|
 
 #### <a name="returns"></a>Renvoie
 [ShapeDataItem](shapedataitem.md)
@@ -67,7 +67,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 

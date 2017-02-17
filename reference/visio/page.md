@@ -1,20 +1,20 @@
 # <a name="page-object-javascript-api-for-visio"></a>Objet Page (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** les API JavaScript Visio ne sont actuellement pas prises en charge dans les environnements d’évaluation ou de production.
+>**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe Page.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Commentaires|
+| Propriété       | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |index|int|Index de l’objet Page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
 |isBackground|bool|Indique s’il s’agit d’une page d’arrière-plan ou non. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
 |name|string|Nom de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Commentaires|
+| Relation | Type    |Description| Commentaires|
 |:---------------|:--------|:----------|:---|
 |shapes|[ShapeCollection](shapecollection.md)|Représente les formes de l’objet Page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-shapes)|
 |view|[PageView](pageview.md)|Renvoie l’affichage de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-view)|
@@ -52,7 +52,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
