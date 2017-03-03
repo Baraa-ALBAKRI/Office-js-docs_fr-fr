@@ -100,7 +100,7 @@ L’élément  **Hosts** peut contenir un ou plusieurs éléments  **Host**. L�
 ## <a name="set-the-requirements-element-in-the-manifest"></a>Définition de l’élément Requirements dans le manifeste
 
 
-L’élément **Requirements** spécifie les ensembles de conditions requises ou les membres d’API qui doivent être au minimum pris en charge par l’hôte Office pour exécuter votre complément. L’élément **Requirements** peut spécifier des ensembles de conditions requises et des méthodes individuelles utilisés dans votre complément. Dans la version 1.1 du schéma de manifeste complément, l’élément **Requirements** est facultatif pour tous les complément, sauf pour les complément Outlook.
+L’élément **Requirements** indique les ensembles de conditions minimales requises ou les membres d’API qui doivent être pris en charge par l’hôte Office en vue d’exécuter votre complément. L’élément **Requirements** peut indiquer des ensembles de conditions requises et des méthodes individuelles utilisés dans votre complément. Dans la version 1.1 du schéma de manifeste du complément, l’élément **Requirements** est facultatif pour tous les compléments, sauf pour les compléments Outlook.
 
 
  >**Attention :**  utilisez uniquement l’élément **Requirements** pour spécifier des ensembles de conditions requises essentiels ou des membres API que votre complément doit utiliser. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément **Requirements**, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans **Mes compléments**. Nous vous recommandons plutôt de rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel pour Windows, Excel Online et Excel pour iPad. Pour rendre votre complément disponible sur _tous_ les hôtes et plateformes Office, utilisez des vérifications à l’exécution à la place de l’élément **Requirements**.
@@ -135,7 +135,7 @@ Cet exemple de code illustre un complément qui se charge dans toutes les applic
     
 - L’élément **Set** spécifie les ensembles de conditions requises que l’hôte Office doit prendre en charge pour exécuter le complément. L’attribut **Name** indique le nom de l’ensemble de conditions requises. L’attribut **MinVersion** spécifie la version minimale de l’ensemble de conditions requises. L’attribut **MinVersion** remplace la valeur de **DefaultMinVersion**. Pour plus d’informations sur les ensembles de conditions requises et les versions auxquelles les membres de votre API appartiennent, consultez [Ensemble de conditions requises pour les compléments Office](../../reference/office-add-in-requirement-sets.md).
     
-- L’élément **Methods** peut contenir un ou plusieurs éléments **Method**. Vous ne pouvez pas utiliser l’élément  **Methods** avec des complément Outlook.
+- L’élément **Methods** peut contenir un ou plusieurs éléments **Method**. Vous ne pouvez pas utiliser l’élément **Methods** avec des compléments Outlook.
     
 - L’élément  **Method** spécifie une méthode individuelle qui doit être prise en charge dans l’hôte Office où votre complément est exécuté. L’attribut **Name** est obligatoire et indique le nom de la méthode qualifiée avec son objet parent.
     
@@ -172,7 +172,7 @@ L’exemple de code suivant montre comment un complément peut fournir des fonct
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1)
 {
-    // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
+       // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts')
 {
@@ -213,7 +213,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 - [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
     
-- [Ensembles de conditions requises pour les compléments Office](../../reference/office-add-in-requirement-sets.md)
+- [Ensembles de conditions requises pour les compléments Office](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
 - [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     
