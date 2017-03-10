@@ -1,13 +1,13 @@
-# <a name="rangeborder-object-javascript-api-for-excel"></a>Objet RangeBorder (interface API JavaScript pour Excel)
+# <a name="rangeborder-object-javascript-api-for-excel"></a>Objet RangeBorder (API JavaScript pour Excel)
 
-Cet objet représente la bordure d'un objet.
+Représente la bordure d’un objet.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|id|chaîne|Représente l’identificateur de la bordure. En lecture seule. Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|id|string|Représente l’identificateur de la bordure. En lecture seule. Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sideIndex|string|Valeur constante qui indique un côté spécifique de la bordure. En lecture seule. Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |style|string|L’une des constantes de style de ligne déterminant le style de ligne de la bordure. Les valeurs possibles sont les suivantes : None (aucune), Continuous (continue), Dash (tirets), DashDot (ligne tiret-point), DashDotDot (ligne tiret-point-point), Dot (points), Double (double), SlantDashDot (ligne tiret-point oblique).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |weight|string|Spécifie l’épaisseur de la bordure entourant une plage. Les valeurs possibles sont les suivantes : Hairline (très fine), Thin (fine), Medium (moyenne), Thick (épaisse).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,29 +19,11 @@ Aucun
 
 
 ## <a name="methods"></a>Méthodes
+Aucun
 
-| Méthode           | Type renvoyé    |Description| Dem. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

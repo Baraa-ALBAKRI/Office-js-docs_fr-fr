@@ -1,25 +1,25 @@
-# <a name="rangeformat-object-javascript-api-for-excel"></a>Objet RangeFormat (interface API JavaScript pour Excel)
+# <a name="rangeformat-object-javascript-api-for-excel"></a>Objet RangeFormat (API JavaScript pour Excel)
 
-Objet de format qui comprend les propriétés de police, de remplissage, de bordures, d’alignement, etc. de la plage.
+Objet de format qui comprend les propriétés de police, de remplissage, de bordures, d’alignement et d’autres propriétés de la plage.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|columnWidth|double|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|columnWidth|double|Obtient ou définit la largeur de toutes les colonnes de la plage. Si les largeurs de colonne ne sont pas uniformes, la valeur « null » est renvoyée.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |horizontalAlignment|string|Représente l’alignement horizontal de l’objet spécifié. Les valeurs possibles sont les suivantes : General (général), Left (gauche), Center (centré), Right (droit), Fill (remplir), Justify (justifié), CenterAcrossSelection (centré pour toute la sélection), Distributed (distribué).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|rowHeight|double|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de lignes ne sont pas uniformes, la valeur « null » est renvoyée.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|rowHeight|double|Obtient ou définit la hauteur de toutes les lignes de la plage. Si les hauteurs de lignes ne sont pas uniformes, la valeur « null » est renvoyée.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalAlignment|string|Représente l’alignement vertical de l’objet spécifié. Les valeurs possibles sont les suivantes : Top (haut), Center (centré), Bottom (bas), Justify (justifié), Distributed (distribué).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |wrapText|bool|Indique si Excel renvoie le texte à la ligne dans l’objet. Une valeur null indique que les paramètres de retour à la ligne ne sont pas les mêmes sur l’ensemble de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|bordures|[RangeBorderCollection](rangebordercollection.md)|Collection d’objets de bordure qui s’appliquent à l’ensemble de la plage sélectionnée. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|bordures|[RangeBorderCollection](rangebordercollection.md)|Collection d’objets de bordure qui s’appliquent à l’ensemble de la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |remplissage|[RangeFill](rangefill.md)|Renvoie l’objet de remplissage défini sur la plage globale. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|police|[RangeFont](rangefont.md)|Renvoie l’objet de police défini sur la plage globale sélectionnée. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|police|[RangeFont](rangefont.md)|Renvoie l’objet de police défini sur l’ensemble de la plage. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[FormatProtection](formatprotection.md)|Renvoie l’objet de protection du format pour une plage. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
@@ -28,7 +28,6 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[autofitColumns()](#autofitcolumns)|void|Modifie la largeur des colonnes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[autofitRows()](#autofitrows)|void|Modifie la hauteur des lignes de la plage active pour obtenir le meilleur ajustement, en fonction des données présentes dans les colonnes.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -57,22 +56,6 @@ rangeFormatObject.autofitRows();
 
 #### <a name="parameters"></a>Paramètres
 Aucun
-
-#### <a name="returns"></a>Retourne
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Retourne
 void

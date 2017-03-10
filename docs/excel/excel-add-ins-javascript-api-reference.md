@@ -3,9 +3,9 @@
 Vous pouvez utiliser l’API JavaScript d’Excel pour créer des compléments pour Excel 2016. La liste suivante affiche les objets de haut niveau Excel qui sont disponibles dans l’API. Chaque page d’objet contient une description des propriétés, des relations et des méthodes disponibles sur l’objet. Cliquez sur les liens suivants pour en savoir plus.
 
 * [Workbook](../../reference/excel/workbook.md) : objet de niveau supérieur qui contient les objets de classeur associés tels que les feuilles de calcul, les tableaux, les plages, etc. Il permet également d’établir la liste des références associées.
-* [Worksheet](../../reference/excel/worksheet.md) : membre de la collection de feuilles de calcul. La collection de feuilles de calcul contient tous les objets de feuille de calcul d’un classeur.
-    * [WorksheetCollection](../../reference/excel/worksheetcollection.md) : collection de tous les objets de classeur qui font partie du classeur.
-* [Range](../../reference/excel/range.md) : représente une cellule, une ligne, une colonne ou une sélection de cellules contenant un ou plusieurs blocs contigus de cellules.
+* [Worksheet](../../reference/excel/worksheet.md) : membre de la collection de feuilles de calcul. La collection de feuilles de calcul contient tous les objets de feuille de calcul d’un classeur.
+    * [Worksheet Collection](../../reference/excel/worksheetcollection.md) : collection de tous les objets de feuille de calcul qui font partie du classeur.
+* [Range](../../reference/excel/range.md) : représente une cellule, une ligne, une colonne ou une sélection de cellules contenant des blocs contigus de cellules.
 * [Table](../../reference/excel/table.md) : représente une collection de cellules organisées conçue pour faciliter la gestion des données.
     * [TableCollection](../../reference/excel/tablecollection.md) : collection de tableaux d’un classeur ou d’une feuille de calcul.
     * [TableColumnCollection](../../reference/excel/tablecolumncollection.md) : collection de toutes les colonnes d’un tableau.

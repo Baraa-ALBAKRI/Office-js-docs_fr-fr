@@ -1,10 +1,10 @@
-# <a name="bindingcollection-object-javascript-api-for-excel"></a>Objet BindingCollection (interface API JavaScript pour Excel)
+# <a name="bindingcollection-object-javascript-api-for-excel"></a>Objet BindingCollection (API JavaScript pour Excel)
 
-Représente la collection de tous les objets de liaison qui font partie du classeur.
+Représente la collection de l’ensemble des objets de liaison qui font partie du classeur.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Renvoie le nombre de liaisons de la collection. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |éléments|[Binding[]](binding.md)|Collection d’objets de liaison. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -22,10 +22,10 @@ Aucun
 |[add(range: plage ou chaîne, bindingType: chaîne, id: chaîne)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Ajouter une nouvelle liaison à une plage spécifique.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromNamedItem(name: chaîne, bindingType: chaîne, id: chaîne)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Ajouter une nouvelle liaison basée sur un élément nommé dans le classeur.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromSelection(bindingType: chaîne, id: chaîne)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Ajouter une nouvelle liaison basée sur la sélection en cours.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Obtient le nombre de liaisons de la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Obtient un objet de liaison par ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtient un objet de liaison en fonction de sa position dans le tableau d’éléments.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(id: chaîne)](#getitemornullid-string)|[Binding](binding.md)|Obtient un objet de liaison par ID. Si l’objet de liaison n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(id: string)](#getitemornullobjectid-string)|[Binding](binding.md)|Obtient un objet de liaison par ID. Si l’objet de liaison n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -39,10 +39,10 @@ bindingCollectionObject.add(range, bindingType, id);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |plage|range ou string|Plage à laquelle lier la liaison. Peut être un objet de plage Excel ou une chaîne. Si c’est une chaîne, elle doit contenir l’adresse complète, y compris le nom de la feuille.|
-|bindingType|chaîne|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
+|bindingType|string|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
 |id|chaîne|Nom de la liaison.|
 
 #### <a name="returns"></a>Retourne
@@ -57,7 +57,7 @@ bindingCollectionObject.addFromNamedItem(name, bindingType, id);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |name|chaîne|Nom à partir duquel créer la liaison.|
 |bindingType|chaîne|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
@@ -75,13 +75,27 @@ bindingCollectionObject.addFromSelection(bindingType, id);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |bindingType|chaîne|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
 |id|chaîne|Nom de la liaison.|
 
 #### <a name="returns"></a>Retourne
 [Binding](binding.md)
+
+### <a name="getcount"></a>getCount()
+Obtient le nombre de liaisons de la collection.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+bindingCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+int
 
 ### <a name="getitemid-string"></a>getItem(id: string)
 Obtient un objet de liaison par ID.
@@ -92,14 +106,14 @@ bindingCollectionObject.getItem(id);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |id|string|ID de l’objet de liaison à récupérer.|
 
 #### <a name="returns"></a>Retourne
 [Binding](binding.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 
 Créez une liaison de table pour contrôler les modifications apportées aux données de la table. Lorsque les données sont modifiées, la couleur d’arrière-plan du tableau devient orange.
 
@@ -172,14 +186,14 @@ bindingCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
 [Binding](binding.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -197,37 +211,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullid-string"></a>getItemOrNull(id: chaîne)
-Obtient un objet de liaison par ID. Si l’objet de liaison n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.
+### <a name="getitemornullobjectid-string"></a>getItemOrNullObject(id: string)
+Obtient un objet de liaison par ID. Si l’objet de liaison n’existe pas, renvoie un objet null.
 
 #### <a name="syntax"></a>Syntaxe
 ```js
-bindingCollectionObject.getItemOrNull(id);
+bindingCollectionObject.getItemOrNullObject(id);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |id|string|ID de l’objet de liaison à récupérer.|
 
 #### <a name="returns"></a>Retourne
 [Binding](binding.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

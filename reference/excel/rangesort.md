@@ -1,4 +1,4 @@
-# <a name="rangesort-object-javascript-api-for-excel"></a>Objet RangeSort (interface API JavaScript pour Excel)
+# <a name="rangesort-object-javascript-api-for-excel"></a>Objet RangeSort (API JavaScript pour Excel)
 
 Gère les opérations de tri des objets Range.
 
@@ -28,7 +28,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |champs|SortField[]|Liste des conditions de tri.|
 |matchCase|bool|Facultatif. Indique si la casse influe sur le classement des chaînes.|

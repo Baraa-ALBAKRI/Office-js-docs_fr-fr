@@ -1,16 +1,14 @@
-
 # <a name="pagecollection-object-javascript-api-for-visio"></a>Objet PageCollection (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente une collection d’objets Page faisant partie du document.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|items|[Page[]](page.md)|Collection d’objets de page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-items)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|éléments|[Page[]](page.md)|Collection d’objets de page. En lecture seule.|
 
 ## <a name="relationships"></a>Relations
 Aucun
@@ -18,11 +16,11 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtient le nombre de pages de la collection.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getCount)|
-|[getItem(key: valeur numérique ou chaîne)](#getitemkey-number-or-string)|[Page](page.md)|Obtient une page à l’aide de sa clé (nom ou ID).|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageCollection-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtient le nombre de pages de la collection.|
+|[getItem(key: number ou string)](#getitemkey-number-or-string)|[Page](page.md)|Obtient une page à l’aide de sa clé (nom ou ID).|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

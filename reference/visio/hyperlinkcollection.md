@@ -1,15 +1,14 @@
 # <a name="hyperlinkcollection-object-javascript-api-for-visio"></a>Objet HyperlinkCollection (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente l’objet HyperlinkCollection.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|items|[Hyperlink[]](hyperlink.md)|Collection d’objets de lien hypertexte. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-items)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|éléments|[Hyperlink[]](hyperlink.md)|Collection d’objets de lien hypertexte. En lecture seule.|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -19,11 +18,11 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtient le nombre de liens hypertexte.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getCount)|
-|[getItem(Key: valeur numérique ou chaîne)](#getitemkey-number-or-string)|[Hyperlink](hyperlink.md)|Obtient un objet Hyperlink à l’aide de sa clé (nom ou ID).|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtient le nombre de liens hypertexte.|
+|[getItem(Key: number ou string)](#getitemkey-number-or-string)|[Hyperlink](hyperlink.md)|Obtient un objet Hyperlink à l’aide de sa clé (nom ou ID).|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

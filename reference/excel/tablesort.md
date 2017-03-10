@@ -1,18 +1,18 @@
-# <a name="tablesort-object-javascript-api-for-excel"></a>Objet TableSort (interface API JavaScript pour Excel)
+# <a name="tablesort-object-javascript-api-for-excel"></a>Objet TableSort (API JavaScript pour Excel)
 
 Gère les opérations de tri des objets Table.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |matchCase|bool|Indique si la casse a influé sur le dernier tri du tableau. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|méthode|string|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule. Les valeurs possibles sont les suivantes : PinYin, StrokeCount|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|méthode|string|Dernière méthode de classement des caractères chinois utilisée pour trier le tableau. En lecture seule. Les valeurs possibles sont les suivantes : PinYin, StrokeCount|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|champs|[SortField](sortfield.md)|Représente les dernières conditions utilisées pour trier le tableau. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|champs|[SortField](sortfield.md)|Dernières conditions utilisées pour trier le tableau. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
@@ -20,7 +20,6 @@ Gère les opérations de tri des objets Table.
 |:---------------|:--------|:----------|:----|
 |[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Effectue une opération de tri.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Efface le tri actuellement appliqué au tableau. Même si le classement du tableau n’est pas modifié, l’état des boutons d’en-tête est rétabli.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapply()](#reapply)|void|Applique à nouveau les paramètres actuels de tri au tableau.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
@@ -35,7 +34,7 @@ tableSortObject.apply(fields, matchCase, method);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |champs|SortField[]|Liste des conditions de tri.|
 |matchCase|bool|Facultatif. Indique si la casse influe sur le classement des chaînes.|
@@ -74,22 +73,6 @@ tableSortObject.clear();
 
 #### <a name="parameters"></a>Paramètres
 Aucun
-
-#### <a name="returns"></a>Retourne
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Retourne
 void

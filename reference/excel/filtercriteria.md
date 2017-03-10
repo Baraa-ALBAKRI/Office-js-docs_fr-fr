@@ -1,10 +1,10 @@
-# <a name="filtercriteria-object-javascript-api-for-excel"></a>Objet FilterCriteria (interface API JavaScript pour Excel)
+# <a name="filtercriteria-object-javascript-api-for-excel"></a>Objet FilterCriteria (API JavaScript pour Excel)
 
 Représente les critères de filtrage appliqués à une colonne.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|Chaîne de couleur HTML utilisée pour filtrer des cellules. Utilisée avec le filtrage « cellColor » et « fontColor ».|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |criterion1|string|Premier critère utilisé pour filtrer des données. Utilisé comme opérateur dans le cas d’un filtrage « Custom ».|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -17,31 +17,10 @@ Représente les critères de filtrage appliqués à une colonne.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|icône|[Icon](icon.md)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « icon ».|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|icône|[Icon](icon.md)|Icône utilisée pour filtrer des cellules. Utilisé avec le filtrage « Icon ».|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
+Aucun
 
-| Méthode           | Type renvoyé    |Description| Dem. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-
-## <a name="method-details"></a>Détails des méthodes
-
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void

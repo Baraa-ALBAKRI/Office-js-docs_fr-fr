@@ -16,9 +16,9 @@ La procédure suivante présente les opérations de base pour l’utilisation de
 ##<a name="1-add-the-fabric-cdn-references"></a>1. Ajouter les références CDN de la structure
 Pour faire référence à la structure à partir de CDN, ajoutez le code HTML suivant à votre page.
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
 
 Voilà, vous êtes maintenant prêt à commencer à utiliser la structure dans votre complément. 
 
@@ -37,26 +37,26 @@ La structure fournit plusieurs composants UX, tels que des boutons ou cases à c
 
 > **Remarque :** nous allons ajouter des composants supplémentaires au fil du temps. 
 
-- [Barre de navigation](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
-- [Bouton](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
-- [Case à cocher](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
-- [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
-- [Sélecteur de dates](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md) (pour un exemple de mise en œuvre du sélecteur de dates dans un complément, voir l’exemple de code [Suivi de ventes Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).)
-- [Liste déroulante](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)
-- [Étiquette](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)
-- [Lien](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)
-- [Liste](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md) (vous pouvez modifier les styles par défaut du composant dans le fichier CSS.)
-- [MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)
-- [MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)
-- [Superposition](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)
-- [Volet](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)
-- [Pivot](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)
-- [ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)
-- [Zone de recherche](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)
-- [Bouton fléché](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)
-- [Tableau](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)
-- [TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)
-- [Bouton bascule](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)
+- [Breadcrumb](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
+- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (envisagez d’utiliser la variante du petit bouton dans votre complément.)
+- [Checkbox](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
+- [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
+- [Sélecteur de dates](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (pour un exemple de mise en œuvre du sélecteur de dates dans un complément, voir l’exemple de code [Suivi de ventes Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).)
+- [Liste déroulante](https://dev.office.com/fabric-js/Components/Dropdown/Dropdown.html)
+- [Étiquette](https://dev.office.com/fabric-js/Components/Label/Label.html)
+- [Lien](https://dev.office.com/fabric-js/Components/Link/Link.html)
+- [Liste](https://dev.office.com/fabric-js/Components/List/List.html) (vous pouvez modifier les styles par défaut du composant dans le fichier CSS.)
+- [MessageBanner](https://dev.office.com/fabric-js/Components/MessageBanner/MessageBanner.html)
+- [MessageBar](https://dev.office.com/fabric-js/Components/MessageBar/MessageBar.html)
+- [Superposition](https://dev.office.com/fabric-js/Components/Overlay/Overlay.html)
+- [Volet](https://dev.office.com/fabric-js/Components/Panel/Panel.html)
+- [Pivot](https://dev.office.com/fabric-js/Components/Pivot/Pivot.html)
+- [ProgressIndicator](https://dev.office.com/fabric-js/Components/ProgressIndicator/ProgressIndicator.html)
+- [Zone de recherche](https://dev.office.com/fabric-js/Components/SearchBox/SearchBox.html)
+- [Bouton fléché](https://dev.office.com/fabric-js/Components/Spinner/Spinner.html)
+- [Tableau](https://dev.office.com/fabric-js/Components/Table/Table.html)
+- [TextField](https://dev.office.com/fabric-js/Components/TextField/TextField.html)
+- [Bouton bascule](https://dev.office.com/fabric-js/Components/Toggle/Toggle.html)
    
 ## <a name="updating-your-add-in-to-use-fabric-js"></a>Mise à jour de votre complément pour utiliser la structure JS
 Si vous utilisez une version précédente de la structure de l’interface utilisateur d’Office et que vous souhaitez migrer vers la structure JS, assurez-vous de connaître, incorporer et tester les nouveaux composants de votre complément. Gardez les points suivants à l’esprit pour vous aider à planifier vos mises à jour :

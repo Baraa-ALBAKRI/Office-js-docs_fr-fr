@@ -1,15 +1,14 @@
 # <a name="application-object-javascript-api-for-visio"></a>Objet Application (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente l’objet Application.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|showToolbars|bool|Affiche ou masque les barres d’outils standard.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-showToolbars)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|showToolbars|bool|Affiche ou masque les barres d’outils standard.|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -19,9 +18,9 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-application-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

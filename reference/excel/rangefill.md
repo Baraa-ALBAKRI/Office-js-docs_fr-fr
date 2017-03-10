@@ -1,10 +1,10 @@
-# <a name="rangefill-object-javascript-api-for-excel"></a>Objet RangeFill (interface API JavaScript pour Excel)
+# <a name="rangefill-object-javascript-api-for-excel"></a>Objet RangeFill (API JavaScript pour Excel)
 
 Représente l’arrière-plan d’un objet de plage.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -19,7 +19,6 @@ Aucun
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|Réinitialise l’arrière-plan de la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -59,22 +58,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js
 Excel.run(function (ctx) { 

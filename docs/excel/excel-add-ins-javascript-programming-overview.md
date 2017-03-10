@@ -1,4 +1,4 @@
-# <a name="excel-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript d’Excel
+﻿# <a name="excel-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript d’Excel
 
 Cet article décrit comment utiliser l’API JavaScript Excel pour créer des compléments pour Excel 2016. Il présente des concepts fondamentaux pour l’utilisation d’API, notamment concernant les objets RequestContext, les objets de proxy JavaScript, ainsi que les méthodes sync(), Excel.run() et load(). Les exemples de code à la fin de l’article vous montrent comment appliquer les concepts.
 
@@ -37,7 +37,6 @@ La méthode d’exécution utilise le contexte de demande et renvoie une promess
 La méthode load() permet de remplir les objets de proxy créés dans le calque JavaScript du complément. Lorsque vous essayez de récupérer un objet, une feuille de calcul par exemple, un objet de proxy local est tout d’abord créé dans le calque JavaScript. Cet objet peut être utilisé pour mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Toutefois, pour la lecture des propriétés ou des relations de l’objet, les méthodes load() et sync() doivent d’abord être appelées. La méthode load() utilise les propriétés et les relations qui doivent être chargées lors de l’appel de la méthode sync().
 
 _Syntaxe :_
-
 ```js
 object.load(string: properties);
 //or
@@ -47,7 +46,7 @@ object.load({loadOption});
 ```
 où :
 
-* `properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les méthodes .load() décrites sous chaque objet.
+o*`properties` est la liste des propriétés et/ou des noms de relation à charger, fournie sous forme de chaînes séparées par des virgules ou de tableau de noms. Pour plus d’informations, consultez les méthodes .load() décrites sous chaque objet.
 * `loadOption` spécifie un objet qui décrit les propriétés select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](../../reference/excel/loadoption.md) de chargement d’objet.
 
 ## <a name="example-write-values-from-an-array-to-a-range-object"></a>Exemple : écrire des valeurs d’un tableau vers un objet de plage
@@ -57,7 +56,7 @@ L’exemple suivant vous montre comment écrire des valeurs d’un tableau vers 
 La méthode Excel.run() contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à une plage (adresse A1:B2) est créé dans la feuille de calcul active. La valeur de cet objet de plage de proxy est définie localement. Pour pouvoir lire les valeurs, la propriété `text` de la plage est chargée sur l’objet proxy. Toutes ces commandes sont mises en file d’attente et sont exécutées lorsque la méthode ctx.sync() est appelée. La méthode sync() renvoie une promesse qui peut être utilisée pour y adjoindre d’autres opérations.
 
 ```js
-// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
+l// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
     // Create a proxy object for the sheet
@@ -67,7 +66,7 @@ Excel.run(function (ctx) {
                  ["Type", "Estimate"],
                  ["Transportation", 1670]
                  ];
-    // Create a proxy object for the range
+.    // Create a proxy object for the range
     var range = sheet.getRange("A1:B2");
 
     // Assign array value to the proxy object's values property.
@@ -93,8 +92,8 @@ L’exemple suivant montre comment copier les valeurs de la plage A1:A2 vers la 
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
-    // Create a proxy object for the range
-    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+    // Create a proxy object for the range and load the values property
+    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2").load("values");
 
     // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
     return ctx.sync().then(function() {
@@ -335,13 +334,13 @@ Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d
 |InvalidBinding  |Cette liaison d’objets n’est plus valide en raison de mises à jour précédentes.|
 |InvalidSelection|La sélection en cours est incorrecte pour cette action.|
 |Unauthenticated |Les informations d’authentification requises sont manquantes ou incorrectes.|
-|AccessDenied   |Vous ne pouvez pas effectuer l’opération demandée.|
-|ItemNotFound   |La ressource demandée n’existe pas.|
+|AccessDenied    |Vous ne pouvez pas effectuer l’opération demandée.|
+|ItemNotFound    |La ressource demandée n’existe pas.|
 |ActivityLimitReached|La limite d’activité a été atteinte.|
 |GeneralException|Une erreur interne s’est produite lors du traitement de la demande.|
 |NotImplemented  |La fonctionnalité demandée n’est pas implémentée|
 |ServiceNotAvailable|Le service n’est pas disponible.|
-|Conflict   |La demande n’a pas pu être traitée en raison d’un conflit.|
+|Conflict    |La demande n’a pas pu être traitée en raison d’un conflit.|
 |ItemAlreadyExists|La ressource en cours de création existe déjà.|
 |UnsupportedOperation|L’opération tentée n’est pas prise en charge.|
 |RequestAborted|La demande a été interrompue pendant l’exécution.|

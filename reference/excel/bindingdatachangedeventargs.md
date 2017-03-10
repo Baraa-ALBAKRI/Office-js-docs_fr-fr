@@ -7,8 +7,9 @@ Fournit des informations sur la liaison qui a déclenché l’événement DataCh
 Aucun
 
 ## <a name="relationships"></a>Relations
-Aucun
-
+| Relation | Type    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|binding|[Binding](binding.md)|Obtient un objet Binding qui représente la liaison ayant déclenché l’événement DataChanged.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 Aucun

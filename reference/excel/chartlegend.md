@@ -1,10 +1,10 @@
-# <a name="chartlegend-object-javascript-api-for-excel"></a>Objet ChartLegend (interface API JavaScript pour Excel)
+# <a name="chartlegend-object-javascript-api-for-excel"></a>Objet ChartLegend (API JavaScript pour Excel)
 
 Représente la légende d’un graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |overlay|bool|Valeur booléenne indiquant si la légende du graphique doit chevaucher le corps principal du graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |Position|string|Représente la position de la légende sur le graphique. Les valeurs possibles sont les suivantes : Top, Bottom, Left, Right, Corner, Custom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -13,41 +13,23 @@ Représente la légende d’un graphique.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|format|[ChartLegendFormat](chartlegendformat.md)|Représente le format d’une légende de graphique, à savoir le format de remplissage et de la police. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|format|[ChartLegendFormat](chartlegendformat.md)|Représente le format d’une légende de graphique, à savoir le format du remplissage et de la police. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
+Aucun
 
-| Méthode           | Type renvoyé    |Description| Dem. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Obtenir la valeur `position` de la légende de graphique dans Chart1
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     var legend = chart.legend;
     legend.load('position');
     return ctx.sync().then(function() {
@@ -65,7 +47,7 @@ Afficher la légende de Chart1 et la placer en haut du graphique
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.legend.visible = true;
     chart.legend.position = "top"; 
     chart.legend.overlay = false; 

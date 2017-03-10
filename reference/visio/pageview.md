@@ -1,28 +1,29 @@
 # <a name="pageview-object-javascript-api-for-visio"></a>Objet PageView (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe PageView.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété | Type |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|zoom|int|Obtient/Définit le niveau de zoom de l’objet Page.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+| Propriété | Type |Description|
+|:---------------|:--------|:----------|
+|zoom|int|Obtient/Définit le niveau de zoom de l’objet Page.|
 
 ## <a name="relationships"></a>Relations
-
 Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[centerViewportOnShape(ShapeId: valeur numérique)](#centerviewportonshapeshapeid-number)|void|Effectue un panoramique du dessin Visio pour placer la forme spécifiée au centre de l’affichage.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-centerViewportOnShape)|
-|[fitToWindow()](#fittowindow)|void|Ajuste l’objet Page à la fenêtre active.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-fitToWindow)|
-|[isShapeInViewport(Shape: Shape)](#isshapeinviewportshape-shape)|bool|Vérifie si la forme se situe devant l’objet Page ou non.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-isShapeInViewport)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[centerViewportOnShape(ShapeId: number)](#centerviewportonshapeshapeid-number)|void|Effectue un panoramique du dessin Visio pour placer la forme spécifiée au centre de l’affichage.|
+|[fitToWindow()](#fittowindow)|void|Ajuste l’objet Page à la fenêtre active.|
+|[getPosition()](#getposition)|[Position](position.md)|Spécifie la position de la page affichée.|
+|[getSelection()](#getselection)|[Selection](selection.md)|Représente la sélection dans la page.|
+|[isShapeInViewport(Shape: Shape)](#isshapeinviewportshape-shape)|bool|Vérifie si la forme se situe devant l’objet Page ou non.|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+|[setPosition(Position: Position)](#setpositionposition-position)|void|Définit la position de la page dans l’affichage.|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -73,6 +74,34 @@ Aucun
 #### <a name="returns"></a>Retourne
 void
 
+### <a name="getposition"></a>getPosition()
+Spécifie la position de la page affichée.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+pageViewObject.getPosition();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+[Position](position.md)
+
+### <a name="getselection"></a>getSelection()
+Représente la sélection dans la page.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+pageViewObject.getSelection();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+[Selection](selection.md)
+
 ### <a name="isshapeinviewportshape-shape"></a>isShapeInViewport(Shape: Shape)
 Vérifie si la forme se situe devant l’objet Page ou non.
 
@@ -104,6 +133,14 @@ object.load(param);
 
 #### <a name="returns"></a>Renvoie
 void
+
+### <a name="setpositionposition-position"></a>setPosition(Position: Position)
+Définit la position de la page dans l’affichage.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+pageViewObject.setPosition(Position);
+```
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|

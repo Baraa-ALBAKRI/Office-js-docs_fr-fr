@@ -1,4 +1,4 @@
-# <a name="filter-object-javascript-api-for-excel"></a>Objet Filter (interface API JavaScript pour Excel)
+# <a name="filter-object-javascript-api-for-excel"></a>Objet Filter (API JavaScript pour Excel)
 
 Gère le filtrage de la colonne d’un tableau.
 
@@ -7,9 +7,9 @@ Gère le filtrage de la colonne d’un tableau.
 Aucun
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|de réussite|[FilterCriteria](filtercriteria.md)|Le filtre actuellement appliqué à la colonne donnée. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|critères|[FilterCriteria](filtercriteria.md)|Le filtre actuellement appliqué à la colonne donnée. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
@@ -27,7 +27,6 @@ Aucun
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Appliquer un filtre « Pourcentage supérieur » à la colonne pour le pourcentage d’éléments donné.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Appliquer un filtre « Valeurs » à la colonne pour les valeurs données.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Effacer le filtre sur la colonne donnée.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -41,7 +40,7 @@ filterObject.apply(criteria);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |de réussite|FilterCriteria|Critères à appliquer.|
 
@@ -57,7 +56,7 @@ filterObject.applyBottomItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|Nombre d’éléments à partir du bas à afficher.|
 
@@ -73,7 +72,7 @@ filterObject.applyBottomPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |pourcentage|number|Pourcentage d’éléments à partir du bas à afficher.|
 
@@ -89,7 +88,7 @@ filterObject.applyCellColorFilter(color);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |color|string|Couleur d’arrière-plan des cellules à afficher.|
 
@@ -105,7 +104,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |criteria1|string|Première chaîne de critères.|
 |criteria2|string|Facultatif. Deuxième chaîne de critères.|
@@ -123,7 +122,7 @@ filterObject.applyDynamicFilter(criteria);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |de réussite|string|Critères dynamiques à appliquer.  Les valeurs possibles sont les suivantes : Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday|
 
@@ -139,7 +138,7 @@ filterObject.applyFontColorFilter(color);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |color|string|Couleur de police des cellules à afficher.|
 
@@ -155,7 +154,7 @@ filterObject.applyIconFilter(icon);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |icône|Icône|Icônes des cellules à afficher.|
 
@@ -171,7 +170,7 @@ filterObject.applyTopItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |count|number|Nombre d’éléments à partir du haut à afficher.|
 
@@ -187,7 +186,7 @@ filterObject.applyTopPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |pourcentage|number|Pourcentage d’éléments à partir du haut à afficher.|
 
@@ -203,7 +202,7 @@ filterObject.applyValuesFilter(values);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |values|()[]|Liste des valeurs à afficher.|
 
@@ -220,22 +219,6 @@ filterObject.clear();
 
 #### <a name="parameters"></a>Paramètres
 Aucun
-
-#### <a name="returns"></a>Retourne
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Retourne
 void

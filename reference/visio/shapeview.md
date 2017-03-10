@@ -1,7 +1,6 @@
 # <a name="shapeview-object-javascript-api-for-visio"></a>Objet ShapeView (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe ShapeView.
 
@@ -10,15 +9,17 @@ Représente la classe ShapeView.
 Aucun
 
 ## <a name="relationships"></a>Relations
-Aucun
+| Relation | Type    |Description|
+|:---------------|:--------|:----------|
+|highlight|[Highlight](highlight.md)|Représente la mise en surbrillance autour de la forme.|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[addOverlay(OverlayType: OverlayType, Content: chaîne, HorizontalAlignment: HorizontalAlignment, VerticalAlignment: VerticalAlignment, Width: valeur numérique, Height: valeur numérique)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|Ajoute une superposition sur la forme.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-addOverlay)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-load)|
-|[removeOverlay(OverlayId: valeur numérique)](#removeoverlayoverlayid-number)|void|Supprime une ou toutes les superpositions de la forme.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeView-removeOverlay)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[addOverlay(OverlayType: OverlayType, Content: chaîne, HorizontalAlignment: HorizontalAlignment, VerticalAlignment: VerticalAlignment, Width: valeur numérique, Height: valeur numérique)](#addoverlayoverlaytype-overlaytype-content-string-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment-width-number-height-number)|int|Ajoute une superposition sur la forme.|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+|[removeOverlay(OverlayId: number)](#removeoverlayoverlayid-number)|void|Supprime une ou toutes les superpositions de la forme.|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -35,7 +36,7 @@ shapeViewObject.addOverlay(OverlayType, Content, HorizontalAlignment, VerticalAl
 | Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |OverlayType|OverlayType|Type de superposition (texte, image).|
-|Contenu|string|Contenu de la superposition.|
+|Contenu|chaîne|Contenu de la superposition.|
 |HorizontalAlignment|HorizontalAlignment|Alignement horizontal de la superposition (gauche, centre, droite)|
 |VerticalAlignment|VerticalAlignment|Alignement vertical de la superposition (haut, milieu, bas)|
 |Width|valeur numérique|Largeur de la superposition.|
@@ -75,6 +76,20 @@ shapeViewObject.removeOverlay(OverlayId);
 
 #### <a name="returns"></a>Retourne
 void
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
+```js
+Visio.run(function (ctx) { 
+    var activePage = ctx.document.getActivePage();
+    var shape = activePage.shapes.getItem(0);
+    shape.view.highlight = { color: "#E7E7E7", width: 100 };
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js

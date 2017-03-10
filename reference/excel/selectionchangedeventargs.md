@@ -7,8 +7,9 @@ Fournit des informations sur le document qui a déclenché l’événement Selec
 Aucun
 
 ## <a name="relationships"></a>Relations
-Aucun
-
+| Relation | Type    |Description| Dem. Set|
+|:---------------|:--------|:----------|:----|
+|workbook|[Workbook](workbook.md)|Renvoie l’objet de classeur ayant déclenché l’événement SelectionChanged.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 Aucun

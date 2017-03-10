@@ -1,16 +1,17 @@
 # <a name="shapedataitem-object-javascript-api-for-visio"></a>Objet ShapeDataItem (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente l’objet ShapeDataItem.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|label|string|Chaîne qui spécifie l’étiquette de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|value|string|Chaîne qui spécifie la valeur de l’élément de données de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|format|string|Chaîne spécifiant le format de l’élément de données de forme. En lecture seule.|
+|formattedValue|string|Chaîne spécifiant la valeur formatée de l’élément de données de forme. En lecture seule.|
+|label|chaîne|Chaîne qui spécifie l’étiquette de l’élément de données de forme. En lecture seule.|
+|value|chaîne|Chaîne qui spécifie la valeur de l’élément de données de forme. En lecture seule.|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -20,9 +21,9 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

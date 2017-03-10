@@ -1,30 +1,32 @@
 # <a name="page-object-javascript-api-for-visio"></a>Objet Page (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe Page.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|index|int|Index de l’objet Page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-index)|
-|isBackground|bool|Indique s’il s’agit d’une page d’arrière-plan ou non. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-isBackground)|
-|name|string|Nom de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-name)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|height|int|Renvoie la hauteur de la page. En lecture seule.|
+|Index|int|Index de l’objet Page. En lecture seule.|
+|isBackground|bool|Indique s’il s’agit d’une page d’arrière-plan ou non. En lecture seule.|
+|name|chaîne|Nom de la page. En lecture seule.|
+|width|int|Renvoie la largeur de la page. En lecture seule.|
 
 ## <a name="relationships"></a>Relations
-| Relation | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|shapes|[ShapeCollection](shapecollection.md)|Représente les formes de l’objet Page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-shapes)|
-|view|[PageView](pageview.md)|Renvoie l’affichage de la page. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-view)|
+| Relation | Type    |Description|
+|:---------------|:--------|:----------|
+|comments|[CommentCollection](commentcollection.md)|Renvoie la collection de commentaires. En lecture seule.|
+|shapes|[ShapeCollection](shapecollection.md)|Représente les formes de l’objet Page. En lecture seule.|
+|view|[PageView](pageview.md)|Renvoie l’affichage de la page. En lecture seule.|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[activate()](#activate)|void|Définit la page comme la page active du document.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-activate)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-page-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[activate()](#activate)|void|Définit la page comme la page active du document.|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

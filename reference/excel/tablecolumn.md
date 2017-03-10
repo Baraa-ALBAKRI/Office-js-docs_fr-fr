@@ -1,22 +1,22 @@
-# <a name="tablecolumn-object-javascript-api-for-excel"></a>Objet TableColumn (interface API JavaScript pour Excel)
+# <a name="tablecolumn-object-javascript-api-for-excel"></a>Objet TableColumn (API JavaScript pour Excel)
 
-Cet objet représente une colonne dans un tableau.
+Représente une colonne dans un tableau.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |id|int|Renvoie une clé unique qui identifie la colonne du tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |index|int|Renvoie le numéro d’indice de la colonne dans la collection de colonnes du tableau. Avec indice zéro. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|name|chaîne|Renvoie le nom de la colonne du tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Représente le nom de la colonne du tableau.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |values|object[][]|Représente les valeurs brutes de la plage spécifiée. Les données renvoyées peuvent être des chaînes, des valeurs numériques ou des valeurs booléennes. Une cellule contenant une erreur renvoie la chaîne d’erreur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|filtrer|[Filter](filter.md)|Extrait le filtre appliqué à la colonne. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|filtre|[Filter](filter.md)|Extrait le filtre appliqué à la colonne. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
@@ -27,7 +27,6 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtient l’objet de plage associé à la ligne d’en-tête de la colonne.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Renvoie l’objet de plage associé à l’intégralité de la colonne.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtient l’objet de plage associé à la ligne de total de la colonne.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -196,22 +195,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

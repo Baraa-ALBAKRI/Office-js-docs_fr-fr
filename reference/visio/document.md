@@ -1,7 +1,6 @@
 # <a name="document-object-javascript-api-for-visio"></a>Objet Document (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
 Représente la classe Document.
 
@@ -10,18 +9,20 @@ Représente la classe Document.
 Aucun
 
 ## <a name="relationships"></a>Relations
-| Relation | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|application|[Application](application.md)|Représente une instance de l’application Visio contenant ce document. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
-|pages|[PageCollection](pagecollection.md)|Représente une collection de pages associées au document. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
+| Relation | Type    |Description|
+|:---------------|:--------|:----------|
+|application|[Application](application.md)|Représente une instance de l’application Visio contenant ce document. En lecture seule.|
+|pages|[PageCollection](pagecollection.md)|Représente une collection de pages associées au document. En lecture seule.|
+|view|[DocumentView](documentview.md)|Renvoie l’objet DocumentView. En lecture seule.|
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[getActivePage()](#getactivepage)|[Page](page.md)|Renvoie la page active du document.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
-|[setActivePage(PageName: chaîne)](#setactivepagepagename-string)|void|Configure la page active du document.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[getActivePage()](#getactivepage)|[Page](page.md)|Renvoie la page active du document.|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
+|[setActivePage(PageName: string)](#setactivepagepagename-string)|void|Configure la page active du document.|
+|[startDataRefresh()](#startdatarefresh)|void|Déclenche l’actualisation des données dans le diagramme pour toutes les pages.|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -85,7 +86,7 @@ documentObject.setActivePage(PageName);
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
-|PageName|string|Nom de la page|
+|PageName|chaîne|Nom de la page|
 
 #### <a name="returns"></a>Renvoie
 void
@@ -106,7 +107,33 @@ Visio.run(function (ctx) {
 ```
 
 
-### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
+### <a name="startdatarefresh"></a>startDataRefresh()
+Déclenche l’actualisation des données dans le diagramme pour toutes les pages.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+documentObject.startDataRefresh();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Retourne
+void
+
+#### <a name="examples"></a>Exemples
+```js
+Visio.run(function (ctx) { 
+    var document = ctx.document;
+    document.startDataRefresh();
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```### Property access examples
 ```js
 Visio.run(function (ctx) { 
     var pages = ctx.document.pages;
@@ -114,6 +141,20 @@ Visio.run(function (ctx) {
     return ctx.sync().then(function () {
         console.log("Pages Count: " +pageCount.value);
         });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
+```js
+Visio.run(function (ctx) { 
+    var documentView = ctx.document.view;
+    documentView.disableHyperlinks();
+    return ctx.sync();
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {

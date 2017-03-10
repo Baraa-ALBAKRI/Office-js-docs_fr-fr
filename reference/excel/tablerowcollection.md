@@ -1,12 +1,12 @@
-# <a name="tablerowcollection-object-javascript-api-for-excel"></a>Objet TableRowCollection (interface API JavaScript pour Excel)
+# <a name="tablerowcollection-object-javascript-api-for-excel"></a>Objet TableRowCollection (API JavaScript pour Excel)
 
 Représente une collection de toutes les lignes du tableau.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|count|int|Renvoie le nombre de lignes dans le tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|int|Renvoie le nombre de lignes du tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |éléments|[TableRow[]](tablerow.md)|Collection d’objets tableRow. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
@@ -19,9 +19,9 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Ajoute une ou plusieurs lignes dans le tableau. L’objet renvoyé sera placé en premier dans les lignes récemment ajoutées.|[1.1, 1.1 pour l’ajout d’une seule ligne ; 1,4 permet d’ajouter plusieurs lignes.](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Ajoute une ou plusieurs lignes dans le tableau. L’objet renvoyé sera placé en premier dans les lignes récemment ajoutées.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Obtient le nombre de lignes dans le tableau.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Obtient une ligne en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -35,10 +35,10 @@ tableRowCollectionObject.add(index, values);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Facultatif. Spécifie la position relative de la nouvelle ligne. Si la valeur est null ou -1, la ligne est ajoutée à la fin. Toutes les lignes en dessous de la ligne insérée sont déplacées vers le bas. Avec indice zéro.|
-|valeurs|(boolean ou string ou number)[][]|Facultatif. Matrice 2D des valeurs non mises en forme de la ligne du tableau.|
+|values|(boolean ou string ou number)[][]|Facultatif. Matrice 2D des valeurs non mises en forme de la ligne du tableau.|
 
 #### <a name="returns"></a>Retourne
 [TableRow](tablerow.md)
@@ -62,6 +62,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="getcount"></a>getCount()
+Obtient le nombre de lignes dans le tableau.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+tableRowCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+int
+
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtient une ligne en fonction de sa position dans la collection.
 
@@ -71,7 +85,7 @@ tableRowCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
@@ -94,22 +108,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

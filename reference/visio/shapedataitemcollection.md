@@ -1,15 +1,14 @@
 # <a name="shapedataitemcollection-object-javascript-api-for-visio"></a>Objet ShapeDataItemCollection (interface API JavaScript pour Visio)
 
 S’applique à : _Visio Online_
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
 
-Représente la collection d’éléments de données d’une forme donnée.
+Représente la collection d’éléments de données pour une forme donnée.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|items|[ShapeDataItem[]](shapedataitem.md)|Collection d’objets ShapeDataItem. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|éléments|[ShapeDataItem[]](shapedataitem.md)|Collection d’objets ShapeDataItem. En lecture seule.|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -19,11 +18,11 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtient le nombre d’éléments de données de forme.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getCount)|
-|[getItem(key: chaîne)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Obtient l’élément de données de forme à l’aide de son nom.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtient le nombre d’éléments de données de forme.|
+|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Obtient l’élément de données de forme à l’aide de son nom.|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -53,7 +52,7 @@ shapeDataItemCollectionObject.getItem(key);
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
-|Key|string|La clé est le nom de l’élément de données de forme à récupérer.|
+|Key|chaîne|La clé est le nom de l’élément de données de forme à récupérer.|
 
 #### <a name="returns"></a>Renvoie
 [ShapeDataItem](shapedataitem.md)

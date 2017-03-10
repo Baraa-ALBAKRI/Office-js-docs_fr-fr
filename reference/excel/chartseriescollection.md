@@ -1,10 +1,10 @@
-# <a name="chartseriescollection-object-javascript-api-for-excel"></a>Objet ChartSeriesCollection (interface API JavaScript pour Excel)
+# <a name="chartseriescollection-object-javascript-api-for-excel"></a>Objet ChartSeriesCollection (API JavaScript pour Excel)
 
 Représente une collection de séries de graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Renvoie le nombre de séries de la collection. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |éléments|[ChartSeries[]](chartseries.md)|Collection d’objets chartSeries. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,11 +19,25 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|int|Renvoie le nombre de séries de la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Extrait une série en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
+
+### <a name="getcount"></a>getCount()
+Renvoie le nombre de séries de la collection.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+chartSeriesCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+int
 
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 Extrait une série en fonction de sa position dans la collection.
@@ -34,7 +48,7 @@ chartSeriesCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
@@ -60,22 +74,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 Obtenir le nom des séries de la collection
 

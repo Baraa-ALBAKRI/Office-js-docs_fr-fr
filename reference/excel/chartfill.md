@@ -1,4 +1,4 @@
-# <a name="chartfill-object-javascript-api-for-excel"></a>Objet ChartFill (interface API JavaScript pour Excel)
+# <a name="chartfill-object-javascript-api-for-excel"></a>Objet ChartFill (API JavaScript pour Excel)
 
 Représente le format de remplissage d’un élément de graphique.
 
@@ -40,7 +40,7 @@ Désactiver le format des lignes de quadrillage principal sur l’axe des ordonn
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;    
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -62,7 +62,7 @@ chartFillObject.setSolidColor(color);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |color|string|Code couleur HTML qui représente la couleur de la ligne de bordure, au format #RRGGBB (par exemple : « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 
@@ -75,7 +75,7 @@ Définir le rouge comme couleur d’arrière-plan de Chart1
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
 
     chart.format.fill.setSolidColor("#FF0000");
 

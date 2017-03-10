@@ -1,10 +1,10 @@
-# <a name="tablecollection-object-javascript-api-for-excel"></a>Objet TableCollection (interface API JavaScript pour Excel)
+# <a name="tablecollection-object-javascript-api-for-excel"></a>Objet TableCollection (API JavaScript pour Excel)
 
-Représente une collection de tous les tableaux du classeur.
+Représente une collection de tous les tableaux qui font partie du classeur ou de la feuille de calcul, en fonction de la méthode d’appel.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Renvoie le nombre de tableaux dans le classeur. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |éléments|[Table[]](table.md)|Collection d’objets de tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,16 +19,16 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
-|[add(address: plage ou chaîne, hasHeaders: valeur booléenne)](#addaddress-range-or-string-hasheaders-bool)|[Table](table.md)|Crée un tableau L’adresse de la source ou de l’objet de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(address: [object, hasHeaders: bool)](#addaddress-object-hasheaders-bool)|[Table](table.md)|Crée un tableau L’adresse de la source ou de l’objet de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Obtient le nombre de tableaux de la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(key: number ou string)](#getitemkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Obtient un tableau en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: nombre ou chaîne)](#getitemornullkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number ou string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
 
-### <a name="addaddress-range-or-string-hasheaders-bool"></a>add(address: plage ou chaîne, hasHeaders: valeur booléenne)
+### <a name="addaddress-object-hasheaders-bool"></a>add(address: [object, hasHeaders: bool)
 Crée un tableau L’adresse de la source ou de l’objet de la plage détermine la feuille de calcul dans laquelle le tableau sera ajouté. Si l’ajout ne peut être effectué (par exemple, parce que l’adresse n’est pas valide, ou parce que le tableau empiéterait sur un autre tableau), un message d’erreur apparaît.
 
 #### <a name="syntax"></a>Syntaxe
@@ -37,9 +37,9 @@ tableCollectionObject.add(address, hasHeaders);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
-|adresse|range ou string|Objet de plage ou nom/adresse (chaîne) de la plage représentant la source de données. Si l’adresse ne contient pas de nom de feuille, la feuille ouverte est utilisée. Ensemble de conditions requises 1.1 pour le paramètre de chaîne ; 1.3 pour accepter un objet de plage.|
+|address|[object|Objet de plage ou nom/adresse (string) de la plage représentant la source de données. Si l’adresse ne contient pas de nom de feuille, la feuille ouverte est utilisée. Pour 1.1, utilisez le paramètre string ; pour 1.3 vous pouvez également utiliser l’objet Range.|
 |hasHeaders|bool|Valeur booléenne qui indique si les données importées disposent d’étiquettes de colonne. Si la source ne contient pas d’en-têtes (autrement dit, lorsque cette propriété est définie sur false), Excel génère automatiquement un en-tête et décale les données d’une ligne vers le bas.|
 
 #### <a name="returns"></a>Retourne
@@ -62,6 +62,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="getcount"></a>getCount()
+Obtient le nombre de tableaux de la collection.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+tableCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+int
+
 ### <a name="getitemkey-number-or-string"></a>getItem(key: number ou string)
 Obtient un tableau à l’aide de son nom ou de son ID.
 
@@ -71,7 +85,7 @@ tableCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |Key|number or string|Nom ou ID du tableau à récupérer.|
 
@@ -124,14 +138,14 @@ tableCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
 [Table](table.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -149,37 +163,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullkey-number-or-string"></a>getItemOrNull(key: nombre ou chaîne)
-Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.
+### <a name="getitemornullobjectkey-number-or-string"></a>getItemOrNullObject(key: number ou string)
+Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, renvoie un objet null.
 
 #### <a name="syntax"></a>Syntaxe
 ```js
-tableCollectionObject.getItemOrNull(key);
+tableCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |Key|number or string|Nom ou ID du tableau à récupérer.|
 
 #### <a name="returns"></a>Retourne
 [Table](table.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

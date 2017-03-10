@@ -1,10 +1,10 @@
-# <a name="charttitle-object-javascript-api-for-excel"></a>Objet ChartTitle (interface API JavaScript pour Excel)
+# <a name="charttitle-object-javascript-api-for-excel"></a>Objet ChartTitle (API JavaScript pour Excel)
 
 Représente un objet de titre pour un graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |overlay|bool|Valeur booléenne indiquant si le titre du graphique recouvre le graphique ou non.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |text|string|Représente le texte du titre d’un graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -13,41 +13,23 @@ Représente un objet de titre pour un graphique.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |format|[ChartTitleFormat](charttitleformat.md)|Représente le format du titre d’un graphique, à savoir le format de remplissage et de la police. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
+Aucun
 
-| Méthode           | Type renvoyé    |Description| Dem. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Obtenir la valeur `text` du titre du graphique Chart1.
 
 ```js
 Excel.run(function (ctx) { 
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
 
 var title = chart.title;
 title.load('text');
@@ -66,7 +48,7 @@ Définir la valeur `text` du titre du graphique sur « My Chart » et placer 
 
 ```js
 Excel.run(function (ctx) { 
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
 
 chart.title.text= "My Chart"; 
 chart.title.visible=true;

@@ -1,4 +1,4 @@
-# <a name="worksheetcollection-object-javascript-api-for-excel"></a>Objet WorksheetCollection (interface API JavaScript pour Excel)
+# <a name="worksheetcollection-object-javascript-api-for-excel"></a>Objet WorksheetCollection (API JavaScript pour Excel)
 
 Représente une collection d’objets de feuille de calcul qui font partie du classeur.
 
@@ -20,9 +20,9 @@ Aucun
 |:---------------|:--------|:----------|:----|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Ajoute une nouvelle feuille de calcul au classeur. La feuille de calcul est ajoutée à la fin des feuilles de calcul existantes. Si vous souhaitez activer la feuille de calcul nouvellement ajoutée, appelez la méthode .activate() pour cette feuille.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Obtient la feuille de calcul active du classeur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount(visibleOnly: bool)](#getcountvisibleonly-bool)|int|Obtient le nombre de feuilles de calcul dans la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: string)](#getitemornullkey-string)|[Feuille de calcul](worksheet.md)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: string)](#getitemornullobjectkey-string)|[Feuille de calcul](worksheet.md)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -94,6 +94,22 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcountvisibleonly-bool"></a>getCount(visibleOnly: bool)
+Obtient le nombre de feuilles de calcul dans la collection.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+worksheetCollectionObject.getCount(visibleOnly);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre       | Type    |Description|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Facultatif. Renvoie des feuilles de calcul visibles uniquement si la valeur est définie sur true. |
+
+#### <a name="returns"></a>Renvoie
+int
+
 ### <a name="getitemkey-string"></a>getItem(key: string)
 Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.
 
@@ -110,12 +126,12 @@ worksheetCollectionObject.getItem(key);
 #### <a name="returns"></a>Retourne
 [Worksheet](worksheet.md)
 
-### <a name="getitemornullkey-string"></a>getItemOrNull(key: chaîne)
-Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.
+### <a name="getitemornullobjectkey-string"></a>getItemOrNullObject(key: string)
+Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID. Si la feuille de calcul n’existe pas, renvoie un objet null.
 
 #### <a name="syntax"></a>Syntaxe
 ```js
-worksheetCollectionObject.getItemOrNull(key);
+worksheetCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>Paramètres
@@ -125,22 +141,6 @@ worksheetCollectionObject.getItemOrNull(key);
 
 #### <a name="returns"></a>Retourne
 [Worksheet](worksheet.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Renvoie
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js
 Excel.run(function (ctx) { 

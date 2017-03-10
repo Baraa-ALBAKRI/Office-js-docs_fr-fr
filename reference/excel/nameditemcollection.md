@@ -1,10 +1,10 @@
-# <a name="nameditemcollection-object-javascript-api-for-excel"></a>Objet NamedItemCollection (interface API JavaScript pour Excel)
+# <a name="nameditemcollection-object-javascript-api-for-excel"></a>Objet NamedItemCollection (API JavaScript pour Excel)
 
-Collection de tous les objets NamedItem du classeur.
+Collection de tous les objets nameditem qui font partie du classeur ou de la feuille de calcul, en fonction de la méthode d’appel.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |éléments|[NamedItem[]](nameditem.md)|Collection d’objets NamedItem. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -18,12 +18,64 @@ Aucun
 
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
+|[add(name: string, reference: range ou string, comment: string)](#addname-string-reference-range-or-string-comment-string)|[NamedItem](nameditem.md)|Ajoute un nouveau nom à la collection de l’étendue donnée.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFormulaLocal(name: string, formula: string, comment: string)](#addformulalocalname-string-formula-string-comment-string)|[NamedItem](nameditem.md)|Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|int|Obtient le nombre d’éléments nommés dans la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Obtient un objet NamedItem à l’aide de son nom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: chaîne)](#getitemornullname-string)|[NamedItem](nameditem.md)|Obtient un objet NamedItem à l’aide de son nom. Si l’objet NamedItem n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[NamedItem](nameditem.md)|Obtient un objet nameditem à l’aide de son nom. Si l’objet nameditem n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
+
+### <a name="addname-string-reference-range-or-string-comment-string"></a>add(name: string, reference: range ou string, comment: string)
+Ajoute un nouveau nom à la collection de l’étendue donnée.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+namedItemCollectionObject.add(name, reference, comment);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre       | Type    |Description|
+|:---------------|:--------|:----------|:---|
+|name|string|Nom de l’élément nommé.|
+|reference|range ou string|Formule ou plage à laquelle le nom fait référence.|
+|comment|string|Facultatif. Commentaire associé à l’élément nommé|
+
+#### <a name="returns"></a>Renvoie
+[NamedItem](nameditem.md)
+
+### <a name="addformulalocalname-string-formula-string-comment-string"></a>addFormulaLocal(name: string, formula: string, comment: string)
+Ajoute un nouveau nom à la collection de l’étendue donnée à l’aide des paramètres régionaux de l’utilisateur pour la formule.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+namedItemCollectionObject.addFormulaLocal(name, formula, comment);
+```
+
+#### <a name="parameters"></a>Paramètres
+| Paramètre       | Type    |Description|
+|:---------------|:--------|:----------|:---|
+|name|string|« Nom » de l’élément nommé.|
+|formula|string|Formule dans les paramètres régionaux de l’utilisateur à laquelle le nom fait référence.|
+|comment|string|Facultatif. Commentaire associé à l’élément nommé|
+
+#### <a name="returns"></a>Renvoie
+[NamedItem](nameditem.md)
+
+### <a name="getcount"></a>getCount()
+Obtient le nombre d’éléments nommés dans la collection.
+
+#### <a name="syntax"></a>Syntaxe
+```js
+namedItemCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Paramètres
+Aucun
+
+#### <a name="returns"></a>Renvoie
+int
 
 ### <a name="getitemname-string"></a>getItem(name: string)
 Obtient un objet NamedItem à l’aide de son nom.
@@ -34,14 +86,14 @@ namedItemCollectionObject.getItem(name);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |name|string|nom de l’objet NamedItem.|
 
 #### <a name="returns"></a>Retourne
 [NamedItem](nameditem.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 
 ```js
 Excel.run(function (ctx) { 
@@ -58,37 +110,21 @@ Excel.run(function (ctx) {
         }
 });
 ```
-### <a name="getitemornullname-string"></a>getItemOrNull(name: chaîne)
-Obtient un objet NamedItem à l’aide de son nom. Si l’objet NamedItem n’existe pas, la propriété isNull de l’objet renvoyé aura la valeur true.
+### <a name="getitemornullobjectname-string"></a>getItemOrNullObject(name: string)
+Obtient un objet nameditem à l’aide de son nom. Si l’objet nameditem n’existe pas, renvoie un objet null.
 
 #### <a name="syntax"></a>Syntaxe
 ```js
-namedItemCollectionObject.getItemOrNull(name);
+namedItemCollectionObject.getItemOrNullObject(name);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |name|string|nom de l’objet NamedItem.|
 
 #### <a name="returns"></a>Retourne
 [NamedItem](nameditem.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

@@ -2,15 +2,13 @@
 
 S’applique à : _Visio Online_
 
->**Remarque :** Les interfaces API JavaScript pour Visio sont actuellement affichées dans l’aperçu et peuvent être modifiées. Elles ne sont actuellement pas prises en charge dans les environnements de production.
-
 Représente la collection Shape.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété       | Type    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|items|[Shape[]](shape.md)|Collection d’objets de forme. En lecture seule.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-items)|
+| Propriété       | Type    |Description|
+|:---------------|:--------|:----------|
+|éléments|[Shape[]](shape.md)|Collection d’objets de forme. En lecture seule.|
 
 ## <a name="relationships"></a>Relations
 Aucun
@@ -18,11 +16,11 @@ Aucun
 
 ## <a name="methods"></a>Méthodes
 
-| Méthode           | Type renvoyé    |Description| Commentaires|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtient le nombre de formes de la collection.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getCount)|
-|[getItem(key: valeur numérique ou chaîne)](#getitemkey-number-or-string)|[Shape](shape.md)|Obtient une forme à l’aide de sa clé (nom ou index).|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[Activer](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-load)|
+| Méthode           | Type renvoyé    |Description|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtient le nombre de formes de la collection.|
+|[getItem(key: number ou string)](#getitemkey-number-or-string)|[Shape](shape.md)|Obtient une forme à l’aide de sa clé (nom ou index).|
+|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|
 
 ## <a name="method-details"></a>Détails des méthodes
 

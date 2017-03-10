@@ -1,10 +1,10 @@
-# <a name="binding-object-javascript-api-for-excel"></a>Objet Binding (interface API JavaScript pour Excel)
+# <a name="binding-object-javascript-api-for-excel"></a>Objet Binding (API JavaScript pour Excel)
 
 Représente une liaison Office.js définie dans le classeur.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |id|string|Représente l’identificateur de liaison. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |type|string|Renvoie le type de la liaison. En lecture seule. Les valeurs possibles sont les suivantes : Range, Table, Text.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -21,9 +21,8 @@ Aucun
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Supprime la liaison.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Renvoie la plage représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getTable()](#gettable)|[Table](table.md)|Renvoie la table représentée par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getText()](#gettext)|chaîne|Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTable()](#gettable)|[Table](table.md)|Renvoie le tableau représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getText()](#gettext)|string|Renvoie le texte représenté par la liaison. Génère une erreur si la liaison n’est pas du type approprié.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -56,7 +55,7 @@ Aucun
 #### <a name="returns"></a>Retourne
 [Range](range.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 L’exemple ci-dessous utilise l’objet de liaison pour obtenir la plage associée.
 
 ```js
@@ -140,22 +139,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

@@ -1,10 +1,10 @@
-# <a name="table-object-javascript-api-for-excel"></a>Objet Table (interface API JavaScript pour Excel)
+# <a name="table-object-javascript-api-for-excel"></a>Objet Table (API JavaScript pour Excel)
 
 Représente un tableau Excel.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |highlightFirstColumn|bool|Indique si la première colonne contient une mise en forme spéciale.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |highlightLastColumn|bool|Indique si la dernière colonne contient une mise en forme spéciale.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,12 +20,12 @@ Représente un tableau Excel.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |colonnes|[TableColumnCollection](tablecolumncollection.md)|Représente une collection de toutes les colonnes du tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |Objet Rows|[TableRowCollection](tablerowcollection.md)|Représente une collection de toutes les lignes du tableau. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|tri|[TableSort](tablesort.md)|Représente le tri de la table. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant le tableau actuel. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|tri|[TableSort](tablesort.md)|Représente le tri du tableau. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant le tableau actif. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
@@ -38,7 +38,6 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtient l’objet de plage associé à la ligne d’en-tête du tableau.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Renvoie l’objet de plage associé à l’intégralité du tableau.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Renvoie l’objet de plage associé à la ligne de total du tableau.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapplyFilters()](#reapplyfilters)|void|Applique de nouveau tous les filtres actuellement appliqués sur le tableau.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
@@ -202,7 +201,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableRange = table.getRange();
-    tableRange.load('address'); 
+    tableRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableRange.address);
     });
@@ -235,7 +234,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableTotalsRange = table.getTotalRowRange();
-    tableTotalsRange.load('address');   
+    tableTotalsRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableTotalsRange.address);
     });
@@ -247,22 +246,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 
 ### <a name="reapplyfilters"></a>reapplyFilters()
 Applique de nouveau tous les filtres actuellement appliqués sur le tableau.

@@ -1,10 +1,10 @@
-# <a name="rangebordercollection-object-javascript-api-for-excel"></a>Objet RangeBorderCollection (interface API JavaScript pour Excel)
+# <a name="rangebordercollection-object-javascript-api-for-excel"></a>Objet RangeBorderCollection (API JavaScript pour Excel)
 
 Représente les objets de bordure qui composent la bordure de la plage.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |count|int|Nombre d’objets de bordure de la collection. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |éléments|[RangeBorder[]](rangeborder.md)|Collection d’objets rangeBorder. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -21,7 +21,6 @@ Aucun
 |:---------------|:--------|:----------|:----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son nom.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtient un objet de bordure à l’aide de son indice.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -35,7 +34,7 @@ rangeBorderCollectionObject.getItem(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|string|Valeur d’indice de l’objet de bordure à récupérer. Les valeurs possibles sont les suivantes : EdgeTop (bord supérieur), EdgeBottom (bord inférieur), EdgeLeft (bord gauche), EdgeRight (bord droit), InsideVertical (intérieur vertical), InsideHorizontal (intérieur horizontal), DiagonalDown (diagonale vers le bas), DiagonalUp (diagonale vers le haut).|
 
@@ -95,7 +94,7 @@ rangeBorderCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
@@ -123,22 +122,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 ```js

@@ -287,21 +287,33 @@
 		<Item text="Ensembles de conditions requises de l’API JavaScript pour OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Trouver des informations sur les ensembles de conditions requises pour OneNote, les applications hôtes Office qui prennent en charge ces conditions et les numéros de version ou la date de disponibilité." />
 	</Item>
 	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
-		<Item text="Application" url="visio/application" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="Document" url="visio/document" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="Hyperlink" url="visio/hyperlink" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="LoadOption" url="visio/loadoption" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="Page" url="visio/page" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="PageView" url="visio/pageview" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="Shape" url="visio/shape" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Référence de l’API JavaScript pour Visio" /> 
-		<Item text="ShapeView" url="visio/shapeview" SEODescription="Référence de l’API JavaScript pour Visio" /> 
+		<Item text="Application" url="visio/application" /> 
+		<Item text="BoundingBox" url="visio/boundingbox" />
+		<Item text="Comment" url="visio/comment" />
+		<Item text="CommentCollection" url="visio/commentcollection" />
+		<Item text="DataRefreshCompleteEventArgs" url="visio/datarefreshcompleteeventargs" />
+		<Item text="Document" url="visio/document" />
+		<Item text="DocumentView" url="visio/documentview" />
+		<Item text="Highlight" url="visio/highlight" />
+		<Item text="Hyperlink" url="visio/hyperlink" /> 
+		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" /> 
+		<Item text="LoadOption" url="visio/loadoption" /> 
+		<Item text="Page" url="visio/page" /> 
+		<Item text="PageCollection" url="visio/pagecollection" /> 
+		<Item text="PageLoadCompleteEventArgs" url="visio/pageloadcompleteeventargs" />
+		<Item text="PageView" url="visio/pageview" /> 
+		<Item text="Position" url="visio/position" />
+		<Item text="Selection" url="visio/selection" />
+		<Item text="SelectionChangedEventArgs" url="visio/selectionchangedeventargs" />
+		<Item text="Shape" url="visio/shape" /> 
+		<Item text="ShapeCollection" url="visio/shapecollection" /> 
+		<Item text="ShapeDataItem" url="visio/shapedataitem" /> 
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" /> 
+		<Item text="ShapeMouseEnterEventArgs" url="visio/shapemouseentereventargs" />
+		<Item text="ShapeMouseLeaveEventArgs" url="visio/shapemouseleaveeventargs" />
+		<Item text="ShapeView" url="visio/shapeview" /> 
 	</Item> 
-	<Item text="API partagée" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
+	<Item text="Shared API" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="Interface API JavaScript pour Office" url="javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office comprend des objets, méthodes, propriétés, événements et énumérations que vous pouvez utiliser dans votre code des compléments Office." />
 		<Item text="Nouveautés de l’API JavaScript pour Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="L’interface API JavaScript pour Office est mise à jour régulièrement avec de nouveaux objets, méthodes, propriétés, événements et énumérations mis à jour afin d’étendre les fonctionnalités de vos compléments Office." />
 		<Item text="Ensembles de conditions requises communes pour Office" url="requirement-sets/office-add-in-requirement-sets" SEODescription="Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément." />

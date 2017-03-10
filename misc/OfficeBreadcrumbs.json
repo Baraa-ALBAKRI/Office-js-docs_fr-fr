@@ -11,6 +11,13 @@
             "Title": "Référence de l’API JavaScript d’Office",
             "URL": "/reference/add-ins/javascript-api-for-office",
             "Index":  "/reference/add-ins/"
+		},
+        {
+
+            "Title": "Soumettre à l’Office Store",
+            "URL": "https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store",
+            "Index":  "/officestore/docs/"
+
         }
         
     ]

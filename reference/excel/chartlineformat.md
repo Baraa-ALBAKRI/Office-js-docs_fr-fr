@@ -1,10 +1,10 @@
-# <a name="chartlineformat-object-javascript-api-for-excel"></a>Objet ChartLineFormat (interface API JavaScript pour Excel)
+# <a name="chartlineformat-object-javascript-api-for-excel"></a>Objet ChartLineFormat (API JavaScript pour Excel)
 
 Regroupe les options de mise en forme pour les éléments de ligne.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |color|string|Code couleur HTML qui représente la couleur des lignes dans le graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -19,7 +19,6 @@ Aucun
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |[clear()](#clear)|void|Désactiver le format de ligne d’un élément de graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -44,7 +43,7 @@ Désactiver le format des lignes de quadrillage principal sur l’axe des ordonn
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;    
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -56,22 +55,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Définir le rouge comme couleur des lignes de quadrillage principal sur l’axe des ordonnées.

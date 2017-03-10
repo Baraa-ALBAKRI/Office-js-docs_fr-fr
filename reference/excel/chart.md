@@ -1,10 +1,10 @@
-# <a name="chart-object-javascript-api-for-excel"></a>Objet Chart (interface API JavaScript pour Excel)
+# <a name="chart-object-javascript-api-for-excel"></a>Objet Chart (API JavaScript pour Excel)
 
 Représente un objet de graphique dans un classeur.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |height|Double|Représente la hauteur, exprimée en points, de l’objet de graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |id|string|Extrait un graphique en fonction de sa position dans la collection. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -16,15 +16,15 @@ Représente un objet de graphique dans un classeur.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |axes|[ChartAxes](chartaxes.md)|Représente les axes du graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|dataLabels|[ChartDataLabels](chartdatalabels.md)|Représente les étiquettes de données sur le graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|dataLabels|[ChartDataLabels](chartdatalabels.md)|Représente les étiquettes des données sur le graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |format|[ChartAreaFormat](chartareaformat.md)|Regroupe les propriétés de format de la zone de graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |légende|[ChartLegend](chartlegend.md)|Représente la légende du graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |série|[ChartSeriesCollection](chartseriescollection.md)|Représente une série ou une collection de séries dans le graphique. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |title|[ChartTitle](charttitle.md)|Représente le titre du graphique indiqué et comprend le texte, la visibilité, la position et la mise en forme du titre. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|feuille de calcul|[Feuille de calcul](worksheet.md)|Feuille de calcul contenant le graphique actuel. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|feuille de calcul|[Worksheet](worksheet.md)|Feuille de calcul contenant le graphique actuel. En lecture seule.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Méthodes
 
@@ -32,7 +32,6 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |:---------------|:--------|:----------|:----|
 |[delete()](#delete)|void|Supprime l’objet Graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getImage(height: number, width: number, fittingMode: string)](#getimageheight-number-width-number-fittingmode-string)|[System.IO.Stream](system.io.stream.md)|Affiche le graphique sous forme d’image codée en Base64 ajustée aux dimensions spécifiées.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setData(sourceData: Range, seriesBy: string)](#setdatasourcedata-range-seriesby-string)|void|Réinitialise les données source du graphique.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positionne le graphique par rapport aux cellules dans la feuille de calcul.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -56,7 +55,7 @@ void
 #### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.delete();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -76,7 +75,7 @@ chartObject.getImage(height, width, fittingMode);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |height|number|Facultatif. (Facultatif) Hauteur souhaitée de l’image produite.|
 |width|number|Facultatif. (Facultatif) Largeur souhaitée de l’image produite.|
@@ -85,10 +84,10 @@ chartObject.getImage(height, width, fittingMode);
 #### <a name="returns"></a>Retourne
 [System.IO.Stream](system.io.stream.md)
 
-#### <a name="examples"></a>範例
+#### <a name="examples"></a>Exemples
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     var image = chart.getImage();
     return ctx.sync(); 
 }).catch(function(error) {
@@ -103,22 +102,6 @@ Excel.run(function (ctx) {
 
 
 
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
-
 ### <a name="setdatasourcedata-range-seriesby-string"></a>setData(sourceData: Range, seriesBy: string)
 Redéfinit les données sources du graphique.
 
@@ -128,7 +111,7 @@ chartObject.setData(sourceData, seriesBy);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |sourceData|Range|Objet Range correspondant aux données source.|
 |seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Les options disponibles sont : en mode automatique (par défaut), par lignes et par colonnes. Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes)|
@@ -142,7 +125,7 @@ Définir `sourceData` sur « A1:B4 » et `seriesBy` sur « Columns »
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     var sourceData = "A1:B4";
     chart.setData(sourceData, "Columns");
     return ctx.sync(); 
@@ -155,7 +138,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="setpositionstartcell-range-or-string-endcell-range-or-string"></a>setPosition(startCell: range ou string, endCell: Range or string)
+### <a name="setpositionstartcell-range-or-string-endcell-range-or-string"></a>setPosition(startCell: range ou string, endCell: range ou string)
 Positionne le graphique par rapport aux cellules dans la feuille de calcul.
 
 #### <a name="syntax"></a>Syntaxe
@@ -164,7 +147,7 @@ chartObject.setPosition(startCell, endCell);
 ```
 
 #### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|:---|
 |startCell|range ou string|Cellule de début. Il s’agit de l’emplacement où le graphique sera déplacé. La cellule de début est la cellule supérieure gauche ou supérieure droite, selon les paramètres d’affichage droite-gauche définis par l’utilisateur.|
 |endCell|range ou string|Facultatif. (Facultatif) Cellule de fin. Si une valeur est indiquée, la largeur et la hauteur du graphique seront définies de manière à couvrir entièrement cette cellule/plage.|
@@ -200,7 +183,7 @@ Obtenir un graphique nommé « Chart1 »
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.load('name');
     return ctx.sync().then(function() {
             console.log(chart.name);
@@ -217,7 +200,7 @@ Mettre à jour un graphique, y compris son nom, sa position et ses dimensions
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
     chart.name="New Name";
     chart.top = 100;
     chart.left = 100;
@@ -237,7 +220,7 @@ Renommer le graphique, définir les dimensions du graphique sur 200 points en 
 ```js
 Excel.run(function (ctx) { 
     var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    chart.name="New Name";  
+    chart.name="New Name";    
     chart.top = 100;
     chart.left = 100;
     chart.height =200;

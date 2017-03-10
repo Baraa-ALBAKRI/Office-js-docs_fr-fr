@@ -4,7 +4,7 @@ RangeView représente un ensemble de cellules visibles de la plage parent.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |cellAddresses|object[][]|Représente les adresses de cellule de la RangeView. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |columnCount|int|Renvoie le nombre de colonnes visibles. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
@@ -21,7 +21,7 @@ RangeView représente un ensemble de cellules visibles de la plage parent.
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
 ## <a name="relationships"></a>Relations
-| Relation | Type   |Description| Dem. Set|
+| Relation | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |Objet Rows|[RangeViewCollection](rangeviewcollection.md)|Représente une collection d’affichages de plage associés à la plage. En lecture seule.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -30,7 +30,6 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |[getRange()](#getrange)|[Range](range.md)|Obtient la plage parent associée à l’affichage de plage actuel.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -48,19 +47,3 @@ Aucun
 
 #### <a name="returns"></a>Retourne
 [Range](range.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void

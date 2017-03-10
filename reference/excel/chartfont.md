@@ -1,10 +1,10 @@
-# <a name="chartfont-object-javascript-api-for-excel"></a>Objet ChartFont (interface API JavaScript pour Excel)
+# <a name="chartfont-object-javascript-api-for-excel"></a>Objet ChartFont (API JavaScript pour Excel)
 
-Cet objet représente les attributs de police (nom de la police, taille de police, couleur, etc.) d’un objet de graphique.
+Cet objet représente les attributs de police (nom de police, taille de police, couleur, etc.) d’un objet de graphique.
 
 ## <a name="properties"></a>Propriétés
 
-| Propriété     | Type   |Description| Dem. Set|
+| Propriété       | Type    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |bold|bool|Représente le format de police Gras.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |color|string|Représentation sous forme de code couleur HTML de la couleur du texte. Par exemple, #FF0000 représente le rouge.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,29 +20,11 @@ Aucun
 
 
 ## <a name="methods"></a>Méthodes
+Aucun
 
-| Méthode           | Type renvoyé    |Description| Dem. Set|
-|:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Remplit l’objet proxy créé dans le calque JavaScript avec des valeurs de propriété et d’objet spécifiées dans le paramètre.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Paramètres
-| Paramètre    | Type   |Description|
-|:---------------|:--------|:----------|:---|
-|param|object|Facultatif. Accepte les noms de paramètre et de relation sous forme de chaîne délimitée ou de tableau. Sinon, indiquez l’objet [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 
 Utiliser le titre du graphique comme exemple

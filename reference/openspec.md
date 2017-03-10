@@ -12,9 +12,9 @@ Visio Online est la nouvelle méthode pour afficher et partager des diagrammes 
 **Consultez la [page de l’API JavaScript 1.1 pour Visio](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) pour en savoir plus et fournir vos commentaires.**
 
 ## <a name="new-excel-javascript-apis"></a>Nouvelles API JavaScript pour Excel
-Aidez-nous dans la révision de notre conception de nouvelles API JavaScript pour Excel. Les API nouvelles et mises à jour comprennent des composants customXML, la méthode d’ajout de l’élément nommé, la mise en forme conditionnelle, etc. 
+Aidez-nous dans la révision de notre conception de nouvelles API JavaScript pour Excel. Les nouvelles API et celles mises à jour comprennent des composants customXML, la mise en forme conditionnelle, etc. 
 
-**Consultez la [page de l’API Excel JavaScript 1.4](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec) pour en savoir plus et fournir vos commentaires.**
+**Consultez la [page de conception ouverte JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) pour en savoir plus et fournir vos commentaires.**
 
 ## <a name="new-word-javascript-apis-13"></a>Nouvelles API JavaScript pour Word (1.3)
 La mise à jour de l’API Word JavaScript 1.3 contient le plus grand ensemble de modifications mises en œuvre depuis l’introduction de cette API. Avec la nouvelle API, vous pourrez : 
@@ -26,7 +26,7 @@ La mise à jour de l’API Word JavaScript 1.3 contient le plus grand ensemble d
 
 Ces modifications ont été apportées dans presque tous les objets de l’API JavaScript pour Word. Cette fonctionnalité est désormais disponible ou le sera bientôt dans la version préliminaire de Word 2016 sur le bureau pour Windows et Mac, et sur l’iPad. Effectuez la mise à jour de vos clients vers la dernière version mensuelle et commencez à implémenter ces formidables fonctionnalités !
 
-**Consultez la [page de l’API Word JS 1.3](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) pour en savoir plus et fournir vos commentaires.**
+**Consultez la [page de conception ouverte pour l’API Word JS 1.3](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) afin d’en savoir plus et de fournir vos commentaires.**
 
 ## <a name="new-word-javascript-apis-14"></a>Nouvelles API JavaScript pour Word (1.4)
 La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts importants, qui incluent :
@@ -38,10 +38,13 @@ La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts import
 * le tableau de fusion de cellules ;
 * le tableau de fusion de lignes et de fractionnement de colonnes.
 
-**Consultez la [page de l’API Word JS 1.4](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) pour en savoir plus et fournir vos commentaires.**
+**Consultez la [page de conception ouverte pour l’API Word JS 1.4](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) afin d’en savoir plus et de fournir vos commentaires.**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>Hôte, informations sur la plateforme et informations de diagnostic 
-Consultez les ajouts prévus dans l’objet Office.Context pour fournir aux développeurs des informations sur l’environnement runtime du complément et des informations de diagnostic. 
+Consultez les [ajouts](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) prévus dans l’objet Office.Context pour fournir aux développeurs des informations sur l’environnement runtime du complément et des informations de diagnostic. 
+
+## <a name="single-sign-on-capability"></a>Fonctionnalité d’authentification unique 
+Explorez la conception initiale pour activer l’authentification unique dans les compléments Office [ici](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec).
 
 **Consultez les [spécifications liées aux ajouts de contexte Office](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) pour en savoir plus et fournir vos commentaires.**
 
