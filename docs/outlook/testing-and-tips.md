@@ -57,11 +57,7 @@ Pour utiliser Outlook Web App (OWA) pour installer un complément Outlook, pr
 6. Sélectionnez le nom d’utilisateur dans le coin supérieur droit de la fenêtre et sélectionnez **Mon courrier** pour accéder à votre message électronique afin de tester le complément.
     
 
->**Remarque :**  si vous n’utilisez aucun des éléments suivants pour développer votre complément : 
-- Client de développeur Office 365
-- Visual Studio
-
-Et, si vous n’avez pas au minimum le rôle « Mes applications personnalisées » de votre serveur Exchange, vous pouvez installer les compléments uniquement à partir de l’Office Store. Pour tester votre complément ou installer des compléments en général en spécifiant une URL ou un nom de fichier pour le manifeste de complément, vous devez demander à votre administrateur Exchange de vous octroyer les autorisations nécessaires.
+Si vous n’avez pas au minimum le rôle « Mes applications personnalisées » pour votre serveur Exchange, vous pouvez installer des compléments uniquement à partir de l’Office Store. Pour tester votre complément ou installer des compléments en général en spécifiant une URL ou un nom de fichier pour le manifeste de complément, vous devez demander à votre administrateur Exchange de vous octroyer les autorisations nécessaires.
 
 L’administrateur Exchange peut exécuter la cmdlet PowerShell suivante pour affecter les autorisations nécessaires à un seul utilisateur. Dans cet exemple, « wendyri » est l’alias de messagerie de l’utilisateur.
 

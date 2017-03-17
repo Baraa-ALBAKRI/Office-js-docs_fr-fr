@@ -38,7 +38,7 @@ La structure fournit plusieurs composants UX, tels que des boutons ou cases à c
 > **Remarque :** nous allons ajouter des composants supplémentaires au fil du temps. 
 
 - [Breadcrumb](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
-- [Button](https://dev.office.com/fabric-js/Components/Button/Button.html) (envisagez d’utiliser la variante du petit bouton dans votre complément.)
+- [Bouton](https://dev.office.com/fabric-js/Components/Button/Button.html) (Envisagez d’utiliser la variante bouton de petite taille dans votre complément. Ajoutez 16 px de marge intérieure aux boutons de petite taille pour garantir une cible tactile de 40 px au minimum sur les appareils tactiles).
 - [Checkbox](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
 - [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
 - [Sélecteur de dates](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (pour un exemple de mise en œuvre du sélecteur de dates dans un complément, voir l’exemple de code [Suivi de ventes Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).)

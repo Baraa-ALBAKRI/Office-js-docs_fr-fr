@@ -3,7 +3,7 @@
 
 >**Important :** les catalogues de compléments sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud VersionOverrides du [manifeste de complément](../overview/add-in-manifests.md), comme les commandes de complément. 
 
->Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’utiliser un **déploiement centralisé** via l’[Aperçu du Centre d’administration](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) pour publier vos compléments.
+>Si vous ciblez un environnement de cloud ou hybride, nous vous recommandons d’utiliser un **déploiement centralisé** via l’[aperçu du centre d’administration](publish/publish.md#office-365-admin-center-preview-deployment) pour publier vos compléments.
 
 Un catalogue de compléments est une collection de sites dédiée dans une application web SharePoint ou une location SharePoint Online qui héberge des bibliothèques de documents pour des compléments Office et SharePoint. Les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue de compléments pour leur organisation. Lorsqu’un administrateur enregistre un catalogue de compléments en tant que catalogue approuvé, les utilisateurs peuvent insérer le complément à partir de l’interface utilisateur d’insertion dans une application cliente Office.
 

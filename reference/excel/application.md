@@ -19,7 +19,7 @@ Aucun
 | Méthode           | Type renvoyé    |Description| Dem. Set|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalcule tous les classeurs actuellement ouverts dans Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[suspendCalculationUntilNextSync()](#suspendcalculationuntilnextsync)|void|Interrompt le calcul jusqu'à ce que la prochaine méthode « context.sync() » soit appelée. Une fois cette option définie, il incombe au développeur de recalculer le classeur afin de garantir que toutes les dépendances sont propagées.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -52,20 +52,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="suspendcalculationuntilnextsync"></a>suspendCalculationUntilNextSync()
-Interrompt le calcul jusqu'à ce que la prochaine méthode « context.sync() » soit appelée. Une fois cette option définie, il incombe au développeur de recalculer le classeur afin de garantir que toutes les dépendances sont propagées.
-
-#### <a name="syntax"></a>Syntaxe
-```js
-applicationObject.suspendCalculationUntilNextSync();
-```
-
-#### <a name="parameters"></a>Paramètres
-Aucun
-
-#### <a name="returns"></a>Retourne
-void
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 ```js
 Excel.run(function (ctx) {

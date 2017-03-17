@@ -3,11 +3,11 @@
 
 Vous pouvez installer un complément Office à des fins de test dans un client Office s’exécutant sur Windows à l’aide d’un catalogue de dossiers partagés pour publier le manifeste sur un partage de fichiers réseau. 
 
->**Remarque :** Pour tester un complément Office dans Office Online, voir [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md). Pour tester un complément sur un iPad ou un Mac, voir [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md ). Pour tester un complément Outlook, voir [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md ).
+Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
 
-Déployez uniquement le fichier manifeste vers le catalogue de dossiers partagés. Déployez l’application web en elle-même vers un serveur web et spécifiez l’URL dans l’élément **SourceLocation** du fichier manifeste.
-
- >**Important :**  Pour contribuer à sécuriser les compléments accédant à des services et données externes, votre application doit utiliser un protocole sécurisé tel que HTTPS (Hypertext Transfer Protocol Secure) pour se connecter aux services et données externes. Vous devez utiliser HTTPS si votre complément utilise des commandes de complément.
+- [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
+- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md )
+- [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md )
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online.
 
@@ -46,7 +46,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 ## <a name="sideload-your-add-in"></a>Charger votre complément
 
 
-1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés.
+1. Placez le fichier manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
+
+    >**Important :**  pour contribuer à sécuriser les compléments accédant à des services et données externes, votre complément doit utiliser un protocole sécurisé tel que HTTPS pour se connecter aux services et données externes. Vous devez utiliser HTTPS si votre complément utilise des commandes de complément.
 
 2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban.
 

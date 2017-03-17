@@ -1,4 +1,3 @@
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
 Parfois, vos utilisateurs peuvent rencontrer des problèmes avec les compléments Office que vous développez. Par exemple, il se peut qu’un complément ne se charge pas ou soit inaccessible. Utilisez les informations de cet article pour résoudre les problèmes courants que vos utilisateurs rencontrent avec votre complément Office. 
@@ -49,19 +48,40 @@ Pour résoudre ce problème, vérifiez que les dernières mises à jour Office s
 
 Consultez la rubrique relative à la [validation et à la résolution des problèmes de votre manifeste](troubleshoot-manifest.md) pour déboguer le manifeste de votre complément.
 
+## <a name="add-in-dialog-box-cannot-be-displayed"></a>La boîte de dialogue des compléments ne s’affiche pas
+
+Lorsqu’un utilisateur utilise un complément Office, il est invité à autoriser l’affichage d’une boîte de dialogue. L’utilisateur choisit **Autoriser** et le message d’erreur suivant apparaît :
+
+« Les paramètres de sécurité de votre navigateur nous empêchent de créer une boîte de dialogue. Essayez d’utiliser un autre navigateur, ou configurez votre navigateur de sorte que [URL] et le domaine affiché dans la barre d’adresse se trouvent dans la même zone de sécurité. »
+
+![Capture d’écran du message d’erreur de la boîte de dialogue](http://i.imgur.com/3mqmlgE.png)
+
+|**Navigateurs concernés**|**Plateformes concernées**|
+|:--------------------|:---------------------|
+|Internet Explorer, Microsoft Edge|Office Online|
+
+Pour résoudre le problème, les utilisateurs finals et les administrateurs peuvent ajouter le domaine du complément à la liste des sites de confiance dans Internet Explorer. Utilisez la même procédure que vous utilisiez le navigateur Internet Explorer ou Microsoft Edge.
+
+>**Important :** n’ajoutez pas l’URL d’un complément à votre liste de sites de confiance si vous ne faites pas confiance au complément.
+
+Pour ajouter une URL à votre liste de sites de confiance :
+
+1. Dans Internet Explorer, cliquez sur le bouton Outils et accédez à **Options Internet** > **Sécurité**.
+2. Sélectionnez la zone **Sites de confiance**, puis choisissez **Sites**.
+3. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
+4. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.
+
+Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](../../reference/shared/officeui.displaydialogasync). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
+
+```js
+
+Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+```
+
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-
-
-- [Débogage de compléments dans Office Online](../testing/debug-add-ins-in-office-online.md)
-    
-- [Charger une version test d’un complément Office sur iPad ou Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
-- [Débogage des compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-    
-- [Créer et déboguer des compléments Office dans Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-    
-- [Déployer et installer des compléments Outlook à des fins de test](../outlook/testing-and-tips.md)
-    
+- [Débogage de compléments dans Office Online](../testing/debug-add-ins-in-office-online.md) 
+- [Charger une version test d’un complément Office sur iPad ou Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Débogage des compléments Office sur iPad et Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
 - [Valider et résoudre des problèmes avec votre manifeste](troubleshoot-manifest.md)
     
