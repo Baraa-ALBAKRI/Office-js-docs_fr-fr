@@ -4,6 +4,10 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge ces conditions et la version ou le numéro de build de ces applications.
 
+> Pour les ensembles de conditions requises qui sont marqués comme *bêta*, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+
+> Les entrées qui ne sont pas répertoriées comme *bêta* sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+
 |  Ensemble de conditions requises  |  Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | ExcelApi 1.5 **bêta**  | Version 1702 (build TBD) ou version ultérieure| Bientôt disponible |  Bientôt disponible| bientôt disponible | Bientôt disponible|
@@ -80,7 +84,7 @@ En outre, nous sommes en train de résoudre le bogue de recalcul F9, qui ne perm
 |[namedItemCollection](../excel/nameditemcollection.md)|_Méthode_ > [getItemOrNullObject(name: string)](../excel/nameditemcollection.md#getitemornullobjectname-string)|Obtient un objet nameditem à l’aide de son nom. Si l’objet nameditem n’existe pas, renvoie un objet null.|1.4|
 |[pivotTableCollection](../excel/pivottablecollection.md)|_Méthode_ > [getCount()](../excel/pivottablecollection.md#getcount)|Obtient le nombre de tableaux croisés dynamiques de la collection.|1.4|
 |[pivotTableCollection](../excel/pivottablecollection.md)|_Méthode_ > [getItemOrNullObject(name: string)](../excel/pivottablecollection.md#getitemornullobjectname-string)|Extrait un tableau croisé dynamique par nom. Si le tableau croisé dynamique n’existe pas, renvoie un objet null.|1.4|
-|[range](../excel/range.md)|_Méthode_ > [getIntersectionOrNullObject(anotherRange: range ou string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet null.|1.4|
+|[range](../excel/range.md)|_Méthode_ > [getIntersectionOrNullObject(anotherRange: range ou string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.|1.4|
 |[range](../excel/range.md)|_Méthode_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/range.md#getusedrangeornullobjectvaluesonly-bool)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction renvoie un objet null.|1.4|
 |[rangeViewCollection](../excel/rangeviewcollection.md)|_Méthode_ > [getCount()](../excel/rangeviewcollection.md#getcount)|Obtient le nombre d’objets RangeView dans la collection.|1.4|
 |[setting](../excel/setting.md)|_Propriété_ > key|Renvoie la clé qui représente l’id du paramètre. En lecture seule.|1.4|

@@ -43,7 +43,7 @@ Les clients suivants prennent en charge des compléments Outlook.
 | Client | Ensembles de conditions requises des API prises en charge |
 | --- | --- |
 | Outlook 2016 pour Windows | 1.1, 1.2, 1.3, 1.4 |
-| Outlook 2016 pour Mac | 1.1 |
+| Outlook 2016 pour Mac | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2013 pour Windows | 1.1, 1.2, 1.3 |
 | Outlook sur le web (Office 365 et Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
 | Outlook Web App (Exchange 2013 sur site) | 1.1 |

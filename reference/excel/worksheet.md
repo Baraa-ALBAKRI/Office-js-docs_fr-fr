@@ -9,7 +9,7 @@ Une feuille de calcul Excel est une grille de cellules. Elle peut contenir des d
 |id|string|Renvoie une valeur qui permet d’identifier la feuille de calcul de façon unique dans un classeur donné. La valeur de l’identificateur reste identique, même lorsque la feuille de calcul est renommée ou déplacée. En lecture seule.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Nom complet de la feuille de calcul.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |Position|int|Position de la feuille de calcul au sein du classeur (sur une base zéro).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|visibility|chaîne|Visibilité de la feuille de calcul. Les valeurs possibles sont les suivantes : Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visibility|string|Visibilité de la feuille de calcul. Les valeurs possibles sont les suivantes : Visible (visible), Hidden (masquée), VeryHidden (très masquée).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 
@@ -30,7 +30,7 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |[delete()](#delete)|void|Supprime la feuille de calcul du classeur.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Renvoie l’objet de plage qui contient une cellule donnée sur la base des numéros de ligne et de colonne. La cellule peut se trouver en dehors des limites de ses plages parent, pour peu qu’elle reste dans la grille de la feuille de calcul.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Renvoie l’objet de plage spécifié par son nom ou son adresse.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (c'est-à-dire qu’elle ne génère *pas* d’erreur).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (c'est-à-dire qu’elle ne génère *pas* d’erreur).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
@@ -192,7 +192,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getusedrangevaluesonly-apisetversion"></a>getUsedRange(valuesOnly: [ApiSet(Version)
+### <a name="getusedrangevaluesonly-bool"></a>getUsedRange(valuesOnly: bool)
 La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté. Si la feuille de calcul entière est vide, cette fonction renvoie la cellule supérieure gauche (c'est-à-dire qu’elle ne génère *pas* d’erreur).
 
 #### <a name="syntax"></a>Syntaxe
@@ -241,7 +241,7 @@ worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 |:---------------|:--------|:----------|:---|
 |valuesOnly|bool|Facultatif. Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 [Range](range.md)
 ### <a name="property-access-examples"></a>Exemples d’accès aux propriétés
 

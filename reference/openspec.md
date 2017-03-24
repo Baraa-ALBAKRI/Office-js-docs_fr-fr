@@ -46,5 +46,5 @@ Consultez les [ajouts](https://github.com/OfficeDev/office-js-docs/tree/ContextA
 ## <a name="single-sign-on-capability"></a>Fonctionnalité d’authentification unique 
 Explorez la conception initiale pour activer l’authentification unique dans les compléments Office [ici](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec).
 
-**Consultez les [spécifications liées aux ajouts de contexte Office](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) pour en savoir plus et fournir vos commentaires.**
+**Consultez les [spécifications d’authentification unique](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec) afin d’en savoir plus et de fournir vos commentaires.**
 

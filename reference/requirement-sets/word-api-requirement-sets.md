@@ -4,6 +4,10 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications Office hôte qui prennent en charge ces conditions et les numéros de build ou de version de ces applications.
 
+> Pour les ensembles de conditions requises qui sont marqués comme bêta, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+
+> Les entrées qui ne sont pas répertoriées comme bêta sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+
 |  Ensemble de conditions requises  |   Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3  | En présentation, version 1605 (Build 6925.1000) ou version ultérieure| En présentation, mai 2016, 1.22 ou version ultérieure | En présentation, 15.22 ou version ultérieure| Dans la version d’évaluation. ||

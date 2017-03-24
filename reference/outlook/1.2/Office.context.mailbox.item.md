@@ -271,6 +271,8 @@ Obtient l’adresse de messagerie de l’expéditeur d’un message. Mode lectur
 
 Les propriétés `from` et [`sender`](Office.context.mailbox.item.md#sender) représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
 
+> **Remarque :** la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `from` est `undefined`.
+
 ##### <a name="type"></a>Type :
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
@@ -570,6 +572,8 @@ Obtient les ressources requises pour un rendez-vous. Mode lecture uniquement.
 Obtient l’adresse de messagerie de l’expéditeur d’un message électronique. Mode lecture uniquement.
 
 Les propriétés [`from`](Office.context.mailbox.item.md#from) et `sender` représentent la même personne, sauf si le message est envoyé par un délégué. Dans ce cas, la propriété `from` représente le délégant et la propriété sender représente le délégué.
+
+> **Remarque :** la propriété `recipientType` de l’objet `EmailAddressDetails` dans la propriété `sender` est `undefined`.
 
 ##### <a name="type"></a>Type :
 
