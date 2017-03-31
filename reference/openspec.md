@@ -4,7 +4,7 @@ Merci de l’intérêt que vous portez aux nouvelles API et fonctionnalités que
 
 Les fonctionnalités décrites ici peuvent être à différentes étapes de développement (conception ou version préliminaire publique, par exemple). Généralement, lorsque la fonctionnalité est disponible, le contenu est supprimé de cette page et nous mettons à jour notre documentation pour inclure les détails de la nouvelle fonctionnalité. 
 
-_**Important :** les fonctionnalités répertoriées ici sont encore en phase de conception et de révision, et ne sont pas encore disponibles. Ces fonctionnalités et API peuvent faire l’objet de modifications._
+>**Important :** les fonctionnalités répertoriées ici sont encore en phase de conception et de révision, et ne sont pas encore disponibles. Ces fonctionnalités et API peuvent faire l’objet de modifications.
 
 ## <a name="visio-javascript-apis"></a>API JavaScript pour Visio
 Visio Online est la nouvelle méthode pour afficher et partager des diagrammes Visio sur le web. Vous pouvez utiliser l’API JavaScript 1.1 pour Visio afin d’étendre les fonctionnalités de Visio Online. Utilisez ces API par rapport aux diagrammes Visio incorporés dans une page SharePoint. L’API JavaScript pour Visio ne s’applique actuellement pas aux [compléments Office](https://dev.office.com/docs/add-ins/overview/office-add-ins).
@@ -29,7 +29,7 @@ Ces modifications ont été apportées dans presque tous les objets de l’API J
 **Consultez la [page de conception ouverte pour l’API Word JS 1.3](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) afin d’en savoir plus et de fournir vos commentaires.**
 
 ## <a name="new-word-javascript-apis-14"></a>Nouvelles API JavaScript pour Word (1.4)
-La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts importants, qui incluent :
+La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts importants, notamment les suivants :
 
 * créer et modifier des documents dans la mémoire ;
 * paramétrer les API à l’aide de la syntaxe basée sur la promesse ;
@@ -41,10 +41,10 @@ La mise à jour de l’API JavaScript pour Word (1.4) contient des ajouts import
 **Consultez la [page de conception ouverte pour l’API Word JS 1.4](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) afin d’en savoir plus et de fournir vos commentaires.**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>Hôte, informations sur la plateforme et informations de diagnostic 
-Consultez les [ajouts](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) prévus dans l’objet Office.Context pour fournir aux développeurs des informations sur l’environnement runtime du complément et des informations de diagnostic. 
+Consultez les [ajouts planifiés à l’objet Office.Context](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec). Ces mises à jour fournissent des informations sur l’environnement d’exécution des compléments et des informations de diagnostic. 
 
 ## <a name="single-sign-on-capability"></a>Fonctionnalité d’authentification unique 
-Explorez la conception initiale pour activer l’authentification unique dans les compléments Office [ici](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec).
+Explorez la conception initiale pour activer l’authentification unique dans les compléments Office.
 
 **Consultez les [spécifications d’authentification unique](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec) afin d’en savoir plus et de fournir vos commentaires.**
 

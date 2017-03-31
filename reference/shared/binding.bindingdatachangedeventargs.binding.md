@@ -1,5 +1,5 @@
 
-# <a name="bindingdatachangedeventargs.binding-property"></a>Propriété BindingDataChangedEventArgs.binding
+# <a name="bindingdatachangedeventargsbinding-property"></a>Propriété BindingDataChangedEventArgs.binding
 Obtient un objet **Binding** qui représente la liaison ayant déclenché l’événement [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md).
 
 |||
@@ -32,7 +32,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|

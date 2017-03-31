@@ -1,5 +1,5 @@
 
-# <a name="binding.bindingdatachanged-event"></a>Événement Binding.bindingDataChanged
+# <a name="bindingbindingdatachanged-event"></a>Événement Binding.bindingDataChanged
 Se produit quand des données sont modifiées dans la liaison.
 
 |||
@@ -53,7 +53,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|

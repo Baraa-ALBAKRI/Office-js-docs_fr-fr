@@ -1,5 +1,5 @@
 
-# <a name="bindingdatachangedeventargs.type-property"></a>Propriété BindingDataChangedEventArgs.type
+# <a name="bindingdatachangedeventargstype-property"></a>Propriété BindingDataChangedEventArgs.type
 Obtient une valeur d’énumération **EventType** qui identifie le type d’événement déclenché.
 
 |||
@@ -32,7 +32,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|

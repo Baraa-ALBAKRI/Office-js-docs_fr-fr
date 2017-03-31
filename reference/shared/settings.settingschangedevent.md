@@ -1,11 +1,11 @@
 
 
-# <a name="settings.settingschanged-event"></a>Événement Settings.settingsChanged
+# <a name="settingssettingschanged-event"></a>Événement Settings.settingsChanged
 Cela se produit lors de l’enregistrement de la copie en mémoire du conteneur des propriétés des paramètres dans le document avec la méthode [Settings.saveAsync](../../reference/shared/settings.saveasync.md).
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Excel |
+|**Hôtes :**|Excel, Word|
 |**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Paramètres|
 |**Dernière modification dans**|1.0|
 
@@ -38,6 +38,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 ||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||v||
+|**Word**|v|v||
 
 |||
 |:-----|:-----|

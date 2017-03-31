@@ -100,7 +100,7 @@ Pour affecter des compléments à des clients, utilisez le centre d’administra
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Déployer et installer des compléments Outlook à des fins de test](../outlook/testing-and-tips.md) 
-- [Soumission de compléments et d’applications web dans l’Office Store][Office Store]
+- [Envoyer à l’Office Store][Office Store]
 - [Instructions de conception pour les compléments Office](../design/add-in-design)
 - [Création de compléments efficaces pour l’Office Store](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)

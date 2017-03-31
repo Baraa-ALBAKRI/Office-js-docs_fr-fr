@@ -1,10 +1,10 @@
 
-# <a name="settingschangedeventargs.type-property"></a>Propriété SettingsChangedEventArgs.type
+# <a name="settingschangedeventargstype-property"></a>Propriété SettingsChangedEventArgs.type
 Obtient une valeur d’énumération **EventType** qui identifie le genre d’événement déclenché.
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Excel|
+|**Hôtes :**|Excel, Word|
 |**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Paramètres|
 |**Dernière modification dans**|1.0|
 
@@ -29,6 +29,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 ||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||v||
+|**Word**|v|v||
 
 |||
 |:-----|:-----|

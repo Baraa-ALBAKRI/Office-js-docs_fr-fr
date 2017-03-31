@@ -1,9 +1,9 @@
-# <a name="settings.settingschangedeventargs-object"></a>Objet settings.settingschangedeventargs
+# <a name="settingssettingschangedeventargs-object"></a>Objet settings.settingschangedeventargs
 Fournit des informations sur les paramètres qui ont déclenché l’événement [settingsChanged](settings.settingschangedevent.md).
 
 |||
 |:-----|:-----|
-|**Hôtes :**|Access, Excel |
+|**Hôtes :**|Access, Excel, Word|
 |**Disponible dans l’[ensemble de conditions requises](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Paramètres|
 |**Dernière modification dans**|1.0|
 
@@ -44,7 +44,7 @@ Pour plus d’informations sur les exigences de l’application et du serveur h�
 ||**Office pour bureau Windows**|**Office Online (dans un navigateur)**|**Office pour iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**||v||
-
+|**Word**|v|v||
 
 |||
 |:-----|:-----|
