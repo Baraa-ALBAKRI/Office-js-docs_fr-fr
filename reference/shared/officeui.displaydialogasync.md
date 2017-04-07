@@ -81,7 +81,7 @@ Pour obtenir des exemples de scénario d’authentification, consultez les pages
  
 ## <a name="parameters"></a>Paramètres
 
-| Paramètre    | Type   |Description|
+| Paramètre       | Type    |Description|
 |:---------------|:--------|:----------|
 |startAddress|string|Accepte l’URL HTTPS(TLS) initiale qui s’ouvre dans la boîte de dialogue. <ul><li>La page initiale doit figurer sur le même domaine que la page parent. Après le chargement de la page initiale, vous pouvez également accéder à d’autres domaines.</li><li>Toute page appelant [office.context.ui.messageParent](officeui.messageparent.md) doit également figurer sur le même domaine que la page parent.</li></ul>|
 |options|object|Facultatif. Accepte un objet options pour définir les comportements de la boîte de dialogue.|
@@ -91,11 +91,11 @@ Pour obtenir des exemples de scénario d’authentification, consultez les pages
 Les options de configuration suivantes sont disponibles pour une boîte de dialogue.
 
 
-| Propriété     | Type   |Description|
+| Propriété       | Type    |Description|
 |:---------------|:--------|:----------|
 |**width**|int|Facultatif. Définit la largeur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 250 pixels.|
 |**height**|int|Facultatif. Définit la hauteur de la boîte de dialogue sous forme de pourcentage de l’affichage actuel. La valeur par défaut est 80 %. La résolution minimale est de 150 pixels.|
-|**displayInIframe**|booléen|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame. **Ce paramètre n’est applicable que dans les clients Office en ligne. **, ce paramètre est ignoré par les clients de bureau. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
+|**displayInIframe**|bool|Facultatif. Détermine si la boîte de dialogue doit être affichée dans un IFrame. **Ce paramètre n’est applicable que dans les clients Office Online** et est ignoré par les autres plateformes. Les valeurs possibles sont les suivantes :<ul><li>False (valeur par défaut) : la boîte de dialogue s’affichera dans une nouvelle fenêtre de navigateur (fenêtre contextuelle). Recommandé pour les pages d’authentification qui ne peuvent pas être affichées dans un IFrame. </li><li>True : la boîte de dialogue s’affichera sous la forme d’une fenêtre flottante avec un IFrame. Recommandé pour une expérience utilisateur et des performances optimales.</li>|
 
 
 ## <a name="callback-value"></a>Valeur de rappel

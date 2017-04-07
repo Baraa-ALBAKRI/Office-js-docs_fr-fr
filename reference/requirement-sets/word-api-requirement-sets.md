@@ -10,7 +10,7 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 
 |  Ensemble de conditions requises  |   Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| WordApi 1.3  | En présentation, version 1605 (Build 6925.1000) ou version ultérieure| En présentation, mai 2016, 1.22 ou version ultérieure | En présentation, 15.22 ou version ultérieure| Dans la version d’évaluation. ||
+| WordApi 1.3 **Bêta** | Version 1605 (Build 6925.1000) ou version ultérieure| mai 2016, 1.22 ou version ultérieure | 15.22 ou version ultérieure| Dans la version d’évaluation. ||
 | WordApi 1.2  | Mise à jour de décembre 2015, version 1601 (Build 6568.1000) ou version ultérieure | Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
 | WordApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure| Janvier 2016, 1.18 ou version ultérieure | Janvier 2016, 15.19 ou version ultérieure| Septembre 2016 | |
 

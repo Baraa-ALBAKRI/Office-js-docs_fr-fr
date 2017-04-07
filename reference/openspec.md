@@ -6,15 +6,10 @@ Les fonctionnalités décrites ici peuvent être à différentes étapes de dév
 
 >**Important :** les fonctionnalités répertoriées ici sont encore en phase de conception et de révision, et ne sont pas encore disponibles. Ces fonctionnalités et API peuvent faire l’objet de modifications.
 
-## <a name="visio-javascript-apis"></a>API JavaScript pour Visio
-Visio Online est la nouvelle méthode pour afficher et partager des diagrammes Visio sur le web. Vous pouvez utiliser l’API JavaScript 1.1 pour Visio afin d’étendre les fonctionnalités de Visio Online. Utilisez ces API par rapport aux diagrammes Visio incorporés dans une page SharePoint. L’API JavaScript pour Visio ne s’applique actuellement pas aux [compléments Office](https://dev.office.com/docs/add-ins/overview/office-add-ins).
-
-**Consultez la [page de l’API JavaScript 1.1 pour Visio](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) pour en savoir plus et fournir vos commentaires.**
-
 ## <a name="new-excel-javascript-apis"></a>Nouvelles API JavaScript pour Excel
-Aidez-nous dans la révision de notre conception de nouvelles API JavaScript pour Excel. Les nouvelles API et celles mises à jour comprennent des composants customXML, la mise en forme conditionnelle, etc. 
+Aidez-nous dans la révision de notre conception de nouvelles API JavaScript pour Excel. 
 
-**Consultez la [page de conception ouverte JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) pour en savoir plus et fournir vos commentaires.**
+**Consultez la [page de conception ouverte JavaScript pour Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) pour en savoir plus et transmettre vos commentaires.**
 
 ## <a name="new-word-javascript-apis-13"></a>Nouvelles API JavaScript pour Word (1.3)
 La mise à jour de l’API Word JavaScript 1.3 contient le plus grand ensemble de modifications mises en œuvre depuis l’introduction de cette API. Avec la nouvelle API, vous pourrez : 

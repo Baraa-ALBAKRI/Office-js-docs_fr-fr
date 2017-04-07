@@ -4,14 +4,15 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge ces conditions et la version ou le numéro de build de ces applications.
 
-> Pour les ensembles de conditions requises qui sont marqués comme *bêta*, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js
+> **Remarque** : Toute API qui est répertoriée en tant que version **bêta** n’est pas prête pour l’utilisation en production. Elles sont rendues disponibles afin que les développeurs puissent les tester dans les environnements de test et de développement. Elles ne sont pas destinées à être utilisées avec des documents essentiels de production/d’entreprise. 
 
-> Les entrées qui ne sont pas répertoriées comme *bêta* sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
+> Pour les ensembles de conditions requises qui sont marqués comme *bêta*, utilisez la version spécifiée (ou ultérieure) du logiciel Office et utilisez la bibliothèque bêta du CDN : https://appsforoffice.microsoft.com/lib/beta/hosted/office.js. Les entrées qui ne sont pas répertoriées en version *bêta* sont généralement disponibles et vous pouvez continuer à utiliser la bibliothèque CDN Production : https://appsforoffice.microsoft.com/lib/1/hosted/office.js
 
 |  Ensemble de conditions requises  |  Office 2016 pour Windows*  |  Office 2016 pour iPad  |  Office 2016 pour Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| ExcelApi 1.5 **bêta**  | Version 1702 (build TBD) ou version ultérieure| Bientôt disponible |  Bientôt disponible| bientôt disponible | Bientôt disponible|
-| ExcelApi 1.4 **bêta** | Version 1702 (build TBD) ou version ultérieure| Bientôt disponible |  Bientôt disponible| bientôt disponible | Bientôt disponible|
+| ExcelApi 1.6 **bêta**  | Version 1702 (version à déterminer) ou version ultérieure| Bientôt disponible |  Bientôt disponible| Mars 2017 | Bientôt disponible|
+| ExcelApi 1.5 **bêta**  | Version 1702 (build TBD) ou version ultérieure| Bientôt disponible |  Bientôt disponible| Mars 2017 | Bientôt disponible|
+| ExcelApi 1.4 | Version 1701 (Build 7870.2024) ou version ultérieure| Bientôt disponible |  Bientôt disponible| Janvier 2017 | Bientôt disponible|
 | ExcelApi 1.3  | Version 1608 (Build 7369.2055) ou version ultérieure| 1.27 ou version ultérieure |  15.27 ou version ultérieure| Septembre 2016 | Version 1608 (Build 7601.6800) ou version ultérieure|
 | ExcelApi 1.2  | Version 1601 (Build 6741.2088) ou version ultérieure | 1.21 ou version ultérieure | 15.22 ou version ultérieure| Janvier 2016 ||
 | ExcelApi 1.1  | Version 1509 (Build 4266.1001) ou version ultérieure | 1.19 ou version ultérieure | 15.20 ou version ultérieure| Janvier 2016 ||
@@ -25,8 +26,86 @@ Pour en savoir plus sur les versions, les numéros de build et Office Online Ser
 - [Où trouver le numéro de version et de build pour une application cliente Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 - [Présentation d’Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
+## <a name="runtime-requirement-support-check"></a>Vérification de la prise en charge d’un ensemble de conditions requises à l’exécution
+
+Lors de l’exécution, les compléments peuvent vérifier si un hôte particulier prend en charge un ensemble de conditions requises d’API en procédant comme suit : 
+
+```js
+if (Office.context.requirements.isSetSupported('ExcelApi', 1.3) === true) {
+  /// perform actions
+}
+else {
+  /// provide alternate flow/logic
+}
+```
+
+## <a name="manifest-based-requirement-support-check"></a>Vérification de la prise en charge d’un ensemble de conditions requises basée sur le manifeste
+
+Utilisez l’élément Conditions requises dans le manifeste du complément pour spécifier des ensembles de conditions requises essentiels ou des membres API que votre complément doit utiliser. Si la plateforme ou l’hôte Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément Conditions requises, le complément ne s’exécute pas dans cet hôte ou cette plateforme et ne s’affiche pas dans Mes compléments. Nous vous recommandons plutôt de rendre votre complément disponible sur toutes les plateformes d’un hôte Office, comme Excel pour Windows, Excel Online et Excel pour iPad. Pour rendre votre complément disponible sur l’ensemble des hôtes et plateformes Office, utilisez des vérifications à l’exécution à la place de l’élément Conditions requises.
+
+Cet exemple de code illustre un complément qui se charge dans toutes les applications hôtes Office qui prennent en charge l’ensemble de conditions requises ExcelApi, version 1.3.
+
+```xml
+<Requirements>
+   <Sets DefaultMinVersion="1.3">
+      <Set Name="ExcelApi" MinVersion="1.3"/>
+   </Sets>
+</Requirements>
+```
+
 ## <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office
 Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
+
+## <a name="upcoming-excel-16-release-features"></a>Fonctionnalités d’Excel 1.6 à venir
+
+### <a name="conditional-formatting"></a>Mise en forme conditionnelle
+
+Présente la [mise en forme conditionnelle](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/conditionalformat.md) d’une plage. Autorise les types de mise en forme conditionnelle suivants :
+
+* Échelle de couleurs
+* Barre de données
+* Jeu d'icônes
+* Personnalisé
+
+En outre :
+* Renvoie la plage à laquelle s’applique la mise en forme conditionnelle.
+* Supprime la mise en forme conditionnelle.
+* Offre une fonctionnalité de priorité et stopifTrue
+* Obtient la collection de toutes les mises en forme conditionnelles sur une plage donnée.
+* Efface toutes les mises en forme conditionnelles actives sur la plage spécifiée actuelle.
+
+Pour des détails sur l’API, reportez-vous à l’[ouverture des spécifications](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) de l’API Excel. 
+
+## <a name="upcoming-excel-15-release-features"></a>Fonctionnalités d’Excel 1.5 à venir
+
+### <a name="custom-xml-part"></a>Partie XML personnalisée
+
+* Ajout d’une collection de parties XML personnalisée à un objet workbook.
+* Obtenir la partie XML personnalisée à l’aide de l’ID
+* Obtenez une nouvelle collection délimitée de parties XML personnalisées dont les espaces de noms correspondent à l’espace de noms donné.
+* Obtenez une chaîne XML associée à une partie.
+* Fournissez l’ID et l’espace de noms d’une partie.
+* Ajoute une nouvelle partie XML personnalisée au classeur.
+* Définissez une partie XML entière.
+* Supprimez une partie XML personnalisée.
+* Supprimez un attribut avec le nom donné dans l’élément identifié par langage XPath.
+* Interrogez le contenu XML par langage XPath.
+* Insérez, mettez à jour et supprimez l’attribut.
+
+**Implémentation de référence :** Cliquez [ici](https://github.com/mandren/Excel-CustomXMLPart-Demo) pour obtenir une implémentation de référence qui décrit comment les parties XML personnalisées peuvent être utilisées dans un complément.
+
+### <a name="others"></a>Autres
+* `range.getSurroundingRegion()` Renvoie un objet Range qui représente la région environnante pour cette plage. Une région environnante est une plage délimitée par une combinaison de lignes et de colonnes vides par rapport à cette plage.
+* `getNextColumn()` et `getPreviousColumn()`, `getLast() sur la colonne du tableau.
+* `getActiveWorksheet()` sur le classeur.
+* `getRange(address: string)` en dehors du classeur.
+* `getBoundingRange(ranges: [])` Renvoie le plus petit objet range qui englobe les plages fournies. Par exemple, la plage englobante entre « B2:C5 » et « D10:E15 » est « B2:E15 ».
+* `getCount()` sur différentes collections (élément nommé, feuille de calcul, tableau, etc.) pour obtenir le nombre d’éléments dans une collection. `workbook.worksheets.getCount()`
+* `getFirst()`et `getLast()` et get last sur différentes collections (feuille de calcul, colonne de tableau, points de graphique, vue de plage).
+* `getNext()` et `getPrevious()` sur une collection de feuilles de calcul, colonnes de tableau.
+* `getRangeR1C1()` Renvoie l’objet range commençant à un index de ligne et de colonne particulier et couvrant un certain nombre de lignes et de colonnes.
+
+Pour des détails sur l’API, reportez-vous à l’[ouverture des spécifications](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) de l’API Excel. 
 
 ## <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 Les ajouts apportés aux API JavaScript pour Excel dans l’ensemble de conditions requises 1.3 sont présentés ci-dessous.
@@ -58,14 +137,8 @@ Les API comprennent `getItem()` pour obtenir une entrée de paramètre via la cl
 
 `worksheet.GetItemOrNullObject()`
 
-### <a name="suspend-calculation"></a>Interrompre le calcul
-Interrompt le calcul (application.suspendCalculationUntilNextSync()) jusqu'à ce que la prochaine méthode « context.sync() » soit appelée. Une fois cette option définie, il incombe au développeur de recalculer le classeur afin de garantir que toutes les dépendances sont propagées.
-
-En outre, nous sommes en train de résoudre le bogue de recalcul F9, qui ne permettait pas de recalculer les cellules compromises.
-
 |Objet| Quelles sont les nouveautés ?| Description|Ensemble de conditions requises|
 |:----|:----|:----|:----|
-|[application](../excel/application.md)|_Méthode_ > [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|Interrompt le calcul jusqu'à ce que la prochaine méthode « context.sync() » soit appelée. Une fois cette option définie, il incombe au développeur de recalculer le classeur afin de garantir que toutes les dépendances sont propagées.|1.4|
 |[bindingCollection](../excel/bindingcollection.md)|_Méthode_ > [getCount()](../excel/bindingcollection.md#getcount)|Obtient le nombre de liaisons de la collection.|1.4|
 |[bindingCollection](../excel/bindingcollection.md)|_Méthode_ > [getItemOrNullObject(id: string)](../excel/bindingcollection.md#getitemornullobjectid-string)|Obtient un objet de liaison par ID. Si l’objet de liaison n’existe pas, renvoie un objet null.|1.4|
 |[chartCollection](../excel/chartcollection.md)|_Méthode_ > [getCount()](../excel/chartcollection.md#getcount)|Renvoie le nombre de graphiques dans la feuille de calcul.|1.4|

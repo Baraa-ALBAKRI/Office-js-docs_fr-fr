@@ -29,6 +29,7 @@
   <Item text="Développer" url="develop">
 	<Item text="Cycle de vie de développement du complément" url="develop/add-in-development-lifecycle" SEODescription="Planifiez le processus de bout en bout pour développer des compléments de volet des tâches, de contenu et Outlook pour étendre des applications Office." />
 	<Item text="Installer la dernière version d’Office" url="develop/install-latest-office-version" SEODescription="Découvrez comment obtenir les dernières versions d’Office." />
+	<Item text="Présentation des versions d’Office" url="develop/office-versions" />
 	<Item text="Développement de compléments pour l’iPad" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="Vérifiez que vos compléments Office sont disponibles dans Office pour iPad." />
 	<Item text="Conseils pour la création de compléments avec Angular 2" url="develop/add-ins-with-angular2" SEODescription="Angular 2 permet de développer des compléments Office." />
 	<Item text="Utiliser l’API de dialogue" url="develop/dialog-api-in-office-add-ins" SEODescription="Utilisez l’API de dialogue pour ouvrir des boîtes de dialogue dans votre complément Office." />
@@ -39,7 +40,8 @@
 		<Item text="Mettre à jour la version du manifeste et de l’API" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Mettez à jour les fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément utilisés dans votre projet Complément Office vers la version 1.1." />		
 	</Item>	
 	<Item text="API JavaScript pour Office" url="develop/understanding-the-javascript-api-for-office" SEODescription="Découvrez les domaines fonctionnels de l’API JavaScript pour Office, implémentée dans le fichier Office.js.">
-		<Item text="Prise en charge des compléments de contenu et de volet des tâches" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Décrit les différents niveaux d’autorisation que vous pouvez déclarer dans le manifeste de votre complément de volet des tâches ou de contenu pour spécifier le niveau d’accès de l’API JavaScript nécessaire à votre complément pour ses fonctionnalités." />
+		<Item text="Versions Office.js" url="develop/office-js-versioning" />
+		<Item text="Prise en charge des compléments de contenu et de volet Office" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Décrit les différents niveaux d’autorisation que vous pouvez déclarer dans le manifeste de votre complément de volet des tâches ou de contenu pour spécifier le niveau d’accès de l’API JavaScript nécessaire à votre complément pour ses fonctionnalités." />
 		<Item text="Référencer Office.js" url="develop/referencing-the-javascript-api-for-office-library-from-its-cdn" SEODescription="Référencez la bibliothèque de l’interface API JavaScript pour Office (fichiers Office.js et fichiers .js associés propres aux applications) à partir de l’emplacement de son réseau de distribution de contenu (CDN)." />
 		<Item text="Charger Office.js" url="develop/loading-the-dom-and-runtime-environment" SEODescription="Un complément doit s’assurer que le DOM et l’environnement d’exécution des compléments Office sont chargés avant d’exécuter sa propre logique personnalisée." />
 		<Item text="Programmation asynchrone dans des compléments Office" url="develop/asynchronous-programming-in-office-add-ins" SEODescription="Développez des compléments Office à l’aide des rappels et des modèles de promesses imbriqués, ainsi que des modèles de programmation asynchrones pris en charge par l’API JavaScript pour Office." />
@@ -49,7 +51,8 @@
 	<Item text="Confidentialité et sécurité" url="develop/privacy-and-security" SEODescription="Les compléments Office sont sécurisés par une infrastructure d’exécution, un modèle d’autorisations à plusieurs niveaux et la possibilité de contrôler l’utilisation de la mémoire, l’UC et les ressources réseau." />
 	<Item text="Traiter les limites de stratégie de même origine" url="develop/addressing-same-origin-policy-limitations" SEODescription="Fournit un bref aperçu des façons de traiter les limites de stratégie de même origine qui empêchent un script chargé à partir d’un domaine d’obtenir ou de manipuler les propriétés d’un document à partir d’un autre domaine dans un complément Office." />
 	<Item text="Localisation" url="develop/localization" SEODescription="Cet article décrit quelques moyens de fournir un contenu propre aux paramètres régionaux pour un complément Office, y compris les chaînes d’interface utilisateur, le nom du complément, la description, l’icône, le fichier source et le format de date/heure." />
-    <Item text="Performances" url="develop/resource-limits-and-performance-optimization" SEODescription="Appliquez des limites d’utilisation des ressources à vos compléments Office et optimisez les performances de votre complément." />
+    <Item text="Performances" url="develop/resource-limits-and-performance-optimization" SEODescription="Appliquez des limites d’utilisation des ressources à vos compléments Office et optimisez leurs performances." />
+	<Item text="Détails d’implémentation" url="develop/implementation-details" />
   </Item>
   <Item text="Test et débogage" url="testing">
     	<Item text="Chargement de compléments Office pour des tests" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Installez un complément Office en cours d’exécution sur Windows pour les tests." Scope="Excel, Word, PowerPoint, Project, Access" />

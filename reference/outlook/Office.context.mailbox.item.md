@@ -1425,6 +1425,8 @@ Enregistre un élément de manière asynchrone.
 
 Lorsqu’elle est appelée, cette méthode enregistre le message en cours en tant que brouillon et renvoie l’ID de l’élément via la méthode de rappel. Dans Outlook Web App ou Outlook en mode en ligne, l’élément est enregistré sur le serveur. Dans Outlook en mode mis en cache, l’élément est enregistré dans le cache local.
 
+> **Remarque :** Outlook pour Mac ne prend en charge `saveAsync` sur une réunion en mode composition. Le fait d’appeler `saveAsync` sur une réunion dans Outlook pour Mac renvoie une erreur.
+
 ##### <a name="parameters"></a>Paramètres :
 
 |Nom| Type| Attributs| Description|

@@ -47,7 +47,7 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Obtient un objet qui représente la colonne entière de la plage (par exemple, si la plage actuelle représente les cellules « B4:E11 », sa valeur `getEntireColumn` est une plage qui représente les colonnes « B:E »).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getEntireRow()](#getentirerow)|[Range](range.md)|Obtient un objet qui représente la ligne entière de la plage (par exemple, si la plage actuelle représente les cellules « B4:E11 », sa valeur `GetEntireRow` est une plage qui représente les lignes « 4:11 »).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getIntersectionOrNullObject(anotherRange: range ou string)](#getintersectionornullobjectanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getIntersectionOrNullObject(anotherRange: range ou string)](#getintersectionornullobjectanotherrange-range-or-string)|[Range](range.md)|Obtient l’objet de plage qui représente l’intersection rectangulaire des plages données. Si aucune intersection n’est trouvée, renvoie un objet Null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastCell()](#getlastcell)|[Range](range.md)|Obtient la dernière cellule de la plage. Par exemple, la dernière cellule de la plage « B2:D5 » est « D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|Obtient la dernière colonne de la plage. Par exemple, la dernière colonne de la plage « B2:D5 » est « D2:D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getLastRow()](#getlastrow)|[Range](range.md)|Obtient la dernière ligne de la plage. Par exemple, la dernière ligne de la plage « B2:D5 » est « B5:D5 ».|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -56,7 +56,7 @@ _Voir des [exemples d’accès aux propriétés.](#property-access-examples)_
 |[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Obtient une ligne contenue dans la plage.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsAbove(count: nombre)](#getrowsabovecount-number)|[Range](range.md)|Obtient un certain nombre de lignes au-dessus de l’objet de plage actuel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRowsBelow(count: number)](#getrowsbelowcount-number)|[Range](range.md)|Obtient un certain nombre de lignes en dessous de l’objet de plage actuel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction génère une erreur ItemNotFound.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction génère une erreur ItemNotFound.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|Renvoie la plage utilisée d’un objet de plage donné. Si aucune cellule n’est utilisée dans la plage, cette fonction renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getVisibleView()](#getvisibleview)|[RangeView](rangeview.md)|Représente les lignes visibles de la plage en cours.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[insert(shift: string)](#insertshift-string)|[Range](range.md)|Insère une cellule ou une plage de cellules dans la feuille de calcul à la place d’une plage donnée et décale les autres cellules pour libérer de l’espace. Renvoie un nouvel objet Range dans l’espace vide qui s’est créé.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -635,7 +635,7 @@ rangeObject.getRowsBelow(count);
 |:---------------|:--------|:----------|:---|
 |count|number|Facultatif. Nombre de lignes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 [Range](range.md)
 
 ### <a name="getusedrangevaluesonly-apisetversion"></a>getUsedRange(valuesOnly: [ApiSet(Version)
@@ -689,7 +689,7 @@ rangeObject.getUsedRangeOrNullObject(valuesOnly);
 |:---------------|:--------|:----------|:---|
 |valuesOnly|bool|Facultatif. Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
-#### <a name="returns"></a>Retourne
+#### <a name="returns"></a>Renvoie
 [Range](range.md)
 
 ### <a name="getvisibleview"></a>getVisibleView()
