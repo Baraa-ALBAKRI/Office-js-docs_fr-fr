@@ -25,7 +25,7 @@ Vous pouvez modifier les fichiers de complément en utilisant un éditeur de tex
 
 1 - Ouvrez **index.html** dans le répertoire du projet. 
 
-2 - Remplacez l’élément `<main>` par le code suivant. Cette option ajoute une zone de texte et un bouton à l’aide des [composants de la structure de l’interface utilisateur d’Office](http://dev.office.com/fabric/components).
+2 - Remplacez l’élément `<main>` par le code suivant. Une zone de texte et un bouton sont ajoutés à l’aide des [composants Office UI Fabric](http://dev.office.com/fabric/components).
 
 ```html
 <main class="ms-welcome__main">

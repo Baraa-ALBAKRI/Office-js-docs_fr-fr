@@ -14,7 +14,7 @@ Au cœur de la nouvelle vague des API Office 2016 se trouve un contexte de la de
 >**Remarque :** Git est une analogie de gestion de version particulièrement bien adaptée, car les modifications locales sont parfaitement isolées du référentiel : tant que vous n’effectuez pas un `git push` de votre état local, le référentiel n’a *aucune connaissance* des modifications apportées.  Les objets proxy et Contexte de la demande du nouveau modèle Office.js sont très similaires : ils sont complètement inconnus du document jusqu'à ce que le développeur émette une commande `context.sync()`.  
 
 
-L’objet Contexte de la demande contient deux tableaux qui lui permettent de fonctionner.  Un tableau est dédié aux **chemins d’accès d’objet** : descriptions de la dérivation d’un objet à partir d’un autre objet (par exemple, « *appeler la méthode `getRow` avec la valeur du paramètre `2` sur <insert-some-preceding-object-path> pour dériver cet objet* »).  L’autre tableau est dédié aux **actions** (par exemple, *définir la propriété nommée « couleur » sur une valeur « violet » sur l’objet décrit par le chemin d’accès d’objet #xyz*).  Pour ceux qui connaissent bien le modèle de conception « Commande », cette notion de transport d’objets qui représentent la recette d’une action donnée n’est pas nouvelle.
+L’objet Contexte de la demande contient deux tableaux qui lui permettent de fonctionner.  Un tableau est dédié aux **chemins d’accès d’objet** : descriptions de la dérivation d’un objet à partir d’un autre objet (par exemple, « *appeler la méthode `getRow` avec la valeur du paramètre `2` sur <insérer-un-chemin d’accès-d’objet-précédent> pour dériver cet objet* »).  L’autre tableau est dédié aux **actions** (par exemple, *définir la propriété nommée « couleur » sur la valeur « violet » sur l’objet décrit par le chemin d’accès d’objet #xyz*).  Pour ceux qui connaissent bien le modèle de conception « Commande », cette notion de transport d’objets qui représentent la recette d’une action donnée n’est pas nouvelle.
 
 Le Contexte de la demande contient un seul objet racine qui le connecte au modèle objet sous-jacent.  Pour Excel, cet objet est un `workbook` ; pour Word, c’est un `document`.  À partir de là, vous pouvez dériver de nouveaux objets en appelant des méthodes sur l’objet proxy racine ou sur n’importe lequel de ses descendants.  Par exemple, pour obtenir une feuille de calcul nommée « Rapport », demandez l’objet `workbook` pour sa propriété `worksheets` (qui renvoie un objet proxy correspondant à la collection de feuilles de calcul dans le document), puis utilisez `worksheets` pour appeler une méthode `getItem("Report")` afin d’obtenir un objet proxy correspondant à la feuille de calcul « Rapport » souhaitée.  Chacun de ces objets comporte un lien vers son Contexte de la demande d’origine, qui à son tour effectue le suivi des informations sur le chemin de chaque objet : qui était le parent de ce nouvel objet et quelles étaient les circonstances dans lesquelles il a été créé (*était-ce une propriété ou un appel de méthode ? des paramètres ont-ils été transmis ?*).
 
@@ -28,7 +28,7 @@ Examinons un exemple concret.  Supposons que vous avez le code suivant :
         let range = context.workbook.getSelectedRange();
         range.clear();
         let thirdRow = range.getRow(2);
-        firstRow.format.fill.color = "purple";
+        thirdRow.format.fill.color = "purple";
 
         await context.sync();
     }).catch(OfficeHelpers.Utilities.log);
@@ -108,7 +108,7 @@ Ligne **n° 4**  -- `let thirdRow = range.getRow(2)` : suit un schéma semblab
 ~~~
 
 
-Ligne **n° 5**  -- `firstRow.format.fill.color = "purple"` : est incluse dans plusieurs appels d’API.  Nous commençons par créer un objet format [anonyme], en suivant la propriété `format` de la variable `thirdRow`.  Ensuite, nous procédons de la même façon pour l’objet [anonyme] fill.  Les deux objets suivent le même modèle que précédemment, créant un chemin d’accès d’objet et une action d’instanciation pour chacun.  Mais ensuite, après avoir atteint l’objet souhaité, nous effectuons une autre action ayant un impact sur le document sur l’objet : définir la couleur de remplissage de la troisième ligne en violet (reportez-vous à l’action « **A6** » ci-dessous) :
+Ligne **n° 5**  -- `thirdRow.format.fill.color = "purple"` : est incluse dans plusieurs appels d’API.  Nous commençons par créer un objet format [anonyme], en suivant la propriété `format` de la variable `thirdRow`.  Ensuite, nous procédons de la même façon pour l’objet [anonyme] fill.  Les deux objets suivent le même modèle que précédemment, créant un chemin d’accès d’objet et une action d’instanciation pour chacun.  Mais ensuite, après avoir atteint l’objet souhaité, nous effectuons une autre action ayant un impact sur le document sur l’objet : définir la couleur de remplissage de la troisième ligne en violet (reportez-vous à l’action « **A6** » ci-dessous) :
 
 ~~~
     objectPaths:

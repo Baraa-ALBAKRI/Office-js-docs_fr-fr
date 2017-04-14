@@ -2,9 +2,11 @@
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Spécifier les hôtes Office et les conditions requises d’API](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Pour plus d’informations sur la prise en charge des compléments par l’hôte Office, reportez-vous à la rubrique [Disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability).
+Pour plus d’informations sur la prise en charge des compléments par l’hôte Office, consultez la rubrique relative à la [disponibilité des compléments Office sur les plateformes et les hôtes](https://dev.office.com/add-in-availability).
 
-## <a name="host-specific-api-requirement-sets"></a>Ensembles de conditions requises de l’API spécifique à l’hôte
+>**Important :** nous ne vous recommandons plus de créer et d’utiliser les bases de données et les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
+
+## <a name="host-specific-api-requirement-sets"></a>Ensembles de conditions requises de l’API propres à l’hôte
 
 Pour plus d’informations sur les ensembles de conditions requises des API pour Excel, Word, OneNote, Outlook et Dialog, reportez-vous à :
 

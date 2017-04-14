@@ -22,7 +22,7 @@ Suivez ces instructions lorsque vous créez vos icônes :
 - Respectez la grille 1 px et utilisez l’outil d’édition des images bitmap pour de meilleurs résultats.  
 - Renouvelez sans redimensionner. Lorsque vous redimensionnez vos icônes à des tailles supérieures ou inférieures, prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. 
 - Supprimez les artefacts qui rendent votre icône désordonnée.
-- Ne réutilisez pas les icônes de la structure d’interface utilisateur d’Office dans le ruban Office ou le menu contextuel. Les icônes de structure sont stylistiquement différentes et ne correspondront pas. 
+- Ne réutilisez pas les icônes d’Office UI Fabric dans le ruban Office ou le menu contextuel. Les icônes de structure sont stylistiquement différentes et ne correspondront pas. 
 - Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les repères de marque entrent souvent en conflit avec les styles d’icônes du ruban Office et peuvent gêner l’attention de l’utilisateur dans un environnement saturé.
 - Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  
 - Utilisez le format PNG avec un arrière-plan transparent. 

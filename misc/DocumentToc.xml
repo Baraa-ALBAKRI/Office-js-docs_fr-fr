@@ -11,13 +11,13 @@
 	  <Item text="Utiliser un éditeur" url="get-started/create-an-office-add-in-using-any-editor" SEODescription="Commencez à créer des compléments Office avec un éditeur, sur un Mac ou PC Windows. " />
   </Item>
   <Item text="Conception" url="design/add-in-design">
-      <Item text="Éléments d’interface utilisateur" url="design/ui-elements/ui-elements" SEODescription="Utilisez des commandes de complément, l’interface utilisateur de la structure Office et des interfaces HTML personnalisées afin de rendre les interfaces utilisateur de complément intéressantes.">
+      <Item text="Éléments d’interface utilisateur" url="design/ui-elements/ui-elements" SEODescription="Utilisez des commandes de complément, l’interface utilisateur Fabric et des interfaces HTML personnalisées afin de rendre les interfaces utilisateur de complément intéressantes.">
       	<Item text="Modèles d’interaction" url="design/ui-elements/interaction-patterns" SEODescription="Créez un style visuel cohérent pour vos modèles de conception en utilisant la mise en page recommandée." />
       	<Item text="Mise en page pour les compléments de contenu" url="design/ui-elements/layout-for-content-add-ins" SEODescription="Créez un style visuel cohérent pour vos compléments de contenu en utilisant la mise en page recommandée." />
       	<Item text="Mise en page pour les compléments de volet des tâches" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Créez un style visuel cohérent pour vos compléments de volet des tâches en utilisant la mise en page recommandée." />
       	<Item text="Mises en page pour les compléments Outlook" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Utiliser ces mises en page pour les compléments de messagerie" Scope="outlook" />
       </Item>	
-    	<Item text="Utilisation de la structure de l’interface utilisateur Office JS" url="design/using-office-ui-fabric-js" SEODescription="Décrit les opérations de base pour l’utilisation de la structure JS." />
+    	<Item text="Utilisation d’Office UI Fabric JS" url="design/using-office-ui-fabric-js" SEODescription="Décrit les opérations de base pour l’utilisation de la structure JS." />
 		<Item text="Modèles de conception de l’expérience utilisateur" url="design/ux-design-patterns" SEODescription="Utilisez les modèles de conception de l’expérience utilisateur pour les compléments Office afin de créer des extensions de l’interface utilisateur." />
 	<Item text="Commandes de complément pour Excel, Word et PowerPoint" url="design/add-in-commands" SEODescription="Utilisez des commandes de complément dans votre complément pour étendre l’interface utilisateur d’Office par défaut dans Excel, Word et PowerPoint." />
   	<Item text="Concevoir des icônes pour les commandes de complément" url="design/design-icons" SEODescription="Concevez des icônes pour les commandes de complément s’intégrant parfaitement avec l’interface utilisateur Office." />
@@ -67,8 +67,9 @@
 	</Item>
   <Item text="Publier" url="publish/publish">
     <Item text="Héberger un complément pour Office sur Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Utilisez Visual Studio 2015 et les outils de développement de Microsoft Office pour publier puis héberger un complément Office sur Microsoft Azure." />
-    <Item text="Créer un package de votre complément avec Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Créez un package de votre complément Office afin de le préparer pour la publication." />
-    <Item text="Publier  des compléments du volet Office et de contenu dans un catalogue de compléments" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurer les clients Office pour que votre complément soit disponible à partir de la boîte de dialogue des compléments Office" />
+    <Item text="Créer un package de votre complément avec Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Créez un package de votre complément Office afin de le préparer à la publication." />
+    <Item text="Publication de compléments via le déploiement centralisé" url="publish/centralized-deployment" />
+	<Item text="Publication de compléments de contenu et du volet Office dans un catalogue de compléments" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurer les clients Office pour que votre complément soit disponible à partir de la boîte de dialogue des compléments Office" />
 	<Item text="Soumettre des compléments dans l’Office Store" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
 	<Item text="Stratégies de validation de l’Office Store" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>

@@ -1,8 +1,8 @@
-# <a name="create-add-ins-for-access-web-apps"></a>Création de compléments pour les applications web Access
+# <a name="create-add-ins-for-access-web-apps"></a>Création de compléments pour les applications web Access
 
->Nous ne vous recommandons plus de créer et d’utiliser les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
+>**Important :** nous ne vous recommandons plus de créer et d’utiliser les bases de données et les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
 
-Cet article explique comment utiliser Visual Studio 2015 pour développer un complément Office qui cible les applications web Access.
+Cet article explique comment utiliser Visual Studio 2015 pour développer un complément Office qui cible les applications web Access.
 
 >**Remarque :** pour plus d’informations sur le développement de solutions pour Access à l’aide de VBA, consultez la rubrique [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) sur MSDN.
 

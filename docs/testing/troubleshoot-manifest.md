@@ -2,21 +2,42 @@
 
 Utilisez ces méthodes pour valider et résoudre les problèmes rencontrés dans votre manifeste. 
 
-- [Validation du manifeste des compléments Office par rapport au schéma XML](validate-the-office-add-ins-manifest-against-the-xml-schema)
-- [Utilisation de la journalisation runtime pour déboguer le manifeste de votre complément Office](use-runtime-logging-to-debug-the-manifest-for-your-office-add-in)
+- [Validation du manifeste de compléments Office à l’aide du validateur de complément Office](validate-the-office-add-ins-manifest-against-validator)    
+- [Validation du manifeste des compléments Office par rapport au schéma XML](validate-the-office-add-ins-manifest-against-the-xml-schema)
+- [Utilisation de la journalisation à l’exécution pour déboguer le manifeste de votre complément Office](use-runtime-logging-to-debug-the-manifest-for-your-office-add-in)
+
+## <a name="validate-your-manifest-with-the-office-add-in-validator"></a>Validation du manifeste à l’aide du validateur de complément Office
+Pour vous aider à vous assurer que le fichier manifeste qui décrit votre complément Office est correct et complet, vérifiez-le à l’aide du [validateur de complément Office](https://github.com/OfficeDev/office-addin-validator).
+
+Pour utiliser le validateur de complément Office afin de valider votre manifeste, procédez comme suit :
+
+1. Installez [Node.js](https://nodejs.org/download/). 
+2. Ouvrez une invite de commandes/un terminal en tant qu’administrateur, puis installez le validateur de complément Office et ses dépendances de façon global à l’aide de la commande suivante :
+
+    ```
+    npm install -g office-addin-validator
+    ```
+    
+    > **Remarque :** Si Yo Office est déjà installé, effectuez une mise à niveau vers la dernière version ; le validateur sera installé en tant que dépendance.
+
+3. Exécutez la commande suivante pour valider votre manifeste. Remplacez MANIFEST.XML par le chemin d’accès au fichier XML de manifeste.
+
+    ```
+    validate-office-addin MANIFEST.XML
+    ```
+
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validation de votre manifeste par rapport au schéma XML
 
-Pour vous aider à vous assurer que le fichier manifeste qui décrit votre complément Office est correct et complet, validez-le par rapport aux fichiers [de définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). Vous pouvez utiliser un outil de validation de schéma XML ou [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) pour valider le manifeste. 
+Pour vous aider à vous assurer que le fichier manifeste suit le bon schéma, vérifiez-le par rapport aux fichiers de [définition de schéma XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). Pour ce faire, vous pouvez utiliser un outil de validation de schéma XML. 
 
-Pour utiliser Visual Studio, accédez à Générer > Publier, et choisissez **Effectuer la vérification de la validation**.
+Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste, procédez comme suit :
 
-Pour utiliser un outil de validation de schéma XML à ligne de commande pour valider votre manifeste :
-
-1.  Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait. 
-2.  Exécutez la commande suivante. Remplacez XSD_FILE par le chemin d’accès au fichier XSD manifeste et XML_FILE par le chemin d’accès au fichier XML manifeste.
-
+1.    Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait. 
+2.    Exécutez la commande suivante. Remplacez XSD_FILE par le chemin d’accès au fichier XSD manifeste et XML_FILE par le chemin d’accès au fichier XML manifeste.
+    ```
     xmllint --noout --schema XSD_FILE XML_FILE
+    ```
 
 ## <a name="use-runtime-logging-to-debug-your-add-in-manifest"></a>Utilisation de la journalisation runtime pour déboguer le manifeste de votre complément
 
@@ -56,8 +77,8 @@ Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe v
 
 Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :
 
-- Le message `Medium   Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.
-- Si vous voyez le message `Unexpected    Add-in is missing required manifest fields  DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez. 
+- Le message `Medium    Current host not in add-in's host list` suivi de `Unexpected    Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.
+- Si vous voyez le message `Unexpected    Add-in is missing required manifest fields    DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez. 
 - Tous les messages `Monitorable` sont des erreurs attendues du point de vue du système. Parfois, ils indiquent un problème avec votre manifeste, comme un élément mal orthographié qui a été ignoré, mais n’a pas provoqué l’échec du manifeste. 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires

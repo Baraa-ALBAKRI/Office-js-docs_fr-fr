@@ -11,6 +11,6 @@ Créez un style visuel cohérent pour vos conteneurs du volet Office en utilisan
 
 Vous pouvez également ajouter des [éléments d’interface utilisateur HTML personnalisés](ui-elements.md#custom-HTML-based-UI) à votre volet Office.
 
-Vous pouvez également consulter un [exemple d’utilisation de la structure d’interface utilisateur d’Office dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
+Vous pouvez également consulter un [exemple d’utilisation d’Office UI Fabric dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 
 <!-- Add sample template for content add-in and individual building blocks - Branding, Navigation bar or pivot, input, layout components -->

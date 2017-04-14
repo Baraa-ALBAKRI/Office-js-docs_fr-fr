@@ -3,7 +3,7 @@
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser la [structure d’interface utilisateur d’Office](http://dev.office.com/fabric) pour créer le cadre de vos visualisations de données. La structure d’interface utilisateur d’Office comprend des styles et des composants qui s’intègrent parfaitement à l’apparence d’Office. 
+Nous vous recommandons d’utiliser [Office UI Fabric](http://dev.office.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office. 
 
 <!--The following figure shows a data visualization in an add-in that uses Fabric.
 
@@ -24,7 +24,7 @@ Suivez ces instructions pour les titres de graphique :
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Intégrez la [rampe du type de structure d’interface utilisateur d’Office](http://dev.office.com/fabric#/styles/typography) pour rendre vos graphiques cohérents avec l’interface utilisateur d’Office, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](http://dev.office.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 Les exemples suivants illustrent des polices serif et sans-serif utilisées dans les titres de graphique. Remarquez comment le contraste d’échelle et une utilisation efficace des espaces blancs créent une hiérarchie visuelle forte.
@@ -36,7 +36,7 @@ Les exemples suivants illustrent des polices serif et sans-serif utilisées dans
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Le gris clair est plus efficace pour les étiquettes d’axe. Si vous utilisez la structure d’interface utilisateur d’Office, voir la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -57,7 +57,7 @@ Pour des recommandations sur l’utilisation des couleurs dans les visualisation
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Le gris clair est plus efficace pour les quadrillages. Si vous utilisez la structure d’interface utilisateur d’Office, voir la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez Fabric, consultez la [palette de couleurs neutres](http://dev.office.com/fabric#/styles/colors).
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 

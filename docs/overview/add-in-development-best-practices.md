@@ -74,7 +74,7 @@ Pour obtenir les modèles illustrant les modèles de conception à appliquer lor
 
 
 
-- Assurez-vous que l’aspect, la convivialité et la fonctionnalité de votre complément améliorent l’expérience Office. Utilisez la [structure de l’interface utilisateur Office](https://dev.office.com/fabric).
+- Assurez-vous que l’aspect, la convivialité et la fonctionnalité de votre complément améliorent l’expérience Office. Utilisez [Office UI Fabric](https://dev.office.com/fabric).
 
 - Privilégiez le contenu plutôt que l’apparence. Évitez les éléments d’interface utilisateur superflus qui n’ajoutent pas de valeur à l’expérience utilisateur.
 
@@ -110,7 +110,7 @@ Pour les modèles appliquant des principes de conception que vous pouvez utilise
 - Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 
- >**Remarque**  Si vous utilisez [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) pour vos éléments de conception, un grand nombre de ces éléments sont pris en charge.
+ >**Remarque :** si vous utilisez [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) pour vos éléments de conception, un grand nombre de ces éléments sont pris en charge.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément

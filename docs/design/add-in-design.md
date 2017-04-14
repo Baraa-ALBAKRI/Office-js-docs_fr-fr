@@ -16,12 +16,11 @@ Quelle que soit l’infrastructure sous-jacente que vous utilisez pour créer vo
 
 - **Laissez suffisamment de contrôle aux utilisateurs**. Faites en sorte que les utilisateurs puissent garder le contrôle de ce qu’ils font, qu’ils comprennent les décisions importantes et qu’ils puissent annuler facilement les actions effectuées par le complément. 
 
-- 
-  **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#bk_Touch). 
+- **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](https://msdn.microsoft.com/EN-US/library/mt590883.aspx#bk_Touch). 
 
 
 ## <a name="design-language"></a>Langage de création
-Nous vous recommandons d’adopter le langage de conception d’Office et d’utiliser la [structure de l’interface utilisateur Office](https://dev.office.com/fabric) pour créer une interface personnalisée utilisant HTML dans vos compléments. Si votre organisation dispose déjà d’un langage de conception, vous pouvez parfaitement utiliser celui-ci, tant que le résultat final offre une expérience harmonieuse pour les utilisateurs d’Office. 
+Nous vous recommandons d’adopter le langage de conception d’Office et d’utiliser [Office UI Fabric](https://dev.office.com/fabric) pour créer une interface personnalisée utilisant HTML dans vos compléments. Si votre organisation dispose déjà d’un langage de conception, vous pouvez parfaitement utiliser celui-ci, tant que le résultat final offre une expérience harmonieuse pour les utilisateurs d’Office. 
 
 
 ## <a name="add-in-building-blocks"></a>Blocs de construction pour les compléments
@@ -34,7 +33,7 @@ Pour plus d’informations sur l’utilisation de ces blocs de construction, rep
 
 ## <a name="ux-design-patterns"></a>Modèles de conception de l’expérience utilisateur
 
-Pour vous aider à créer une expérience utilisateur intéressante pour votre complément, des modèles illustrant les modèles de conception d’expérience utilisateur courants sont disponibles. Ces modèles reflètent les [meilleures pratiques](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices) pour créer des compléments de qualité attrayants, et comprennent des modèles de conception pour créer des premières expériences d’utilisation, des éléments de personnalisation et des notifications utilisateur. Ils utilisent des composants et des styles de la [structure de l’interface utilisateur Office](https://dev.office.com/fabric) et incluent des éléments qui enrichissent l’interface utilisateur Office.
+Pour vous aider à créer une expérience utilisateur intéressante pour votre complément, des modèles illustrant les modèles de conception d’expérience utilisateur courants sont disponibles. Ces modèles reflètent les [meilleures pratiques](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices) pour créer des compléments de qualité attrayants, et comprennent des modèles de conception pour créer des premières expériences d’utilisation, des éléments de personnalisation et des notifications utilisateur. Ils utilisent des composants et des styles d’[Office UI Fabric](https://dev.office.com/fabric) et incluent des éléments qui enrichissent l’interface utilisateur Office.
 
 Pour accéder aux modèles, consultez le référentiel relatif aux [modèles de conception de l’expérience utilisateur du complément Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns). Des fichiers Adobe Illustrator sont également disponibles. Vous pouvez les télécharger et les mettre à jour pour refléter vos propres modèles de conception. Vous pouvez également copier les fichiers de code à partir du référentiel relatif au [code des modèles de conception de l’expérience utilisateur du complément Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code) dans votre projet de complément et les personnaliser selon vos besoins. 
 
@@ -49,5 +48,5 @@ Consultez aussi nos modèles d’interaction pour obtenir des exemples de scéna
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Structure de l’interface utilisateur Office](https://dev.office.com/fabric) 
+- [Office UI Fabric](https://dev.office.com/fabric) 
 

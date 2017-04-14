@@ -10,6 +10,6 @@ Créez un style visuel cohérent pour vos compléments de contenu en utilisant l
 
 Vous pouvez également ajouter des [éléments d’interface HTML personnalisés](ui-elements.md#custom-HTML-based-UI) à votre complément de contenu.
 
-Vous pouvez également consulter un [exemple d’utilisation de la structure d’interface utilisateur d’Office dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
+Vous pouvez également consulter un [exemple d’utilisation d’Office UI Fabric dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 
 <!-- Add sample template for content add-in and individual building blocks - Command Bar, Input, layout components. -->

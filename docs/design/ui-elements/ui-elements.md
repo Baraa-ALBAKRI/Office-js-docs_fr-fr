@@ -19,9 +19,9 @@ Excel, PowerPoint et Word disposent de points d’entrée prédéfinis pour les 
 ## <a name="custom-html-based-ui"></a>Éléments d’interface utilisateur HTML personnalisés
 Les compléments peuvent incorporer des éléments d’interface utilisateur HTML personnalisés aux clients Office. Les conteneurs disponibles pour afficher ces éléments varient selon le type de complément. Par exemple, les compléments de volet de tâches affichent les éléments d’interface utilisateur HTML personnalisés dans le volet droit du document, tandis que les compléments de contenu les affichent directement dans les documents Office.
 
-Quel que soit le type de complément que vous créez, vous pouvez utiliser des blocs de construction communs pour créer des éléments d’interface utilisateur HTML personnalisés. Nous vous recommandons d’utiliser la [structure d’IU d’Office](https://github.com/OfficeDev/Office-UI-Fabric) pour ces éléments, afin que votre complément s’intègre harmonieusement à l’interface Office. Vous pouvez également utiliser vos propres éléments d’interface utilisateur pour obtenir un rendu plus personnalisé.
+Quel que soit le type de complément que vous créez, vous pouvez utiliser des blocs de construction communs pour créer des éléments d’interface utilisateur HTML personnalisés. Nous vous recommandons d’utiliser [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) pour ces éléments, afin que votre complément s’intègre harmonieusement à l’interface Office. Vous pouvez également utiliser vos propres éléments d’interface utilisateur pour obtenir un rendu plus personnalisé.
 
-La structure d’interface utilisateur d’Office fournit les éléments suivants :
+Office UI Fabric fournit les éléments suivants :
 
 - Typographie
 - Couleur
@@ -31,9 +31,9 @@ La structure d’interface utilisateur d’Office fournit les éléments suivant
 - dispositions
 - Éléments de navigation
 
-Vous pouvez télécharger la [structure d’interface utilisateur d’Office à partir de Github](https://github.com/OfficeDev/Office-UI-Fabric).
+Vous pouvez télécharger [Office UI Fabric à partir de Github](https://github.com/OfficeDev/Office-UI-Fabric).
 
-Vous pouvez également consulter un [exemple d’utilisation de la structure d’interface utilisateur d’Office dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
+Vous pouvez également consulter un [exemple d’utilisation d’Office UI Fabric dans des compléments Office](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample).
 
 **Remarque :** si vous décidez d’utiliser votre propre jeu de polices et d’icônes, assurez-vous qu’elles n’entrent pas en conflit avec celles d’Office. Par exemple, n’utilisez pas d’icônes qui sont identiques ou semblable à celles d’Office, mais représentent quelque chose de différent dans votre complément. 
 

@@ -1,4 +1,4 @@
-# <a name="tips-for-creating-office-addins-with-angular-2"></a>Conseils pour la création de compléments Office avec Angular 2 
+# <a name="tips-for-creating-office-add-ins-with-angular-2"></a>Conseils pour la création de compléments Office avec Angular 2 
 
 Cet article fournit des conseils sur l’utilisation d’Angular 2 pour créer un complément Office sous la forme d’une application monopage.
 
@@ -52,9 +52,9 @@ import { RouterModule, Routes } from '@angular/router';
 ```   
 
 
-## <a name="consider-wrapping-fabric-components-with-angular-2-components"></a>Envisager l’habillage des composants de structure avec des composants Angular 2
+## <a name="consider-wrapping-fabric-components-with-angular-2-components"></a>Insertion de composants Fabric dans des composants Angular 2
 
-Nous vous recommandons d’utiliser le style de la [structure de l’interface utilisateur d’Office](http://dev.office.com/fabric#/fabric-js) dans votre complément. La structure inclut des composants qui sont fournis dans différentes versions, notamment une version [basée sur TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Envisagez d’utiliser des composants de structure dans votre complément en les insérant dans les composants Angular 2. Pour obtenir un exemple de procédure à suivre, voir [Complément de vérification du style dans Word basé sur Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Notez, par exemple, comment le composant Angular défini dans [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importe le fichier de structure TextField.ts, où le composant de structure est défini. 
+Nous vous recommandons d’utiliser le style [Office UI Fabric](http://dev.office.com/fabric#/fabric-js) dans votre complément. Fabric comprend des composants disponibles dans plusieurs versions, y compris une version qui [repose sur TypeScript](https://github.com/OfficeDev/office-ui-fabric-js). Envisagez d’utiliser des composants Fabric dans votre complément en les insérant dans des composants Angular 2. Pour obtenir un exemple de la procédure à suivre, consultez l’article relatif au [complément de vérification du style Word reposant sur Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker). Observez, par exemple, comment le composant Angular défini dans [fabric.textfield.wrapper](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/shared/office-fabric-component-wrappers/fabric.textfield.wrapper.component.ts) importe le fichier Fabric TextField.ts, dans lequel le composant Fabric est défini. 
 
 
 ## <a name="using-the-office-dialog-api-with-angular"></a>Utilisation de l’API Boîte de dialogue Office

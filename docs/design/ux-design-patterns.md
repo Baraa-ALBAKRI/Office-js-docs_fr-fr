@@ -6,7 +6,7 @@ Utiliser le projet de modèles de conception d’expérience utilisateur aux fin
 
 * Appliquer des solutions à des scénarios client courants.
 * Appliquer les meilleures pratiques en matière de conception.
-* Incorporer les composants et styles de la [structure de l’interface utilisateur d’Office](https://dev.office.com/fabric#/get-started).
+* Incorporer les composants et styles d’[Office UI Fabric](https://dev.office.com/fabric#/get-started).
 * Créer des compléments qui s’intègrent visuellement à l’interface utilisateur d’Office par défaut.  
 
 ## <a name="using-the-ux-design-patterns"></a>Utilisation des modèles de conception d’expérience utilisateur
@@ -18,7 +18,7 @@ Pour utiliser les spécifications afin de créer une maquette de votre propre in
 1. Téléchargez des [modèles de conception d’expérience utilisateur](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns).
 2. Utilisez les modèles [Word](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Word_Desktop_reference.pdf), [Excel](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_Desktop_reference.pdf) ou [PowerPoint](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_PowerPoint_Desktop_reference.pdf) pour faire une maquette de vos points d’extension pour ordinateur de bureau ou tablette.
 3. Copiez et modifiez les [modèles de conception d’expérience utilisateur](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/tree/master/Patterns) pour répondre à vos besoins spécifiques.
-4. Consultez les modèles pour parcourir une [feuille principale d’icône de structure d’interface utilisateur](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/OfficeUIFabric_icon_mastersheet.pdf), afficher les points d’extension pour Word, Excel et PowerPoint (par exemple, [Excel pour iPad](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_iPad_reference.pdf) et [Excel pour Bureau Windows](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_Desktop_reference.pdf)) ou [finaliser les icônes pour les commandes de complément](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/Icon_production.pdf).
+4. Consultez les modèles pour parcourir une [feuille principale d’icône d’Office UI Fabric](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/OfficeUIFabric_icon_mastersheet.pdf), afficher les points d’extension pour Word, Excel et PowerPoint (par exemple, [Excel pour iPad](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_iPad_reference.pdf) et [Excel pour Bureau Windows](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/AddIn_Template_Excel_Desktop_reference.pdf)) ou [finaliser les icônes pour les commandes de complément](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Helpful%20Templates/Icon_production.pdf).
 
 Pour ajouter le code source, procédez comme suit :
 
@@ -190,7 +190,7 @@ Les boîtes de dialogue client fournissent aux utilisateurs un autre moyen de tr
 * **Boîte de dialogue de rampe de type** - Affiche une boîte de dialogue avec du contenu textuel. Utilisez la boîte de dialogue de rampe de type pour transmettre des informations détaillées aux utilisateurs. 
     * [Spécification de la boîte de dialogue de rampe de type](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
     * [Code de la boîte de dialogue de rampe de type](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp)
-* **Boîte de dialogue d’alerte** - Affiche un message d’alerte avec des informations importantes, comme les erreurs ou les notifications, aux utilisateurs.  
+* **Boîte de dialogue d’alerte** - Affiche un message d’alerte avec des informations importantes, comme les erreurs ou les notifications, aux utilisateurs.     
     * [Spécification de la boîte de dialogue d’alerte](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
     * [Code de la boîte de dialogue d’alerte](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert)
 * **Boîte de dialogue de navigation** - Affiche une boîte de dialogue comportant la navigation. Utilisez la boîte de dialogue de navigation pour permettre aux utilisateurs de naviguer entre les différents contenus. 
@@ -254,4 +254,4 @@ Les compléments peuvent nécessiter une page des paramètres afin que les utili
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Meilleures pratiques en matière de développement de compléments Office](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices)
-* [Structure de l’interface utilisateur Office](http://dev.office.com/fabric/)
+* [Office UI Fabric](http://dev.office.com/fabric/)

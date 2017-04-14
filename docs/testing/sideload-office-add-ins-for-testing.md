@@ -1,5 +1,4 @@
-
-# <a name="sideload-office-addins-in-office-online-for-testing"></a>Chargement de version test des compléments Office dans Office Online
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Chargement de version test des compléments Office dans Office Online
 
 Vous pouvez installer un complément Office test sans avoir à le placer au préalable dans un catalogue de compléments en utilisant le chargement de version test. Le chargement de version test peut être effectué sur Office 365 ou Office Online. La procédure présente de légères différences d’une plateforme à l’autre. 
 
@@ -12,7 +11,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
 
-## <a name="sideload-an-office-addin-on-office-365"></a>Chargement de version test de complément Office dans Office 365
+## <a name="sideload-an-office-add-in-on-office-365"></a>Chargement de version test de complément Office dans Office 365
 
 
 1. Connectez-vous à votre compte Office 365.
@@ -32,9 +31,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 6. Verify that your complément is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## <a name="sideload-an-office-addin-on-office-online"></a>Charger une version test d’un complément Office sur Office Online
-
-
+## <a name="sideload-an-office-add-in-on-office-online"></a>Charger une version test d’un complément Office sur Office Online
 
 
 1. Open [Microsoft Office Online](https://office.live.com/).
@@ -52,4 +49,15 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     ![Boîte de dialogue de téléchargement de complément avec des boutons pour parcourir, télécharger et annuler.](../../images/039aef16-b12f-4d01-ad46-f13e01dd3162.png)
 
 6. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
-    
+
+## <a name="sideload-an-add-in-when-using-visual-studio"></a>Chargement d’une version test d’un complément lors de l’utilisation de Visual Studio
+
+Si vous développez votre complément à l’aide de Visual Studio, le processus de chargement d’une version de teste est similaire. La seule différence est que vous devez mettre à jour la valeur de l’élément **SourceURL** dans votre manifeste, de sorte à inclure l’URL entière de l’emplacement de déploiement du complément. 
+
+Si vous êtes en train de développer votre complément, recherchez-le dans le fichier manifest.xml et mettez à jour la valeur de l’élément **SourceLocation** de façon à inclure un URI absolu. Visual Studio met en place un jeton pour votre déploiement localhost.
+
+Par exemple : 
+
+    ```xml
+    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
+    ```
