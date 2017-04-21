@@ -33,7 +33,7 @@ worksheetProtectionObject.protect(options);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |options|WorksheetProtectionOptions|Facultatif. Options de protection de feuille.|
 
 #### <a name="returns"></a>Renvoie

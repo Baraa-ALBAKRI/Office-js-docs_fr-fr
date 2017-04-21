@@ -76,7 +76,7 @@ chartObject.getImage(height, width, fittingMode);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |height|number|Facultatif. (Facultatif) Hauteur souhaitée de l’image produite.|
 |width|number|Facultatif. (Facultatif) Largeur souhaitée de l’image produite.|
 |fittingMode|string|Facultatif. (Facultatif) Méthode utilisée pour mettre à l’échelle le graphique aux dimensions spécifiées (si la hauteur et la largeur sont définies).  Les valeurs possibles sont les suivantes : Fit (ajuster), FitAndCenter (ajuster et centrer), Fill (remplir)|
@@ -112,7 +112,7 @@ chartObject.setData(sourceData, seriesBy);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |sourceData|Range|Objet Range correspondant aux données source.|
 |seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Les options disponibles sont : en mode automatique (par défaut), par lignes et par colonnes. Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes)|
 
@@ -148,7 +148,7 @@ chartObject.setPosition(startCell, endCell);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |startCell|range ou string|Cellule de début. Il s’agit de l’emplacement où le graphique sera déplacé. La cellule de début est la cellule supérieure gauche ou supérieure droite, selon les paramètres d’affichage droite-gauche définis par l’utilisateur.|
 |endCell|range ou string|Facultatif. (Facultatif) Cellule de fin. Si une valeur est indiquée, la largeur et la hauteur du graphique seront définies de manière à couvrir entièrement cette cellule/plage.|
 

@@ -37,7 +37,7 @@ namedItemCollectionObject.add(name, reference, comment);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Nom de l’élément nommé.|
 |reference|range ou string|Formule ou plage à laquelle le nom fait référence.|
 |comment|string|Facultatif. Commentaire associé à l’élément nommé|
@@ -55,12 +55,12 @@ namedItemCollectionObject.addFormulaLocal(name, formula, comment);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|« Nom » de l’élément nommé.|
 |formula|string|Formule dans les paramètres régionaux de l’utilisateur à laquelle le nom fait référence.|
 |comment|string|Facultatif. Commentaire associé à l’élément nommé|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 [NamedItem](nameditem.md)
 
 ### <a name="getcount"></a>getCount()
@@ -87,7 +87,7 @@ namedItemCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|nom de l’objet NamedItem.|
 
 #### <a name="returns"></a>Retourne
@@ -120,7 +120,7 @@ namedItemCollectionObject.getItemOrNullObject(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|nom de l’objet NamedItem.|
 
 #### <a name="returns"></a>Retourne

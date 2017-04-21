@@ -29,7 +29,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |champs|SortField[]|Liste des conditions de tri.|
 |matchCase|bool|Facultatif. Indique si la casse influe sur le classement des chaînes.|
 |hasHeaders|bool|Facultatif. Indique si la plage comporte un en-tête.|

@@ -34,7 +34,7 @@ applicationObject.calculate(calculationType);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |calculationType|string|Spécifie le type de calcul à utiliser. Les valeurs possibles sont les suivantes : `Recalculate` Recalcule toutes les cellules qu’Excel a marquées comme compromises, c'est-à-dire celles dépendant de données volatiles ou modifiées, et les cellules marquées comme compromises par programmation. `Full` Cette opération marque toutes les cellules comme compromises, puis les recalcule. `FullRebuild` Cela force une reconstruction de la chaîne de calcul entière, marque toutes les cellules comme compromises, puis recalcule toutes les cellules.|
 
 #### <a name="returns"></a>Renvoie

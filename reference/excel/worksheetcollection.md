@@ -37,7 +37,7 @@ worksheetCollectionObject.add(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Facultatif. Nom de la feuille de calcul à ajouter. Si cette propriété est définie, le nom doit être unique. Si cette propriété n’est pas définie, Excel détermine le nom de la nouvelle feuille de calcul.|
 
 #### <a name="returns"></a>Retourne
@@ -104,10 +104,10 @@ worksheetCollectionObject.getCount(visibleOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |visibleOnly|bool|Facultatif. Renvoie des feuilles de calcul visibles uniquement si la valeur est définie sur true. |
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 int
 
 ### <a name="getitemkey-string"></a>getItem(key: string)
@@ -120,7 +120,7 @@ worksheetCollectionObject.getItem(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|string|Nom ou ID de la feuille de calcul.|
 
 #### <a name="returns"></a>Retourne
@@ -136,7 +136,7 @@ worksheetCollectionObject.getItemOrNullObject(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|string|Nom ou ID de la feuille de calcul.|
 
 #### <a name="returns"></a>Retourne

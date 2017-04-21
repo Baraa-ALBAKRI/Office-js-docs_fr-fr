@@ -49,7 +49,7 @@ chartSeriesCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne

@@ -36,7 +36,7 @@ settingCollectionObject.add(key, value);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|chaîne|Clé du nouveau paramètre.|
 |value|(any)[]|Valeur du nouveau paramètre.|
 
@@ -67,7 +67,7 @@ settingCollectionObject.getItem(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|chaîne|Clé du paramètre.|
 
 #### <a name="returns"></a>Retourne
@@ -83,7 +83,7 @@ settingCollectionObject.getItemOrNullObject(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|chaîne|Clé du paramètre.|
 
 #### <a name="returns"></a>Retourne

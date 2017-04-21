@@ -19,7 +19,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
     
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
     
-Vous pouvez également créer un complément pour PowerPoint ou Word à l’aide de [Visual Studio 2015](get-started/create-and-debug-office-add-ins-in-visual-studio) ou de [n’importe quel éditeur](get-started/create-an-office-add-in-using-any-editor). 
+Vous pouvez également créer un complément pour PowerPoint ou Word à l’aide de [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) ou de [n’importe quel éditeur](../get-started/create-an-office-add-in-using-any-editor.md). 
 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office

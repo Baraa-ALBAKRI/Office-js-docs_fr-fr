@@ -77,7 +77,7 @@ rangeObject.clear(applyTo);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |applyTo|string|Facultatif. Détermine le type d’action de suppression. Les valeurs possibles sont les suivantes : `All` Option par défaut,`Formats`, ,`Contents` |
 
 #### <a name="returns"></a>Renvoie
@@ -113,7 +113,7 @@ rangeObject.delete(shift);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Shift|string|Indique la façon dont les cellules doivent être décalées. Les valeurs possibles sont les suivantes : Up (vers le haut), Left (vers la gauche)|
 
 #### <a name="returns"></a>Renvoie
@@ -147,7 +147,7 @@ rangeObject.getBoundingRect(anotherRange);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|range ou string|Nom, adresse ou objet de plage.|
 
 #### <a name="returns"></a>Retourne
@@ -185,7 +185,7 @@ rangeObject.getCell(row, column);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Numéro de ligne de la cellule à récupérer. Avec indice zéro.|
 |column|number|Numéro de colonne de la cellule à récupérer. Avec indice zéro.|
 
@@ -224,7 +224,7 @@ rangeObject.getColumn(column);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |column|number|Numéro de colonne de la plage à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -261,7 +261,7 @@ rangeObject.getColumnsAfter(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Facultatif. Nombre de colonnes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
 
 #### <a name="returns"></a>Retourne
@@ -277,7 +277,7 @@ rangeObject.getColumnsBefore(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Facultatif. Nombre de colonnes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
 
 #### <a name="returns"></a>Retourne
@@ -366,7 +366,7 @@ rangeObject.getIntersection(anotherRange);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|range ou string|Objet de plage ou adresse de plage utilisé pour déterminer l’intersection des plages.|
 
 #### <a name="returns"></a>Retourne
@@ -403,7 +403,7 @@ rangeObject.getIntersectionOrNullObject(anotherRange);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |anotherRange|range ou string|Objet de plage ou adresse de plage utilisé pour déterminer l’intersection des plages.|
 
 #### <a name="returns"></a>Retourne
@@ -525,7 +525,7 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |rowOffset|number|Nombre de lignes (positif, négatif ou nul) duquel décaler la plage. Les valeurs positives représentent un décalage vers le bas et les valeurs négatives un décalage vers le haut.|
 |columnOffset|number|Nombre de colonnes (positif, négatif ou nul) duquel décaler la plage. Les valeurs positives représentent un décalage vers la droite et les valeurs négatives un décalage vers la gauche.|
 
@@ -562,7 +562,7 @@ rangeObject.getResizedRange(deltaRows, deltaColumns);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |deltaRows|number|Nombre de lignes par lequel développer le coin inférieur droit, par rapport à la plage actuelle. Utilisez un nombre positif pour étendre la plage ou un nombre négatif pour la réduire.|
 |deltaColumns|number|Nombre de colonnes par lequel développer le coin inférieur droit, par rapport à la plage actuelle. Utilisez un nombre positif pour étendre la plage ou un nombre négatif pour la réduire.|
 
@@ -579,7 +579,7 @@ rangeObject.getRow(row);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Numéro de ligne de la plage à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -616,7 +616,7 @@ rangeObject.getRowsAbove(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Facultatif. Nombre de lignes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
 
 #### <a name="returns"></a>Renvoie
@@ -632,7 +632,7 @@ rangeObject.getRowsBelow(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Facultatif. Nombre de lignes à inclure dans la plage obtenue. En règle générale, utilisez un nombre positif pour créer une plage en dehors de la plage actuelle. Vous pouvez également utiliser un nombre négatif pour créer une plage à l’intérieur de la plage actuelle. La valeur par défaut est 1.|
 
 #### <a name="returns"></a>Renvoie
@@ -648,7 +648,7 @@ rangeObject.getUsedRange(valuesOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|[ApiSet(Version|Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
 #### <a name="returns"></a>Retourne
@@ -686,7 +686,7 @@ rangeObject.getUsedRangeOrNullObject(valuesOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|bool|Facultatif. Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
 #### <a name="returns"></a>Renvoie
@@ -716,7 +716,7 @@ rangeObject.insert(shift);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Shift|string|Indique la façon dont les cellules doivent être décalées. Les valeurs possibles sont les suivantes : Down (vers le bas), Right (vers la droite)|
 
 #### <a name="returns"></a>Retourne
@@ -752,7 +752,7 @@ rangeObject.merge(across);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |across|bool|Facultatif. Définit la valeur « true » pour fusionner séparément les cellules de chaque ligne de la plage spécifiée. La valeur par défaut est « false ».|
 
 #### <a name="returns"></a>Retourne

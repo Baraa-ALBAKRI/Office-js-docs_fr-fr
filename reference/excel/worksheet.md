@@ -108,7 +108,7 @@ worksheetObject.getCell(row, column);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |row|number|Numéro de ligne de la cellule à récupérer. Avec indice zéro.|
 |column|number|Numéro de colonne de la cellule à récupérer. Avec indice zéro.|
 
@@ -145,7 +145,7 @@ worksheetObject.getRange(address);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |address|string|Facultatif. Adresse ou nom de la plage. Si cette propriété n’est pas définie, la plage de la feuille de calcul toute entière est renvoyée.|
 
 #### <a name="returns"></a>Retourne
@@ -202,7 +202,7 @@ worksheetObject.getUsedRange(valuesOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|[ApiSet(Version|Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées (ignore la mise en forme).|
 
 #### <a name="returns"></a>Renvoie
@@ -238,7 +238,7 @@ worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |valuesOnly|bool|Facultatif. Prend uniquement en compte les cellules avec des valeurs sous forme de cellules utilisées.|
 
 #### <a name="returns"></a>Renvoie

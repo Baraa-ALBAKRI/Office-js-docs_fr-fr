@@ -38,12 +38,12 @@ tableColumnCollectionObject.add(index, values, name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Facultatif. Spécifie la position relative de la nouvelle colonne. Si la valeur est null ou -1, la ligne est ajoutée à la fin. Les colonnes avec un index supérieur seront décalées sur le côté. Avec indice zéro.|
 |values|(boolean ou string ou number)[][]|Facultatif. Matrice 2D des valeurs non mises en forme de la colonne du tableau.|
-|name|string|Facultatif. Spécifie le nom de la nouvelle colonne. Si la valeur est null, le nom par défaut est utilisé.|
+|name|chaîne|Facultatif. Spécifie le nom de la nouvelle colonne. Si la valeur est null, le nom par défaut est utilisé.|
 
-#### <a name="returns"></a>Renvoie
+#### <a name="returns"></a>Retourne
 [TableColumn](tablecolumn.md)
 
 #### <a name="examples"></a>Exemples
@@ -90,7 +90,7 @@ tableColumnCollectionObject.getItem(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|number ou string| Nom ou ID de la colonne.|
 
 #### <a name="returns"></a>Retourne
@@ -140,7 +140,7 @@ tableColumnCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -172,7 +172,7 @@ tableColumnCollectionObject.getItemOrNullObject(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|number ou string| Nom ou ID de la colonne.|
 
 #### <a name="returns"></a>Retourne

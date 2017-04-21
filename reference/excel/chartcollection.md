@@ -23,7 +23,7 @@ Aucun
 |[getCount()](#getcount)|int|Renvoie le nombre de graphiques dans la feuille de calcul.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Extrait un graphique en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Chart](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Graphique](chart.md)|Extrait un graphique à l’aide de son nom. Si plusieurs graphiques portent le même nom, c’est le premier d’entre eux qui est renvoyé.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -38,7 +38,7 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |type|string|Représente le type d’un graphique. Les valeurs possibles sont les suivantes : ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
 |sourceData|Range|Objet Range correspondant aux données source.|
 |seriesBy|string|Facultatif. Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique. Les valeurs possibles sont les suivantes : Auto (automatique), Columns (colonnes), Rows (lignes)|
@@ -92,7 +92,7 @@ chartCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Nom du graphique à extraire.|
 
 #### <a name="returns"></a>Retourne
@@ -163,7 +163,7 @@ chartCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -197,7 +197,7 @@ chartCollectionObject.getItemOrNullObject(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|string|Nom du graphique à extraire.|
 
 #### <a name="returns"></a>Retourne

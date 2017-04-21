@@ -6,8 +6,8 @@ Vous pouvez installer un complément Office à des fins de test dans un client O
 Si vous ne testez pas un complément Word, Excel ou PowerPoint sous Windows, consultez une des rubriques suivantes pour charger la version test de votre complément :
 
 - [Chargement de version test des compléments Office dans Office Online](sideload-office-add-ins-for-testing.md)
-- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md )
-- [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md )
+- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement de version test des compléments Outlook](sideload-outlook-add-ins-for-testing.md)
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans la version de bureau Office ou Office Online.
 

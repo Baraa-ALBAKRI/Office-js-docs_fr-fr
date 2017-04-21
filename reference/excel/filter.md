@@ -41,7 +41,7 @@ filterObject.apply(criteria);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |de réussite|FilterCriteria|Critères à appliquer.|
 
 #### <a name="returns"></a>Renvoie
@@ -57,7 +57,7 @@ filterObject.applyBottomItemsFilter(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Nombre d’éléments à partir du bas à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -73,7 +73,7 @@ filterObject.applyBottomPercentFilter(percent);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |pourcentage|number|Pourcentage d’éléments à partir du bas à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -89,7 +89,7 @@ filterObject.applyCellColorFilter(color);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|Couleur d’arrière-plan des cellules à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -105,7 +105,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |criteria1|string|Première chaîne de critères.|
 |criteria2|string|Facultatif. Deuxième chaîne de critères.|
 |oper|chaîne|Facultatif. Opérateur qui décrit comment les deux critères sont joints.  Les valeurs possibles sont les suivantes : And, Or|
@@ -123,7 +123,7 @@ filterObject.applyDynamicFilter(criteria);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |de réussite|string|Critères dynamiques à appliquer.  Les valeurs possibles sont les suivantes : Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday|
 
 #### <a name="returns"></a>Retourne
@@ -139,7 +139,7 @@ filterObject.applyFontColorFilter(color);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |color|string|Couleur de police des cellules à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -155,7 +155,7 @@ filterObject.applyIconFilter(icon);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |icône|Icône|Icônes des cellules à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -171,7 +171,7 @@ filterObject.applyTopItemsFilter(count);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |count|number|Nombre d’éléments à partir du haut à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -187,7 +187,7 @@ filterObject.applyTopPercentFilter(percent);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |pourcentage|number|Pourcentage d’éléments à partir du haut à afficher.|
 
 #### <a name="returns"></a>Renvoie
@@ -203,7 +203,7 @@ filterObject.applyValuesFilter(values);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |values|()[]|Liste des valeurs à afficher.|
 
 #### <a name="returns"></a>Renvoie

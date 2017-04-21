@@ -103,8 +103,7 @@ Dans cette procédure, vous allez ajouter une bibliothèque de documents et fair
     
 12. Dans le concepteur de manifeste, définissez la valeur de la **page de démarrage** sur ~appWebUrl/Lists/MyDocumentLibrary. Cela la convertit en une valeur de OfficeEnabledAddin/Lists/MyDocumentLibrary.
     
-     >
-  **Remarque** : cette URL fait référence à la bibliothèque de documents. Vous devez utiliser le jeton ~appWebUrl au début des URL dans votre manifeste de complément Office faisant référence à des éléments dans le complément web. Pour plus d’informations sur les jetons d’URL dans un projet de complément SharePoint, consultez l’article [Chaînes URL et jetons dans les compléments pour SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
+     >**Remarque** : cette URL fait référence à la bibliothèque de documents. Vous devez utiliser le jeton ~appWebUrl au début des URL dans votre manifeste de complément Office faisant référence à des éléments dans le complément web. Pour plus d’informations sur les jetons d’URL dans un projet de complément SharePoint, consultez l’article [Chaînes URL et jetons dans les compléments pour SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
 13. Fermez le concepteur de manifeste pour enregistrer la modification.
     
 
@@ -116,11 +115,9 @@ Dans cette procédure, vous allez afficher la liste des utilisateurs du site à 
 Dans cet exemple, seules les données de liste SharePoint sont affichées, mais vous pouvez utiliser ce type de données dans le cadre d’un complément d’approbation de document. Si un utilisateur sélectionne un nom dans cette liste, votre code définit la valeur de la colonne du réviseur dans une liste de suivi de document. Un flux de travail associé à cette liste peut envoyer une notification de révision à cet utilisateur. Vous pouvez également enregistrer le nom sélectionné dans les paramètres du document. Dans ce cas, lorsqu’un utilisateur ouvre le document, vous pouvez afficher les contrôles dans le complément du volet Office uniquement si l’utilisateur actuel et l’utilisateur stocké dans les paramètres du document sont identiques. Pour plus d’informations, voir les sections suivantes :
 
 
-- 
-  [Effectuer des opérations de base à l’aide de terminaux REST SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
+- [Effectuer des opérations de base à l’aide de terminaux REST SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
     
-- 
-  [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
+- [Procédure : effectuer des opérations de base avec du code de bibliothèque JavaScript dans SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
     
 - [Conservation de l’état et des paramètres des compléments](../../docs/develop/persisting-add-in-state-and-settings.md)
     
@@ -221,8 +218,7 @@ Vous pouvez déboguer votre complément du volet Office en lançant le document
 
 
 
- >
-  **Remarque** : cette procédure ouvre Excel Online. Cela fonctionne uniquement lorsque vous avez un compte Office 365. Voir la [procédure : Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ >**Remarque** : cette procédure ouvre Excel Online. Cela fonctionne uniquement lorsque vous avez un compte Office 365. Voir la [procédure : Configurer un environnement de développement pour les compléments pour SharePoint dans Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
 
 
 1. Ouvrez le fichier Home.js dans l’éditeur de code, puis définissez un point d’arrêt en regard de la méthode `getDataFromSelection`.
@@ -275,9 +271,9 @@ Quand vous êtes prêt à empaqueter votre complément pour la publication, ouvr
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-- [Instructions de conception pour les compléments Office](../../docs/design/add-in-design.md)
+- [Instructions de conception pour les compléments Office](../design/add-in-design.md)
     
-- [Cycle de vie du développement des compléments Office](../../docs/design/add-in-development-lifecycle.md)
+- [Cycle de vie du développement des compléments Office](add-in-development-lifecycle.md)
     
 - [Publier votre complément Office](../publish/publish.md)
     
@@ -285,5 +281,5 @@ Quand vous êtes prêt à empaqueter votre complément pour la publication, ouvr
     
 - [Manifeste XML des compléments Office](../../docs/overview/add-in-manifests.md)
     
-- [API et schémas de référence pour les compléments Office](../../reference/reference.md)
+- [API et schémas de référence pour les compléments Office](../../reference/javascript-api-for-office.md)
     

@@ -35,7 +35,7 @@ tableSortObject.apply(fields, matchCase, method);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |champs|SortField[]|Liste des conditions de tri.|
 |matchCase|bool|Facultatif. Indique si la casse influe sur le classement des chaînes.|
 |méthode|string|Facultatif. Méthode de classement utilisée pour les caractères chinois.  Les valeurs possibles sont les suivantes : PinYin, StrokeCount|

@@ -23,7 +23,7 @@ Aucun
 |[getCount()](#getcount)|int|Obtient le nombre de tableaux de la collection.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: number ou string)](#getitemkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Obtient un tableau en fonction de sa position dans la collection.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: number ou string)](#getitemornullobjectkey-number-or-string)|[Table](table.md)|Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number ou string)](#getitemornullobjectkey-number-or-string)|[Tableau](table.md)|Obtient un tableau à l’aide de son nom ou de son ID. Si le tableau n’existe pas, renvoie un objet null.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Détails des méthodes
 
@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |address|[object|Objet de plage ou nom/adresse (string) de la plage représentant la source de données. Si l’adresse ne contient pas de nom de feuille, la feuille ouverte est utilisée. Pour 1.1, utilisez le paramètre string ; pour 1.3 vous pouvez également utiliser l’objet Range.|
 |hasHeaders|bool|Valeur booléenne qui indique si les données importées disposent d’étiquettes de colonne. Si la source ne contient pas d’en-têtes (autrement dit, lorsque cette propriété est définie sur false), Excel génère automatiquement un en-tête et décale les données d’une ligne vers le bas.|
 
@@ -86,7 +86,7 @@ tableCollectionObject.getItem(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|number or string|Nom ou ID du tableau à récupérer.|
 
 #### <a name="returns"></a>Retourne
@@ -139,7 +139,7 @@ tableCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -173,7 +173,7 @@ tableCollectionObject.getItemOrNullObject(key);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |Key|number or string|Nom ou ID du tableau à récupérer.|
 
 #### <a name="returns"></a>Retourne

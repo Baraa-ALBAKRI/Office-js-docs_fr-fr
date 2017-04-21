@@ -107,7 +107,7 @@ Une API est prête pour la production lorsque vous consultez IntelliSense, que v
 Ce moment doit correspondre à peu près à :
 
 * Affichage de l’API dans la documentation et non plus sous une spécification ouverte.
-* Affichage de son IntelliSense dans un endroit public tel que [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/office-js/index.d.ts).
+* Affichage de son IntelliSense dans un endroit public tel que [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/office-js/index.d.ts).
 
 Notez que certaines plateformes peuvent être en avance par rapport à d’autres. Les versions de bureau sont généralement en avance.  Ainsi, le simple fait que `isSetSupported` renvoie `true` sur la version de bureau ne signifie pas qu’il renverra nécessairement `true` sur Mac au même moment (même si c’est généralement le cas au bout d’un mois ou deux).  Toutefois, la cadence différente d’implémentation explique précisément pourquoi `isSetSupported` (et/ou la spécification des conditions requises basée sur le manifeste) est nécessaire en premier lieu.  Dans la mesure où vous placez des fonctionnalités d’activation avec `isSetSupported`, ou ajoutez la condition requise du manifeste, vous ne devez pas vous soucier du type d’API disponible et du moment où il est disponible. Lorsque la fonctionnalité est disponible sur la plateforme donnée, votre complément « fonctionne » à cet endroit.
 

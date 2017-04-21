@@ -1,7 +1,7 @@
 
 # <a name="create-an-office-add-in-using-any-editor"></a>Créer un complément Office à l’aide d’un éditeur
 
-Vous pouvez utiliser le générateur Yeoman pour votre complément Office. Le générateur Yeoman fournit la structure du projet et assure la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
+Vous pouvez utiliser le générateur Yeoman pour créer votre complément Office. Le générateur Yeoman fournit la structure du projet et assure la gestion des builds. Le fichier `manifest.xml` indique à l’application Office où se trouve votre complément et la façon dont vous voulez qu’il s’affiche. L’application Office l’héberge dans Office.
 
  >**Remarque :** ces instructions utilisent Terminal sur un Mac, mais vous pouvez également utiliser d’autres environnements de ligne de commande Exchange Management Shell. 
 
@@ -118,7 +118,7 @@ Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialog
 
 Vous pouvez ensuite l’attacher et effectuer le débogage dans Visual Studio.   
 
-  >  **Remarque** :  actuellement, le seul outil de débogage pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx). Si vous n’avez pas installé Visual Studio, la sélection de l’option **Attacher le débogueur** ne produit aucune action.  
+  >**Remarque** :  actuellement, le seul outil de débogage pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx). Si vous n’avez pas installé Visual Studio, la sélection de l’option **Attacher le débogueur** ne produit aucune action.  
   
 Pour plus d’informations, consultez les rubriques suivantes :
 

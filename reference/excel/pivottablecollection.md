@@ -50,7 +50,7 @@ pivotTableCollectionObject.getItem(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|chaîne|Nom du tableau croisé dynamique à récupérer.|
 
 #### <a name="returns"></a>Retourne
@@ -66,7 +66,7 @@ pivotTableCollectionObject.getItemOrNullObject(name);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|chaîne|Nom du tableau croisé dynamique à récupérer.|
 
 #### <a name="returns"></a>Retourne

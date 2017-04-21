@@ -40,7 +40,7 @@ bindingCollectionObject.add(range, bindingType, id);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |plage|range ou string|Plage à laquelle lier la liaison. Peut être un objet de plage Excel ou une chaîne. Si c’est une chaîne, elle doit contenir l’adresse complète, y compris le nom de la feuille.|
 |bindingType|string|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
 |id|chaîne|Nom de la liaison.|
@@ -58,9 +58,9 @@ bindingCollectionObject.addFromNamedItem(name, bindingType, id);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |name|chaîne|Nom à partir duquel créer la liaison.|
-|bindingType|chaîne|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
+|bindingType|string|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
 |id|chaîne|Nom de la liaison.|
 
 #### <a name="returns"></a>Retourne
@@ -76,8 +76,8 @@ bindingCollectionObject.addFromSelection(bindingType, id);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
-|bindingType|chaîne|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
+|:---------------|:--------|:----------|
+|bindingType|string|Type de liaison.  Les valeurs possibles sont les suivantes : Range, Table, Text|
 |id|chaîne|Nom de la liaison.|
 
 #### <a name="returns"></a>Retourne
@@ -107,7 +107,7 @@ bindingCollectionObject.getItem(id);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID de l’objet de liaison à récupérer.|
 
 #### <a name="returns"></a>Retourne
@@ -187,7 +187,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |index|number|Valeur d’indice de l’objet à récupérer. Avec indice zéro.|
 
 #### <a name="returns"></a>Retourne
@@ -221,7 +221,7 @@ bindingCollectionObject.getItemOrNullObject(id);
 
 #### <a name="parameters"></a>Paramètres
 | Paramètre       | Type    |Description|
-|:---------------|:--------|:----------|:---|
+|:---------------|:--------|:----------|
 |id|string|ID de l’objet de liaison à récupérer.|
 
 #### <a name="returns"></a>Retourne
