@@ -31,26 +31,27 @@ Vous pouvez déployer des compléments via le centre d’administration si votre
 
 Actuellement, les compléments pour les clients Office suivants sont pris en charge : 
 
-|**Application Office**|**Office 2016 pour Windows**|**Office Online**|**Office 2016 pour Mac**|
-|:---------------------|:--------------------------|:--------------|:------------------|
-|Word|X|X|X|
-|Excel|X|X|X|
-|PowerPoint|X|X|X|
-|Outlook|Bientôt disponible|Bientôt disponible|Bientôt disponible|
+| Application Office    | Office 2016 pour Windows   | Office Online | Office 2016 pour Mac   |
+|:----------------------|:-------------------------:|:-------------:|:---------------------:|
+| Word                  | X                         | X             | X                     |
+| Excel                 | X                         | X             | X                     |
+| PowerPoint            | X                         | X             | X                     |
+| Outlook               | Bientôt disponible               | Bientôt disponible   | Bientôt disponible           |
 
 Le centre d’administration ne prend pas en charge les éléments suivants :
 
-- Les compléments qui ciblent Word, Excel, PowerPoint ou Outlook dans Office 2013.
+- Office 2013 (Word, Excel, PowerPoint ou Outlook).
+- Office pour iPad.
+- Compléments SharePoint.
+- Compléments COM/VSTO.
+- Office Online Server.
 - Le service d’annuaire local.
-- Le déploiement de compléments SharePoint.
-- Le déploiement de compléments vers Office Online Server.
-- Le déploiement de compléments COM/VSTO.
 
 Pour déployer des compléments SharePoint ou des compléments qui ciblent Office 2013, utilisez un [catalogue de compléments SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 >**Important :** les catalogues de compléments SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud [VersionOverrides](../../reference/manifest/versionoverrides.md) du manifeste de complément, comme les [commandes de complément](../design/add-in-commands.md). 
 
-Pour déployer des compléments COM/VSTO, utilisez ClickOnce ou Windows Installer. Pour plus d’informations, consultez l’article [Déploiement d’une solution Office](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
+Pour déployer des compléments COM/VSTO, utilisez ClickOnce ou Windows Installer. Pour plus d’informations, voir [Déploiement d’une solution Office](https://msdn.microsoft.com/en-us/library/bb386179.aspx).
 
 <!-- Need URL on SOC site.
 For more information about requirements, see [centralized deployment eligibility]().

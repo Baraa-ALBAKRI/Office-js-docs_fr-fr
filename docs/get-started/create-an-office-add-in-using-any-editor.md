@@ -57,6 +57,9 @@ Le générateur vous demande d’indiquer les éléments suivants :
 - Ajouter [TypeScript](https://www.typescriptlang.org/) : utiliser _N_
 - Choisir l’infrastructure : utiliser _Jquery_
 
+>**Remarque :** Si vous souhaitez créer un complément Office qui utilise Office UI Fabric React, entrez les informations suivantes :
+>- Ajouter [TypeScript](https://www.typescriptlang.org/) : utiliser _Y_
+>- Choisir l’infrastructure : utiliser _React_
 
 ![Image GIF du générateur Yeoman invitant à saisir des informations sur le projet](../../images/gettingstarted-fast.gif)
 
