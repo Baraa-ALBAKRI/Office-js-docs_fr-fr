@@ -45,7 +45,8 @@ Les clients suivants prennent en charge des compléments Outlook.
 | Outlook 2016 pour Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 pour Mac | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2013 pour Windows | 1.1, 1.2, 1.3 |
-| Outlook sur le web (Office 365 et Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
+| Outlook sur le web (Office 365 et Outlook.com) | 1.1, 1.2, 1.3, 1.4, 1.5 |
 | Outlook Web App (Exchange 2013 sur site) | 1.1 |
 | Outlook Web App (Exchange 2016 sur site) | 1.1, 1.2. 1.3 |
->**Remarque** La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [Mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/en-us/kb/3114349)    
+
+>**Remarque** La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [Mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/en-us/kb/3114349)

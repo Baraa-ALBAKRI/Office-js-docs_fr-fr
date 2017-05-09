@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|V1.3|V1.2|V1.1|">
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|Preview|V1.5|V1.4|V1.3|V1.2|V1.1|">
 	<Item text="Manifeste" url="manifest" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="Indique si une capture instantanée de votre complément de contenu est enregistrée avec le document hôte." />
 		<Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Indique l’ID secondaire de votre complément Office tel qu’il est émis par l’Office Store." />
 		<Item text="AppDomain" url="manifest/appdomain" SEODescription="Indique un domaine supplémentaire permettant de charger des pages dans la fenêtre du complément." />
 		<Item text="AppDomains" url="manifest/appdomains" SEODescription="Indique les domaines supplémentaires que votre complément utilisera pour charger des pages." />
-		<Item text="CitationText" url="manifest/citationtext" SEODescription="Spécifie le texte réutilisable de citation de ce dictionnaire." />
+		<Item text="CitationText" url="manifest/citationtext" Scope="excel, word, powerpoint, access, project" SEODescription="Spécifie le texte réutilisable de citation de ce dictionnaire." />
 		<Item text="DefaultLocale" url="manifest/defaultlocale" SEODescription="Spécifie le nom de culture par défaut des paramètres régionaux utilisés par les chaînes contenues dans votre complément." />
 		<Item text="DefaultSettings" url="manifest/defaultsettings" SEODescription="Spécifie l’emplacement de la source par défaut et d’autres paramètres par défaut pour votre complément de contenu ou de volet des tâches." />
 		<Item text="Description" url="manifest/description" SEODescription="Spécifie la description de votre complément Office sous forme d’une chaîne de 250 caractères maximum." />
@@ -46,14 +46,15 @@
 			<Item text="Contrôle" url="manifest/control" SEODescription="Indique le contrôle à réaliser lorsque l’utilisateur sélectionne un bouton ou un menu." />
 
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="Indique l’onglet et le groupe pour les commandes de complément." />
+			<Item text="Événement" url="manifest/event" Scope="outlook" SEODescription="Définit un gestionnaire d’événements dans un complément." />
 			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint, outlook" SEODescription="Définit l’emplacement où se trouvent les fonctionnalités d’un complément" />
-			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
+			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint,outlook" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme donné." />
 			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur." />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Fournit les informations utilisées par la légende qui s’affiche lorsque le complément est installé sur des hôtes Word, Excel et PowerPoint." />
 			<Item text="Groupe" url="manifest/group" Scope="excel, word, powerpoint, outlook" SEODescription="Définit un groupe de points d’extension d’interface utilisateur dans un onglet." />
 			<Item text="Hôtes" url="manifest/hosts" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie les types d’application hôte Office pris en charge par votre complément Office." />
 			<Item text="Icône" url="manifest/icon" Scope="excel, word, powerpoint, outlook" SEODescription="Définit les éléments d’image pour les options de menu et de bouton." />
-      <Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme pour environnement mobile." />
+			<Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="Spécifie les paramètres d’un complément pour un facteur de forme pour environnement mobile." />
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Définit un ensemble de contrôles à inclure dans le menu contextuel d’Office." />
 			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="Spécifie l’onglet préexistant à utiliser pour une commande de complément." />
 			<Item text="Ressources" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="Contient des icônes, des chaînes et des URL pour le nœud VersionOverrides." />
@@ -138,133 +139,163 @@
 		<Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Cet objet représente la protection d’un objet de la feuille." />
 		<Item text="Ensembles de conditions requises de l’API JavaScript pour Excel" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Trouver des informations sur les ensembles de conditions requises pour Excel, les applications hôtes Office qui prennent en charge ces conditions et les numéros de build ou de version de ces applications." />
 	</Item>
-	<Item text="Outlook" url="outlook" Scope="Outlook">
-		<Item text="1.1" url="outlook/1.1/index" Version="V1.1">
-			<Item text="Modèles objet" url="outlook/1.1" Version="V1.1">
-				<Item text="Office.context" url="outlook/1.1/Office.context" Version="V1.1" />
-				<Item text="Office.context.mailbox" url="outlook/1.1/Office.context.mailbox" Version="V1.1" />
-				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.1/Office.context.mailbox.diagnostics" Version="V1.1" />
-				<Item text="Office.context.mailbox.item" url="outlook/1.1/Office.context.mailbox.item" Version="V1.1" />
-				<Item text="Office.context.mailbox.userProfile" url="outlook/1.1/Office.context.mailbox.userProfile" Version="V1.1" />
+	<Item text="Outlook" url="outlook" Scope="outlook">
+		<Item text="Présentation de l’ensemble de conditions requises des API" url="outlook/tutorial-api-requirement-sets" Scope="outlook" SEODescription="Ensembles de conditions requises de l’API pour Outlook" />
+		<Item text="Ensemble de conditions requises (aperçu)" url="outlook/preview/index" Scope="outlook" Version="Preview">
+			<Item text="Modèles objet" url="outlook/preview" Scope="outlook" Version="Preview">
+				<Item text="Office" url="outlook/preview/Office" Scope="outlook" Version="Preview" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context" url="outlook/preview/Office.context" Scope="outlook" Version="Preview" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/preview/Office.context.mailbox.diagnostics" Scope="outlook" Version="Preview" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
+				<Item text="Office.context.mailbox" url="outlook/preview/Office.context.mailbox" Scope="outlook" Version="Preview" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
+				<Item text="Office.context.mailbox.item" url="outlook/preview/Office.context.mailbox.item" Scope="outlook" Version="Preview" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/preview/Office.context.mailbox.userProfile" Scope="outlook" Version="Preview" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
 			</Item>
-			<Item text="Types complexes" url="outlook/1.1" Version="V1.1">
-				<Item text="Body" url="outlook/1.1/Body" Version="V1.1" />
-				<Item text="CustomProperties" url="outlook/1.1/CustomProperties" Version="V1.1" />
-				<Item text="Emplacement" url="outlook/1.1/Location" Version="V1.1" />
-				<Item text="Destinataires" url="outlook/1.1/Recipients" Version="V1.1" />
-				<Item text="RoamingSettings" url="outlook/1.1/RoamingSettings" Version="V1.1" />
-				<Item text="Objet" url="outlook/1.1/Subject" Version="V1.1" />
-				<Item text="Heure" url="outlook/1.1/Time" Version="V1.1" />
+			<Item text="Types complexes" url="outlook/preview" Scope="outlook" Version="Preview">
+				<Item text="Body" url="outlook/preview/Body" Scope="outlook" Version="Preview" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
+				<Item text="CustomProperties" url="outlook/preview/CustomProperties" Scope="outlook" Version="Preview" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
+				<Item text="Événement" url="outlook/preview/Event" Scope="outlook" Version="Preview" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
+				<Item text="Emplacement" url="outlook/preview/Location" Scope="outlook" Version="Preview" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
+				<Item text="NotificationMessages" url="outlook/preview/NotificationMessages" Scope="outlook" Version="Preview" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
+				<Item text="Destinataires" url="outlook/preview/Recipients" Scope="outlook" Version="Preview" SEODescription="Informations sur les destinataires du message." />
+				<Item text="RoamingSettings" url="outlook/preview/RoamingSettings" Scope="outlook" Version="Preview" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur." />
+				<Item text="Objet" url="outlook/preview/Subject" Scope="outlook" Version="Preview" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
+				<Item text="Heure" url="outlook/preview/Time" Scope="outlook" Version="Preview" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
 			</Item>
-			<Item text="Types simples" url="outlook/1.1/simple-types" Version="V1.1" />
-			<!-- <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.1"  />
-        <Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.1"  />
-        <Item text="Contact" url="outlook/simple-types#contact" Version="V1.1"  />
-        <Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.1"  />
-        <Item text="EmailUser" url="outlook/simple-types#emailuser" Version="V1.1"  />
-        <Item text="Entities" url="outlook/simple-types#entities" Version="V1.1"  />
-        <Item text="LocalClientTime" url="outlook/simple-types#localclienttime" Version="V1.1"  />
-        <Item text="MeetingSuggestion" url="outlook/simple-types#contact" Version="V1.1"  />
-        <Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.1"  />
-        <Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.1"  />
-    </Item>-->
-			<Item text="Énumérations" url="outlook/1.1/Office.MailboxEnums" Version="V1.1" />
-			<!--<Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.1"  />
-      <Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.ItemType" url="outlook/Office.MailboxEnums#itemtype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.1"  />
-      <Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.1"  />-->
+			<Item text="Types simples" url="outlook/preview/simple-types" Scope="outlook" Version="Preview" />
+			<Item text="Énumérations" url="outlook/preview/Office.MailboxEnums" Scope="outlook" Version="Preview" />
 		</Item>
-		<Item text="1.2" url="outlook/1.2/index" Version="V1.2">
-			<Item text="Modèles objet" url="outlook/1.2" Version="V1.2">
-				<Item text="Office.context" url="outlook/1.2/Office.context" Version="V1.2" />
-				<Item text="Office.context.mailbox" url="outlook/1.2/Office.context.mailbox" Version="V1.2" />
-				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.2/Office.context.mailbox.diagnostics" Version="V1.2" />
-				<Item text="Office.context.mailbox.item" url="outlook/1.2/Office.context.mailbox.item" Version="V1.2" />
-				<Item text="Office.context.mailbox.userProfile" url="outlook/1.2/Office.context.mailbox.userProfile" Version="V1.2" />
+		<Item text="Ensemble de conditions requises de la version 1.5" url="outlook/1.5/index" Scope="outlook" Version="V1.5">
+			<Item text="Modèles objet" url="outlook/1.5" Scope="outlook" Version="V1.5">
+				<Item text="Office" url="outlook/1.5/Office" Scope="outlook" Version="V1.5" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context" url="outlook/1.5/Office.context" Scope="outlook" Version="V1.5" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.5/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.5" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
+				<Item text="Office.context.mailbox" url="outlook/1.5/Office.context.mailbox" Scope="outlook" Version="V1.5" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
+				<Item text="Office.context.mailbox.item" url="outlook/1.5/Office.context.mailbox.item" Scope="outlook" Version="V1.5" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.5/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.5" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
 			</Item>
-			<Item text="Types complexes" url="outlook/1.2" Version="V1.2">
-				<Item text="Body" url="outlook/1.2/Body" Version="V1.2" />
-				<Item text="CustomProperties" url="outlook/1.2/CustomProperties" Version="V1.2" />
-				<Item text="Emplacement" url="outlook/1.2/Location" Version="V1.2" />
-				<Item text="Destinataires" url="outlook/1.2/Recipients" Version="V1.2" />
-				<Item text="RoamingSettings" url="outlook/1.2/RoamingSettings" Version="V1.2" />
-				<Item text="Objet" url="outlook/1.2/Subject" Version="V1.2" />
-				<Item text="Heure" url="outlook/1.2/Time" Version="V1.2" />
+			<Item text="Types complexes" url="outlook/1.5" Scope="outlook" Version="V1.5">
+				<Item text="Body" url="outlook/1.5/Body" Scope="outlook" Version="V1.5" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
+				<Item text="CustomProperties" url="outlook/1.5/CustomProperties" Scope="outlook" Version="V1.5" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
+				<Item text="Événement" url="outlook/1.5/Event" Scope="outlook" Version="V1.5" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
+				<Item text="Emplacement" url="outlook/1.5/Location" Scope="outlook" Version="V1.5" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
+				<Item text="NotificationMessages" url="outlook/1.5/NotificationMessages" Scope="outlook" Version="V1.5" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
+				<Item text="Destinataires" url="outlook/1.5/Recipients" Scope="outlook" Version="V1.5" SEODescription="Informations sur les destinataires du message." />
+				<Item text="RoamingSettings" url="outlook/1.5/RoamingSettings" Scope="outlook" Version="V1.5" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur." />
+				<Item text="Objet" url="outlook/1.5/Subject" Scope="outlook" Version="V1.5" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
+				<Item text="Heure" url="outlook/1.5/Time" Scope="outlook" Version="V1.5" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
 			</Item>
-			<Item text="Types simples" url="outlook/1.2/simple-types" Version="V1.2" SEODescription="Représente les types simples de l’API de boîte aux lettres." />
-			<Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.2" />
-			<Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.2" />
-			<Item text="Contact" url="outlook/simple-types#contact" Version="V1.2" />
-			<Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.2" />
-			<Item text="EmailUser" url="outlook/simple-types#emailuser" Version="V1.2" />
-			<Item text="Entités" url="outlook/simple-types#entities" Version="V1.2" />
-			<Item text="LocalClientTime" url="outlook/simple-types#localclienttime" Version="V1.2" />
-			<Item text="MeetingSuggestion" url="outlook/simple-types#contact" Version="V1.2" />
-			<Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.2" />
-			<Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.2" />
-			<Item text="Énumérations" url="outlook/1.2/Office.MailboxEnums" Version="V1.2" SEODescription="Représente les énumérations de l’API de boîte aux lettres." />
-			<Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.2" />
-			<Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.ItemType" url="outlook/Office.MailboxEnums#itemtype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.2" />
-			<Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.2" />
+			<Item text="Types simples" url="outlook/1.5/simple-types" Scope="outlook" Version="V1.5" />
+			<Item text="Énumérations" url="outlook/1.5/Office.MailboxEnums" Scope="outlook" Version="V1.5" />
 		</Item>
-		<!-- V1.3 or latest. This doesn't have a url with the version number-->
-		<Item text="Modèles objet" url="outlook" Version="V1.3">
-			<Item text="Office" url="outlook/Office" Version="V1.3" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
-			<Item text="Office.context" url="outlook/Office.context" Version="V1.3" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
-			<Item text="Office.context.mailbox.diagnostics" url="outlook/Office.context.mailbox.diagnostics" Version="V1.3" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
-			<Item text="Office.context.mailbox" url="outlook/Office.context.mailbox" Version="V1.3" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
-			<Item text="Office.context.mailbox.item" url="outlook/Office.context.mailbox.item" Version="V1.3" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
-			<Item text="Office.context.mailbox.userProfile" url="outlook/Office.context.mailbox.userProfile" Version="V1.3" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
+		<Item text="Ensemble de conditions requises de la version 1.4" url="outlook/1.4/index" Scope="outlook" Version="V1.4">
+			<Item text="Modèles objet" url="outlook/1.4" Scope="outlook" Version="V1.4">
+				<Item text="Office" url="outlook/1.4/Office" Scope="outlook" Version="V1.4" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context" url="outlook/1.4/Office.context" Scope="outlook" Version="V1.4" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.4/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.4" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
+				<Item text="Office.context.mailbox" url="outlook/1.4/Office.context.mailbox" Scope="outlook" Version="V1.4" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
+				<Item text="Office.context.mailbox.item" url="outlook/1.4/Office.context.mailbox.item" Scope="outlook" Version="V1.4" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.4/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.4" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
+			</Item>
+			<Item text="Types complexes" url="outlook/1.4" Scope="outlook" Version="V1.4">
+				<Item text="Body" url="outlook/1.4/Body" Scope="outlook" Version="V1.4" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
+				<Item text="CustomProperties" url="outlook/1.4/CustomProperties" Scope="outlook" Version="V1.4" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
+				<Item text="Événement" url="outlook/1.4/Event" Scope="outlook" Version="V1.4" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
+				<Item text="Emplacement" url="outlook/1.4/Location" Scope="outlook" Version="V1.4" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
+				<Item text="NotificationMessages" url="outlook/1.4/NotificationMessages" Scope="outlook" Version="V1.4" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
+				<Item text="Destinataires" url="outlook/1.4/Recipients" Scope="outlook" Version="V1.4" SEODescription="Informations sur les destinataires du message." />
+				<Item text="RoamingSettings" url="outlook/1.4/RoamingSettings" Scope="outlook" Version="V1.4" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur." />
+				<Item text="Objet" url="outlook/1.4/Subject" Scope="outlook" Version="V1.4" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
+				<Item text="Heure" url="outlook/1.4/Time" Scope="outlook" Version="V1.4" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
+			</Item>
+			<Item text="Types simples" url="outlook/1.4/simple-types" Scope="outlook" Version="V1.4" />
+			<Item text="Énumérations" url="outlook/1.4/Office.MailboxEnums" Scope="outlook" Version="V1.4" />
 		</Item>
-		<Item text="Types complexes" url="outlook" Version="V1.3">
-			<Item text="Body" url="outlook/Body" Version="V1.3" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
-			<Item text="CustomProperties" url="outlook/CustomProperties" Version="V1.3" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
-			<Item text="Événement" url="outlook/Event" Version="V1.3" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
-			<Item text="Emplacement" url="outlook/Location" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
-			<Item text="NotificationMessages" url="outlook/NotificationMessages" Version="V1.3" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
-			<Item text="Destinataires" url="outlook/Recipients" Version="V1.3" SEODescription="Informations sur les destinataires du message." />
-			<Item text="RoamingSettings" url="outlook/RoamingSettings" Version="V1.3" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur. " />
-			<Item text="Objet" url="outlook/Subject" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
-			<Item text="Heure" url="outlook/Time" Version="V1.3" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
+		<Item text="Ensemble de conditions requises de la version 1.3" url="outlook/1.3/index" Scope="outlook" Version="V1.3">
+			<Item text="Modèles objet" url="outlook/1.3" Scope="outlook" Version="V1.3">
+				<Item text="Office" url="outlook/1.3/Office" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context" url="outlook/1.3/Office.context" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.3/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.3" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
+				<Item text="Office.context.mailbox" url="outlook/1.3/Office.context.mailbox" Scope="outlook" Version="V1.3" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
+				<Item text="Office.context.mailbox.item" url="outlook/1.3/Office.context.mailbox.item" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.3/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.3" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
+			</Item>
+			<Item text="Types complexes" url="outlook/1.3" Scope="outlook" Version="V1.3">
+				<Item text="Body" url="outlook/1.3/Body" Scope="outlook" Version="V1.3" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
+				<Item text="CustomProperties" url="outlook/1.3/CustomProperties" Scope="outlook" Version="V1.3" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
+				<Item text="Événement" url="outlook/1.3/Event" Scope="outlook" Version="V1.3" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
+				<Item text="Emplacement" url="outlook/1.3/Location" Scope="outlook" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
+				<Item text="NotificationMessages" url="outlook/1.3/NotificationMessages" Scope="outlook" Version="V1.3" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
+				<Item text="Destinataires" url="outlook/1.3/Recipients" Scope="outlook" Version="V1.3" SEODescription="Informations sur les destinataires du message." />
+				<Item text="RoamingSettings" url="outlook/1.3/RoamingSettings" Scope="outlook" Version="V1.3" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur." />
+				<Item text="Objet" url="outlook/1.3/Subject" Scope="outlook" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
+				<Item text="Heure" url="outlook/1.3/Time" Scope="outlook" Version="V1.3" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
+			</Item>
+			<Item text="Types simples" url="outlook/1.3/simple-types" Scope="outlook" Version="V1.3" />
+			<Item text="Énumérations" url="outlook/1.3/Office.MailboxEnums" Scope="outlook" Version="V1.3" />
 		</Item>
-		<Item text="Types simples" url="outlook/simple-types" Version="V1.3">
-			<!--
-        <Item text="AsyncResult" url="outlook/simple-types#asyncresult" Version="V1.3"  />
-        <Item text="AttachmentDetails" url="outlook/simple-types#attachmentdetails" Version="V1.3"  />
-        <Item text="Contact" url="outlook/simple-types#contact" Version="V1.3"  />
-        <Item text="EmailAddressDetails" url="outlook/simple-types#emailaddressdetails" Version="V1.3"  />
-        <Item text="EmailUser" url="outlook/simple-types#emailuser" Version="V1.3"  />
-        <Item text="Entities" url="outlook/simple-types#entities" Version="V1.3"  />
-        <Item text="LocalClientTime" url="outlook/simple-types#localclienttime" Version="V1.3"  />
-        <Item text="MeetingSuggestion" url="outlook/simple-types#contact" Version="V1.3"  />
-        <Item text="NotificationMessageDetails" url="outlook/simple-types#meetingsuggestion" Version="V1.3"  />
-        <Item text="PhoneNumber" url="outlook/simple-types#phonenumber" Version="V1.3"  />
-        <Item text="TaskSuggestion" url="outlook/simple-types#tasksuggestion" Version="V1.3"  />
-        -->
+		<Item text="Ensemble de conditions requises de la version 1.3" url="outlook/1.3/index" Scope="outlook" Version="V1.3">
+			<Item text="Modèles objet" url="outlook/1.3" Scope="outlook" Version="V1.3">
+				<Item text="Office" url="outlook/1.3/Office" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context" url="outlook/1.3/Office.context" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms Office.context fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office." />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.3/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.3" SEODescription="Fournit des informations de diagnostic à un complément Outlook." />
+				<Item text="Office.context.mailbox" url="outlook/1.3/Office.context.mailbox" Scope="outlook" Version="V1.3" SEODescription="Permet d’accéder au modèle d’objet du complément Outlook pour Microsoft Outlook et Microsoft Outlook sur le web." />
+				<Item text="Office.context.mailbox.item" url="outlook/1.3/Office.context.mailbox.item" Scope="outlook" Version="V1.3" SEODescription="L’espace de noms de l’élément est utilisé pour accéder au message, à la demande de réunion ou au rendez-vous actuellement sélectionné. Vous pouvez déterminer le type de l’élément à l’aide de la propriété itemType." />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.3/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.3" SEODescription="Permet d’accéder au profil de la boîte aux lettres de l’utilisateur." />
+			</Item>
+			<Item text="Types complexes" url="outlook/1.3" Scope="outlook" Version="V1.3">
+				<Item text="Body" url="outlook/1.3/Body" Scope="outlook" Version="V1.3" SEODescription="L’objet Body fournit des méthodes d’ajout et de mise à jour du contenu du message ou du rendez-vous." />
+				<Item text="CustomProperties" url="outlook/1.3/CustomProperties" Scope="outlook" Version="V1.3" SEODescription="L’objet CustomProperties représente les propriétés personnalisées qui sont spécifiques à un élément particulier et à un complément de messagerie pour Outlook." />
+				<Item text="Événement" url="outlook/1.3/Event" Scope="outlook" Version="V1.3" SEODescription="L’objet Event est transmis en tant que paramètre aux fonctions de complément appelées par des boutons de commande sans interface utilisateur." />
+				<Item text="Emplacement" url="outlook/1.3/Location" Scope="outlook" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir le lieu d’une réunion dans un complément Outlook." />
+				<Item text="NotificationMessages" url="outlook/1.3/NotificationMessages" Scope="outlook" Version="V1.3" SEODescription="L’objet NotificationMessages est renvoyé en tant que propriété notificationMessages d’un élément." />
+				<Item text="Destinataires" url="outlook/1.3/Recipients" Scope="outlook" Version="V1.3" SEODescription="Informations sur les destinataires du message." />
+				<Item text="RoamingSettings" url="outlook/1.3/RoamingSettings" Scope="outlook" Version="V1.3" SEODescription="Les paramètres créés à l’aide des méthodes de l’objet RoamingSettings sont enregistrés par complément et par utilisateur." />
+				<Item text="Objet" url="outlook/1.3/Subject" Scope="outlook" Version="V1.3" SEODescription="Fournit des méthodes pour obtenir et définir l’objet d’un rendez-vous ou d’un message dans un complément Outlook." />
+				<Item text="Heure" url="outlook/1.3/Time" Scope="outlook" Version="V1.3" SEODescription="L’objet Time est renvoyé comme propriété start ou end d’un rendez-vous en mode composition." />
+			</Item>
+			<Item text="Types simples" url="outlook/1.3/simple-types" Scope="outlook" Version="V1.3" />
+			<Item text="Énumérations" url="outlook/1.3/Office.MailboxEnums" Scope="outlook" Version="V1.3" />
 		</Item>
-		<Item text="Énumérations" url="outlook/Office.MailboxEnums" Version="V1.3">
-			<!--
-      <Item text="Office.AsyncResultStatus" url="outlook/Office#asyncresultstatus-string" Version="V1.3"  />
-      <Item text="Office.CoercionType" url="outlook/Office#coerciontype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.AttachmentType" url="outlook/Office.MailboxEnums#attachmenttype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.EntityType" url="outlook/Office.MailboxEnums#entitytype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.ItemNotification" url="outlook/Office.MailboxEnums#itemnotificationmessagetype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.ItemType" url="outlook/Office.MailboxEnums#itemtype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.RecipientType" url="outlook/Office.MailboxEnums#recipienttype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.ResponseType" url="outlook/Office.MailboxEnums#responsetype-string" Version="V1.3"  />
-      <Item text="Office.MailboxEnums.SourceProperty" url="outlook/Office#sourceproperty-string" Version="V1.3"  />
-        -->
+		<Item text="Ensemble de conditions requises de la version 1.2" url="outlook/1.2/index" Scope="outlook" Version="V1.2">
+			<Item text="Modèles objet" url="outlook/1.2" Scope="outlook" Version="V1.2">
+				<Item text="Office.context" url="outlook/1.2/Office.context" Scope="outlook" Version="V1.2" />
+				<Item text="Office.context.mailbox" url="outlook/1.2/Office.context.mailbox" Scope="outlook" Version="V1.2" />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.2/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.2" />
+				<Item text="Office.context.mailbox.item" url="outlook/1.2/Office.context.mailbox.item" Scope="outlook" Version="V1.2" />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.2/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.2" />
+			</Item>
+			<Item text="Types complexes" url="outlook/1.2" Scope="outlook" Version="V1.2">
+				<Item text="Body" url="outlook/1.2/Body" Scope="outlook" Version="V1.2" />
+				<Item text="CustomProperties" url="outlook/1.2/CustomProperties" Scope="outlook" Version="V1.2" />
+				<Item text="Emplacement" url="outlook/1.2/Location" Scope="outlook" Version="V1.2" />
+				<Item text="Destinataires" url="outlook/1.2/Recipients" Scope="outlook" Version="V1.2" />
+				<Item text="RoamingSettings" url="outlook/1.2/RoamingSettings" Scope="outlook" Version="V1.2" />
+				<Item text="Objet" url="outlook/1.2/Subject" Scope="outlook" Version="V1.2" />
+				<Item text="Heure" url="outlook/1.2/Time" Scope="outlook" Version="V1.2" />
+			</Item>
+			<Item text="Types simples" url="outlook/1.2/simple-types" Scope="outlook" Version="V1.2" SEODescription="Représente les types simples de l’API de boîte aux lettres." />
+			<Item text="Énumérations" url="outlook/1.2/Office.MailboxEnums" Scope="outlook" Version="V1.2" SEODescription="Représente les énumérations de l’API de boîte aux lettres." />
 		</Item>
-		<Item text="Présentation de l’ensemble de conditions requises des API" url="outlook/tutorial-api-requirement-sets" Version="V1.3" SEODescription="Ensembles de conditions requises de l’API pour Outlook" />
+		<Item text="Ensemble de conditions requises de la version 1.1" url="outlook/1.1/index" Scope="outlook" Version="V1.1">
+			<Item text="Modèles objet" url="outlook/1.1" Scope="outlook" Version="V1.1">
+				<Item text="Office.context" url="outlook/1.1/Office.context" Scope="outlook" Version="V1.1" />
+				<Item text="Office.context.mailbox" url="outlook/1.1/Office.context.mailbox" Scope="outlook" Version="V1.1" />
+				<Item text="Office.context.mailbox.diagnostics" url="outlook/1.1/Office.context.mailbox.diagnostics" Scope="outlook" Version="V1.1" />
+				<Item text="Office.context.mailbox.item" url="outlook/1.1/Office.context.mailbox.item" Scope="outlook" Version="V1.1" />
+				<Item text="Office.context.mailbox.userProfile" url="outlook/1.1/Office.context.mailbox.userProfile" Scope="outlook" Version="V1.1" />
+			</Item>
+			<Item text="Types complexes" url="outlook/1.1" Scope="outlook" Version="V1.1">
+				<Item text="Body" url="outlook/1.1/Body" Scope="outlook" Version="V1.1" />
+				<Item text="CustomProperties" url="outlook/1.1/CustomProperties" Scope="outlook" Version="V1.1" />
+				<Item text="Emplacement" url="outlook/1.1/Location" Scope="outlook" Version="V1.1" />
+				<Item text="Destinataires" url="outlook/1.1/Recipients" Scope="outlook" Version="V1.1" />
+				<Item text="RoamingSettings" url="outlook/1.1/RoamingSettings" Scope="outlook" Version="V1.1" />
+				<Item text="Objet" url="outlook/1.1/Subject" Scope="outlook" Version="V1.1" />
+				<Item text="Heure" url="outlook/1.1/Time" Scope="outlook" Version="V1.1" />
+			</Item>
+			<Item text="Types simples" url="outlook/1.1/simple-types" Scope="outlook" Version="V1.1" />
+			<Item text="Énumérations" url="outlook/1.1/Office.MailboxEnums" Scope="outlook" Version="V1.1" />
+		</Item>
 	</Item>
 	<Item text="OneNote" url="onenote/onenote-add-ins-javascript-reference" Scope="onenote">
 		<Item text="Application" url="onenote/application" SEODescription="Référence des compléments OneNote." />
@@ -320,7 +351,7 @@
 		<Item text="Codes d’erreur de l’API JavaScript pour Office" url="javascript-api-for-office-error-codes" SEODescription="Les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’interface API JavaScript pour Office (Office.js)." />
 		<Item text="Énumérations" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
 			<Item text="Énumération ActiveView" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="Spécifie l’état de l’affichage dynamique du document, par exemple, si l’utilisateur peut modifier le document." />
-			<Item text="AsyncResultStatus, énumération" url="shared/asyncresultstatus-enumeration" FriendlyUrl="reference/enumerationsasyncresultstatus-enumeration" Scope="Access, Excel, Word" SEODescription="Spécifie le résultat d’un appel asynchrone." />
+			<Item text="AsyncResultStatus, énumération" url="shared/asyncresultstatus-enumeration" FriendlyUrl="reference/enumerationsasyncresultstatus-enumeration" Scope="Access, Excel, Word, outlook" SEODescription="Spécifie le résultat d’un appel asynchrone." />
 			<Item text="BindingType, énumération" url="shared/bindingtype-enumeration" FriendlyUrl="reference/enumerationsbindingtype-enumeration" Scope="Access, Excel, Word" SEODescription="Spécifie le type de l’objet de liaison qui doit être retourné." />
 			<Item text="CoercionType, énumération" url="shared/coerciontype-enumeration" FriendlyUrl="reference/enumerationscoerciontype-enumeration" SEODescription="Indique comment forcer le type des données retournées ou définies par la méthode appelée." />
 			<Item text="CustomXMLNodeType, énumération" url="shared/customxmlnodetype-enumeration" FriendlyUrl="reference/enumerationscustomxmlnodetype-enumeration" Scope="Word" SEODescription="Spécifie le type de nœud." />
@@ -346,36 +377,36 @@
 		</Item>
 		<Item text="Context " url="shared/context">
 			<Item text="office.context" url="shared/office.context" SEODescription="Obtient l’objet Context qui représente l’environnement d’exécution du complément " />
-			<Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" SEODescription="Obtient des informations indiquant si le complément est exécuté sur une plateforme qui autorise les liens vers des systèmes de paiement externes." />
-			<Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" SEODescription="Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification du document ou de l’élément." />
+			<Item text="office.context.commerceAllowed " url="shared/office.context.commerceallowed" FriendlyUrl="reference/common/contextoffice.context.commerceallowed" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient des informations indiquant si le complément est exécuté sur une plateforme qui autorise les liens vers des systèmes de paiement externes." />
+			<Item text="office.context.contentLanguage" url="shared/office.context.contentlanguage" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification du document ou de l’élément." />
 			<Item text="office.context.displaylanguage" url="shared/office.context.displaylanguage" SEODescription="Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour l’interface utilisateur de l’application hôte Office." />
-			<Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled" SEODescription="Obtient des informations indiquant si le complément est exécuté dans une application hôte Office tactile." />
+			<Item text="office.context.touchEnabled" url="shared/office.context.touchenabled" FriendlyUrl="reference/common/contextoffice.context.touchenabled" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient des informations indiquant si le complément est exécuté dans une application hôte Office tactile." />
 			<Item text="office.context.officetheme" url="shared/office.context.officetheme" SEODescription="Permet d’accéder aux propriétés pour les couleurs du thème Office." />
-			<Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" SEODescription="Obtient la couleur d’arrière-plan du corps du thème Office" />
-			<Item text="office.context.bodyForegroundColor" url="shared/office.context.bodyforegroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodyforegroundcolor" SEOKeyword="OL" SEODescription="Obtient la couleur de premier plan du corps du thème Office." />
-			<Item text="office.context.controlbackgroundcolor" url="shared/office.context.controlbackgroundcolor" SEODescription="Obtient la couleur d’arrière-plan du contrôle du thème Office." />
-			<Item text="office.context.controlforegroundcolor" url="shared/office.context.controlforegroundcolor" SEODescription="Obtient la couleur de premier plan du contrôle du thème Office." />
-			<Item text="office.context.document" url="shared/office.context.document" SEODescription="Obtient un objet qui représente le document avec lequel le complément interagit." />
-			<Item text="office.context.mailbox" url="shared/office.context.mailbox" SEODescription="Obtient l’objet mailbox qui donne accès aux membres de l’API spécifiquement pour les compléments Outlook." />
-			<Item text="office.context.roamingsettings" url="shared/office.context.roamingsettings" SEODescription="Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément Outlook enregistré dans la boîte aux lettres d’un utilisateur." />
+			<Item text="office.context.bodyBackgroundColor" url="shared/office.context.bodybackgroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodybackgroundcolor" SEOKeyword="OL" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient la couleur d’arrière-plan du corps du thème Office" />
+			<Item text="office.context.bodyForegroundColor" url="shared/office.context.bodyforegroundcolor" FriendlyUrl="reference/common/contextoffice.context.bodyforegroundcolor" SEOKeyword="OL" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient la couleur de premier plan du corps du thème Office." />
+			<Item text="office.context.controlbackgroundcolor" url="shared/office.context.controlbackgroundcolor" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient la couleur d’arrière-plan du contrôle du thème Office." />
+			<Item text="office.context.controlforegroundcolor" url="shared/office.context.controlforegroundcolor" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient la couleur de premier plan du contrôle du thème Office." />
+			<Item text="office.context.document" url="shared/office.context.document" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Obtient un objet qui représente le document avec lequel le complément interagit." />
+			<Item text="office.context.mailbox" url="shared/office.context.mailbox" Scope="outlook" SEODescription="Obtient l’objet mailbox qui donne accès aux membres de l’API spécifiquement pour les compléments Outlook." />
+			<Item text="office.context.roamingsettings" url="shared/office.context.roamingsettings" Scope="outlook" SEODescription="Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément Outlook enregistré dans la boîte aux lettres d’un utilisateur." />
 		</Item>
 		<Item text="Liaison" url="shared/binding" Scope="access, excel, word">
 			<Item text="Binding.addHandlerAsync" url="shared/binding.addhandlerasync" SEODescription="Ajoute un gestionnaire à la liaison pour le type d’événement spécifié." />
 			<Item text="Événement Binding.bindingDataChanged" url="shared/binding.bindingdatachangedevent" SEODescription="Se produit quand des données sont modifiées dans la liaison." />
-			<!--<Item text="bindingDataChangedEventArgs object" url="shared/binding.bindingdatachangedeventargs" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs"    />
-        <Item text="type " url="shared/binding.bindingdatachangedeventargs.type" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.type"    />
-        <Item text="binding " url="shared/binding.bindingdatachangedeventargs.binding" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.binding"    />
-      <Item text="bindingselectionchangedevent.binding " url="shared/binding.bindingselectionchangedevent.binding" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.binding"    />
-      -->
+			<!--<Item text="bindingDataChangedEventArgs object" url="shared/binding.bindingdatachangedeventargs" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs"   />
+				<Item text="type " url="shared/binding.bindingdatachangedeventargs.type" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.type"   />
+				<Item text="binding " url="shared/binding.bindingdatachangedeventargs.binding" FriendlyUrl="reference/common/binding-object/data-changed-event/argsbinding.bindingdatachangedeventargs.binding"   />
+			<Item text="bindingselectionchangedevent.binding " url="shared/binding.bindingselectionchangedevent.binding" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.binding"   />
+			-->
 			<Item text="Événement Binding.bindingSelectionChanged" url="shared/binding.bindingselectionchangedevent" FriendlyUrl="reference/common/binding-object/selection-changed-eventbinding.bindingselectionchangedevent">
 				<Item text="columnCount" url="shared/binding.bindingselectionchangedevent.columncount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.columncount" SEODescription="Obtient le nombre de colonnes sélectionnées." />
 				<Item text="rowCount" url="shared/binding.bindingselectionchangedevent.rowcount" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.rowcount" SEODescription="Obtient le nombre de lignes sélectionnées" />
 				<Item text="startColumn" url="shared/binding.bindingselectionchangedevent.startcolumn" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startcolumn" SEODescription="Obtient l’index de la première colonne de la sélection (de base zéro)." />
 				<Item text="startRow" url="shared/binding.bindingselectionchangedevent.startrow" FriendlyUrl="reference/common/binding-object/selection-changed-event-argsbinding.bindingselectionchangedevent.startrow" SEODescription="Obtient l’index de la première ligne de la sélection (de base zéro)." />
 			</Item>
-			<!--<Item text="binding.bindingSelectionChangedeventargs" url="shared/binding.bindingselectionchangedeventargs"  />
-        <Item text="type" url="shared/binding.bindingselectionchangedevent.type"  />
-      -->
+			<!--<Item text="binding.bindingSelectionChangedeventargs" url="shared/binding.bindingselectionchangedeventargs" />
+				<Item text="type" url="shared/binding.bindingselectionchangedevent.type" />
+			-->
 			<Item text="document" url="shared/binding.document" SEODescription="Classe abstraite qui représente une liaison à une section du document." />
 			<Item text="getDataAsync" url="shared/binding.getdataasync" FriendlyUrl="reference/common/binding-objectbinding.getdataasync" SEODescription="Retourne les données contenues dans la liaison." />
 			<Item text="id" url="shared/binding.id" FriendlyUrl="reference/common/binding-objectbinding.id" SEODescription="Obtient l’identificateur de l’objet." />
@@ -431,11 +462,11 @@
 			<Item text="namespaceManager" url="shared/customxmlpart.namespacemanager" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.namespacemanager" SEODescription="Obtient l’ensemble des mappages de préfixes d’espace de noms (CustomXMLPrefixMappings) utilisés pour le CustomXMLPart actuel." Scope="word" />
 			<Item text="newNode" url="shared/customxmlpart.newnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.newnode" SEODescription="Obtient le nœud qui vient d’être ajouté à l’objet CustomXMLPart." Scope="word" />
 			<Item text="Événement nodeDeleted" url="shared/customxmlpart.nodedeleted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeleted.event" SEODescription="Se produit quand un nœud est supprimé." Scope="word" />
-			<!--<Item text="NodeDeletedEventArgs object" url="shared/customxmlpart.nodedeletedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeletedeventargs" SEODescription="Provides information about the deleted node that raised the nodeDeleted event." Scope="word"  />-->
+			<!--<Item text="NodeDeletedEventArgs object" url="shared/customxmlpart.nodedeletedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodedeletedeventargs" SEODescription="Provides information about the deleted node that raised the nodeDeleted event." Scope="word" />-->
 			<Item text="Événement nodeInserted" url="shared/customxmlpart.nodeinserted.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinserted.event" SEODescription="Se produit quand un nœud est inséré." Scope="word" />
-			<!--<Item text="NodeInsertedEventArgs object" url="shared/customxmlpart.nodeinsertedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinsertedeventargs" SEODescription="Provides information about the inserted node that raised the nodeInserted event." Scope="word"  />-->
+			<!--<Item text="NodeInsertedEventArgs object" url="shared/customxmlpart.nodeinsertedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodeinsertedeventargs" SEODescription="Provides information about the inserted node that raised the nodeInserted event." Scope="word" />-->
 			<Item text="Événement nodeReplaced" url="shared/customxmlpart.nodereplaced.event" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplaced.event" SEODescription="Se produit quand un nœud est remplacé." Scope="word" />
-			<!--<Item text="NodeReplacedEventArgs object" url="shared/customxmlpart.nodereplacedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplacedeventargs" SEODescription="Provides information about the replaced node that raised the nodeReplaced event." Scope="word"  />-->
+			<!--<Item text="NodeReplacedEventArgs object" url="shared/customxmlpart.nodereplacedeventargs" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.nodereplacedeventargs" SEODescription="Provides information about the replaced node that raised the nodeReplaced event." Scope="word" />-->
 			<Item text="oldNextSibling" url="shared/customxmlpart.oldnextsibling" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnextsibling" SEODescription="Obtient l’ancien frère suivant du nœud qui vient d’être supprimé de l’objet CustomXMLPart." Scope="word" />
 			<Item text="oldNode" url="shared/customxmlpart.oldnode" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.oldnode" SEODescription="Obtient le nœud qui vient d’être supprimé de l’objet CustomXmlPart." Scope="word" />
 			<Item text="removeHandlerAsync" url="shared/customxmlpart.removehandlerasync" FriendlyUrl="reference/common/customxmlpart-objectcustomxmlpart.removehandlerasync" SEODescription="Supprime un gestionnaire d’événements pour un événement d’objet CustomXmlPart." Scope="word" />
@@ -452,10 +483,10 @@
 		</Item>
 		<Item text="Document" url="shared/document" SEODescription="Le sous-ensemble Document API de l’interface API JavaScript pour Office inclut des objets, méthodes, propriétés et événements que vous pouvez utiliser dans les compléments Office qui sont associés à des documents." Scope="access, excel, powerpoint, project, word">
 			<Item text="Événement ActiveViewChanged" url="shared/document.activeviewchanged" FriendlyUrl="reference/common/document/activeviewchangeddocument.activeviewchanged" SEODescription="Survient lorsque l’utilisateur modifie l’affichage actuel du document." Scope="powerpoint" />
-			<!--<Item text="DocumentActiveViewChangedEventArgs object" url="shared/document.activeviewchangedeventargs" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs" SEODescription="Provides information about the view that raised the ActiveViewChanged event." Scope="powerpoint"  />
-      <Item text="activeView " url="shared/document.activeviewchangedeventargs.activeview" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.activeview" SEODescription="&quot;Gets an  **ActiveView** enumeration value that identifies the state of the active view of the document" Scope="powerpoint"  />
-      <Item text="type " url="shared/document.activeviewchangedeventargs.type" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.type" SEODescription="Gets an EventType enumeration value that identifies the kind of event that was raised." Scope="powerpoint"  />
-      -->
+			<!--<Item text="DocumentActiveViewChangedEventArgs object" url="shared/document.activeviewchangedeventargs" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs" SEODescription="Provides information about the view that raised the ActiveViewChanged event." Scope="powerpoint" />
+			<Item text="activeView " url="shared/document.activeviewchangedeventargs.activeview" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.activeview" SEODescription="&quot;Gets an  **ActiveView** enumeration value that identifies the state of the active view of the document" Scope="powerpoint" />
+			<Item text="type " url="shared/document.activeviewchangedeventargs.type" FriendlyUrl="reference/common/document/activeviewchangedeventargs-object/document.activeviewchangedeventargs.type" SEODescription="Gets an EventType enumeration value that identifies the kind of event that was raised." Scope="powerpoint" />
+			-->
 			<Item text="addHandlerAsync" url="shared/document.addhandlerasync" FriendlyUrl="reference/common/documentdocument.addhandlerasync" SEODescription="Ajoute un gestionnaire d’événements pour un événement d’objet Document." />
 			<Item text="bindings" url="shared/document.bindings" FriendlyUrl="reference/common/documentdocument.bindings" SEODescription="Représente les liaisons du complément au sein du document." />
 			<Item text="customXmlParts" url="shared/document.customxmlparts" FriendlyUrl="reference/common/documentdocument.customxmlparts" SEODescription="Obtient un objet qui représente les parties XML personnalisées contenues dans le document." Scope="word" />
@@ -467,9 +498,9 @@
 			<Item text="mode" url="shared/document.mode" SEODescription="Le mode actuel du laboratoire, mode Édition ou mode Affichage." />
 			<Item text="removeHandlerAsync" url="shared/document.removehandlerasync" SEODescription="Supprime le gestionnaire spécifié de la liaison pour le type d’événement spécifié." />
 			<Item text="Événement selectionChanged" url="shared/document.selectionchanged.event" SEODescription="Fournit des informations sur le document qui a déclenché l’événement SelectionChanged." />
-			<!--<Item text="document " url="shared/document.selectionchangedeventargs.document"  />
-      <Item text="documentSelectionChangedEventArgs object"   />
-      <Item text="type " url="shared/document.selectionchangedeventargs.type"  />-->
+			<!--<Item text="document " url="shared/document.selectionchangedeventargs.document" />
+			<Item text="documentSelectionChangedEventArgs object"  />
+			<Item text="type " url="shared/document.selectionchangedeventargs.type" />-->
 			<Item text="setSelectedDataAsync" url="shared/document.setselecteddataasync" SEODescription="Écrit des données dans la sélection actuelle au sein du document." />
 			<Item text="paramètres" url="shared/document.settings" SEODescription="Représente des paramètres personnalisés pour un complément de contenu ou de volet des tâches qui sont stockés dans le document hôte comme paires nom/valeur." />
 			<Item text="url" url="shared/document.url" SEODescription="Obtient l’URL du document actuellement ouvert dans l’application hôte." />
@@ -479,7 +510,7 @@
 			<Item text="error.message" url="shared/error.message" SEODescription="Obtient une description détaillée de l’erreur." />
 			<Item text="error.name" url="shared/error.name" SEODescription="Obtient le nom de l’erreur." />
 		</Item>
-		<Item text="Fichier" url="shared/file">
+		<Item text="Fichier" url="shared/file" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio">
 			<Item text="closeAsync" url="shared/file.closeasync" FriendlyUrl="reference/common/filefile.closeasync" SEODescription="Ferme le fichier de document." />
 			<Item text="getSliceAsync" url="shared/file.getsliceasync" FriendlyUrl="reference/common/filefile.getsliceasync" SEODescription=" Retourne la section spécifiée." />
 			<Item text="size" url="shared/file.size" FriendlyUrl="reference/common/filefile.size" SEODescription="Renvoie la taille spécifiée." />
@@ -488,8 +519,8 @@
 		<Item text="Office" url="shared/office">
 			<Item text="cast.item" url="shared/office.cast.item" Scope="outlook" SEODescription="Fournit la fonction IntelliSense pour les messages et rendez-vous en mode composition ou lecture." />
 			<Item text="Événement initialize" url="shared/office.initialize" SEODescription="Se produit quand l’environnement d’exécution est chargé et que le complément est prêt à interagir avec l’application et le document hébergé" />
-			<Item text="select" url="shared/office.select" FriendlyUrl="reference/common/officeoffice.select" SEODescription="Sélectionne le document hébergé." />
-			<Item text="useShortNamespace" url="shared/office.useshortnamespace" FriendlyUrl="reference/common/officeoffice.useshortnamespace" SEODescription="Active et désactive l’alias Office pour l’espace de noms Microsoft.Office.WebExtension complet." />
+			<Item text="select" url="shared/office.select" FriendlyUrl="reference/common/officeoffice.select" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Sélectionne le document hébergé." />
+			<Item text="useShortNamespace" url="shared/office.useshortnamespace" FriendlyUrl="reference/common/officeoffice.useshortnamespace" Scope="Word,Excel,OneNote,PowerPoint,Project,Access,Visio" SEODescription="Active et désactive l’alias Office pour l’espace de noms Microsoft.Office.WebExtension complet." />
 		</Item>
 		<Item text="ProjectDocument" url="shared/projectdocument.projectdocument" FriendlyUrl="reference/common/projectdocumentprojectdocument.projectdocument" Scope="project">
 			<Item text="addHandlerAsync" url="shared/projectdocument.addhandlerasync" FriendlyUrl="reference/common/projectdocumentprojectdocument.addhandlerasync" Scope="project" SEODescription="Ajoute de manière asynchrone un gestionnaire d’événements pour un événement dans un objet ProjectDocument." />
@@ -539,8 +570,9 @@
 		<Item text="event.source.id" url="shared/event.source.id" FriendlyUrl="reference/common/officeevent.source.id" Scope="outlook" SEODescription="Obtient l’ID du contrôle qui a déclenché l’appel de cette fonction." />
 		<Item text="Interface utilisateur Office" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="Fournit des objets et des méthodes permettant de créer des composants d’interface utilisateur pour les compléments.">
 			<Item text="Objet Dialogue" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="Objet renvoyé lorsque la méthode displayDialogAsync est appelée." />
-			<Item text="Méthode DisplayDialog" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Affiche une boîte de dialogue web à l’intérieur des hôtes Office." />
-			<Item text="Méthode MessageParent" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Remet un message de la part de la boîte de dialogue à sa page parent/d’ouverture." />
+			<Item text="Méthode closeContainer" url="shared/officeui.closecontainer" Scope="outlook, excel, word, powerpoint" SEODescription="Ferme le conteneur d’IU actif du complément." />
+			<Item text="Méthode displayDialog" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Affiche une boîte de dialogue web à l’intérieur des hôtes Office." />
+			<Item text="Méthode messageParent" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Remet un message de la part de la boîte de dialogue à sa page parent/d’ouverture." />
 			<Item text="Ensembles de conditions requises de l’API de boîte de dialogue" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="Trouver des informations sur les ensembles de conditions requises pour l’API de boîte de dialogue, les applications hôtes Office qui prennent en charge ces conditions et les numéros de build ou de version de l’application Office." />
 		</Item>
 	</Item>

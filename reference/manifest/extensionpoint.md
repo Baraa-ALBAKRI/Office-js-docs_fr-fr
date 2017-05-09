@@ -74,6 +74,7 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](./desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
+- [Événements](#events)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
@@ -232,4 +233,20 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
     <!-- Control definition -->
   </Control>
 </ExtensionPoint>
+```
+
+### <a name="events"></a>Événements
+Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié.
+
+> **Remarque :** ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+
+|  Élément |  Description  |
+|:-----|:-----|
+|  [Event](./event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
+
+#### <a name="itemsend-event-example"></a>Exemple d’événement ItemSend
+```xml
+<ExtensionPoint xsi:type="Events"> 
+  <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
 ```

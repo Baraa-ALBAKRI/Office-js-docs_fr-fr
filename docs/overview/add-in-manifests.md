@@ -26,7 +26,7 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 
 
  >**Remarques importantes** : 
- 
+ >- Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique. 
  >- Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**.
  >- Toutes les URL d’icône, telles que celles utilisées sur les surfaces de commande, doivent **autoriser la mise en cache**. Le serveur web NE doit PAS renvoyer les en-têtes HTTP, tels que no-cache/no-store. 
  >- Les compléments envoyés à l’Office Store doivent également inclure l’élément [SupportUrl](../../reference/manifest/supporturl.md). Pour plus d’informations, voir la section relative aux [erreurs d’envoi fréquentes à éviter](http://msdn.microsoft.com/library/0ceb385c-a608-40cc-8314-78e39d6c75d0%28Office.15%29.aspx#bk_q2).
@@ -137,7 +137,7 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
       <!-- Workbook=Excel Document=Word Presentation=PowerPoint -->
       <!-- Make sure the hosts you override match the hosts declared in the top section of the manifest -->
       <Host xsi:type="Document">
-        <!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+          <!-- Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
             <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
@@ -145,12 +145,12 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
 
           <!--PrimaryCommandSurface==Main Office Ribbon-->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
+              <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab -->
             <!-- Documentation includes all the IDs currently tested to work -->
             <CustomTab id="Contoso.Tab1">
                 <!--Group. Ensure you provide a unique id. Recommendation for any IDs is to namespace using your company name-->
               <Group id="Contoso.Tab1.Group1">
-                 <!--Label for your group. resid must point to a ShortString resource -->
+                   <!--Label for your group. resid must point to a ShortString resource -->
                 <Label resid="Contoso.Tab1.GroupLabel" />
                 <Icon>
                 <!-- Sample Todo: Each size needs its own icon resource or it will look distorted when resized -->
@@ -166,7 +166,7 @@ Les sections suivantes présentent des exemples de fichiers XML manifeste versio
                 <!--Label for your button. resid must point to a ShortString resource -->
                   <Label resid="Contoso.FunctionButton.Label" />
                   <Supertip>
-                     <!--ToolTip title. resid must point to a ShortString resource -->
+                       <!--ToolTip title. resid must point to a ShortString resource -->
                     <Title resid="Contoso.FunctionButton.Label" />
                      <!--ToolTip description. resid must point to a LongString resource -->
                     <Description resid="Contoso.FunctionButton.Tooltip" />

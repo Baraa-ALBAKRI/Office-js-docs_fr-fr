@@ -36,10 +36,9 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes :
 
-- Office pour Windows 2016 pour ordinateur de bureau (version 16.0.6769.0000 ou ultérieure)
-- Office Online avec comptes personnels
-- Office Online avec comptes professionnels ou scolaires (aperçu)
-- Office pour Mac ([aperçu](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/blob/master/Tools/MacDevPreview.md))
+- Office pour bureau Windows 2016 (build 16.0.6769+)
+- Office pour Mac (build 15.33+)
+- Office Online 
 
 D’autres plateformes seront bientôt disponibles.
 

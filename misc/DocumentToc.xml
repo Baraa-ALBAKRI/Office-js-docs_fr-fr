@@ -107,7 +107,8 @@
     </Item>
     <Item text="Appeler les API REST Outlook" url="outlook/use-rest-api" SEODescription="Découvrez comment authentifier et appeler des API REST à partir d’un complément Outlook." Scope="outlook" />
     <Item text="Obtenir et définir des données d’élément dans des formulaires de composition ou de lecture" url="outlook/item-data" SEODescription="Découvrez comment obtenir ou définir des données sur un rendez-vous ou un message à partir d’un complément Outlook" Scope="outlook" />
-    <Item text="Obtenir et définir des métadonnées de complément" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Découvrez comment charger et stocker des données personnalisées auxquelles seul votre complément Outlook peut accéder - via les paramètres d’itinérance et des propriétés personnalisées." Scope="outlook" />
+    <Item text="Fonctionnalité d’envoi pour les compléments Outlook" url="outlook/outlook-on-send-addins" Scope="outlook" />
+	<Item text="Obtenir et définir des métadonnées de complément" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Découvrez comment charger et stocker des données personnalisées auxquelles seul votre complément Outlook peut accéder - via les paramètres d’itinérance et des propriétés personnalisées." Scope="outlook" />
     <Item text="Confidentialité et sécurité" url="outlook/privacy-and-security" SEODescription="Utilisateurs finals" Scope="outlook">
       <Item text="Présentation des autorisations de complément Outlook" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Spécifiez les niveaux d’autorisation dans votre manifeste de complément Outlook." />
     </Item>
