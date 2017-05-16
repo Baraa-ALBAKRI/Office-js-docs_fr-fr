@@ -5,7 +5,7 @@ Spécifie la hauteur initiale d’un complément de contenu en pixels, comprise 
  **Type de complément :** Contenu
 
 
-## <a name="syntax:"></a>Syntaxe :
+## <a name="syntax"></a>Syntaxe :
 
 
 ```XML
@@ -13,9 +13,8 @@ Spécifie la hauteur initiale d’un complément de contenu en pixels, comprise 
 ```
 
 
-## <a name="contained-in:"></a>Contenu dans :
+## <a name="contained-in"></a>Contenu dans :
 
-[DefaultSettings](../../reference/manifest/defaultsettings.md) (compléments de contenu)
-
-[DesktopSettings](../../reference/manifest/desktopsettings.md) et [TabletSettings](../../reference/manifest/tabletsettings.md) (compléments de messagerie)
-
+- [DefaultSettings](defaultsettings.md) (compléments de contenu)
+- [DesktopSettings](desktopsettings.md) et [TabletSettings](../../reference/manifest/tabletsettings.md) (compléments de messagerie)
+- [ExtensionPoint](extensionpoint.md) (compléments de messagerie contextuels)

@@ -75,6 +75,7 @@ Les exemples suivants montrent comment utiliser l’élément  **ExtensionPoint*
 - [Module](#module) (peut uniquement être utilisé dans [DesktopFormFactor](./desktopformfactor.md).)
 - [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 - [Événements](#events)
+- [DetectedEntity](#detectedentity)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Ce point d’extension place des boutons dans la surface de commande pour le mode de lecture de courrier électronique. Dans l’application de bureau Outlook, cela apparaît dans le ruban.
@@ -248,5 +249,46 @@ Ce point d’extension ajoute un gestionnaire d’événements pour un événeme
 ```xml
 <ExtensionPoint xsi:type="Events"> 
   <Event Type="ItemSend" FunctionExecution="synchronous" FunctionName="itemSendHandler" /> 
+</ExtensionPoint> 
+```
+
+### <a name="detectedentity"></a>DetectedEntity
+Ce point d’extension ajoute une activation de complément contextuel sur un type d’entité spécifié.
+
+Pour l’élément [VersionOverrides](./versionoverrides.md) le contenant, l’attribut `xsi:type` doit avoir la valeur `VersionOverridesV1_1`.
+
+> **Remarque :** ce type d’élément est uniquement pris en charge par Outlook sur le web dans Office 365.
+
+|  Élément |  Description  |
+|:-----|:-----|
+|  [Label](#label) |  Spécifie l’étiquette pour le complément dans la fenêtre contextuelle.  |
+|  [SourceLocation](./sourcelocation.md) |  Spécifie l’URL de la fenêtre contextuelle.  |
+|  [Règle](./rule.md) |  Spécifie la ou les règles qui déterminent lorsqu’un complément s’active.  |
+
+#### <a name="label"></a>Étiquette
+
+Obligatoire. Libellé du groupe. L’attribut  **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **String** dans l’élément [ShortStrings](./resources.md#shortstrings) de l’élément [Resources](./resources.md).
+
+#### <a name="highlight-requirements"></a>Exigences relatives à la mise en surbrillance
+
+Le seul moyen pour qu’un utilisateur puisse activer un complément contextuel consiste à interagir avec une entité en surbrillance. Les développeurs peuvent contrôler les entités qui sont mises en surbrillance à l’aide de l’attribut `Highlight` de l’élément `Rule` pour les types de règles `ItemHasKnownEntity` et `ItemHasRegularExpressionMatch`.
+
+Toutefois, il existe certaines limitations à connaître. Ces limitations sont en place pour vous assurer qu’il y aura toujours une entité en surbrillance dans les messages ou rendez-vous applicables pour permettre à l’utilisateur d’activer le complément.
+
+- Les types d’entité `EmailAddress` et `Url` ne peuvent pas être mis en surbrillance et par conséquent ne peuvent pas être utilisés pour activer un complément.
+- Si vous utilisez une seule règle, `Highlight` DOIT avoir la valeur `all` ou `first`.
+- Si vous utilisez un type de règle `RuleCollection` avec `Mode="AND"` pour combiner plusieurs règles, au moins l’une des règles DOIT définir `Highlight` sur la valeur `all` ou `first`.
+- Si vous utilisez un type de règle `RuleCollection` avec `Mode="OR"` pour combiner plusieurs règles, toutes les règles DOIVENT définir `Highlight` sur la valeur `all` ou `first`.
+
+#### <a name="detectedentity-event-example"></a>Exemple d’événement DetectedEntity
+```xml
+<ExtensionPoint xsi:type="DetectedEntity">
+  <Label resid="residLabelName"/>
+  <SourceLocation resid="residDetectedEntityURL" />
+  <Rule xsi:type="RuleCollection" Mode="And">
+    <Rule xsi:type="ItemIs" ItemType="Message" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="MeetingSuggestion" Highlight="all" />
+    <Rule xsi:type="ItemHasKnownEntity" EntityType="Address" Highlight="none" />
+  </Rule>
 </ExtensionPoint> 
 ```

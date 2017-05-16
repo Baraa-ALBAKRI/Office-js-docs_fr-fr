@@ -34,6 +34,11 @@
 	<Item text="Développement de compléments pour l’iPad" url="develop/develop-office-add-ins-for-the-ipad" SEODescription="Vérifiez que vos compléments Office sont disponibles dans Office pour iPad." />
 	<Item text="Conseils pour la création de compléments avec Angular 2" url="develop/add-ins-with-angular2" SEODescription="Angular 2 permet de développer des compléments Office." />
 	<Item text="Utiliser l’API de dialogue" url="develop/dialog-api-in-office-add-ins" SEODescription="Utilisez l’API de dialogue pour ouvrir des boîtes de dialogue dans votre complément Office." />
+	<Item text="Autoriser des services externes" url="develop/auth-external-add-ins" SEODescription="Utilisez l’authentification OAuth 2.0 avec vos compléments Office." />
+	<Item text="Activer l’authentification unique dans un complément" url="develop/sso-in-office-add-ins">
+		<Item text="Créer un complément d’authentification unique à l’aide d’ASP.NET" url="develop/create-sso-office-add-ins-aspnet" />
+		<Item text="Créer un complément d’authentification unique à l’aide de Node.js" url="develop/create-sso-office-add-ins-nodejs" />
+	</Item>
 	<Item text="Manifeste" url="overview/add-in-manifests">	
 		<Item text="Définir des commandes de complément" url="outlook/manifests/define-add-in-commands" SEODescription="Utilisez l’élément VersionOverrides dans votre manifeste de complément pour définir des commandes de complément." />
 		<Item text="Spécifier les hôtes Office" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Découvrez comment spécifier les exigences en matière d’hôtes Office et d’API dans votre manifeste." /> 	
@@ -48,7 +53,6 @@
 		<Item text="Programmation asynchrone dans des compléments Office" url="develop/asynchronous-programming-in-office-add-ins" SEODescription="Développez des compléments Office à l’aide des rappels et des modèles de promesses imbriqués, ainsi que des modèles de programmation asynchrones pris en charge par l’API JavaScript pour Office." />
 		<Item text="Conserver l’état et les paramètres" url="develop/persisting-add-in-state-and-settings" SEODescription="Découvrez les options de conservation des données et paramètres d’état de complément pour les compléments de contenu, de volet des tâches et Outlook." />
 	</Item>
-	<Item text="Autoriser des services externes" url="develop/auth-external-add-ins" SEODescription="Utilisez l’authentification OAuth 2.0 avec vos compléments Office." />
 	<Item text="Confidentialité et sécurité" url="develop/privacy-and-security" SEODescription="Les compléments Office sont sécurisés par une infrastructure d’exécution, un modèle d’autorisations à plusieurs niveaux et la possibilité de contrôler l’utilisation de la mémoire, l’UC et les ressources réseau." />
 	<Item text="Traiter les limites de stratégie de même origine" url="develop/addressing-same-origin-policy-limitations" SEODescription="Fournit un bref aperçu des façons de traiter les limites de stratégie de même origine qui empêchent un script chargé à partir d’un domaine d’obtenir ou de manipuler les propriétés d’un document à partir d’un autre domaine dans un complément Office." />
 	<Item text="Localisation" url="develop/localization" SEODescription="Cet article décrit quelques moyens de fournir un contenu propre aux paramètres régionaux pour un complément Office, y compris les chaînes d’interface utilisateur, le nom du complément, la description, l’icône, le fichier source et le format de date/heure." />

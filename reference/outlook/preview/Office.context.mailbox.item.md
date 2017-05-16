@@ -889,10 +889,10 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |`formData`| String &#124; Object|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante : |
 | `formData.htmlBody` | String | &lt;optional&gt; | Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
-| `formData.attachments[].type` | String | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
+| `formData.attachments[].type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
 | `formData.attachments[].name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.| 
 | `formData.attachments[].url` | String | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
-| `formData.attachments[].url` | String | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
+| `formData.attachments[].url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
 | `formData.attachments[].itemId` | String | Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères. |
 | `callback` | function | &lt;optional&gt; | Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](simple-types.md#asyncresult). |
 
@@ -1007,10 +1007,10 @@ Lorsque des pièces jointes sont spécifiées dans le paramètre `formData.attac
 |`formData`| String &#124; Object|Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.<br/>**OU**<br/>Objet qui contient les données du corps du message ou des pièces jointes et une fonction de rappel. L’objet est défini de la manière suivante : |
 | `formData.htmlBody` | String | &lt;optional&gt; | Chaîne qui contient du texte et des éléments HTML et qui représente le corps du formulaire de réponse. La chaîne est limitée à 32 Ko.
 | `formData.attachments` | Array.&lt;Object&gt; | &lt;optional&gt; | Tableau d’objets JSON qui sont des pièces jointes de fichier ou d’élément. |
-| `formData.attachments[].type` | String | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
+| `formData.attachments[].type` | Chaîne | Indique le type de pièce jointe. Doit être `file` pour une pièce jointe de fichier ou `item` pour une pièce jointe d’élément. |
 | `formData.attachments[].name` | String | Chaîne qui contient le nom de la pièce jointe et comporte jusqu'à 255 caractères.| 
-| `formData.attachments[].url` | String | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
-| `formData.attachments[].url` | String | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
+| `formData.attachments[].url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Il s’agit de l’URI de l’emplacement du fichier. |
+| `formData.attachments[].url` | Chaîne | Utilisé uniquement si `type` est défini sur `file`. Si elle est définie sur `true`, cette valeur indique que la pièce jointe est incorporée dans le corps du message et qu’elle ne doit pas figurer dans la liste des pièces jointes. |
 | `formData.attachments[].itemId` | String | Utilisé uniquement si `type` est défini sur `item`. Il s’agit de l’ID de l’élément EWS de la pièce jointe. Il s’agit d’une chaîne comportant un maximum de 100 caractères. |
 | `callback` | function | &lt;optional&gt; | Une fois la méthode exécutée, la fonction transmise au paramètre `callback` est appelée avec un seul paramètre, `asyncResult`, qui est un objet [AsyncResult](simple-types.md#asyncresult). |
 
@@ -1269,7 +1269,7 @@ Un objet qui contient les tableaux des chaînes correspondant aux expressions r�
 
 ##### <a name="example"></a>Exemple
 
-L’exemple suivant montre comment accéder au tableau de correspondances pour les éléments<rule> d’expression régulière `fruits` et `veggies`, spécifiés dans le manifeste.</rule>
+L’exemple suivant montre comment accéder au tableau de correspondances pour les éléments de règle d’expression régulière `fruits` et `veggies`, spécifiés dans le manifeste.
 
 ```
 var allMatches = Office.context.mailbox.item.getRegExMatches();
@@ -1374,6 +1374,83 @@ function getCallback(asyncResult) {
 function setCallback(asyncResult) {
     // check for errors
 }
+```
+
+#### <a name="getselectedentities--entitiessimple-typesmdentities"></a>getSelectedEntities() → {[Entities](simple-types.md#entities)}
+
+Obtient les entités figurant dans une correspondance en surbrillance qu’un utilisateur a sélectionné. Les correspondances en surbrillance s’appliquent aux [compléments contextuels](..\..\..\docs\outlook\contextual-outlook-add-ins.md).
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| Aperçu |
+|[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Mode Outlook applicable| Lecture|
+
+##### <a name="returns"></a>Renvoie :
+
+Type : [Entities](simple-types.md#entities)
+
+##### <a name="example"></a>Exemple
+
+L’exemple suivant accède aux entités d’adresses dans la correspondance en surbrillance sélectionnée par l’utilisateur.
+
+```
+var contacts = Office.context.mailbox.item.getSelectedEntities().addresses;
+```
+
+#### <a name="getselectedregexmatches--object"></a>getSelectedRegExMatches() → {Object}
+
+Renvoie des valeurs de chaîne dans une correspondance en surbrillance, qui correspondent aux expressions régulières définies dans le fichier manifeste XML. Les correspondances en surbrillance s’appliquent aux [compléments contextuels](..\..\..\docs\outlook\contextual-outlook-add-ins.md).
+
+> **Remarque :** Cette méthode n’est pas prise en charge dans Outlook pour iOS ou Outlook pour Android.
+
+La méthode `getSelectedRegExMatches` renvoie les chaînes qui correspondent à l’expression régulière définie dans chaque élément de règle `ItemHasRegularExpressionMatch` ou `ItemHasKnownEntity` du fichier manifeste XML. Pour une règle `ItemHasRegularExpressionMatch`, une chaîne correspondante doit être présente dans la propriété de l’élément spécifié par cette règle. Le type simple `PropertyName` définit les propriétés prises en charge.
+
+Par exemple, supposons qu’un manifeste de complément contienne l’élément `Rule` suivant :
+
+```
+<Rule xsi:type="RuleCollection" Mode="And">
+  <Rule xsi:type="ItemIs" FormType="Read" ItemType="Message" />
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="veggies" RegExValue="tomato|onion|spinach|broccoli" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
+  </Rule>
+</Rule>
+```
+
+L’objet renvoyé depuis `getRegExMatches` aurait deux propriétés : `fruits` et `veggies`.
+
+```
+{
+  'fruits': ['apple','banana','Banana','coconut'],
+  'veggies': ['tomato','onion','spinach','broccoli']
+}
+```
+
+Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour la propriété de corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus. Utilisez plutôt la méthode [`Body.getAsync`](Body.md#getasynccoerciontype-options-callback) pour récupérer l’intégralité du corps de l’élément.
+
+##### <a name="requirements"></a>Configuration requise
+
+|Conditions requises| Valeur|
+|---|---|
+|[Version de l’ensemble minimal de conditions de boîte aux lettres](./tutorial-api-requirement-sets.md)| Aperçu |
+|[Niveau d’autorisation minimal](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
+|Mode Outlook applicable| Lecture|
+
+##### <a name="returns"></a>Renvoie :
+
+Un objet qui contient les tableaux des chaînes correspondant aux expressions régulières définies dans le fichier manifeste XML. Le nom de chaque tableau est égal à la valeur correspondante de l’attribut `RegExName` de la règle `ItemHasRegularExpressionMatch` correspondante ou de l’attribut `FilterName` de la règle `ItemHasKnownEntity` correspondante.
+
+##### <a name="example"></a>Exemple
+
+L’exemple suivant montre comment accéder au tableau de correspondances pour les éléments de règle d’expression régulière `fruits` et `veggies`, spécifiés dans le manifeste.
+
+```
+var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
+var fruits = selectedMatches.fruits;
+var veggies = selectedMatches.veggies;
 ```
 
 ####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])

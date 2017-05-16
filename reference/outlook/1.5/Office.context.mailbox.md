@@ -58,6 +58,8 @@ L’autorisation **ReadItem** doit être spécifiée dans le manifeste de votre 
 
 En mode composition, vous devez appeler la méthode [`saveAsync`](Office.context.mailbox.item#saveAsync) avant de pouvoir utiliser le membre `restUrl`. Votre application doit disposer des autorisations **ReadWriteItem** pour appeler la méthode `saveAsync`.
 
+> **Remarque :** Les clients Outlook connectés aux installations locales d’Exchange 2016 avec une URL REST personnalisée configurée renvoient une valeur non valide pour `restUrl`.
+
 ##### <a name="type"></a>Type :
 
 *   Chaîne

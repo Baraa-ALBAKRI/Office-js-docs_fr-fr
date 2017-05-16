@@ -6,6 +6,9 @@ Cet article fournit des conseils sur l’utilisation d’Angular 2 pour créer 
 
 Pour un exemple de complément Office créé à l’aide de l’infrastructure Angular 2, consultez [Complément de vérification du style dans Word basé sur Angular 2](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
+## <a name="install-the-typescript-type-definitions"></a>Installer les définitions de type TypeScript
+Ouvrez une fenêtre nodejs et entrez les informations suivantes sur la ligne de commande : `npm install --save-dev @types/office-js`.
+
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>L’amorçage doit s’effectuer à l’intérieur d’Office.initialize
 
 Dans une page qui appelle les API Office, Word ou Excel JavaScript, votre code doit d’abord attribuer une méthode à la propriété `Office.initialize`. (Si vous ne possédez aucun code d’initialisation, le corps de la méthode peut contenir simplement des symboles « `{}` » vides, mais vous ne devez pas laisser la propriété `Office.initialize` non définie. Pour plus d’informations, voir [Initialisation de votre complément](http://dev.office.com/docs/add-ins/develop/understanding-the-javascript-api-for-office#initializing-your-add-in).) Office appelle cette méthode immédiatement après l’initialisation des bibliothèques JavaScript Office.
